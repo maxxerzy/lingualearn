@@ -28,9 +28,9 @@ export function getSelectedMode() {
   return btn ? btn.dataset.mode : 'flashcard';
 }
 
-export async function startSession() {
+export function startSession() {
   const deckId = document.getElementById('deckSelect').value;
-  const allDecks = await getDecks();
+  const allDecks = getDecks();
   const deck = allDecks[deckId];
 
   if (!deck) {

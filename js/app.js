@@ -3,11 +3,10 @@ import { initSettings, handleImport, handleExport } from '../ui/settings.js';
 import { startSession } from '../core/session.js';
 import { updateStats } from '../core/stats.js';
 import { getDecks } from '../core/state.js';
-import './integrations/react-bits-explorer.js';
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
-  await populateDeckSelect();
+  populateDeckSelect();
   updateStats();
   initSettings();
   setupModeTabs();
@@ -19,11 +18,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.handleExport = handleExport;
 });
 
-async function populateDeckSelect() {
+function populateDeckSelect() {
   const deckSelect = document.getElementById('deckSelect');
   if (!deckSelect) return;
 
-  const decks = await getDecks();
+  const decks = getDecks();
   const prev  = deckSelect.value;
   const sorted = Object.entries(decks).sort(([, a], [, b]) =>
     a.name.localeCompare(b.name, 'de')

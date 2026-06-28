@@ -56,8 +56,8 @@ export function handleImport() {
 }
 
 // Handle export
-export async function handleExport() {
-  const decks = await getDecks();
+export function handleExport() {
+  const decks = getDecks();
   const deck = decks['basic-da'];
 
   if (!deck) {

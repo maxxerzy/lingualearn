@@ -1,7 +1,7 @@
 {
   "name": "lingualite-pro",
   "version": "1.0.0",
-  "description": "Lingualite Sprachlernoberfläche mit React Bits Playground",
+  "description": "Lingualite Sprachlernoberfläche zum Lernen von Vokabeln",
   "main": "index.html",
   "scripts": {
     "serve": "python3 -m http.server 4173",
@@ -9,7 +9,6 @@
   },
   "keywords": [
     "lingualite",
-    "react-bits",
     "language-learning"
   ],
   "author": "",

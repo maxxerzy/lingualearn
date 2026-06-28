@@ -1,10 +1,12 @@
-// Auto-translate example sentences via MyMemory API (free, no auth required)
+// Auto-translate example sentences via MyMemory API (free, no auth required).
+// Runs in the background so it never blocks deck selection or the UI.
 const CACHE_KEY = 'lingualearn_translations';
 const API_URL = 'https://api.mymemory.translated.net/get';
 const LANG_MAP = {
-  da: 'da|en', // Danish -> English (then we'll do English to German)
-  el: 'el|en'  // Greek -> English
+  da: 'da|en', // Danish -> English (then English -> German)
+  el: 'el|en'  // Greek  -> English
 };
+const REQUEST_TIMEOUT = 5000;
 
 function getCachedTranslations() {
   try {
@@ -24,54 +26,66 @@ function saveCachedTranslations(cache) {
 }
 
 async function translateText(text, langPair) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
   try {
     const res = await fetch(
       `${API_URL}?q=${encodeURIComponent(text)}&langpair=${langPair}&format=json`,
-      { timeout: 5000 }
+      { signal: controller.signal }
     );
     if (!res.ok) return null;
     const data = await res.json();
     return data.responseStatus === 200 ? data.responseData.translatedText : null;
   } catch {
     return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// Apply any already-cached translations to the decks synchronously (instant).
+function applyCachedTranslations(decks, cache) {
+  for (const deck of Object.values(decks)) {
+    if (!deck.cards) continue;
+    for (const card of deck.cards) {
+      if (card.example && cache[card.example]) {
+        card.exampleDE = cache[card.example];
+      }
+    }
   }
 }
 
 export async function enrichDecksWithTranslations(decks) {
   const cache = getCachedTranslations();
+
+  // 1) Instant pass: fill in everything we already have cached.
+  applyCachedTranslations(decks, cache);
+
+  // 2) Background pass: fetch the missing ones one at a time so we stay
+  //    well under MyMemory's rate limits. This is non-blocking from the
+  //    caller's perspective — the decks are already usable.
   let changed = false;
 
-  for (const [deckId, deck] of Object.entries(decks)) {
+  for (const deck of Object.values(decks)) {
     if (!deck.cards) continue;
 
+    const langPair = LANG_MAP[deck.language];
+    if (!langPair) continue;
+
     for (const card of deck.cards) {
-      if (!card.example) continue;
+      if (!card.example || card.exampleDE) continue;
 
-      const cacheKey = `${card.example}`;
-      if (cache[cacheKey]) {
-        card.exampleDE = cache[cacheKey];
-        continue;
-      }
+      // Step 1: deck language -> English
+      const enText = await translateText(card.example, langPair);
+      if (!enText || enText === card.example) continue;
 
-      // Translate: deck language -> German (via English as intermediate)
-      let translated = null;
+      // Step 2: English -> German
+      const translated = await translateText(enText, 'en|de');
+      if (!translated) continue;
 
-      // Step 1: Translate from deck language to English
-      const langPair = LANG_MAP[deck.language];
-      if (langPair) {
-        const enText = await translateText(card.example, langPair);
-
-        // Step 2: Translate English to German
-        if (enText && enText !== card.example) {
-          translated = await translateText(enText, 'en|de');
-        }
-      }
-
-      if (translated) {
-        card.exampleDE = translated;
-        cache[cacheKey] = translated;
-        changed = true;
-      }
+      card.exampleDE = translated;
+      cache[card.example] = translated;
+      changed = true;
     }
   }
 
