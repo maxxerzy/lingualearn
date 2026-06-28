@@ -1,4 +1,4 @@
-import { initNavigation, initDecksView, filterDecksByLanguage } from '../ui/navigation.js';
+import { initNavigation } from '../ui/navigation.js';
 import { initSettings, handleImport, handleExport } from '../ui/settings.js';
 import { startSession } from '../core/session.js';
 import { updateStats } from '../core/stats.js';
@@ -7,7 +7,6 @@ import './integrations/react-bits-explorer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
-  initDecksView();
   populateDeckSelect();
   updateStats();
   initSettings();
@@ -16,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (startButton) {
     startButton.addEventListener('click', startSession);
   }
-
-  setupLanguageTabs();
 
   window.handleImport = handleImport;
   window.handleExport = handleExport;
@@ -53,16 +50,4 @@ function populateDeckSelect() {
       deckSelect.value = firstDeckId;
     }
   }
-}
-
-function setupLanguageTabs() {
-  const tabs = document.querySelectorAll('.lang-tab');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const language = tab.dataset.lang || 'all';
-      filterDecksByLanguage(language);
-    });
-  });
 }
