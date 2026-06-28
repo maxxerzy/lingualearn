@@ -517,46 +517,6 @@ label {
   white-space: pre;
 }
 
-/* ── React Bits ── */
-.panel-description { color: var(--gray); margin-bottom: 12px; }
-
-.react-bits-root {
-  border: 2px dashed rgba(67, 97, 238, 0.3);
-  border-radius: var(--border-radius);
-  background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(58, 12, 163, 0.02));
-  min-height: 400px;
-  padding: 24px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  overflow-y: auto;
-}
-
-.react-bits-placeholder { color: var(--gray); font-style: italic; text-align: center; }
-.react-bits-content { width: 100%; }
-.react-bits-hint { color: var(--gray); margin-bottom: 12px; }
-
-.react-bits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 10px;
-}
-
-.react-bits-chip {
-  padding: 10px 12px;
-  border-radius: 9999px;
-  border: 1px solid rgba(67, 97, 238, 0.25);
-  background: white;
-  color: var(--primary);
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.react-bits-chip:hover { background: var(--primary); color: white; }
-.react-bits-error { color: #ae2012; font-weight: 500; text-align: center; }
-.react-bits-footer { margin-top: 16px; font-size: 0.9rem; color: var(--gray); }
-
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .learn-layout { grid-template-columns: 1fr; }
