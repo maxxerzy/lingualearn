@@ -61,6 +61,8 @@ export function startSession() {
 
   if (mode === 'flashcard') {
     showFlashcard();
+  } else if (mode === 'multiplechoice') {
+    showMultipleChoice();
   } else {
     showNextCard();
   }
@@ -181,6 +183,107 @@ function rateFlashcard(card, rating) {
   setCurrentSession(session);
   updateProgress();
   showFlashcard();
+}
+
+// ── MULTIPLE CHOICE MODE ─────────────────────────────────────────
+
+function showMultipleChoice() {
+  const session = getCurrentSession();
+  if (!session || session.currentIndex >= session.cards.length) {
+    endSession();
+    return;
+  }
+
+  const card = session.cards[session.currentIndex];
+  const lang = session.deck.language;
+  const options = buildMCOptions(card, session.cards);
+
+  const learnArea = document.getElementById('learnArea');
+  learnArea.innerHTML = `
+    <div class="mc-card">
+      <p class="fc-label">Deutsch</p>
+      <div class="fc-word mc-question">${escHtml(card.front)}</div>
+      <p class="prompt">${getLangName(lang)} — welche Übersetzung stimmt?</p>
+      <div class="mc-options">
+        ${options.map((opt, i) => `
+          <button type="button" class="btn mc-option" data-idx="${i}">
+            <span class="mc-key">${'ABCD'[i]}</span>
+            <span class="mc-text">
+              ${escHtml(opt.back)}
+              <button type="button" class="audio-btn mc-audio" data-text="${escHtml(opt.back)}" title="Aussprache">
+                <i class="fas fa-volume-up"></i>
+              </button>
+            </span>
+          </button>
+        `).join('')}
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentIndex++;
+  session.currentPrompt = { card, options };
+  setCurrentSession(session);
+  updateProgress();
+
+  learnArea.querySelectorAll('.mc-audio').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      speakWord(btn.dataset.text, lang);
+    });
+  });
+
+  learnArea.querySelectorAll('.mc-option').forEach(btn => {
+    btn.addEventListener('click', () => checkMCAnswer(Number(btn.dataset.idx)));
+  });
+}
+
+function buildMCOptions(card, cards) {
+  const wrongs = shuffleArray(cards.filter(c => c.back !== card.back)).slice(0, 3);
+  return shuffleArray([card, ...wrongs]);
+}
+
+function checkMCAnswer(selectedIdx) {
+  const session = getCurrentSession();
+  const userStats = getUserStats();
+  const { card, options } = session.currentPrompt;
+  const chosen = options[selectedIdx];
+  const isCorrect = chosen.back === card.back;
+  const correctIdx = options.findIndex(o => o.back === card.back);
+  const lang = session.deck.language;
+
+  document.querySelectorAll('.mc-option').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === correctIdx) btn.classList.add('mc-correct');
+    else if (i === selectedIdx && !isCorrect) btn.classList.add('mc-wrong');
+  });
+
+  if (isCorrect) {
+    session.correctAnswers++;
+    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+    speakWord(card.back, lang);
+  }
+
+  userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
+  setUserStats(userStats);
+  updateStats();
+  session.currentPrompt = null;
+  setCurrentSession(session);
+
+  const fb = document.getElementById('mc-fb');
+  fb.innerHTML = isCorrect
+    ? `<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>`
+    : `<div class="incorrect" style="margin-top:14px">
+         <p>❌ Falsch — richtig: <b>${escHtml(card.back)}</b></p>
+       </div>`;
+
+  fb.innerHTML += `
+    <div class="actions" style="margin-top:14px">
+      <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
+    </div>
+  `;
+
+  document.getElementById('mcNext').addEventListener('click', showMultipleChoice);
 }
 
 // ── COMPARISON MODE ──────────────────────────────────────────────
