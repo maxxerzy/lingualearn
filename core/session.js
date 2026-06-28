@@ -164,8 +164,6 @@ function rateFlashcard(card, rating) {
       session.queue = shuffleArray([...session.reviewQueue]);
       session.reviewQueue = [];
       session.reviewRound++;
-      session.currentIndex = 0;
-      session.correctAnswers = 0;
     } else {
       setCurrentSession(session);
       endSession();

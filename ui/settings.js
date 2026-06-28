@@ -1,15 +1,31 @@
-import { getDecks } from '../core/state.js';
+import { getDecks, setCurrentSession } from '../core/state.js';
 
 // Initialize settings
 export function initSettings() {
-  document.getElementById('importBtn').addEventListener('click', handleImport);
-  document.getElementById('exportBtn').addEventListener('click', handleExport);
+  const importBtn = document.getElementById('importBtn');
+  const exportBtn = document.getElementById('exportBtn');
+
+  if (importBtn) importBtn.addEventListener('click', handleImport);
+  if (exportBtn) exportBtn.addEventListener('click', handleExport);
+}
+
+// Validate deck structure
+function validateDeckStructure(deckData) {
+  if (!deckData || typeof deckData !== 'object') return false;
+  if (!deckData.name || !deckData.language) return false;
+  if (!Array.isArray(deckData.cards)) return false;
+  if (deckData.cards.length === 0) return false;
+
+  return deckData.cards.every(card =>
+    card && typeof card === 'object' &&
+    'front' in card && 'back' in card
+  );
 }
 
 // Handle import
 export function handleImport() {
   const fileInput = document.getElementById('importFile');
-  const file = fileInput.files[0];
+  const file = fileInput?.files?.[0];
 
   if (!file) {
     alert('Bitte wählen Sie eine JSON-Datei aus.');
@@ -20,7 +36,17 @@ export function handleImport() {
   reader.onload = function(e) {
     try {
       const deckData = JSON.parse(e.target.result);
-      alert(`Deck "${deckData.name}" erfolgreich importiert!`);
+
+      if (!validateDeckStructure(deckData)) {
+        alert('Fehler: Deck hat ungültiges Format. Erforderlich: name, language, cards (Array mit front/back)');
+        return;
+      }
+
+      const decks = getDecks();
+      const deckId = `imported-${Date.now()}`;
+      decks[deckId] = deckData;
+
+      alert(`Deck "${deckData.name}" erfolgreich importiert! Du kannst es jetzt in der Lernen-Seite auswählen.`);
       fileInput.value = '';
     } catch (error) {
       alert('Fehler beim Importieren: Ungültiges JSON-Format.');

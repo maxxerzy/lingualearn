@@ -28,7 +28,7 @@ async function translateText(text, langPair) {
     ]);
     if (!res.ok) return null;
     const data = await res.json();
-    return data.responseStatus === 200 ? data.responseData.translatedText : null;
+    return data.responseStatus === 200 ? data.responseData?.translatedText || null : null;
   } catch {
     return null;
   }
