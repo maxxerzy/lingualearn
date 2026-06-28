@@ -28,9 +28,10 @@ export function getSelectedMode() {
   return btn ? btn.dataset.mode : 'flashcard';
 }
 
-export function startSession() {
+export async function startSession() {
   const deckId = document.getElementById('deckSelect').value;
-  const deck = getDecks()[deckId];
+  const allDecks = await getDecks();
+  const deck = allDecks[deckId];
 
   if (!deck) {
     alert('Bitte wähle ein gültiges Deck aus.');
@@ -115,7 +116,10 @@ function showFlashcardBack(card) {
           <i class="fas fa-volume-up"></i>
         </button>
       </div>
-      ${card.example ? `<p class="fc-example">${escHtml(card.example)}</p>` : ''}
+      ${card.example ? `
+        <p class="fc-example"><strong>${escHtml(card.example)}</strong></p>
+        ${card.exampleDE ? `<p class="fc-example-de">${escHtml(card.exampleDE)}</p>` : ''}
+      ` : ''}
       <div class="fc-rating">
         <p class="fc-rating-label">Wie gut wusstest du das?</p>
         <div class="actions">

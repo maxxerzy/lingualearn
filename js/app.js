@@ -5,9 +5,9 @@ import { updateStats } from '../core/stats.js';
 import { getDecks } from '../core/state.js';
 import './integrations/react-bits-explorer.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   initNavigation();
-  populateDeckSelect();
+  await populateDeckSelect();
   updateStats();
   initSettings();
   setupModeTabs();
@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.handleExport = handleExport;
 });
 
-function populateDeckSelect() {
+async function populateDeckSelect() {
   const deckSelect = document.getElementById('deckSelect');
   if (!deckSelect) return;
 
-  const decks = getDecks();
+  const decks = await getDecks();
   const prev  = deckSelect.value;
   const sorted = Object.entries(decks).sort(([, a], [, b]) =>
     a.name.localeCompare(b.name, 'de')
