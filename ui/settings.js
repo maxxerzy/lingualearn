@@ -10,19 +10,17 @@ export function initSettings() {
 export function handleImport() {
   const fileInput = document.getElementById('importFile');
   const file = fileInput.files[0];
-  
+
   if (!file) {
     alert('Bitte wählen Sie eine JSON-Datei aus.');
     return;
   }
-  
+
   const reader = new FileReader();
   reader.onload = function(e) {
     try {
       const deckData = JSON.parse(e.target.result);
-      // In a real application, you would add this to your decks object
       alert(`Deck "${deckData.name}" erfolgreich importiert!`);
-      // Reset file input
       fileInput.value = '';
     } catch (error) {
       alert('Fehler beim Importieren: Ungültiges JSON-Format.');
@@ -41,12 +39,11 @@ export function handleExport() {
     return;
   }
 
-  // In a real application, you would export the actual data
   const dataStr = JSON.stringify(deck, null, 2);
   const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-  
-  const exportFileDefaultName = 'lingualite_export.json';
-  
+
+  const exportFileDefaultName = 'lingualearn_export.json';
+
   const linkElement = document.createElement('a');
   linkElement.setAttribute('href', dataUri);
   linkElement.setAttribute('download', exportFileDefaultName);

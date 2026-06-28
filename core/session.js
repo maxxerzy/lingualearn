@@ -48,7 +48,6 @@ export function startSession() {
     correctAnswers: 0,
     totalCards: shuffled.length,
     currentPrompt: null,
-    // flashcard
     queue: [...shuffled],
     reviewQueue: [],
     reviewRound: 1
@@ -65,7 +64,7 @@ export function startSession() {
   }
 }
 
-// ── FLASHCARD MODE ───────────────────────────────────────────────
+// ── FLASHCARD MODE ──────────────────────────────────────────────
 
 function showFlashcard() {
   const session = getCurrentSession();
@@ -119,22 +118,20 @@ function showFlashcardBack(card) {
       <div class="fc-rating">
         <p class="fc-rating-label">Wie gut wusstest du das?</p>
         <div class="actions">
-          <button type="button" class="btn btn-again" data-rating="again">
-            <i class="fas fa-redo"></i> Nochmal
-          </button>
-          <button type="button" class="btn btn-hard" data-rating="hard">Schwer</button>
-          <button type="button" class="btn btn-good" data-rating="good">Gut</button>
           <button type="button" class="btn btn-easy" data-rating="easy">
             <i class="fas fa-star"></i> Einfach
+          </button>
+          <button type="button" class="btn btn-good" data-rating="good">Gut</button>
+          <button type="button" class="btn btn-hard" data-rating="hard">Schwer</button>
+          <button type="button" class="btn btn-again" data-rating="again">
+            <i class="fas fa-redo"></i> Nochmal
           </button>
         </div>
       </div>
     </div>
   `;
 
-  // Auto-play pronunciation
   speakWord(card.back, lang);
-
   document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
 
   document.querySelectorAll('[data-rating]').forEach(btn => {
@@ -153,7 +150,6 @@ function rateFlashcard(card, rating) {
     session.reviewQueue.push(card);
   } else {
     session.correctAnswers++;
-    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
   }
 
   userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
@@ -199,12 +195,9 @@ export function showNextCard() {
 
 function createComparisonPrompt(card, cards) {
   if (cards.length <= 1) return { translation: card.back, isMatch: true };
-
   if (Math.random() < 0.5) return { translation: card.back, isMatch: true };
-
   const alts = cards.filter(c => c.back !== card.back);
   if (alts.length === 0) return { translation: card.back, isMatch: true };
-
   return { translation: alts[Math.floor(Math.random() * alts.length)].back, isMatch: false };
 }
 
@@ -265,7 +258,6 @@ function checkComparisonAnswer(userSaysMatch) {
       </div>
     `;
     session.correctAnswers++;
-    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
   } else {
     fb.innerHTML = `
       <div class="incorrect">
