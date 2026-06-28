@@ -28,9 +28,10 @@ export function getSelectedMode() {
   return btn ? btn.dataset.mode : 'flashcard';
 }
 
-export function startSession() {
+export async function startSession() {
   const deckId = document.getElementById('deckSelect').value;
-  const deck = getDecks()[deckId];
+  const allDecks = await getDecks();
+  const deck = allDecks[deckId];
 
   if (!deck) {
     alert('Bitte wähle ein gültiges Deck aus.');
@@ -48,6 +49,7 @@ export function startSession() {
     correctAnswers: 0,
     totalCards: shuffled.length,
     currentPrompt: null,
+    // flashcard
     queue: [...shuffled],
     reviewQueue: [],
     reviewRound: 1
@@ -64,7 +66,7 @@ export function startSession() {
   }
 }
 
-// ── FLASHCARD MODE ──────────────────────────────────────────────
+// ── FLASHCARD MODE ───────────────────────────────────────────────
 
 function showFlashcard() {
   const session = getCurrentSession();
@@ -134,7 +136,9 @@ function showFlashcardBack(card) {
     </div>
   `;
 
+  // Auto-play pronunciation
   speakWord(card.back, lang);
+
   document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
 
   document.querySelectorAll('[data-rating]').forEach(btn => {
@@ -153,6 +157,7 @@ function rateFlashcard(card, rating) {
     session.reviewQueue.push(card);
   } else {
     session.correctAnswers++;
+    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
   }
 
   userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
@@ -164,6 +169,8 @@ function rateFlashcard(card, rating) {
       session.queue = shuffleArray([...session.reviewQueue]);
       session.reviewQueue = [];
       session.reviewRound++;
+      session.currentIndex = 0;
+      session.correctAnswers = 0;
     } else {
       setCurrentSession(session);
       endSession();
@@ -196,9 +203,12 @@ export function showNextCard() {
 
 function createComparisonPrompt(card, cards) {
   if (cards.length <= 1) return { translation: card.back, isMatch: true };
+
   if (Math.random() < 0.5) return { translation: card.back, isMatch: true };
+
   const alts = cards.filter(c => c.back !== card.back);
   if (alts.length === 0) return { translation: card.back, isMatch: true };
+
   return { translation: alts[Math.floor(Math.random() * alts.length)].back, isMatch: false };
 }
 
@@ -259,6 +269,7 @@ function checkComparisonAnswer(userSaysMatch) {
       </div>
     `;
     session.correctAnswers++;
+    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
   } else {
     fb.innerHTML = `
       <div class="incorrect">
