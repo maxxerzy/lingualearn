@@ -3,29 +3,25 @@ import { enrichDecksWithTranslations } from './translator.js';
 
 // Application state
 let currentSession = null;
-let enrichedDecks = null;
 let userStats = {
   learnedWords: 0,
   activeDays: 1,
   successRate: 0
 };
 
-// Auto-enrich decks with translations on first access
-async function initializeDecks() {
-  if (!enrichedDecks) {
-    enrichedDecks = await enrichDecksWithTranslations(JSON.parse(JSON.stringify(decks)));
-  }
-  return enrichedDecks;
-}
+// Live, mutable copy of the decks. We clone once so the background
+// translation can attach `exampleDE` without touching the source module.
+const liveDecks = JSON.parse(JSON.stringify(decks));
 
-initializeDecks();
+// Kick off translation enrichment in the BACKGROUND. This does NOT block
+// deck selection — cards gain `exampleDE` over time as translations arrive,
+// and the app works fully without them. Any cached translations are applied
+// synchronously on the first pass, so they show up immediately.
+enrichDecksWithTranslations(liveDecks).catch(() => {});
 
-// Data access helpers
-export async function getDecks() {
-  if (!enrichedDecks) {
-    enrichedDecks = await initializeDecks();
-  }
-  return enrichedDecks;
+// Data access helpers — synchronous, returns instantly.
+export function getDecks() {
+  return liveDecks;
 }
 
 // Export state for other modules
