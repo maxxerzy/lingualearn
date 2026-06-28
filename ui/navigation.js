@@ -88,7 +88,8 @@ function selectDeck(deckId) {
 // Get language name from code
 function getLanguageName(code) {
   const languages = {
-    da: 'Dänisch'
+    da: 'Dänisch',
+    el: 'Griechisch'
   };
   return languages[code] || code;
 }
