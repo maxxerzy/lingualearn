@@ -103,8 +103,10 @@ export function enrichDecksWithTranslations(decks) {
     }
   }
 
-  // Start background processing (non-blocking)
-  processTranslationQueue(cache);
+  // Start background processing (non-blocking) - fire and forget
+  if (translationQueue.length > 0) {
+    processTranslationQueue(cache).catch(() => {});
+  }
 
   return decks;
 }

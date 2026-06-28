@@ -1,4 +1,4 @@
-import { getDecks, setCurrentSession } from '../core/state.js';
+import { getDecks } from '../core/state.js';
 
 // Initialize settings
 export function initSettings() {
