@@ -26,6 +26,9 @@
           <button type="button" class="nav-btn active" data-view="learn">
             <i class="fas fa-book"></i> Lernen
           </button>
+          <button type="button" class="nav-btn" data-view="playground" title="React Bits Playground">
+            <i class="fas fa-cube"></i> Playground
+          </button>
           <button type="button" class="nav-btn icon-btn" data-view="settings" title="Einstellungen">
             <i class="fas fa-cog"></i>
           </button>
@@ -78,6 +81,23 @@
           </div>
         </section>
 
+        <section id="view-playground" class="view">
+          <div class="panel">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <div>
+                <h2 style="margin: 0;">React Bits Playground</h2>
+                <p style="color: var(--gray); margin: 4px 0 0; font-size: 0.9rem;">Experimentiere mit Komponenten aus dem react-bits Paket</p>
+              </div>
+              <a href="https://github.com/DavidHDev/react-bits" target="_blank" rel="noreferrer" class="btn btn-secondary" style="margin: 0;">
+                <i class="fas fa-github"></i> GitHub
+              </a>
+            </div>
+            <div id="react-bits-root" class="react-bits-root" data-state="idle">
+              <div class="react-bits-placeholder">React Bits Vorschau wird vorbereitet …</div>
+            </div>
+          </div>
+        </section>
+
         <section id="view-settings" class="view">
           <div class="panel">
             <h2>Einstellungen</h2>
@@ -110,17 +130,6 @@
             </div>
           </div>
 
-          <div class="panel">
-            <h2>React Bits Komponenten</h2>
-            <p class="panel-description">
-              Dieses Projekt kann direkt mit den Komponenten aus
-              <a href="https://github.com/DavidHDev/react-bits" target="_blank" rel="noreferrer">react-bits</a>
-              experimentieren.
-            </p>
-            <div id="react-bits-root" class="react-bits-root" data-state="idle">
-              <div class="react-bits-placeholder">React Bits Vorschau wird vorbereitet …</div>
-            </div>
-          </div>
         </section>
       </div>
     </main>
