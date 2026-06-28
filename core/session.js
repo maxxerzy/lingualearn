@@ -114,7 +114,10 @@ function showFlashcardBack(card) {
           <i class="fas fa-volume-up"></i>
         </button>
       </div>
-      ${card.example ? `<p class="fc-example">${escHtml(card.example)}</p>` : ''}
+      ${card.example ? `
+        <p class="fc-example"><strong>${escHtml(card.example)}</strong></p>
+        ${card.exampleDE ? `<p class="fc-example-de">${escHtml(card.exampleDE)}</p>` : ''}
+      ` : ''}
       <div class="fc-rating">
         <p class="fc-rating-label">Wie gut wusstest du das?</p>
         <div class="actions">

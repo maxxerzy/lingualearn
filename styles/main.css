@@ -373,9 +373,20 @@ label {
 .fc-example {
   font-style: italic;
   color: var(--gray);
-  font-size: 1rem;
+  font-size: 0.95rem;
   max-width: 480px;
-  margin: 8px 0 4px;
+  margin: 8px 0 2px;
+  line-height: 1.4;
+}
+
+.fc-example-de {
+  font-size: 0.85rem;
+  color: #7b8a99;
+  max-width: 480px;
+  margin: 4px 0 12px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  font-style: normal;
 }
 
 .fc-rating {

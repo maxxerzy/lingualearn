@@ -1,4 +1,5 @@
 import { decks } from '../js/data/decks.js';
+import { enrichDecksWithTranslations } from './translator.js';
 
 // Application state
 let currentSession = null;
@@ -8,12 +9,14 @@ let userStats = {
   successRate: 0
 };
 
+// Enrich decks with translations on load (non-blocking)
+enrichDecksWithTranslations(decks);
+
 // Data access helpers
 export function getDecks() {
   return decks;
 }
 
-// Export state for other modules
 export function getCurrentSession() {
   return currentSession;
 }
