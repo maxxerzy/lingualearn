@@ -10,11 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   populateDeckSelect();
   updateStats();
   initSettings();
+  setupModeTabs();
 
-  const startButton = document.getElementById('startBtn');
-  if (startButton) {
-    startButton.addEventListener('click', startSession);
-  }
+  const startBtn = document.getElementById('startBtn');
+  if (startBtn) startBtn.addEventListener('click', startSession);
 
   window.handleImport = handleImport;
   window.handleExport = handleExport;
@@ -22,32 +21,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function populateDeckSelect() {
   const deckSelect = document.getElementById('deckSelect');
-  if (!deckSelect) {
-    return;
-  }
+  if (!deckSelect) return;
 
   const decks = getDecks();
-  const previousSelection = deckSelect.value;
-  const fragment = document.createDocumentFragment();
-  const sortedDecks = Object.entries(decks).sort(([, a], [, b]) =>
+  const prev  = deckSelect.value;
+  const sorted = Object.entries(decks).sort(([, a], [, b]) =>
     a.name.localeCompare(b.name, 'de')
   );
 
-  sortedDecks.forEach(([id, deck]) => {
-    const option = document.createElement('option');
-    option.value = id;
-    option.textContent = deck.name;
-    fragment.appendChild(option);
+  const frag = document.createDocumentFragment();
+  sorted.forEach(([id, deck]) => {
+    const opt = document.createElement('option');
+    opt.value = id;
+    opt.textContent = `${deck.name} (${deck.cards.length} Karten)`;
+    frag.appendChild(opt);
   });
 
-  deckSelect.replaceChildren(fragment);
+  deckSelect.replaceChildren(frag);
+  deckSelect.value = (prev && decks[prev]) ? prev : (sorted[0]?.[0] ?? '');
+}
 
-  if (previousSelection && decks[previousSelection]) {
-    deckSelect.value = previousSelection;
-  } else {
-    const firstDeckId = sortedDecks[0]?.[0];
-    if (firstDeckId) {
-      deckSelect.value = firstDeckId;
-    }
-  }
+function setupModeTabs() {
+  const btns = document.querySelectorAll('.mode-btn');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
 }

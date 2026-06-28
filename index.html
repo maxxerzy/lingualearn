@@ -12,64 +12,73 @@
     <header>
       <div class="logo">
         <i class="fas fa-language logo-icon"></i>
-        <h1>LinguaLearn – Sprachen lernen</h1>
+        <h1>LinguaLearn</h1>
       </div>
-      <nav class="nav">
-        <button type="button" class="nav-btn active" data-view="learn">
-          <i class="fas fa-book"></i> Lernen
-        </button>
-<button type="button" class="nav-btn icon-btn" data-view="settings" title="Einstellungen">
-          <i class="fas fa-cog"></i>
-        </button>
-      </nav>
+      <div class="header-right">
+        <div class="header-stats">
+          <div class="stat-badge">
+            <i class="fas fa-chart-line"></i>
+            <span id="success-rate">0%</span>
+            <span class="stat-label">Erfolgsrate</span>
+          </div>
+        </div>
+        <nav class="nav">
+          <button type="button" class="nav-btn active" data-view="learn">
+            <i class="fas fa-book"></i> Lernen
+          </button>
+          <button type="button" class="nav-btn icon-btn" data-view="settings" title="Einstellungen">
+            <i class="fas fa-cog"></i>
+          </button>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <aside class="sidebar">
-        <h2>Deine Statistik</h2>
-        <div class="stats">
-          <div class="stat-card">
-            <h3 id="success-rate">0%</h3>
-            <p>Erfolgsrate</p>
-          </div>
-        </div>
-        
-      </aside>
-
       <div class="content">
         <section id="view-learn" class="view active">
-          <div class="panel">
-            <h2>Lernsession – Wörtervergleich</h2>
-            <div class="row">
-              <div class="form-group" style="flex: 1;">
-                <label for="deckSelect">Deck auswählen</label>
+          <div class="learn-layout">
+
+            <div class="panel config-panel">
+              <h2>Lernsession</h2>
+              <div class="form-group">
+                <label for="deckSelect">Deck</label>
                 <select id="deckSelect" class="input"></select>
               </div>
               <div class="form-group">
-                <button type="button" id="startBtn" class="btn btn-primary">
-                  <i class="fas fa-play"></i> Session starten
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="session-header">
-              <h2 id="session-title">Bereit zum Lernen</h2>
-              <div class="session-progress">
-                <div class="progress-text" id="progress-text">0/0 Karten</div>
-                <div class="progress">
-                  <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+                <label>Modus</label>
+                <div class="mode-tabs">
+                  <button type="button" class="mode-btn active" data-mode="flashcard">
+                    <i class="fas fa-clone"></i> Karteikarten
+                  </button>
+                  <button type="button" class="mode-btn" data-mode="comparison">
+                    <i class="fas fa-random"></i> Vergleich
+                  </button>
                 </div>
               </div>
+              <button type="button" id="startBtn" class="btn btn-primary btn-full">
+                <i class="fas fa-play"></i> Session starten
+              </button>
             </div>
-            <div id="learnArea" class="card">
-              <p>Wähle ein Deck und starte eine Lernsession mit Wörtervergleichen.</p>
+
+            <div class="panel learn-panel">
+              <div class="session-header">
+                <h2 id="session-title">Bereit zum Lernen</h2>
+                <div class="session-progress">
+                  <div class="progress-text" id="progress-text">0/0 Karten</div>
+                  <div class="progress">
+                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="learnArea" class="card">
+                <p>Wähle ein Deck und einen Modus, dann starte die Session.</p>
+              </div>
             </div>
+
           </div>
         </section>
 
-<section id="view-settings" class="view">
+        <section id="view-settings" class="view">
           <div class="panel">
             <h2>Einstellungen</h2>
             <div class="form-group">
@@ -84,7 +93,6 @@
                 <i class="fas fa-file-export"></i> Exportieren
               </button>
             </div>
-            
             <div class="form-group" style="margin-top: 20px;">
               <h3>Deck-Schema</h3>
               <pre class="code">
@@ -105,15 +113,12 @@
           <div class="panel">
             <h2>React Bits Komponenten</h2>
             <p class="panel-description">
-              Dieses Projekt kann jetzt direkt mit den Komponenten aus
+              Dieses Projekt kann direkt mit den Komponenten aus
               <a href="https://github.com/DavidHDev/react-bits" target="_blank" rel="noreferrer">react-bits</a>
-              experimentieren. Die folgende Vorschau lädt das Paket live aus dem CDN
-              und listet alle verfügbaren Exporte auf.
+              experimentieren.
             </p>
             <div id="react-bits-root" class="react-bits-root" data-state="idle">
-              <div class="react-bits-placeholder">
-                React Bits Vorschau wird vorbereitet …
-              </div>
+              <div class="react-bits-placeholder">React Bits Vorschau wird vorbereitet …</div>
             </div>
           </div>
         </section>
