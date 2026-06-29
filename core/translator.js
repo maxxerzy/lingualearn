@@ -3,8 +3,12 @@
 const CACHE_KEY = 'lingualearn_translations';
 const API_URL = 'https://api.mymemory.translated.net/get';
 const LANG_MAP = {
-  da: 'da|en', // Danish -> English (then English -> German)
-  el: 'el|en'  // Greek  -> English
+  da: 'da|en',
+  el: 'el|en',
+  fr: 'fr|en',
+  es: 'es|en',
+  la: 'la|en',
+  ru: 'ru|en',
 };
 const REQUEST_TIMEOUT = 5000;
 

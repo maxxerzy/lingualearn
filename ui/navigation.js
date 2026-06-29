@@ -9,7 +9,7 @@ export function initNavigation() {
     if (target) target.classList.add('active');
 
     desktopBtns.forEach(b => b.classList.toggle('active', b.dataset.view === viewId));
-    mobileBtns.forEach(b => b.classList.toggle('active', b.dataset.view === viewId));
+    mobileBtns.forEach(b  => b.classList.toggle('active', b.dataset.view === viewId));
   }
 
   desktopBtns.forEach(btn => btn.addEventListener('click', () => activateView(btn.dataset.view)));

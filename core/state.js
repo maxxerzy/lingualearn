@@ -4,9 +4,15 @@ import { getCurrentUser } from './auth.js';
 
 const STATS_PREFIX = 'lingualearn_stats_';
 
+// Richer default shape keeps all stat fields in sync between branches.
 const defaultStats = {
   successRate: 0,
   learnedWords: 0,
+  totalCorrect: 0,
+  totalAnswered: 0,
+  totalSessions: 0,
+  activeDays: 1,
+  lastSessionDate: null,
 };
 
 function statsKey() {
