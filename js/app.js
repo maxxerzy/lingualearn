@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function showLogin() {
   document.getElementById('login-screen').hidden = false;
   document.getElementById('app').hidden = true;
+  const btn = document.getElementById('loginBtn');
+  btn.disabled = false;
+  btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Einloggen / Registrieren';
   document.getElementById('loginUsername').focus();
 }
 
@@ -76,6 +79,7 @@ function doLogout() {
   document.getElementById('loginError').hidden = true;
   showLogin();
 }
+
 
 function populateDeckSelect() {
   const deckSelect = document.getElementById('deckSelect');
