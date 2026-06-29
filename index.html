@@ -221,6 +221,123 @@
 
   </div>
 
+  <!-- Auth runs as a plain script — never blocked by module-loading failures -->
+  <script>
+  (function () {
+    'use strict';
+    var USERS_KEY = 'lingualearn_users';
+    var CURRENT_USER_KEY = 'lingualearn_current_user';
+    var loginMode = 'login';
+
+    function hp(pw) {
+      var s = 'lingualearn_v1:' + pw;
+      var h1 = 0x9e3779b9 >>> 0, h2 = 0x6c62272e >>> 0;
+      for (var i = 0; i < s.length; i++) {
+        var c = s.charCodeAt(i);
+        h1 = Math.imul(h1 ^ c, 2654435761) >>> 0;
+        h2 = Math.imul(h2 ^ c, 2246822519) >>> 0;
+      }
+      return [h1, h2, (h1 ^ h2) >>> 0, (h1 + h2) >>> 0]
+        .map(function (n) { return n.toString(16).padStart(8, '0'); }).join('');
+    }
+
+    function getUsers()    { try { return JSON.parse(localStorage.getItem(USERS_KEY) || '{}'); } catch (e) { return {}; } }
+    function saveUsers(u)  { try { localStorage.setItem(USERS_KEY, JSON.stringify(u)); } catch (e) {} }
+    function getUser()     { try { return localStorage.getItem(CURRENT_USER_KEY) || null; } catch (e) { return null; } }
+    function setUser(u)    { try { localStorage.setItem(CURRENT_USER_KEY, u); } catch (e) {} }
+    function clearUser()   { try { localStorage.removeItem(CURRENT_USER_KEY); } catch (e) {} }
+
+    function authOp(mode, username, password) {
+      var u = (username || '').trim();
+      if (u.length < 2) return { ok: false, err: 'Benutzername zu kurz (mind. 2 Zeichen).' };
+      if ((password || '').length < 4) return { ok: false, err: 'Passwort zu kurz (mind. 4 Zeichen).' };
+      var users = getUsers(), hash = hp(password);
+      if (mode === 'login') {
+        if (!users[u]) return { ok: false, err: 'Kein Konto gefunden — bitte zuerst registrieren.' };
+        if (users[u].passwordHash !== hash) return { ok: false, err: 'Falsches Passwort.' };
+        setUser(u); return { ok: true };
+      } else {
+        if (users[u]) {
+          if (users[u].passwordHash === hash) { setUser(u); return { ok: true }; }
+          return { ok: false, err: 'Konto existiert bereits — bitte einloggen.' };
+        }
+        users[u] = { passwordHash: hash };
+        saveUsers(users); setUser(u); return { ok: true };
+      }
+    }
+
+    function setMode(mode) {
+      loginMode = mode;
+      var tL = document.getElementById('tabLogin'), tR = document.getElementById('tabRegister');
+      var btn = document.getElementById('loginBtn'), err = document.getElementById('loginError');
+      if (tL)  tL.classList.toggle('active', mode === 'login');
+      if (tR)  tR.classList.toggle('active', mode === 'register');
+      if (btn) { btn.disabled = false; btn.textContent = mode === 'login' ? 'Einloggen' : 'Registrieren'; }
+      if (err) err.hidden = true;
+    }
+
+    function showLoginScreen() {
+      var ls = document.getElementById('login-screen'), app = document.getElementById('app');
+      var un = document.getElementById('loginUsername'), pw = document.getElementById('loginPassword');
+      if (ls)  ls.hidden  = false;
+      if (app) app.hidden = true;
+      setMode('login');
+      if (un) un.value = '';
+      if (pw) pw.value = '';
+      window.scrollTo(0, 0);
+      try { if (un) un.focus(); } catch (e) {}
+    }
+
+    window.LinguaAuth = { getUser: getUser, clearUser: clearUser, showLoginScreen: showLoginScreen };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var tL   = document.getElementById('tabLogin');
+      var tR   = document.getElementById('tabRegister');
+      var form = document.getElementById('loginForm');
+
+      if (tL)   tL.addEventListener('click', function () { setMode('login'); });
+      if (tR)   tR.addEventListener('click', function () { setMode('register'); });
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var u    = (document.getElementById('loginUsername') || {}).value || '';
+          var pw   = (document.getElementById('loginPassword') || {}).value || '';
+          var errEl = document.getElementById('loginError');
+          var btn   = document.getElementById('loginBtn');
+
+          if (btn)   { btn.disabled = true; btn.textContent = 'Wird geprüft…'; }
+          if (errEl) errEl.hidden = true;
+
+          var res;
+          try { res = authOp(loginMode, u, pw); }
+          catch (ex) {
+            if (errEl) { errEl.textContent = 'Fehler: ' + (ex.message || ex); errEl.hidden = false; }
+            setMode(loginMode); return;
+          }
+
+          if (res.ok) {
+            document.dispatchEvent(new CustomEvent('linguaauth:login', { detail: { user: getUser() } }));
+            /* Fallback if app module failed to load */
+            setTimeout(function () {
+              var app = document.getElementById('app');
+              if (app && app.hidden) {
+                if (errEl) { errEl.textContent = 'App konnte nicht geladen werden — bitte Seite neu laden.'; errEl.hidden = false; }
+                setMode(loginMode);
+              }
+            }, 2000);
+          } else {
+            if (errEl) { errEl.textContent = res.err; errEl.hidden = false; }
+            setMode(loginMode);
+          }
+        });
+      }
+
+      if (!getUser()) showLoginScreen();
+    });
+  })();
+  </script>
+
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
