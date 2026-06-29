@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn      = document.getElementById('loginBtn');
 
     btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird geprüft…';
+    btn.textContent = 'Wird geprüft…';
     errorEl.hidden = true;
 
     const result = await loginOrRegister(username, password);
@@ -34,12 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
       errorEl.textContent = result.error;
       errorEl.hidden = false;
       btn.disabled = false;
-      btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Einloggen / Registrieren';
+      btn.textContent = 'Starten';
     }
   });
 
   document.getElementById('logoutBtn').addEventListener('click', doLogout);
-  document.getElementById('mobileLogoutBtn').addEventListener('click', doLogout);
 });
 
 function showLogin() {
@@ -47,7 +46,7 @@ function showLogin() {
   document.getElementById('app').hidden = true;
   const btn = document.getElementById('loginBtn');
   btn.disabled = false;
-  btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Einloggen / Registrieren';
+  btn.textContent = 'Starten';
   document.getElementById('loginUsername').focus();
 }
 
@@ -62,9 +61,26 @@ function showApp() {
     initSettings();
     setupModeTabs();
     document.getElementById('startBtn').addEventListener('click', startSession);
-    document.getElementById('userChipBtn').addEventListener('click', () => activateView('stats'));
     window.handleImport = handleImport;
     window.handleExport = handleExport;
+
+    // User chip dropdown
+    const dropdown = document.getElementById('userDropdown');
+    document.getElementById('userChipBtn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.hidden = !dropdown.hidden;
+    });
+    document.querySelectorAll('.user-dropdown__item[data-action]').forEach(item => {
+      item.addEventListener('click', () => {
+        activateView(item.dataset.action);
+        dropdown.hidden = true;
+      });
+    });
+    document.addEventListener('click', () => { dropdown.hidden = true; });
+
+    // Back buttons in Stats and Settings views
+    document.getElementById('statsBackBtn').addEventListener('click', () => activateView('learn'));
+    document.getElementById('settingsBackBtn').addEventListener('click', () => activateView('learn'));
   }
 
   populateDeckSelect();
@@ -74,12 +90,12 @@ function showApp() {
 function doLogout() {
   setCurrentSession(null);
   logout();
+  document.getElementById('userDropdown').hidden = true;
   document.getElementById('loginUsername').value = '';
   document.getElementById('loginPassword').value = '';
   document.getElementById('loginError').hidden = true;
   showLogin();
 }
-
 
 function populateDeckSelect() {
   const deckSelect = document.getElementById('deckSelect');

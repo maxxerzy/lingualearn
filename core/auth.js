@@ -37,10 +37,8 @@ export function isLoggedIn() {
 
 export async function loginOrRegister(username, password) {
   const u = username.trim();
-  if (u.length < 2) return { success: false, error: 'Benutzername muss mindestens 2 Zeichen haben.' };
-  if (password.length < 4) return { success: false, error: 'Passwort muss mindestens 4 Zeichen haben.' };
-  // Block characters that would break the localStorage key namespace
-  if (/[_:]/.test(u)) return { success: false, error: 'Benutzername darf kein _ oder : enthalten.' };
+  if (u.length < 2) return { success: false, error: 'Benutzername zu kurz (mind. 2 Zeichen).' };
+  if (password.length < 4) return { success: false, error: 'Passwort zu kurz (mind. 4 Zeichen).' };
 
   const users = getUsers();
   const hash = await hashPassword(password);
