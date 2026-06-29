@@ -33,7 +33,11 @@ function saveUsers(users) {
 }
 
 export function getCurrentUser() {
-  return localStorage.getItem(CURRENT_USER_KEY) || null;
+  try {
+    return localStorage.getItem(CURRENT_USER_KEY) || null;
+  } catch {
+    return null;
+  }
 }
 
 export function isLoggedIn() {
@@ -51,7 +55,7 @@ export function login(username, password) {
   const hash = hashPassword(password);
   if (users[u].passwordHash !== hash) return { success: false, error: 'Falsches Passwort.' };
 
-  localStorage.setItem(CURRENT_USER_KEY, u);
+  try { localStorage.setItem(CURRENT_USER_KEY, u); } catch { /* ignore */ }
   return { success: true };
 }
 
@@ -65,7 +69,7 @@ export function register(username, password) {
 
   if (users[u]) {
     if (users[u].passwordHash === hash) {
-      localStorage.setItem(CURRENT_USER_KEY, u);
+      try { localStorage.setItem(CURRENT_USER_KEY, u); } catch { /* ignore */ }
       return { success: true };
     }
     return { success: false, error: 'Dieses Konto existiert bereits. Bitte unter „Einloggen" anmelden.' };
@@ -73,10 +77,10 @@ export function register(username, password) {
 
   users[u] = { passwordHash: hash };
   saveUsers(users);
-  localStorage.setItem(CURRENT_USER_KEY, u);
+  try { localStorage.setItem(CURRENT_USER_KEY, u); } catch { /* ignore */ }
   return { success: true };
 }
 
 export function logout() {
-  localStorage.removeItem(CURRENT_USER_KEY);
+  try { localStorage.removeItem(CURRENT_USER_KEY); } catch { /* ignore */ }
 }
