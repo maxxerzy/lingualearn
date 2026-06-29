@@ -1,12 +1,19 @@
 const USERS_KEY = 'lingualearn_users';
 const CURRENT_USER_KEY = 'lingualearn_current_user';
 
-async function hashPassword(password) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode('lingualearn_v1:' + password);
-  const buf = await crypto.subtle.digest('SHA-256', data);
-  return Array.from(new Uint8Array(buf))
-    .map(b => b.toString(16).padStart(2, '0'))
+// Synchronous deterministic hash — no crypto.subtle dependency.
+// Sufficient for local-only localStorage; not intended as a server password store.
+function hashPassword(password) {
+  const src = 'lingualearn_v1:' + password;
+  let h1 = 0x9e3779b9 >>> 0;
+  let h2 = 0x6c62272e >>> 0;
+  for (let i = 0; i < src.length; i++) {
+    const c = src.charCodeAt(i);
+    h1 = (Math.imul(h1 ^ c, 2654435761) >>> 0);
+    h2 = (Math.imul(h2 ^ c, 2246822519) >>> 0);
+  }
+  return [h1, h2, (h1 ^ h2) >>> 0, (h1 + h2) >>> 0]
+    .map(n => n.toString(16).padStart(8, '0'))
     .join('');
 }
 
@@ -33,7 +40,7 @@ export function isLoggedIn() {
   return !!getCurrentUser();
 }
 
-export async function login(username, password) {
+export function login(username, password) {
   const u = username.trim();
   if (u.length < 2) return { success: false, error: 'Benutzername zu kurz (mind. 2 Zeichen).' };
   if (password.length < 4) return { success: false, error: 'Passwort zu kurz (mind. 4 Zeichen).' };
@@ -41,23 +48,22 @@ export async function login(username, password) {
   const users = getUsers();
   if (!users[u]) return { success: false, error: 'Kein Konto gefunden. Bitte zuerst unter „Registrieren" ein Konto anlegen.' };
 
-  const hash = await hashPassword(password);
+  const hash = hashPassword(password);
   if (users[u].passwordHash !== hash) return { success: false, error: 'Falsches Passwort.' };
 
   localStorage.setItem(CURRENT_USER_KEY, u);
   return { success: true };
 }
 
-export async function register(username, password) {
+export function register(username, password) {
   const u = username.trim();
   if (u.length < 2) return { success: false, error: 'Benutzername zu kurz (mind. 2 Zeichen).' };
   if (password.length < 4) return { success: false, error: 'Passwort zu kurz (mind. 4 Zeichen).' };
 
   const users = getUsers();
-  const hash = await hashPassword(password);
+  const hash = hashPassword(password);
 
   if (users[u]) {
-    // Account exists — log in directly if password matches, else redirect to login tab
     if (users[u].passwordHash === hash) {
       localStorage.setItem(CURRENT_USER_KEY, u);
       return { success: true };
