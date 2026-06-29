@@ -39,7 +39,7 @@ export async function login(username, password) {
   if (password.length < 4) return { success: false, error: 'Passwort zu kurz (mind. 4 Zeichen).' };
 
   const users = getUsers();
-  if (!users[u]) return { success: false, error: 'Kein Konto mit diesem Benutzernamen gefunden.' };
+  if (!users[u]) return { success: false, error: 'Kein Konto gefunden. Bitte zuerst unter „Registrieren" ein Konto anlegen.' };
 
   const hash = await hashPassword(password);
   if (users[u].passwordHash !== hash) return { success: false, error: 'Falsches Passwort.' };
@@ -54,12 +54,19 @@ export async function register(username, password) {
   if (password.length < 4) return { success: false, error: 'Passwort zu kurz (mind. 4 Zeichen).' };
 
   const users = getUsers();
-  if (users[u]) return { success: false, error: 'Benutzername bereits vergeben. Bitte einloggen.' };
-
   const hash = await hashPassword(password);
+
+  if (users[u]) {
+    // Account exists — log in directly if password matches, else redirect to login tab
+    if (users[u].passwordHash === hash) {
+      localStorage.setItem(CURRENT_USER_KEY, u);
+      return { success: true };
+    }
+    return { success: false, error: 'Dieses Konto existiert bereits. Bitte unter „Einloggen" anmelden.' };
+  }
+
   users[u] = { passwordHash: hash };
   saveUsers(users);
-
   localStorage.setItem(CURRENT_USER_KEY, u);
   return { success: true };
 }
