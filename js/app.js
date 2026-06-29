@@ -30,18 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.textContent = 'Wird geprüft…';
     errorEl.hidden = true;
 
-    const result = loginMode === 'login'
-      ? await login(username, password)
-      : await register(username, password);
+    try {
+      const result = loginMode === 'login'
+        ? await login(username, password)
+        : await register(username, password);
 
-    if (result.success) {
-      reinitUserStats();
-      showApp();
-    } else {
-      errorEl.textContent = result.error;
+      if (result.success) {
+        reinitUserStats();
+        showApp();
+      } else {
+        errorEl.textContent = result.error;
+        errorEl.hidden = false;
+        setLoginMode(loginMode);
+      }
+    } catch (err) {
+      errorEl.textContent = 'Ein Fehler ist aufgetreten. Bitte Seite neu laden.';
       errorEl.hidden = false;
-      btn.disabled = false;
-      btn.textContent = loginMode === 'login' ? 'Einloggen' : 'Registrieren';
+      setLoginMode(loginMode);
     }
   });
 
@@ -52,7 +57,9 @@ function setLoginMode(mode) {
   loginMode = mode;
   document.getElementById('tabLogin').classList.toggle('active', mode === 'login');
   document.getElementById('tabRegister').classList.toggle('active', mode === 'register');
-  document.getElementById('loginBtn').textContent = mode === 'login' ? 'Einloggen' : 'Registrieren';
+  const btn = document.getElementById('loginBtn');
+  btn.disabled = false;
+  btn.textContent = mode === 'login' ? 'Einloggen' : 'Registrieren';
   document.getElementById('loginError').hidden = true;
 }
 
