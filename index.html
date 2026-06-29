@@ -312,8 +312,9 @@
           var res;
           try { res = authOp(loginMode, u, pw); }
           catch (ex) {
+            setMode(loginMode);
             if (errEl) { errEl.textContent = 'Fehler: ' + (ex.message || ex); errEl.hidden = false; }
-            setMode(loginMode); return;
+            return;
           }
 
           if (res.ok) {
@@ -322,13 +323,13 @@
             setTimeout(function () {
               var app = document.getElementById('app');
               if (app && app.hidden) {
-                if (errEl) { errEl.textContent = 'App konnte nicht geladen werden — bitte Seite neu laden.'; errEl.hidden = false; }
                 setMode(loginMode);
+                if (errEl) { errEl.textContent = 'App konnte nicht geladen werden — bitte Seite neu laden.'; errEl.hidden = false; }
               }
             }, 2000);
           } else {
-            if (errEl) { errEl.textContent = res.err; errEl.hidden = false; }
             setMode(loginMode);
+            if (errEl) { errEl.textContent = res.err; errEl.hidden = false; }
           }
         });
       }
