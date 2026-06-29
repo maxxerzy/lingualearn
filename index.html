@@ -2,20 +2,56 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
   <title>LinguaLearn – Sprachen lernen</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <div class="app-container">
+
+  <!-- ── Login ─────────────────────────────────────────────────── -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="login-logo">
+        <i class="fas fa-language"></i>
+        <span>LinguaLearn</span>
+      </div>
+      <h2 class="login-title">Willkommen!</h2>
+      <p class="login-subtitle">Neu hier? Einfach einen Benutzernamen und Passwort wählen – dein Konto wird automatisch angelegt.</p>
+      <form id="loginForm" class="login-form" novalidate>
+        <div class="form-group">
+          <label for="loginUsername">Benutzername</label>
+          <input type="text" id="loginUsername" class="input" placeholder="z.&thinsp;B. anna123"
+            autocomplete="username" autocorrect="off" autocapitalize="none" spellcheck="false">
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Passwort</label>
+          <input type="password" id="loginPassword" class="input" placeholder="Mindestens 4 Zeichen"
+            autocomplete="current-password">
+        </div>
+        <div id="loginError" class="login-error" hidden></div>
+        <button type="submit" id="loginBtn" class="btn btn-primary btn-full">
+          <i class="fas fa-sign-in-alt"></i> Einloggen / Registrieren
+        </button>
+      </form>
+      <p class="login-note"><i class="fas fa-lock"></i> Fortschritt wird lokal auf diesem Gerät gespeichert.</p>
+    </div>
+  </div>
+
+  <!-- ── App (shown after login) ──────────────────────────────── -->
+  <div id="app" class="app-container" hidden>
+
     <header>
       <div class="logo">
         <i class="fas fa-language logo-icon"></i>
         <h1>LinguaLearn</h1>
       </div>
       <div class="header-right">
-        <nav class="nav">
+        <div class="user-chip">
+          <i class="fas fa-user-circle"></i>
+          <span id="userName"></span>
+        </div>
+        <nav class="nav" aria-label="Hauptnavigation">
           <button type="button" class="nav-btn active" data-view="learn">
             <i class="fas fa-book"></i> Lernen
           </button>
@@ -25,12 +61,17 @@
           <button type="button" class="nav-btn icon-btn" data-view="settings" title="Einstellungen">
             <i class="fas fa-cog"></i>
           </button>
+          <button type="button" class="nav-btn icon-btn" id="logoutBtn" title="Abmelden">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
         </nav>
       </div>
     </header>
 
     <main>
       <div class="content">
+
+        <!-- Learn View -->
         <section id="view-learn" class="view active">
           <div class="learn-layout">
 
@@ -77,10 +118,10 @@
           </div>
         </section>
 
+        <!-- Stats View -->
         <section id="view-stats" class="view">
           <div class="panel">
             <h2><i class="fas fa-chart-bar"></i> Statistik</h2>
-
             <div class="stats-grid">
               <div class="stat-card stat-card--primary">
                 <div class="stat-card__icon"><i class="fas fa-percentage"></i></div>
@@ -90,37 +131,31 @@
                   <div class="stat-accuracy-bar" id="stat-accuracy-bar" style="width:0%"></div>
                 </div>
               </div>
-
               <div class="stat-card">
                 <div class="stat-card__icon"><i class="fas fa-star"></i></div>
                 <div class="stat-card__value" id="stat-success-rate">0%</div>
                 <div class="stat-card__label">Erfolgsrate (letzte Session)</div>
               </div>
-
               <div class="stat-card">
                 <div class="stat-card__icon"><i class="fas fa-graduation-cap"></i></div>
                 <div class="stat-card__value" id="stat-learned-words">0</div>
                 <div class="stat-card__label">Gelernte Wörter</div>
               </div>
-
               <div class="stat-card">
                 <div class="stat-card__icon"><i class="fas fa-check-circle"></i></div>
                 <div class="stat-card__value" id="stat-total-correct">0</div>
                 <div class="stat-card__label">Richtige Antworten</div>
               </div>
-
               <div class="stat-card">
                 <div class="stat-card__icon"><i class="fas fa-tasks"></i></div>
                 <div class="stat-card__value" id="stat-total-answered">0</div>
                 <div class="stat-card__label">Fragen beantwortet</div>
               </div>
-
               <div class="stat-card">
                 <div class="stat-card__icon"><i class="fas fa-play-circle"></i></div>
                 <div class="stat-card__value" id="stat-total-sessions">0</div>
                 <div class="stat-card__label">Sessions abgeschlossen</div>
               </div>
-
               <div class="stat-card">
                 <div class="stat-card__icon"><i class="fas fa-calendar-check"></i></div>
                 <div class="stat-card__value" id="stat-active-days">0</div>
@@ -130,6 +165,7 @@
           </div>
         </section>
 
+        <!-- Settings View -->
         <section id="view-settings" class="view">
           <div class="panel">
             <h2>Einstellungen</h2>
@@ -161,10 +197,31 @@
 }</pre>
             </div>
           </div>
-
         </section>
+
       </div>
     </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+      <button type="button" class="mobile-nav-btn active" data-view="learn">
+        <i class="fas fa-book"></i>
+        <span>Lernen</span>
+      </button>
+      <button type="button" class="mobile-nav-btn" data-view="stats">
+        <i class="fas fa-chart-bar"></i>
+        <span>Statistik</span>
+      </button>
+      <button type="button" class="mobile-nav-btn" data-view="settings">
+        <i class="fas fa-cog"></i>
+        <span>Einstell.</span>
+      </button>
+      <button type="button" class="mobile-nav-btn" id="mobileLogoutBtn">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Abmelden</span>
+      </button>
+    </nav>
+
   </div>
 
   <script type="module" src="js/app.js"></script>
