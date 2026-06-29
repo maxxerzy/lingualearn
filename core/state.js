@@ -1,13 +1,36 @@
 import { decks } from '../js/data/decks.js';
 import { enrichDecksWithTranslations } from './translator.js';
 
+const STATS_KEY = 'lingualearn_stats';
+
+const defaultStats = {
+  successRate: 0,
+  learnedWords: 0,
+  totalCorrect: 0,
+  totalAnswered: 0,
+  totalSessions: 0,
+  activeDays: 1,
+  lastSessionDate: null,
+};
+
+function loadStats() {
+  try {
+    const raw = localStorage.getItem(STATS_KEY);
+    return raw ? { ...defaultStats, ...JSON.parse(raw) } : { ...defaultStats };
+  } catch {
+    return { ...defaultStats };
+  }
+}
+
+function persistStats(stats) {
+  try {
+    localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+  } catch { /* ignore */ }
+}
+
 // Application state
 let currentSession = null;
-let userStats = {
-  learnedWords: 0,
-  activeDays: 1,
-  successRate: 0
-};
+let userStats = loadStats();
 
 // Live, mutable copy of the decks. We clone once so the background
 // translation can attach `exampleDE` without touching the source module.
@@ -24,7 +47,6 @@ export function getDecks() {
   return liveDecks;
 }
 
-// Export state for other modules
 export function getCurrentSession() {
   return currentSession;
 }
@@ -39,4 +61,5 @@ export function getUserStats() {
 
 export function setUserStats(stats) {
   userStats = { ...stats };
+  persistStats(userStats);
 }

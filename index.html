@@ -15,16 +15,12 @@
         <h1>LinguaLearn</h1>
       </div>
       <div class="header-right">
-        <div class="header-stats">
-          <div class="stat-badge">
-            <i class="fas fa-chart-line"></i>
-            <span id="success-rate">0%</span>
-            <span class="stat-label">Erfolgsrate</span>
-          </div>
-        </div>
         <nav class="nav">
           <button type="button" class="nav-btn active" data-view="learn">
             <i class="fas fa-book"></i> Lernen
+          </button>
+          <button type="button" class="nav-btn" data-view="stats">
+            <i class="fas fa-chart-bar"></i> Statistik
           </button>
           <button type="button" class="nav-btn icon-btn" data-view="settings" title="Einstellungen">
             <i class="fas fa-cog"></i>
@@ -78,6 +74,59 @@
               </div>
             </div>
 
+          </div>
+        </section>
+
+        <section id="view-stats" class="view">
+          <div class="panel">
+            <h2><i class="fas fa-chart-bar"></i> Statistik</h2>
+
+            <div class="stats-grid">
+              <div class="stat-card stat-card--primary">
+                <div class="stat-card__icon"><i class="fas fa-percentage"></i></div>
+                <div class="stat-card__value" id="stat-accuracy">0%</div>
+                <div class="stat-card__label">Genauigkeit (gesamt)</div>
+                <div class="stat-accuracy-bar-wrap">
+                  <div class="stat-accuracy-bar" id="stat-accuracy-bar" style="width:0%"></div>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card__icon"><i class="fas fa-star"></i></div>
+                <div class="stat-card__value" id="stat-success-rate">0%</div>
+                <div class="stat-card__label">Erfolgsrate (letzte Session)</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card__icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="stat-card__value" id="stat-learned-words">0</div>
+                <div class="stat-card__label">Gelernte Wörter</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card__icon"><i class="fas fa-check-circle"></i></div>
+                <div class="stat-card__value" id="stat-total-correct">0</div>
+                <div class="stat-card__label">Richtige Antworten</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card__icon"><i class="fas fa-tasks"></i></div>
+                <div class="stat-card__value" id="stat-total-answered">0</div>
+                <div class="stat-card__label">Fragen beantwortet</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card__icon"><i class="fas fa-play-circle"></i></div>
+                <div class="stat-card__value" id="stat-total-sessions">0</div>
+                <div class="stat-card__label">Sessions abgeschlossen</div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-card__icon"><i class="fas fa-calendar-check"></i></div>
+                <div class="stat-card__value" id="stat-active-days">0</div>
+                <div class="stat-card__label">Aktive Lerntage</div>
+              </div>
+            </div>
           </div>
         </section>
 

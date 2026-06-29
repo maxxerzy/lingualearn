@@ -3,8 +3,8 @@ import { updateProgress } from './progress.js';
 import { updateStats } from './stats.js';
 import { shuffleArray } from '../utils/helpers.js';
 
-const LANG_CODES = { da: 'da-DK', el: 'el-GR' };
-const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch' };
+const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU' };
+const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch', fr: 'Französisch', es: 'Spanisch', la: 'Latein', ru: 'Russisch' };
 
 function getLangCode(lang) {
   return LANG_CODES[lang] || lang;
@@ -155,13 +155,13 @@ function rateFlashcard(card, rating) {
   session.queue.shift();
   session.currentIndex++;
 
-  if (rating === 'again' || rating === 'hard') {
-    session.reviewQueue.push(card);
-  } else {
+  const isCorrect = rating !== 'again' && rating !== 'hard';
+  if (isCorrect) {
     session.correctAnswers++;
     userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+    userStats.totalCorrect = (userStats.totalCorrect || 0) + 1;
   }
-
+  userStats.totalAnswered = (userStats.totalAnswered || 0) + 1;
   userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
   setUserStats(userStats);
   updateStats();
@@ -261,9 +261,10 @@ function checkMCAnswer(selectedIdx) {
   if (isCorrect) {
     session.correctAnswers++;
     userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+    userStats.totalCorrect = (userStats.totalCorrect || 0) + 1;
     speakWord(card.back, lang);
   }
-
+  userStats.totalAnswered = (userStats.totalAnswered || 0) + 1;
   userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
   setUserStats(userStats);
   updateStats();
@@ -373,6 +374,7 @@ function checkComparisonAnswer(userSaysMatch) {
     `;
     session.correctAnswers++;
     userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+    userStats.totalCorrect = (userStats.totalCorrect || 0) + 1;
   } else {
     fb.innerHTML = `
       <div class="incorrect">
@@ -385,6 +387,7 @@ function checkComparisonAnswer(userSaysMatch) {
     `;
   }
 
+  userStats.totalAnswered = (userStats.totalAnswered || 0) + 1;
   userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
   setUserStats(userStats);
   updateStats();
@@ -398,6 +401,18 @@ function checkComparisonAnswer(userSaysMatch) {
 
 function endSession() {
   const session = getCurrentSession();
+  const userStats = getUserStats();
+
+  // Count completed session and track active days
+  userStats.totalSessions = (userStats.totalSessions || 0) + 1;
+  const today = new Date().toISOString().slice(0, 10);
+  if (userStats.lastSessionDate !== today) {
+    userStats.activeDays = (userStats.activeDays || 0) + 1;
+    userStats.lastSessionDate = today;
+  }
+  setUserStats(userStats);
+  updateStats();
+
   const total = session?.totalCards || session?.cards?.length || 0;
   const correct = session?.correctAnswers || 0;
   const rate = total > 0 ? Math.round((correct / total) * 100) : 0;
