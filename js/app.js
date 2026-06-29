@@ -55,10 +55,11 @@ function showApp() {
 
   if (!appInitialized) {
     appInitialized = true;
-    initNavigation();
+    const activateView = initNavigation();
     initSettings();
     setupModeTabs();
     document.getElementById('startBtn').addEventListener('click', startSession);
+    document.getElementById('userChipBtn').addEventListener('click', () => activateView('stats'));
     window.handleImport = handleImport;
     window.handleExport = handleExport;
   }
