@@ -3,8 +3,6 @@ const CURRENT_USER_KEY = 'lingualearn_current_user';
 
 async function hashPassword(password) {
   const encoder = new TextEncoder();
-  // Minimal stretching — this is client-side local storage, not a server hash.
-  // The salt prevents trivial rainbow-table lookups of common passwords.
   const data = encoder.encode('lingualearn_v1:' + password);
   const buf = await crypto.subtle.digest('SHA-256', data);
   return Array.from(new Uint8Array(buf))
@@ -35,28 +33,35 @@ export function isLoggedIn() {
   return !!getCurrentUser();
 }
 
-export async function loginOrRegister(username, password) {
+export async function login(username, password) {
   const u = username.trim();
-  if (u.length < 2) return { success: false, error: 'Benutzername muss mindestens 2 Zeichen haben.' };
-  if (password.length < 4) return { success: false, error: 'Passwort muss mindestens 4 Zeichen haben.' };
-  // Block characters that would break the localStorage key namespace
-  if (/[_:]/.test(u)) return { success: false, error: 'Benutzername darf kein _ oder : enthalten.' };
+  if (u.length < 2) return { success: false, error: 'Benutzername zu kurz (mind. 2 Zeichen).' };
+  if (password.length < 4) return { success: false, error: 'Passwort zu kurz (mind. 4 Zeichen).' };
 
   const users = getUsers();
-  const hash = await hashPassword(password);
-  const isExisting = !!users[u];
+  if (!users[u]) return { success: false, error: 'Kein Konto mit diesem Benutzernamen gefunden.' };
 
-  if (isExisting) {
-    if (users[u].passwordHash !== hash) {
-      return { success: false, error: 'Falsches Passwort.' };
-    }
-  } else {
-    users[u] = { passwordHash: hash };
-    saveUsers(users);
-  }
+  const hash = await hashPassword(password);
+  if (users[u].passwordHash !== hash) return { success: false, error: 'Falsches Passwort.' };
 
   localStorage.setItem(CURRENT_USER_KEY, u);
-  return { success: true, isNewUser: !isExisting };
+  return { success: true };
+}
+
+export async function register(username, password) {
+  const u = username.trim();
+  if (u.length < 2) return { success: false, error: 'Benutzername zu kurz (mind. 2 Zeichen).' };
+  if (password.length < 4) return { success: false, error: 'Passwort zu kurz (mind. 4 Zeichen).' };
+
+  const users = getUsers();
+  if (users[u]) return { success: false, error: 'Benutzername bereits vergeben. Bitte einloggen.' };
+
+  const hash = await hashPassword(password);
+  users[u] = { passwordHash: hash };
+  saveUsers(users);
+
+  localStorage.setItem(CURRENT_USER_KEY, u);
+  return { success: true };
 }
 
 export function logout() {

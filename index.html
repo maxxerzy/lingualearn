@@ -16,25 +16,26 @@
         <i class="fas fa-language"></i>
         <span>LinguaLearn</span>
       </div>
-      <h2 class="login-title">Willkommen!</h2>
-      <p class="login-subtitle">Neu hier? Einfach einen Benutzernamen und Passwort wählen – dein Konto wird automatisch angelegt.</p>
+      <div class="login-tabs">
+        <button type="button" class="login-tab active" id="tabLogin">Einloggen</button>
+        <button type="button" class="login-tab" id="tabRegister">Registrieren</button>
+      </div>
       <form id="loginForm" class="login-form" novalidate>
         <div class="form-group">
           <label for="loginUsername">Benutzername</label>
-          <input type="text" id="loginUsername" class="input" placeholder="z.&thinsp;B. anna123"
+          <input type="text" id="loginUsername" class="input" placeholder="z. B. anna123"
             autocomplete="username" autocorrect="off" autocapitalize="none" spellcheck="false">
         </div>
         <div class="form-group">
           <label for="loginPassword">Passwort</label>
-          <input type="password" id="loginPassword" class="input" placeholder="Mindestens 4 Zeichen"
+          <input type="password" id="loginPassword" class="input" placeholder="Mind. 4 Zeichen"
             autocomplete="current-password">
         </div>
         <div id="loginError" class="login-error" hidden></div>
         <button type="submit" id="loginBtn" class="btn btn-primary btn-full">
-          <i class="fas fa-sign-in-alt"></i> Einloggen / Registrieren
+          Einloggen
         </button>
       </form>
-      <p class="login-note"><i class="fas fa-lock"></i> Fortschritt wird lokal auf diesem Gerät gespeichert.</p>
     </div>
   </div>
 
@@ -47,22 +48,30 @@
         <h1>LinguaLearn</h1>
       </div>
       <div class="header-right">
-        <button type="button" class="user-chip" id="userChipBtn" title="Statistik anzeigen">
-          <i class="fas fa-user-circle"></i>
-          <span id="userName"></span>
-          <i class="fas fa-chart-bar user-chip__stats"></i>
-        </button>
         <nav class="nav" aria-label="Hauptnavigation">
           <button type="button" class="nav-btn active" data-view="learn">
             <i class="fas fa-book"></i> Lernen
           </button>
-          <button type="button" class="nav-btn icon-btn" data-view="settings" title="Einstellungen">
-            <i class="fas fa-cog"></i>
-          </button>
-          <button type="button" class="nav-btn icon-btn" id="logoutBtn" title="Abmelden">
-            <i class="fas fa-sign-out-alt"></i>
-          </button>
         </nav>
+        <div class="user-menu" id="userMenu">
+          <button type="button" class="user-chip" id="userChipBtn">
+            <i class="fas fa-user-circle"></i>
+            <span id="userName"></span>
+            <i class="fas fa-caret-down user-chip__caret"></i>
+          </button>
+          <div class="user-dropdown" id="userDropdown" hidden>
+            <button type="button" class="user-dropdown__item" data-action="stats">
+              <i class="fas fa-chart-bar"></i> Statistik
+            </button>
+            <button type="button" class="user-dropdown__item" data-action="settings">
+              <i class="fas fa-cog"></i> Einstellungen
+            </button>
+            <div class="user-dropdown__divider"></div>
+            <button type="button" class="user-dropdown__item user-dropdown__item--danger" id="logoutBtn">
+              <i class="fas fa-sign-out-alt"></i> Abmelden
+            </button>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -119,7 +128,12 @@
         <!-- Stats View -->
         <section id="view-stats" class="view">
           <div class="panel">
-            <h2><i class="fas fa-chart-bar"></i> Statistik</h2>
+            <div class="view-topbar">
+              <button type="button" class="btn-back" id="statsBackBtn">
+                <i class="fas fa-arrow-left"></i> Lernen
+              </button>
+              <h2><i class="fas fa-chart-bar"></i> Statistik</h2>
+            </div>
             <div class="stats-grid">
               <div class="stat-card stat-card--primary">
                 <div class="stat-card__icon"><i class="fas fa-percentage"></i></div>
@@ -166,7 +180,12 @@
         <!-- Settings View -->
         <section id="view-settings" class="view">
           <div class="panel">
-            <h2>Einstellungen</h2>
+            <div class="view-topbar">
+              <button type="button" class="btn-back" id="settingsBackBtn">
+                <i class="fas fa-arrow-left"></i> Lernen
+              </button>
+              <h2>Einstellungen</h2>
+            </div>
             <div class="form-group">
               <label for="importFile">Deck importieren (JSON)</label>
               <input type="file" id="importFile" class="input" accept=".json">
@@ -199,22 +218,6 @@
 
       </div>
     </main>
-
-    <!-- Mobile Bottom Navigation -->
-    <nav class="mobile-nav" aria-label="Mobile Navigation">
-      <button type="button" class="mobile-nav-btn active" data-view="learn">
-        <i class="fas fa-book"></i>
-        <span>Lernen</span>
-      </button>
-      <button type="button" class="mobile-nav-btn" data-view="settings">
-        <i class="fas fa-cog"></i>
-        <span>Einstell.</span>
-      </button>
-      <button type="button" class="mobile-nav-btn" id="mobileLogoutBtn">
-        <i class="fas fa-sign-out-alt"></i>
-        <span>Abmelden</span>
-      </button>
-    </nav>
 
   </div>
 

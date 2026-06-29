@@ -3,9 +3,10 @@ import { initSettings, handleImport, handleExport } from '../ui/settings.js';
 import { startSession } from '../core/session.js';
 import { updateStats } from '../core/stats.js';
 import { getDecks, reinitUserStats, setCurrentSession } from '../core/state.js';
-import { isLoggedIn, loginOrRegister, logout, getCurrentUser } from '../core/auth.js';
+import { isLoggedIn, login, register, logout, getCurrentUser } from '../core/auth.js';
 
 let appInitialized = false;
+let loginMode = 'login'; // 'login' | 'register'
 
 document.addEventListener('DOMContentLoaded', () => {
   if (isLoggedIn()) {
@@ -13,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     showLogin();
   }
+
+  // Tab switching
+  document.getElementById('tabLogin').addEventListener('click', () => setLoginMode('login'));
+  document.getElementById('tabRegister').addEventListener('click', () => setLoginMode('register'));
 
   document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -22,10 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn      = document.getElementById('loginBtn');
 
     btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird geprüft…';
+    btn.textContent = 'Wird geprüft…';
     errorEl.hidden = true;
 
-    const result = await loginOrRegister(username, password);
+    const result = loginMode === 'login'
+      ? await login(username, password)
+      : await register(username, password);
 
     if (result.success) {
       reinitUserStats();
@@ -34,26 +41,35 @@ document.addEventListener('DOMContentLoaded', () => {
       errorEl.textContent = result.error;
       errorEl.hidden = false;
       btn.disabled = false;
-      btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Einloggen / Registrieren';
+      btn.textContent = loginMode === 'login' ? 'Einloggen' : 'Registrieren';
     }
   });
 
   document.getElementById('logoutBtn').addEventListener('click', doLogout);
-  document.getElementById('mobileLogoutBtn').addEventListener('click', doLogout);
 });
+
+function setLoginMode(mode) {
+  loginMode = mode;
+  document.getElementById('tabLogin').classList.toggle('active', mode === 'login');
+  document.getElementById('tabRegister').classList.toggle('active', mode === 'register');
+  document.getElementById('loginBtn').textContent = mode === 'login' ? 'Einloggen' : 'Registrieren';
+  document.getElementById('loginError').hidden = true;
+}
 
 function showLogin() {
   document.getElementById('login-screen').hidden = false;
   document.getElementById('app').hidden = true;
-  const btn = document.getElementById('loginBtn');
-  btn.disabled = false;
-  btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Einloggen / Registrieren';
+  setLoginMode('login');
+  document.getElementById('loginUsername').value = '';
+  document.getElementById('loginPassword').value = '';
+  window.scrollTo(0, 0);
   document.getElementById('loginUsername').focus();
 }
 
 function showApp() {
   document.getElementById('login-screen').hidden = true;
   document.getElementById('app').hidden = false;
+  window.scrollTo(0, 0);
   document.getElementById('userName').textContent = getCurrentUser();
 
   if (!appInitialized) {
@@ -62,9 +78,26 @@ function showApp() {
     initSettings();
     setupModeTabs();
     document.getElementById('startBtn').addEventListener('click', startSession);
-    document.getElementById('userChipBtn').addEventListener('click', () => activateView('stats'));
     window.handleImport = handleImport;
     window.handleExport = handleExport;
+
+    // User chip dropdown
+    const dropdown = document.getElementById('userDropdown');
+    document.getElementById('userChipBtn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.hidden = !dropdown.hidden;
+    });
+    document.querySelectorAll('.user-dropdown__item[data-action]').forEach(item => {
+      item.addEventListener('click', () => {
+        activateView(item.dataset.action);
+        dropdown.hidden = true;
+      });
+    });
+    document.addEventListener('click', () => { dropdown.hidden = true; });
+
+    // Back buttons in Stats and Settings views
+    document.getElementById('statsBackBtn').addEventListener('click', () => activateView('learn'));
+    document.getElementById('settingsBackBtn').addEventListener('click', () => activateView('learn'));
   }
 
   populateDeckSelect();
@@ -74,12 +107,9 @@ function showApp() {
 function doLogout() {
   setCurrentSession(null);
   logout();
-  document.getElementById('loginUsername').value = '';
-  document.getElementById('loginPassword').value = '';
-  document.getElementById('loginError').hidden = true;
+  document.getElementById('userDropdown').hidden = true;
   showLogin();
 }
-
 
 function populateDeckSelect() {
   const deckSelect = document.getElementById('deckSelect');
