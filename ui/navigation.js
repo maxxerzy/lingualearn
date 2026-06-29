@@ -1,20 +1,17 @@
-// Initialize navigation
 export function initNavigation() {
-  const navButtons = document.querySelectorAll('.nav-btn');
-  const views = document.querySelectorAll('.view');
-  
-  navButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const viewId = button.getAttribute('data-view');
-      
-      // Update active button
-      navButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-      
-      // Show selected view
-      views.forEach(view => view.classList.remove('active'));
-      document.getElementById(`view-${viewId}`).classList.add('active');
-    });
-  });
-}
+  const desktopBtns = document.querySelectorAll('.nav-btn[data-view]');
+  const mobileBtns  = document.querySelectorAll('.mobile-nav-btn[data-view]');
+  const views       = document.querySelectorAll('.view');
 
+  function activateView(viewId) {
+    views.forEach(v => v.classList.remove('active'));
+    const target = document.getElementById(`view-${viewId}`);
+    if (target) target.classList.add('active');
+
+    desktopBtns.forEach(b => b.classList.toggle('active', b.dataset.view === viewId));
+    mobileBtns.forEach(b => b.classList.toggle('active', b.dataset.view === viewId));
+  }
+
+  desktopBtns.forEach(btn => btn.addEventListener('click', () => activateView(btn.dataset.view)));
+  mobileBtns.forEach(btn  => btn.addEventListener('click', () => activateView(btn.dataset.view)));
+}
