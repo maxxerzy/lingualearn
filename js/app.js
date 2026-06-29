@@ -3,9 +3,10 @@ import { initSettings, handleImport, handleExport } from '../ui/settings.js';
 import { startSession } from '../core/session.js';
 import { updateStats } from '../core/stats.js';
 import { getDecks, reinitUserStats, setCurrentSession } from '../core/state.js';
-import { isLoggedIn, loginOrRegister, logout, getCurrentUser } from '../core/auth.js';
+import { isLoggedIn, login, register, logout, getCurrentUser } from '../core/auth.js';
 
 let appInitialized = false;
+let loginMode = 'login'; // 'login' | 'register'
 
 document.addEventListener('DOMContentLoaded', () => {
   if (isLoggedIn()) {
@@ -13,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     showLogin();
   }
+
+  // Tab switching
+  document.getElementById('tabLogin').addEventListener('click', () => setLoginMode('login'));
+  document.getElementById('tabRegister').addEventListener('click', () => setLoginMode('register'));
 
   document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -25,7 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.textContent = 'Wird geprüft…';
     errorEl.hidden = true;
 
-    const result = await loginOrRegister(username, password);
+    const result = loginMode === 'login'
+      ? await login(username, password)
+      : await register(username, password);
 
     if (result.success) {
       reinitUserStats();
@@ -34,25 +41,35 @@ document.addEventListener('DOMContentLoaded', () => {
       errorEl.textContent = result.error;
       errorEl.hidden = false;
       btn.disabled = false;
-      btn.textContent = 'Starten';
+      btn.textContent = loginMode === 'login' ? 'Einloggen' : 'Registrieren';
     }
   });
 
   document.getElementById('logoutBtn').addEventListener('click', doLogout);
 });
 
+function setLoginMode(mode) {
+  loginMode = mode;
+  document.getElementById('tabLogin').classList.toggle('active', mode === 'login');
+  document.getElementById('tabRegister').classList.toggle('active', mode === 'register');
+  document.getElementById('loginBtn').textContent = mode === 'login' ? 'Einloggen' : 'Registrieren';
+  document.getElementById('loginError').hidden = true;
+}
+
 function showLogin() {
   document.getElementById('login-screen').hidden = false;
   document.getElementById('app').hidden = true;
-  const btn = document.getElementById('loginBtn');
-  btn.disabled = false;
-  btn.textContent = 'Starten';
+  setLoginMode('login');
+  document.getElementById('loginUsername').value = '';
+  document.getElementById('loginPassword').value = '';
+  window.scrollTo(0, 0);
   document.getElementById('loginUsername').focus();
 }
 
 function showApp() {
   document.getElementById('login-screen').hidden = true;
   document.getElementById('app').hidden = false;
+  window.scrollTo(0, 0);
   document.getElementById('userName').textContent = getCurrentUser();
 
   if (!appInitialized) {
@@ -91,9 +108,6 @@ function doLogout() {
   setCurrentSession(null);
   logout();
   document.getElementById('userDropdown').hidden = true;
-  document.getElementById('loginUsername').value = '';
-  document.getElementById('loginPassword').value = '';
-  document.getElementById('loginError').hidden = true;
   showLogin();
 }
 

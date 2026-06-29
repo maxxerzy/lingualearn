@@ -16,7 +16,10 @@
         <i class="fas fa-language"></i>
         <span>LinguaLearn</span>
       </div>
-      <h2 class="login-title">Willkommen!</h2>
+      <div class="login-tabs">
+        <button type="button" class="login-tab active" id="tabLogin">Einloggen</button>
+        <button type="button" class="login-tab" id="tabRegister">Registrieren</button>
+      </div>
       <form id="loginForm" class="login-form" novalidate>
         <div class="form-group">
           <label for="loginUsername">Benutzername</label>
@@ -30,10 +33,9 @@
         </div>
         <div id="loginError" class="login-error" hidden></div>
         <button type="submit" id="loginBtn" class="btn btn-primary btn-full">
-          Starten
+          Einloggen
         </button>
       </form>
-      <p class="login-note"><i class="fas fa-info-circle"></i> Neues Konto wird automatisch angelegt.</p>
     </div>
   </div>
 
