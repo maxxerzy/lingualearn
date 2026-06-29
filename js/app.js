@@ -79,7 +79,7 @@ function populateDeckSelect() {
   sorted.forEach(([id, deck]) => {
     const opt = document.createElement('option');
     opt.value = id;
-    opt.textContent = `${deck.name} (${deck.cards.length} Karten)`;
+    opt.textContent = `${deck.name} (${deck.cards?.length ?? deck.count} Karten)`;
     frag.appendChild(opt);
   });
 
