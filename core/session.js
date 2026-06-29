@@ -1,4 +1,4 @@
-import { getDecks, getCurrentSession, setCurrentSession, getUserStats, setUserStats } from './state.js';
+import { loadDeck, getCurrentSession, setCurrentSession, getUserStats, setUserStats } from './state.js';
 import { updateProgress } from './progress.js';
 import { updateStats } from './stats.js';
 import { shuffleArray } from '../utils/helpers.js';
@@ -28,12 +28,16 @@ export function getSelectedMode() {
   return btn ? btn.dataset.mode : 'flashcard';
 }
 
-export function startSession() {
+export async function startSession() {
   const deckId = document.getElementById('deckSelect').value;
-  const allDecks = getDecks();
-  const deck = allDecks[deckId];
+  const startBtn = document.getElementById('startBtn');
+  if (startBtn) startBtn.disabled = true;
 
-  if (!deck) {
+  const deck = await loadDeck(deckId);
+
+  if (startBtn) startBtn.disabled = false;
+
+  if (!deck?.cards?.length) {
     alert('Bitte wähle ein gültiges Deck aus.');
     return;
   }

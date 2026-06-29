@@ -1,4 +1,4 @@
-import { getDecks } from '../core/state.js';
+import { getDecks, loadDeck } from '../core/state.js';
 
 // Initialize settings
 export function initSettings() {
@@ -56,11 +56,10 @@ export function handleImport() {
 }
 
 // Handle export
-export function handleExport() {
-  const decks = getDecks();
-  const deck = decks['basic-da'];
+export async function handleExport() {
+  const deck = await loadDeck('basic-da');
 
-  if (!deck) {
+  if (!deck?.cards) {
     alert('Kein Beispiel-Deck zum Export gefunden.');
     return;
   }

@@ -1,10 +1,9 @@
-import { decks } from '../js/data/decks.js';
+import { deckMeta } from '../js/data/decks/meta.js';
 import { enrichDecksWithTranslations } from './translator.js';
 import { getCurrentUser } from './auth.js';
 
 const STATS_PREFIX = 'lingualearn_stats_';
 
-// Richer default shape keeps all stat fields in sync between branches.
 const defaultStats = {
   successRate: 0,
   learnedWords: 0,
@@ -42,10 +41,32 @@ function persistStats(stats) {
 let currentSession = null;
 let userStats = loadStats();
 
-// Live, mutable copy of the decks. We clone once so background translation
-// can attach `exampleDE` without touching the source module.
-const liveDecks = JSON.parse(JSON.stringify(decks));
-enrichDecksWithTranslations(liveDecks).catch(() => {});
+// Build live decks map from metadata — cards start as null until loaded on demand.
+const liveDecks = {};
+for (const m of deckMeta) {
+  liveDecks[m.id] = { name: m.name, language: m.language, count: m.count, cards: null };
+}
+
+// In-flight load promises — prevents double-fetching the same deck.
+const loadingPromises = {};
+
+export async function loadDeck(deckId) {
+  const entry = liveDecks[deckId];
+  if (!entry) return null;
+  if (entry.cards !== null) return entry;
+  if (loadingPromises[deckId]) return loadingPromises[deckId];
+
+  loadingPromises[deckId] = (async () => {
+    const { language } = entry;
+    const { cards } = await import(`../js/data/decks/${language}.js`);
+    entry.cards = JSON.parse(JSON.stringify(cards));
+    // Enrich example sentences in the background — non-blocking.
+    enrichDecksWithTranslations({ [deckId]: entry }).catch(() => {});
+    return entry;
+  })();
+
+  return loadingPromises[deckId];
+}
 
 export function getDecks() { return liveDecks; }
 
@@ -59,8 +80,6 @@ export function setUserStats(stats) {
   persistStats(userStats);
 }
 
-// Reload stats from localStorage for the currently logged-in user.
-// Call this immediately after a successful login.
 export function reinitUserStats() {
   userStats = loadStats();
 }
