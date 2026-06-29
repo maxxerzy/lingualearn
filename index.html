@@ -47,16 +47,14 @@
         <h1>LinguaLearn</h1>
       </div>
       <div class="header-right">
-        <div class="user-chip">
+        <button type="button" class="user-chip" id="userChipBtn" title="Statistik anzeigen">
           <i class="fas fa-user-circle"></i>
           <span id="userName"></span>
-        </div>
+          <i class="fas fa-chart-bar user-chip__stats"></i>
+        </button>
         <nav class="nav" aria-label="Hauptnavigation">
           <button type="button" class="nav-btn active" data-view="learn">
             <i class="fas fa-book"></i> Lernen
-          </button>
-          <button type="button" class="nav-btn" data-view="stats">
-            <i class="fas fa-chart-bar"></i> Statistik
           </button>
           <button type="button" class="nav-btn icon-btn" data-view="settings" title="Einstellungen">
             <i class="fas fa-cog"></i>
@@ -207,10 +205,6 @@
       <button type="button" class="mobile-nav-btn active" data-view="learn">
         <i class="fas fa-book"></i>
         <span>Lernen</span>
-      </button>
-      <button type="button" class="mobile-nav-btn" data-view="stats">
-        <i class="fas fa-chart-bar"></i>
-        <span>Statistik</span>
       </button>
       <button type="button" class="mobile-nav-btn" data-view="settings">
         <i class="fas fa-cog"></i>

@@ -14,4 +14,6 @@ export function initNavigation() {
 
   desktopBtns.forEach(btn => btn.addEventListener('click', () => activateView(btn.dataset.view)));
   mobileBtns.forEach(btn  => btn.addEventListener('click', () => activateView(btn.dataset.view)));
+
+  return activateView;
 }
