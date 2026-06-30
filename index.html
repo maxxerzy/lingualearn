@@ -249,15 +249,41 @@
       var users = getUsers(), hash = hp(password);
       if (mode === 'login') {
         if (!users[u]) return { ok: false, err: 'Kein Konto gefunden — bitte zuerst registrieren.' };
+        // Old accounts used SHA-256 (64 chars). Trigger async migration path.
+        if (users[u].passwordHash.length === 64) return { ok: false, needsMigration: true };
         if (users[u].passwordHash !== hash) return { ok: false, err: 'Falsches Passwort.' };
         setUser(u); return { ok: true };
       } else {
         if (users[u]) {
           if (users[u].passwordHash === hash) { setUser(u); return { ok: true }; }
+          // Old-format hash — let register overwrite with new hash if password matches after migration.
+          if (users[u].passwordHash.length === 64) return { ok: false, needsMigration: true };
           return { ok: false, err: 'Konto existiert bereits — bitte einloggen.' };
         }
         users[u] = { passwordHash: hash };
         saveUsers(users); setUser(u); return { ok: true };
+      }
+    }
+
+    // Transparently migrates accounts registered with the old SHA-256 hash.
+    // Verifies password via crypto.subtle, then re-saves with the current hash format.
+    async function migrateAndAuth(mode, username, password) {
+      var u = (username || '').trim();
+      var users = getUsers();
+      if (!users[u]) return { ok: false, err: 'Kein Konto gefunden — bitte zuerst registrieren.' };
+      try {
+        var buf = await crypto.subtle.digest('SHA-256',
+          new TextEncoder().encode('lingualearn_v1:' + password));
+        var oldHash = Array.from(new Uint8Array(buf))
+          .map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+        if (users[u].passwordHash !== oldHash) return { ok: false, err: 'Falsches Passwort.' };
+        // Password verified — upgrade stored hash to current format.
+        users[u].passwordHash = hp(password);
+        saveUsers(users);
+        setUser(u);
+        return { ok: true };
+      } catch (ex) {
+        return { ok: false, err: 'Fehler beim Prüfen. Bitte neu registrieren.' };
       }
     }
 
@@ -294,7 +320,7 @@
       if (tR)   tR.addEventListener('click', function () { setMode('register'); });
 
       if (form) {
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', async function (e) {
           e.preventDefault();
           var u    = (document.getElementById('loginUsername') || {}).value || '';
           var pw   = (document.getElementById('loginPassword') || {}).value || '';
@@ -305,8 +331,12 @@
           if (errEl) errEl.hidden = true;
 
           var res;
-          try { res = authOp(loginMode, u, pw); }
-          catch (ex) {
+          try {
+            res = authOp(loginMode, u, pw);
+            if (!res.ok && res.needsMigration) {
+              res = await migrateAndAuth(loginMode, u, pw);
+            }
+          } catch (ex) {
             setMode(loginMode);
             if (errEl) { errEl.textContent = 'Fehler: ' + (ex.message || ex); errEl.hidden = false; }
             return;
