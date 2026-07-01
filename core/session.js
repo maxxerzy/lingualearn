@@ -110,6 +110,13 @@ function showFlashcardBack(card) {
   const lang = session.deck.language;
   const learnArea = document.getElementById('learnArea');
 
+  // Pronunciation of the target word: IPA (+ romanization for non-Latin scripts).
+  const ipaParts = [];
+  if (card.ipa)   ipaParts.push(`<span class="fc-ipa-tip__ipa">/${escHtml(card.ipa)}/</span>`);
+  if (card.roman) ipaParts.push(`<span class="fc-ipa-tip__roman">${escHtml(card.roman)}</span>`);
+  const ipaMarkup = ipaParts.join('');
+  const pron = ipaParts.length > 0;
+
   learnArea.innerHTML = `
     <div class="flashcard-back">
       <p class="fc-label">Deutsch</p>
@@ -123,8 +130,15 @@ function showFlashcardBack(card) {
         </button>
       </div>
       ${card.example ? `
-        <p class="fc-example"><strong>${escHtml(card.example)}</strong></p>
-        ${card.exampleDE ? `<p class="fc-example-de">${escHtml(card.exampleDE)}</p>` : ''}
+        <div class="fc-example-block">
+          <p class="fc-example${pron ? ' has-ipa' : ''}"${pron ? ' tabindex="0"' : ''}>
+            <strong>${escHtml(card.example)}</strong>
+            ${pron ? `<span class="fc-ipa-tip" role="tooltip">
+              <span class="fc-ipa-tip__word">${escHtml(card.back)}</span>${ipaMarkup}
+            </span>` : ''}
+          </p>
+          ${card.exampleDE ? `<p class="fc-example-de">${escHtml(card.exampleDE)}</p>` : ''}
+        </div>
       ` : ''}
       <div class="fc-rating">
         <p class="fc-rating-label">Wie gut wusstest du das?</p>
@@ -146,6 +160,12 @@ function showFlashcardBack(card) {
   speakWord(card.back, lang);
 
   document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
+
+  // Touch devices have no hover — let a tap toggle the pronunciation tooltip.
+  const exampleEl = learnArea.querySelector('.fc-example.has-ipa');
+  if (exampleEl) {
+    exampleEl.addEventListener('click', () => exampleEl.classList.toggle('show-ipa'));
+  }
 
   document.querySelectorAll('[data-rating]').forEach(btn => {
     btn.addEventListener('click', () => rateFlashcard(card, btn.dataset.rating));
