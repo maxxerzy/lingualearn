@@ -506,6 +506,7 @@ label {
 .fc-arrow { font-size: 1.4rem; color: var(--light-gray); margin: 4px 0; }
 
 .fc-example {
+  position: relative;
   font-style: italic;
   color: var(--gray);
   font-size: 0.93rem;
@@ -513,6 +514,57 @@ label {
   margin: 8px 0 2px;
   line-height: 1.5;
 }
+
+/* Hoverable example: subtle dotted underline hints that a tooltip exists. */
+.fc-example.has-ipa strong {
+  border-bottom: 1px dotted var(--light-gray);
+  cursor: help;
+}
+
+/* Pronunciation tooltip (IPA of the target word, + romanization for non-Latin
+   scripts). Hidden by default; revealed on hover, keyboard focus, or tap. */
+.fc-ipa-tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  z-index: 20;
+  white-space: nowrap;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #fff;
+  background: #2b3440;
+  padding: 7px 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.22);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+.fc-ipa-tip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #2b3440;
+}
+
+.fc-example.has-ipa:hover .fc-ipa-tip,
+.fc-example.has-ipa:focus .fc-ipa-tip,
+.fc-example.has-ipa:focus-within .fc-ipa-tip,
+.fc-example.has-ipa.show-ipa .fc-ipa-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.fc-ipa-tip__word { color: #cfe3ff; font-weight: 600; margin-right: 8px; }
+.fc-ipa-tip__ipa  { letter-spacing: .3px; }
+.fc-ipa-tip__roman { color: #b9c6d3; margin-left: 8px; }
 
 .fc-example-de {
   font-size: 0.83rem;
