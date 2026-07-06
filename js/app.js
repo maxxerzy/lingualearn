@@ -4,23 +4,33 @@ import { startSession } from '../core/session.js';
 import { updateStats } from '../core/stats.js';
 import { getDecks, reinitUserStats, setCurrentSession } from '../core/state.js';
 import { isLoggedIn, logout, getCurrentUser } from '../core/auth.js';
+import { reinitCardProgress } from '../core/cardProgress.js';
+import { reinitGame } from '../core/gamification.js';
+import { renderGamiHeader, renderLearnWidgets, renderStatsExtras } from '../ui/gami.js';
 
 let appInitialized = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   if (isLoggedIn()) {
-    reinitUserStats();
+    reinitUser();
     showApp();
   }
 
   document.addEventListener('linguaauth:login', () => {
-    reinitUserStats();
+    reinitUser();
     showApp();
   });
 
   const logoutBtn = document.getElementById('logoutBtn');
   if (logoutBtn) logoutBtn.addEventListener('click', doLogout);
 });
+
+// Nutzerspezifischen Zustand (Stats, Kartenlevel, Gamification) neu laden.
+function reinitUser() {
+  reinitUserStats();
+  reinitCardProgress();
+  reinitGame();
+}
 
 function showApp() {
   document.getElementById('login-screen').hidden = true;
@@ -45,6 +55,7 @@ function showApp() {
     document.querySelectorAll('.user-dropdown__item[data-action]').forEach(item => {
       item.addEventListener('click', () => {
         activateView(item.dataset.action);
+        if (item.dataset.action === 'stats') renderStatsExtras();
         dropdown.hidden = true;
       });
     });
@@ -52,10 +63,21 @@ function showApp() {
 
     document.getElementById('statsBackBtn').addEventListener('click', () => activateView('learn'));
     document.getElementById('settingsBackBtn').addEventListener('click', () => activateView('learn'));
+
+    // Deck-Wechsel aktualisiert Fortschritt & Fällig-Zähler.
+    document.getElementById('deckSelect').addEventListener('change', renderLearnWidgets);
+
+    // Nach einem Import: Selector und Widgets auffrischen.
+    document.addEventListener('lingua:decks-changed', () => {
+      populateDeckSelect();
+      renderLearnWidgets();
+    });
   }
 
   populateDeckSelect();
   updateStats();
+  renderGamiHeader();
+  renderLearnWidgets();
 }
 
 function doLogout() {

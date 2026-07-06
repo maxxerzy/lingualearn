@@ -2,6 +2,10 @@ import { loadDeck, getCurrentSession, setCurrentSession, getUserStats, setUserSt
 import { updateProgress } from './progress.js';
 import { updateStats } from './stats.js';
 import { shuffleArray } from '../utils/helpers.js';
+import { recordCardAnswer, getDueFronts } from './cardProgress.js';
+import { recordGameAnswer, recordSessionEnd, checkAchievements, XP } from './gamification.js';
+import { renderGamiHeader, renderLearnWidgets } from '../ui/gami.js';
+import { toastAchievements } from '../ui/toast.js';
 
 const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU' };
 const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch', fr: 'Französisch', es: 'Spanisch', la: 'Latein', ru: 'Russisch' };
@@ -42,11 +46,24 @@ export async function startSession() {
     return;
   }
 
+  // Fällig-Modus: nur Karten lernen, deren Wiederholungsdatum erreicht ist.
+  let sessionCards = deck.cards;
+  const dueOnly = document.getElementById('dueOnly')?.checked;
+  if (dueOnly) {
+    const dueFronts = new Set(getDueFronts(deckId));
+    sessionCards = deck.cards.filter(c => dueFronts.has(c.front));
+    if (sessionCards.length === 0) {
+      alert('Keine fälligen Karten in diesem Deck — starte eine normale Session, um neue Karten zu lernen.');
+      return;
+    }
+  }
+
   const mode = getSelectedMode();
-  const shuffled = shuffleArray([...deck.cards]);
+  const shuffled = shuffleArray([...sessionCards]);
 
   const session = {
     deck,
+    deckId,
     cards: shuffled,
     mode,
     currentIndex: 0,
@@ -179,6 +196,11 @@ function rateFlashcard(card, rating) {
   session.queue.shift();
   session.currentIndex++;
 
+  // „Nochmal" legt die Karte in die Wiederholungsrunde dieser Session.
+  if (rating === 'again') {
+    session.reviewQueue.push(card);
+  }
+
   const isCorrect = rating !== 'again' && rating !== 'hard';
   if (isCorrect) {
     session.correctAnswers++;
@@ -189,6 +211,13 @@ function rateFlashcard(card, rating) {
   userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
   setUserStats(userStats);
   updateStats();
+
+  recordCardAnswer(session.deckId, card.front, rating);
+  recordGameAnswer(isCorrect);
+  session.xpFromAnswers = (session.xpFromAnswers || 0) + (isCorrect ? XP.correct : XP.wrong);
+  renderGamiHeader();
+  renderLearnWidgets();
+  toastAchievements(checkAchievements());
 
   if (session.queue.length === 0) {
     if (session.reviewQueue.length > 0) {
@@ -234,9 +263,9 @@ function showMultipleChoice() {
             <span class="mc-key">${'ABCD'[i]}</span>
             <span class="mc-text">
               ${escHtml(opt.back)}
-              <button type="button" class="audio-btn mc-audio" data-text="${escHtml(opt.back)}" title="Aussprache">
+              <span class="audio-btn mc-audio" role="button" tabindex="0" data-text="${escHtml(opt.back)}" title="Aussprache">
                 <i class="fas fa-volume-up"></i>
-              </button>
+              </span>
             </span>
           </button>
         `).join('')}
@@ -254,6 +283,13 @@ function showMultipleChoice() {
     btn.addEventListener('click', e => {
       e.stopPropagation();
       speakWord(btn.dataset.text, lang);
+    });
+    btn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        e.stopPropagation();
+        speakWord(btn.dataset.text, lang);
+      }
     });
   });
 
@@ -294,6 +330,13 @@ function checkMCAnswer(selectedIdx) {
   updateStats();
   session.currentPrompt = null;
   setCurrentSession(session);
+
+  recordCardAnswer(session.deckId, card.front, isCorrect);
+  recordGameAnswer(isCorrect);
+  session.xpFromAnswers = (session.xpFromAnswers || 0) + (isCorrect ? XP.correct : XP.wrong);
+  renderGamiHeader();
+  renderLearnWidgets();
+  toastAchievements(checkAchievements());
 
   const fb = document.getElementById('mc-fb');
   fb.innerHTML = isCorrect
@@ -418,6 +461,13 @@ function checkComparisonAnswer(userSaysMatch) {
   session.currentPrompt = null;
   setCurrentSession(session);
 
+  recordCardAnswer(session.deckId, prompt.card.front, isCorrect);
+  recordGameAnswer(isCorrect);
+  session.xpFromAnswers = (session.xpFromAnswers || 0) + (isCorrect ? XP.correct : XP.wrong);
+  renderGamiHeader();
+  renderLearnWidgets();
+  toastAchievements(checkAchievements());
+
   document.getElementById('nextCard').addEventListener('click', showNextCard);
 }
 
@@ -441,19 +491,42 @@ function endSession() {
   const correct = session?.correctAnswers || 0;
   const rate = total > 0 ? Math.round((correct / total) * 100) : 0;
 
+  const { xpEarned, perfect, game } = recordSessionEnd({
+    language: session?.deck?.language,
+    correct,
+    total,
+  });
+  // Gesamte Session-XP: Antworten + Abschluss-Bonus (+ Perfekt-Bonus).
+  const xpTotal = (session?.xpFromAnswers || 0) + xpEarned;
+  renderGamiHeader();
+  renderLearnWidgets();
+  const freshAchievements = checkAchievements();
+
   document.getElementById('learnArea').innerHTML = `
     <h3 style="font-size:1.6rem;margin-bottom:12px">🎉 Session beendet!</h3>
     <p style="color:var(--gray);margin-bottom:6px">${correct} von ${total} Karten richtig</p>
-    <p style="font-size:1.4rem;font-weight:700;color:var(--primary);margin-bottom:24px">${rate}%</p>
-    <div class="actions">
+    <p style="font-size:1.4rem;font-weight:700;color:var(--primary);margin-bottom:14px">${rate}%</p>
+    <div class="session-rewards">
+      <span class="reward-pill reward-pill--xp"><i class="fas fa-bolt"></i> +${xpTotal} XP</span>
+      ${perfect ? '<span class="reward-pill reward-pill--perfect"><i class="fas fa-star"></i> Perfekte Session!</span>' : ''}
+      <span class="reward-pill reward-pill--streak"><i class="fas fa-fire"></i> Serie: ${game.streak.current} ${game.streak.current === 1 ? 'Tag' : 'Tage'}</span>
+    </div>
+    <div class="actions" style="margin-top:20px">
       <button type="button" class="btn btn-primary" id="restartSession">
         <i class="fas fa-redo"></i> Noch einmal
       </button>
     </div>
   `;
 
+  toastAchievements(freshAchievements);
   document.getElementById('restartSession').addEventListener('click', startSession);
   setCurrentSession(null);
+
+  // Fortschrittsbalken auf den Endstand bringen.
+  const textEl = document.getElementById('progress-text');
+  const barEl  = document.getElementById('progress-bar');
+  if (textEl) textEl.textContent = `${total}/${total} Karten`;
+  if (barEl)  barEl.style.width = '100%';
 }
 
 // ── Helpers ──────────────────────────────────────────────────────
