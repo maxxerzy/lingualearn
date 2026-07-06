@@ -1,0 +1,150 @@
+/* ════════════════════════════════════════════════════════════════
+   LinguaLearn — Button-Animationen (rein additiv)
+   Einbinden in index.html NACH main.css:
+   <link rel="stylesheet" href="styles/button-animations.css">
+   Keine HTML- oder JS-Änderungen nötig. Alle Effekte sind CSS-only
+   und respektieren prefers-reduced-motion.
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Basis: sanfter Lift & Press für alle Buttons ─────────────── */
+.btn,
+.mode-btn,
+.mc-option,
+.btn-back,
+.login-tab,
+.user-chip,
+.nav-btn {
+  transition:
+    transform 0.18s var(--ease-spring),
+    box-shadow 0.25s var(--ease-out),
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+  will-change: transform;
+}
+
+/* Hover: dezenter Lift */
+.btn:hover:not(:disabled),
+.btn-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(33, 37, 41, 0.12);
+}
+
+/* Primär-Button: getönter Schatten passend zur Markenfarbe */
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 0 6px 18px rgba(67, 97, 238, 0.35);
+}
+
+/* Press: kurzes Eindrücken — gibt sofortiges taktiles Feedback */
+.btn:active:not(:disabled),
+.mode-btn:active,
+.mc-option:active:not(:disabled),
+.btn-back:active,
+.login-tab:active,
+.user-chip:active,
+.nav-btn:active,
+.audio-btn:active {
+  transform: translateY(0) scale(0.96);
+  transition-duration: 0.08s;
+}
+
+/* Tastatur-Fokus: klarer Ring statt Browser-Default */
+.btn:focus-visible,
+.mode-btn:focus-visible,
+.mc-option:focus-visible,
+.btn-back:focus-visible,
+.login-tab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.35);
+}
+
+/* ── Icons: Mikro-Bewegung beim Hover ─────────────────────────── */
+.btn i,
+.btn-back i,
+.mode-btn i {
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.btn:hover:not(:disabled) .fa-play        { transform: translateX(2px) scale(1.1); }
+.btn-back:hover .fa-arrow-left            { transform: translateX(-3px); }
+.btn:hover:not(:disabled) .fa-file-import { transform: translateY(2px); }
+.btn:hover:not(:disabled) .fa-file-export { transform: translateY(-2px); }
+
+/* ── Mode-Buttons (Sidebar) ────────────────────────────────────── */
+.mode-btn:hover:not(.active) {
+  transform: translateX(3px);
+}
+
+.mode-btn.active {
+  animation: mode-pop 0.3s var(--ease-spring);
+}
+
+@keyframes mode-pop {
+  0%   { transform: scale(0.97); }
+  55%  { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* ── Multiple Choice: Feedback-Animationen ─────────────────────
+   Die Klassen mc-correct / mc-wrong setzt euer JS bereits —
+   die Animation läuft dadurch automatisch an. */
+.mc-option:hover:not(:disabled) {
+  transform: translateX(4px);
+}
+
+.mc-option.mc-correct {
+  animation: mc-pop 0.4s var(--ease-spring);
+}
+
+.mc-option.mc-wrong {
+  animation: mc-shake 0.4s ease;
+}
+
+@keyframes mc-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.025); }
+  100% { transform: scale(1); }
+}
+
+@keyframes mc-shake {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-5px); }
+  50%      { transform: translateX(4px); }
+  75%      { transform: translateX(-2px); }
+}
+
+/* ── Rating-Buttons: Lift in der jeweiligen Farbe ──────────────── */
+.btn-again:hover { box-shadow: 0 5px 14px rgba(201, 24, 74, 0.30); }
+.btn-hard:hover  { box-shadow: 0 5px 14px rgba(230, 81, 0, 0.30); }
+.btn-good:hover  { box-shadow: 0 5px 14px rgba(46, 125, 50, 0.30); }
+.btn-easy:hover  { box-shadow: 0 5px 14px rgba(21, 101, 192, 0.30); }
+
+/* ── Audio-Button: sanftes Aufpulsen ───────────────────────────── */
+.audio-btn {
+  transition: transform 0.2s var(--ease-spring), opacity 0.2s ease, background-color 0.2s ease;
+}
+.audio-btn:hover { transform: scale(1.15); }
+
+/* ── Login-Tabs: weicher Wechsel ───────────────────────────────── */
+.login-tab.active {
+  animation: mode-pop 0.3s var(--ease-spring);
+}
+
+/* ── Deaktivierte Buttons: keine Bewegung ──────────────────────── */
+.btn:disabled { transform: none; box-shadow: none; }
+
+/* ── Barrierefreiheit: reduzierte Bewegung respektieren ────────── */
+@media (prefers-reduced-motion: reduce) {
+  .btn, .mode-btn, .mc-option, .btn-back,
+  .login-tab, .user-chip, .nav-btn, .audio-btn,
+  .btn i, .btn-back i, .mode-btn i {
+    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
