@@ -1,5 +1,4 @@
 import { deckMeta } from '../js/data/decks/meta.js';
-import { enrichDecksWithTranslations } from './translator.js';
 import { getCurrentUser } from './auth.js';
 
 const STATS_PREFIX = 'lingualearn_stats_';
@@ -95,9 +94,9 @@ export async function loadDeck(deckId) {
   loadingPromises[deckId] = (async () => {
     const { language } = entry;
     const { cards } = await import(`../js/data/decks/${language}.js`);
+    // Alle Übersetzungen (exampleDE) stehen fest in den Deck-Dateien —
+    // kein Laufzeit-API-Aufruf mehr nötig.
     entry.cards = JSON.parse(JSON.stringify(cards));
-    // Enrich example sentences in the background — non-blocking.
-    enrichDecksWithTranslations({ [deckId]: entry }).catch(() => {});
     return entry;
   })();
 

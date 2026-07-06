@@ -1,0 +1,12 @@
+# Cloudflare-Pages-Cache-Regeln
+
+# Service Worker darf nicht gecacht werden — Updates müssen sofort greifen.
+/sw.js
+  Cache-Control: no-cache
+
+# Unveränderliche Assets lange cachen.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/icons/*
+  Cache-Control: public, max-age=31536000, immutable
