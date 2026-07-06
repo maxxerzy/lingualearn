@@ -47,6 +47,42 @@ for (const m of deckMeta) {
   liveDecks[m.id] = { name: m.name, language: m.language, count: m.count, cards: null };
 }
 
+// Vom Nutzer importierte Decks überleben den Reload via localStorage.
+const IMPORTED_KEY = 'lingualearn_imported_decks';
+
+function loadImportedDecks() {
+  try {
+    return JSON.parse(localStorage.getItem(IMPORTED_KEY) || '{}');
+  } catch {
+    return {};
+  }
+}
+
+for (const [id, d] of Object.entries(loadImportedDecks())) {
+  if (d?.name && Array.isArray(d.cards)) {
+    liveDecks[id] = {
+      name: d.name,
+      language: d.language,
+      count: d.cards.length,
+      cards: JSON.parse(JSON.stringify(d.cards)),
+    };
+  }
+}
+
+export function addImportedDeck(deckId, deckData) {
+  liveDecks[deckId] = {
+    name: deckData.name,
+    language: deckData.language,
+    count: deckData.cards.length,
+    cards: deckData.cards,
+  };
+  const all = loadImportedDecks();
+  all[deckId] = deckData;
+  try {
+    localStorage.setItem(IMPORTED_KEY, JSON.stringify(all));
+  } catch { /* storage voll — Deck bleibt für diese Sitzung nutzbar */ }
+}
+
 // In-flight load promises — prevents double-fetching the same deck.
 const loadingPromises = {};
 

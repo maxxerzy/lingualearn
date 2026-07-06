@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/button-animations.css">
+  <link rel="stylesheet" href="styles/gamification.css">
 </head>
 <body>
 
@@ -49,6 +50,15 @@
         <h1>LinguaLearn</h1>
       </div>
       <div class="header-right">
+        <div class="gami-chips">
+          <span class="gami-chip gami-chip--streak" id="streakChip">
+            <i class="fas fa-fire"></i> <span id="streakCount">0</span>
+          </span>
+          <span class="gami-chip gami-chip--level" id="levelChip">
+            <span class="gami-level-label">Lv. <b id="levelNum">1</b></span>
+            <span class="gami-xp-bar"><span class="gami-xp-fill" id="xpFill"></span></span>
+          </span>
+        </div>
         <div class="user-menu" id="userMenu">
           <button type="button" class="user-chip" id="userChipBtn">
             <i class="fas fa-user-circle"></i>
@@ -83,6 +93,13 @@
               <div class="form-group">
                 <label for="deckSelect">Deck</label>
                 <select id="deckSelect" class="input"></select>
+                <div class="deck-progress" id="deckProgress" hidden>
+                  <div class="deck-progress__bar">
+                    <span class="dp-seg dp-seg--mastered" id="dpMastered"></span>
+                    <span class="dp-seg dp-seg--learning" id="dpLearning"></span>
+                  </div>
+                  <div class="deck-progress__text" id="deckProgressText"></div>
+                </div>
               </div>
               <div class="form-group">
                 <label>Modus</label>
@@ -98,9 +115,22 @@
                   </button>
                 </div>
               </div>
+              <label class="due-toggle" for="dueOnly">
+                <input type="checkbox" id="dueOnly">
+                <span>Nur fällige Karten (<span id="dueCount">0</span>)</span>
+              </label>
               <button type="button" id="startBtn" class="btn btn-primary btn-full">
                 <i class="fas fa-play"></i> Session starten
               </button>
+              <div class="daily-goal" id="dailyGoalWrap">
+                <div class="daily-goal__head">
+                  <span><i class="fas fa-bullseye"></i> Tagesziel</span>
+                  <span id="dailyGoalText">0/20</span>
+                </div>
+                <div class="progress daily-goal__bar">
+                  <div class="progress-bar" id="dailyGoalBar" style="width:0%"></div>
+                </div>
+              </div>
             </div>
 
             <div class="panel learn-panel">
@@ -169,7 +199,39 @@
                 <div class="stat-card__value" id="stat-active-days">0</div>
                 <div class="stat-card__label">Aktive Lerntage</div>
               </div>
+              <div class="stat-card">
+                <div class="stat-card__icon"><i class="fas fa-fire"></i></div>
+                <div class="stat-card__value" id="stat-streak">0</div>
+                <div class="stat-card__label">Serie (Rekord: <span id="stat-streak-longest">0</span>)</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-card__icon"><i class="fas fa-trophy"></i></div>
+                <div class="stat-card__value" id="stat-level">1</div>
+                <div class="stat-card__label">Level (<span id="stat-rank">Bronze</span>)</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-card__icon"><i class="fas fa-bolt"></i></div>
+                <div class="stat-card__value" id="stat-xp">0</div>
+                <div class="stat-card__label">Erfahrungspunkte</div>
+              </div>
             </div>
+
+            <h3 class="stats-subhead"><i class="fas fa-calendar-alt"></i> Aktivität (letzte 12 Wochen)</h3>
+            <div class="heatmap-wrap">
+              <div class="heatmap" id="heatmap"></div>
+              <div class="heatmap-legend">
+                <span>Weniger</span>
+                <span class="heatmap__cell heatmap__cell--i0"></span>
+                <span class="heatmap__cell heatmap__cell--i1"></span>
+                <span class="heatmap__cell heatmap__cell--i2"></span>
+                <span class="heatmap__cell heatmap__cell--i3"></span>
+                <span class="heatmap__cell heatmap__cell--i4"></span>
+                <span>Mehr</span>
+              </div>
+            </div>
+
+            <h3 class="stats-subhead"><i class="fas fa-medal"></i> Erfolge <span id="achCount"></span></h3>
+            <div class="achievements" id="achievements"></div>
           </div>
         </section>
 
@@ -181,6 +243,10 @@
                 <i class="fas fa-arrow-left"></i> Lernen
               </button>
               <h2>Einstellungen</h2>
+            </div>
+            <div class="form-group">
+              <label for="dailyGoalInput">Tagesziel (Karten pro Tag)</label>
+              <input type="number" id="dailyGoalInput" class="input" min="1" max="500" step="1" value="20">
             </div>
             <div class="form-group">
               <label for="importFile">Deck importieren (JSON)</label>

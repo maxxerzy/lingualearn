@@ -1,4 +1,7 @@
-import { getDecks, loadDeck } from '../core/state.js';
+import { loadDeck, addImportedDeck } from '../core/state.js';
+import { getGame, setDailyGoal, checkAchievements } from '../core/gamification.js';
+import { renderLearnWidgets } from './gami.js';
+import { showToast, toastAchievements } from './toast.js';
 
 // Initialize settings
 export function initSettings() {
@@ -7,6 +10,19 @@ export function initSettings() {
 
   if (importBtn) importBtn.addEventListener('click', handleImport);
   if (exportBtn) exportBtn.addEventListener('click', handleExport);
+
+  const goalInput = document.getElementById('dailyGoalInput');
+  if (goalInput) {
+    goalInput.value = getGame().dailyGoal;
+    goalInput.addEventListener('change', () => {
+      const g = setDailyGoal(Number(goalInput.value));
+      goalInput.value = g.dailyGoal;
+      renderLearnWidgets();
+      showToast(`<i class="fas fa-bullseye toast__icon"></i><div class="toast__body"><b>Tagesziel gespeichert</b><span>${g.dailyGoal} Karten pro Tag</span></div>`);
+      // Ein niedrigeres Ziel kann sofort erfüllt sein — Erfolge direkt prüfen.
+      toastAchievements(checkAchievements());
+    });
+  }
 }
 
 // Validate deck structure
@@ -42,9 +58,9 @@ export function handleImport() {
         return;
       }
 
-      const decks = getDecks();
       const deckId = `imported-${Date.now()}`;
-      decks[deckId] = deckData;
+      addImportedDeck(deckId, deckData);
+      document.dispatchEvent(new CustomEvent('lingua:decks-changed'));
 
       alert(`Deck "${deckData.name}" erfolgreich importiert! Du kannst es jetzt in der Lernen-Seite auswählen.`);
       fileInput.value = '';
@@ -55,19 +71,21 @@ export function handleImport() {
   reader.readAsText(file);
 }
 
-// Handle export
+// Handle export — exportiert das aktuell ausgewählte Deck.
 export async function handleExport() {
-  const deck = await loadDeck('basic-da');
+  const deckId = document.getElementById('deckSelect')?.value || 'basic-da';
+  const deck = await loadDeck(deckId);
 
   if (!deck?.cards) {
-    alert('Kein Beispiel-Deck zum Export gefunden.');
+    alert('Kein Deck zum Export gefunden.');
     return;
   }
 
-  const dataStr = JSON.stringify(deck, null, 2);
+  const payload = { name: deck.name, language: deck.language, cards: deck.cards };
+  const dataStr = JSON.stringify(payload, null, 2);
   const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
 
-  const exportFileDefaultName = 'lingualearn_export.json';
+  const exportFileDefaultName = `lingualearn_${deckId}.json`;
 
   const linkElement = document.createElement('a');
   linkElement.setAttribute('href', dataUri);
