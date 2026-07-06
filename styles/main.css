@@ -344,6 +344,7 @@ label {
 
 .mode-btn {
   width: 100%;
+  min-height: 44px;
   padding: 10px 14px;
   border: 2px solid var(--light-gray);
   border-radius: var(--radius);
@@ -791,12 +792,38 @@ label {
   overflow-x: auto;
 }
 
-/* ── Responsive: Tablet (≤ 900px) ──────────────────────────────── */
+/* ── Touch-Geräte: Mindestgrößen für Finger-Bedienung ──────────── */
+@media (pointer: coarse) {
+  .btn, .mode-btn, .mc-option, .login-tab, .btn-back, .user-chip {
+    min-height: 44px;
+  }
+  .audio-btn {
+    min-width: 40px;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .input, select { min-height: 44px; }
+  .due-toggle { min-height: 44px; }
+  .due-toggle input { width: 20px; height: 20px; }
+}
+
+/* ── Responsive: Tablet (≤ 900px, z. B. iPad hochkant) ─────────── */
 @media (max-width: 900px) {
   .learn-layout { grid-template-columns: 1fr; min-height: unset; }
   .config-panel { position: static; align-self: auto; }
   .learn-panel  { min-height: 520px; }
   .learn-panel .panel { margin-bottom: 0; }
+
+  /* Modus-Buttons nebeneinander, sobald das Panel volle Breite hat */
+  .mode-tabs { flex-direction: row; }
+  .mode-btn  {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /* ── Responsive: Mobile (≤ 768px) ──────────────────────────────── */
@@ -806,14 +833,42 @@ label {
   .app-container {
     border-radius: 0;
     min-height: 100vh;
+    min-height: 100dvh;
     box-shadow: none;
   }
 
-  header     { padding: 10px 14px; }
+  /* Safe-Area für Notch/Dynamic Island (viewport-fit=cover) */
+  header {
+    padding: 10px 14px;
+    padding-top: calc(10px + env(safe-area-inset-top, 0px));
+    padding-left: calc(14px + env(safe-area-inset-left, 0px));
+    padding-right: calc(14px + env(safe-area-inset-right, 0px));
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .content {
+    padding-left: calc(14px + env(safe-area-inset-left, 0px));
+    padding-right: calc(14px + env(safe-area-inset-right, 0px));
+    padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  }
+
   .logo h1   { font-size: 1.2rem; }
   .logo-icon { font-size: 1.4rem; }
   .nav       { display: none; }
-  .user-chip { max-width: 130px; font-size: 0.82rem; padding: 5px 10px; }
+  .header-right { gap: 8px; min-width: 0; }
+  .user-chip { max-width: 110px; font-size: 0.82rem; padding: 5px 10px; }
+  .user-chip #userName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* IPA-Tooltip darf nicht über den Viewport hinauslaufen */
+  .fc-ipa-tip {
+    white-space: normal;
+    max-width: min(86vw, 320px);
+    width: max-content;
+  }
 
   .content   { padding: 14px; }
   .panel     { padding: 16px; margin-bottom: 14px; }
@@ -869,4 +924,9 @@ label {
 @media (max-width: 380px) {
   .fc-word { font-size: 1.5rem; padding: 10px 12px; }
   .btn     { font-size: 0.92rem; padding: 10px 12px; }
+  .logo h1 { font-size: 1.05rem; }
+  .user-chip { max-width: 88px; }
+  .content { padding: 10px; }
+  .panel   { padding: 14px 12px; }
+  .fc-rating .actions { max-width: none; }
 }

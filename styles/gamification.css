@@ -248,8 +248,27 @@
 .toast--achieve { background: linear-gradient(135deg, #3b2f63, #24304d); }
 
 /* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .gami-chips { gap: 6px; }
+  .gami-chip { padding: 5px 9px; font-size: 0.78rem; }
+  .gami-xp-bar { width: 34px; }
+
+  /* Toasts: volle Breite am unteren Rand, über der Safe-Area */
+  #toastRoot {
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    align-items: stretch;
+  }
+  .toast { max-width: none; }
+}
+
 @media (max-width: 640px) {
-  .gami-chip--streak { padding: 6px 9px; }
-  .gami-xp-bar { width: 36px; }
   .achievements { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
+
+/* Sehr schmale Phones: XP-Balken weglassen, Level bleibt lesbar */
+@media (max-width: 400px) {
+  .gami-xp-bar { display: none; }
+  .gami-chip { padding: 5px 8px; }
 }
