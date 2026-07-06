@@ -26,6 +26,12 @@ npx wrangler login                                        # einmalig
 npx wrangler pages deploy . --project-name lingualearn    # bei jedem Update
 ```
 
+### Weg C: Git-Integration (Workers Builds)
+
+Im Cloudflare-Dashboard das Repository anbinden und als Deploy-Command `npx wrangler deploy` setzen (Build-Command leer lassen). Die committete `wrangler.jsonc` liefert die Konfiguration; `.assetsignore` hält `node_modules`, `.git` & Co. aus dem Asset-Upload heraus.
+
+*Hinweis:* Weg C nutzt GitHub als Deploy-Trigger — wer vollständig GitHub-unabhängig bleiben will, nimmt Weg A oder B.
+
 ### Eigene Domain
 
 Im Pages-Projekt unter **Custom domains** lässt sich jede eigene Domain anbinden (Zertifikat kommt automatisch).

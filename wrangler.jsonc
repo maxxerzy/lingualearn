@@ -1,0 +1,12 @@
+// Cloudflare-Workers-Konfiguration — reine statische Assets, kein Worker-Code.
+// Diese Datei muss committet sein: ohne sie generiert wranglers Auto-Setup im
+// Build-Container eine eigene Config UND installiert wrangler als devDependency,
+// wodurch node_modules (u. a. die 121-MB-workerd-Binary) im Assets-Upload
+// landet und das 25-MiB-Limit sprengt.
+{
+  "name": "lingualearn",
+  "compatibility_date": "2026-07-06",
+  "assets": {
+    "directory": "."
+  }
+}
