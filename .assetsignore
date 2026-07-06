@@ -1,0 +1,12 @@
+# Vom Cloudflare-Assets-Upload ausgeschlossen (gitignore-Syntax).
+# _headers bleibt bewusst drin — Workers Static Assets wenden es serverseitig an.
+node_modules/
+.git/
+.wrangler/
+.gitignore
+.gitattributes
+wrangler.jsonc
+package.json
+package-lock.json
+README.md
+.DS_Store
