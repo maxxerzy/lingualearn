@@ -1,0 +1,26 @@
+{
+  "name": "grodt",
+  "version": "0.1.0",
+  "description": "GRODT — Trading-PWA: Kurse, Charts, Watchlist, Alarme und Depot für iPhone & macOS",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "dev:fixtures": "wrangler dev --var USE_FIXTURES:1",
+    "deploy": "wrangler deploy",
+    "db:schema": "wrangler d1 execute grodt --remote --file worker/schema.sql",
+    "db:schema:local": "wrangler d1 execute grodt --local --file worker/schema.sql",
+    "vendor": "node scripts/copy-vendor.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "vapid": "node scripts/generate-vapid.mjs",
+    "test": "node --test tests/unit/*.test.mjs",
+    "test:ui": "playwright test --config tests/playwright.config.mjs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "lightweight-charts": "5.2.0",
+    "sharp": "^0.35.3",
+    "wrangler": "^4.110.0"
+  }
+}

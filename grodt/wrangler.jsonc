@@ -1,0 +1,31 @@
+// GRODT — Cloudflare-Workers-Konfiguration.
+// Worker-Code (worker/index.js) bedient /api/*; alles andere kommt als
+// statisches Asset aus public/. Vor dem ersten Deploy:
+//   1. npx wrangler d1 create grodt          → database_id unten eintragen
+//   2. npm run db:schema                     → Tabellen anlegen (remote)
+//   3. npm run vapid                         → VAPID-Keys erzeugen und per
+//      `wrangler secret put` setzen (siehe README, Abschnitt Push)
+{
+  "name": "grodt",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-07-06",
+  "assets": {
+    "directory": "public",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "grodt",
+      "database_id": "REPLACE_WITH_D1_DATABASE_ID"
+    }
+  ],
+  "triggers": {
+    // Serverseitige Alarm-Prüfung; außerhalb der Handelszeiten beendet sich
+    // der Lauf sofort (siehe worker/alerts.js).
+    "crons": ["*/5 * * * *"]
+  },
+  "observability": {
+    "enabled": true
+  }
+}

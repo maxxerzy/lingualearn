@@ -1,0 +1,143 @@
+/* App-Grundlayout: Header oben, Inhalt, Bottom-Tabbar am Phone;
+   ab 900 px Sidebar links statt Tabbar. */
+
+#app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+#appHeader {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: calc(var(--header-h) + var(--safe-top));
+  padding: var(--safe-top) 12px 0 12px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  font-size: 17px;
+}
+.brand img { border-radius: 7px; }
+
+.header-actions { display: flex; align-items: center; gap: 10px; }
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.icon-btn:hover { background: var(--bg-elev2); }
+
+.live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--text-dim);
+}
+.live-dot.on { background: var(--up); box-shadow: 0 0 6px var(--up); }
+
+#view {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 14px calc(var(--nav-h) + var(--safe-bottom) + 18px) 14px;
+  outline: none;
+}
+
+/* --- Navigation: Bottom-Tabbar (Phone) --- */
+#mainNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: var(--safe-bottom);
+  background: color-mix(in srgb, var(--bg-elev) 88%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border);
+}
+
+#mainNav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 7px 4px 6px;
+  min-width: 60px;
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+#mainNav a svg { width: 24px; height: 24px; }
+#mainNav a.active { color: var(--accent); }
+
+/* --- Desktop: Sidebar --- */
+@media (min-width: 900px) {
+  #app { flex-direction: row; flex-wrap: wrap; }
+  #appHeader { width: 100%; }
+
+  #mainNav {
+    position: sticky;
+    top: calc(var(--header-h) + var(--safe-top));
+    bottom: auto;
+    align-self: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4px;
+    width: 200px;
+    height: calc(100dvh - var(--header-h) - var(--safe-top));
+    padding: 16px 10px;
+    border-top: none;
+    border-right: 1px solid var(--border);
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  #mainNav a {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+  #mainNav a.active { background: var(--accent-soft); }
+
+  #view {
+    flex: 1;
+    min-width: 0;
+    padding: 20px 24px 40px;
+  }
+}
+
+@media (max-width: 899px) {
+  #mainNav a span.nav-label { display: block; }
+}
