@@ -1,6 +1,7 @@
 import { getGame, levelInfo, ACHIEVEMENTS } from '../core/gamification.js';
 import { getDeckProgress, getDueFronts } from '../core/cardProgress.js';
 import { getDecks } from '../core/state.js';
+import { getCourseState, lessonNumber } from '../core/course.js';
 
 function setText(id, value) {
   const el = document.getElementById(id);
@@ -52,6 +53,22 @@ export function renderLearnWidgets() {
     }
 
     setText('dueCount', getDueFronts(deckId).length);
+
+    // Lernkurs-Zeile: Speicherstand des ausgewählten Decks.
+    const { introduced } = getCourseState(deckId);
+    setText('courseProgressText',
+      introduced >= total && total > 0
+        ? `Kurs abgeschlossen — alle ${total} Wörter gelernt`
+        : `Lektion ${lessonNumber(deckId)} · ${introduced}/${total} Wörter gelernt`);
+
+    // Start-Button-Beschriftung je nach Modus.
+    const startBtn = document.getElementById('startBtn');
+    const activeMode = document.querySelector('.mode-btn.active')?.dataset.mode;
+    if (startBtn) {
+      startBtn.innerHTML = activeMode === 'course'
+        ? `<i class="fas fa-graduation-cap"></i> Lektion ${lessonNumber(deckId)} starten`
+        : '<i class="fas fa-play"></i> Session starten';
+    }
   }
 
   const g = getGame();
