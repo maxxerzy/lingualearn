@@ -12,9 +12,10 @@ export function updateProgress() {
   }
 
   const done  = session.currentIndex;
-  const total = session.totalCards || session.cards.length;
+  const total = session.totalCards || session.cards?.length || 0;
   const pct   = total > 0 ? Math.min(100, Math.round((done / total) * 100)) : 0;
+  const unit  = session.mode === 'course' ? 'Schritte' : 'Karten';
 
-  textEl.textContent = `${done}/${total} Karten`;
+  textEl.textContent = `${done}/${total} ${unit}`;
   barEl.style.width  = `${pct}%`;
 }

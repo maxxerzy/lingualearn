@@ -6,6 +6,7 @@ import { getDecks, reinitUserStats, setCurrentSession } from '../core/state.js';
 import { isLoggedIn, logout, getCurrentUser } from '../core/auth.js';
 import { reinitCardProgress } from '../core/cardProgress.js';
 import { reinitGame } from '../core/gamification.js';
+import { reinitCourse } from '../core/course.js';
 import { renderGamiHeader, renderLearnWidgets, renderStatsExtras } from '../ui/gami.js';
 
 let appInitialized = false;
@@ -30,6 +31,7 @@ function reinitUser() {
   reinitUserStats();
   reinitCardProgress();
   reinitGame();
+  reinitCourse();
 }
 
 function showApp() {
@@ -115,6 +117,8 @@ function setupModeTabs() {
     btn.addEventListener('click', () => {
       btns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      // Start-Button-Label und Kurszeile an den Modus anpassen.
+      renderLearnWidgets();
     });
   });
 }

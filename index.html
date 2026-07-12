@@ -108,6 +108,9 @@
               <div class="form-group">
                 <label>Modus</label>
                 <div class="mode-tabs">
+                  <button type="button" class="mode-btn" data-mode="course">
+                    <i class="fas fa-graduation-cap"></i> Lernkurs
+                  </button>
                   <button type="button" class="mode-btn active" data-mode="flashcard">
                     <i class="fas fa-clone"></i> Karteikarten
                   </button>
@@ -117,6 +120,9 @@
                   <button type="button" class="mode-btn" data-mode="comparison">
                     <i class="fas fa-random"></i> Vergleich
                   </button>
+                </div>
+                <div class="course-progress" id="courseProgress">
+                  <i class="fas fa-graduation-cap"></i> <span id="courseProgressText"></span>
                 </div>
               </div>
               <label class="due-toggle" for="dueOnly">
