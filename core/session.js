@@ -6,7 +6,7 @@ import { recordCardAnswer, getDueFronts } from './cardProgress.js';
 import { recordGameAnswer, recordSessionEnd, checkAchievements, XP } from './gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../ui/gami.js';
 import { toastAchievements } from '../ui/toast.js';
-import { nextLessonCards, lessonNumber, advanceCourse } from './course.js';
+import { nextLessonCards, lessonNumber, advanceCourse, getCourseState, getSentencesDone, markSentencesDone } from './course.js';
 
 const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU' };
 const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch', fr: 'Französisch', es: 'Spanisch', la: 'Latein', ru: 'Russisch' };
@@ -554,18 +554,24 @@ function startCourseLesson(deck, deckId) {
     return;
   }
 
+  // Bereits gelernter Wortschatz (bisherige Lektionen + die 8 dieser Lektion).
+  const introducedStart = getCourseState(deckId).introduced;
+  const knownCards = deck.cards.slice(0, introducedStart + lessonCards.length);
+
   const session = {
     deck,
     deckId,
     mode: 'course',
     lesson: lessonNumber(deckId),
     lessonCards,
+    knownCards,
     phase: 'teach',          // teach → words → sentences
     teachIndex: 0,
     queue: [],
+    sentencesCompleted: [],
     currentPrompt: null,
     currentIndex: 0,                       // erledigte Schritte (für Fortschrittsbalken)
-    totalCards: lessonCards.length * 3,    // Kennenlernen + Wörter + Sätze
+    totalCards: lessonCards.length * 2,    // Kennenlernen + Wörter (Sätze kommen dynamisch dazu)
     correctAnswers: 0,
     gradedAnswers: 0,
   };
@@ -593,9 +599,13 @@ function showCourseStep() {
 
   if (session.phase === 'words') {
     if (session.queue.length === 0) {
+      // Übergang zur Satz-Phase: nur Sätze aufnehmen, deren Wörter ALLE
+      // schon gelernt sind (echtes Basic 101 — keine unbekannten Wörter).
       session.phase = 'sentences';
-      session.queue = shuffleArray([...session.lessonCards]);
+      session.queue = collectUnlockedSentences(session);
+      session.totalCards = session.lessonCards.length * 2 + session.queue.length;
       setCurrentSession(session);
+      updateProgress();
     } else {
       renderCourseWordMC(session);
       return;
@@ -609,6 +619,52 @@ function showCourseStep() {
     }
     renderCourseGapFill(session);
   }
+}
+
+// Wortabgleich mit Toleranz für Beugung: exakt / solider Teilstring /
+// gemeinsames Präfix ≥5. Kurze Funktionswörter matchen dadurch nicht.
+function backMatchScore(word, back) {
+  if (word === back) return 100;
+  const short = Math.min(word.length, back.length);
+  if (short >= 4 && (word.includes(back) || back.includes(word))) return 80;
+  let p = 0;
+  while (p < word.length && p < back.length && word[p] === back[p]) p++;
+  if (p >= 5) return 60;
+  return 0;
+}
+
+// Ist der Beispielsatz vollständig aus bekannten Wörtern gebildet?
+// Tokens, die zu keinem Deck-Wort passen, gelten als Funktionswörter.
+function sentenceIsKnown(example, knownBackSet, knownBackList, deckBackList) {
+  const tokens = example.toLowerCase().split(/[\s.,!?;:„“"»«()¿¡'’-]+/).filter(Boolean);
+  for (const t of tokens) {
+    if (knownBackSet.has(t)) continue;                    // exakt bekannt
+    if (knownBackList.some(b => backMatchScore(t, b) >= 60)) continue; // bekannt (gebeugt)
+    if (deckBackList.some(b => backMatchScore(t, b) >= 60)) return false; // Deck-Wort, aber noch nicht gelernt
+    // sonst: Funktionswort → ignorieren
+  }
+  return true;
+}
+
+// Sammelt bis zu 6 freischaltbare Lückensätze (neueste Wörter zuerst),
+// die noch nicht geübt wurden.
+function collectUnlockedSentences(session) {
+  const { knownCards, deck } = session;
+  const done = new Set(getSentencesDone(session.deckId));
+  const knownBackList = knownCards.map(c => c.back.toLowerCase());
+  const knownBackSet = new Set(knownBackList);
+  const deckBackList = deck.cards.map(c => c.back.toLowerCase());
+
+  const eligible = [];
+  for (let i = knownCards.length - 1; i >= 0 && eligible.length < 6; i--) {
+    const card = knownCards[i];
+    if (done.has(card.front) || !card.example) continue;
+    if (!findGapSentence(card.example, card.back)) continue;
+    if (sentenceIsKnown(card.example, knownBackSet, knownBackList, deckBackList)) {
+      eligible.push(card);
+    }
+  }
+  return eligible;
 }
 
 function courseBadge(text) {
@@ -672,6 +728,8 @@ function courseGrade(session, card, isCorrect) {
     session.queue.shift();
     session.currentIndex++;
     session.correctAnswers++;
+    // Gemeisterten Lückensatz merken → wird nicht erneut abgefragt.
+    if (session.phase === 'sentences') session.sentencesCompleted.push(card.front);
   } else {
     session.queue.push(session.queue.shift());
   }
@@ -699,7 +757,8 @@ function courseGrade(session, card, isCorrect) {
 function renderCourseWordMC(session) {
   const card = session.queue[0];
   const lang = session.deck.language;
-  const options = buildMCOptions(card, session.deck.cards);
+  // Distraktoren nur aus bereits gelernten Wörtern.
+  const options = buildMCOptions(card, session.knownCards);
   const learnArea = document.getElementById('learnArea');
 
   learnArea.innerHTML = `
@@ -786,18 +845,17 @@ function findGapSentence(example, back) {
 function renderCourseGapFill(session) {
   const card = session.queue[0];
   const lang = session.deck.language;
-  const options = buildMCOptions(card, session.deck.cards);
+  // Distraktoren nur aus bereits gelernten Wörtern.
+  const options = buildMCOptions(card, session.knownCards);
   const learnArea = document.getElementById('learnArea');
 
-  const gapped = card.example ? findGapSentence(card.example, card.back) : null;
+  // Sätze in der Warteschlange sind garantiert lückenfähig (Vorauswahl).
+  const gapped = findGapSentence(card.example, card.back);
 
-  const question = gapped
-    ? `<p class="fc-label">${getLangName(lang)}</p>
+  const question =
+    `<p class="fc-label">${getLangName(lang)}</p>
        <div class="gap-sentence">${escHtml(gapped)}</div>
-       <p class="prompt">Welches Wort gehört in die Lücke?</p>`
-    : `<p class="fc-label">Deutsch</p>
-       <div class="gap-sentence">${escHtml(card.exampleDE || card.front)}</div>
-       <p class="prompt">Welches Wort gehört zu diesem Satz?</p>`;
+       <p class="prompt">Welches Wort gehört in die Lücke?</p>`;
 
   learnArea.innerHTML = `
     <div class="mc-card">
@@ -848,6 +906,8 @@ function renderCourseGapFill(session) {
 
 function endCourseLesson(session) {
   advanceCourse(session.deckId, session.lessonCards.length);
+  markSentencesDone(session.deckId, session.sentencesCompleted);
+  const sentencesLearned = session.sentencesCompleted.length;
 
   const userStats = getUserStats();
   userStats.totalSessions = (userStats.totalSessions || 0) + 1;
@@ -874,9 +934,14 @@ function endCourseLesson(session) {
 
   const nextLesson = lessonNumber(session.deckId);
 
+  const sentenceNote = sentencesLearned > 0
+    ? `<p style="color:var(--gray);margin-bottom:14px">Und du hast <b>${sentencesLearned}</b> ${sentencesLearned === 1 ? 'Satz' : 'Sätze'} freigeschaltet und geübt — aus Wörtern, die du schon kennst.</p>`
+    : `<p style="color:var(--gray);margin-bottom:14px">Ganze Sätze schaltest du frei, sobald du genug Wörter für sie gelernt hast.</p>`;
+
   document.getElementById('learnArea').innerHTML = `
     <h3 style="font-size:1.6rem;margin-bottom:12px">🎉 Lektion ${session.lesson} geschafft!</h3>
-    <p style="color:var(--gray);margin-bottom:14px">${session.lessonCards.length} neue Wörter gelernt — sie fließen jetzt in dein Level-System ein.</p>
+    <p style="color:var(--gray);margin-bottom:6px">${session.lessonCards.length} neue Wörter gelernt — sie fließen jetzt in dein Level-System ein.</p>
+    ${sentenceNote}
     <div class="session-rewards">
       <span class="reward-pill reward-pill--xp"><i class="fas fa-bolt"></i> +${xpTotal} XP</span>
       ${perfect ? '<span class="reward-pill reward-pill--perfect"><i class="fas fa-star"></i> Fehlerfrei!</span>' : ''}

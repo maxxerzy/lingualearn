@@ -2,9 +2,13 @@
 
 Vokabeltrainer für **Dänisch, Griechisch, Französisch, Spanisch, Latein und Russisch** — als reine statische Web-App ohne Server, Build-Schritt oder externe Dienste.
 
-**Features:** Karteikarten mit IPA-Aussprache-Tooltips und deutschen Beispielsatz-Übersetzungen · Multiple Choice · Vergleichsmodus · Spaced-Repetition-Levelsystem (fällige Karten) · XP, Level & Tages-Streaks · Erfolge & Aktivitäts-Heatmap · Deck-Import/-Export · mehrere lokale Nutzerkonten · **offline nutzbar (PWA)**.
+**Features:** Geführter Lernkurs (Basic 101) · Karteikarten mit IPA-Aussprache-Tooltips und deutschen Beispielsatz-Übersetzungen · Multiple Choice · Vergleichsmodus · Spaced-Repetition-Levelsystem (fällige Karten) · XP, Level & Tages-Streaks · Erfolge & Aktivitäts-Heatmap · Deck-Import/-Export · mehrere lokale Nutzerkonten · **offline nutzbar (PWA)**.
 
 Alle Daten (Konten, Lernstand, Statistiken) bleiben im `localStorage` des Browsers — nichts verlässt das Gerät.
+
+## Eigene Decks
+
+Du kannst eigene Vokabeldecks hinzufügen — per JSON-Import in der App (ohne Code) oder als Datei im Projekt. Format, Vorlage und Schritt-für-Schritt-Anleitung: **[DECKS.md](DECKS.md)**.
 
 ## Deployment auf Cloudflare Pages (Free)
 
