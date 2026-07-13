@@ -38,7 +38,23 @@ export function reinitCourse() { cache = null; cacheKey = null; }
 
 export function getCourseState(deckId) {
   const st = load()[deckId];
-  return { introduced: st?.introduced || 0 };
+  return { introduced: st?.introduced || 0, sentencesDone: st?.sentencesDone || [] };
+}
+
+// Fronts der Karten, deren Lückensatz bereits geübt wurde.
+export function getSentencesDone(deckId) {
+  return load()[deckId]?.sentencesDone || [];
+}
+
+export function markSentencesDone(deckId, fronts) {
+  if (!fronts || fronts.length === 0) return;
+  const map = load();
+  const st = map[deckId] || { introduced: 0 };
+  const set = new Set(st.sentencesDone || []);
+  fronts.forEach(f => set.add(f));
+  st.sentencesDone = [...set];
+  map[deckId] = st;
+  persist();
 }
 
 export function lessonNumber(deckId) {
