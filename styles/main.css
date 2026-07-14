@@ -822,7 +822,7 @@ label {
   .learn-panel .panel { margin-bottom: 0; }
 
   /* Modus-Buttons nebeneinander, sobald das Panel volle Breite hat */
-  .mode-tabs { flex-direction: row; }
+  .mode-tabs { flex-direction: row; flex-wrap: wrap; }
   .mode-btn  {
     flex: 1;
     min-width: 0;
@@ -903,7 +903,7 @@ label {
   .progress { flex: 1; }
 
   /* Mode tabs: horizontal row on mobile (already vertical on desktop) */
-  .mode-tabs { flex-direction: row; }
+  .mode-tabs { flex-direction: row; flex-wrap: wrap; }
   .mode-btn  {
     flex: 1;
     min-width: 0;

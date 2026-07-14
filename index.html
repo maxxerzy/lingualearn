@@ -125,10 +125,16 @@
                   <button type="button" class="mode-btn" data-mode="comparison">
                     <i class="fas fa-random"></i> Vergleich
                   </button>
+                  <button type="button" class="mode-btn" data-mode="listen">
+                    <i class="fas fa-headphones"></i> Hören
+                  </button>
                 </div>
                 <div class="course-progress" id="courseProgress">
                   <i class="fas fa-graduation-cap"></i> <span id="courseProgressText"></span>
                 </div>
+                <button type="button" class="map-trigger" id="coursemapBtn">
+                  <i class="fas fa-map-signs"></i> Lernkarte anzeigen
+                </button>
               </div>
               <label class="due-toggle" for="dueOnly">
                 <input type="checkbox" id="dueOnly">
@@ -317,6 +323,18 @@
 
       </div>
     </main>
+
+    <!-- Lern-Landkarte (Modal) -->
+    <div class="modal" id="coursemapModal" hidden>
+      <div class="modal__backdrop"></div>
+      <div class="modal__box" role="dialog" aria-label="Lernkarte">
+        <div class="modal__head">
+          <h3><i class="fas fa-map-signs"></i> <span id="coursemapTitle">Lernkarte</span></h3>
+          <button type="button" class="modal__close" aria-label="Schließen"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal__body" id="coursemapBody"></div>
+      </div>
+    </div>
 
   </div>
 

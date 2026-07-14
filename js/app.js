@@ -11,6 +11,7 @@ import { reinitCosmetics } from '../core/cosmetics.js';
 import { renderGamiHeader, renderLearnWidgets, renderStatsExtras } from '../ui/gami.js';
 import { applyCosmetics, initRewards, renderRewards } from '../ui/cosmetics.js';
 import { renderWotd, reinitWotd } from '../ui/wotd.js';
+import { initCourseMap } from '../ui/coursemap.js';
 
 let appInitialized = false;
 
@@ -49,6 +50,7 @@ function showApp() {
     appInitialized = true;
     const activateView = initNavigation();
     initSettings();
+    initCourseMap();
     initRewards();
     setupModeTabs();
     document.getElementById('startBtn').addEventListener('click', startSession);

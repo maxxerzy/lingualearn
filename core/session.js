@@ -107,6 +107,8 @@ export async function startSession() {
     showFlashcard();
   } else if (mode === 'multiplechoice') {
     showMultipleChoice();
+  } else if (mode === 'listen') {
+    showListenDuel();
   } else {
     showNextCard();
   }
@@ -388,6 +390,81 @@ function checkMCAnswer(selectedIdx) {
   `;
 
   document.getElementById('mcNext').addEventListener('click', showMultipleChoice);
+}
+
+// ── AUSSPRACHE-DUELL (Hörverständnis) ────────────────────────────
+// Das Wort wird vorgelesen; aus 4 Schreibweisen die richtige wählen.
+function showListenDuel() {
+  const session = getCurrentSession();
+  if (!session || session.currentIndex >= session.cards.length) {
+    endSession();
+    return;
+  }
+
+  const card = session.cards[session.currentIndex];
+  const lang = session.deck.language;
+  const options = buildMCOptions(card, session.cards);
+
+  const learnArea = document.getElementById('learnArea');
+  learnArea.innerHTML = `
+    <div class="mc-card listen-card">
+      <p class="fc-label">Hörverständnis</p>
+      <button type="button" class="listen-play" id="listenPlay" title="Nochmal abspielen">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <p class="prompt">Welches Wort hast du gehört?</p>
+      ${mcOptionsMarkup(options)}
+    </div>
+  `;
+
+  session.currentIndex++;
+  session.currentPrompt = { card, options };
+  setCurrentSession(session);
+  updateProgress();
+
+  // Autoplay + Wiederholung auf Knopfdruck.
+  speakWord(card.back, lang);
+  document.getElementById('listenPlay').addEventListener('click', () => speakWord(card.back, lang));
+
+  learnArea.querySelectorAll('.mc-option').forEach(btn => {
+    btn.addEventListener('click', () => checkListenAnswer(Number(btn.dataset.idx)));
+  });
+}
+
+function checkListenAnswer(selectedIdx) {
+  const session = getCurrentSession();
+  const userStats = getUserStats();
+  const { card, options } = session.currentPrompt;
+  const lang = session.deck.language;
+
+  const { isCorrect } = markMcAnswer(options, selectedIdx, card);
+
+  if (isCorrect) {
+    session.correctAnswers++;
+    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+    userStats.totalCorrect = (userStats.totalCorrect || 0) + 1;
+  }
+  userStats.totalAnswered = (userStats.totalAnswered || 0) + 1;
+  userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
+  setUserStats(userStats);
+  updateStats();
+  session.currentPrompt = null;
+  setCurrentSession(session);
+
+  recordAnswerEffects(session, card, isCorrect, isCorrect);
+
+  const fb = document.getElementById('mc-fb');
+  fb.innerHTML = `
+    ${isCorrect
+      ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
+      : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(card.back)}</b></p></div>`}
+    <p class="listen-reveal">${escHtml(card.back)} — <b>${escHtml(card.front)}</b></p>
+    <div class="actions" style="margin-top:14px">
+      <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
+    </div>
+  `;
+
+  document.getElementById('mcNext').addEventListener('click', showListenDuel);
 }
 
 // ── COMPARISON MODE ──────────────────────────────────────────────
