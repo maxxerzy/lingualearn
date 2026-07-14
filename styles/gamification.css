@@ -102,6 +102,9 @@
 .daily-goal--done .daily-goal__head i { color: #2e7d32; }
 .daily-goal--done .progress-bar { background: #2e7d32; }
 
+/* Grünes Häkchen, wenn das Tagesziel erreicht/übererfüllt ist. */
+.daily-goal__check { color: #2e7d32; margin-right: 0 !important; margin-left: 3px; font-size: 1em; }
+
 /* ── Session-Zusammenfassung: Belohnungs-Pillen ────────────────── */
 .session-rewards {
   display: flex;

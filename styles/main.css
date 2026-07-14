@@ -27,7 +27,6 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--app-bg);
-  background-attachment: fixed;
   color: var(--dark);
   line-height: 1.6;
   min-height: 100vh;
@@ -333,9 +332,15 @@ main { display: block; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition);
+  /* Ring (box-shadow) NICHT animieren → beim Ausschalten sofort weg. */
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
-.config-icon-btn:hover { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 8%, var(--surface)); }
+/* Hover nur auf echten Zeigegeräten — sonst „klebt" der Hover-Rahmen auf
+   dem Handy nach dem Antippen fest und sieht aus wie „noch an". */
+@media (hover: hover) {
+  .config-icon-btn:hover { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 8%, var(--surface)); }
+}
+.config-icon-btn:focus:not(:focus-visible) { outline: none; }
 /* „Nur fällige Karten" ist standardmäßig AUS. Einmal antippen → AN:
    der Rahmen bleibt sichtbar (kräftiger Ring), bis man wieder AUS tippt. */
 .config-due-btn.active {
@@ -1094,21 +1099,6 @@ label {
   #view-learn.session-active .card { justify-content: center; }
 }
 
-/* ── Vertikales Einrasten (nur im Konfig-Screen des Lernbereichs) ──
-   Scrollt man ein wenig, rastet die Ansicht wieder oben ein: entweder
-   ganz oben bei „LinguaLearn" oder bündig bei der „Lernsession"-Karte.
-   Bewusst „proximity" (sanft) statt „mandatory", damit nichts festhängt;
-   in einer laufenden Session und in anderen Ansichten aus. */
-@media (max-width: 1200px) {
-  html:has(#view-learn.active:not(.session-active)) {
-    scroll-snap-type: y proximity;
-    scroll-padding-top: 118px;   /* ~ Höhe der (mobilen) Kopfzeile */
-  }
-  #view-learn.active:not(.session-active) .config-panel {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-}
 
 /* Sehr kurze Screens (z. B. iPhone SE): auch den Konfig-Screen enger
    schnüren, damit er ohne Scrollen passt. */
@@ -1153,6 +1143,7 @@ label {
     min-height: 100vh;
     min-height: 100dvh;
     box-shadow: none;
+    overflow: visible;   /* nichts abschneiden → Ansichten (z. B. Statistik) scrollen zuverlässig */
   }
 
   /* Safe-Area für Notch/Dynamic Island (viewport-fit=cover) */

@@ -163,6 +163,8 @@ function setupDueToggle() {
     chk.checked = !chk.checked;
     btn.classList.toggle('active', chk.checked);
     btn.setAttribute('aria-pressed', chk.checked ? 'true' : 'false');
+    // Fokus abgeben, damit nach dem Ausschalten kein Rahmen „hängen bleibt".
+    btn.blur();
     const n = document.getElementById('dueCount')?.textContent || '0';
     showToast(chk.checked
       ? `<i class="fas fa-filter toast__icon"></i><div class="toast__body"><b>Nur fällige Karten · An</b><span>${n} fällige Karte(n) in dieser Session</span></div>`

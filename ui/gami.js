@@ -2,13 +2,18 @@ import { getGame, levelInfo, ACHIEVEMENTS } from '../core/gamification.js';
 import { getDeckProgress, getDueFronts } from '../core/cardProgress.js';
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
+import { themeOf } from '../js/data/themes.js';
 
-// „Leitbegriff" einer Lektion: das längste deutsche Wort ihrer Karten —
-// meist ein Inhaltswort, das die Lektion griffig beschreibt.
-function lessonLeadWord(deck, lessonNum) {
+// Fallback-Titel, falls ein Deck (noch) keine thematischen Lektions-Titel
+// mitbringt: häufigstes Thema der 8 Wörter, sonst das markanteste Wort.
+function fallbackLessonTitle(deck, lessonNum) {
   const from = (lessonNum - 1) * LESSON_SIZE;
   const slice = (deck?.cards || []).slice(from, from + LESSON_SIZE);
   if (!slice.length) return null;
+  const counts = {};
+  for (const c of slice) { const t = themeOf(c.front); if (t) counts[t] = (counts[t] || 0) + 1; }
+  const best = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
+  if (best && best[1] >= 2) return best[0];
   return slice.map(c => c.front).sort((a, b) => b.length - a.length)[0];
 }
 
@@ -66,40 +71,52 @@ export function renderLearnWidgets() {
     const dueBadge = document.getElementById('dueCount');
     if (dueBadge) dueBadge.hidden = dueN === 0;
 
-    // Lernkurs-Zeile: Lektion mit Leitbegriff + Fortschritt des Decks.
+    // Lernkurs-Zeile + Start-Button. Der genaue Lektions-Zuschnitt (Titel,
+    // Nummer) steht erst nach dem Laden des Decks fest (thematischer Plan).
     const { introduced } = getCourseState(deckId);
-    const L = lessonNumber(deckId);
     const done = introduced >= total && total > 0;
+    const activeMode = document.querySelector('.mode-btn.active')?.dataset.mode;
+
+    // Die „Lektion N"-Zeile ist nur im Lernkurs relevant.
+    const courseWrap = document.getElementById('courseProgress');
+    if (courseWrap) courseWrap.style.display = activeMode === 'course' ? '' : 'none';
+
     setText('courseProgressText', done
       ? `Kurs abgeschlossen — alle ${total} Wörter gelernt`
-      : `Lektion ${L} · ${introduced}/${total} Wörter`);
-    // Leitbegriff nachladen (Deck-Karten kommen ggf. asynchron).
-    if (!done) {
-      loadDeck(deckId).then(deck => {
-        if (document.getElementById('deckSelect')?.value !== deckId) return;
-        const word = lessonLeadWord(deck, L);
-        if (word) setText('courseProgressText', `Lektion ${L} · „${word}" · ${introduced}/${total} Wörter`);
-      }).catch(() => {});
+      : `Lektion ${lessonNumber(deckId)} · ${introduced}/${total} Wörter`);
+    const startBtn = document.getElementById('startBtn');
+    if (startBtn && activeMode !== 'course') {
+      startBtn.innerHTML = '<i class="fas fa-play"></i> Session starten';
     }
 
-    // Start-Button-Beschriftung je nach Modus.
-    const startBtn = document.getElementById('startBtn');
-    const activeMode = document.querySelector('.mode-btn.active')?.dataset.mode;
-    if (startBtn) {
-      startBtn.innerHTML = activeMode === 'course'
-        ? `<i class="fas fa-graduation-cap"></i> Lektion ${lessonNumber(deckId)} starten`
-        : '<i class="fas fa-play"></i> Session starten';
+    if (!done) {
+      loadDeck(deckId).then(() => {
+        if (document.getElementById('deckSelect')?.value !== deckId) return;
+        const deck = getDecks()[deckId];
+        const L = lessonNumber(deckId);   // jetzt mit thematischem Plan
+        const title = deck?.lessonTitles?.[L - 1] || fallbackLessonTitle(deck, L);
+        setText('courseProgressText',
+          `Lektion ${L}${title ? ' · ' + title : ''} · ${introduced}/${total} Wörter`);
+        const sb = document.getElementById('startBtn');
+        if (sb && document.querySelector('.mode-btn.active')?.dataset.mode === 'course') {
+          sb.innerHTML = `<i class="fas fa-graduation-cap"></i> Lektion ${L} starten`;
+        }
+      }).catch(() => {});
     }
   }
 
   const g = getGame();
   const today = new Date().toISOString().slice(0, 10);
   const count = g.daily.date === today ? g.daily.count : 0;
-  setText('dailyGoalText', `${count}/${g.dailyGoal}`);
+  const goalHit = count >= g.dailyGoal;
+  // Erreicht → Zahl in Klammern + grünes Häkchen; Balken bei 100 % gekappt.
+  setText('dailyGoalText', goalHit ? `(${count}/${g.dailyGoal})` : `${count}/${g.dailyGoal}`);
   const bar = document.getElementById('dailyGoalBar');
   if (bar) bar.style.width = `${Math.min(100, Math.round((count / g.dailyGoal) * 100))}%`;
   const goalWrap = document.getElementById('dailyGoalWrap');
-  if (goalWrap) goalWrap.classList.toggle('daily-goal--done', count >= g.dailyGoal);
+  if (goalWrap) goalWrap.classList.toggle('daily-goal--done', goalHit);
+  const goalCheck = document.getElementById('dailyGoalCheck');
+  if (goalCheck) goalCheck.hidden = !goalHit;
 }
 
 // ── Statistik-Ansicht: Zusatz-Karten, Heatmap, Erfolge ───────────
