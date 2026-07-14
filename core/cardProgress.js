@@ -1,41 +1,16 @@
-import { getCurrentUser } from './auth.js';
+import { createUserStore } from './userStore.js';
 
 // Leitner-style spaced repetition: each card has a level 0-5.
 // Correct answers move it up, wrong answers move it down.
 // Each level maps to a review interval; a card is "due" once its date passes.
-const KEY_PREFIX = 'lingualearn_cards_';
 const INTERVALS_DAYS = [0, 1, 2, 4, 8, 16];
 export const MAX_LEVEL = 5;
 
-let cache = null;
-let cacheKey = null;
-
-function storageKey() {
-  const user = getCurrentUser();
-  return user ? KEY_PREFIX + user : null;
-}
-
-function load() {
-  const key = storageKey();
-  if (!key) return {};
-  if (cache && cacheKey === key) return cache;
-  try {
-    cache = JSON.parse(localStorage.getItem(key) || '{}');
-  } catch {
-    cache = {};
-  }
-  cacheKey = key;
-  return cache;
-}
-
-function persist() {
-  const key = storageKey();
-  if (!key || !cache) return;
-  try { localStorage.setItem(key, JSON.stringify(cache)); } catch { /* voll — ignorieren */ }
-}
+const store = createUserStore('lingualearn_cards_');
+const load = () => store.get();
 
 // Nach Login neu laden, damit der Zustand des richtigen Nutzers gilt.
-export function reinitCardProgress() { cache = null; cacheKey = null; }
+export function reinitCardProgress() { store.reinit(); }
 
 function dateStr(offsetDays = 0) {
   const d = new Date();
@@ -63,7 +38,7 @@ export function recordCardAnswer(deckId, front, rating) {
   st.level = Math.min(MAX_LEVEL, Math.max(0, st.level + delta));
   st.due = dateStr(INTERVALS_DAYS[st.level]);
   map[k] = st;
-  persist();
+  store.save(map);
   return st;
 }
 
