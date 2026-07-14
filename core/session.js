@@ -49,6 +49,10 @@ function enterFocus(mode) {
   if (mapBtn) mapBtn.hidden = mode !== 'course';
   const menu = document.getElementById('sessionModeMenu');
   if (menu) menu.hidden = true;
+  // Modus-Knopf zeigt das Icon des aktuellen Modus (+ Pfeil aus dem CSS).
+  const icon = document.getElementById('sessionModeIcon');
+  const srcIcon = document.querySelector(`.mode-btn[data-mode="${mode}"] i`);
+  if (icon && srcIcon) icon.className = srcIcon.className;
 }
 
 // Session verlassen → zurück zur Konfiguration.
