@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/button-animations.css">
   <link rel="stylesheet" href="styles/gamification.css">
+  <link rel="stylesheet" href="styles/cosmetics.css">
 </head>
 <body>
 
@@ -65,13 +66,17 @@
         </div>
         <div class="user-menu" id="userMenu">
           <button type="button" class="user-chip" id="userChipBtn">
-            <i class="fas fa-user-circle"></i>
+            <i class="fas fa-user-circle user-chip__avatar" id="userAvatar"></i>
             <span id="userName"></span>
+            <span class="user-title" id="userTitle" hidden></span>
             <i class="fas fa-caret-down user-chip__caret"></i>
           </button>
           <div class="user-dropdown" id="userDropdown" hidden>
             <button type="button" class="user-dropdown__item" data-action="stats">
               <i class="fas fa-chart-bar"></i> Statistik
+            </button>
+            <button type="button" class="user-dropdown__item" data-action="rewards">
+              <i class="fas fa-gift"></i> Belohnungen
             </button>
             <button type="button" class="user-dropdown__item" data-action="settings">
               <i class="fas fa-cog"></i> Einstellungen
@@ -120,10 +125,16 @@
                   <button type="button" class="mode-btn" data-mode="comparison">
                     <i class="fas fa-random"></i> Vergleich
                   </button>
+                  <button type="button" class="mode-btn" data-mode="listen">
+                    <i class="fas fa-headphones"></i> Hören
+                  </button>
                 </div>
                 <div class="course-progress" id="courseProgress">
                   <i class="fas fa-graduation-cap"></i> <span id="courseProgressText"></span>
                 </div>
+                <button type="button" class="map-trigger" id="coursemapBtn">
+                  <i class="fas fa-map-signs"></i> Lernkarte anzeigen
+                </button>
               </div>
               <label class="due-toggle" for="dueOnly">
                 <input type="checkbox" id="dueOnly">
@@ -141,6 +152,7 @@
                   <div class="progress-bar" id="dailyGoalBar" style="width:0%"></div>
                 </div>
               </div>
+              <div class="wotd" id="wotd" hidden></div>
             </div>
 
             <div class="panel learn-panel">
@@ -288,8 +300,41 @@
           </div>
         </section>
 
+        <!-- Rewards / Cosmetics View -->
+        <section id="view-rewards" class="view">
+          <div class="panel">
+            <div class="view-topbar">
+              <button type="button" class="btn-back" id="rewardsBackBtn">
+                <i class="fas fa-arrow-left"></i> Lernen
+              </button>
+              <h2><i class="fas fa-gift"></i> Belohnungen</h2>
+            </div>
+            <p style="color:var(--gray);margin-bottom:16px">Schalte Themes, Avatare, Titel und Karten-Designs frei, indem du lernst, Level aufsteigst und Serien hältst.</p>
+            <div class="rewards-tabs" id="rewardsTabs">
+              <button type="button" class="rewards-tab active" data-cat="theme">Themes</button>
+              <button type="button" class="rewards-tab" data-cat="avatar">Avatare</button>
+              <button type="button" class="rewards-tab" data-cat="title">Titel</button>
+              <button type="button" class="rewards-tab" data-cat="cardDesign">Karten-Designs</button>
+              <button type="button" class="rewards-tab" data-cat="badges">Abzeichen-Vitrine</button>
+            </div>
+            <div id="rewardsBody"></div>
+          </div>
+        </section>
+
       </div>
     </main>
+
+    <!-- Lern-Landkarte (Modal) -->
+    <div class="modal" id="coursemapModal" hidden>
+      <div class="modal__backdrop"></div>
+      <div class="modal__box" role="dialog" aria-label="Lernkarte">
+        <div class="modal__head">
+          <h3><i class="fas fa-map-signs"></i> <span id="coursemapTitle">Lernkarte</span></h3>
+          <button type="button" class="modal__close" aria-label="Schließen"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal__body" id="coursemapBody"></div>
+      </div>
+    </div>
 
   </div>
 

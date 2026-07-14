@@ -1,7 +1,5 @@
 import { deckMeta } from '../js/data/decks/meta.js';
-import { getCurrentUser } from './auth.js';
-
-const STATS_PREFIX = 'lingualearn_stats_';
+import { createUserStore } from './userStore.js';
 
 const defaultStats = {
   successRate: 0,
@@ -13,32 +11,12 @@ const defaultStats = {
   lastSessionDate: null,
 };
 
-function statsKey() {
-  const user = getCurrentUser();
-  return user ? `${STATS_PREFIX}${user}` : null;
-}
-
-function loadStats() {
-  const key = statsKey();
-  if (!key) return { ...defaultStats };
-  try {
-    const raw = localStorage.getItem(key);
-    return raw ? { ...defaultStats, ...JSON.parse(raw) } : { ...defaultStats };
-  } catch {
-    return { ...defaultStats };
-  }
-}
-
-function persistStats(stats) {
-  const key = statsKey();
-  if (!key) return;
-  try {
-    localStorage.setItem(key, JSON.stringify(stats));
-  } catch { /* storage full — ignore */ }
-}
+const statsStore = createUserStore('lingualearn_stats_', {
+  defaults: () => ({ ...defaultStats }),
+  merge: raw => ({ ...defaultStats, ...raw }),
+});
 
 let currentSession = null;
-let userStats = loadStats();
 
 // Build live decks map from metadata — cards start as null until loaded on demand.
 const liveDecks = {};
@@ -108,13 +86,12 @@ export function getDecks() { return liveDecks; }
 export function getCurrentSession() { return currentSession; }
 export function setCurrentSession(session) { currentSession = session; }
 
-export function getUserStats() { return userStats; }
+export function getUserStats() { return statsStore.get(); }
 
 export function setUserStats(stats) {
-  userStats = { ...stats };
-  persistStats(userStats);
+  statsStore.save({ ...stats });
 }
 
 export function reinitUserStats() {
-  userStats = loadStats();
+  statsStore.reinit();
 }

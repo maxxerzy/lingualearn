@@ -31,3 +31,20 @@ export function toastAchievements(list) {
     }, i * 750);
   });
 }
+
+const COSMETIC_LABEL = { theme: 'Theme', avatar: 'Avatar', title: 'Titel', cardDesign: 'Karten-Design' };
+
+export function toastCosmetics(list) {
+  list.forEach((c, i) => {
+    setTimeout(() => {
+      showToast(
+        `<i class="fas fa-gift toast__icon"></i>
+         <div class="toast__body">
+           <b>Neu freigeschaltet!</b>
+           <span>${COSMETIC_LABEL[c.type] || 'Belohnung'}: ${c.name} — unter „Belohnungen"</span>
+         </div>`,
+        { variant: 'achieve', duration: 4200 }
+      );
+    }, i * 750);
+  });
+}

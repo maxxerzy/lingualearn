@@ -1,0 +1,176 @@
+/* ════════════════════════════════════════════════════════════════
+   Cosmetics — freischaltbare Themes, Karten-Designs, Avatare, Titel,
+   Abzeichen-Vitrine. Themes überschreiben nur die Design-Tokens aus
+   main.css; alle Komponenten folgen automatisch via var().
+   ════════════════════════════════════════════════════════════════ */
+
+:root[data-theme="ocean"] {
+  --primary: #0077b6; --secondary: #023e8a; --accent: #00b4d8;
+  --app-bg: linear-gradient(135deg, #caf0f8 0%, #90e0ef 100%);
+}
+:root[data-theme="sunset"] {
+  --primary: #e5556e; --secondary: #6d597a; --accent: #f4a261;
+  --app-bg: linear-gradient(135deg, #ffd6a5 0%, #ffb5a7 100%);
+}
+:root[data-theme="forest"] {
+  --primary: #2d6a4f; --secondary: #1b4332; --accent: #74c69d;
+  --app-bg: linear-gradient(135deg, #d8f3dc 0%, #b7e4c7 100%);
+}
+:root[data-theme="royal"] {
+  --primary: #7b2cbf; --secondary: #3c096c; --accent: #ffbe0b;
+  --app-bg: linear-gradient(135deg, #e0c3fc 0%, #b298dc 100%);
+}
+/* Mitternacht — echtes Dunkeldesign: Flächen und Textfarben tauschen. */
+:root[data-theme="dark"] {
+  --primary: #6c8cff; --secondary: #4361ee; --accent: #f72585;
+  --app-bg: #12161c;
+  --surface: #1e2530;
+  --bg: #12161c;
+  --light: #262f3d;
+  --light-gray: #2c3440;
+  --dark: #e9ecef;
+  --gray: #9aa5b1;
+  --shadow: 0 4px 12px rgba(0,0,0,.4);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.55);
+}
+
+/* ── Avatar & Titel im Header ──────────────────────────────────── */
+.user-chip__avatar { font-size: 1.05rem; }
+.user-title {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary) 14%, transparent);
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ── Karten-Designs (auf #learnArea) ───────────────────────────── */
+.card--paper {
+  background:
+    repeating-linear-gradient(var(--surface), var(--surface) 27px, color-mix(in srgb, var(--primary) 8%, transparent) 28px);
+}
+.card--gold {
+  border: 2px solid #e6b800;
+  box-shadow: inset 0 0 0 3px color-mix(in srgb, #ffd700 25%, transparent), var(--shadow);
+}
+.card--neon {
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.card--sakura {
+  background:
+    radial-gradient(circle at 12% 12%, color-mix(in srgb, #ff8fab 20%, transparent) 0 12px, transparent 13px),
+    radial-gradient(circle at 88% 82%, color-mix(in srgb, #ffb3c6 22%, transparent) 0 16px, transparent 17px),
+    var(--surface);
+}
+
+/* ── Belohnungen-Ansicht ───────────────────────────────────────── */
+.rewards-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.rewards-tab {
+  padding: 8px 14px;
+  min-height: 40px;
+  border: 1.5px solid var(--light-gray);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--gray);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.rewards-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+.cosmetic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.cosmetic {
+  position: relative;
+  padding: 16px 12px;
+  border-radius: 14px;
+  border: 2px solid var(--light-gray);
+  background: var(--surface);
+  text-align: center;
+  transition: var(--transition);
+}
+.cosmetic--locked { opacity: 0.55; filter: grayscale(0.7); }
+.cosmetic--equipped { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 22%, transparent); }
+
+.cosmetic__swatch {
+  height: 46px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.cosmetic__name { font-weight: 700; font-size: 0.9rem; }
+.cosmetic__req  { font-size: 0.74rem; color: var(--gray); margin-top: 3px; min-height: 1.4em; }
+
+.cosmetic__btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 7px 0;
+  min-height: 38px;
+  border: none;
+  border-radius: 9px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.cosmetic__btn[disabled] { background: var(--light-gray); color: var(--gray); cursor: default; }
+.cosmetic--equipped .cosmetic__btn { background: color-mix(in srgb, var(--primary) 20%, transparent); color: var(--primary); }
+
+.cosmetic__lock {
+  position: absolute;
+  top: 8px; right: 10px;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+/* ── Abzeichen-Vitrine ─────────────────────────────────────────── */
+.badge-shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+.badge {
+  padding: 14px 10px;
+  border-radius: 14px;
+  text-align: center;
+  border: 2px solid var(--light-gray);
+  background: var(--surface);
+  opacity: 0.5;
+  filter: grayscale(1);
+  transition: var(--transition);
+}
+.badge--earned { opacity: 1; filter: none; }
+.badge__medal { font-size: 1.8rem; margin-bottom: 6px; }
+.badge__name { font-weight: 700; font-size: 0.84rem; }
+.badge__rarity { font-size: 0.72rem; font-weight: 700; margin-top: 2px; text-transform: uppercase; letter-spacing: .4px; }
+
+.badge--bronze    .badge__medal { color: #cd7f32; }
+.badge--silber    .badge__medal { color: #9aa5b1; }
+.badge--gold      .badge__medal { color: #f5b301; }
+.badge--legendaer .badge__medal { color: #b06cf7; }
+.badge--bronze    .badge__rarity { color: #cd7f32; }
+.badge--silber    .badge__rarity { color: #8a949e; }
+.badge--gold      .badge__rarity { color: #d99a00; }
+.badge--legendaer .badge__rarity { color: #b06cf7; }
+.badge--earned.badge--legendaer { box-shadow: 0 0 16px color-mix(in srgb, #b06cf7 40%, transparent); }

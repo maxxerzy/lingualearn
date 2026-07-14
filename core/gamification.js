@@ -1,8 +1,6 @@
-import { getCurrentUser } from './auth.js';
 import { getUserStats } from './state.js';
 import { countMasteredAll } from './cardProgress.js';
-
-const KEY_PREFIX = 'lingualearn_game_';
+import { createUserStore } from './userStore.js';
 
 const DEFAULTS = {
   xp: 0,
@@ -18,34 +16,20 @@ const DEFAULTS = {
 
 export const XP = { correct: 10, wrong: 2, session: 50, perfect: 100 };
 
-let game = null;
-let gameKey = null;
+const store = createUserStore('lingualearn_game_', {
+  defaults: () => structuredClone(DEFAULTS),
+  merge: raw => ({
+    ...structuredClone(DEFAULTS),
+    ...raw,
+    daily: { ...DEFAULTS.daily, ...(raw.daily || {}) },
+    streak: { ...DEFAULTS.streak, ...(raw.streak || {}) },
+  }),
+});
 
-function storageKey() {
-  const user = getCurrentUser();
-  return user ? KEY_PREFIX + user : null;
-}
+const load = () => store.get();
+const persist = () => store.save(load());
 
-function load() {
-  const key = storageKey();
-  if (!key) return structuredClone(DEFAULTS);
-  if (game && gameKey === key) return game;
-  let raw = {};
-  try { raw = JSON.parse(localStorage.getItem(key) || '{}'); } catch { raw = {}; }
-  game = { ...structuredClone(DEFAULTS), ...raw };
-  game.daily = { ...DEFAULTS.daily, ...(raw.daily || {}) };
-  game.streak = { ...DEFAULTS.streak, ...(raw.streak || {}) };
-  gameKey = key;
-  return game;
-}
-
-function persist() {
-  const key = storageKey();
-  if (!key || !game) return;
-  try { localStorage.setItem(key, JSON.stringify(game)); } catch { /* ignorieren */ }
-}
-
-export function reinitGame() { game = null; gameKey = null; }
+export function reinitGame() { store.reinit(); }
 export function getGame() { return load(); }
 
 function todayStr() { return new Date().toISOString().slice(0, 10); }
@@ -101,6 +85,14 @@ export function recordGameAnswer(correct) {
     g.daily.goalHit = true;
     g.goalHitEver = true;
   }
+  persist();
+  return g;
+}
+
+// Bonus-XP ohne Antwort (z. B. „Wort des Tages").
+export function addBonusXp(n) {
+  const g = load();
+  g.xp += n;
   persist();
   return g;
 }

@@ -2,14 +2,22 @@ import { loadDeck, getCurrentSession, setCurrentSession, getUserStats, setUserSt
 import { updateProgress } from './progress.js';
 import { updateStats } from './stats.js';
 import { shuffleArray } from '../utils/helpers.js';
+import { isCognate } from '../utils/cognate.js';
 import { recordCardAnswer, getDueFronts } from './cardProgress.js';
 import { recordGameAnswer, recordSessionEnd, checkAchievements, XP } from './gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../ui/gami.js';
-import { toastAchievements } from '../ui/toast.js';
+import { toastAchievements, toastCosmetics } from '../ui/toast.js';
+import { checkNewCosmetics } from './cosmetics.js';
 import { nextLessonCards, lessonNumber, advanceCourse, getCourseState, getSentencesDone, markSentencesDone } from './course.js';
 
-const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU' };
-const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch', fr: 'Französisch', es: 'Spanisch', la: 'Latein', ru: 'Russisch' };
+// Erfolge prüfen + einblenden, danach dadurch freigeschaltete Cosmetics.
+function announceUnlocks() {
+  toastAchievements(checkAchievements());
+  toastCosmetics(checkNewCosmetics());
+}
+
+const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU', ja: 'ja-JP' };
+const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch', fr: 'Französisch', es: 'Spanisch', la: 'Latein', ru: 'Russisch', ja: 'Japanisch' };
 
 function getLangCode(lang) {
   return LANG_CODES[lang] || lang;
@@ -31,6 +39,14 @@ function speakWord(text, lang) {
 export function getSelectedMode() {
   const btn = document.querySelector('.mode-btn.active');
   return btn ? btn.dataset.mode : 'flashcard';
+}
+
+// Kognat-Hinweis: verwandte Wörter merkt man sich leichter.
+function cognateChip(card) {
+  if (!isCognate(card.front, card.back, card.roman)) return '';
+  return `<div class="cognate-chip" title="Dieses Wort ist mit dem deutschen „${escHtml(card.front)}" verwandt — leichter zu merken!">
+    <i class="fas fa-link"></i> verwandt mit „${escHtml(card.front)}"
+  </div>`;
 }
 
 export async function startSession() {
@@ -91,6 +107,8 @@ export async function startSession() {
     showFlashcard();
   } else if (mode === 'multiplechoice') {
     showMultipleChoice();
+  } else if (mode === 'listen') {
+    showListenDuel();
   } else {
     showNextCard();
   }
@@ -153,6 +171,7 @@ function showFlashcardBack(card) {
           <i class="fas fa-volume-up"></i>
         </button>
       </div>
+      ${cognateChip(card)}
       ${card.example ? `
         <div class="fc-example-block">
           <p class="fc-example${pron ? ' has-ipa' : ''}"${pron ? ' tabindex="0"' : ''}>
@@ -219,12 +238,7 @@ function rateFlashcard(card, rating) {
   setUserStats(userStats);
   updateStats();
 
-  recordCardAnswer(session.deckId, card.front, rating);
-  recordGameAnswer(isCorrect);
-  session.xpFromAnswers = (session.xpFromAnswers || 0) + (isCorrect ? XP.correct : XP.wrong);
-  renderGamiHeader();
-  renderLearnWidgets();
-  toastAchievements(checkAchievements());
+  recordAnswerEffects(session, card, isCorrect, rating);
 
   if (session.queue.length === 0) {
     if (session.reviewQueue.length > 0) {
@@ -264,20 +278,7 @@ function showMultipleChoice() {
       <p class="fc-label">Deutsch</p>
       <div class="fc-word mc-question">${escHtml(card.front)}</div>
       <p class="prompt">${getLangName(lang)} — welche Übersetzung stimmt?</p>
-      <div class="mc-options">
-        ${options.map((opt, i) => `
-          <button type="button" class="btn mc-option" data-idx="${i}">
-            <span class="mc-key">${'ABCD'[i]}</span>
-            <span class="mc-text">
-              ${escHtml(opt.back)}
-              <span class="audio-btn mc-audio" role="button" tabindex="0" data-text="${escHtml(opt.back)}" title="Aussprache">
-                <i class="fas fa-volume-up"></i>
-              </span>
-            </span>
-          </button>
-        `).join('')}
-      </div>
-      <div id="mc-fb"></div>
+      ${mcOptionsMarkup(options, { withAudio: true })}
     </div>
   `;
 
@@ -310,20 +311,55 @@ function buildMCOptions(card, cards) {
   return shuffleArray([card, ...wrongs]);
 }
 
+// Gemeinsames Markup der Antwort-Optionen (A–D) + Feedback-Container.
+// withAudio blendet je Option einen Aussprache-Knopf ein (nur MC-Modus).
+function mcOptionsMarkup(options, { withAudio = false } = {}) {
+  return `
+      <div class="mc-options">
+        ${options.map((opt, i) => `
+          <button type="button" class="btn mc-option" data-idx="${i}">
+            <span class="mc-key">${'ABCD'[i]}</span>
+            <span class="mc-text">${escHtml(opt.back)}${withAudio ? `
+              <span class="audio-btn mc-audio" role="button" tabindex="0" data-text="${escHtml(opt.back)}" title="Aussprache">
+                <i class="fas fa-volume-up"></i>
+              </span>` : ''}</span>
+          </button>
+        `).join('')}
+      </div>
+      <div id="mc-fb"></div>`;
+}
+
+// Deaktiviert die Optionen und markiert richtig/falsch. Gibt Auswertung zurück.
+function markMcAnswer(options, chosenIdx, card) {
+  const correctIdx = options.findIndex(o => o.back === card.back);
+  const isCorrect = options[chosenIdx].back === card.back;
+  document.querySelectorAll('.mc-option').forEach((b, i) => {
+    b.disabled = true;
+    if (i === correctIdx) b.classList.add('mc-correct');
+    else if (i === chosenIdx && !isCorrect) b.classList.add('mc-wrong');
+  });
+  return { isCorrect, correctIdx };
+}
+
+// Gemeinsamer Abschluss jeder Antwort: SRS-Level, XP, Header/Widgets, Erfolge.
+// ratingOrBool geht an das SRS (Flashcard: 'easy'|'good'|'hard'|'again';
+// die MC/Vergleich/Kurs-Pfade übergeben einfach isCorrect).
+function recordAnswerEffects(session, card, isCorrect, ratingOrBool) {
+  recordCardAnswer(session.deckId, card.front, ratingOrBool);
+  recordGameAnswer(isCorrect);
+  session.xpFromAnswers = (session.xpFromAnswers || 0) + (isCorrect ? XP.correct : XP.wrong);
+  renderGamiHeader();
+  renderLearnWidgets();
+  announceUnlocks();
+}
+
 function checkMCAnswer(selectedIdx) {
   const session = getCurrentSession();
   const userStats = getUserStats();
   const { card, options } = session.currentPrompt;
-  const chosen = options[selectedIdx];
-  const isCorrect = chosen.back === card.back;
-  const correctIdx = options.findIndex(o => o.back === card.back);
   const lang = session.deck.language;
 
-  document.querySelectorAll('.mc-option').forEach((btn, i) => {
-    btn.disabled = true;
-    if (i === correctIdx) btn.classList.add('mc-correct');
-    else if (i === selectedIdx && !isCorrect) btn.classList.add('mc-wrong');
-  });
+  const { isCorrect } = markMcAnswer(options, selectedIdx, card);
 
   if (isCorrect) {
     session.correctAnswers++;
@@ -338,12 +374,7 @@ function checkMCAnswer(selectedIdx) {
   session.currentPrompt = null;
   setCurrentSession(session);
 
-  recordCardAnswer(session.deckId, card.front, isCorrect);
-  recordGameAnswer(isCorrect);
-  session.xpFromAnswers = (session.xpFromAnswers || 0) + (isCorrect ? XP.correct : XP.wrong);
-  renderGamiHeader();
-  renderLearnWidgets();
-  toastAchievements(checkAchievements());
+  recordAnswerEffects(session, card, isCorrect, isCorrect);
 
   const fb = document.getElementById('mc-fb');
   fb.innerHTML = isCorrect
@@ -359,6 +390,81 @@ function checkMCAnswer(selectedIdx) {
   `;
 
   document.getElementById('mcNext').addEventListener('click', showMultipleChoice);
+}
+
+// ── AUSSPRACHE-DUELL (Hörverständnis) ────────────────────────────
+// Das Wort wird vorgelesen; aus 4 Schreibweisen die richtige wählen.
+function showListenDuel() {
+  const session = getCurrentSession();
+  if (!session || session.currentIndex >= session.cards.length) {
+    endSession();
+    return;
+  }
+
+  const card = session.cards[session.currentIndex];
+  const lang = session.deck.language;
+  const options = buildMCOptions(card, session.cards);
+
+  const learnArea = document.getElementById('learnArea');
+  learnArea.innerHTML = `
+    <div class="mc-card listen-card">
+      <p class="fc-label">Hörverständnis</p>
+      <button type="button" class="listen-play" id="listenPlay" title="Nochmal abspielen">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <p class="prompt">Welches Wort hast du gehört?</p>
+      ${mcOptionsMarkup(options)}
+    </div>
+  `;
+
+  session.currentIndex++;
+  session.currentPrompt = { card, options };
+  setCurrentSession(session);
+  updateProgress();
+
+  // Autoplay + Wiederholung auf Knopfdruck.
+  speakWord(card.back, lang);
+  document.getElementById('listenPlay').addEventListener('click', () => speakWord(card.back, lang));
+
+  learnArea.querySelectorAll('.mc-option').forEach(btn => {
+    btn.addEventListener('click', () => checkListenAnswer(Number(btn.dataset.idx)));
+  });
+}
+
+function checkListenAnswer(selectedIdx) {
+  const session = getCurrentSession();
+  const userStats = getUserStats();
+  const { card, options } = session.currentPrompt;
+  const lang = session.deck.language;
+
+  const { isCorrect } = markMcAnswer(options, selectedIdx, card);
+
+  if (isCorrect) {
+    session.correctAnswers++;
+    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+    userStats.totalCorrect = (userStats.totalCorrect || 0) + 1;
+  }
+  userStats.totalAnswered = (userStats.totalAnswered || 0) + 1;
+  userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
+  setUserStats(userStats);
+  updateStats();
+  session.currentPrompt = null;
+  setCurrentSession(session);
+
+  recordAnswerEffects(session, card, isCorrect, isCorrect);
+
+  const fb = document.getElementById('mc-fb');
+  fb.innerHTML = `
+    ${isCorrect
+      ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
+      : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(card.back)}</b></p></div>`}
+    <p class="listen-reveal">${escHtml(card.back)} — <b>${escHtml(card.front)}</b></p>
+    <div class="actions" style="margin-top:14px">
+      <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
+    </div>
+  `;
+
+  document.getElementById('mcNext').addEventListener('click', showListenDuel);
 }
 
 // ── COMPARISON MODE ──────────────────────────────────────────────
@@ -468,12 +574,7 @@ function checkComparisonAnswer(userSaysMatch) {
   session.currentPrompt = null;
   setCurrentSession(session);
 
-  recordCardAnswer(session.deckId, prompt.card.front, isCorrect);
-  recordGameAnswer(isCorrect);
-  session.xpFromAnswers = (session.xpFromAnswers || 0) + (isCorrect ? XP.correct : XP.wrong);
-  renderGamiHeader();
-  renderLearnWidgets();
-  toastAchievements(checkAchievements());
+  recordAnswerEffects(session, prompt.card, isCorrect, isCorrect);
 
   document.getElementById('nextCard').addEventListener('click', showNextCard);
 }
@@ -526,6 +627,7 @@ function endSession() {
   `;
 
   toastAchievements(freshAchievements);
+  toastCosmetics(checkNewCosmetics());
   document.getElementById('restartSession').addEventListener('click', startSession);
   setCurrentSession(null);
 
@@ -695,6 +797,7 @@ function renderCourseTeach(session) {
         </button>
       </div>
       ${ipaParts.length ? `<div class="course-pron">${ipaParts.join(' · ')}</div>` : ''}
+      ${cognateChip(card)}
       ${card.example ? `
         <div class="fc-example-block">
           <p class="fc-example"><strong>${escHtml(card.example)}</strong></p>
@@ -743,13 +846,8 @@ function courseGrade(session, card, isCorrect) {
   setUserStats(userStats);
   updateStats();
 
-  recordCardAnswer(session.deckId, card.front, isCorrect);
-  recordGameAnswer(isCorrect);
-  session.xpFromAnswers = (session.xpFromAnswers || 0) + (isCorrect ? XP.correct : XP.wrong);
   setCurrentSession(session);
-  renderGamiHeader();
-  renderLearnWidgets();
-  toastAchievements(checkAchievements());
+  recordAnswerEffects(session, card, isCorrect, isCorrect);
   updateProgress();
 }
 
@@ -767,38 +865,19 @@ function renderCourseWordMC(session) {
       <p class="fc-label">Deutsch</p>
       <div class="fc-word mc-question">${escHtml(card.front)}</div>
       <p class="prompt">${getLangName(lang)} — welche Übersetzung stimmt?</p>
-      <div class="mc-options">
-        ${options.map((opt, i) => `
-          <button type="button" class="btn mc-option" data-idx="${i}">
-            <span class="mc-key">${'ABCD'[i]}</span>
-            <span class="mc-text">${escHtml(opt.back)}</span>
-          </button>
-        `).join('')}
-      </div>
-      <div id="mc-fb"></div>
+      ${mcOptionsMarkup(options)}
     </div>
   `;
 
   learnArea.querySelectorAll('.mc-option').forEach(btn => {
     btn.addEventListener('click', () => {
-      const chosen = options[Number(btn.dataset.idx)];
-      const isCorrect = chosen.back === card.back;
-      const correctIdx = options.findIndex(o => o.back === card.back);
-
-      learnArea.querySelectorAll('.mc-option').forEach((b, i) => {
-        b.disabled = true;
-        if (i === correctIdx) b.classList.add('mc-correct');
-        else if (b === btn && !isCorrect) b.classList.add('mc-wrong');
-      });
+      const { isCorrect } = markMcAnswer(options, Number(btn.dataset.idx), card);
       if (isCorrect) speakWord(card.back, lang);
 
       courseGrade(session, card, isCorrect);
 
-      const fb = document.getElementById('mc-fb');
-      fb.innerHTML = `
-        ${isCorrect
-          ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
-          : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(card.back)}</b>. Kommt gleich nochmal.</p></div>`}
+      document.getElementById('mc-fb').innerHTML = `
+        ${courseFeedbackHtml(isCorrect, card)}
         <div class="actions" style="margin-top:14px">
           <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
         </div>
@@ -806,6 +885,13 @@ function renderCourseWordMC(session) {
       document.getElementById('courseNext').addEventListener('click', showCourseStep);
     });
   });
+}
+
+// Feedback-Text für die Kurs-Übungen (richtig / falsch mit Lösung).
+function courseFeedbackHtml(isCorrect, card, extra = '') {
+  return `${isCorrect
+    ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
+    : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(card.back)}</b>. Kommt gleich nochmal.</p></div>`}${extra}`;
 }
 
 // Sucht im Beispielsatz das Wort, das zum Zielwort gehört (auch gebeugte
@@ -861,40 +947,22 @@ function renderCourseGapFill(session) {
     <div class="mc-card">
       ${courseBadge(`<i class="fas fa-comment-dots"></i> Sätze üben — noch ${session.queue.length}`)}
       ${question}
-      <div class="mc-options">
-        ${options.map((opt, i) => `
-          <button type="button" class="btn mc-option" data-idx="${i}">
-            <span class="mc-key">${'ABCD'[i]}</span>
-            <span class="mc-text">${escHtml(opt.back)}</span>
-          </button>
-        `).join('')}
-      </div>
-      <div id="mc-fb"></div>
+      ${mcOptionsMarkup(options)}
     </div>
   `;
 
   learnArea.querySelectorAll('.mc-option').forEach(btn => {
     btn.addEventListener('click', () => {
-      const chosen = options[Number(btn.dataset.idx)];
-      const isCorrect = chosen.back === card.back;
-      const correctIdx = options.findIndex(o => o.back === card.back);
-
-      learnArea.querySelectorAll('.mc-option').forEach((b, i) => {
-        b.disabled = true;
-        if (i === correctIdx) b.classList.add('mc-correct');
-        else if (b === btn && !isCorrect) b.classList.add('mc-wrong');
-      });
+      const { isCorrect } = markMcAnswer(options, Number(btn.dataset.idx), card);
       if (isCorrect) speakWord(card.example || card.back, lang);
 
       courseGrade(session, card, isCorrect);
 
-      const fb = document.getElementById('mc-fb');
-      fb.innerHTML = `
-        ${isCorrect
-          ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
-          : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(card.back)}</b>. Kommt gleich nochmal.</p></div>`}
+      const extra = `
         <p class="fc-example" style="margin-top:10px"><strong>${escHtml(card.example || '')}</strong></p>
-        ${card.exampleDE ? `<p class="fc-example-de">${escHtml(card.exampleDE)}</p>` : ''}
+        ${card.exampleDE ? `<p class="fc-example-de">${escHtml(card.exampleDE)}</p>` : ''}`;
+      document.getElementById('mc-fb').innerHTML = `
+        ${courseFeedbackHtml(isCorrect, card, extra)}
         <div class="actions" style="margin-top:14px">
           <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
         </div>
@@ -955,6 +1023,7 @@ function endCourseLesson(session) {
   `;
 
   toastAchievements(freshAchievements);
+  toastCosmetics(checkNewCosmetics());
   document.getElementById('restartSession').addEventListener('click', startSession);
   setCurrentSession(null);
 
