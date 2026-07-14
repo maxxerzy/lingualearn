@@ -148,7 +148,7 @@
                     <i class="fas fa-list-ul"></i> Multiple Choice
                   </button>
                   <button type="button" class="mode-btn" data-mode="comparison">
-                    <i class="fas fa-random"></i> Vergleich
+                    <i class="fas fa-scale-balanced"></i> Vergleich
                   </button>
                   <button type="button" class="mode-btn" data-mode="listen">
                     <i class="fas fa-headphones"></i> Hören
@@ -163,7 +163,9 @@
               </button>
               <div class="daily-goal" id="dailyGoalWrap">
                 <div class="daily-goal__head">
-                  <span><i class="fas fa-bullseye"></i> Tagesziel</span>
+                  <span><i class="fas fa-bullseye"></i> Tagesziel
+                    <i class="fas fa-circle-check daily-goal__check" id="dailyGoalCheck" hidden title="Tagesziel erreicht"></i>
+                  </span>
                   <span id="dailyGoalText">0/20</span>
                 </div>
                 <div class="progress daily-goal__bar">
@@ -392,7 +394,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v10';
+    var APP_VERSION = 'v11';
     var loginMode = 'login';
 
     function hp(pw) {

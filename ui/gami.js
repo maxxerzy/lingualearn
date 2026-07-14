@@ -3,13 +3,49 @@ import { getDeckProgress, getDueFronts } from '../core/cardProgress.js';
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
 
-// „Leitbegriff" einer Lektion: das längste deutsche Wort ihrer Karten —
-// meist ein Inhaltswort, das die Lektion griffig beschreibt.
-function lessonLeadWord(deck, lessonNum) {
+// Semantische Felder für den „Oberbegriff" einer Lektion. Die Karten-
+// Vorderseiten sind deutsch; die häufigste Kategorie der 8 Wörter einer
+// Lektion wird als Überschrift genutzt (Substantive, Verben & Adjektive).
+const THEME_WORDS = {
+  'Zahlen': ['null','eins','ein','zwei','drei','vier','fünf','sechs','sieben','acht','neun','zehn','elf','zwölf','dreizehn','vierzehn','fünfzehn','zwanzig','dreißig','hundert','tausend','million','zahl'],
+  'Begrüßung': ['hallo','danke','bitte','tschüss','entschuldigung','willkommen','ja','nein','gruß','guten'],
+  'Familie': ['mutter','vater','kind','kinder','bruder','schwester','oma','opa','großmutter','großvater','familie','sohn','tochter','eltern','baby','onkel','tante','ehemann','ehefrau','mann','frau','freund','freundin'],
+  'Essen': ['brot','käse','apfel','ei','eier','fleisch','obst','gemüse','reis','suppe','kuchen','banane','kartoffel','salat','zucker','salz','butter','nudeln','pizza','schokolade','frühstück','mittagessen','abendessen','mahlzeit','hunger','essen','honig','wurst','tomate'],
+  'Trinken': ['wasser','kaffee','tee','milch','saft','bier','wein','getränk','glas','tasse','flasche','durst','trinken'],
+  'Tiere': ['hund','katze','pferd','vogel','fisch','kuh','schwein','maus','tier','tiere','löwe','bär','huhn','ente','schaf','ziege','elefant','affe','wolf','fuchs','hase'],
+  'Körper': ['kopf','hand','hände','fuß','füße','auge','augen','ohr','nase','mund','arm','bein','haar','herz','zahn','zähne','finger','rücken','bauch','gesicht','hals','knie'],
+  'Haus & Wohnen': ['haus','tür','fenster','tisch','stuhl','bett','zimmer','küche','wohnung','wand','dach','garten','lampe','sofa','schrank','spiegel','boden','treppe','keller','bad','badezimmer','schlüssel'],
+  'Kleidung': ['hemd','hose','schuh','schuhe','jacke','kleid','mantel','socke','socken','mütze','kleidung','rock','pullover','hut','handschuh','gürtel','schal'],
+  'Natur': ['baum','blume','sonne','mond','stern','sterne','himmel','meer','berg','fluss','see','wald','erde','wolke','gras','blatt','insel','strand','feld','stein','blumen'],
+  'Wetter': ['wetter','regen','schnee','wind','sturm','nebel','gewitter','temperatur','eis','hitze','kälte'],
+  'Farben': ['rot','blau','grün','gelb','schwarz','weiß','farbe','braun','orange','rosa','grau','lila','bunt','violett'],
+  'Zeit': ['tag','nacht','morgen','abend','woche','monat','jahr','stunde','minute','sekunde','zeit','heute','gestern','uhr','mittag','wochenende','früh','spät'],
+  'Reisen & Verkehr': ['auto','zug','bus','flugzeug','fahrrad','straße','reise','ticket','bahnhof','flughafen','schiff','boot','taxi','weg','brücke','koffer','fahren','fliegen','reisen'],
+  'Schule & Arbeit': ['buch','bücher','schule','lehrer','lehrerin','stift','papier','arbeit','büro','computer','beruf','schüler','heft','tafel','prüfung','aufgabe','chef','geld','lernen','arbeiten'],
+  'Gefühle': ['liebe','angst','freude','glück','wut','trauer','hoffnung','gefühl','stolz','mut'],
+  'Verben': ['gehen','kommen','sehen','hören','machen','sagen','geben','nehmen','laufen','lesen','schreiben','sprechen','spielen','schlafen','kaufen','kochen','tanzen','singen','denken','wissen','finden','suchen','öffnen','schließen','helfen','warten','fragen','antworten','verstehen','bringen','tragen','fallen','stehen','sitzen','liegen','springen','schwimmen','lachen','weinen','wohnen','leben','lieben','sehen'],
+  'Eigenschaften': ['groß','klein','gut','schlecht','schön','hässlich','neu','alt','jung','warm','kalt','heiß','schnell','langsam','glücklich','traurig','stark','schwach','reich','leicht','schwer','hoch','niedrig','lang','kurz','breit','voll','leer','sauber','hell','dunkel','laut','leise','teuer','billig','richtig','falsch','einfach','schwierig','müde','krank','gesund'],
+};
+const WORD_THEME = {};
+for (const [theme, words] of Object.entries(THEME_WORDS)) {
+  for (const w of words) if (!(w in WORD_THEME)) WORD_THEME[w] = theme;
+}
+
+// Oberbegriff einer Lektion: häufigste Kategorie ihrer 8 Wörter (≥ 2 Treffer).
+// Sonst Fallback auf das markanteste (längste) Wort der Lektion.
+function lessonTheme(deck, lessonNum) {
   const from = (lessonNum - 1) * LESSON_SIZE;
   const slice = (deck?.cards || []).slice(from, from + LESSON_SIZE);
   if (!slice.length) return null;
-  return slice.map(c => c.front).sort((a, b) => b.length - a.length)[0];
+  const counts = {};
+  for (const c of slice) {
+    const t = WORD_THEME[String(c.front).toLowerCase().trim()];
+    if (t) counts[t] = (counts[t] || 0) + 1;
+  }
+  const best = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
+  if (best && best[1] >= 2) return { label: best[0], isCategory: true };
+  const word = slice.map(c => c.front).sort((a, b) => b.length - a.length)[0];
+  return { label: word, isCategory: false };
 }
 
 function setText(id, value) {
@@ -77,8 +113,11 @@ export function renderLearnWidgets() {
     if (!done) {
       loadDeck(deckId).then(deck => {
         if (document.getElementById('deckSelect')?.value !== deckId) return;
-        const word = lessonLeadWord(deck, L);
-        if (word) setText('courseProgressText', `Lektion ${L} · „${word}" · ${introduced}/${total} Wörter`);
+        const theme = lessonTheme(deck, L);
+        if (theme) {
+          const t = theme.isCategory ? theme.label : `„${theme.label}"`;
+          setText('courseProgressText', `Lektion ${L} · ${t} · ${introduced}/${total} Wörter`);
+        }
       }).catch(() => {});
     }
 
@@ -95,11 +134,15 @@ export function renderLearnWidgets() {
   const g = getGame();
   const today = new Date().toISOString().slice(0, 10);
   const count = g.daily.date === today ? g.daily.count : 0;
-  setText('dailyGoalText', `${count}/${g.dailyGoal}`);
+  const goalHit = count >= g.dailyGoal;
+  // Erreicht → Zahl in Klammern + grünes Häkchen; Balken bei 100 % gekappt.
+  setText('dailyGoalText', goalHit ? `(${count}/${g.dailyGoal})` : `${count}/${g.dailyGoal}`);
   const bar = document.getElementById('dailyGoalBar');
   if (bar) bar.style.width = `${Math.min(100, Math.round((count / g.dailyGoal) * 100))}%`;
   const goalWrap = document.getElementById('dailyGoalWrap');
-  if (goalWrap) goalWrap.classList.toggle('daily-goal--done', count >= g.dailyGoal);
+  if (goalWrap) goalWrap.classList.toggle('daily-goal--done', goalHit);
+  const goalCheck = document.getElementById('dailyGoalCheck');
+  if (goalCheck) goalCheck.hidden = !goalHit;
 }
 
 // ── Statistik-Ansicht: Zusatz-Karten, Heatmap, Erfolge ───────────
