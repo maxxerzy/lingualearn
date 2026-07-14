@@ -157,7 +157,21 @@
 
             <div class="panel learn-panel">
               <div class="session-header">
+                <button type="button" class="session-back" id="sessionBackBtn" title="Session verlassen">
+                  <i class="fas fa-arrow-left"></i>
+                </button>
                 <h2 id="session-title">Bereit zum Lernen</h2>
+                <div class="session-header__actions">
+                  <button type="button" class="session-icon-btn" id="sessionMapBtn" hidden title="Lernkarte">
+                    <i class="fas fa-map-signs"></i>
+                  </button>
+                  <div class="session-mode-switch">
+                    <button type="button" class="session-icon-btn" id="sessionModeBtn" title="Modus wechseln">
+                      <i class="fas fa-shuffle"></i>
+                    </button>
+                    <div class="session-mode-menu" id="sessionModeMenu" hidden></div>
+                  </div>
+                </div>
                 <div class="session-progress">
                   <div class="progress-text" id="progress-text">0/0 Karten</div>
                   <div class="progress">

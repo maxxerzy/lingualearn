@@ -41,6 +41,33 @@ export function getSelectedMode() {
   return btn ? btn.dataset.mode : 'flashcard';
 }
 
+// Fokus-Modus: blendet (mobil) die Konfiguration aus und zeigt nur den
+// Lernbereich mit Zurück-/Modus-Leiste. Die Lernkarte gibt's im Kurs.
+function enterFocus(mode) {
+  document.getElementById('view-learn')?.classList.add('session-active');
+  const mapBtn = document.getElementById('sessionMapBtn');
+  if (mapBtn) mapBtn.hidden = mode !== 'course';
+  const menu = document.getElementById('sessionModeMenu');
+  if (menu) menu.hidden = true;
+}
+
+// Session verlassen → zurück zur Konfiguration.
+export function exitSession() {
+  setCurrentSession(null);
+  document.getElementById('view-learn')?.classList.remove('session-active');
+  const menu = document.getElementById('sessionModeMenu');
+  if (menu) menu.hidden = true;
+  const title = document.getElementById('session-title');
+  if (title) title.textContent = 'Bereit zum Lernen';
+  const area = document.getElementById('learnArea');
+  if (area) area.innerHTML = '<p>Wähle ein Deck und einen Modus, dann starte die Session.</p>';
+  const t = document.getElementById('progress-text');
+  if (t) t.textContent = '0/0 Karten';
+  const b = document.getElementById('progress-bar');
+  if (b) b.style.width = '0%';
+  renderLearnWidgets();
+}
+
 // Kognat-Hinweis: verwandte Wörter merkt man sich leichter.
 function cognateChip(card) {
   if (!isCognate(card.front, card.back, card.roman)) return '';
@@ -76,6 +103,7 @@ export async function startSession() {
   }
 
   const mode = getSelectedMode();
+  enterFocus(mode);
 
   if (mode === 'course') {
     startCourseLesson(deck, deckId);

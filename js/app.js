@@ -1,6 +1,6 @@
 import { initNavigation } from '../ui/navigation.js';
 import { initSettings, handleImport, handleExport } from '../ui/settings.js';
-import { startSession } from '../core/session.js';
+import { startSession, exitSession } from '../core/session.js';
 import { updateStats } from '../core/stats.js';
 import { getDecks, reinitUserStats, setCurrentSession } from '../core/state.js';
 import { isLoggedIn, logout, getCurrentUser } from '../core/auth.js';
@@ -11,7 +11,7 @@ import { reinitCosmetics } from '../core/cosmetics.js';
 import { renderGamiHeader, renderLearnWidgets, renderStatsExtras } from '../ui/gami.js';
 import { applyCosmetics, initRewards, renderRewards } from '../ui/cosmetics.js';
 import { renderWotd, reinitWotd } from '../ui/wotd.js';
-import { initCourseMap } from '../ui/coursemap.js';
+import { initCourseMap, openCourseMap } from '../ui/coursemap.js';
 
 let appInitialized = false;
 
@@ -53,6 +53,7 @@ function showApp() {
     initCourseMap();
     initRewards();
     setupModeTabs();
+    setupFocusControls();
     document.getElementById('startBtn').addEventListener('click', startSession);
     window.handleImport = handleImport;
     window.handleExport = handleExport;
@@ -88,6 +89,10 @@ function showApp() {
       renderLearnWidgets();
     });
   }
+
+  // Fokus-Modus zurücksetzen (frischer Start / nach Kontowechsel).
+  document.getElementById('view-learn')?.classList.remove('session-active');
+  document.getElementById('sessionMapBtn')?.setAttribute('hidden', '');
 
   populateDeckSelect();
   updateStats();
@@ -136,4 +141,42 @@ function setupModeTabs() {
       renderLearnWidgets();
     });
   });
+}
+
+// Zurück-Button, Modus-Wechsel-Menü und Lernkarte in der Fokus-Leiste.
+function setupFocusControls() {
+  document.getElementById('sessionBackBtn')?.addEventListener('click', exitSession);
+  document.getElementById('sessionMapBtn')?.addEventListener('click', openCourseMap);
+
+  const modeBtn = document.getElementById('sessionModeBtn');
+  const menu = document.getElementById('sessionModeMenu');
+  const modeTabs = [...document.querySelectorAll('.mode-btn')];
+  if (!modeBtn || !menu) return;
+
+  // Menü aus den vorhandenen Modus-Tabs aufbauen (gleiche Beschriftung/Icons).
+  menu.innerHTML = modeTabs.map(b => {
+    const icon = b.querySelector('i')?.className || '';
+    return `<button type="button" class="session-mode-item" data-mode="${b.dataset.mode}">
+      <i class="${icon}"></i> ${b.textContent.trim()}
+    </button>`;
+  }).join('');
+
+  modeBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    // aktiven Modus markieren
+    const active = document.querySelector('.mode-btn.active')?.dataset.mode;
+    menu.querySelectorAll('.session-mode-item').forEach(it =>
+      it.classList.toggle('session-mode-item--active', it.dataset.mode === active));
+    menu.hidden = !menu.hidden;
+  });
+
+  menu.querySelectorAll('.session-mode-item').forEach(item => {
+    item.addEventListener('click', () => {
+      modeTabs.forEach(b => b.classList.toggle('active', b.dataset.mode === item.dataset.mode));
+      menu.hidden = true;
+      startSession();   // startet direkt im gewählten Modus (bleibt im Fokus)
+    });
+  });
+
+  document.addEventListener('click', () => { menu.hidden = true; });
 }
