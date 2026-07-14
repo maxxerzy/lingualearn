@@ -71,29 +71,37 @@ export function renderLearnWidgets() {
     const dueBadge = document.getElementById('dueCount');
     if (dueBadge) dueBadge.hidden = dueN === 0;
 
-    // Lernkurs-Zeile: Lektion mit Leitbegriff + Fortschritt des Decks.
+    // Lernkurs-Zeile + Start-Button. Der genaue Lektions-Zuschnitt (Titel,
+    // Nummer) steht erst nach dem Laden des Decks fest (thematischer Plan).
     const { introduced } = getCourseState(deckId);
-    const L = lessonNumber(deckId);
     const done = introduced >= total && total > 0;
+    const activeMode = document.querySelector('.mode-btn.active')?.dataset.mode;
+
+    // Die „Lektion N"-Zeile ist nur im Lernkurs relevant.
+    const courseWrap = document.getElementById('courseProgress');
+    if (courseWrap) courseWrap.style.display = activeMode === 'course' ? '' : 'none';
+
     setText('courseProgressText', done
       ? `Kurs abgeschlossen — alle ${total} Wörter gelernt`
-      : `Lektion ${L} · ${introduced}/${total} Wörter`);
-    // Leitbegriff nachladen (Deck-Karten kommen ggf. asynchron).
-    if (!done) {
-      loadDeck(deckId).then(deck => {
-        if (document.getElementById('deckSelect')?.value !== deckId) return;
-        const title = deck?.lessonTitles?.[L - 1] || fallbackLessonTitle(deck, L);
-        if (title) setText('courseProgressText', `Lektion ${L} · ${title} · ${introduced}/${total} Wörter`);
-      }).catch(() => {});
+      : `Lektion ${lessonNumber(deckId)} · ${introduced}/${total} Wörter`);
+    const startBtn = document.getElementById('startBtn');
+    if (startBtn && activeMode !== 'course') {
+      startBtn.innerHTML = '<i class="fas fa-play"></i> Session starten';
     }
 
-    // Start-Button-Beschriftung je nach Modus.
-    const startBtn = document.getElementById('startBtn');
-    const activeMode = document.querySelector('.mode-btn.active')?.dataset.mode;
-    if (startBtn) {
-      startBtn.innerHTML = activeMode === 'course'
-        ? `<i class="fas fa-graduation-cap"></i> Lektion ${lessonNumber(deckId)} starten`
-        : '<i class="fas fa-play"></i> Session starten';
+    if (!done) {
+      loadDeck(deckId).then(() => {
+        if (document.getElementById('deckSelect')?.value !== deckId) return;
+        const deck = getDecks()[deckId];
+        const L = lessonNumber(deckId);   // jetzt mit thematischem Plan
+        const title = deck?.lessonTitles?.[L - 1] || fallbackLessonTitle(deck, L);
+        setText('courseProgressText',
+          `Lektion ${L}${title ? ' · ' + title : ''} · ${introduced}/${total} Wörter`);
+        const sb = document.getElementById('startBtn');
+        if (sb && document.querySelector('.mode-btn.active')?.dataset.mode === 'course') {
+          sb.innerHTML = `<i class="fas fa-graduation-cap"></i> Lektion ${L} starten`;
+        }
+      }).catch(() => {});
     }
   }
 

@@ -1,5 +1,6 @@
 import { deckMeta } from '../js/data/decks/meta.js';
 import { createUserStore } from './userStore.js';
+import { setLessonPlan } from './course.js';
 
 const defaultStats = {
   successRate: 0,
@@ -75,8 +76,10 @@ export async function loadDeck(deckId) {
     // Alle Übersetzungen (exampleDE) stehen fest in den Deck-Dateien —
     // kein Laufzeit-API-Aufruf mehr nötig.
     entry.cards = JSON.parse(JSON.stringify(mod.cards));
-    // Thematische Lektions-Titel (Karten sind bereits thematisch sortiert).
+    // Thematische Lektionen (Karten sind bereits thematisch sortiert).
     entry.lessonTitles = mod.lessonTitles || null;
+    entry.lessonSizes = mod.lessonSizes || null;
+    setLessonPlan(deckId, mod.lessonSizes);
     return entry;
   })();
 

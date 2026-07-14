@@ -101,5 +101,7 @@ export const cards = [
   {"front":"wann","back":"いつ","example":"誕生日はいつですか。","exampleDE":"Wann hast du Geburtstag?","ipa":"itsɯ","roman":"itsu"},
 ];
 
-// Thematische Lektions-Titel (je 8 Karten eine Lektion).
-export const lessonTitles = ["Begrüßung & Höflichkeit","Zahlen","Farben","Familie & Menschen","Essen","Trinken","Zeit & Kalender","Reisen & Verkehr","Einkaufen, Geld & Wirtschaft","Eigenschaften","Denken & Kommunikation","Ort & Richtung","Kleine Wörter & Grammatik"];
+// Thematische Lektionen: jede Lektion enthält genau ein Thema.
+// lessonSizes[i] = Kartenzahl der Lektion i, lessonTitles[i] = ihr Thema.
+export const lessonSizes = [6,3,5,5,4,7,3,8,3,1,2,4,5,3,2,3,4,5,4,5,2,4,6,6];
+export const lessonTitles = ["Begrüßung & Höflichkeit","Redewendungen","Zahlen 1","Zahlen 2","Farben","Familie & Menschen","Körper & Gesundheit","Essen","Trinken","Haus & Wohnen","Tiere","Natur & Pflanzen","Zeit & Kalender","Reisen & Verkehr","Stadt & Gebäude","Schule & Bildung","Einkaufen, Geld & Wirtschaft","Eigenschaften 1","Eigenschaften 2","Verben – Alltag","Verben – Bewegung & Handlung","Denken & Kommunikation","Ort & Richtung","Kleine Wörter & Grammatik"];
