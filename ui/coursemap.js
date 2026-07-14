@@ -1,4 +1,4 @@
-import { getDecks } from '../core/state.js';
+import { getDecks, loadDeck } from '../core/state.js';
 import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
 
 // Lern-Landkarte: visueller Lektionspfad des gewählten Decks
@@ -32,11 +32,12 @@ export function renderCourseMap(deckId) {
     else { cls = 'locked'; icon = 'fa-lock'; }
     const from = (n - 1) * LESSON_SIZE + 1;
     const to = Math.min(n * LESSON_SIZE, total);
+    const title = deck.lessonTitles?.[n - 1];
     nodes.push(`
       <li class="map-node map-node--${cls}">
         <span class="map-node__dot"><i class="fas ${icon}"></i></span>
         <span class="map-node__label">
-          <b>Lektion ${n}</b>
+          <b>Lektion ${n}${title ? ' · ' + esc(title) : ''}</b>
           <span class="map-node__range">Wörter ${from}–${to}</span>
         </span>
       </li>`);
@@ -52,8 +53,12 @@ export function openCourseMap() {
   const modal = document.getElementById('coursemapModal');
   if (!modal) return;
   const deckId = document.getElementById('deckSelect')?.value;
-  renderCourseMap(deckId);
+  renderCourseMap(deckId);           // sofort zeigen (evtl. noch ohne Titel)
   modal.hidden = false;
+  // Deck laden, damit die thematischen Lektions-Titel erscheinen.
+  loadDeck(deckId).then(() => {
+    if (!modal.hidden) renderCourseMap(deckId);
+  }).catch(() => {});
 }
 
 export function closeCourseMap() {

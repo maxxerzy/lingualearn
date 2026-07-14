@@ -71,10 +71,12 @@ export async function loadDeck(deckId) {
 
   loadingPromises[deckId] = (async () => {
     const { language } = entry;
-    const { cards } = await import(`../js/data/decks/${language}.js`);
+    const mod = await import(`../js/data/decks/${language}.js`);
     // Alle Übersetzungen (exampleDE) stehen fest in den Deck-Dateien —
     // kein Laufzeit-API-Aufruf mehr nötig.
-    entry.cards = JSON.parse(JSON.stringify(cards));
+    entry.cards = JSON.parse(JSON.stringify(mod.cards));
+    // Thematische Lektions-Titel (Karten sind bereits thematisch sortiert).
+    entry.lessonTitles = mod.lessonTitles || null;
     return entry;
   })();
 
