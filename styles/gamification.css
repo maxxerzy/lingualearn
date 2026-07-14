@@ -215,7 +215,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: -4px 0 14px;
+  margin: 12px 0 4px;
   font-size: 0.82rem;
   color: var(--gray, #6c757d);
 }
@@ -283,6 +283,14 @@
   border-radius: 12px;
   border: 1.5px dashed color-mix(in srgb, var(--primary) 40%, transparent);
   background: color-mix(in srgb, var(--primary) 6%, var(--surface));
+}
+/* Im Overlay ohne eigenen Rahmen — die Modal-Box liefert den Container. */
+.modal .wotd { margin: 0; padding: 0; border: none; background: none; }
+.wotd__deck {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray, #6c757d);
+  margin-bottom: 10px;
 }
 .wotd__head {
   display: flex;

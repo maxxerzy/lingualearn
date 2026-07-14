@@ -98,7 +98,25 @@
           <div class="learn-layout">
 
             <div class="panel config-panel">
-              <h2>Lernsession</h2>
+              <div class="config-head">
+                <h2>Lernsession</h2>
+                <div class="config-actions">
+                  <button type="button" class="config-icon-btn" id="coursemapBtn" title="Lernkarte" aria-label="Lernkarte">
+                    <i class="fas fa-map-signs"></i>
+                  </button>
+                  <button type="button" class="config-icon-btn" id="wotdBtn" title="Wort des Tages" aria-label="Wort des Tages">
+                    <i class="fas fa-star"></i>
+                  </button>
+                  <button type="button" class="config-icon-btn config-due-btn" id="dueToggleBtn" title="Nur fällige Karten" aria-label="Nur fällige Karten" aria-pressed="false">
+                    <i class="fas fa-filter"></i>
+                    <span class="config-due-badge" id="dueCount" hidden>0</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Zustand für „nur fällige Karten"; wird über das Icon oben umgeschaltet -->
+              <input type="checkbox" id="dueOnly" hidden>
+
               <div class="form-group">
                 <label for="deckSelect">Deck</label>
                 <select id="deckSelect" class="input"></select>
@@ -132,14 +150,7 @@
                 <div class="course-progress" id="courseProgress">
                   <i class="fas fa-graduation-cap"></i> <span id="courseProgressText"></span>
                 </div>
-                <button type="button" class="map-trigger" id="coursemapBtn">
-                  <i class="fas fa-map-signs"></i> Lernkarte anzeigen
-                </button>
               </div>
-              <label class="due-toggle" for="dueOnly">
-                <input type="checkbox" id="dueOnly">
-                <span>Nur fällige Karten (<span id="dueCount">0</span>)</span>
-              </label>
               <button type="button" id="startBtn" class="btn btn-primary btn-full">
                 <i class="fas fa-play"></i> Session starten
               </button>
@@ -152,7 +163,6 @@
                   <div class="progress-bar" id="dailyGoalBar" style="width:0%"></div>
                 </div>
               </div>
-              <div class="wotd" id="wotd" hidden></div>
             </div>
 
             <div class="panel learn-panel">
@@ -351,6 +361,18 @@
       </div>
     </div>
 
+    <!-- Wort des Tages (Modal) -->
+    <div class="modal" id="wotdModal" hidden>
+      <div class="modal__backdrop"></div>
+      <div class="modal__box" role="dialog" aria-label="Wort des Tages">
+        <div class="modal__head">
+          <h3><i class="fas fa-star"></i> Wort des Tages</h3>
+          <button type="button" class="modal__close" aria-label="Schließen"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal__body"><div class="wotd" id="wotd"></div></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Auth runs as a plain script — never blocked by module-loading failures -->
@@ -359,6 +381,11 @@
     'use strict';
     var USERS_KEY = 'lingualearn_users';
     var CURRENT_USER_KEY = 'lingualearn_current_user';
+    var APP_VERSION_KEY = 'lingualearn_app_version';
+    // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
+    // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
+    // Sitzung endet — man muss sich neu einloggen).
+    var APP_VERSION = 'v9';
     var loginMode = 'login';
 
     function hp(pw) {
@@ -495,6 +522,15 @@
           }
         });
       }
+
+      // Update-Logout: neue App-Version → aktive Sitzung beenden (Konten
+      // bleiben in USERS_KEY erhalten), Nutzer muss sich neu einloggen.
+      try {
+        if (localStorage.getItem(APP_VERSION_KEY) !== APP_VERSION) {
+          clearUser();
+          localStorage.setItem(APP_VERSION_KEY, APP_VERSION);
+        }
+      } catch (e) {}
 
       if (!getUser()) showLoginScreen();
     });

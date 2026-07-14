@@ -11,6 +11,28 @@ const store = createUserStore('lingualearn_wotd_', { defaults: () => ({ date: nu
 
 export function reinitWotd() { store.reinit(); }
 
+// „Wort des Tages" als Overlay (Knopf oben in der Konfiguration).
+export function openWotd() {
+  const modal = document.getElementById('wotdModal');
+  if (!modal) return;
+  renderWotd();
+  modal.hidden = false;
+}
+export function closeWotd() {
+  const modal = document.getElementById('wotdModal');
+  if (modal) modal.hidden = true;
+}
+export function initWotdModal() {
+  document.getElementById('wotdBtn')?.addEventListener('click', openWotd);
+  const modal = document.getElementById('wotdModal');
+  if (!modal) return;
+  modal.querySelector('.modal__close')?.addEventListener('click', closeWotd);
+  modal.querySelector('.modal__backdrop')?.addEventListener('click', closeWotd);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modal.hidden) closeWotd();
+  });
+}
+
 const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU', ja: 'ja-JP' };
 
 function todayStr() { return new Date().toISOString().slice(0, 10); }
@@ -49,7 +71,7 @@ export async function renderWotd() {
 
   panel.hidden = false;
   panel.innerHTML = `
-    <div class="wotd__head"><i class="fas fa-star"></i> Wort des Tages · ${esc(deck.name)}</div>
+    <div class="wotd__deck">${esc(deck.name)}</div>
     <div class="wotd__row">
       <div class="wotd__word">
         <span class="wotd__de">${esc(card.front)}</span>

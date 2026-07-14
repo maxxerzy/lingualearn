@@ -10,8 +10,9 @@ import { reinitCourse } from '../core/course.js';
 import { reinitCosmetics } from '../core/cosmetics.js';
 import { renderGamiHeader, renderLearnWidgets, renderStatsExtras } from '../ui/gami.js';
 import { applyCosmetics, initRewards, renderRewards } from '../ui/cosmetics.js';
-import { renderWotd, reinitWotd } from '../ui/wotd.js';
+import { reinitWotd, initWotdModal } from '../ui/wotd.js';
 import { initCourseMap, openCourseMap } from '../ui/coursemap.js';
+import { showToast } from '../ui/toast.js';
 
 let appInitialized = false;
 
@@ -51,9 +52,11 @@ function showApp() {
     const activateView = initNavigation();
     initSettings();
     initCourseMap();
+    initWotdModal();
     initRewards();
     setupModeTabs();
     setupFocusControls();
+    setupDueToggle();
     document.getElementById('startBtn').addEventListener('click', startSession);
     window.handleImport = handleImport;
     window.handleExport = handleExport;
@@ -77,10 +80,10 @@ function showApp() {
     document.getElementById('settingsBackBtn').addEventListener('click', () => activateView('learn'));
     document.getElementById('rewardsBackBtn').addEventListener('click', () => activateView('learn'));
 
-    // Deck-Wechsel aktualisiert Fortschritt, Fällig-Zähler & Wort des Tages.
+    // Deck-Wechsel aktualisiert Fortschritt & Fällig-Zähler.
+    // (Wort des Tages wird beim Öffnen des Overlays frisch gerendert.)
     document.getElementById('deckSelect').addEventListener('change', () => {
       renderLearnWidgets();
-      renderWotd();
     });
 
     // Nach einem Import: Selector und Widgets auffrischen.
@@ -99,7 +102,6 @@ function showApp() {
   renderGamiHeader();
   renderLearnWidgets();
   applyCosmetics();
-  renderWotd();
 }
 
 function doLogout() {
@@ -140,6 +142,24 @@ function setupModeTabs() {
       // Start-Button-Label und Kurszeile an den Modus anpassen.
       renderLearnWidgets();
     });
+  });
+}
+
+// „Nur fällige Karten": Icon-Schalter oben statt Checkbox. Blendet beim
+// Umschalten oben eine Rückmeldung (An/Aus) ein und hält den versteckten
+// #dueOnly-Zustand aktuell, den die Session ausliest.
+function setupDueToggle() {
+  const btn = document.getElementById('dueToggleBtn');
+  const chk = document.getElementById('dueOnly');
+  if (!btn || !chk) return;
+  btn.addEventListener('click', () => {
+    chk.checked = !chk.checked;
+    btn.classList.toggle('active', chk.checked);
+    btn.setAttribute('aria-pressed', chk.checked ? 'true' : 'false');
+    const n = document.getElementById('dueCount')?.textContent || '0';
+    showToast(chk.checked
+      ? `<i class="fas fa-filter toast__icon"></i><div class="toast__body"><b>Nur fällige Karten · An</b><span>${n} fällige Karte(n) in dieser Session</span></div>`
+      : `<i class="fas fa-layer-group toast__icon"></i><div class="toast__body"><b>Nur fällige Karten · Aus</b><span>Alle Karten des Decks</span></div>`);
   });
 }
 
