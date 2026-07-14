@@ -55,23 +55,20 @@
         <h1>LinguaLearn</h1>
       </div>
       <div class="header-right">
-        <div class="gami-chips">
-          <span class="gami-chip gami-chip--streak" id="streakChip">
-            <i class="fas fa-fire"></i> <span id="streakCount">0</span>
-          </span>
-          <span class="gami-chip gami-chip--level" id="levelChip">
-            <span class="gami-level-label">Lv. <b id="levelNum">1</b></span>
-            <span class="gami-xp-bar"><span class="gami-xp-fill" id="xpFill"></span></span>
-          </span>
-        </div>
+        <!-- Profil/Menü ganz links: Rang immer sichtbar, „Menü"-Pfeil zeigt,
+             dass darunter Profil, Einstellungen & Co. erreichbar sind. -->
         <div class="user-menu" id="userMenu">
-          <button type="button" class="user-chip" id="userChipBtn">
+          <button type="button" class="user-chip" id="userChipBtn" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user-circle user-chip__avatar" id="userAvatar"></i>
-            <span id="userName"></span>
-            <span class="user-title" id="userTitle" hidden></span>
+            <span class="user-title" id="userTitle">Neuling</span>
             <i class="fas fa-caret-down user-chip__caret"></i>
           </button>
           <div class="user-dropdown" id="userDropdown" hidden>
+            <div class="user-dropdown__head">
+              <i class="fas fa-user-circle"></i>
+              <span>Angemeldet als <b id="userName"></b></span>
+            </div>
+            <div class="user-dropdown__divider"></div>
             <button type="button" class="user-dropdown__item" data-action="stats">
               <i class="fas fa-chart-bar"></i> Statistik
             </button>
@@ -86,6 +83,16 @@
               <i class="fas fa-sign-out-alt"></i> Abmelden
             </button>
           </div>
+        </div>
+        <!-- rechts: erst Level, dann Streak ganz rechts -->
+        <div class="gami-chips">
+          <span class="gami-chip gami-chip--level" id="levelChip">
+            <span class="gami-level-label">Lv. <b id="levelNum">1</b></span>
+            <span class="gami-xp-bar"><span class="gami-xp-fill" id="xpFill"></span></span>
+          </span>
+          <span class="gami-chip gami-chip--streak" id="streakChip">
+            <i class="fas fa-fire"></i> <span id="streakCount">0</span>
+          </span>
         </div>
       </div>
     </header>
@@ -385,7 +392,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v9';
+    var APP_VERSION = 'v10';
     var loginMode = 'login';
 
     function hp(pw) {

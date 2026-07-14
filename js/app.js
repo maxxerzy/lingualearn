@@ -62,9 +62,15 @@ function showApp() {
     window.handleExport = handleExport;
 
     const dropdown = document.getElementById('userDropdown');
-    document.getElementById('userChipBtn').addEventListener('click', (e) => {
+    const chipBtn = document.getElementById('userChipBtn');
+    const syncChip = () => {
+      chipBtn.classList.toggle('open', !dropdown.hidden);
+      chipBtn.setAttribute('aria-expanded', dropdown.hidden ? 'false' : 'true');
+    };
+    chipBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       dropdown.hidden = !dropdown.hidden;
+      syncChip();
     });
     document.querySelectorAll('.user-dropdown__item[data-action]').forEach(item => {
       item.addEventListener('click', () => {
@@ -72,9 +78,10 @@ function showApp() {
         if (item.dataset.action === 'stats') renderStatsExtras();
         if (item.dataset.action === 'rewards') renderRewards();
         dropdown.hidden = true;
+        syncChip();
       });
     });
-    document.addEventListener('click', () => { dropdown.hidden = true; });
+    document.addEventListener('click', () => { dropdown.hidden = true; syncChip(); });
 
     document.getElementById('statsBackBtn').addEventListener('click', () => activateView('learn'));
     document.getElementById('settingsBackBtn').addEventListener('click', () => activateView('learn'));

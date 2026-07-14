@@ -1,7 +1,16 @@
 import { getGame, levelInfo, ACHIEVEMENTS } from '../core/gamification.js';
 import { getDeckProgress, getDueFronts } from '../core/cardProgress.js';
-import { getDecks } from '../core/state.js';
-import { getCourseState, lessonNumber } from '../core/course.js';
+import { getDecks, loadDeck } from '../core/state.js';
+import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
+
+// „Leitbegriff" einer Lektion: das längste deutsche Wort ihrer Karten —
+// meist ein Inhaltswort, das die Lektion griffig beschreibt.
+function lessonLeadWord(deck, lessonNum) {
+  const from = (lessonNum - 1) * LESSON_SIZE;
+  const slice = (deck?.cards || []).slice(from, from + LESSON_SIZE);
+  if (!slice.length) return null;
+  return slice.map(c => c.front).sort((a, b) => b.length - a.length)[0];
+}
 
 function setText(id, value) {
   const el = document.getElementById(id);
@@ -57,12 +66,21 @@ export function renderLearnWidgets() {
     const dueBadge = document.getElementById('dueCount');
     if (dueBadge) dueBadge.hidden = dueN === 0;
 
-    // Lernkurs-Zeile: Speicherstand des ausgewählten Decks.
+    // Lernkurs-Zeile: Lektion mit Leitbegriff + Fortschritt des Decks.
     const { introduced } = getCourseState(deckId);
-    setText('courseProgressText',
-      introduced >= total && total > 0
-        ? `Kurs abgeschlossen — alle ${total} Wörter gelernt`
-        : `Lektion ${lessonNumber(deckId)} · ${introduced}/${total} Wörter gelernt`);
+    const L = lessonNumber(deckId);
+    const done = introduced >= total && total > 0;
+    setText('courseProgressText', done
+      ? `Kurs abgeschlossen — alle ${total} Wörter gelernt`
+      : `Lektion ${L} · ${introduced}/${total} Wörter`);
+    // Leitbegriff nachladen (Deck-Karten kommen ggf. asynchron).
+    if (!done) {
+      loadDeck(deckId).then(deck => {
+        if (document.getElementById('deckSelect')?.value !== deckId) return;
+        const word = lessonLeadWord(deck, L);
+        if (word) setText('courseProgressText', `Lektion ${L} · „${word}" · ${introduced}/${total} Wörter`);
+      }).catch(() => {});
+    }
 
     // Start-Button-Beschriftung je nach Modus.
     const startBtn = document.getElementById('startBtn');
