@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/button-animations.css">
   <link rel="stylesheet" href="styles/gamification.css">
+  <link rel="stylesheet" href="styles/cosmetics.css">
 </head>
 <body>
 
@@ -65,13 +66,17 @@
         </div>
         <div class="user-menu" id="userMenu">
           <button type="button" class="user-chip" id="userChipBtn">
-            <i class="fas fa-user-circle"></i>
+            <i class="fas fa-user-circle user-chip__avatar" id="userAvatar"></i>
             <span id="userName"></span>
+            <span class="user-title" id="userTitle" hidden></span>
             <i class="fas fa-caret-down user-chip__caret"></i>
           </button>
           <div class="user-dropdown" id="userDropdown" hidden>
             <button type="button" class="user-dropdown__item" data-action="stats">
               <i class="fas fa-chart-bar"></i> Statistik
+            </button>
+            <button type="button" class="user-dropdown__item" data-action="rewards">
+              <i class="fas fa-gift"></i> Belohnungen
             </button>
             <button type="button" class="user-dropdown__item" data-action="settings">
               <i class="fas fa-cog"></i> Einstellungen
@@ -141,6 +146,7 @@
                   <div class="progress-bar" id="dailyGoalBar" style="width:0%"></div>
                 </div>
               </div>
+              <div class="wotd" id="wotd" hidden></div>
             </div>
 
             <div class="panel learn-panel">
@@ -285,6 +291,27 @@
   ]
 }</pre>
             </div>
+          </div>
+        </section>
+
+        <!-- Rewards / Cosmetics View -->
+        <section id="view-rewards" class="view">
+          <div class="panel">
+            <div class="view-topbar">
+              <button type="button" class="btn-back" id="rewardsBackBtn">
+                <i class="fas fa-arrow-left"></i> Lernen
+              </button>
+              <h2><i class="fas fa-gift"></i> Belohnungen</h2>
+            </div>
+            <p style="color:var(--gray);margin-bottom:16px">Schalte Themes, Avatare, Titel und Karten-Designs frei, indem du lernst, Level aufsteigst und Serien hältst.</p>
+            <div class="rewards-tabs" id="rewardsTabs">
+              <button type="button" class="rewards-tab active" data-cat="theme">Themes</button>
+              <button type="button" class="rewards-tab" data-cat="avatar">Avatare</button>
+              <button type="button" class="rewards-tab" data-cat="title">Titel</button>
+              <button type="button" class="rewards-tab" data-cat="cardDesign">Karten-Designs</button>
+              <button type="button" class="rewards-tab" data-cat="badges">Abzeichen-Vitrine</button>
+            </div>
+            <div id="rewardsBody"></div>
           </div>
         </section>
 

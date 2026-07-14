@@ -7,7 +7,10 @@ import { isLoggedIn, logout, getCurrentUser } from '../core/auth.js';
 import { reinitCardProgress } from '../core/cardProgress.js';
 import { reinitGame } from '../core/gamification.js';
 import { reinitCourse } from '../core/course.js';
+import { reinitCosmetics } from '../core/cosmetics.js';
 import { renderGamiHeader, renderLearnWidgets, renderStatsExtras } from '../ui/gami.js';
+import { applyCosmetics, initRewards, renderRewards } from '../ui/cosmetics.js';
+import { renderWotd, reinitWotd } from '../ui/wotd.js';
 
 let appInitialized = false;
 
@@ -32,6 +35,8 @@ function reinitUser() {
   reinitCardProgress();
   reinitGame();
   reinitCourse();
+  reinitCosmetics();
+  reinitWotd();
 }
 
 function showApp() {
@@ -44,6 +49,7 @@ function showApp() {
     appInitialized = true;
     const activateView = initNavigation();
     initSettings();
+    initRewards();
     setupModeTabs();
     document.getElementById('startBtn').addEventListener('click', startSession);
     window.handleImport = handleImport;
@@ -58,6 +64,7 @@ function showApp() {
       item.addEventListener('click', () => {
         activateView(item.dataset.action);
         if (item.dataset.action === 'stats') renderStatsExtras();
+        if (item.dataset.action === 'rewards') renderRewards();
         dropdown.hidden = true;
       });
     });
@@ -65,9 +72,13 @@ function showApp() {
 
     document.getElementById('statsBackBtn').addEventListener('click', () => activateView('learn'));
     document.getElementById('settingsBackBtn').addEventListener('click', () => activateView('learn'));
+    document.getElementById('rewardsBackBtn').addEventListener('click', () => activateView('learn'));
 
-    // Deck-Wechsel aktualisiert Fortschritt & Fällig-Zähler.
-    document.getElementById('deckSelect').addEventListener('change', renderLearnWidgets);
+    // Deck-Wechsel aktualisiert Fortschritt, Fällig-Zähler & Wort des Tages.
+    document.getElementById('deckSelect').addEventListener('change', () => {
+      renderLearnWidgets();
+      renderWotd();
+    });
 
     // Nach einem Import: Selector und Widgets auffrischen.
     document.addEventListener('lingua:decks-changed', () => {
@@ -80,6 +91,8 @@ function showApp() {
   updateStats();
   renderGamiHeader();
   renderLearnWidgets();
+  applyCosmetics();
+  renderWotd();
 }
 
 function doLogout() {

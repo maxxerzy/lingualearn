@@ -261,6 +261,50 @@
   border-radius: 12px;
 }
 
+/* ── Kognat-Marker ─────────────────────────────────────────────── */
+.cognate-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 2px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--success) 22%, transparent);
+  color: #0a6c86;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+:root[data-theme="dark"] .cognate-chip { color: #7fd8f0; }
+
+/* ── Wort des Tages ────────────────────────────────────────────── */
+.wotd {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1.5px dashed color-mix(in srgb, var(--primary) 40%, transparent);
+  background: color-mix(in srgb, var(--primary) 6%, var(--surface));
+}
+.wotd__head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 8px;
+}
+.wotd__word { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.wotd__de { font-weight: 700; }
+.wotd__arrow { color: var(--gray); }
+.wotd__target { font-weight: 700; color: var(--primary); }
+.wotd__pron { font-size: 0.8rem; color: var(--gray); margin-top: 3px; }
+.wotd__ex { font-size: 0.82rem; color: var(--gray); font-style: italic; margin: 8px 0; }
+.wotd__exde { font-style: normal; }
+.wotd__claim { margin-top: 6px; }
+.wotd__claim[disabled] { opacity: 0.6; }
+
 /* ── Toasts ────────────────────────────────────────────────────── */
 #toastRoot {
   position: fixed;

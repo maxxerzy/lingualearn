@@ -89,6 +89,14 @@ export function recordGameAnswer(correct) {
   return g;
 }
 
+// Bonus-XP ohne Antwort (z. B. „Wort des Tages").
+export function addBonusXp(n) {
+  const g = load();
+  g.xp += n;
+  persist();
+  return g;
+}
+
 export function recordSessionEnd({ language, correct, total }) {
   const g = load();
   touchDay(g);

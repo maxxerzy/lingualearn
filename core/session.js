@@ -2,11 +2,19 @@ import { loadDeck, getCurrentSession, setCurrentSession, getUserStats, setUserSt
 import { updateProgress } from './progress.js';
 import { updateStats } from './stats.js';
 import { shuffleArray } from '../utils/helpers.js';
+import { isCognate } from '../utils/cognate.js';
 import { recordCardAnswer, getDueFronts } from './cardProgress.js';
 import { recordGameAnswer, recordSessionEnd, checkAchievements, XP } from './gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../ui/gami.js';
-import { toastAchievements } from '../ui/toast.js';
+import { toastAchievements, toastCosmetics } from '../ui/toast.js';
+import { checkNewCosmetics } from './cosmetics.js';
 import { nextLessonCards, lessonNumber, advanceCourse, getCourseState, getSentencesDone, markSentencesDone } from './course.js';
+
+// Erfolge prüfen + einblenden, danach dadurch freigeschaltete Cosmetics.
+function announceUnlocks() {
+  toastAchievements(checkAchievements());
+  toastCosmetics(checkNewCosmetics());
+}
 
 const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU', ja: 'ja-JP' };
 const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch', fr: 'Französisch', es: 'Spanisch', la: 'Latein', ru: 'Russisch', ja: 'Japanisch' };
@@ -31,6 +39,14 @@ function speakWord(text, lang) {
 export function getSelectedMode() {
   const btn = document.querySelector('.mode-btn.active');
   return btn ? btn.dataset.mode : 'flashcard';
+}
+
+// Kognat-Hinweis: verwandte Wörter merkt man sich leichter.
+function cognateChip(card) {
+  if (!isCognate(card.front, card.back, card.roman)) return '';
+  return `<div class="cognate-chip" title="Dieses Wort ist mit dem deutschen „${escHtml(card.front)}" verwandt — leichter zu merken!">
+    <i class="fas fa-link"></i> verwandt mit „${escHtml(card.front)}"
+  </div>`;
 }
 
 export async function startSession() {
@@ -153,6 +169,7 @@ function showFlashcardBack(card) {
           <i class="fas fa-volume-up"></i>
         </button>
       </div>
+      ${cognateChip(card)}
       ${card.example ? `
         <div class="fc-example-block">
           <p class="fc-example${pron ? ' has-ipa' : ''}"${pron ? ' tabindex="0"' : ''}>
@@ -331,7 +348,7 @@ function recordAnswerEffects(session, card, isCorrect, ratingOrBool) {
   session.xpFromAnswers = (session.xpFromAnswers || 0) + (isCorrect ? XP.correct : XP.wrong);
   renderGamiHeader();
   renderLearnWidgets();
-  toastAchievements(checkAchievements());
+  announceUnlocks();
 }
 
 function checkMCAnswer(selectedIdx) {
@@ -533,6 +550,7 @@ function endSession() {
   `;
 
   toastAchievements(freshAchievements);
+  toastCosmetics(checkNewCosmetics());
   document.getElementById('restartSession').addEventListener('click', startSession);
   setCurrentSession(null);
 
@@ -702,6 +720,7 @@ function renderCourseTeach(session) {
         </button>
       </div>
       ${ipaParts.length ? `<div class="course-pron">${ipaParts.join(' · ')}</div>` : ''}
+      ${cognateChip(card)}
       ${card.example ? `
         <div class="fc-example-block">
           <p class="fc-example"><strong>${escHtml(card.example)}</strong></p>
@@ -927,6 +946,7 @@ function endCourseLesson(session) {
   `;
 
   toastAchievements(freshAchievements);
+  toastCosmetics(checkNewCosmetics());
   document.getElementById('restartSession').addEventListener('click', startSession);
   setCurrentSession(null);
 
