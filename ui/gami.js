@@ -52,7 +52,10 @@ export function renderLearnWidgets() {
         `${p.mastered} gemeistert · ${p.seen - p.mastered} in Arbeit · ${p.fresh} neu`);
     }
 
-    setText('dueCount', getDueFronts(deckId).length);
+    const dueN = getDueFronts(deckId).length;
+    setText('dueCount', dueN);
+    const dueBadge = document.getElementById('dueCount');
+    if (dueBadge) dueBadge.hidden = dueN === 0;
 
     // Lernkurs-Zeile: Speicherstand des ausgewählten Decks.
     const { introduced } = getCourseState(deckId);
