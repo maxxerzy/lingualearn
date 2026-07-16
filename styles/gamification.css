@@ -617,3 +617,16 @@
 @keyframes confettiFall {
   to { transform: translateY(105vh) rotate(540deg); opacity: .9; }
 }
+
+/* ── Sprechen & Story ─────────────────────────────────────────── */
+.story-sent { font-size: 1.15rem; font-weight: 600; line-height: 1.5; max-width: 480px; margin: 6px auto 2px; }
+.speak-card .course-pron { margin-bottom: 4px; }
+
+/* ── Lernpfad-Ansicht ─────────────────────────────────────────── */
+.path-start { margin-top: 14px; position: sticky; bottom: 10px; box-shadow: 0 8px 22px rgba(67,97,238,.35); }
+.map-node[data-start-lesson] { cursor: pointer; }
+.map-node[data-start-lesson] .map-node__dot { animation: pathPulse 1.6s ease-in-out infinite; }
+@keyframes pathPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(67,97,238,.45); }
+  50%      { box-shadow: 0 0 0 9px rgba(67,97,238,0); }
+}

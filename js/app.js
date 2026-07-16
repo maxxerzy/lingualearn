@@ -11,10 +11,11 @@ import { reinitCosmetics } from '../core/cosmetics.js';
 import { renderGamiHeader, renderLearnWidgets, renderStatsExtras } from '../ui/gami.js';
 import { applyCosmetics, initRewards, renderRewards } from '../ui/cosmetics.js';
 import { reinitWotd, initWotdModal } from '../ui/wotd.js';
-import { initCourseMap, openCourseMap } from '../ui/coursemap.js';
+import { initPath, showPath } from '../ui/coursemap.js';
 import { initArena, renderArena } from '../ui/hub.js';
 import { reinitLeague } from '../core/league.js';
 import { reinitQuests } from '../core/quests.js';
+import { getGame } from '../core/gamification.js';
 import { showToast } from '../ui/toast.js';
 
 let appInitialized = false;
@@ -56,7 +57,8 @@ function showApp() {
     appInitialized = true;
     const activateView = initNavigation();
     initSettings();
-    initCourseMap();
+    initPath(activateView, startSession);
+    document.getElementById('coursemapBtn')?.addEventListener('click', showPath);
     initWotdModal();
     initArena();
     initRewards();
@@ -116,6 +118,13 @@ function showApp() {
   renderGamiHeader();
   renderLearnWidgets();
   applyCosmetics();
+
+  // Lokale Serien-Erinnerung: gestern gelernt, heute noch nicht → Hinweis.
+  const g = getGame();
+  const yest = (() => { const d = new Date(); d.setDate(d.getDate() - 1); return d.toISOString().slice(0, 10); })();
+  if (g.streak.current > 0 && g.streak.lastDate === yest) {
+    showToast(`<i class="fas fa-fire toast__icon"></i><div class="toast__body"><b>Deine Serie: ${g.streak.current} ${g.streak.current === 1 ? 'Tag' : 'Tage'} 🔥</b><span>Lern heute eine Runde, um sie zu halten!</span></div>`, { duration: 5000 });
+  }
 }
 
 function doLogout() {
@@ -182,7 +191,7 @@ function setupDueToggle() {
 // Zurück-Button, Modus-Wechsel-Menü und Lernkarte in der Fokus-Leiste.
 function setupFocusControls() {
   document.getElementById('sessionBackBtn')?.addEventListener('click', exitSession);
-  document.getElementById('sessionMapBtn')?.addEventListener('click', openCourseMap);
+  document.getElementById('sessionMapBtn')?.addEventListener('click', showPath);
 
   const modeBtn = document.getElementById('sessionModeBtn');
   const menu = document.getElementById('sessionModeMenu');

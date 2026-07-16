@@ -153,6 +153,19 @@ export async function startSession() {
     }
   }
 
+  // Story: 5 aufeinanderfolgende Sätze (Deck ist thematisch sortiert →
+  // die Szenen gehören zusammen); braucht genug Sätze für die Antwortoptionen.
+  let storyPool = null;
+  if (mode === 'story') {
+    storyPool = sessionCards.filter(c => c.example && c.exampleDE);
+    if (storyPool.length < 8) {
+      alert('Für Story-Lektionen braucht das Deck mehr Beispielsätze.');
+      return;
+    }
+    const startAt = Math.floor(Math.random() * (storyPool.length - 5 + 1));
+    sessionCards = storyPool.slice(startAt, startAt + 5);
+  }
+
   enterFocus(mode);
 
   if (mode === 'course') {
@@ -160,13 +173,15 @@ export async function startSession() {
     return;
   }
 
-  const shuffled = shuffleArray([...sessionCards]);
+  // Story behält die Erzähl-Reihenfolge, alle anderen Modi mischen.
+  const shuffled = mode === 'story' ? [...sessionCards] : shuffleArray([...sessionCards]);
 
   const session = {
     deck,
     deckId,
     cards: shuffled,
     mode,
+    storyPool,
     currentIndex: 0,
     correctAnswers: 0,
     totalCards: shuffled.length,
@@ -193,6 +208,10 @@ export async function startSession() {
     showTyping();
   } else if (mode === 'build') {
     showSentenceBuild();
+  } else if (mode === 'speak') {
+    showSpeaking();
+  } else if (mode === 'story') {
+    showStory();
   } else {
     showNextCard();
   }
@@ -690,15 +709,21 @@ function showSentenceBuild() {
   }
 
   const card = session.cards[session.currentIndex];
+  const lang = session.deck.language;
+  // Jede 2. Karte: Hör-Variante — der Satz wird vorgesprochen statt gezeigt.
+  const byEar = session.currentIndex % 2 === 1;
   const tokens = card.example.trim().split(/\s+/);
   const order = shuffleArray(tokens.map((_, i) => i));
   const learnArea = document.getElementById('learnArea');
 
   learnArea.innerHTML = `
     <div class="mc-card build-card">
-      <p class="fc-label">Satzbau</p>
-      <p class="build-src">„${escHtml(card.exampleDE)}"</p>
-      <p class="prompt">Setze den Satz zusammen:</p>
+      <p class="fc-label">${byEar ? 'Hör-Satzbau' : 'Satzbau'}</p>
+      ${byEar
+        ? `<button type="button" class="listen-play" id="buildPlay" title="Satz anhören"><i class="fas fa-volume-up"></i></button>
+           <p class="prompt">Höre den Satz und baue ihn nach:</p>`
+        : `<p class="build-src">„${escHtml(card.exampleDE)}"</p>
+           <p class="prompt">Setze den Satz zusammen:</p>`}
       <div class="build-answer" id="buildAnswer" aria-label="Deine Antwort"></div>
       <div class="build-pool" id="buildPool">
         ${order.map(i => `<button type="button" class="build-tile" data-i="${i}">${escHtml(tokens[i])}</button>`).join('')}
@@ -714,6 +739,11 @@ function showSentenceBuild() {
   session.currentPrompt = { card, tokens, placed: [] };
   setCurrentSession(session);
   updateProgress();
+
+  if (byEar) {
+    speakWord(card.example, lang);
+    document.getElementById('buildPlay')?.addEventListener('click', () => speakWord(card.example, lang));
+  }
 
   const pool = document.getElementById('buildPool');
   const answer = document.getElementById('buildAnswer');
@@ -790,11 +820,236 @@ function checkSentenceBuild() {
     ${isCorrect
       ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
       : `<div class="incorrect" style="margin-top:14px"><p>❌ Nicht ganz — richtig wäre:</p><p style="margin-top:6px"><b>${escHtml(card.example)}</b></p></div>`}
+    <p class="listen-reveal">„${escHtml(card.exampleDE)}"</p>
     <div class="actions" style="margin-top:14px">
       <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
     </div>
   `;
   document.getElementById('mcNext').addEventListener('click', showSentenceBuild);
+}
+
+// ── SPEAKING MODE (Aussprache üben) ──────────────────────────────
+// Das Zielwort laut aussprechen. Wo verfügbar, hört die Web-Speech-
+// Erkennung zu und vergleicht; sonst (z. B. iOS) Referenz-Audio +
+// ehrliche Selbsteinschätzung.
+function speechRecognitionCtor() {
+  return window.SpeechRecognition || window.webkitSpeechRecognition || null;
+}
+
+function showSpeaking() {
+  const session = getCurrentSession();
+  if (!session || session.currentIndex >= session.cards.length) {
+    endSession();
+    return;
+  }
+
+  const card = session.cards[session.currentIndex];
+  const lang = session.deck.language;
+  const SR = speechRecognitionCtor();
+  const pron = [];
+  if (card.roman) pron.push(escHtml(card.roman));
+  if (card.ipa) pron.push('/' + escHtml(card.ipa) + '/');
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card speak-card">
+      <p class="fc-label">Sprechen</p>
+      <div class="fc-word fc-word-target">
+        ${escHtml(card.back)}
+        <button type="button" class="audio-btn" id="speakListen" title="Anhören"><i class="fas fa-volume-up"></i></button>
+      </div>
+      ${pron.length ? `<p class="course-pron">${pron.join(' · ')}</p>` : ''}
+      <p class="prompt">Sprich das Wort laut aus${SR ? ' — ich höre zu' : ''}:</p>
+      <div class="actions">
+        ${SR ? '<button type="button" class="btn btn-primary" id="speakRec"><i class="fas fa-microphone"></i> Aufnehmen</button>' : ''}
+        <button type="button" class="btn ${SR ? '' : 'btn-primary'}" id="speakDone">
+          ${SR ? 'Ohne Mikro fortfahren' : 'Ich habe es gesprochen'}
+        </button>
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentIndex++;
+  session.currentPrompt = { card };
+  setCurrentSession(session);
+  updateProgress();
+
+  speakWord(card.back, lang);
+  document.getElementById('speakListen').addEventListener('click', () => speakWord(card.back, lang));
+  document.getElementById('speakDone').addEventListener('click', () => showSelfAssess(card));
+  document.getElementById('speakRec')?.addEventListener('click', () => runSpeechRecognition(card, lang));
+}
+
+// Fallback: der Nutzer bewertet ehrlich selbst, wie gut es geklappt hat.
+function showSelfAssess(card) {
+  const fb = document.getElementById('mc-fb');
+  if (!fb) return;
+  fb.innerHTML = `
+    <p class="prompt" style="margin-top:14px">Wie gut hast du es getroffen?</p>
+    <div class="actions">
+      <button type="button" class="btn btn-good" id="speakHit"><i class="fas fa-check"></i> Getroffen</button>
+      <button type="button" class="btn btn-again" id="speakMiss"><i class="fas fa-redo"></i> Nochmal üben</button>
+    </div>
+  `;
+  document.getElementById('speakHit').addEventListener('click', () => finishSpeaking(card, true, null));
+  document.getElementById('speakMiss').addEventListener('click', () => finishSpeaking(card, false, null));
+}
+
+function runSpeechRecognition(card, lang) {
+  const SR = speechRecognitionCtor();
+  if (!SR) { showSelfAssess(card); return; }
+  const recBtn = document.getElementById('speakRec');
+  if (recBtn) { recBtn.disabled = true; recBtn.innerHTML = '<i class="fas fa-microphone"></i> Ich höre…'; }
+  let settled = false;
+  const settle = fn => { if (!settled) { settled = true; fn(); } };
+  try {
+    const rec = new SR();
+    rec.lang = getLangCode(lang);
+    rec.interimResults = false;
+    rec.maxAlternatives = 5;
+    rec.onresult = ev => settle(() => {
+      const alts = [...(ev.results[0] || [])].map(a => a.transcript);
+      const hit = alts.some(t =>
+        normAnswer(t) === normAnswer(card.back) ||
+        (card.roman && normAnswer(t) === normAnswer(card.roman)));
+      finishSpeaking(card, hit, alts[0] || '');
+    });
+    rec.onerror = () => settle(() => showSelfAssess(card));
+    rec.onend = () => settle(() => showSelfAssess(card));
+    rec.start();
+    setTimeout(() => settle(() => { try { rec.abort(); } catch { /* egal */ } showSelfAssess(card); }), 8000);
+  } catch {
+    settle(() => showSelfAssess(card));
+  }
+}
+
+function finishSpeaking(card, isCorrect, heard) {
+  const session = getCurrentSession();
+  if (!session?.currentPrompt) return;
+  const userStats = getUserStats();
+
+  if (isCorrect) {
+    session.correctAnswers++;
+    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+    userStats.totalCorrect = (userStats.totalCorrect || 0) + 1;
+  }
+  userStats.totalAnswered = (userStats.totalAnswered || 0) + 1;
+  userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
+  setUserStats(userStats);
+  updateStats();
+  session.currentPrompt = null;
+  setCurrentSession(session);
+
+  recordAnswerEffects(session, card, isCorrect, isCorrect);
+
+  const fb = document.getElementById('mc-fb');
+  fb.innerHTML = `
+    ${isCorrect
+      ? '<div class="correct" style="margin-top:14px"><p>✅ Gut gesprochen!</p></div>'
+      : '<div class="incorrect" style="margin-top:14px"><p>❌ Noch nicht ganz — hör es dir nochmal an.</p></div>'}
+    ${heard ? `<p class="listen-reveal">Verstanden: „${escHtml(heard)}"</p>` : ''}
+    <p class="listen-reveal">${escHtml(card.back)} — <b>${escHtml(card.front)}</b></p>
+    <div class="actions" style="margin-top:14px">
+      <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
+    </div>
+  `;
+  document.getElementById('mcNext').addEventListener('click', showSpeaking);
+}
+
+// ── STORY MODE (Mini-Geschichte) ─────────────────────────────────
+// 5 aufeinanderfolgende Sätze eines Themas als kleine Szene: Satz hören
+// & lesen, dann die richtige deutsche Bedeutung wählen.
+function showStory() {
+  const session = getCurrentSession();
+  if (!session || session.currentIndex >= session.cards.length) {
+    endSession();
+    return;
+  }
+
+  const card = session.cards[session.currentIndex];
+  const lang = session.deck.language;
+  const step = session.currentIndex + 1;
+
+  // 3 Ablenker aus dem Satz-Pool + die richtige Bedeutung.
+  const distractors = shuffleArray(
+    (session.storyPool || session.cards).filter(c => c !== card && c.exampleDE !== card.exampleDE)
+  ).slice(0, 3).map(c => c.exampleDE);
+  const options = shuffleArray([
+    { text: card.exampleDE, correct: true },
+    ...distractors.map(t => ({ text: t, correct: false })),
+  ]);
+
+  const learnArea = document.getElementById('learnArea');
+  learnArea.innerHTML = `
+    <div class="mc-card story-card">
+      <span class="course-phase-badge"><i class="fas fa-book-open"></i> Szene ${step}/${session.cards.length}</span>
+      <p class="story-sent">
+        ${escHtml(card.example)}
+        <button type="button" class="audio-btn" id="storyAudio" title="Anhören"><i class="fas fa-volume-up"></i></button>
+      </p>
+      <p class="prompt">Was bedeutet dieser Satz?</p>
+      <div class="mc-options">
+        ${options.map((o, i) => `
+          <button type="button" class="mc-option" data-idx="${i}">
+            <span class="mc-key">${String.fromCharCode(65 + i)}</span>
+            <span class="mc-text">${escHtml(o.text)}</span>
+          </button>`).join('')}
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentIndex++;
+  session.currentPrompt = { card, options };
+  setCurrentSession(session);
+  updateProgress();
+
+  speakWord(card.example, lang);
+  document.getElementById('storyAudio').addEventListener('click', () => speakWord(card.example, lang));
+  learnArea.querySelectorAll('.mc-option').forEach(btn => {
+    btn.addEventListener('click', () => checkStoryAnswer(Number(btn.dataset.idx)));
+  });
+}
+
+function checkStoryAnswer(selectedIdx) {
+  const session = getCurrentSession();
+  if (!session?.currentPrompt) return;
+  const userStats = getUserStats();
+  const { card, options } = session.currentPrompt;
+
+  const correctIdx = options.findIndex(o => o.correct);
+  const isCorrect = selectedIdx === correctIdx;
+  document.querySelectorAll('.mc-option').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === correctIdx) btn.classList.add('mc-correct');
+    else if (i === selectedIdx) btn.classList.add('mc-wrong');
+  });
+
+  if (isCorrect) {
+    session.correctAnswers++;
+    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+    userStats.totalCorrect = (userStats.totalCorrect || 0) + 1;
+  }
+  userStats.totalAnswered = (userStats.totalAnswered || 0) + 1;
+  userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
+  setUserStats(userStats);
+  updateStats();
+  session.currentPrompt = null;
+  setCurrentSession(session);
+
+  recordAnswerEffects(session, card, isCorrect, isCorrect);
+
+  const fb = document.getElementById('mc-fb');
+  fb.innerHTML = `
+    ${isCorrect
+      ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
+      : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(card.exampleDE)}</b></p></div>`}
+    <div class="actions" style="margin-top:14px">
+      <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
+    </div>
+  `;
+  document.getElementById('mcNext').addEventListener('click', showStory);
 }
 
 // ── COMPARISON MODE ──────────────────────────────────────────────

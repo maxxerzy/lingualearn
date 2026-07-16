@@ -165,6 +165,12 @@
                   <button type="button" class="mode-btn" data-mode="build">
                     <i class="fas fa-puzzle-piece"></i> Satzbau
                   </button>
+                  <button type="button" class="mode-btn" data-mode="speak">
+                    <i class="fas fa-microphone"></i> Sprechen
+                  </button>
+                  <button type="button" class="mode-btn" data-mode="story">
+                    <i class="fas fa-book-open"></i> Story
+                  </button>
                 </div>
                 <div class="course-progress" id="courseProgress">
                   <i class="fas fa-graduation-cap"></i> <span id="courseProgressText"></span>
@@ -385,20 +391,23 @@
           </div>
         </section>
 
+        <!-- Lernpfad View: scrollbare Lektions-Landkarte, aktuelle Lektion startbar -->
+        <section id="view-path" class="view">
+          <div class="panel">
+            <div class="view-topbar">
+              <button type="button" class="btn-back" id="pathBackBtn">
+                <i class="fas fa-arrow-left"></i> Lernen
+              </button>
+              <h2><i class="fas fa-map-signs"></i> <span id="pathTitle">Lernpfad</span></h2>
+            </div>
+            <div id="pathBody"></div>
+            <button type="button" class="btn btn-primary btn-full path-start" id="pathStartBtn" hidden></button>
+          </div>
+        </section>
+
       </div>
     </main>
 
-    <!-- Lern-Landkarte (Modal) -->
-    <div class="modal" id="coursemapModal" hidden>
-      <div class="modal__backdrop"></div>
-      <div class="modal__box" role="dialog" aria-label="Lernkarte">
-        <div class="modal__head">
-          <h3><i class="fas fa-map-signs"></i> <span id="coursemapTitle">Lernkarte</span></h3>
-          <button type="button" class="modal__close" aria-label="Schließen"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="modal__body" id="coursemapBody"></div>
-      </div>
-    </div>
 
     <!-- Wort des Tages (Modal) -->
     <div class="modal" id="wotdModal" hidden>
@@ -424,7 +433,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v15';
+    var APP_VERSION = 'v16';
     var loginMode = 'login';
 
     function hp(pw) {

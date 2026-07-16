@@ -1,16 +1,21 @@
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
 
-// Lern-Landkarte: visueller Lektionspfad des gewählten Decks
-// (erledigt / aktuell / gesperrt). Read-only, zeigt nur den Fortschritt.
+// Lernpfad: vollwertige Ansicht mit dem Lektionsweg des gewählten Decks
+// (erledigt / aktuell / gesperrt). Die aktuelle Lektion lässt sich direkt
+// vom Pfad aus starten — à la Duolingo.
+
+let navigate = null;      // activateView aus der Navigation
+let startCourse = null;   // startet die Session (setzt vorher Kurs-Modus)
 
 function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-export function renderCourseMap(deckId) {
-  const body = document.getElementById('coursemapBody');
-  const titleEl = document.getElementById('coursemapTitle');
+export function renderPath(deckId) {
+  const body = document.getElementById('pathBody');
+  const titleEl = document.getElementById('pathTitle');
+  const startBtn = document.getElementById('pathStartBtn');
   if (!body) return;
 
   const deck = getDecks()[deckId];
@@ -22,9 +27,9 @@ export function renderCourseMap(deckId) {
     { length: Math.max(1, Math.ceil(total / LESSON_SIZE)) },
     (_, i) => Math.min(LESSON_SIZE, total - i * LESSON_SIZE));
   const totalLessons = sizes.length;
-  const introduced = getCourseState(deckId).introduced;
   const current = lessonNumber(deckId);                 // 1-basiert
-  const done = current - 1;                              // vollständig abgeschlossene Lektionen
+  const done = Math.min(current - 1, totalLessons);
+  const finished = getCourseState(deckId).introduced >= total && total > 0;
 
   if (titleEl) titleEl.textContent = `${deck.name} — ${done}/${totalLessons} Lektionen`;
 
@@ -33,56 +38,68 @@ export function renderCourseMap(deckId) {
   for (let n = 1; n <= totalLessons; n++) {
     const size = sizes[n - 1];
     let cls, icon;
-    if (n <= done) { cls = 'done'; icon = 'fa-check'; }
+    if (finished || n <= done) { cls = 'done'; icon = 'fa-check'; }
     else if (n === current) { cls = 'current'; icon = 'fa-play'; }
     else { cls = 'locked'; icon = 'fa-lock'; }
     const from = start + 1;
     const to = start + size;
     start += size;
     const title = deck.lessonTitles?.[n - 1];
+    const isGo = cls === 'current';
     nodes.push(`
-      <li class="map-node map-node--${cls}">
+      <li class="map-node map-node--${cls}" ${isGo ? 'data-start-lesson role="button" tabindex="0"' : ''}>
         <span class="map-node__dot"><i class="fas ${icon}"></i></span>
         <span class="map-node__label">
           <b>Lektion ${n}${title ? ' · ' + esc(title) : ''}</b>
-          <span class="map-node__range">Wörter ${from}–${to}</span>
+          <span class="map-node__range">Wörter ${from}–${to}${isGo ? ' · antippen zum Starten' : ''}</span>
         </span>
       </li>`);
   }
   body.innerHTML = `<ol class="map-path">${nodes.join('')}</ol>`;
+
+  if (startBtn) {
+    if (finished) {
+      startBtn.hidden = false;
+      startBtn.disabled = true;
+      startBtn.innerHTML = '<i class="fas fa-check"></i> Kurs abgeschlossen';
+    } else {
+      const t = deck.lessonTitles?.[current - 1];
+      startBtn.hidden = false;
+      startBtn.disabled = false;
+      startBtn.innerHTML = `<i class="fas fa-graduation-cap"></i> Lektion ${current}${t ? ' · ' + esc(t) : ''} starten`;
+    }
+  }
 
   // Zur aktuellen Lektion scrollen.
   const cur = body.querySelector('.map-node--current');
   if (cur) cur.scrollIntoView({ block: 'center' });
 }
 
-export function openCourseMap() {
-  const modal = document.getElementById('coursemapModal');
-  if (!modal) return;
+// Pfad-Ansicht öffnen (aus Konfiguration oder laufender Session).
+export function showPath() {
   const deckId = document.getElementById('deckSelect')?.value;
-  renderCourseMap(deckId);           // sofort zeigen (evtl. noch ohne Titel)
-  modal.hidden = false;
-  // Deck laden, damit die thematischen Lektions-Titel erscheinen.
+  if (navigate) navigate('path');
+  renderPath(deckId);                   // sofort zeigen (evtl. noch ohne Titel)
   loadDeck(deckId).then(() => {
-    if (!modal.hidden) renderCourseMap(deckId);
+    if (document.getElementById('view-path')?.classList.contains('active')) renderPath(deckId);
   }).catch(() => {});
 }
 
-export function closeCourseMap() {
-  const modal = document.getElementById('coursemapModal');
-  if (modal) modal.hidden = true;
+// Aktuelle Lektion direkt vom Pfad aus starten: Kurs-Modus aktivieren,
+// zurück zur Lern-Ansicht, Session starten.
+function startFromPath() {
+  document.querySelectorAll('.mode-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.mode === 'course'));
+  if (navigate) navigate('learn');
+  if (startCourse) startCourse();
 }
 
-// Trigger, Schließen-Button, Backdrop-Klick und Esc einmalig verdrahten.
-export function initCourseMap() {
-  const trigger = document.getElementById('coursemapBtn');
-  if (trigger) trigger.addEventListener('click', openCourseMap);
-
-  const modal = document.getElementById('coursemapModal');
-  if (!modal) return;
-  modal.querySelector('.modal__close')?.addEventListener('click', closeCourseMap);
-  modal.querySelector('.modal__backdrop')?.addEventListener('click', closeCourseMap);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && !modal.hidden) closeCourseMap();
+export function initPath(activateView, startSessionFn) {
+  navigate = activateView;
+  startCourse = startSessionFn;
+  document.getElementById('pathBackBtn')?.addEventListener('click', () => navigate?.('learn'));
+  document.getElementById('pathStartBtn')?.addEventListener('click', startFromPath);
+  document.getElementById('pathBody')?.addEventListener('click', e => {
+    if (e.target.closest('[data-start-lesson]')) startFromPath();
   });
 }
