@@ -958,7 +958,7 @@ label {
 
 /* ── Touch-Geräte: Mindestgrößen für Finger-Bedienung ──────────── */
 @media (pointer: coarse) {
-  .btn, .mode-btn, .mc-option, .login-tab, .btn-back, .user-chip {
+  .btn, .mode-btn, .mc-option, .login-tab, .btn-back, .user-chip, .build-tile {
     min-height: 44px;
   }
   .audio-btn {
@@ -1111,6 +1111,11 @@ label {
   #view-learn:not(.session-active) .daily-goal { margin-top: 6px; padding: 7px 10px; }
   #view-learn:not(.session-active) .daily-goal__bar { height: 6px; }
   #view-learn:not(.session-active) .course-progress { margin: 6px 0 2px; }
+  /* Deck-Fortschrittsdetails auf sehr kurzen Screens einklappen —
+     die Info steckt auch in der Statistik; so passen 7 Modi ohne Scrollen. */
+  #view-learn:not(.session-active) .deck-progress { display: none; }
+  #view-learn:not(.session-active) .mode-btn { min-height: 44px; padding: 6px 6px; font-size: 0.72rem; }
+  #view-learn:not(.session-active) .mode-tabs { gap: 5px; }
 }
 
 /* (Fokus-Modus – gleiche kurze Screens) */

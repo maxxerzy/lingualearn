@@ -23,6 +23,7 @@ export const AVATARS = [
   { id: 'rocket',  name: 'Rakete',     icon: 'fa-rocket',         req: { level: 5 } },
   { id: 'dragon',  name: 'Drache',     icon: 'fa-dragon',         req: { streak: 7 } },
   { id: 'astro',   name: 'Astronaut',  icon: 'fa-user-astronaut', req: { level: 8 } },
+  { id: 'flamme',  name: 'Flamme',     icon: 'fa-fire',           req: { achievement: 'combo-10' } },
   { id: 'crown',   name: 'Krone',      icon: 'fa-crown',          req: { achievement: 'meister-100' } },
 ];
 
@@ -34,6 +35,8 @@ export const TITLES = [
   { id: 'profi',      name: 'Vokabelprofi',     req: { achievement: 'meister-50' } },
   { id: 'koenig',     name: 'Wortschatz-König', req: { achievement: 'meister-100' } },
   { id: 'polyglott',  name: 'Polyglott',        req: { achievement: 'polyglott' } },
+  { id: 'aufsteiger', name: 'Liga-Aufsteiger',  req: { achievement: 'liga-auf' } },
+  { id: 'questheld',  name: 'Questheld',        req: { achievement: 'quests-10' } },
 ];
 
 export const CARD_DESIGNS = [
@@ -50,6 +53,8 @@ export const BADGE_RARITY = {
   'richtig-100': 'silber', 'meister-10': 'silber', 'serie-7': 'silber',
   'perfekt': 'silber', 'level-5': 'silber',
   'richtig-500': 'gold', 'meister-50': 'gold', 'serie-30': 'gold',
+  'quests-10': 'silber', 'combo-10': 'silber',
+  'gems-250': 'gold', 'liga-auf': 'gold',
   'polyglott': 'legendaer', 'meister-100': 'legendaer',
 };
 

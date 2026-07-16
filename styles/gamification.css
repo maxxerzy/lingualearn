@@ -572,3 +572,48 @@
 .shop-item__owned { color: var(--gray); font-size: .72rem; }
 .shop-item__buy { border: none; background: var(--gem); color: #fff; font-weight: 800; border-radius: 999px; padding: 8px 14px; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
 .shop-item__buy[disabled] { background: var(--light-gray); color: var(--gray); cursor: default; }
+
+/* ── Tippen-Modus ─────────────────────────────────────────────── */
+.typing-input {
+  max-width: 340px;
+  margin: 4px auto 0;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.typing-input:disabled { opacity: .65; }
+
+/* ── Satzbau-Modus ────────────────────────────────────────────── */
+.build-src { font-size: 1.05rem; font-weight: 600; color: var(--dark); margin: 4px 0 2px; }
+.build-answer {
+  display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+  min-height: 52px; width: 100%; max-width: 480px; margin: 6px auto;
+  padding: 8px; border-bottom: 2px dashed var(--light-gray);
+}
+.build-pool { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; max-width: 480px; margin: 6px auto 0; }
+.build-tile {
+  border: 1.5px solid var(--light-gray); border-radius: 10px;
+  background: var(--surface); color: var(--dark);
+  padding: 8px 12px; min-height: 40px; font-size: .95rem; font-weight: 600;
+  cursor: pointer; transition: var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+.build-tile:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.build-tile--used { opacity: .25; }
+.build-tile--placed { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, var(--surface)); }
+
+/* ── Fehler-Training-Button ───────────────────────────────────── */
+.btn-error-review {
+  border: 1.5px solid #e05260; color: #e05260; background: var(--surface);
+}
+.btn-error-review:hover { background: #fdeaec; }
+
+/* ── Konfetti (Level-Up, Truhen) ──────────────────────────────── */
+.confetti { position: fixed; inset: 0; pointer-events: none; z-index: 400; overflow: hidden; }
+.confetti span {
+  position: absolute; top: -14px; width: 9px; height: 14px; border-radius: 2px;
+  animation: confettiFall linear forwards;
+}
+@keyframes confettiFall {
+  to { transform: translateY(105vh) rotate(540deg); opacity: .9; }
+}

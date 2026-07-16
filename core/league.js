@@ -19,7 +19,7 @@ const DEMOTE = 2;    // Untere 2 steigen ab
 const GROUP = 10;    // du + 9 Gegner
 
 const store = createUserStore('lingualearn_league_', {
-  defaults: () => ({ weekId: null, division: 0, weekXp: 0, seed: 1, lastResult: null }),
+  defaults: () => ({ weekId: null, division: 0, weekXp: 0, seed: 1, lastResult: null, promotions: 0 }),
 });
 
 function hash(str) {
@@ -70,7 +70,10 @@ function ensureWeek() {
     const finals = makeBots(st.weekId, st.division, st.seed).map(b => b.target);
     const rank = finals.filter(x => x > (st.weekXp || 0)).length + 1;
     let division = st.division, outcome = 'gehalten';
-    if (rank <= PROMOTE && division < DIVISIONS.length - 1) { division++; outcome = 'aufgestiegen'; }
+    if (rank <= PROMOTE && division < DIVISIONS.length - 1) {
+      division++; outcome = 'aufgestiegen';
+      st.promotions = (st.promotions || 0) + 1;   // für den „Liga-Aufsteiger"-Erfolg
+    }
     else if (rank > GROUP - DEMOTE && division > 0) { division--; outcome = 'abgestiegen'; }
     st.division = division;
     st.lastResult = { rank, outcome, division, weekId: st.weekId };
@@ -112,6 +115,7 @@ export function getLeague() {
 }
 
 export function reinitLeague() { store.reinit(); }
+export function getLeaguePromotions() { return store.get().promotions || 0; }
 export function clearLastResult() {
   const st = store.get();
   if (st.lastResult) { st.lastResult = null; store.save(st); }

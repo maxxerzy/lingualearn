@@ -1,5 +1,5 @@
 import { createUserStore } from './userStore.js';
-import { getGame, addGems, addBonusXp } from './gamification.js';
+import { getGame, addGems, addBonusXp, noteQuestDone } from './gamification.js';
 
 // Tagesquests: 3 wechselnde Aufgaben pro Tag (deterministisch aus dem Datum).
 // Fortschritt kommt aus den Tageszählern (game.daily); erfüllte Quests geben
@@ -67,6 +67,7 @@ export function claimQuest(id) {
   store.save(st);
   addGems(q.gem);
   if (q.xp) addBonusXp(q.xp);
+  noteQuestDone();
   return q;
 }
 

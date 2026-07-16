@@ -32,6 +32,24 @@ export function toastAchievements(list) {
   });
 }
 
+// Kurzer Konfetti-Regen (Level-Up, Streak-Truhe).
+const CONFETTI_COLORS = ['#4361ee', '#f72585', '#ffd60a', '#2ec4b6', '#ff8a1e', '#9b5de5'];
+export function confettiBurst(count = 26) {
+  const wrap = document.createElement('div');
+  wrap.className = 'confetti';
+  for (let i = 0; i < count; i++) {
+    const s = document.createElement('span');
+    s.style.left = Math.random() * 100 + 'vw';
+    s.style.background = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
+    s.style.animationDelay = (Math.random() * 0.4) + 's';
+    s.style.animationDuration = (0.9 + Math.random() * 0.8) + 's';
+    s.style.transform = `rotate(${Math.random() * 360}deg)`;
+    wrap.appendChild(s);
+  }
+  document.body.appendChild(wrap);
+  setTimeout(() => wrap.remove(), 2200);
+}
+
 const COSMETIC_LABEL = { theme: 'Theme', avatar: 'Avatar', title: 'Titel', cardDesign: 'Karten-Design' };
 
 export function toastCosmetics(list) {

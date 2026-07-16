@@ -4,9 +4,9 @@ import { updateStats } from './stats.js';
 import { shuffleArray } from '../utils/helpers.js';
 import { isCognate } from '../utils/cognate.js';
 import { recordCardAnswer, getDueFronts } from './cardProgress.js';
-import { recordGameAnswer, recordSessionEnd, checkAchievements, consumeXpBoost, getGame, XP } from './gamification.js';
+import { recordGameAnswer, recordSessionEnd, checkAchievements, consumeXpBoost, consumeCelebrations, noteCombo, getGame, XP } from './gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../ui/gami.js';
-import { showToast, toastAchievements, toastCosmetics } from '../ui/toast.js';
+import { showToast, toastAchievements, toastCosmetics, confettiBurst } from '../ui/toast.js';
 import { checkNewCosmetics } from './cosmetics.js';
 import { pendingQuestClaims } from './quests.js';
 import { nextLessonCards, lessonNumber, advanceCourse, getCourseState, getSentencesDone, markSentencesDone } from './course.js';
@@ -37,6 +37,7 @@ function rewardExtras(gemsEarned, boosted) {
   return `${gemsEarned ? `<span class="reward-pill reward-pill--gems"><i class="fas fa-gem"></i> +${gemsEarned}</span>` : ''}${boosted ? '<span class="reward-pill reward-pill--boost"><i class="fas fa-bolt"></i> 2× XP</span>' : ''}`;
 }
 function celebrateSessionEnd() {
+  announceCelebrations();
   const g = getGame();
   if (g.streakFrozeToday) {
     showToast('<i class="fas fa-snowflake toast__icon"></i><div class="toast__body"><b>Streak-Freeze eingesetzt</b><span>Deine Serie ist geschützt geblieben.</span></div>');
@@ -138,6 +139,20 @@ export async function startSession() {
   }
 
   const mode = getSelectedMode();
+
+  // Satzbau braucht Karten mit Beispielsatz (3–12 Wörter, mit Übersetzung).
+  if (mode === 'build') {
+    sessionCards = sessionCards.filter(c => {
+      if (!c.example || !c.exampleDE) return false;
+      const n = c.example.trim().split(/\s+/).length;
+      return n >= 3 && n <= 12;
+    });
+    if (sessionCards.length === 0) {
+      alert('Für dieses Deck gibt es keine passenden Sätze für den Satzbau-Modus.');
+      return;
+    }
+  }
+
   enterFocus(mode);
 
   if (mode === 'course') {
@@ -174,6 +189,10 @@ export async function startSession() {
     showMultipleChoice();
   } else if (mode === 'listen') {
     showListenDuel();
+  } else if (mode === 'typing') {
+    showTyping();
+  } else if (mode === 'build') {
+    showSentenceBuild();
   } else {
     showNextCard();
   }
@@ -413,13 +432,33 @@ function recordAnswerEffects(session, card, isCorrect, ratingOrBool) {
   recordCardAnswer(session.deckId, card.front, ratingOrBool);
   // Combo: Serie richtiger Antworten gibt Bonus-XP (bis +10).
   session.combo = isCorrect ? (session.combo || 0) + 1 : 0;
+  if (isCorrect) noteCombo(session.combo);
   const comboBonus = isCorrect && session.combo >= 2 ? Math.min(session.combo - 1, 5) * 2 : 0;
   const { gained } = recordGameAnswer(isCorrect, { bonus: comboBonus, boost: !!session.boosted });
   session.xpFromAnswers = (session.xpFromAnswers || 0) + gained;
+  // Falsche Antworten fürs anschließende Fehler-Training merken.
+  if (!isCorrect) {
+    session.wrongCards = session.wrongCards || [];
+    if (!session.wrongCards.some(c => c.front === card.front)) session.wrongCards.push(card);
+  }
   renderGamiHeader();
   renderLearnWidgets();
   announceUnlocks();
+  announceCelebrations();
   showCombo(session.combo, comboBonus);
+}
+
+// Level-Up- und Streak-Truhen-Feiern (Toast + Konfetti).
+function announceCelebrations() {
+  const c = consumeCelebrations();
+  if (c.levelUp) {
+    confettiBurst();
+    showToast(`<i class="fas fa-trophy toast__icon"></i><div class="toast__body"><b>Level ${c.levelUp} erreicht! 🎉</b><span>+${c.gemBonus} Diamanten als Bonus</span></div>`);
+  }
+  if (c.chest) {
+    confettiBurst();
+    showToast(`<i class="fas fa-box-open toast__icon"></i><div class="toast__body"><b>${c.chest.days}-Tage-Truhe geöffnet! 🎁</b><span>+${c.chest.gems} Diamanten für deine Serie</span></div>`);
+  }
 }
 
 function checkMCAnswer(selectedIdx) {
@@ -534,6 +573,228 @@ function checkListenAnswer(selectedIdx) {
   `;
 
   document.getElementById('mcNext').addEventListener('click', showListenDuel);
+}
+
+// ── TYPING MODE (freies Abrufen) ─────────────────────────────────
+// Die Übersetzung selbst eintippen — tolerant gegenüber Groß-/Klein-
+// schreibung, Satzzeichen und Sonderbuchstaben (æ→ae, ø→o …); für
+// nicht-lateinische Schriften (ru/ja) zählt auch die Umschrift (roman).
+const TYPO_MAP = { 'æ': 'ae', 'ø': 'o', 'å': 'a', 'ß': 'ss', 'œ': 'oe', 'ð': 'd', 'þ': 'th' };
+function normAnswer(s) {
+  return String(s || '')
+    .toLowerCase()
+    .replace(/[.,!?;:„“”"'’«»()¿¡]/g, '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[æøåßœðþ]/g, ch => TYPO_MAP[ch] || ch)
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function showTyping() {
+  const session = getCurrentSession();
+  if (!session || session.currentIndex >= session.cards.length) {
+    endSession();
+    return;
+  }
+
+  const card = session.cards[session.currentIndex];
+  const lang = session.deck.language;
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card typing-card">
+      <p class="fc-label">Deutsch</p>
+      <div class="fc-word">${escHtml(card.front)}</div>
+      <p class="prompt">Schreibe die Übersetzung (${getLangName(lang)}):</p>
+      <input type="text" id="typingInput" class="input typing-input" autocomplete="off"
+        autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done">
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="typingCheck">Prüfen</button>
+        <button type="button" class="btn" id="typingReveal">Aufdecken</button>
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentIndex++;
+  session.currentPrompt = { card };
+  setCurrentSession(session);
+  updateProgress();
+
+  const input = document.getElementById('typingInput');
+  input.focus();
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') checkTyping(false); });
+  document.getElementById('typingCheck').addEventListener('click', () => checkTyping(false));
+  document.getElementById('typingReveal').addEventListener('click', () => checkTyping(true));
+}
+
+function checkTyping(revealed) {
+  const session = getCurrentSession();
+  if (!session?.currentPrompt) return;
+  const userStats = getUserStats();
+  const { card } = session.currentPrompt;
+  const lang = session.deck.language;
+
+  const input = document.getElementById('typingInput');
+  const guess = input?.value || '';
+  if (!revealed && normAnswer(guess) === '') { input?.focus(); return; }
+
+  const isCorrect = !revealed && (
+    normAnswer(guess) === normAnswer(card.back) ||
+    (card.roman && normAnswer(guess) === normAnswer(card.roman))
+  );
+
+  if (input) input.disabled = true;
+  document.getElementById('typingCheck')?.setAttribute('disabled', '');
+  document.getElementById('typingReveal')?.setAttribute('disabled', '');
+
+  if (isCorrect) {
+    session.correctAnswers++;
+    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+    userStats.totalCorrect = (userStats.totalCorrect || 0) + 1;
+  }
+  userStats.totalAnswered = (userStats.totalAnswered || 0) + 1;
+  userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
+  setUserStats(userStats);
+  updateStats();
+  session.currentPrompt = null;
+  setCurrentSession(session);
+
+  recordAnswerEffects(session, card, isCorrect, isCorrect);
+  speakWord(card.back, lang);
+
+  const pron = [];
+  if (card.roman) pron.push(escHtml(card.roman));
+  if (card.ipa) pron.push('/' + escHtml(card.ipa) + '/');
+  const fb = document.getElementById('mc-fb');
+  fb.innerHTML = `
+    ${isCorrect
+      ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
+      : `<div class="incorrect" style="margin-top:14px"><p>${revealed ? '👁 Lösung' : '❌ Falsch'} — richtig: <b>${escHtml(card.back)}</b></p></div>`}
+    ${pron.length ? `<p class="listen-reveal">${pron.join(' · ')}</p>` : ''}
+    <div class="actions" style="margin-top:14px">
+      <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
+    </div>
+  `;
+  document.getElementById('mcNext').addEventListener('click', showTyping);
+}
+
+// ── SENTENCE BUILD MODE (Satzbau) ────────────────────────────────
+// Den Beispielsatz aus gemischten Wort-Kacheln zusammensetzen —
+// die deutsche Übersetzung dient als Vorlage.
+function showSentenceBuild() {
+  const session = getCurrentSession();
+  if (!session || session.currentIndex >= session.cards.length) {
+    endSession();
+    return;
+  }
+
+  const card = session.cards[session.currentIndex];
+  const tokens = card.example.trim().split(/\s+/);
+  const order = shuffleArray(tokens.map((_, i) => i));
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card build-card">
+      <p class="fc-label">Satzbau</p>
+      <p class="build-src">„${escHtml(card.exampleDE)}"</p>
+      <p class="prompt">Setze den Satz zusammen:</p>
+      <div class="build-answer" id="buildAnswer" aria-label="Deine Antwort"></div>
+      <div class="build-pool" id="buildPool">
+        ${order.map(i => `<button type="button" class="build-tile" data-i="${i}">${escHtml(tokens[i])}</button>`).join('')}
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="buildCheck" disabled>Prüfen</button>
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentIndex++;
+  session.currentPrompt = { card, tokens, placed: [] };
+  setCurrentSession(session);
+  updateProgress();
+
+  const pool = document.getElementById('buildPool');
+  const answer = document.getElementById('buildAnswer');
+  const checkBtn = document.getElementById('buildCheck');
+
+  function sync() {
+    const s = getCurrentSession();
+    checkBtn.disabled = s.currentPrompt.placed.length !== tokens.length;
+  }
+
+  pool.addEventListener('click', e => {
+    const tile = e.target.closest('.build-tile');
+    if (!tile || tile.disabled) return;
+    tile.disabled = true;
+    tile.classList.add('build-tile--used');
+    const s = getCurrentSession();
+    s.currentPrompt.placed.push(Number(tile.dataset.i));
+    setCurrentSession(s);
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'build-tile build-tile--placed';
+    chip.dataset.i = tile.dataset.i;
+    chip.textContent = tokens[Number(tile.dataset.i)];
+    answer.appendChild(chip);
+    sync();
+  });
+
+  answer.addEventListener('click', e => {
+    const chip = e.target.closest('.build-tile--placed');
+    if (!chip) return;
+    const i = Number(chip.dataset.i);
+    const s = getCurrentSession();
+    s.currentPrompt.placed = s.currentPrompt.placed.filter(x => x !== i);
+    setCurrentSession(s);
+    chip.remove();
+    const orig = pool.querySelector(`.build-tile[data-i="${i}"]`);
+    if (orig) { orig.disabled = false; orig.classList.remove('build-tile--used'); }
+    sync();
+  });
+
+  checkBtn.addEventListener('click', checkSentenceBuild);
+}
+
+function checkSentenceBuild() {
+  const session = getCurrentSession();
+  if (!session?.currentPrompt) return;
+  const userStats = getUserStats();
+  const { card, tokens, placed } = session.currentPrompt;
+  const lang = session.deck.language;
+
+  const built = placed.map(i => tokens[i]).join(' ');
+  const isCorrect = built === tokens.join(' ');
+
+  document.getElementById('buildCheck')?.setAttribute('disabled', '');
+  document.querySelectorAll('.build-tile').forEach(t => (t.disabled = true));
+
+  if (isCorrect) {
+    session.correctAnswers++;
+    userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+    userStats.totalCorrect = (userStats.totalCorrect || 0) + 1;
+  }
+  userStats.totalAnswered = (userStats.totalAnswered || 0) + 1;
+  userStats.successRate = Math.round((session.correctAnswers / session.currentIndex) * 100);
+  setUserStats(userStats);
+  updateStats();
+  session.currentPrompt = null;
+  setCurrentSession(session);
+
+  recordAnswerEffects(session, card, isCorrect, isCorrect);
+  if (isCorrect) speakWord(card.example, lang);
+
+  const fb = document.getElementById('mc-fb');
+  fb.innerHTML = `
+    ${isCorrect
+      ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
+      : `<div class="incorrect" style="margin-top:14px"><p>❌ Nicht ganz — richtig wäre:</p><p style="margin-top:6px"><b>${escHtml(card.example)}</b></p></div>`}
+    <div class="actions" style="margin-top:14px">
+      <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
+    </div>
+  `;
+  document.getElementById('mcNext').addEventListener('click', showSentenceBuild);
 }
 
 // ── COMPARISON MODE ──────────────────────────────────────────────
@@ -692,6 +953,10 @@ function endSession() {
       <span class="reward-pill reward-pill--streak"><i class="fas fa-fire"></i> Serie: ${game.streak.current} ${game.streak.current === 1 ? 'Tag' : 'Tage'}</span>
     </div>
     <div class="actions" style="margin-top:20px">
+      ${session?.wrongCards?.length ? `
+        <button type="button" class="btn btn-error-review" id="reviewErrorsBtn">
+          <i class="fas fa-rotate-left"></i> Fehler üben (${session.wrongCards.length})
+        </button>` : ''}
       <button type="button" class="btn btn-primary" id="restartSession">
         <i class="fas fa-redo"></i> Noch einmal
       </button>
@@ -702,6 +967,9 @@ function endSession() {
   toastCosmetics(checkNewCosmetics());
   celebrateSessionEnd();
   document.getElementById('restartSession').addEventListener('click', startSession);
+  const wrong = session?.wrongCards || [];
+  document.getElementById('reviewErrorsBtn')?.addEventListener('click', () =>
+    startErrorReview(session.deck, session.deckId, wrong));
   setCurrentSession(null);
 
   // Fortschrittsbalken auf den Endstand bringen.
@@ -709,6 +977,32 @@ function endSession() {
   const barEl  = document.getElementById('progress-bar');
   if (textEl) textEl.textContent = `${total}/${total} Karten`;
   if (barEl)  barEl.style.width = '100%';
+}
+
+// Fehler-Training: die falsch beantworteten Karten der letzten Session
+// noch einmal als Karteikarten durchgehen.
+function startErrorReview(deck, deckId, cards) {
+  if (!cards?.length) return;
+  const shuffled = shuffleArray([...cards]);
+  const session = {
+    deck,
+    deckId,
+    cards: shuffled,
+    mode: 'flashcard',
+    currentIndex: 0,
+    correctAnswers: 0,
+    totalCards: shuffled.length,
+    currentPrompt: null,
+    combo: 0,
+    boosted: false,
+    queue: [...shuffled],
+    reviewQueue: [],
+    reviewRound: 1,
+  };
+  setCurrentSession(session);
+  document.getElementById('session-title').textContent = `${deck.name} — Fehler-Training`;
+  updateProgress();
+  showFlashcard();
 }
 
 // ── LERNKURS-MODUS (Basic101) ────────────────────────────────────
