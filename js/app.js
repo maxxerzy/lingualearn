@@ -12,6 +12,9 @@ import { renderGamiHeader, renderLearnWidgets, renderStatsExtras } from '../ui/g
 import { applyCosmetics, initRewards, renderRewards } from '../ui/cosmetics.js';
 import { reinitWotd, initWotdModal } from '../ui/wotd.js';
 import { initCourseMap, openCourseMap } from '../ui/coursemap.js';
+import { initArena, renderArena } from '../ui/hub.js';
+import { reinitLeague } from '../core/league.js';
+import { reinitQuests } from '../core/quests.js';
 import { showToast } from '../ui/toast.js';
 
 let appInitialized = false;
@@ -39,6 +42,8 @@ function reinitUser() {
   reinitCourse();
   reinitCosmetics();
   reinitWotd();
+  reinitLeague();
+  reinitQuests();
 }
 
 function showApp() {
@@ -53,6 +58,7 @@ function showApp() {
     initSettings();
     initCourseMap();
     initWotdModal();
+    initArena();
     initRewards();
     setupModeTabs();
     setupFocusControls();
@@ -77,6 +83,7 @@ function showApp() {
         activateView(item.dataset.action);
         if (item.dataset.action === 'stats') renderStatsExtras();
         if (item.dataset.action === 'rewards') renderRewards();
+        if (item.dataset.action === 'arena') renderArena();
         dropdown.hidden = true;
         syncChip();
       });

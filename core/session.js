@@ -4,16 +4,47 @@ import { updateStats } from './stats.js';
 import { shuffleArray } from '../utils/helpers.js';
 import { isCognate } from '../utils/cognate.js';
 import { recordCardAnswer, getDueFronts } from './cardProgress.js';
-import { recordGameAnswer, recordSessionEnd, checkAchievements, XP } from './gamification.js';
+import { recordGameAnswer, recordSessionEnd, checkAchievements, consumeXpBoost, getGame, XP } from './gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../ui/gami.js';
-import { toastAchievements, toastCosmetics } from '../ui/toast.js';
+import { showToast, toastAchievements, toastCosmetics } from '../ui/toast.js';
 import { checkNewCosmetics } from './cosmetics.js';
+import { pendingQuestClaims } from './quests.js';
 import { nextLessonCards, lessonNumber, advanceCourse, getCourseState, getSentencesDone, markSentencesDone } from './course.js';
 
 // Erfolge prüfen + einblenden, danach dadurch freigeschaltete Cosmetics.
 function announceUnlocks() {
   toastAchievements(checkAchievements());
   toastCosmetics(checkNewCosmetics());
+}
+
+// Combo-Anzeige (aufeinanderfolgende richtige Antworten).
+function showCombo(combo, bonus) {
+  let el = document.getElementById('comboFloat');
+  if (!el) { el = document.createElement('div'); el.id = 'comboFloat'; el.className = 'combo-float'; document.body.appendChild(el); }
+  if (combo >= 3) {
+    el.innerHTML = `<i class="fas fa-fire"></i> Combo ×${combo}${bonus ? ` <span>+${bonus}</span>` : ''}`;
+    el.classList.remove('combo-float--show');
+    void el.offsetWidth;   // Reflow → Animation neu starten
+    el.classList.add('combo-float--show');
+  } else {
+    el.classList.remove('combo-float--show');
+  }
+}
+
+// Zusatz-Belohnungen am Sessionende: Diamanten-Pille, XP-Boost-Hinweis,
+// Streak-Freeze- und Quest-Meldungen.
+function rewardExtras(gemsEarned, boosted) {
+  return `${gemsEarned ? `<span class="reward-pill reward-pill--gems"><i class="fas fa-gem"></i> +${gemsEarned}</span>` : ''}${boosted ? '<span class="reward-pill reward-pill--boost"><i class="fas fa-bolt"></i> 2× XP</span>' : ''}`;
+}
+function celebrateSessionEnd() {
+  const g = getGame();
+  if (g.streakFrozeToday) {
+    showToast('<i class="fas fa-snowflake toast__icon"></i><div class="toast__body"><b>Streak-Freeze eingesetzt</b><span>Deine Serie ist geschützt geblieben.</span></div>');
+  }
+  const pend = pendingQuestClaims();
+  if (pend.length) {
+    showToast(`<i class="fas fa-bullseye toast__icon"></i><div class="toast__body"><b>${pend.length} Quest${pend.length > 1 ? 's' : ''} erledigt!</b><span>In der Arena abholen (+Diamanten).</span></div>`);
+  }
 }
 
 const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU', ja: 'ja-JP' };
@@ -125,6 +156,8 @@ export async function startSession() {
     correctAnswers: 0,
     totalCards: shuffled.length,
     currentPrompt: null,
+    combo: 0,
+    boosted: consumeXpBoost(),   // XP-Boost aus dem Shop einlösen
     // flashcard
     queue: [...shuffled],
     reviewQueue: [],
@@ -378,11 +411,15 @@ function markMcAnswer(options, chosenIdx, card) {
 // die MC/Vergleich/Kurs-Pfade übergeben einfach isCorrect).
 function recordAnswerEffects(session, card, isCorrect, ratingOrBool) {
   recordCardAnswer(session.deckId, card.front, ratingOrBool);
-  recordGameAnswer(isCorrect);
-  session.xpFromAnswers = (session.xpFromAnswers || 0) + (isCorrect ? XP.correct : XP.wrong);
+  // Combo: Serie richtiger Antworten gibt Bonus-XP (bis +10).
+  session.combo = isCorrect ? (session.combo || 0) + 1 : 0;
+  const comboBonus = isCorrect && session.combo >= 2 ? Math.min(session.combo - 1, 5) * 2 : 0;
+  const { gained } = recordGameAnswer(isCorrect, { bonus: comboBonus, boost: !!session.boosted });
+  session.xpFromAnswers = (session.xpFromAnswers || 0) + gained;
   renderGamiHeader();
   renderLearnWidgets();
   announceUnlocks();
+  showCombo(session.combo, comboBonus);
 }
 
 function checkMCAnswer(selectedIdx) {
@@ -631,13 +668,15 @@ function endSession() {
   const correct = session?.correctAnswers || 0;
   const rate = total > 0 ? Math.round((correct / total) * 100) : 0;
 
-  const { xpEarned, perfect, game } = recordSessionEnd({
+  const { xpEarned, perfect, gemsEarned, game } = recordSessionEnd({
     language: session?.deck?.language,
     correct,
     total,
+    boost: !!session?.boosted,
   });
   // Gesamte Session-XP: Antworten + Abschluss-Bonus (+ Perfekt-Bonus).
   const xpTotal = (session?.xpFromAnswers || 0) + xpEarned;
+  showCombo(0);
   renderGamiHeader();
   renderLearnWidgets();
   const freshAchievements = checkAchievements();
@@ -648,6 +687,7 @@ function endSession() {
     <p style="font-size:1.4rem;font-weight:700;color:var(--primary);margin-bottom:14px">${rate}%</p>
     <div class="session-rewards">
       <span class="reward-pill reward-pill--xp"><i class="fas fa-bolt"></i> +${xpTotal} XP</span>
+      ${rewardExtras(gemsEarned, session?.boosted)}
       ${perfect ? '<span class="reward-pill reward-pill--perfect"><i class="fas fa-star"></i> Perfekte Session!</span>' : ''}
       <span class="reward-pill reward-pill--streak"><i class="fas fa-fire"></i> Serie: ${game.streak.current} ${game.streak.current === 1 ? 'Tag' : 'Tage'}</span>
     </div>
@@ -660,6 +700,7 @@ function endSession() {
 
   toastAchievements(freshAchievements);
   toastCosmetics(checkNewCosmetics());
+  celebrateSessionEnd();
   document.getElementById('restartSession').addEventListener('click', startSession);
   setCurrentSession(null);
 
@@ -708,6 +749,8 @@ function startCourseLesson(deck, deckId) {
     totalCards: lessonCards.length * 2,    // Kennenlernen + Wörter (Sätze kommen dynamisch dazu)
     correctAnswers: 0,
     gradedAnswers: 0,
+    combo: 0,
+    boosted: consumeXpBoost(),             // XP-Boost aus dem Shop einlösen
   };
 
   setCurrentSession(session);
@@ -1022,12 +1065,14 @@ function endCourseLesson(session) {
   setUserStats(userStats);
   updateStats();
 
-  const { xpEarned, perfect, game } = recordSessionEnd({
+  const { xpEarned, perfect, gemsEarned, game } = recordSessionEnd({
     language: session.deck.language,
     correct: session.correctAnswers,
     total: session.gradedAnswers,
+    boost: !!session.boosted,
   });
   const xpTotal = (session.xpFromAnswers || 0) + xpEarned;
+  showCombo(0);
   renderGamiHeader();
   renderLearnWidgets();
   const freshAchievements = checkAchievements();
@@ -1044,6 +1089,7 @@ function endCourseLesson(session) {
     ${sentenceNote}
     <div class="session-rewards">
       <span class="reward-pill reward-pill--xp"><i class="fas fa-bolt"></i> +${xpTotal} XP</span>
+      ${rewardExtras(gemsEarned, session.boosted)}
       ${perfect ? '<span class="reward-pill reward-pill--perfect"><i class="fas fa-star"></i> Fehlerfrei!</span>' : ''}
       <span class="reward-pill reward-pill--streak"><i class="fas fa-fire"></i> Serie: ${game.streak.current} ${game.streak.current === 1 ? 'Tag' : 'Tage'}</span>
     </div>
@@ -1056,6 +1102,7 @@ function endCourseLesson(session) {
 
   toastAchievements(freshAchievements);
   toastCosmetics(checkNewCosmetics());
+  celebrateSessionEnd();
   document.getElementById('restartSession').addEventListener('click', startSession);
   setCurrentSession(null);
 

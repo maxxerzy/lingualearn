@@ -500,3 +500,75 @@
   .gami-xp-bar { display: none; }
   .gami-chip { padding: 5px 8px; }
 }
+
+/* ══ Duolingo-artige Gamification: Diamanten, Combo, Arena ══════════ */
+:root { --gem: #16b8c9; }
+
+.gami-chip--gems, .gami-chip--gems i { color: var(--gem); }
+.reward-pill--gems { background: color-mix(in srgb, var(--gem) 15%, var(--surface)); color: var(--gem); }
+.reward-pill--boost { background: #fff3e0; color: #e8820c; }
+
+/* Combo-Anzeige während der Session */
+.combo-float {
+  position: fixed; left: 50%; top: 92px; transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff8a1e, #ff3d54); color: #fff; font-weight: 800;
+  padding: 8px 16px; border-radius: 999px; box-shadow: 0 10px 26px rgba(255,60,80,.4);
+  display: flex; align-items: center; gap: 8px; opacity: 0; pointer-events: none; z-index: 130;
+}
+.combo-float span { font-size: .8em; opacity: .92; }
+.combo-float--show { animation: comboPop 1.05s ease forwards; }
+@keyframes comboPop {
+  0%   { opacity: 0; transform: translateX(-50%) scale(.6); }
+  18%  { opacity: 1; transform: translateX(-50%) scale(1.12); }
+  32%  { transform: translateX(-50%) scale(1); }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-12px) scale(1); }
+}
+
+/* Arena: Quests / Liga / Shop */
+.arena__hint { color: var(--gray); font-size: .9rem; margin-bottom: 14px; }
+.quest-list, .shop-list, .lg-list, .lg-legend { list-style: none; margin: 0; padding: 0; }
+
+.quest { display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px solid var(--light-gray); border-radius: 14px; margin-bottom: 10px; }
+.quest--done { border-color: color-mix(in srgb, var(--primary) 45%, transparent); background: color-mix(in srgb, var(--primary) 5%, var(--surface)); }
+.quest--claimed { opacity: .55; }
+.quest__icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--primary) 12%, var(--surface)); color: var(--primary); font-size: 1.05rem; flex-shrink: 0; }
+.quest__main { flex: 1; min-width: 0; }
+.quest__top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+.quest__bar { height: 8px; border-radius: 4px; background: var(--light-gray); overflow: hidden; }
+.quest__bar span { display: block; height: 100%; background: var(--primary); border-radius: 4px; }
+.quest__prog { font-size: .74rem; color: var(--gray); margin-top: 4px; }
+.quest__reward { color: var(--gem); font-weight: 700; white-space: nowrap; }
+.quest__claim { border: none; background: var(--primary); color: #fff; font-weight: 700; border-radius: 999px; padding: 6px 12px; cursor: pointer; white-space: nowrap; }
+.quest__done { color: #2e7d32; font-weight: 700; white-space: nowrap; }
+
+.league-head { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 16px; background: color-mix(in srgb, var(--lg) 12%, var(--surface)); border: 1px solid color-mix(in srgb, var(--lg) 40%, transparent); margin-bottom: 12px; }
+.league-badge { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: var(--lg); color: #fff; font-size: 1.5rem; box-shadow: 0 6px 16px color-mix(in srgb, var(--lg) 45%, transparent); flex-shrink: 0; }
+.league-title { font-weight: 800; font-size: 1.1rem; color: var(--dark); }
+.league-sub { color: var(--gray); font-size: .85rem; }
+.lg-legend { display: flex; gap: 16px; font-size: .78rem; color: var(--gray); margin-bottom: 8px; }
+.lg-legend li { display: flex; align-items: center; gap: 6px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot--promote { background: #2e9e5b; } .dot--demote { background: #e05260; }
+.lg-list { border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden; }
+.lg-row { display: flex; align-items: center; gap: 12px; padding: 11px 12px; }
+.lg-row + .lg-row { border-top: 1px solid var(--light-gray); }
+.lg-row--you { background: color-mix(in srgb, var(--primary) 12%, var(--surface)); font-weight: 700; }
+.lg-row--promote .lg-rank { color: #2e9e5b; }
+.lg-row--demote .lg-rank { color: #e05260; }
+.lg-rank { width: 26px; text-align: center; font-weight: 800; color: var(--gray); }
+.lg-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lg-xp { color: var(--gray); font-variant-numeric: tabular-nums; }
+.league-banner { padding: 10px 12px; border-radius: 10px; margin-bottom: 12px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.league-banner--aufgestiegen { background: #e7f6ec; color: #1e7d3f; }
+.league-banner--abgestiegen { background: #fdeaec; color: #b23842; }
+.league-banner--gehalten { background: var(--light); color: var(--dark); }
+.league-banner__x { border: none; background: rgba(0,0,0,.08); border-radius: 8px; padding: 4px 10px; cursor: pointer; font-weight: 700; }
+
+.shop-item { display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px solid var(--light-gray); border-radius: 14px; margin-bottom: 10px; }
+.shop-item__icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--gem) 15%, var(--surface)); color: var(--gem); font-size: 1.2rem; flex-shrink: 0; }
+.shop-item__main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.shop-item__desc { color: var(--gray); font-size: .82rem; }
+.shop-item__owned { color: var(--gray); font-size: .72rem; }
+.shop-item__buy { border: none; background: var(--gem); color: #fff; font-weight: 800; border-radius: 999px; padding: 8px 14px; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+.shop-item__buy[disabled] { background: var(--light-gray); color: var(--gray); cursor: default; }

@@ -72,6 +72,9 @@
             <button type="button" class="user-dropdown__item" data-action="stats">
               <i class="fas fa-chart-bar"></i> Statistik
             </button>
+            <button type="button" class="user-dropdown__item" data-action="arena">
+              <i class="fas fa-trophy"></i> Arena
+            </button>
             <button type="button" class="user-dropdown__item" data-action="rewards">
               <i class="fas fa-gift"></i> Belohnungen
             </button>
@@ -84,8 +87,11 @@
             </button>
           </div>
         </div>
-        <!-- rechts: erst Level, dann Streak ganz rechts -->
+        <!-- rechts: Diamanten, Level, Streak ganz rechts -->
         <div class="gami-chips">
+          <span class="gami-chip gami-chip--gems" id="gemChip" title="Diamanten">
+            <i class="fas fa-gem"></i> <span id="gemCount">0</span>
+          </span>
           <span class="gami-chip gami-chip--level" id="levelChip">
             <span class="gami-level-label">Lv. <b id="levelNum">1</b></span>
             <span class="gami-xp-bar"><span class="gami-xp-fill" id="xpFill"></span></span>
@@ -355,6 +361,24 @@
           </div>
         </section>
 
+        <!-- Arena View: Tagesquests, Liga, Shop -->
+        <section id="view-arena" class="view">
+          <div class="panel">
+            <div class="view-topbar">
+              <button type="button" class="btn-back" id="arenaBackBtn">
+                <i class="fas fa-arrow-left"></i> Lernen
+              </button>
+              <h2><i class="fas fa-trophy"></i> Arena</h2>
+            </div>
+            <div class="rewards-tabs" id="arenaTabs">
+              <button type="button" class="rewards-tab arena-tab active" data-tab="quests"><i class="fas fa-bullseye"></i> Tagesquests</button>
+              <button type="button" class="rewards-tab arena-tab" data-tab="league"><i class="fas fa-ranking-star"></i> Liga</button>
+              <button type="button" class="rewards-tab arena-tab" data-tab="shop"><i class="fas fa-store"></i> Shop</button>
+            </div>
+            <div id="arenaBody"></div>
+          </div>
+        </section>
+
       </div>
     </main>
 
@@ -394,7 +418,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v13';
+    var APP_VERSION = 'v14';
     var loginMode = 'login';
 
     function hp(pw) {
