@@ -1,20 +1,34 @@
 import { getUserStats } from './state.js';
 import { countMasteredAll } from './cardProgress.js';
 import { createUserStore } from './userStore.js';
+import { addLeagueXp, getLeaguePromotions } from './league.js';
 
 const DEFAULTS = {
   xp: 0,
+  gems: 0,             // „Diamanten" — Belohnungswährung
+  gemsEarned: 0,       // Lebenszeit-Zähler (für Erfolge)
+  questsDone: 0,       // abgeschlossene Tagesquests gesamt
+  bestCombo: 0,        // längste Serie richtiger Antworten
+  chests: {},          // Streak-Meilenstein -> Datum der Truhe
   dailyGoal: 20,
-  daily: { date: null, count: 0, goalHit: false },
+  daily: { date: null, count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, goalHit: false },
   goalHitEver: false,
   streak: { current: 0, longest: 0, lastDate: null },
+  inventory: { streakFreeze: 0, xpBoost: 0 },
   achievements: {},   // id -> Datum der Freischaltung
   activity: {},       // 'YYYY-MM-DD' -> beantwortete Karten
   langsPlayed: [],    // Sprachcodes abgeschlossener Sessions
   perfectSessions: 0,
 };
 
+// Streak-Truhen: einmalige Diamanten-Belohnung beim Erreichen der Meilensteine.
+const CHEST_MILESTONES = [3, 7, 14, 30, 50, 100];
+const CHEST_GEMS = { 3: 15, 7: 30, 14: 50, 30: 100, 50: 150, 100: 300 };
+const LEVEL_UP_GEMS = 10;
+
 export const XP = { correct: 10, wrong: 2, session: 50, perfect: 100 };
+
+const EMPTY_DAY = () => ({ date: todayStr(), count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, goalHit: false });
 
 const store = createUserStore('lingualearn_game_', {
   defaults: () => structuredClone(DEFAULTS),
@@ -23,6 +37,8 @@ const store = createUserStore('lingualearn_game_', {
     ...raw,
     daily: { ...DEFAULTS.daily, ...(raw.daily || {}) },
     streak: { ...DEFAULTS.streak, ...(raw.streak || {}) },
+    inventory: { ...DEFAULTS.inventory, ...(raw.inventory || {}) },
+    chests: { ...(raw.chests || {}) },
   }),
 });
 
@@ -37,6 +53,9 @@ function yesterdayStr() {
   const d = new Date();
   d.setDate(d.getDate() - 1);
   return d.toISOString().slice(0, 10);
+}
+function daysBetween(a, b) {
+  return Math.round((Date.parse(b) - Date.parse(a)) / 86400000);
 }
 
 // Level-Schwellen: Gesamt-XP für Level n = 50·n·(n−1)
@@ -61,24 +80,65 @@ function rankName(level) {
   return 'Bronze';
 }
 
-// Streak & Tageszähler beim ersten Lernereignis des Tages fortschreiben.
-function touchDay(g) {
-  const today = todayStr();
-  if (g.daily.date !== today) {
-    g.daily = { date: today, count: 0, goalHit: false };
-  }
-  if (g.streak.lastDate !== today) {
-    g.streak.current = g.streak.lastDate === yesterdayStr() ? g.streak.current + 1 : 1;
-    g.streak.lastDate = today;
-    g.streak.longest = Math.max(g.streak.longest, g.streak.current);
+// XP gutschreiben und Level-Aufstieg erkennen (Feier + Diamanten-Bonus).
+function applyXp(g, amount) {
+  if (!amount) return;
+  const before = levelInfo(g.xp).level;
+  g.xp += amount;
+  const after = levelInfo(g.xp).level;
+  if (after > before) {
+    g.pendingLevelUp = after;
+    g.gems = (g.gems || 0) + LEVEL_UP_GEMS;
+    g.gemsEarned = (g.gemsEarned || 0) + LEVEL_UP_GEMS;
   }
 }
 
-export function recordGameAnswer(correct) {
+// Streak & Tageszähler beim ersten Lernereignis des Tages fortschreiben.
+// Streak-Freeze aus dem Inventar schützt genau EINEN verpassten Tag.
+// Meilensteine (3/7/14/30/50/100 Tage) öffnen einmalig eine Diamanten-Truhe.
+function touchDay(g) {
+  const today = todayStr();
+  if (g.daily.date !== today) g.daily = EMPTY_DAY();
+  if (g.streak.lastDate !== today) {
+    if (g.streak.lastDate === yesterdayStr()) {
+      g.streak.current += 1;
+    } else if (g.streak.lastDate && daysBetween(g.streak.lastDate, today) === 2 && (g.inventory.streakFreeze || 0) > 0) {
+      g.inventory.streakFreeze -= 1;         // genau 1 Tag verpasst → Freeze einsetzen
+      g.streak.current += 1;
+      g.streakFrozeToday = true;
+    } else {
+      g.streak.current = 1;
+    }
+    g.streak.lastDate = today;
+    g.streak.longest = Math.max(g.streak.longest, g.streak.current);
+
+    // Truhen für alle erreichten, noch nicht geöffneten Meilensteine.
+    let chestGems = 0, chestDays = 0;
+    for (const m of CHEST_MILESTONES) {
+      if (g.streak.current >= m && !g.chests[m]) {
+        g.chests[m] = today;
+        chestGems += CHEST_GEMS[m];
+        chestDays = m;
+      }
+    }
+    if (chestGems) {
+      g.gems = (g.gems || 0) + chestGems;
+      g.gemsEarned = (g.gemsEarned || 0) + chestGems;
+      g.pendingChest = { days: chestDays, gems: chestGems };
+    }
+  }
+}
+
+// Eine Antwort verbuchen. opts.bonus = Combo-Bonus-XP, opts.boost = 2× aktiv.
+export function recordGameAnswer(correct, { bonus = 0, boost = false } = {}) {
   const g = load();
   touchDay(g);
-  g.xp += correct ? XP.correct : XP.wrong;
+  let gained = (correct ? XP.correct : XP.wrong) + (bonus || 0);
+  if (boost) gained *= 2;
+  applyXp(g, gained);
+  g.daily.xp += gained;
   g.daily.count++;
+  if (correct) g.daily.correct++;
   const today = todayStr();
   g.activity[today] = (g.activity[today] || 0) + 1;
   if (!g.daily.goalHit && g.daily.count >= g.dailyGoal) {
@@ -86,18 +146,21 @@ export function recordGameAnswer(correct) {
     g.goalHitEver = true;
   }
   persist();
-  return g;
+  addLeagueXp(gained);
+  return { game: g, gained };
 }
 
 // Bonus-XP ohne Antwort (z. B. „Wort des Tages").
 export function addBonusXp(n) {
   const g = load();
-  g.xp += n;
+  applyXp(g, n);
+  g.daily.date === todayStr() ? (g.daily.xp += n) : (g.daily = EMPTY_DAY(), g.daily.xp = n);
   persist();
+  addLeagueXp(n);
   return g;
 }
 
-export function recordSessionEnd({ language, correct, total }) {
+export function recordSessionEnd({ language, correct, total, boost = false }) {
   const g = load();
   touchDay(g);
   let xpEarned = XP.session;
@@ -105,11 +168,65 @@ export function recordSessionEnd({ language, correct, total }) {
   if (perfect) {
     xpEarned += XP.perfect;
     g.perfectSessions++;
+    g.daily.perfect++;
   }
-  g.xp += xpEarned;
+  if (boost) xpEarned *= 2;
+  applyXp(g, xpEarned);
+  g.daily.xp += xpEarned;
+  g.daily.lessons++;
+  const gemsEarned = 3 + (perfect ? 3 : 0);   // Diamanten fürs Abschließen
+  g.gems = (g.gems || 0) + gemsEarned;
+  g.gemsEarned = (g.gemsEarned || 0) + gemsEarned;
   if (language && !g.langsPlayed.includes(language)) g.langsPlayed.push(language);
   persist();
-  return { xpEarned, perfect, game: g };
+  addLeagueXp(xpEarned);
+  return { xpEarned, perfect, gemsEarned, game: g };
+}
+
+// Anstehende Feiern (Level-Up, Streak-Truhe) abholen & löschen.
+export function consumeCelebrations() {
+  const g = load();
+  const out = { levelUp: g.pendingLevelUp || null, chest: g.pendingChest || null, gemBonus: LEVEL_UP_GEMS };
+  if (g.pendingLevelUp || g.pendingChest) {
+    delete g.pendingLevelUp;
+    delete g.pendingChest;
+    persist();
+  }
+  return out;
+}
+
+// Lebenszeit-Zähler für Erfolge.
+export function noteQuestDone() { const g = load(); g.questsDone = (g.questsDone || 0) + 1; persist(); }
+export function noteCombo(n) {
+  const g = load();
+  if (n > (g.bestCombo || 0)) { g.bestCombo = n; persist(); }
+}
+
+// ── Diamanten & Inventar ─────────────────────────────────────────
+export function getGems() { return load().gems || 0; }
+export function addGems(n) {
+  const g = load();
+  g.gems = (g.gems || 0) + n;
+  if (n > 0) g.gemsEarned = (g.gemsEarned || 0) + n;
+  persist();
+  return g.gems;
+}
+export function spendGems(n) {
+  const g = load();
+  if ((g.gems || 0) < n) return false;
+  g.gems -= n; persist(); return true;
+}
+export function getInventory() { return { ...load().inventory }; }
+export function addInventory(item, n = 1) {
+  const g = load();
+  g.inventory[item] = (g.inventory[item] || 0) + n;
+  persist();
+  return g.inventory[item];
+}
+export function consumeXpBoost() {
+  const g = load();
+  if ((g.inventory.xpBoost || 0) > 0) { g.inventory.xpBoost -= 1; persist(); return true; }
+  return false;
 }
 
 export function setDailyGoal(n) {
@@ -137,6 +254,10 @@ export const ACHIEVEMENTS = [
   { id: 'polyglott',     icon: 'fa-globe',          name: 'Polyglott',       desc: 'In allen 6 Sprachen eine Session beendet', test: c => c.langCount >= 6 },
   { id: 'tagesziel',     icon: 'fa-bullseye',       name: 'Ziel erreicht',   desc: 'Tagesziel zum ersten Mal geschafft',      test: c => c.goalHitEver },
   { id: 'level-5',       icon: 'fa-trophy',         name: 'Aufsteiger',      desc: 'Level 5 erreicht',                        test: c => c.level >= 5 },
+  { id: 'quests-10',     icon: 'fa-list-check',     name: 'Questjäger',      desc: '10 Tagesquests abgeschlossen',            test: c => c.questsDone >= 10 },
+  { id: 'combo-10',      icon: 'fa-fire',           name: 'Lauffeuer',       desc: '10 richtige Antworten in Folge',          test: c => c.bestCombo >= 10 },
+  { id: 'gems-250',      icon: 'fa-gem',            name: 'Schatzmeister',   desc: '250 Diamanten gesammelt (gesamt)',        test: c => c.gemsEarned >= 250 },
+  { id: 'liga-auf',      icon: 'fa-ranking-star',   name: 'Liga-Aufsteiger', desc: 'Erstmals in eine höhere Liga aufgestiegen', test: c => c.promotions >= 1 },
 ];
 
 // Prüft alle Bedingungen und schaltet neue Erfolge frei.
@@ -153,6 +274,10 @@ export function checkAchievements() {
     langCount: g.langsPlayed.length,
     goalHitEver: g.goalHitEver,
     level: levelInfo(g.xp).level,
+    questsDone: g.questsDone || 0,
+    bestCombo: g.bestCombo || 0,
+    gemsEarned: g.gemsEarned || 0,
+    promotions: getLeaguePromotions(),
   };
   const fresh = [];
   for (const a of ACHIEVEMENTS) {

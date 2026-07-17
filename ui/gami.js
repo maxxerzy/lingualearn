@@ -1,4 +1,4 @@
-import { getGame, levelInfo, ACHIEVEMENTS } from '../core/gamification.js';
+import { getGame, levelInfo, ACHIEVEMENTS, getGems } from '../core/gamification.js';
 import { getDeckProgress, getDueFronts } from '../core/cardProgress.js';
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
@@ -29,6 +29,7 @@ export function renderGamiHeader() {
 
   setText('streakCount', g.streak.current);
   setText('levelNum', info.level);
+  setText('gemCount', g.gems || 0);
 
   const fill = document.getElementById('xpFill');
   if (fill) fill.style.width = `${Math.round(info.progress * 100)}%`;
