@@ -52,6 +52,8 @@ function showApp() {
   document.getElementById('app').hidden = false;
   window.scrollTo(0, 0);
   document.getElementById('userName').textContent = getCurrentUser();
+  const nameChip = document.getElementById('userNameChip');
+  if (nameChip) nameChip.textContent = getCurrentUser();
 
   if (!appInitialized) {
     appInitialized = true;
@@ -60,7 +62,7 @@ function showApp() {
     initPath(activateView, startSession);
     document.getElementById('coursemapBtn')?.addEventListener('click', showPath);
     initWotdModal();
-    initArena();
+    initArena(activateView);
     initRewards();
     setupModeTabs();
     setupFocusControls();

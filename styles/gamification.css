@@ -13,18 +13,37 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
+  padding: 6px 11px;
   border-radius: 999px;
-  background: rgba(67, 97, 238, 0.08);
+  border: 1px solid transparent;
+  background: color-mix(in srgb, var(--primary, #4361ee) 8%, var(--surface, #fff));
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--dark, #212529);
   cursor: default;
   white-space: nowrap;
 }
 
+/* Diamanten: türkise Pille */
+.gami-chip--gems {
+  background: color-mix(in srgb, var(--gem, #16b8c9) 13%, var(--surface, #fff));
+  border-color: color-mix(in srgb, var(--gem, #16b8c9) 30%, transparent);
+  color: #0d7f8d;
+}
+
+/* Streak: grau solange 0, orange Flamme sobald aktiv */
+.gami-chip--streak { background: var(--light, #f8f9fa); color: var(--gray, #6c757d); }
 .gami-chip--streak i { color: #adb5bd; }
+.gami-chip--streak.gami-chip--active {
+  background: color-mix(in srgb, #fd7e14 14%, var(--surface, #fff));
+  border-color: color-mix(in srgb, #fd7e14 32%, transparent);
+  color: #b35100;
+}
 .gami-chip--streak.gami-chip--active i { color: #fd7e14; }
+
+.gami-chip--level {
+  border-color: color-mix(in srgb, var(--primary, #4361ee) 25%, transparent);
+}
 
 .gami-chip--level { gap: 8px; }
 .gami-level-label b { color: var(--primary, #4361ee); }

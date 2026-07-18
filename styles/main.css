@@ -137,7 +137,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid var(--light-gray);
+  border-bottom: 1px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
+  box-shadow: 0 2px 10px rgba(20, 30, 70, .05);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -183,7 +184,16 @@ header {
 }
 .user-chip__avatar { font-size: 1.15rem; }
 .user-chip i { color: var(--primary); flex-shrink: 0; }
-.user-title { color: var(--primary); font-weight: 700; }
+.user-title { color: var(--primary); font-weight: 700; flex-shrink: 0; }
+.user-chip__name {
+  color: var(--gray);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.user-chip__name:not(:empty)::before { content: '· '; color: var(--light-gray); }
 .user-chip__caret { font-size: 0.72rem; opacity: 0.8; margin-left: 1px; transition: transform 0.15s ease; }
 .user-chip.open .user-chip__caret { transform: rotate(180deg); }
 
@@ -382,9 +392,10 @@ main { display: block; }
 /* ── Panels ─────────────────────────────────────────────────────── */
 .panel {
   background: var(--surface);
-  border-radius: var(--radius);
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--light-gray) 55%, transparent);
   padding: 24px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 6px 22px rgba(20, 30, 70, .07);
   margin-bottom: 24px;
 }
 
@@ -446,8 +457,15 @@ label {
   -webkit-tap-highlight-color: transparent;
 }
 
+.mode-btn i { color: var(--primary); }
 .mode-btn:hover  { border-color: var(--primary); color: var(--primary); }
-.mode-btn.active { border-color: var(--primary); background: var(--primary); color: white; }
+.mode-btn.active {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 62%, #1b2a6b));
+  color: white;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--primary) 38%, transparent);
+}
+.mode-btn.active i { color: #fff; }
 
 /* ── Buttons ────────────────────────────────────────────────────── */
 .btn {
@@ -467,8 +485,12 @@ label {
 }
 
 .btn-full { width: 100%; }
-.btn-primary   { background: var(--primary); color: white; }
-.btn-primary:hover { background: var(--secondary); }
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 62%, #1b2a6b));
+  color: white;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 30%, transparent);
+}
+.btn-primary:hover { filter: brightness(1.06); }
 .btn-secondary { background: var(--light); color: var(--dark); }
 .btn-secondary:hover { background: var(--light-gray); }
 .btn:disabled  { opacity: .6; cursor: not-allowed; }
@@ -980,9 +1002,9 @@ label {
   .learn-panel  { min-height: 520px; }
   .learn-panel .panel { margin-bottom: 0; }
 
-  /* Modus-Buttons als festes 3-Spalten-Raster (2 Reihen) — so werden
-     lange Labels wie „Karteikarten" nie beschnitten und die Breite ist
-     gleichmäßig, ohne dass einzelne Buttons die ganze Zeile füllen. */
+  /* Modus-Auswahl als Icon-Karten (3-Spalten-Raster): Symbol über dem
+     Wort — man erkennt sofort, was der Modus macht, nichts wird
+     abgeschnitten. */
   .mode-tabs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -991,13 +1013,16 @@ label {
   .mode-btn  {
     width: 100%;
     min-width: 0;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 9px 8px;
-    font-size: 0.8rem;
-    gap: 6px;
+    padding: 7px 4px;
+    font-size: 0.72rem;
+    gap: 3px;
     white-space: normal;
+    line-height: 1.1;
   }
+  .mode-btn i { font-size: 1.02rem; }
 }
 
 /* ── Fokus-Modus (Handy + Tablet, inkl. iPad quer): läuft eine
@@ -1011,6 +1036,9 @@ label {
      ausblenden — es erscheint beim Start ohnehin im Vollbild. So bleibt
      der Konfig-Screen kurz und ohne Scrollen. */
   #view-learn:not(.session-active) .learn-panel { display: none; }
+  #view-learn:not(.session-active) .config-head { margin-bottom: 12px; }
+  #view-learn:not(.session-active) .form-group { margin-bottom: 12px; }
+  #view-learn:not(.session-active) .daily-goal { margin-top: 10px; }
   #view-learn:not(.session-active) .learn-layout {
     grid-template-columns: 1fr;   /* Konfig volle Breite, nicht in 280px-Spalte gequetscht */
     min-height: unset;
@@ -1024,10 +1052,14 @@ label {
   #view-learn:not(.session-active) .mode-btn {
     width: 100%;
     min-width: 0;
+    flex-direction: column;
+    gap: 3px;
     justify-content: center;
     text-align: center;
     white-space: normal;
+    line-height: 1.1;
   }
+  #view-learn:not(.session-active) .mode-btn i { display: block; font-size: 1.02rem; }
 
   #view-learn.session-active .config-panel { display: none; }
   #view-learn.session-active .learn-layout {
@@ -1114,7 +1146,8 @@ label {
   /* Deck-Fortschrittsdetails auf sehr kurzen Screens einklappen —
      die Info steckt auch in der Statistik; so passen 7 Modi ohne Scrollen. */
   #view-learn:not(.session-active) .deck-progress { display: none; }
-  #view-learn:not(.session-active) .mode-btn { min-height: 44px; padding: 6px 6px; font-size: 0.72rem; }
+  #view-learn:not(.session-active) .mode-btn { min-height: 44px; padding: 4px 3px; font-size: 0.66rem; }
+  #view-learn:not(.session-active) .mode-btn i { font-size: 0.92rem; }
   #view-learn:not(.session-active) .mode-tabs { gap: 5px; }
 }
 
@@ -1172,7 +1205,9 @@ label {
   /* Header-Zeile voll ausnutzen: Profil/„Neuling" ganz links,
      Level + Streak ganz rechts. */
   .header-right { width: 100%; justify-content: space-between; gap: 8px; min-width: 0; }
-  .user-chip { font-size: 0.82rem; padding: 5px 10px; }
+  .user-chip { font-size: 0.82rem; padding: 5px 10px; min-width: 0; }
+  .user-chip__name { max-width: 74px; }
+  .gami-chips { flex-shrink: 0; }
 
   /* IPA-Tooltip darf nicht über den Viewport hinauslaufen */
   .fc-ipa-tip {
@@ -1208,8 +1243,8 @@ label {
   .session-progress { width: 100%; }
   .progress { flex: 1; }
 
-  /* Mode tabs: festes 3-Spalten-Raster auf dem Handy — „Karteikarten"
-     passt komplett in seine Zelle, „Multiple Choice" bricht sauber um. */
+  /* Mode tabs: Icon-Karten auch auf dem Handy — Symbol über dem Wort,
+     nichts wird abgeschnitten. */
   .mode-tabs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1218,14 +1253,16 @@ label {
   .mode-btn  {
     width: 100%;
     min-width: 0;
-    font-size: 0.76rem;
-    padding: 8px 6px;
+    flex-direction: column;
+    font-size: 0.7rem;
+    padding: 6px 3px;
+    gap: 3px;
     justify-content: center;
     white-space: normal;
     text-align: center;
-    line-height: 1.15;
+    line-height: 1.1;
   }
-  .mode-btn i { display: none; }
+  .mode-btn i { display: block; font-size: 1rem; }
 
   /* Stats grid: 2 columns on mobile */
   .stats-grid { grid-template-columns: 1fr 1fr; }
@@ -1243,6 +1280,9 @@ label {
   .btn     { font-size: 0.92rem; padding: 10px 12px; }
   .logo h1 { font-size: 1.05rem; }
   .user-chip { padding: 5px 9px; gap: 5px; }
+  .user-chip__name { max-width: 52px; }
+  .gami-xp-bar { display: none; }
+  .gami-chip { padding: 5px 8px; font-size: 0.78rem; }
   .content { padding: 10px; }
   .panel   { padding: 14px 12px; }
   .fc-rating .actions { max-width: none; }

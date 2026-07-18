@@ -50,6 +50,11 @@ export function renderLearnWidgets() {
   const deckId = deckSelect?.value;
   const decks = getDecks();
 
+  // Lernpfad-Knopf gehört zum Lernkurs — in anderen Modi ausblenden.
+  const modeNow = document.querySelector('.mode-btn.active')?.dataset.mode;
+  const mapCfgBtn = document.getElementById('coursemapBtn');
+  if (mapCfgBtn) mapCfgBtn.style.display = modeNow === 'course' ? '' : 'none';
+
   if (deckId && decks[deckId]) {
     const total = decks[deckId].cards?.length ?? decks[deckId].count ?? 0;
     const p = getDeckProgress(deckId, total);
