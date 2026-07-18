@@ -11,7 +11,7 @@ const DEFAULTS = {
   bestCombo: 0,        // längste Serie richtiger Antworten
   chests: {},          // Streak-Meilenstein -> Datum der Truhe
   dailyGoal: 20,
-  daily: { date: null, count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, goalHit: false },
+  daily: { date: null, count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, combo: 0, goalHit: false },
   goalHitEver: false,
   streak: { current: 0, longest: 0, lastDate: null },
   inventory: { streakFreeze: 0, xpBoost: 0 },
@@ -28,7 +28,7 @@ const LEVEL_UP_GEMS = 10;
 
 export const XP = { correct: 10, wrong: 2, session: 50, perfect: 100 };
 
-const EMPTY_DAY = () => ({ date: todayStr(), count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, goalHit: false });
+const EMPTY_DAY = () => ({ date: todayStr(), count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, combo: 0, goalHit: false });
 
 const store = createUserStore('lingualearn_game_', {
   defaults: () => structuredClone(DEFAULTS),
@@ -112,6 +112,20 @@ function touchDay(g) {
     g.streak.lastDate = today;
     g.streak.longest = Math.max(g.streak.longest, g.streak.current);
 
+    // Doppelt-oder-nichts: gewonnen, sobald die Ziel-Serie steht;
+    // verloren, wenn die Serie unterwegs reißt (Freeze schützt weiter).
+    if (g.wager?.active) {
+      if (g.streak.current >= g.wager.target) {
+        g.gems = (g.gems || 0) + 100;
+        g.gemsEarned = (g.gemsEarned || 0) + 100;
+        g.pendingWager = { won: true };
+        delete g.wager;
+      } else if (g.streak.current === 1 && g.wager.startStreak > 0) {
+        g.pendingWager = { won: false };
+        delete g.wager;
+      }
+    }
+
     // Truhen für alle erreichten, noch nicht geöffneten Meilensteine.
     let chestGems = 0, chestDays = 0;
     for (const m of CHEST_MILESTONES) {
@@ -186,10 +200,11 @@ export function recordSessionEnd({ language, correct, total, boost = false }) {
 // Anstehende Feiern (Level-Up, Streak-Truhe) abholen & löschen.
 export function consumeCelebrations() {
   const g = load();
-  const out = { levelUp: g.pendingLevelUp || null, chest: g.pendingChest || null, gemBonus: LEVEL_UP_GEMS };
-  if (g.pendingLevelUp || g.pendingChest) {
+  const out = { levelUp: g.pendingLevelUp || null, chest: g.pendingChest || null, wager: g.pendingWager || null, gemBonus: LEVEL_UP_GEMS };
+  if (g.pendingLevelUp || g.pendingChest || g.pendingWager) {
     delete g.pendingLevelUp;
     delete g.pendingChest;
+    delete g.pendingWager;
     persist();
   }
   return out;
@@ -199,7 +214,26 @@ export function consumeCelebrations() {
 export function noteQuestDone() { const g = load(); g.questsDone = (g.questsDone || 0) + 1; persist(); }
 export function noteCombo(n) {
   const g = load();
-  if (n > (g.bestCombo || 0)) { g.bestCombo = n; persist(); }
+  let dirty = false;
+  if (n > (g.bestCombo || 0)) { g.bestCombo = n; dirty = true; }
+  if (g.daily.date === todayStr() && n > (g.daily.combo || 0)) { g.daily.combo = n; dirty = true; }
+  if (dirty) persist();
+}
+
+// Doppelt-oder-nichts: 50 Diamanten setzen, 7 weitere Serientage → 100 zurück.
+export function startWager() {
+  const g = load();
+  if (g.wager?.active) return { ok: false, err: 'Wette läuft bereits' };
+  if ((g.gems || 0) < 50) return { ok: false, err: 'Nicht genug Diamanten (50 nötig)' };
+  g.gems -= 50;
+  g.wager = { active: true, startStreak: g.streak.current, target: g.streak.current + 7 };
+  persist();
+  return { ok: true, wager: g.wager };
+}
+export function getWager() {
+  const g = load();
+  if (!g.wager?.active) return null;
+  return { ...g.wager, progress: Math.max(0, g.streak.current - g.wager.startStreak) };
 }
 
 // ── Diamanten & Inventar ─────────────────────────────────────────

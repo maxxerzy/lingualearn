@@ -9,6 +9,21 @@ import { renderGamiHeader, renderLearnWidgets } from '../ui/gami.js';
 import { showToast, toastAchievements, toastCosmetics, confettiBurst } from '../ui/toast.js';
 import { checkNewCosmetics } from './cosmetics.js';
 import { pendingQuestClaims } from './quests.js';
+import { saveErrors, clearErrors } from './errorLog.js';
+import { playCorrect, playWrong } from '../utils/feedback.js';
+import { createUserStore } from './userStore.js';
+
+// Vergoldete (nach Abschluss wiederholte) Lektionen pro Deck.
+const goldStore = createUserStore('lingualearn_gold_');
+export function reinitGold() { goldStore.reinit(); }
+export function getGoldLessons(deckId) { return goldStore.get()[deckId] || []; }
+function markGoldLesson(deckId, lessonIdx) {
+  const map = goldStore.get();
+  const arr = new Set(map[deckId] || []);
+  arr.add(lessonIdx);
+  map[deckId] = [...arr];
+  goldStore.save(map);
+}
 import { nextLessonCards, lessonNumber, advanceCourse, getCourseState, getSentencesDone, markSentencesDone } from './course.js';
 
 // Erfolge prüfen + einblenden, danach dadurch freigeschaltete Cosmetics.
@@ -465,6 +480,7 @@ function recordAnswerEffects(session, card, isCorrect, ratingOrBool) {
   announceUnlocks();
   announceCelebrations();
   showCombo(session.combo, comboBonus);
+  if (isCorrect) playCorrect(); else playWrong();
 }
 
 // Level-Up- und Streak-Truhen-Feiern (Toast + Konfetti).
@@ -478,6 +494,24 @@ function announceCelebrations() {
     confettiBurst();
     showToast(`<i class="fas fa-box-open toast__icon"></i><div class="toast__body"><b>${c.chest.days}-Tage-Truhe geöffnet! 🎁</b><span>+${c.chest.gems} Diamanten für deine Serie</span></div>`);
   }
+  if (c.wager) {
+    if (c.wager.won) { confettiBurst(); showToast('<i class="fas fa-dice toast__icon"></i><div class="toast__body"><b>Wette gewonnen! 🎲</b><span>Doppelt oder nichts: +100 Diamanten</span></div>'); }
+    else showToast('<i class="fas fa-dice toast__icon"></i><div class="toast__body"><b>Wette verloren</b><span>Die Serie ist gerissen — versuch es neu!</span></div>', { variant: 'warn' });
+  }
+}
+
+// Tages-Rückblick: kleine Bilanz des heutigen Lernens für die Endkarte.
+function dailyRecapHtml() {
+  const g = getGame();
+  const d = g.daily.date === new Date().toISOString().slice(0, 10) ? g.daily : {};
+  return `
+    <div class="day-recap">
+      <span class="day-recap__title"><i class="fas fa-sun"></i> Heute</span>
+      <span class="day-recap__stat"><b>${d.xp || 0}</b> XP</span>
+      <span class="day-recap__stat"><b>${d.correct || 0}</b> richtig</span>
+      <span class="day-recap__stat"><b>×${d.combo || 0}</b> Combo</span>
+      <span class="day-recap__stat"><b>${g.streak.current}</b> 🔥</span>
+    </div>`;
 }
 
 function checkMCAnswer(selectedIdx) {
@@ -1197,6 +1231,14 @@ function endSession() {
   renderLearnWidgets();
   const freshAchievements = checkAchievements();
 
+  // Fehler für „Für dich"/Fehler-Training über Neustarts hinweg merken.
+  if (session?.wrongCards?.length) saveErrors(session.deckId, session.wrongCards.map(c => c.front));
+  // Wiederholung einer abgeschlossenen Lektion → Knoten vergolden.
+  if (session?.reviewLesson) {
+    markGoldLesson(session.reviewLesson.deckId, session.reviewLesson.index);
+    showToast('<i class="fas fa-medal toast__icon"></i><div class="toast__body"><b>Lektion vergoldet! ✨</b><span>Wiederholung abgeschlossen</span></div>');
+  }
+
   document.getElementById('learnArea').innerHTML = `
     <h3 style="font-size:1.6rem;margin-bottom:12px">🎉 Session beendet!</h3>
     <p style="color:var(--gray);margin-bottom:6px">${correct} von ${total} Karten richtig</p>
@@ -1207,6 +1249,7 @@ function endSession() {
       ${perfect ? '<span class="reward-pill reward-pill--perfect"><i class="fas fa-star"></i> Perfekte Session!</span>' : ''}
       <span class="reward-pill reward-pill--streak"><i class="fas fa-fire"></i> Serie: ${game.streak.current} ${game.streak.current === 1 ? 'Tag' : 'Tage'}</span>
     </div>
+    ${dailyRecapHtml()}
     <div class="actions" style="margin-top:20px">
       ${session?.wrongCards?.length ? `
         <button type="button" class="btn btn-error-review" id="reviewErrorsBtn">
@@ -1236,7 +1279,7 @@ function endSession() {
 
 // Fehler-Training: die falsch beantworteten Karten der letzten Session
 // noch einmal als Karteikarten durchgehen.
-function startErrorReview(deck, deckId, cards) {
+export function startErrorReview(deck, deckId, cards) {
   if (!cards?.length) return;
   const shuffled = shuffleArray([...cards]);
   const session = {
@@ -1642,6 +1685,7 @@ function endCourseLesson(session) {
       ${perfect ? '<span class="reward-pill reward-pill--perfect"><i class="fas fa-star"></i> Fehlerfrei!</span>' : ''}
       <span class="reward-pill reward-pill--streak"><i class="fas fa-fire"></i> Serie: ${game.streak.current} ${game.streak.current === 1 ? 'Tag' : 'Tage'}</span>
     </div>
+    ${dailyRecapHtml()}
     <div class="actions" style="margin-top:20px">
       <button type="button" class="btn btn-primary" id="restartSession">
         <i class="fas fa-graduation-cap"></i> Lektion ${nextLesson} starten
@@ -1669,4 +1713,57 @@ function escHtml(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+
+// „Für dich": gespeicherte Fehler-Wörter als Karteikarten-Runde üben.
+export async function startErrorReviewByFronts(deckId, fronts) {
+  const deck = await loadDeck(deckId);
+  const set = new Set(fronts);
+  const cards = (deck?.cards || []).filter(c => set.has(c.front));
+  if (!cards.length) return false;
+  clearErrors(deckId);
+  document.getElementById('view-learn')?.classList.add('session-active');
+  startErrorReview(deck, deckId, cards);
+  return true;
+}
+
+// Abgeschlossene Lektion vom Pfad aus wiederholen (Multiple Choice;
+// bei sehr kleinen Lektionen Karteikarten). Abschluss vergoldet den Knoten.
+export async function startLessonReview(deckId, lessonIdx) {
+  const deck = await loadDeck(deckId);
+  const sizes = deck?.lessonSizes;
+  if (!deck || !sizes || lessonIdx < 0 || lessonIdx >= sizes.length) return false;
+  let start = 0;
+  for (let k = 0; k < lessonIdx; k++) start += sizes[k];
+  const cards = deck.cards.slice(start, start + sizes[lessonIdx]);
+  if (!cards.length) return false;
+
+  const mode = cards.length >= 4 ? 'multiplechoice' : 'flashcard';
+  const shuffled = shuffleArray([...cards]);
+  const session = {
+    deck,
+    deckId,
+    cards: shuffled,
+    mode,
+    currentIndex: 0,
+    correctAnswers: 0,
+    gradedAnswers: 0,
+    totalCards: shuffled.length,
+    currentPrompt: null,
+    combo: 0,
+    boosted: false,
+    reviewLesson: { deckId, index: lessonIdx },
+    queue: [...shuffled],
+    reviewQueue: [],
+    reviewRound: 1,
+  };
+  setCurrentSession(session);
+  enterFocus(mode);
+  const title = deck.lessonTitles?.[lessonIdx];
+  document.getElementById('session-title').textContent =
+    `Lektion ${lessonIdx + 1}${title ? ' · ' + title : ''} — Wiederholung`;
+  updateProgress();
+  if (mode === 'multiplechoice') showMultipleChoice(); else showFlashcard();
+  return true;
 }

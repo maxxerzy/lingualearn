@@ -45,6 +45,9 @@ await page.fill('#loginUsername', 'cmp' + key);
 await page.fill('#loginPassword', 'test1234');
 await page.click('#loginBtn');
 await page.waitForSelector('#app:not([hidden])', { timeout: 6000 });
+// Erst-Login-Onboarding überspringen (eigener Test in features_smoke)
+await page.evaluate(() => document.getElementById('obSkip')?.click());
+await page.waitForTimeout(200);
 await page.selectOption('#deckSelect', 'basic-da');
 await page.waitForTimeout(400);
 
@@ -74,6 +77,28 @@ check('Profil-Chip zeigt Kontonamen nach dem Rang', header.name === 'cmp' + key,
   check('Header: keine überlappenden Elemente', !overlap, overlap || '');
   const out = ids.find(id => header.rects[id] && (header.rects[id].right > header.vw + 1 || header.rects[id].left < -1));
   check('Header: alles im Viewport', !out, out || '');
+}
+
+// Handy-Layout (≤768): Profil auf der Logo-Zeile (rechtsbündig), Chips in Zeile 2
+if (vw <= 768) {
+  const rows = await page.evaluate(() => {
+    const r = id => document.getElementById(id)?.getBoundingClientRect() ||
+                    document.querySelector(id)?.getBoundingClientRect();
+    const logo = document.querySelector('.logo').getBoundingClientRect();
+    const chip = document.getElementById('userChipBtn').getBoundingClientRect();
+    const chips = document.querySelector('.gami-chips').getBoundingClientRect();
+    const streak = document.getElementById('streakChip').getBoundingClientRect();
+    return {
+      sameRow: Math.abs((logo.top + logo.height / 2) - (chip.top + chip.height / 2)) < logo.height,
+      chipRight: chip.right >= window.innerWidth - 40,
+      chipsBelow: chips.top >= chip.bottom - 4,
+      streakRight: streak.right >= window.innerWidth - 40,
+    };
+  });
+  check('Handy: Profil rechtsbündig auf Logo-Zeile', rows.sameRow && rows.chipRight, JSON.stringify(rows));
+  check('Handy: Chips-Zeile darunter, Streak ganz rechts', rows.chipsBelow && rows.streakRight, JSON.stringify(rows));
+  const lvl = await page.evaluate(() => document.querySelector('.gami-level-label').textContent.trim());
+  check('Level-Chip heißt „Lvl."', lvl.startsWith('Lvl.'), lvl);
 }
 
 // ── 3) Modus-Karten: 9 Stück, Icon sichtbar, Label nicht abgeschnitten ──
@@ -112,6 +137,7 @@ await menuView('stats', 'statsBackBtn');
 await menuView('arena', 'arenaBackBtn');
 await menuView('rewards', 'rewardsBackBtn');
 await menuView('settings', 'settingsBackBtn');
+await menuView('dict', 'dictBackBtn');
 // Lernpfad (Kurs-Modus ist aktiv)
 await click('#coursemapBtn'); await page.waitForTimeout(400);
 const pathOpen = await page.evaluate(() => document.getElementById('view-path').classList.contains('active'));
