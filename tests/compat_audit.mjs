@@ -45,6 +45,9 @@ await page.fill('#loginUsername', 'cmp' + key);
 await page.fill('#loginPassword', 'test1234');
 await page.click('#loginBtn');
 await page.waitForSelector('#app:not([hidden])', { timeout: 6000 });
+// Erst-Login-Onboarding überspringen (eigener Test in features_smoke)
+await page.evaluate(() => document.getElementById('obSkip')?.click());
+await page.waitForTimeout(200);
 await page.selectOption('#deckSelect', 'basic-da');
 await page.waitForTimeout(400);
 
@@ -134,6 +137,7 @@ await menuView('stats', 'statsBackBtn');
 await menuView('arena', 'arenaBackBtn');
 await menuView('rewards', 'rewardsBackBtn');
 await menuView('settings', 'settingsBackBtn');
+await menuView('dict', 'dictBackBtn');
 // Lernpfad (Kurs-Modus ist aktiv)
 await click('#coursemapBtn'); await page.waitForTimeout(400);
 const pathOpen = await page.evaluate(() => document.getElementById('view-path').classList.contains('active'));

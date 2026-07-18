@@ -2,9 +2,17 @@ import { loadDeck, addImportedDeck } from '../core/state.js';
 import { getGame, setDailyGoal, checkAchievements } from '../core/gamification.js';
 import { renderLearnWidgets } from './gami.js';
 import { showToast, toastAchievements } from './toast.js';
+import { fxEnabled, setFxEnabled } from '../utils/feedback.js';
 
 // Initialize settings
 export function initSettings() {
+  // Töne & Vibration pro Konto an/aus.
+  const fx = document.getElementById('fxToggle');
+  if (fx) {
+    fx.checked = fxEnabled();
+    fx.addEventListener('change', () => setFxEnabled(fx.checked));
+  }
+
   const importBtn = document.getElementById('importBtn');
   const exportBtn = document.getElementById('exportBtn');
 

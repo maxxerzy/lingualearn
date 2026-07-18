@@ -2,6 +2,8 @@ import { getGame, levelInfo, ACHIEVEMENTS, getGems } from '../core/gamification.
 import { getDeckProgress, getDueFronts } from '../core/cardProgress.js';
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
+import { getErrors } from '../core/errorLog.js';
+import { startErrorReviewByFronts } from '../core/session.js';
 import { themeOf } from '../js/data/themes.js';
 
 // Fallback-Titel, falls ein Deck (noch) keine thematischen Lektions-Titel
@@ -49,6 +51,8 @@ export function renderLearnWidgets() {
   const deckSelect = document.getElementById('deckSelect');
   const deckId = deckSelect?.value;
   const decks = getDecks();
+
+  renderSmartBar(deckId);
 
   // Lernpfad-Knopf gehört zum Lernkurs — in anderen Modi ausblenden.
   const modeNow = document.querySelector('.mode-btn.active')?.dataset.mode;
@@ -194,4 +198,47 @@ function renderAchievements(unlocked) {
       </div>
     `;
   }).join('');
+}
+
+
+// ── „Für dich": Ein-Klick-Empfehlung über der Modus-Wahl ─────────
+// Priorität: fällige Karten → gemerkte Fehler → Kurs fortsetzen → Kurs beginnen.
+function smartRecommendation(deckId) {
+  const total = getDecks()[deckId]?.cards?.length ?? getDecks()[deckId]?.count ?? 0;
+  const due = getDueFronts(deckId).length;
+  if (due > 0) return { type: 'due', text: `${due} fällige ${due === 1 ? 'Karte' : 'Karten'} wiederholen` };
+  const errs = getErrors(deckId);
+  if (errs.length) return { type: 'errors', fronts: errs, text: `${errs.length} Fehler von zuletzt üben` };
+  const { introduced } = getCourseState(deckId);
+  if (total > 0 && introduced >= total) return null;   // Kurs fertig, nichts fällig
+  return introduced > 0
+    ? { type: 'course', text: `Weiter mit Lektion ${lessonNumber(deckId)}` }
+    : { type: 'course', text: 'Starte Lektion 1 des Lernkurses' };
+}
+
+function renderSmartBar(deckId) {
+  const bar = document.getElementById('smartBar');
+  if (!bar || !deckId) return;
+  const rec = deckId ? smartRecommendation(deckId) : null;
+  if (!rec) { bar.hidden = true; return; }
+  bar.hidden = false;
+  const textEl = document.getElementById('smartBarText');
+  if (textEl) textEl.textContent = rec.text;
+  bar.onclick = () => {
+    if (rec.type === 'due') {
+      const chk = document.getElementById('dueOnly');
+      if (chk) chk.checked = true;
+      document.getElementById('dueToggleBtn')?.classList.add('active');
+      document.querySelectorAll('.mode-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.mode === 'flashcard'));
+      document.getElementById('startBtn')?.click();
+    } else if (rec.type === 'errors') {
+      startErrorReviewByFronts(deckId, rec.fronts);
+    } else {
+      document.querySelectorAll('.mode-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.mode === 'course'));
+      renderLearnWidgets();
+      document.getElementById('startBtn')?.click();
+    }
+  };
 }

@@ -649,3 +649,45 @@
   0%, 100% { box-shadow: 0 0 0 0 rgba(67,97,238,.45); }
   50%      { box-shadow: 0 0 0 9px rgba(67,97,238,0); }
 }
+
+/* ── Tages-Rückblick auf der Endkarte ─────────────────────────── */
+.day-recap {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 12px; margin: 14px auto 0; padding: 9px 14px; max-width: 420px;
+  border-radius: 12px; background: color-mix(in srgb, var(--primary, #4361ee) 7%, var(--surface, #fff));
+  font-size: 0.82rem; color: var(--gray, #6c757d);
+}
+.day-recap__title { font-weight: 700; color: var(--dark, #212529); }
+.day-recap__title i { color: #f59f00; margin-right: 4px; }
+.day-recap__stat b { color: var(--dark, #212529); }
+
+/* ── Lernpfad: Themen-Banner, Zickzack, Gold ──────────────────── */
+.map-banner {
+  list-style: none;
+  margin: 14px 0 10px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--bn), color-mix(in srgb, var(--bn) 65%, #123));
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--bn) 35%, transparent);
+}
+.map-banner i { margin-right: 6px; opacity: 0.85; }
+.map-node--right { transform: translateX(7%); }
+.map-node--left  { transform: translateX(-3%); }
+.map-node--gold .map-node__dot {
+  background: linear-gradient(135deg, #ffd60a, #e8a80c) !important;
+  color: #7a5800 !important;
+  box-shadow: 0 0 0 3px rgba(255, 214, 10, .35);
+}
+.map-node[data-review-lesson] { cursor: pointer; }
+
+/* ── Shop: Doppelt-oder-nichts ────────────────────────────────── */
+.shop-item--wager { border-color: color-mix(in srgb, #8a5cf6 45%, transparent); }
+.shop-item--wager .shop-item__icon { background: color-mix(in srgb, #8a5cf6 15%, var(--surface, #fff)); color: #8a5cf6; }
+
+/* ── Einstellungen: FX-Schalter ───────────────────────────────── */
+.fx-toggle { display: flex; align-items: center; gap: 10px; cursor: pointer; text-transform: none; letter-spacing: 0; font-size: 0.95rem; color: var(--dark, #212529); }
+.fx-toggle input { width: 18px; height: 18px; accent-color: var(--primary, #4361ee); }
+.fx-toggle i { color: var(--primary, #4361ee); margin-right: 4px; }

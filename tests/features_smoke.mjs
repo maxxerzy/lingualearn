@@ -17,7 +17,33 @@ await page.click('#tabRegister');
 await page.fill('#loginUsername', 'smoke1'); await page.fill('#loginPassword', 'test1234');
 await page.click('#loginBtn');
 await page.waitForSelector('#app:not([hidden])');
+
+// ── Onboarding beim ersten Login: Sprache → Ziel → Motivation → Lektion 1 ──
+check('Onboarding erscheint beim ersten Login', await page.evaluate(() => !document.getElementById('onboarding').hidden));
+await page.evaluate(() => document.querySelector('.ob-chip[data-deck="basic-es"]')?.click());
+await page.evaluate(() => document.getElementById('obNext').click()); await page.waitForTimeout(150);
+await page.evaluate(() => document.querySelector('.ob-chip[data-goal="30"]')?.click());
+await page.evaluate(() => document.getElementById('obNext').click()); await page.waitForTimeout(150);
+await page.evaluate(() => document.querySelector('.ob-chip[data-why="reise"]')?.click());
+await page.evaluate(() => document.getElementById('obNext').click()); await page.waitForTimeout(800);
+const ob = await page.evaluate(async () => ({
+  closed: document.getElementById('onboarding').hidden,
+  session: document.getElementById('view-learn').classList.contains('session-active'),
+  title: document.getElementById('session-title').textContent,
+  goal: (await import('/core/gamification.js')).getGame().dailyGoal,
+  deck: document.getElementById('deckSelect').value,
+}));
+check('Onboarding: startet Lektion 1 mit gewähltem Deck & Ziel',
+  ob.closed && ob.session && /Spanisch — Lektion 1/.test(ob.title) && ob.goal === 30 && ob.deck === 'basic-es', JSON.stringify(ob));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// ── „Für dich"-Empfehlung: frisches Deck → Kursstart empfohlen ──
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(300);
+const smart = await page.evaluate(() => ({
+  visible: !document.getElementById('smartBar').hidden,
+  text: document.getElementById('smartBarText').textContent,
+}));
+check('„Für dich" empfiehlt Kursstart', smart.visible && /Lektion 1/.test(smart.text), JSON.stringify(smart));
 
 // ── Fällig-Schalter: an → Ring bleibt; aus → sofort weg ──
 await click('#dueToggleBtn'); await page.waitForTimeout(150);
@@ -92,7 +118,8 @@ await page.evaluate(async () => {
   const u = localStorage.getItem('lingualearn_current_user');
   const raw = JSON.parse(localStorage.getItem('lingualearn_game_' + u));
   const t = new Date().toISOString().slice(0, 10);
-  raw.gems = 100; raw.daily = { date: t, count: 40, correct: 40, lessons: 5, xp: 200, perfect: 2, goalHit: true };
+  raw.gems = 100; raw.dailyGoal = 20;
+  raw.daily = { date: t, count: 40, correct: 40, lessons: 5, xp: 200, perfect: 2, goalHit: true };
   localStorage.setItem('lingualearn_game_' + u, JSON.stringify(raw));
   (await import('/core/gamification.js')).reinitGame();
 });
@@ -169,6 +196,88 @@ check('„Fehler üben (1)" nach Session', await page.evaluate(() => /\(1\)/.tes
 await page.evaluate(() => document.getElementById('reviewErrorsBtn')?.click()); await page.waitForTimeout(400);
 check('Fehler-Training startet', await page.evaluate(() => document.getElementById('session-title').textContent.includes('Fehler-Training')));
 await click('#sessionBackBtn'); await page.waitForTimeout(200);
+
+// ── Doppelt-oder-nichts: Kauf + Gewinn-Auswertung ──
+const wager = await page.evaluate(async () => {
+  const g = await import('/core/gamification.js');
+  const u = localStorage.getItem('lingualearn_current_user');
+  const raw = JSON.parse(localStorage.getItem('lingualearn_game_' + u));
+  raw.gems = 60; delete raw.wager;
+  const yest = new Date(); yest.setDate(yest.getDate() - 1);
+  raw.streak = { current: 3, longest: 3, lastDate: yest.toISOString().slice(0, 10) };
+  localStorage.setItem('lingualearn_game_' + u, JSON.stringify(raw));
+  g.reinitGame();
+  const started = g.startWager();                    // 60 → 10 Diamanten
+  // Gewinn simulieren: Ziel auf morgen erreichbar setzen
+  const raw2 = JSON.parse(localStorage.getItem('lingualearn_game_' + u));
+  raw2.wager.target = raw2.streak.current + 1;       // nächster Lerntag gewinnt
+  localStorage.setItem('lingualearn_game_' + u, JSON.stringify(raw2));
+  g.reinitGame();
+  g.recordGameAnswer(true);                          // Tag zählt → Serie 4 ≥ Ziel
+  const c = g.consumeCelebrations();
+  return { ok: started.ok, gemsAfterBuy: 10, won: c.wager?.won, gems: g.getGems() };
+});
+check('Wette: Kauf (−50) und Gewinn (+100)', wager.ok && wager.won === true && wager.gems >= 100, JSON.stringify(wager));
+
+// ── Wörterbuch: gesehene Wörter, Suche, Stärke ──
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="dict"]'); await page.waitForTimeout(500);
+const dict = await page.evaluate(() => ({
+  active: document.getElementById('view-dict').classList.contains('active'),
+  rows: document.querySelectorAll('.dict-row').length,
+  dots: document.querySelectorAll('.dict-dot--on').length,
+}));
+check('Wörterbuch: gesehene Wörter mit Stärke-Punkten', dict.active && dict.rows > 0 && dict.dots > 0, JSON.stringify(dict));
+await click('#dictBackBtn'); await page.waitForTimeout(200);
+
+// ── Lektions-Wiederholung: erledigte Lektion → Gold ──
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  localStorage.setItem('lingualearn_course_' + u, JSON.stringify({ 'basic-da': { introduced: 9, sentencesDone: [] } }));
+  (await import('/core/course.js')).reinitCourse();
+});
+await page.selectOption('#deckSelect', 'basic-da');
+await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(300);
+await click('#coursemapBtn'); await page.waitForTimeout(600);
+check('Pfad: Themen-Banner sichtbar', await page.evaluate(() => document.querySelectorAll('.map-banner').length > 3));
+await page.evaluate(() => document.querySelector('[data-review-lesson="0"]')?.click());
+await page.waitForTimeout(600);
+check('Wiederholung startet (Titel „… Wiederholung")', await page.evaluate(() =>
+  document.getElementById('session-title').textContent.includes('Wiederholung')));
+for (let i = 0; i < 6; i++) {
+  if (await page.$('#restartSession')) break;
+  await page.evaluate(() => document.querySelector('.mc-option')?.click());
+  await page.waitForTimeout(200);
+  await page.evaluate(() => document.getElementById('mcNext')?.click());
+  await page.waitForTimeout(250);
+}
+const goldDone = await page.evaluate(async () => ({
+  gold: (await import('/core/session.js')).getGoldLessons('basic-da'),
+  recap: !!document.querySelector('.day-recap'),
+}));
+check('Lektion vergoldet + Tages-Rückblick auf Endkarte', goldDone.gold.includes(0) && goldDone.recap, JSON.stringify(goldDone));
+await click('#sessionBackBtn'); await page.waitForTimeout(200);
+await click('#coursemapBtn'); await page.waitForTimeout(500);
+check('Pfad zeigt Gold-Knoten', await page.evaluate(() => !!document.querySelector('.map-node--gold')));
+await click('#pathBackBtn'); await page.waitForTimeout(200);
+
+// ── Dark Mode (System) + FX-Schalter + Karten-Animation ──
+await page.emulateMedia({ colorScheme: 'dark' }); await page.waitForTimeout(200);
+const surface = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--surface').trim());
+check('System-Dark-Mode greift ohne Cosmetic-Theme', surface === '#1e2530', surface);
+await page.emulateMedia({ colorScheme: 'light' });
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="settings"]'); await page.waitForTimeout(200);
+const fx = await page.evaluate(() => {
+  const t = document.getElementById('fxToggle');
+  const before = t.checked;
+  t.click();
+  const u = localStorage.getItem('lingualearn_current_user');
+  return { before, stored: localStorage.getItem('lingualearn_fx_' + u) };
+});
+check('FX-Schalter speichert pro Konto', fx.before === true && fx.stored === 'off', JSON.stringify(fx));
+await click('#settingsBackBtn'); await page.waitForTimeout(200);
 
 // ── Update-Logout: Konto bleibt, Sitzung endet ──
 await page.evaluate(() => localStorage.setItem('lingualearn_app_version', 'alt-0'));

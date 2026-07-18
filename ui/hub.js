@@ -1,7 +1,7 @@
 import { getDailyQuests, claimQuest } from '../core/quests.js';
 import { getLeague, clearLastResult } from '../core/league.js';
 import { SHOP, buy } from '../core/shop.js';
-import { getGems, getInventory } from '../core/gamification.js';
+import { getGems, getInventory, getWager, startWager } from '../core/gamification.js';
 import { showToast } from './toast.js';
 import { renderGamiHeader } from './gami.js';
 
@@ -77,6 +77,31 @@ function leagueHtml() {
 }
 
 // ── Shop ─────────────────────────────────────────────────────────
+function wagerHtml() {
+  const w = getWager();
+  if (w) {
+    return `
+      <li class="shop-item shop-item--wager">
+        <span class="shop-item__icon"><i class="fas fa-dice"></i></span>
+        <div class="shop-item__main">
+          <b>Doppelt oder nichts läuft!</b>
+          <span class="shop-item__desc">Halte deine Serie: ${w.progress}/7 Tagen geschafft.</span>
+          <span class="shop-item__owned">Bei Erfolg: +100 Diamanten</span>
+        </div>
+        <span class="shop-item__buy" style="background:var(--light);color:var(--gray)">${w.progress}/7</span>
+      </li>`;
+  }
+  return `
+    <li class="shop-item shop-item--wager">
+      <span class="shop-item__icon"><i class="fas fa-dice"></i></span>
+      <div class="shop-item__main">
+        <b>Doppelt oder nichts</b>
+        <span class="shop-item__desc">Setze 50 💎 — halte 7 weitere Serientage und erhalte 100 💎 zurück.</span>
+      </div>
+      <button type="button" class="shop-item__buy" data-wager><i class="fas fa-gem"></i> 50</button>
+    </li>`;
+}
+
 function shopHtml() {
   const inv = getInventory();
   const items = SHOP.map(s => {
@@ -96,7 +121,7 @@ function shopHtml() {
       </li>`;
   }).join('');
   return `<p class="arena__hint"><i class="fas fa-gem"></i> Du hast <b>${getGems()}</b> Diamanten. Verdiene mehr über Quests, Sessions & Erfolge.</p>
-    <ul class="shop-list">${items}</ul>`;
+    <ul class="shop-list">${wagerHtml()}${items}</ul>`;
 }
 
 export function renderArena(tab = activeTab) {
@@ -133,6 +158,15 @@ export function initArena(activateView) {
       const res = buy(buyBtn.dataset.buy);
       if (res.ok) {
         showToast(`<i class="fas ${res.item.icon} toast__icon"></i><div class="toast__body"><b>${res.item.name} gekauft</b><span>Jetzt ${res.count} im Vorrat</span></div>`);
+        renderGamiHeader();
+        renderArena('shop');
+      } else {
+        showToast(`<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>${res.err}</b></div>`, { variant: 'warn' });
+      }
+    } else if (e.target.closest('[data-wager]')) {
+      const res = startWager();
+      if (res.ok) {
+        showToast('<i class="fas fa-dice toast__icon"></i><div class="toast__body"><b>Wette läuft! 🎲</b><span>7 Serientage halten → +100 Diamanten</span></div>');
         renderGamiHeader();
         renderArena('shop');
       } else {

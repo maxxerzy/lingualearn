@@ -79,6 +79,17 @@ export function getDueFronts(deckId) {
   return fronts;
 }
 
+// Alle gespeicherten Karten-Zustände eines Decks (fürs Wörterbuch).
+// Der Store ist flach: Schlüssel sind `deckId:front`.
+export function getCardStates(deckId) {
+  const out = {};
+  const prefix = deckId + ':';
+  for (const [k, v] of Object.entries(load())) {
+    if (k.startsWith(prefix)) out[k.slice(prefix.length)] = v;
+  }
+  return out;
+}
+
 export function countMasteredAll() {
   let n = 0;
   for (const st of Object.values(load())) {

@@ -174,3 +174,21 @@
 .badge--gold      .badge__rarity { color: #d99a00; }
 .badge--legendaer .badge__rarity { color: #b06cf7; }
 .badge--earned.badge--legendaer { box-shadow: 0 0 16px color-mix(in srgb, #b06cf7 40%, transparent); }
+
+
+/* Systemweiter Dark Mode: greift automatisch (prefers-color-scheme),
+   solange kein eigenes Cosmetic-Theme gewählt wurde. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary: #6c8cff; --secondary: #4361ee; --accent: #f72585;
+    --app-bg: #12161c;
+    --surface: #1e2530;
+    --bg: #12161c;
+    --light: #262f3d;
+    --light-gray: #2c3440;
+    --dark: #e9ecef;
+    --gray: #9aa5b1;
+    --shadow: 0 4px 12px rgba(0,0,0,.4);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,.55);
+  }
+}

@@ -19,6 +19,19 @@
   <!-- ── Login ─────────────────────────────────────────────────── -->
   <div id="login-screen" class="login-screen">
     <div class="login-card">
+      <div class="mascot mascot--login" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="96" height="96">
+          <ellipse cx="60" cy="112" rx="30" ry="5" fill="rgba(0,0,0,.08)"/>
+          <path d="M60 14 C30 14 22 40 22 62 C22 92 40 106 60 106 C80 106 98 92 98 62 C98 40 90 14 60 14 Z" fill="#4361ee"/>
+          <path d="M60 30 C42 30 34 48 34 64 C34 86 46 98 60 98 C74 98 86 86 86 64 C86 48 78 30 60 30 Z" fill="#eef1ff"/>
+          <path d="M32 22 L44 34 M88 22 L76 34" stroke="#4361ee" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="47" cy="56" r="11" fill="#fff"/><circle cx="73" cy="56" r="11" fill="#fff"/>
+          <circle cx="49" cy="58" r="5" fill="#212529"/><circle cx="71" cy="58" r="5" fill="#212529"/>
+          <circle cx="50.5" cy="56.5" r="1.6" fill="#fff"/><circle cx="72.5" cy="56.5" r="1.6" fill="#fff"/>
+          <path d="M60 66 L54 76 L66 76 Z" fill="#f9a03f"/>
+          <path d="M42 88 Q60 96 78 88" stroke="#c5d3f7" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
       <div class="login-logo">
         <i class="fas fa-language"></i>
         <span>LinguaLearn</span>
@@ -79,6 +92,9 @@
             <button type="button" class="user-dropdown__item" data-action="rewards">
               <i class="fas fa-gift"></i> Belohnungen
             </button>
+            <button type="button" class="user-dropdown__item" data-action="dict">
+              <i class="fas fa-book"></i> Wörterbuch
+            </button>
             <button type="button" class="user-dropdown__item" data-action="settings">
               <i class="fas fa-cog"></i> Einstellungen
             </button>
@@ -127,6 +143,13 @@
                   </button>
                 </div>
               </div>
+
+              <!-- „Für dich": Ein-Klick-Start der wichtigsten Übung -->
+              <button type="button" class="smart-bar" id="smartBar" hidden>
+                <span class="smart-bar__icon"><i class="fas fa-wand-magic-sparkles"></i></span>
+                <span class="smart-bar__text" id="smartBarText"></span>
+                <span class="smart-bar__go">Los <i class="fas fa-chevron-right"></i></span>
+              </button>
 
               <!-- Zustand für „nur fällige Karten"; wird über das Icon oben umgeschaltet -->
               <input type="checkbox" id="dueOnly" hidden>
@@ -324,6 +347,12 @@
               <input type="number" id="dailyGoalInput" class="input" min="1" max="500" step="1" value="20">
             </div>
             <div class="form-group">
+              <label class="fx-toggle" for="fxToggle">
+                <input type="checkbox" id="fxToggle" checked>
+                <span><i class="fas fa-volume-up"></i> Töne &amp; Vibration bei Antworten</span>
+              </label>
+            </div>
+            <div class="form-group">
               <label for="importFile">Deck importieren (JSON)</label>
               <input type="file" id="importFile" class="input" accept=".json">
             </div>
@@ -392,6 +421,21 @@
           </div>
         </section>
 
+        <!-- Wörterbuch: alle gesehenen Wörter des Decks, durchsuchbar -->
+        <section id="view-dict" class="view">
+          <div class="panel">
+            <div class="view-topbar">
+              <button type="button" class="btn-back" id="dictBackBtn">
+                <i class="fas fa-arrow-left"></i> Lernen
+              </button>
+              <h2><i class="fas fa-book"></i> Wörterbuch</h2>
+            </div>
+            <input type="search" id="dictSearch" class="input" placeholder="Wort suchen …"
+              autocomplete="off" autocorrect="off" autocapitalize="none">
+            <div id="dictBody" class="dict-body"></div>
+          </div>
+        </section>
+
         <!-- Lernpfad View: scrollbare Lektions-Landkarte, aktuelle Lektion startbar -->
         <section id="view-path" class="view">
           <div class="panel">
@@ -424,6 +468,39 @@
 
   </div>
 
+  <!-- Onboarding beim allerersten Login: Sprache → Ziel → Motivation -->
+  <div class="modal" id="onboarding" hidden>
+    <div class="modal__backdrop"></div>
+    <div class="modal__box ob-box" role="dialog" aria-label="Willkommen">
+      <div class="ob-step" data-ob="1">
+        <h3>Willkommen! 👋 Welche Sprache lernst du?</h3>
+        <div class="ob-grid" id="obLangs"></div>
+      </div>
+      <div class="ob-step" data-ob="2" hidden>
+        <h3>Wie viel schaffst du pro Tag?</h3>
+        <div class="ob-grid ob-grid--goals">
+          <button type="button" class="ob-chip" data-goal="10">🌱 Locker<br><b>10 Karten</b></button>
+          <button type="button" class="ob-chip ob-chip--active" data-goal="20">🙂 Normal<br><b>20 Karten</b></button>
+          <button type="button" class="ob-chip" data-goal="30">💪 Ehrgeizig<br><b>30 Karten</b></button>
+          <button type="button" class="ob-chip" data-goal="50">🔥 Intensiv<br><b>50 Karten</b></button>
+        </div>
+      </div>
+      <div class="ob-step" data-ob="3" hidden>
+        <h3>Und warum lernst du?</h3>
+        <div class="ob-grid ob-grid--goals">
+          <button type="button" class="ob-chip" data-why="reise">✈️<br><b>Reisen</b></button>
+          <button type="button" class="ob-chip" data-why="schule">🎓<br><b>Schule/Uni</b></button>
+          <button type="button" class="ob-chip" data-why="beruf">💼<br><b>Beruf</b></button>
+          <button type="button" class="ob-chip" data-why="spass">🎉<br><b>Spaß</b></button>
+        </div>
+      </div>
+      <div class="ob-footer">
+        <button type="button" class="btn" id="obSkip">Später</button>
+        <button type="button" class="btn btn-primary" id="obNext">Weiter</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Auth runs as a plain script — never blocked by module-loading failures -->
   <script>
   (function () {
@@ -434,7 +511,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v18';
+    var APP_VERSION = 'v19';
     var loginMode = 'login';
 
     function hp(pw) {

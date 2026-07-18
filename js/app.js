@@ -16,6 +16,10 @@ import { initArena, renderArena } from '../ui/hub.js';
 import { reinitLeague } from '../core/league.js';
 import { reinitQuests } from '../core/quests.js';
 import { getGame } from '../core/gamification.js';
+import { initDictionary, renderDictionary } from '../ui/dictionary.js';
+import { initOnboarding, maybeShowOnboarding } from '../ui/onboarding.js';
+import { reinitErrorLog } from '../core/errorLog.js';
+import { reinitGold } from '../core/session.js';
 import { showToast } from '../ui/toast.js';
 
 let appInitialized = false;
@@ -45,6 +49,8 @@ function reinitUser() {
   reinitWotd();
   reinitLeague();
   reinitQuests();
+  reinitErrorLog();
+  reinitGold();
 }
 
 function showApp() {
@@ -63,6 +69,8 @@ function showApp() {
     document.getElementById('coursemapBtn')?.addEventListener('click', showPath);
     initWotdModal();
     initArena(activateView);
+    initDictionary(activateView);
+    initOnboarding();
     initRewards();
     setupModeTabs();
     setupFocusControls();
@@ -88,6 +96,11 @@ function showApp() {
         if (item.dataset.action === 'stats') renderStatsExtras();
         if (item.dataset.action === 'rewards') renderRewards();
         if (item.dataset.action === 'arena') renderArena();
+        if (item.dataset.action === 'dict') {
+          const q = document.getElementById('dictSearch');
+          if (q) q.value = '';
+          renderDictionary();
+        }
         dropdown.hidden = true;
         syncChip();
       });
@@ -120,6 +133,9 @@ function showApp() {
   renderGamiHeader();
   renderLearnWidgets();
   applyCosmetics();
+
+  // Erster Login? → Onboarding (Sprache, Ziel, Motivation → Lektion 1).
+  maybeShowOnboarding(() => startSession());
 
   // Lokale Serien-Erinnerung: gestern gelernt, heute noch nicht → Hinweis.
   const g = getGame();

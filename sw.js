@@ -2,7 +2,7 @@
 // vollständig offline nutzbar.
 // WICHTIG: CACHE_VERSION bei jedem Release erhöhen, damit Clients
 // die neuen Dateien bekommen.
-const CACHE_VERSION = 'v18';
+const CACHE_VERSION = 'v19';
 const CACHE_NAME = `lingualearn-${CACHE_VERSION}`;
 
 // Komplette App-Shell — alles relative Pfade, funktioniert daher auf
@@ -46,6 +46,10 @@ const PRECACHE = [
   './core/quests.js',
   './core/shop.js',
   './ui/hub.js',
+  './ui/dictionary.js',
+  './ui/onboarding.js',
+  './core/errorLog.js',
+  './utils/feedback.js',
   './core/state.js',
   './core/stats.js',
   './ui/gami.js',
