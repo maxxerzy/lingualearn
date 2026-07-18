@@ -61,6 +61,7 @@
           <button type="button" class="user-chip" id="userChipBtn" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user-circle user-chip__avatar" id="userAvatar"></i>
             <span class="user-title" id="userTitle">Neuling</span>
+            <span class="user-chip__name" id="userNameChip"></span>
             <i class="fas fa-caret-down user-chip__caret"></i>
           </button>
           <div class="user-dropdown" id="userDropdown" hidden>
@@ -433,7 +434,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v16';
+    var APP_VERSION = 'v17';
     var loginMode = 'login';
 
     function hp(pw) {

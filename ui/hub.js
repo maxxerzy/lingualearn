@@ -109,10 +109,11 @@ export function renderArena(tab = activeTab) {
   renderGems();
 }
 
-export function initArena() {
-  document.getElementById('arenaBackBtn')?.addEventListener('click', () => {
-    document.querySelector('.nav-btn[data-view="learn"]')?.click();
-  });
+let navigateFn = null;
+
+export function initArena(activateView) {
+  navigateFn = activateView;
+  document.getElementById('arenaBackBtn')?.addEventListener('click', () => navigateFn?.('learn'));
   document.querySelectorAll('#arenaTabs .arena-tab').forEach(t =>
     t.addEventListener('click', () => renderArena(t.dataset.tab)));
 
