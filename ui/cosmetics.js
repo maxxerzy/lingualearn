@@ -11,6 +11,11 @@ const THEME_SWATCH = {
   forest:   'linear-gradient(135deg,#2d6a4f,#74c69d)',
   dark:     'linear-gradient(135deg,#12161c,#2c3440)',
   royal:    'linear-gradient(135deg,#7b2cbf,#ffbe0b)',
+  sakura:   'linear-gradient(135deg,#ffc9de,#d6336c)',
+  retro:    'linear-gradient(135deg,#f4ecd8,#8b5e34)',
+  lava:     'linear-gradient(135deg,#241412,#ff5c33)',
+  neon:     'linear-gradient(135deg,#0b0f1a,#22d3ee)',
+  galaxy:   'linear-gradient(135deg,#141026,#a78bfa)',
 };
 const RARITY_LABEL = { bronze: 'Bronze', silber: 'Silber', gold: 'Gold', legendaer: 'Legendär' };
 

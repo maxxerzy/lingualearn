@@ -11,7 +11,7 @@ const DEFAULTS = {
   bestCombo: 0,        // längste Serie richtiger Antworten
   chests: {},          // Streak-Meilenstein -> Datum der Truhe
   dailyGoal: 20,
-  daily: { date: null, count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, combo: 0, goalHit: false },
+  daily: { date: null, count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, combo: 0, blitz: 0, goalHit: false },
   goalHitEver: false,
   streak: { current: 0, longest: 0, lastDate: null },
   inventory: { streakFreeze: 0, xpBoost: 0 },
@@ -28,7 +28,7 @@ const LEVEL_UP_GEMS = 10;
 
 export const XP = { correct: 10, wrong: 2, session: 50, perfect: 100 };
 
-const EMPTY_DAY = () => ({ date: todayStr(), count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, combo: 0, goalHit: false });
+const EMPTY_DAY = () => ({ date: todayStr(), count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, combo: 0, blitz: 0, goalHit: false });
 
 const store = createUserStore('lingualearn_game_', {
   defaults: () => structuredClone(DEFAULTS),
@@ -208,6 +208,22 @@ export function consumeCelebrations() {
     persist();
   }
   return out;
+}
+
+// Blitzrunde beendet: Runden zählen; Diamanten-Bonus nur für die erste
+// Runde des Tages (Score, gedeckelt auf 15).
+export function noteBlitz(score) {
+  const g = load();
+  touchDay(g);
+  g.daily.blitz = (g.daily.blitz || 0) + 1;
+  let gems = 0;
+  if (g.daily.blitz === 1) {
+    gems = Math.max(0, Math.min(score, 15));
+    g.gems = (g.gems || 0) + gems;
+    g.gemsEarned = (g.gemsEarned || 0) + gems;
+  }
+  persist();
+  return { gems, first: g.daily.blitz === 1 };
 }
 
 // Lebenszeit-Zähler für Erfolge.

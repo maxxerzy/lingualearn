@@ -135,6 +135,16 @@ export function renderStatsExtras() {
   setText('stat-rank', info.rank);
   setText('stat-xp', g.xp);
 
+  // Wochen-Bilanz: Summe + aktive Tage der letzten 7 Tage.
+  let weekCards = 0, weekDays = 0;
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const n = g.activity[d.toISOString().slice(0, 10)] || 0;
+    weekCards += n;
+    if (n > 0) weekDays++;
+  }
+  setText('weekSummary', `Diese Woche: ${weekCards} Karten · ${weekDays}/7 Tage aktiv`);
+
   renderHeatmap(g.activity);
   renderAchievements(g.achievements);
 }

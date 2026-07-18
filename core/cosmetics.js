@@ -15,6 +15,11 @@ export const THEMES = [
   { id: 'forest',   name: 'Wald',            req: { level: 6 } },
   { id: 'dark',     name: 'Mitternacht',     req: { level: 4 } },
   { id: 'royal',    name: 'Königlich',       req: { achievement: 'meister-100' } },
+  { id: 'sakura',   name: 'Sakura',          req: { streak: 5 } },
+  { id: 'retro',    name: 'Retro',           req: { mastered: 40 } },
+  { id: 'lava',     name: 'Lava',            req: { perfect: 3 } },
+  { id: 'neon',     name: 'Neon-Nacht',      req: { achievement: 'combo-10' } },
+  { id: 'galaxy',   name: 'Galaxie',         req: { level: 12 } },
 ];
 
 export const AVATARS = [
@@ -24,6 +29,12 @@ export const AVATARS = [
   { id: 'dragon',  name: 'Drache',     icon: 'fa-dragon',         req: { streak: 7 } },
   { id: 'astro',   name: 'Astronaut',  icon: 'fa-user-astronaut', req: { level: 8 } },
   { id: 'flamme',  name: 'Flamme',     icon: 'fa-fire',           req: { achievement: 'combo-10' } },
+  { id: 'hund',    name: 'Hund',       icon: 'fa-dog',            req: { streak: 5 } },
+  { id: 'frosch',  name: 'Frosch',     icon: 'fa-frog',           req: { mastered: 30 } },
+  { id: 'geist',   name: 'Geist',      icon: 'fa-ghost',          req: { perfect: 5 } },
+  { id: 'roboter', name: 'Roboter',    icon: 'fa-robot',          req: { gems: 300 } },
+  { id: 'magier',  name: 'Magier',     icon: 'fa-hat-wizard',     req: { level: 10 } },
+  { id: 'otter',   name: 'Otter',      icon: 'fa-otter',          req: { streak: 14 } },
   { id: 'crown',   name: 'Krone',      icon: 'fa-crown',          req: { achievement: 'meister-100' } },
 ];
 
@@ -37,6 +48,11 @@ export const TITLES = [
   { id: 'polyglott',  name: 'Polyglott',        req: { achievement: 'polyglott' } },
   { id: 'aufsteiger', name: 'Liga-Aufsteiger',  req: { achievement: 'liga-auf' } },
   { id: 'questheld',  name: 'Questheld',        req: { achievement: 'quests-10' } },
+  { id: 'perfekt',    name: 'Perfektionist',    req: { perfect: 5 } },
+  { id: 'diamant',    name: 'Diamantenherz',    req: { gems: 500 } },
+  { id: 'feuerherz',  name: 'Feuerherz',        req: { streak: 14 } },
+  { id: 'meister',    name: 'Sprachmeister',    req: { level: 12 } },
+  { id: 'titan',      name: 'Vokabel-Titan',    req: { mastered: 200 } },
 ];
 
 export const CARD_DESIGNS = [
@@ -45,6 +61,9 @@ export const CARD_DESIGNS = [
   { id: 'gold',     name: 'Gold',     req: { level: 5 } },
   { id: 'neon',     name: 'Neon',     req: { level: 9 } },
   { id: 'sakura',   name: 'Sakura',   req: { mastered: 25 } },
+  { id: 'ocean',    name: 'Ozeanwelle', req: { streak: 7 } },
+  { id: 'holz',     name: 'Holz',       req: { mastered: 75 } },
+  { id: 'galaxy',   name: 'Galaxie',    req: { level: 11 } },
 ];
 
 // Seltenheitsstufen der 13 Erfolge für die Abzeichen-Vitrine.
@@ -86,6 +105,8 @@ function context() {
     level: levelInfo(g.xp).level,
     streak: g.streak.longest,
     mastered: countMasteredAll(),
+    perfect: g.perfectSessions || 0,
+    gems: g.gemsEarned || 0,
     achievements: new Set(Object.keys(g.achievements || {})),
   };
 }
@@ -96,6 +117,8 @@ export function isUnlocked(item, ctx = context()) {
   if (r.level !== undefined) return ctx.level >= r.level;
   if (r.streak !== undefined) return ctx.streak >= r.streak;
   if (r.mastered !== undefined) return ctx.mastered >= r.mastered;
+  if (r.perfect !== undefined) return ctx.perfect >= r.perfect;
+  if (r.gems !== undefined) return ctx.gems >= r.gems;
   if (r.achievement !== undefined) return ctx.achievements.has(r.achievement);
   return false;
 }
@@ -106,6 +129,8 @@ export function requirementText(item) {
   if (r.level !== undefined) return `Ab Level ${r.level}`;
   if (r.streak !== undefined) return `${r.streak} Tage Serie`;
   if (r.mastered !== undefined) return `${r.mastered} Vokabeln gemeistert`;
+  if (r.perfect !== undefined) return `${r.perfect} perfekte Sessions`;
+  if (r.gems !== undefined) return `${r.gems} Diamanten gesammelt (gesamt)`;
   if (r.achievement !== undefined) {
     const a = ACHIEVEMENTS.find(x => x.id === r.achievement);
     return `Erfolg „${a ? a.name : r.achievement}"`;

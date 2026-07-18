@@ -691,3 +691,35 @@
 .fx-toggle { display: flex; align-items: center; gap: 10px; cursor: pointer; text-transform: none; letter-spacing: 0; font-size: 0.95rem; color: var(--dark, #212529); }
 .fx-toggle input { width: 18px; height: 18px; accent-color: var(--primary, #4361ee); }
 .fx-toggle i { color: var(--primary, #4361ee); margin-right: 4px; }
+
+/* ── Blitzrunde ───────────────────────────────────────────────── */
+.blitz-cta {
+  display: flex; align-items: center; gap: 12px; width: 100%;
+  margin-bottom: 14px; padding: 12px;
+  border: none; border-radius: 14px; cursor: pointer; text-align: left;
+  background: linear-gradient(135deg, #ff8a1e, #f4462f);
+  color: #fff; box-shadow: 0 6px 18px rgba(244, 70, 47, .35);
+}
+.blitz-cta__icon { font-size: 1.4rem; flex-shrink: 0; }
+.blitz-cta__main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.blitz-cta__main span { font-size: .78rem; opacity: .92; font-weight: 500; }
+.blitz-cta__go { background: rgba(255,255,255,.22); border-radius: 999px; padding: 7px 14px; font-weight: 800; flex-shrink: 0; }
+.blitz-head { display: flex; justify-content: space-between; align-items: center; max-width: 480px; margin: 0 auto 10px; }
+.blitz-score { font-weight: 800; color: var(--primary, #4361ee); font-size: 1.05rem; }
+.blitz-timer {
+  font-weight: 800; font-variant-numeric: tabular-nums; font-size: 1.05rem;
+  padding: 4px 12px; border-radius: 999px;
+  background: color-mix(in srgb, var(--primary, #4361ee) 12%, var(--surface, #fff));
+}
+.blitz-timer--low { background: #fdeaec; color: #e05260; animation: blitzPulse 1s ease infinite; }
+@keyframes blitzPulse { 50% { transform: scale(1.08); } }
+
+/* ── Wochen-Bilanz (Statistik) ────────────────────────────────── */
+.week-summary { color: var(--gray, #6c757d); font-size: .88rem; margin: -6px 0 10px; font-weight: 600; }
+
+/* ── Einstellungen: Reset-Knopf ───────────────────────────────── */
+.btn-danger-outline {
+  border: 1.5px solid #e05260; color: #e05260; background: var(--surface, #fff);
+}
+.btn-danger-outline:hover { background: #fdeaec; }
+.settings-hint { color: var(--gray, #6c757d); font-size: .78rem; margin-top: 6px; text-transform: none; letter-spacing: 0; }
