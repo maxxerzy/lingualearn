@@ -90,6 +90,17 @@ export function getCardStates(deckId) {
   return out;
 }
 
+// Kompletten SRS-Fortschritt eines Decks löschen (Einstellungen → Reset).
+export function resetDeckProgress(deckId) {
+  const map = load();
+  const prefix = deckId + ':';
+  let changed = false;
+  for (const k of Object.keys(map)) {
+    if (k.startsWith(prefix)) { delete map[k]; changed = true; }
+  }
+  if (changed) store.save(map);
+}
+
 export function countMasteredAll() {
   let n = 0;
   for (const st of Object.values(load())) {

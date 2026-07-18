@@ -45,12 +45,39 @@ const smart = await page.evaluate(() => ({
 }));
 check('„Für dich" empfiehlt Kursstart', smart.visible && /Lektion 1/.test(smart.text), JSON.stringify(smart));
 
-// ── Fällig-Schalter: an → Ring bleibt; aus → sofort weg ──
-await click('#dueToggleBtn'); await page.waitForTimeout(150);
-const on = await page.evaluate(() => ({ a: document.getElementById('dueToggleBtn').classList.contains('active'), c: document.getElementById('dueOnly').checked }));
-await click('#dueToggleBtn'); await page.waitForTimeout(150);
-const off = await page.evaluate(() => ({ a: document.getElementById('dueToggleBtn').classList.contains('active'), c: document.getElementById('dueOnly').checked, sh: getComputedStyle(document.getElementById('dueToggleBtn')).boxShadow }));
-check('Fällig-Schalter an/aus (Ring sofort weg)', on.a && on.c && !off.a && !off.c && off.sh === 'none', JSON.stringify({ on, off }));
+// ── „Für dich" mit fälligen Karten: Ein-Klick-Review, Einmal-Filter ──
+check('Fällig-Filter-Knopf ist entfernt', await page.evaluate(() => !document.getElementById('dueToggleBtn')));
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const today = new Date().toISOString().slice(0, 10);
+  const map = {};
+  for (const front of ['Haus', 'Auto', 'Buch']) map[`basic-da:${front}`] = { level: 1, correct: 1, wrong: 0, due: today };
+  localStorage.setItem('lingualearn_cards_' + u, JSON.stringify(map));
+  (await import('/core/cardProgress.js')).reinitCardProgress();
+  (await import('/ui/gami.js')).renderLearnWidgets();
+});
+await page.waitForTimeout(200);
+const dueRec = await page.evaluate(() => ({
+  visible: !document.getElementById('smartBar').hidden,
+  text: document.getElementById('smartBarText').textContent,
+}));
+check('„Für dich" zeigt fällige Karten', dueRec.visible && /3 fällige Karten/.test(dueRec.text), JSON.stringify(dueRec));
+await click('#smartBar'); await page.waitForTimeout(600);
+const dueRun = await page.evaluate(() => ({
+  focus: document.getElementById('view-learn').classList.contains('session-active'),
+  progress: document.getElementById('progress-text').textContent,
+  reset: !document.getElementById('dueOnly').checked,
+}));
+check('Fällig-Review startet mit 3 Karten, Filter danach gelöst',
+  dueRun.focus && /\/3 Karten/.test(dueRun.progress) && dueRun.reset, JSON.stringify(dueRun));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+// Karten-Zustand aufräumen, damit spätere Checks (Kurszeile etc.) unberührt bleiben
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  localStorage.removeItem('lingualearn_cards_' + u);
+  (await import('/core/cardProgress.js')).reinitCardProgress();
+  (await import('/ui/gami.js')).renderLearnWidgets();
+});
 
 // ── WOTD-Overlay ──
 await click('#wotdBtn'); await page.waitForTimeout(300);
@@ -277,6 +304,100 @@ const fx = await page.evaluate(() => {
   return { before, stored: localStorage.getItem('lingualearn_fx_' + u) };
 });
 check('FX-Schalter speichert pro Konto', fx.before === true && fx.stored === 'off', JSON.stringify(fx));
+await click('#settingsBackBtn'); await page.waitForTimeout(200);
+
+// ── Blitzrunde: Start aus der Arena, Antworten, Tagesbonus ──
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="arena"]'); await page.waitForTimeout(300);
+check('Arena: Blitz-Karte im Quests-Tab', await page.evaluate(() => !!document.querySelector('[data-blitz]')));
+await page.evaluate(() => document.querySelector('[data-blitz]').click());
+await page.waitForTimeout(700);
+const blitzUi = await page.evaluate(() => ({
+  focus: document.getElementById('view-learn').classList.contains('session-active'),
+  timer: document.getElementById('blitzTimer')?.textContent || '',
+  title: document.getElementById('session-title').textContent,
+  options: document.querySelectorAll('.blitz-card .mc-option').length,
+}));
+check('Blitz läuft (Timer, 4 Optionen, Fokus)', blitzUi.focus && /\d+s/.test(blitzUi.timer) && /Blitzrunde/.test(blitzUi.title) && blitzUi.options === 4, JSON.stringify(blitzUi));
+// zwei Antworten geben (richtige Option per Datenabgleich)
+for (let i = 0; i < 2; i++) {
+  const idx = await page.evaluate(async () => {
+    const q = document.querySelector('.blitz-card .mc-question').textContent.trim();
+    const { cards } = await import('/js/data/decks/da.js');
+    const back = cards.find(c => c.front === q).back;
+    const opts = [...document.querySelectorAll('.blitz-card .mc-option .mc-text')];
+    return opts.findIndex(o => o.textContent.trim() === back);
+  });
+  await page.evaluate(i2 => document.querySelector(`.blitz-card .mc-option[data-idx="${i2}"]`)?.click(), idx);
+  await page.waitForTimeout(150);
+}
+// Zeit ablaufen lassen (Ende erzwingen)
+await page.evaluate(async () => {
+  const st = (await import('/core/state.js')).getCurrentSession();
+  if (st) st.blitzEnd = Date.now() - 1;
+});
+await page.waitForTimeout(600);
+const blitzEnd = await page.evaluate(async () => ({
+  summary: document.getElementById('learnArea').textContent.includes('Blitzrunde vorbei'),
+  score: /richtige Antworten/.test(document.getElementById('learnArea').textContent),
+  daily: (await import('/core/gamification.js')).getGame().daily.blitz,
+}));
+check('Blitz-Ende: Zusammenfassung + Tageszähler', blitzEnd.summary && blitzEnd.score && blitzEnd.daily === 1, JSON.stringify(blitzEnd));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// ── Neue Cosmetics: Kataloge + neue Freischalt-Typen + Ausrüsten ──
+const cosmo = await page.evaluate(async () => {
+  const c = await import('/core/cosmetics.js');
+  const g = await import('/core/gamification.js');
+  const u = localStorage.getItem('lingualearn_current_user');
+  const raw = JSON.parse(localStorage.getItem('lingualearn_game_' + u));
+  raw.perfectSessions = 5; raw.gemsEarned = 600;
+  raw.streak = { ...raw.streak, longest: 14 };
+  localStorage.setItem('lingualearn_game_' + u, JSON.stringify(raw));
+  g.reinitGame();
+  return {
+    themes: c.THEMES.length, avatars: c.AVATARS.length, titles: c.TITLES.length, cards: c.CARD_DESIGNS.length,
+    perfektionist: c.isUnlocked(c.TITLES.find(t => t.id === 'perfekt')),
+    diamantenherz: c.isUnlocked(c.TITLES.find(t => t.id === 'diamant')),
+    geist: c.isUnlocked(c.AVATARS.find(a => a.id === 'geist')),
+    sakuraTheme: c.isUnlocked(c.THEMES.find(t => t.id === 'sakura')),
+    lavaTheme: c.isUnlocked(c.THEMES.find(t => t.id === 'lava')),
+    reqTextPerfect: c.requirementText({ req: { perfect: 5 } }),
+    equipped: c.equip('theme', 'sakura'),
+  };
+});
+check('Kataloge erweitert (11 Themes, 13 Avatare, 14 Titel, 8 Designs)',
+  cosmo.themes === 11 && cosmo.avatars === 13 && cosmo.titles === 14 && cosmo.cards === 8, JSON.stringify(cosmo));
+check('Neue Freischalt-Typen (perfekt/gems) greifen',
+  cosmo.perfektionist && cosmo.diamantenherz && cosmo.geist && cosmo.sakuraTheme && cosmo.lavaTheme && /perfekte Sessions/.test(cosmo.reqTextPerfect), JSON.stringify(cosmo));
+await page.evaluate(async () => (await import('/ui/cosmetics.js')).applyCosmetics());
+await page.waitForTimeout(200);
+const sakuraOn = await page.evaluate(() => ({
+  attr: document.documentElement.getAttribute('data-theme'),
+  primary: getComputedStyle(document.documentElement).getPropertyValue('--primary').trim(),
+}));
+check('Theme „Sakura" ausgerüstet & aktiv', sakuraOn.attr === 'sakura' && sakuraOn.primary === '#d6336c', JSON.stringify(sakuraOn));
+await page.evaluate(async () => { (await import('/core/cosmetics.js')).equip('theme', 'standard'); (await import('/ui/cosmetics.js')).applyCosmetics(); });
+
+// ── Wochen-Bilanz in der Statistik ──
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="stats"]'); await page.waitForTimeout(300);
+const week = await page.evaluate(() => document.getElementById('weekSummary').textContent);
+check('Wochen-Bilanz sichtbar', /^Diese Woche: \d+ Karten · \d\/7 Tage aktiv$/.test(week.trim()), week);
+await click('#statsBackBtn'); await page.waitForTimeout(200);
+
+// ── Deck-Reset in den Einstellungen ──
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="settings"]'); await page.waitForTimeout(200);
+await page.evaluate(() => document.getElementById('deckResetBtn').click());   // confirm wird auto-akzeptiert
+await page.waitForTimeout(300);
+const reset = await page.evaluate(async () => ({
+  states: Object.keys((await import('/core/cardProgress.js')).getCardStates('basic-da')).length,
+  course: (await import('/core/course.js')).getCourseState('basic-da').introduced,
+  gold: (await import('/core/session.js')).getGoldLessons('basic-da').length,
+}));
+check('Deck-Reset löscht Karten, Kursstand & Gold', reset.states === 0 && reset.course === 0 && reset.gold === 0, JSON.stringify(reset));
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
 
 // ── Update-Logout: Konto bleibt, Sitzung endet ──

@@ -74,7 +74,6 @@ function showApp() {
     initRewards();
     setupModeTabs();
     setupFocusControls();
-    setupDueToggle();
     document.getElementById('startBtn').addEventListener('click', startSession);
     window.handleImport = handleImport;
     window.handleExport = handleExport;
@@ -186,25 +185,6 @@ function setupModeTabs() {
   });
 }
 
-// „Nur fällige Karten": Icon-Schalter oben statt Checkbox. Blendet beim
-// Umschalten oben eine Rückmeldung (An/Aus) ein und hält den versteckten
-// #dueOnly-Zustand aktuell, den die Session ausliest.
-function setupDueToggle() {
-  const btn = document.getElementById('dueToggleBtn');
-  const chk = document.getElementById('dueOnly');
-  if (!btn || !chk) return;
-  btn.addEventListener('click', () => {
-    chk.checked = !chk.checked;
-    btn.classList.toggle('active', chk.checked);
-    btn.setAttribute('aria-pressed', chk.checked ? 'true' : 'false');
-    // Fokus abgeben, damit nach dem Ausschalten kein Rahmen „hängen bleibt".
-    btn.blur();
-    const n = document.getElementById('dueCount')?.textContent || '0';
-    showToast(chk.checked
-      ? `<i class="fas fa-filter toast__icon"></i><div class="toast__body"><b>Nur fällige Karten · An</b><span>${n} fällige Karte(n) in dieser Session</span></div>`
-      : `<i class="fas fa-layer-group toast__icon"></i><div class="toast__body"><b>Nur fällige Karten · Aus</b><span>Alle Karten des Decks</span></div>`);
-  });
-}
 
 // Zurück-Button, Modus-Wechsel-Menü und Lernkarte in der Fokus-Leiste.
 function setupFocusControls() {

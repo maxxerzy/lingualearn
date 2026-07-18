@@ -14,6 +14,7 @@ const POOL = [
   { id: 'les3',  type: 'lessons', goal: 3,  gem: 15, xp: 15, icon: 'fa-flag-checkered',  name: '3 Sessions abschließen' },
   { id: 'goal',  type: 'goal',    goal: 1,  gem: 15, xp: 10, icon: 'fa-bullseye',        name: 'Tagesziel erreichen' },
   { id: 'perf',  type: 'perfect', goal: 1,  gem: 20, xp: 20, icon: 'fa-star',            name: 'Perfekte Session (≥5 Karten)' },
+  { id: 'blitz', type: 'blitz',   goal: 1,  gem: 15, xp: 10, icon: 'fa-bolt',            name: 'Eine Blitzrunde spielen' },
 ];
 
 const store = createUserStore('lingualearn_quests_', {
@@ -51,6 +52,7 @@ export function getDailyQuests() {
     lessons: g.daily.lessons || 0,
     goal: g.daily.goalHit ? 1 : 0,
     perfect: g.daily.perfect || 0,
+    blitz: g.daily.blitz || 0,
   };
   return st.picks.map(id => {
     const t = POOL.find(q => q.id === id);

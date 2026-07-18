@@ -76,11 +76,6 @@ export function renderLearnWidgets() {
         `${p.mastered} gemeistert · ${p.seen - p.mastered} in Arbeit · ${p.fresh} neu`);
     }
 
-    const dueN = getDueFronts(deckId).length;
-    setText('dueCount', dueN);
-    const dueBadge = document.getElementById('dueCount');
-    if (dueBadge) dueBadge.hidden = dueN === 0;
-
     // Lernkurs-Zeile + Start-Button. Der genaue Lektions-Zuschnitt (Titel,
     // Nummer) steht erst nach dem Laden des Decks fest (thematischer Plan).
     const { introduced } = getCourseState(deckId);
@@ -139,6 +134,16 @@ export function renderStatsExtras() {
   setText('stat-level', info.level);
   setText('stat-rank', info.rank);
   setText('stat-xp', g.xp);
+
+  // Wochen-Bilanz: Summe + aktive Tage der letzten 7 Tage.
+  let weekCards = 0, weekDays = 0;
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const n = g.activity[d.toISOString().slice(0, 10)] || 0;
+    weekCards += n;
+    if (n > 0) weekDays++;
+  }
+  setText('weekSummary', `Diese Woche: ${weekCards} Karten · ${weekDays}/7 Tage aktiv`);
 
   renderHeatmap(g.activity);
   renderAchievements(g.achievements);
@@ -227,8 +232,7 @@ function renderSmartBar(deckId) {
   bar.onclick = () => {
     if (rec.type === 'due') {
       const chk = document.getElementById('dueOnly');
-      if (chk) chk.checked = true;
-      document.getElementById('dueToggleBtn')?.classList.add('active');
+      if (chk) chk.checked = true;   // Einmal-Filter; startSession setzt ihn zurück
       document.querySelectorAll('.mode-btn').forEach(b =>
         b.classList.toggle('active', b.dataset.mode === 'flashcard'));
       document.getElementById('startBtn')?.click();

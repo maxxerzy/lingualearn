@@ -69,6 +69,12 @@ export function nextLessonCards(deckId, cards) {
   return cards.slice(introduced, start + sizes[i]);
 }
 
+// Kurs-Fortschritt eines Decks zurücksetzen (Einstellungen → Reset).
+export function resetCourse(deckId) {
+  const map = load();
+  if (map[deckId]) { delete map[deckId]; store.save(map); }
+}
+
 export function advanceCourse(deckId, n) {
   const map = load();
   const st = map[deckId] || { introduced: 0 };

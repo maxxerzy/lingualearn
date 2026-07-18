@@ -137,10 +137,6 @@
                   <button type="button" class="config-icon-btn" id="wotdBtn" title="Wort des Tages" aria-label="Wort des Tages">
                     <i class="fas fa-star"></i>
                   </button>
-                  <button type="button" class="config-icon-btn config-due-btn" id="dueToggleBtn" title="Nur fällige Karten" aria-label="Nur fällige Karten" aria-pressed="false">
-                    <i class="fas fa-filter"></i>
-                    <span class="config-due-badge" id="dueCount" hidden>0</span>
-                  </button>
                 </div>
               </div>
 
@@ -151,7 +147,8 @@
                 <span class="smart-bar__go">Los <i class="fas fa-chevron-right"></i></span>
               </button>
 
-              <!-- Zustand für „nur fällige Karten"; wird über das Icon oben umgeschaltet -->
+              <!-- Einmal-Filter „nur fällige Karten" — wird von der
+                   „Für dich"-Leiste gesetzt und nach dem Start zurückgesetzt -->
               <input type="checkbox" id="dueOnly" hidden>
 
               <div class="form-group">
@@ -315,6 +312,7 @@
             </div>
 
             <h3 class="stats-subhead"><i class="fas fa-calendar-alt"></i> Aktivität (letzte 12 Wochen)</h3>
+            <p class="week-summary" id="weekSummary"></p>
             <div class="heatmap-wrap">
               <div class="heatmap" id="heatmap"></div>
               <div class="heatmap-legend">
@@ -351,6 +349,13 @@
                 <input type="checkbox" id="fxToggle" checked>
                 <span><i class="fas fa-volume-up"></i> Töne &amp; Vibration bei Antworten</span>
               </label>
+            </div>
+            <div class="form-group">
+              <label>Deck-Fortschritt</label>
+              <button type="button" id="deckResetBtn" class="btn btn-danger-outline">
+                <i class="fas fa-rotate-left"></i> Fortschritt des gewählten Decks zurücksetzen
+              </button>
+              <p class="settings-hint">Löscht Kartenlevel, Kursstand, Gold-Lektionen und gemerkte Fehler — Konto, XP und Diamanten bleiben.</p>
             </div>
             <div class="form-group">
               <label for="importFile">Deck importieren (JSON)</label>
@@ -511,7 +516,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v19';
+    var APP_VERSION = 'v21';
     var loginMode = 'login';
 
     function hp(pw) {

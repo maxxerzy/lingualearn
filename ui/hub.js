@@ -3,6 +3,7 @@ import { getLeague, clearLastResult } from '../core/league.js';
 import { SHOP, buy } from '../core/shop.js';
 import { getGems, getInventory, getWager, startWager } from '../core/gamification.js';
 import { showToast } from './toast.js';
+import { startBlitz } from '../core/session.js';
 import { renderGamiHeader } from './gami.js';
 
 function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
@@ -36,6 +37,14 @@ function questsHtml() {
       </li>`;
   }).join('');
   return `<p class="arena__hint">Erledige täglich 3 Aufgaben und sammle Diamanten. Neue Quests um Mitternacht.</p>
+    <button type="button" class="blitz-cta" data-blitz>
+      <span class="blitz-cta__icon"><i class="fas fa-bolt"></i></span>
+      <span class="blitz-cta__main">
+        <b>⚡ Blitzrunde</b>
+        <span>60 Sekunden, so viele Antworten wie möglich — erste Runde des Tages bringt bis zu 15 💎</span>
+      </span>
+      <span class="blitz-cta__go">Start</span>
+    </button>
     <ul class="quest-list">${items}</ul>`;
 }
 
@@ -163,6 +172,9 @@ export function initArena(activateView) {
       } else {
         showToast(`<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>${res.err}</b></div>`, { variant: 'warn' });
       }
+    } else if (e.target.closest('[data-blitz]')) {
+      navigateFn?.('learn');
+      startBlitz();
     } else if (e.target.closest('[data-wager]')) {
       const res = startWager();
       if (res.ok) {

@@ -34,6 +34,56 @@
   --shadow-lg: 0 8px 32px rgba(0,0,0,.55);
 }
 
+:root[data-theme="sakura"] {
+  --primary: #d6336c; --secondary: #a61e4d; --accent: #f783ac;
+  --app-bg: linear-gradient(135deg, #ffe3ec 0%, #ffc9de 100%);
+  --bg: #fff0f5;
+}
+:root[data-theme="retro"] {
+  --primary: #8b5e34; --secondary: #6f4518; --accent: #d4a373;
+  --app-bg: linear-gradient(135deg, #f4ecd8 0%, #e6ccb2 100%);
+  --bg: #f7f0e0; --light: #f4ecd8; --light-gray: #e3d5bf;
+}
+/* Lava — dunkles Glut-Design */
+:root[data-theme="lava"] {
+  --primary: #ff5c33; --secondary: #d63b1f; --accent: #ffb020;
+  --app-bg: #180d0b;
+  --surface: #241412;
+  --bg: #180d0b;
+  --light: #2f1b17;
+  --light-gray: #3b241f;
+  --dark: #ffe8e0;
+  --gray: #c29a8d;
+  --shadow: 0 4px 12px rgba(0,0,0,.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.6);
+}
+/* Neon-Nacht — fast schwarz mit Cyan/Pink */
+:root[data-theme="neon"] {
+  --primary: #22d3ee; --secondary: #0891b2; --accent: #f0abfc;
+  --app-bg: #0b0f1a;
+  --surface: #131a2a;
+  --bg: #0b0f1a;
+  --light: #1b2438;
+  --light-gray: #253048;
+  --dark: #e6faff;
+  --gray: #8fa3c0;
+  --shadow: 0 4px 12px rgba(0,0,0,.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.6);
+}
+/* Galaxie — tiefes Violett */
+:root[data-theme="galaxy"] {
+  --primary: #a78bfa; --secondary: #7c3aed; --accent: #f472b6;
+  --app-bg: radial-gradient(circle at 20% 10%, #241a4d 0%, #141026 60%);
+  --surface: #1d1636;
+  --bg: #141026;
+  --light: #271e45;
+  --light-gray: #342a58;
+  --dark: #f0eaff;
+  --gray: #a99cc9;
+  --shadow: 0 4px 12px rgba(0,0,0,.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.6);
+}
+
 /* ── Avatar & Titel im Header ──────────────────────────────────── */
 .user-chip__avatar { font-size: 1.05rem; }
 .user-title {
@@ -67,6 +117,27 @@
     radial-gradient(circle at 12% 12%, color-mix(in srgb, #ff8fab 20%, transparent) 0 12px, transparent 13px),
     radial-gradient(circle at 88% 82%, color-mix(in srgb, #ffb3c6 22%, transparent) 0 16px, transparent 17px),
     var(--surface);
+}
+.card--ocean {
+  background:
+    radial-gradient(ellipse 120% 40% at 50% 118%, color-mix(in srgb, #00b4d8 28%, transparent) 0 60%, transparent 61%),
+    radial-gradient(ellipse 120% 40% at 50% 132%, color-mix(in srgb, #0077b6 22%, transparent) 0 60%, transparent 61%),
+    var(--surface);
+  border: 2px solid color-mix(in srgb, #00b4d8 40%, transparent);
+}
+.card--holz {
+  background:
+    repeating-linear-gradient(92deg, color-mix(in srgb, #8b5e34 12%, var(--surface)) 0 14px, color-mix(in srgb, #6f4518 10%, var(--surface)) 14px 30px);
+  border: 2px solid #8b5e34;
+}
+.card--galaxy {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.5) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 70% 12%, rgba(255,255,255,.4) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 40% 75%, rgba(255,255,255,.45) 0 1.4px, transparent 2px),
+    radial-gradient(circle at 88% 60%, rgba(255,255,255,.35) 0 1px, transparent 1.6px),
+    linear-gradient(135deg, color-mix(in srgb, #7c3aed 22%, var(--surface)), var(--surface));
+  border: 2px solid color-mix(in srgb, #a78bfa 45%, transparent);
 }
 
 /* ── Belohnungen-Ansicht ───────────────────────────────────────── */
