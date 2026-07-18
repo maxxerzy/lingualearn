@@ -76,11 +76,6 @@ export function renderLearnWidgets() {
         `${p.mastered} gemeistert · ${p.seen - p.mastered} in Arbeit · ${p.fresh} neu`);
     }
 
-    const dueN = getDueFronts(deckId).length;
-    setText('dueCount', dueN);
-    const dueBadge = document.getElementById('dueCount');
-    if (dueBadge) dueBadge.hidden = dueN === 0;
-
     // Lernkurs-Zeile + Start-Button. Der genaue Lektions-Zuschnitt (Titel,
     // Nummer) steht erst nach dem Laden des Decks fest (thematischer Plan).
     const { introduced } = getCourseState(deckId);
@@ -227,8 +222,7 @@ function renderSmartBar(deckId) {
   bar.onclick = () => {
     if (rec.type === 'due') {
       const chk = document.getElementById('dueOnly');
-      if (chk) chk.checked = true;
-      document.getElementById('dueToggleBtn')?.classList.add('active');
+      if (chk) chk.checked = true;   // Einmal-Filter; startSession setzt ihn zurück
       document.querySelectorAll('.mode-btn').forEach(b =>
         b.classList.toggle('active', b.dataset.mode === 'flashcard'));
       document.getElementById('startBtn')?.click();

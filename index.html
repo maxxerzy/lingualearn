@@ -137,10 +137,6 @@
                   <button type="button" class="config-icon-btn" id="wotdBtn" title="Wort des Tages" aria-label="Wort des Tages">
                     <i class="fas fa-star"></i>
                   </button>
-                  <button type="button" class="config-icon-btn config-due-btn" id="dueToggleBtn" title="Nur fällige Karten" aria-label="Nur fällige Karten" aria-pressed="false">
-                    <i class="fas fa-filter"></i>
-                    <span class="config-due-badge" id="dueCount" hidden>0</span>
-                  </button>
                 </div>
               </div>
 
@@ -151,7 +147,8 @@
                 <span class="smart-bar__go">Los <i class="fas fa-chevron-right"></i></span>
               </button>
 
-              <!-- Zustand für „nur fällige Karten"; wird über das Icon oben umgeschaltet -->
+              <!-- Einmal-Filter „nur fällige Karten" — wird von der
+                   „Für dich"-Leiste gesetzt und nach dem Start zurückgesetzt -->
               <input type="checkbox" id="dueOnly" hidden>
 
               <div class="form-group">
@@ -511,7 +508,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v19';
+    var APP_VERSION = 'v20';
     var loginMode = 'login';
 
     function hp(pw) {

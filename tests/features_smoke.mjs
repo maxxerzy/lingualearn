@@ -45,12 +45,39 @@ const smart = await page.evaluate(() => ({
 }));
 check('„Für dich" empfiehlt Kursstart', smart.visible && /Lektion 1/.test(smart.text), JSON.stringify(smart));
 
-// ── Fällig-Schalter: an → Ring bleibt; aus → sofort weg ──
-await click('#dueToggleBtn'); await page.waitForTimeout(150);
-const on = await page.evaluate(() => ({ a: document.getElementById('dueToggleBtn').classList.contains('active'), c: document.getElementById('dueOnly').checked }));
-await click('#dueToggleBtn'); await page.waitForTimeout(150);
-const off = await page.evaluate(() => ({ a: document.getElementById('dueToggleBtn').classList.contains('active'), c: document.getElementById('dueOnly').checked, sh: getComputedStyle(document.getElementById('dueToggleBtn')).boxShadow }));
-check('Fällig-Schalter an/aus (Ring sofort weg)', on.a && on.c && !off.a && !off.c && off.sh === 'none', JSON.stringify({ on, off }));
+// ── „Für dich" mit fälligen Karten: Ein-Klick-Review, Einmal-Filter ──
+check('Fällig-Filter-Knopf ist entfernt', await page.evaluate(() => !document.getElementById('dueToggleBtn')));
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const today = new Date().toISOString().slice(0, 10);
+  const map = {};
+  for (const front of ['Haus', 'Auto', 'Buch']) map[`basic-da:${front}`] = { level: 1, correct: 1, wrong: 0, due: today };
+  localStorage.setItem('lingualearn_cards_' + u, JSON.stringify(map));
+  (await import('/core/cardProgress.js')).reinitCardProgress();
+  (await import('/ui/gami.js')).renderLearnWidgets();
+});
+await page.waitForTimeout(200);
+const dueRec = await page.evaluate(() => ({
+  visible: !document.getElementById('smartBar').hidden,
+  text: document.getElementById('smartBarText').textContent,
+}));
+check('„Für dich" zeigt fällige Karten', dueRec.visible && /3 fällige Karten/.test(dueRec.text), JSON.stringify(dueRec));
+await click('#smartBar'); await page.waitForTimeout(600);
+const dueRun = await page.evaluate(() => ({
+  focus: document.getElementById('view-learn').classList.contains('session-active'),
+  progress: document.getElementById('progress-text').textContent,
+  reset: !document.getElementById('dueOnly').checked,
+}));
+check('Fällig-Review startet mit 3 Karten, Filter danach gelöst',
+  dueRun.focus && /\/3 Karten/.test(dueRun.progress) && dueRun.reset, JSON.stringify(dueRun));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+// Karten-Zustand aufräumen, damit spätere Checks (Kurszeile etc.) unberührt bleiben
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  localStorage.removeItem('lingualearn_cards_' + u);
+  (await import('/core/cardProgress.js')).reinitCardProgress();
+  (await import('/ui/gami.js')).renderLearnWidgets();
+});
 
 // ── WOTD-Overlay ──
 await click('#wotdBtn'); await page.waitForTimeout(300);

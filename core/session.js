@@ -141,16 +141,19 @@ export async function startSession() {
     return;
   }
 
-  // Fällig-Modus: nur Karten lernen, deren Wiederholungsdatum erreicht ist.
+  // Fällig-Modus (Einmal-Filter der „Für dich"-Leiste): nur Karten lernen,
+  // deren Wiederholungsdatum erreicht ist; danach wird der Filter gelöst.
   let sessionCards = deck.cards;
-  const dueOnly = document.getElementById('dueOnly')?.checked;
-  if (dueOnly) {
+  const dueChk = document.getElementById('dueOnly');
+  if (dueChk?.checked) {
+    dueChk.checked = false;
     const dueFronts = new Set(getDueFronts(deckId));
-    sessionCards = deck.cards.filter(c => dueFronts.has(c.front));
-    if (sessionCards.length === 0) {
+    const dueCards = deck.cards.filter(c => dueFronts.has(c.front));
+    if (dueCards.length === 0) {
       alert('Keine fälligen Karten in diesem Deck — starte eine normale Session, um neue Karten zu lernen.');
       return;
     }
+    sessionCards = dueCards;
   }
 
   const mode = getSelectedMode();
