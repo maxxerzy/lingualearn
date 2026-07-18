@@ -76,6 +76,28 @@ check('Profil-Chip zeigt Kontonamen nach dem Rang', header.name === 'cmp' + key,
   check('Header: alles im Viewport', !out, out || '');
 }
 
+// Handy-Layout (≤768): Profil auf der Logo-Zeile (rechtsbündig), Chips in Zeile 2
+if (vw <= 768) {
+  const rows = await page.evaluate(() => {
+    const r = id => document.getElementById(id)?.getBoundingClientRect() ||
+                    document.querySelector(id)?.getBoundingClientRect();
+    const logo = document.querySelector('.logo').getBoundingClientRect();
+    const chip = document.getElementById('userChipBtn').getBoundingClientRect();
+    const chips = document.querySelector('.gami-chips').getBoundingClientRect();
+    const streak = document.getElementById('streakChip').getBoundingClientRect();
+    return {
+      sameRow: Math.abs((logo.top + logo.height / 2) - (chip.top + chip.height / 2)) < logo.height,
+      chipRight: chip.right >= window.innerWidth - 40,
+      chipsBelow: chips.top >= chip.bottom - 4,
+      streakRight: streak.right >= window.innerWidth - 40,
+    };
+  });
+  check('Handy: Profil rechtsbündig auf Logo-Zeile', rows.sameRow && rows.chipRight, JSON.stringify(rows));
+  check('Handy: Chips-Zeile darunter, Streak ganz rechts', rows.chipsBelow && rows.streakRight, JSON.stringify(rows));
+  const lvl = await page.evaluate(() => document.querySelector('.gami-level-label').textContent.trim());
+  check('Level-Chip heißt „Lvl."', lvl.startsWith('Lvl.'), lvl);
+}
+
 // ── 3) Modus-Karten: 9 Stück, Icon sichtbar, Label nicht abgeschnitten ──
 const modes = await page.evaluate(() => [...document.querySelectorAll('.mode-btn')].map(b => {
   const i = b.querySelector('i');

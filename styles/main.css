@@ -1202,12 +1202,28 @@ label {
   .logo h1   { font-size: 1.2rem; }
   .logo-icon { font-size: 1.4rem; }
   .nav       { display: none; }
-  /* Header-Zeile voll ausnutzen: Profil/„Neuling" ganz links,
-     Level + Streak ganz rechts. */
-  .header-right { width: 100%; justify-content: space-between; gap: 8px; min-width: 0; }
+  /* Header als Raster: Zeile 1 = Logo links + Profil („Neuling · Name")
+     rechtsbündig; Zeile 2 = Diamanten · Lvl. · Streak in voller Breite. */
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    row-gap: 8px;
+  }
+  .header-right { display: contents; }
+  .logo { grid-row: 1; grid-column: 1; min-width: 0; }
+  .user-menu { grid-row: 1; grid-column: 2; justify-self: end; min-width: 0; }
+  .gami-chips {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  /* Menü hängt jetzt rechts — rechtsbündig aufklappen */
+  .user-dropdown { left: auto; right: 0; }
   .user-chip { font-size: 0.82rem; padding: 5px 10px; min-width: 0; }
-  .user-chip__name { max-width: 74px; }
-  .gami-chips { flex-shrink: 0; }
+  .user-chip__name { max-width: 110px; }
 
   /* IPA-Tooltip darf nicht über den Viewport hinauslaufen */
   .fc-ipa-tip {
@@ -1280,8 +1296,8 @@ label {
   .btn     { font-size: 0.92rem; padding: 10px 12px; }
   .logo h1 { font-size: 1.05rem; }
   .user-chip { padding: 5px 9px; gap: 5px; }
-  .user-chip__name { max-width: 52px; }
-  .gami-xp-bar { display: none; }
+  .user-chip__name { max-width: 84px; }
+  .gami-xp-bar { width: 44px; }
   .gami-chip { padding: 5px 8px; font-size: 0.78rem; }
   .content { padding: 10px; }
   .panel   { padding: 14px 12px; }
