@@ -1,6 +1,6 @@
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
-import { startLessonReview, getGoldLessons } from '../core/session.js';
+import { startLessonReview, getGoldLessons, getThemeBadges, startThemeQuiz } from '../core/session.js';
 
 // Farbpalette für die Themen-Banner entlang des Pfads.
 const BANNER_COLORS = ['#4361ee', '#12a5b8', '#e8820c', '#8a5cf6', '#2e9e5b', '#e05260'];
@@ -38,7 +38,13 @@ export function renderPath(deckId) {
   if (titleEl) titleEl.textContent = `${deck.name} — ${done}/${totalLessons} Lektionen`;
 
   const gold = new Set(getGoldLessons(deckId));
+  const badges = getThemeBadges(deckId);
   const baseTheme = t => (t || '').replace(/ \d+$/, '');
+  // Pro (Basis-)Thema: sind alle zugehörigen Lektionen abgeschlossen?
+  // Dann wird das Banner zum Themen-Quiz-Startknopf.
+  const themePerLesson = sizes.map((_, i) => baseTheme(deck.lessonTitles?.[i]));
+  const themeComplete = theme => themePerLesson.every((t, i) =>
+    t !== theme || finished || i + 1 <= done);
   const nodes = [];
   let start = 0;
   let lastTheme = null;
@@ -49,13 +55,22 @@ export function renderPath(deckId) {
     const title = deck.lessonTitles?.[n - 1];
     const theme = baseTheme(title);
 
-    // Themen-Banner bei jedem Themenwechsel (farbig rotierend).
+    // Themen-Banner bei jedem Themenwechsel (farbig rotierend). Ist das
+    // Thema komplett gelernt, startet ein Tipp darauf das Themen-Quiz.
     if (theme && theme !== lastTheme) {
       lastTheme = theme;
       themeIdx++;
       zig = 0;
       const color = BANNER_COLORS[themeIdx % BANNER_COLORS.length];
-      nodes.push(`<li class="map-banner" style="--bn:${color}"><i class="fas fa-bookmark"></i> ${esc(theme)}</li>`);
+      const quizReady = themeComplete(theme);
+      const badged = !!badges[theme];
+      const chip = quizReady
+        ? `<span class="map-banner__quiz${badged ? ' map-banner__quiz--earned' : ''}" title="${badged ? 'Abzeichen verdient — Quiz wiederholen' : 'Themen-Quiz starten (ab 90 % gibt es das Abzeichen)'}">
+             <i class="fas fa-award"></i> ${badged ? 'Abzeichen' : 'Quiz'}</span>`
+        : '';
+      nodes.push(`<li class="map-banner${quizReady ? ' map-banner--quiz' : ''}" style="--bn:${color}"
+        ${quizReady ? `data-theme-quiz="${esc(theme)}" role="button" tabindex="0"` : ''}>
+        <i class="fas fa-bookmark"></i> ${esc(theme)}${chip}</li>`);
     }
 
     let cls, icon;
@@ -132,6 +147,13 @@ export function initPath(activateView, startSessionFn) {
       const deckId = document.getElementById('deckSelect')?.value;
       navigate?.('learn');
       startLessonReview(deckId, Number(rev.dataset.reviewLesson));
+      return;
+    }
+    const qz = e.target.closest('[data-theme-quiz]');
+    if (qz) {
+      const deckId = document.getElementById('deckSelect')?.value;
+      navigate?.('learn');
+      startThemeQuiz(deckId, qz.dataset.themeQuiz);
     }
   });
 }

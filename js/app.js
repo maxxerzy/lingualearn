@@ -19,7 +19,7 @@ import { getGame } from '../core/gamification.js';
 import { initDictionary, renderDictionary } from '../ui/dictionary.js';
 import { initOnboarding, maybeShowOnboarding } from '../ui/onboarding.js';
 import { reinitErrorLog } from '../core/errorLog.js';
-import { reinitGold } from '../core/session.js';
+import { reinitGold, reinitThemeBadges } from '../core/session.js';
 import { showToast } from '../ui/toast.js';
 
 let appInitialized = false;
@@ -51,6 +51,7 @@ function reinitUser() {
   reinitQuests();
   reinitErrorLog();
   reinitGold();
+  reinitThemeBadges();
 }
 
 function showApp() {

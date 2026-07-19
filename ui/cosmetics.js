@@ -16,6 +16,9 @@ const THEME_SWATCH = {
   lava:     'linear-gradient(135deg,#241412,#ff5c33)',
   neon:     'linear-gradient(135deg,#0b0f1a,#22d3ee)',
   galaxy:   'linear-gradient(135deg,#141026,#a78bfa)',
+  sommer:   'linear-gradient(135deg,#ffe58a,#ff9e4a)',
+  spuk:     'linear-gradient(135deg,#1a1026,#ff7b1c)',
+  winter:   'linear-gradient(135deg,#e6f5fc,#4aa8d8)',
 };
 const RARITY_LABEL = { bronze: 'Bronze', silber: 'Silber', gold: 'Gold', legendaer: 'Legendär' };
 

@@ -342,9 +342,31 @@ const blitzEnd = await page.evaluate(async () => ({
   summary: document.getElementById('learnArea').textContent.includes('Blitzrunde vorbei'),
   score: /richtige Antworten/.test(document.getElementById('learnArea').textContent),
   daily: (await import('/core/gamification.js')).getGame().daily.blitz,
+  best: (await import('/core/gamification.js')).getGame().bestBlitz,
+  bestShown: document.getElementById('learnArea').textContent.includes('Bestleistung'),
 }));
 check('Blitz-Ende: Zusammenfassung + Tageszähler', blitzEnd.summary && blitzEnd.score && blitzEnd.daily === 1, JSON.stringify(blitzEnd));
+check('Blitz-Highscore gespeichert & auf Endkarte', blitzEnd.best >= 1 && blitzEnd.bestShown, JSON.stringify(blitzEnd));
 await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// ── Blitzmeister-Erfolg (Score ≥ 20) + Bestleistung auf der Arena-Karte ──
+const blitzAch = await page.evaluate(async () => {
+  const g = await import('/core/gamification.js');
+  const res = g.noteBlitz(25);   // simulierte Rekord-Runde
+  g.checkAchievements();
+  return {
+    record: res.record, best: res.best,
+    unlocked: !!g.getGame().achievements['blitz-20'],
+    total: g.ACHIEVEMENTS.length,
+  };
+});
+check('Erfolg „Blitzmeister" ab Score 20 (18 Erfolge gesamt)',
+  blitzAch.record && blitzAch.best === 25 && blitzAch.unlocked && blitzAch.total === 18, JSON.stringify(blitzAch));
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="arena"]'); await page.waitForTimeout(300);
+const ctaBest = await page.evaluate(() => document.querySelector('.blitz-cta__best')?.textContent.trim() || '');
+check('Arena-Karte zeigt Bestleistung', /25/.test(ctaBest), ctaBest);
+await page.evaluate(() => document.getElementById('arenaBackBtn')?.click()); await page.waitForTimeout(250);
 
 // ── Neue Cosmetics: Kataloge + neue Freischalt-Typen + Ausrüsten ──
 const cosmo = await page.evaluate(async () => {
@@ -367,8 +389,29 @@ const cosmo = await page.evaluate(async () => {
     equipped: c.equip('theme', 'sakura'),
   };
 });
-check('Kataloge erweitert (11 Themes, 13 Avatare, 14 Titel, 8 Designs)',
-  cosmo.themes === 11 && cosmo.avatars === 13 && cosmo.titles === 14 && cosmo.cards === 8, JSON.stringify(cosmo));
+check('Kataloge erweitert (14 Themes, 14 Avatare, 14 Titel, 8 Designs)',
+  cosmo.themes === 14 && cosmo.avatars === 14 && cosmo.titles === 14 && cosmo.cards === 8, JSON.stringify(cosmo));
+
+// ── Saisonale Cosmetics: nur im passenden Monat freischaltbar ──
+const seasonal = await page.evaluate(async () => {
+  const c = await import('/core/cosmetics.js');
+  const winter = c.THEMES.find(t => t.id === 'winter');
+  const sommer = c.THEMES.find(t => t.id === 'sommer');
+  const schneemann = c.AVATARS.find(a => a.id === 'schneemann');
+  const ctxAt = m => ({ level: 1, streak: 0, mastered: 0, perfect: 0, gems: 0, achievements: new Set(), month: m, seen: new Set() });
+  return {
+    haveAll: !!winter && !!sommer && !!schneemann && !!c.THEMES.find(t => t.id === 'spuk'),
+    winterImDez: c.isUnlocked(winter, ctxAt(12)),
+    winterImJuli: c.isUnlocked(winter, ctxAt(7)),
+    sommerImJuli: c.isUnlocked(sommer, ctxAt(7)),
+    // einmal freigeschaltet (in `seen`) → bleibt auch außerhalb der Saison
+    winterBleibt: c.isUnlocked(winter, { ...ctxAt(3), seen: new Set(['winter']) }),
+    reqText: c.requirementText(winter),
+  };
+});
+check('Saisonale Cosmetics (Winter/Sommer/Spuk/Schneemann) monatsgebunden',
+  seasonal.haveAll && seasonal.winterImDez && !seasonal.winterImJuli && seasonal.sommerImJuli && seasonal.winterBleibt && /Dezember/.test(seasonal.reqText),
+  JSON.stringify(seasonal));
 check('Neue Freischalt-Typen (perfekt/gems) greifen',
   cosmo.perfektionist && cosmo.diamantenherz && cosmo.geist && cosmo.sakuraTheme && cosmo.lavaTheme && /perfekte Sessions/.test(cosmo.reqTextPerfect), JSON.stringify(cosmo));
 await page.evaluate(async () => (await import('/ui/cosmetics.js')).applyCosmetics());
@@ -387,6 +430,65 @@ const week = await page.evaluate(() => document.getElementById('weekSummary').te
 check('Wochen-Bilanz sichtbar', /^Diese Woche: \d+ Karten · \d\/7 Tage aktiv$/.test(week.trim()), week);
 await click('#statsBackBtn'); await page.waitForTimeout(200);
 
+// ── Themen-Quiz: Banner auf dem Pfad → Prüfung → Abzeichen ──
+// Kurs als abgeschlossen markieren, dann das kleinste Thema prüfen.
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+const quizTheme = await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const { cards, lessonSizes, lessonTitles } = await import('/js/data/decks/da.js');
+  const store = JSON.parse(localStorage.getItem('lingualearn_course_' + u) || '{}');
+  store['basic-da'] = { introduced: cards.length };
+  localStorage.setItem('lingualearn_course_' + u, JSON.stringify(store));
+  (await import('/core/course.js')).reinitCourse();
+  const sums = {};
+  lessonSizes.forEach((s, i) => { const t = (lessonTitles[i] || '').replace(/ \d+$/, ''); sums[t] = (sums[t] || 0) + s; });
+  return Object.entries(sums).sort((a, b) => a[1] - b[1])[0];   // [Thema, Wortzahl]
+});
+await click('#coursemapBtn'); await page.waitForTimeout(600);
+const bannerInfo = await page.evaluate(t => {
+  const el = document.querySelector(`[data-theme-quiz="${t}"]`);
+  return { found: !!el, chip: el?.querySelector('.map-banner__quiz')?.textContent.trim() || '' };
+}, quizTheme[0]);
+check('Pfad: fertiges Themen-Banner bietet Quiz an', bannerInfo.found && /Quiz/.test(bannerInfo.chip), `${quizTheme[0]} (${quizTheme[1]} Wörter) — ${JSON.stringify(bannerInfo)}`);
+await page.evaluate(t => document.querySelector(`[data-theme-quiz="${t}"]`)?.click(), quizTheme[0]);
+await page.waitForTimeout(700);
+const quizUi = await page.evaluate(() => ({
+  focus: document.getElementById('view-learn').classList.contains('session-active'),
+  title: document.getElementById('session-title').textContent,
+  options: document.querySelectorAll('.quiz-card .mc-option').length,
+  progress: document.querySelector('.quiz-progress')?.textContent || '',
+}));
+check('Themen-Quiz startet (Fokus, 4 Optionen, Fragenzähler)',
+  quizUi.focus && /Themen-Quiz/.test(quizUi.title) && quizUi.options === 4 && /Frage 1\//.test(quizUi.progress), JSON.stringify(quizUi));
+// Alle Fragen richtig beantworten (richtige Option per Datenabgleich).
+let quizState = 'run';
+for (let guard = 0; guard < (quizTheme[1] + 5) * 3 && quizState !== 'ended'; guard++) {
+  quizState = await page.evaluate(async () => {
+    const st = (await import('/core/state.js')).getCurrentSession();
+    if (!st || st.mode !== 'themequiz') return 'ended';
+    if (!st.currentPrompt) return 'wait';   // Auflösungs-Pause läuft noch
+    const back = st.currentPrompt.card.back;
+    const opts = [...document.querySelectorAll('.quiz-card .mc-option')];
+    const idx = opts.findIndex(o => o.querySelector('.mc-text')?.textContent.trim() === back);
+    opts[idx]?.click();
+    return 'answered';
+  });
+  await page.waitForTimeout(quizState === 'answered' ? 620 : 200);
+}
+await page.waitForTimeout(500);
+const quizEnd = await page.evaluate(async t => ({
+  passed: document.getElementById('learnArea').textContent.includes('Quiz bestanden'),
+  pill: document.getElementById('learnArea').textContent.includes('Themen-Abzeichen'),
+  badge: !!(await import('/core/session.js')).getThemeBadges('basic-da')[t],
+}), quizTheme[0]);
+check('Themen-Quiz bestanden → Abzeichen gespeichert', quizEnd.passed && quizEnd.pill && quizEnd.badge, JSON.stringify(quizEnd));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+await click('#coursemapBtn'); await page.waitForTimeout(600);
+const earnedChip = await page.evaluate(t =>
+  document.querySelector(`[data-theme-quiz="${t}"] .map-banner__quiz--earned`)?.textContent.trim() || '', quizTheme[0]);
+check('Pfad: Banner zeigt verdientes Abzeichen', /Abzeichen/.test(earnedChip), earnedChip);
+await page.evaluate(() => document.getElementById('pathBackBtn')?.click()); await page.waitForTimeout(250);
+
 // ── Deck-Reset in den Einstellungen ──
 await click('#userChipBtn'); await page.waitForTimeout(150);
 await click('.user-dropdown__item[data-action="settings"]'); await page.waitForTimeout(200);
@@ -396,8 +498,10 @@ const reset = await page.evaluate(async () => ({
   states: Object.keys((await import('/core/cardProgress.js')).getCardStates('basic-da')).length,
   course: (await import('/core/course.js')).getCourseState('basic-da').introduced,
   gold: (await import('/core/session.js')).getGoldLessons('basic-da').length,
+  badges: Object.keys((await import('/core/session.js')).getThemeBadges('basic-da')).length,
 }));
-check('Deck-Reset löscht Karten, Kursstand & Gold', reset.states === 0 && reset.course === 0 && reset.gold === 0, JSON.stringify(reset));
+check('Deck-Reset löscht Karten, Kursstand, Gold & Themen-Abzeichen',
+  reset.states === 0 && reset.course === 0 && reset.gold === 0 && reset.badges === 0, JSON.stringify(reset));
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
 
 // ── Update-Logout: Konto bleibt, Sitzung endet ──

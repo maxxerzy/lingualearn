@@ -7,7 +7,9 @@ import { countMasteredAll } from './cardProgress.js';
 // freigeschaltete Erfolge, gemeisterte Vokabeln).
 
 // req-Formen: { always:true } | { level:n } | { streak:n } | { mastered:n }
-//           | { achievement:'id' }
+//           | { perfect:n } | { gems:n } | { achievement:'id' }
+//           | { month: n | [n,…] }  → saisonal: nur in diesen Monaten
+//             freischaltbar; einmal freigeschaltet, bleibt es dauerhaft.
 export const THEMES = [
   { id: 'standard', name: 'Standard',        req: { always: true } },
   { id: 'ocean',    name: 'Ozean',           req: { level: 3 } },
@@ -20,6 +22,9 @@ export const THEMES = [
   { id: 'lava',     name: 'Lava',            req: { perfect: 3 } },
   { id: 'neon',     name: 'Neon-Nacht',      req: { achievement: 'combo-10' } },
   { id: 'galaxy',   name: 'Galaxie',         req: { level: 12 } },
+  { id: 'sommer',   name: 'Sommerbrise',     req: { month: [6, 7, 8] } },
+  { id: 'spuk',     name: 'Spuknacht',       req: { month: 10 } },
+  { id: 'winter',   name: 'Winterzauber',    req: { month: 12 } },
 ];
 
 export const AVATARS = [
@@ -35,6 +40,7 @@ export const AVATARS = [
   { id: 'roboter', name: 'Roboter',    icon: 'fa-robot',          req: { gems: 300 } },
   { id: 'magier',  name: 'Magier',     icon: 'fa-hat-wizard',     req: { level: 10 } },
   { id: 'otter',   name: 'Otter',      icon: 'fa-otter',          req: { streak: 14 } },
+  { id: 'schneemann', name: 'Schneemann', icon: 'fa-snowman',     req: { month: 12 } },
   { id: 'crown',   name: 'Krone',      icon: 'fa-crown',          req: { achievement: 'meister-100' } },
 ];
 
@@ -73,7 +79,7 @@ export const BADGE_RARITY = {
   'perfekt': 'silber', 'level-5': 'silber',
   'richtig-500': 'gold', 'meister-50': 'gold', 'serie-30': 'gold',
   'quests-10': 'silber', 'combo-10': 'silber',
-  'gems-250': 'gold', 'liga-auf': 'gold',
+  'gems-250': 'gold', 'liga-auf': 'gold', 'blitz-20': 'gold',
   'polyglott': 'legendaer', 'meister-100': 'legendaer',
 };
 
@@ -108,6 +114,8 @@ function context() {
     perfect: g.perfectSessions || 0,
     gems: g.gemsEarned || 0,
     achievements: new Set(Object.keys(g.achievements || {})),
+    month: new Date().getMonth() + 1,
+    seen: new Set(store.get().seen || []),
   };
 }
 
@@ -120,8 +128,16 @@ export function isUnlocked(item, ctx = context()) {
   if (r.perfect !== undefined) return ctx.perfect >= r.perfect;
   if (r.gems !== undefined) return ctx.gems >= r.gems;
   if (r.achievement !== undefined) return ctx.achievements.has(r.achievement);
+  // Saisonal: im passenden Monat freischaltbar; einmal freigeschaltet
+  // (in `seen` vermerkt), bleibt es dauerhaft verfügbar.
+  if (r.month !== undefined) {
+    return [].concat(r.month).includes(ctx.month) || (ctx.seen?.has(item.id) ?? false);
+  }
   return false;
 }
+
+const MONTH_NAMES = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+  'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
 
 export function requirementText(item) {
   const r = item.req;
@@ -134,6 +150,11 @@ export function requirementText(item) {
   if (r.achievement !== undefined) {
     const a = ACHIEVEMENTS.find(x => x.id === r.achievement);
     return `Erfolg „${a ? a.name : r.achievement}"`;
+  }
+  if (r.month !== undefined) {
+    const m = [].concat(r.month);
+    const range = m.length > 1 ? `${MONTH_NAMES[m[0] - 1]}–${MONTH_NAMES[m[m.length - 1] - 1]}` : MONTH_NAMES[m[0] - 1];
+    return `Saisonal: nur im ${range} freischaltbar`;
   }
   return '';
 }
