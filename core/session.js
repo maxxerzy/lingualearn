@@ -28,6 +28,22 @@ function markGoldLesson(deckId, lessonIdx) {
   map[deckId] = [...arr];
   goldStore.save(map);
 }
+
+// Themen-Abzeichen: bestandene Themen-Quizze pro Deck (Thema → Datum).
+const quizStore = createUserStore('lingualearn_themequiz_');
+export function reinitThemeBadges() { quizStore.reinit(); }
+export function getThemeBadges(deckId) { return quizStore.get()[deckId] || {}; }
+export function resetThemeBadges(deckId) {
+  const map = quizStore.get();
+  if (map[deckId]) { delete map[deckId]; quizStore.save(map); }
+}
+function awardThemeBadge(deckId, theme) {
+  const map = quizStore.get();
+  const badges = map[deckId] || {};
+  badges[theme] = new Date().toISOString().slice(0, 10);
+  map[deckId] = badges;
+  quizStore.save(map);
+}
 import { nextLessonCards, lessonNumber, advanceCourse, getCourseState, getSentencesDone, markSentencesDone } from './course.js';
 
 // Erfolge prüfen + einblenden, danach dadurch freigeschaltete Cosmetics.
@@ -106,10 +122,13 @@ function enterFocus(mode) {
   if (icon && srcIcon) icon.className = srcIcon.className;
 }
 
-// Blitzrunden-Timer (Modul-weit, damit Verlassen/Neustart ihn stoppt).
+// Blitzrunden-Timer + Quiz-Weiterschalt-Timeout (Modul-weit, damit
+// Verlassen/Neustart sie stoppt).
 let blitzTimer = null;
+let quizTimeout = null;
 function clearBlitzTimer() {
   if (blitzTimer) { clearInterval(blitzTimer); blitzTimer = null; }
+  if (quizTimeout) { clearTimeout(quizTimeout); quizTimeout = null; }
 }
 
 // Session verlassen → zurück zur Konfiguration.
@@ -1895,7 +1914,7 @@ function endBlitz() {
 
   const score = session.correctAnswers;
   const answered = session.blitzAnswered;
-  const { gems, first } = noteBlitz(score);
+  const { gems, first, best, record } = noteBlitz(score);
   const { xpEarned, game } = recordSessionEnd({
     language: session.deck.language,
     correct: score,
@@ -1908,7 +1927,7 @@ function endBlitz() {
   toastAchievements(checkAchievements());
   toastCosmetics(checkNewCosmetics());
   celebrateSessionEnd();
-  if (gems > 0) confettiBurst();
+  if (gems > 0 || (record && score > 0)) confettiBurst();
 
   document.getElementById('learnArea').innerHTML = `
     <h3 style="font-size:1.6rem;margin-bottom:12px">⚡ Blitzrunde vorbei!</h3>
@@ -1917,8 +1936,10 @@ function endBlitz() {
     <div class="session-rewards">
       <span class="reward-pill reward-pill--xp"><i class="fas fa-bolt"></i> +${xpTotal} XP</span>
       ${gems > 0 ? `<span class="reward-pill reward-pill--gems"><i class="fas fa-gem"></i> +${gems} Tagesbonus</span>` : ''}
+      ${record && score > 0 ? '<span class="reward-pill reward-pill--perfect"><i class="fas fa-trophy"></i> Neuer Rekord!</span>' : ''}
       <span class="reward-pill reward-pill--streak"><i class="fas fa-fire"></i> Serie: ${game.streak.current} ${game.streak.current === 1 ? 'Tag' : 'Tage'}</span>
     </div>
+    <p style="color:var(--gray);font-size:.85rem;margin-top:8px"><i class="fas fa-trophy" style="color:var(--warning,#f4a261)"></i> Bestleistung: <b>${best}</b></p>
     ${!first ? '<p style="color:var(--gray);font-size:.82rem;margin-top:8px">Diamanten-Bonus gibt es für die erste Runde des Tages.</p>' : ''}
     ${dailyRecapHtml()}
     <div class="actions" style="margin-top:20px">
@@ -1929,4 +1950,163 @@ function endBlitz() {
   `;
   document.getElementById('restartBlitz').addEventListener('click', startBlitz);
   setCurrentSession(null);
+}
+
+
+// ── THEMEN-QUIZ ──────────────────────────────────────────────────
+// Prüfung über ALLE Wörter eines Pfad-Themas (z. B. „Essen" über alle
+// „Essen 1..n"-Lektionen). Eine Runde Multiple Choice ohne Wiederholungs-
+// schleife; ab 90 % gibt es das Themen-Abzeichen auf dem Lernpfad.
+const QUIZ_PASS_RATE = 0.9;
+const baseThemeOf = t => (t || '').replace(/ \d+$/, '');
+
+export async function startThemeQuiz(deckId, theme) {
+  clearBlitzTimer();
+  const deck = await loadDeck(deckId);
+  if (!deck?.cards?.length || !deck.lessonSizes || !deck.lessonTitles) return false;
+
+  // Alle Karten der Lektionen dieses (Basis-)Themas einsammeln.
+  const cards = [];
+  let start = 0;
+  deck.lessonSizes.forEach((size, i) => {
+    if (baseThemeOf(deck.lessonTitles[i]) === theme) cards.push(...deck.cards.slice(start, start + size));
+    start += size;
+  });
+  if (!cards.length) return false;
+
+  const shuffled = shuffleArray([...cards]);
+  const session = {
+    deck,
+    deckId,
+    cards: shuffled,
+    mode: 'themequiz',
+    quizTheme: theme,
+    currentIndex: 0,
+    correctAnswers: 0,
+    totalCards: shuffled.length,
+    currentPrompt: null,
+    combo: 0,
+    boosted: false,
+    queue: [],
+    reviewQueue: [],
+    reviewRound: 1,
+  };
+  setCurrentSession(session);
+  enterFocus('themequiz');
+  const icon = document.getElementById('sessionModeIcon');
+  if (icon) icon.className = 'fas fa-award';
+  document.getElementById('session-title').textContent = `🏅 Themen-Quiz — ${theme}`;
+  showThemeQuiz();
+  return true;
+}
+
+function showThemeQuiz() {
+  const session = getCurrentSession();
+  if (!session || session.mode !== 'themequiz') return;
+  if (session.currentIndex >= session.totalCards) { endThemeQuiz(); return; }
+
+  const card = session.cards[session.currentIndex];
+  // Ablenker aus dem ganzen Deck, damit auch kleine Themen 4 Optionen haben.
+  const pool = session.deck.cards.filter(c => c.back !== card.back);
+  const options = shuffleArray([card, ...shuffleArray(pool).slice(0, 3)]);
+  session.currentPrompt = { card, options };
+  setCurrentSession(session);
+
+  document.getElementById('learnArea').innerHTML = `
+    <div class="mc-card quiz-card">
+      <div class="quiz-head">
+        <span class="quiz-progress"><i class="fas fa-award"></i> Frage ${session.currentIndex + 1}/${session.totalCards}</span>
+        <span class="quiz-score">${session.correctAnswers} richtig</span>
+      </div>
+      <p class="mc-question">${escHtml(card.front)}</p>
+      <div class="mc-options">
+        ${options.map((o, i) => `
+          <button type="button" class="mc-option" data-idx="${i}">
+            <span class="mc-key">${String.fromCharCode(65 + i)}</span>
+            <span class="mc-text">${escHtml(o.back)}</span>
+          </button>`).join('')}
+      </div>
+    </div>
+  `;
+  document.querySelectorAll('.quiz-card .mc-option').forEach(btn =>
+    btn.addEventListener('click', () => checkThemeQuizAnswer(Number(btn.dataset.idx))));
+
+  const t = document.getElementById('progress-text');
+  if (t) t.textContent = `${session.currentIndex}/${session.totalCards} Fragen`;
+  const b = document.getElementById('progress-bar');
+  if (b) b.style.width = `${Math.round((session.currentIndex / session.totalCards) * 100)}%`;
+}
+
+function checkThemeQuizAnswer(idx) {
+  const session = getCurrentSession();
+  if (!session?.currentPrompt || session.mode !== 'themequiz') return;
+  const { card, options } = session.currentPrompt;
+  const { isCorrect } = markMcAnswer(options, idx, card);
+  session.currentIndex++;
+  if (isCorrect) session.correctAnswers++;
+  session.currentPrompt = null;
+  setCurrentSession(session);
+  recordAnswerEffects(session, card, isCorrect, isCorrect);
+  // Kurz die Auflösung zeigen, dann automatisch weiter (Prüfungs-Tempo);
+  // bei Fehlern etwas länger, damit die richtige Antwort hängen bleibt.
+  quizTimeout = setTimeout(() => {
+    quizTimeout = null;
+    showThemeQuiz();
+  }, isCorrect ? 450 : 1300);
+}
+
+function endThemeQuiz() {
+  clearBlitzTimer();
+  const session = getCurrentSession();
+  if (!session || session.mode !== 'themequiz') return;
+
+  const total = session.totalCards;
+  const correct = session.correctAnswers;
+  const rate = total ? correct / total : 0;
+  const passed = rate >= QUIZ_PASS_RATE;
+  const alreadyBadged = !!getThemeBadges(session.deckId)[session.quizTheme];
+  if (passed) awardThemeBadge(session.deckId, session.quizTheme);
+
+  const { xpEarned, game } = recordSessionEnd({
+    language: session.deck.language,
+    correct,
+    total,
+  });
+  const xpTotal = (session.xpFromAnswers || 0) + xpEarned;
+  showCombo(0);
+  renderGamiHeader();
+  renderLearnWidgets();
+  toastAchievements(checkAchievements());
+  toastCosmetics(checkNewCosmetics());
+  celebrateSessionEnd();
+  if (passed) {
+    confettiBurst();
+    if (!alreadyBadged) showToast(`<i class="fas fa-award toast__icon"></i><div class="toast__body"><b>Themen-Abzeichen verdient! 🏅</b><span>„${escHtml(session.quizTheme)}" gemeistert</span></div>`);
+  }
+
+  document.getElementById('learnArea').innerHTML = `
+    <h3 style="font-size:1.6rem;margin-bottom:12px">${passed ? '🏅 Quiz bestanden!' : '📝 Quiz beendet'}</h3>
+    <p style="font-size:2.2rem;font-weight:800;color:var(--primary);margin-bottom:4px">${Math.round(rate * 100)}%</p>
+    <p style="color:var(--gray);margin-bottom:14px">${correct} von ${total} Fragen zum Thema „${escHtml(session.quizTheme)}" richtig</p>
+    <div class="session-rewards">
+      <span class="reward-pill reward-pill--xp"><i class="fas fa-bolt"></i> +${xpTotal} XP</span>
+      ${passed ? '<span class="reward-pill reward-pill--perfect"><i class="fas fa-award"></i> Themen-Abzeichen</span>' : ''}
+      <span class="reward-pill reward-pill--streak"><i class="fas fa-fire"></i> Serie: ${game.streak.current} ${game.streak.current === 1 ? 'Tag' : 'Tage'}</span>
+    </div>
+    ${passed ? '' : `<p style="color:var(--gray);font-size:.85rem;margin-top:8px">Für das Abzeichen brauchst du mindestens ${Math.round(QUIZ_PASS_RATE * 100)} % — versuch es gleich nochmal!</p>`}
+    ${dailyRecapHtml()}
+    <div class="actions" style="margin-top:20px">
+      <button type="button" class="btn btn-primary" id="restartQuiz">
+        <i class="fas fa-award"></i> ${passed ? 'Noch einmal' : 'Nochmal versuchen'}
+      </button>
+    </div>
+  `;
+  const { deckId, quizTheme } = session;
+  document.getElementById('restartQuiz').addEventListener('click', () => startThemeQuiz(deckId, quizTheme));
+  setCurrentSession(null);
+
+  const textEl = document.getElementById('progress-text');
+  const barEl  = document.getElementById('progress-bar');
+  if (textEl) textEl.textContent = `${total}/${total} Fragen`;
+  if (barEl)  barEl.style.width = '100%';
 }

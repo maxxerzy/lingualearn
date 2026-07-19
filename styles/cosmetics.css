@@ -84,6 +84,32 @@
   --shadow-lg: 0 8px 32px rgba(0,0,0,.6);
 }
 
+/* Sommerbrise — warmes Gelb/Orange (saisonal: Juni–August) */
+:root[data-theme="sommer"] {
+  --primary: #e07b12; --secondary: #c05e00; --accent: #38b6a5;
+  --app-bg: linear-gradient(135deg, #fff3c4 0%, #ffd98a 100%);
+  --bg: #fffaf0;
+}
+/* Spuknacht — dunkles Orange/Violett (saisonal: Oktober) */
+:root[data-theme="spuk"] {
+  --primary: #ff7b1c; --secondary: #d95f00; --accent: #a855f7;
+  --app-bg: #140d20;
+  --surface: #1f1530;
+  --bg: #140d20;
+  --light: #2a1d40;
+  --light-gray: #35264e;
+  --dark: #ffeede;
+  --gray: #b9a3c9;
+  --shadow: 0 4px 12px rgba(0,0,0,.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.6);
+}
+/* Winterzauber — Eisblau (saisonal: Dezember) */
+:root[data-theme="winter"] {
+  --primary: #1f7fb5; --secondary: #145d88; --accent: #7cc7e8;
+  --app-bg: linear-gradient(135deg, #e6f5fc 0%, #c4e5f5 100%);
+  --bg: #f2faff;
+}
+
 /* ── Avatar & Titel im Header ──────────────────────────────────── */
 .user-chip__avatar { font-size: 1.05rem; }
 .user-title {

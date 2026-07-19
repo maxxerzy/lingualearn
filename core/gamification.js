@@ -9,6 +9,7 @@ const DEFAULTS = {
   gemsEarned: 0,       // Lebenszeit-Zähler (für Erfolge)
   questsDone: 0,       // abgeschlossene Tagesquests gesamt
   bestCombo: 0,        // längste Serie richtiger Antworten
+  bestBlitz: 0,        // Blitzrunden-Bestleistung (richtige Antworten)
   chests: {},          // Streak-Meilenstein -> Datum der Truhe
   dailyGoal: 20,
   daily: { date: null, count: 0, correct: 0, lessons: 0, xp: 0, perfect: 0, combo: 0, blitz: 0, goalHit: false },
@@ -211,7 +212,7 @@ export function consumeCelebrations() {
 }
 
 // Blitzrunde beendet: Runden zählen; Diamanten-Bonus nur für die erste
-// Runde des Tages (Score, gedeckelt auf 15).
+// Runde des Tages (Score, gedeckelt auf 15). Bestleistung wird gemerkt.
 export function noteBlitz(score) {
   const g = load();
   touchDay(g);
@@ -222,8 +223,10 @@ export function noteBlitz(score) {
     g.gems = (g.gems || 0) + gems;
     g.gemsEarned = (g.gemsEarned || 0) + gems;
   }
+  const record = score > (g.bestBlitz || 0);
+  if (record) g.bestBlitz = score;
   persist();
-  return { gems, first: g.daily.blitz === 1 };
+  return { gems, first: g.daily.blitz === 1, best: g.bestBlitz, record };
 }
 
 // Lebenszeit-Zähler für Erfolge.
@@ -308,6 +311,7 @@ export const ACHIEVEMENTS = [
   { id: 'combo-10',      icon: 'fa-fire',           name: 'Lauffeuer',       desc: '10 richtige Antworten in Folge',          test: c => c.bestCombo >= 10 },
   { id: 'gems-250',      icon: 'fa-gem',            name: 'Schatzmeister',   desc: '250 Diamanten gesammelt (gesamt)',        test: c => c.gemsEarned >= 250 },
   { id: 'liga-auf',      icon: 'fa-ranking-star',   name: 'Liga-Aufsteiger', desc: 'Erstmals in eine höhere Liga aufgestiegen', test: c => c.promotions >= 1 },
+  { id: 'blitz-20',      icon: 'fa-stopwatch',      name: 'Blitzmeister',    desc: '20 richtige Antworten in einer Blitzrunde', test: c => c.bestBlitz >= 20 },
 ];
 
 // Prüft alle Bedingungen und schaltet neue Erfolge frei.
@@ -326,6 +330,7 @@ export function checkAchievements() {
     level: levelInfo(g.xp).level,
     questsDone: g.questsDone || 0,
     bestCombo: g.bestCombo || 0,
+    bestBlitz: g.bestBlitz || 0,
     gemsEarned: g.gemsEarned || 0,
     promotions: getLeaguePromotions(),
   };

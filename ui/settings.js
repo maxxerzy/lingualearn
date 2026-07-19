@@ -5,7 +5,7 @@ import { showToast, toastAchievements } from './toast.js';
 import { fxEnabled, setFxEnabled } from '../utils/feedback.js';
 import { resetDeckProgress } from '../core/cardProgress.js';
 import { resetCourse } from '../core/course.js';
-import { resetGoldLessons } from '../core/session.js';
+import { resetGoldLessons, resetThemeBadges } from '../core/session.js';
 import { clearErrors } from '../core/errorLog.js';
 import { getDecks } from '../core/state.js';
 
@@ -17,10 +17,11 @@ export function initSettings() {
     const deckId = document.getElementById('deckSelect')?.value;
     const deck = getDecks()[deckId];
     if (!deckId || !deck) return;
-    if (!confirm(`Fortschritt für „${deck.name}" wirklich zurücksetzen? Kartenlevel, Kursstand, Gold-Lektionen und gemerkte Fehler dieses Decks werden gelöscht.`)) return;
+    if (!confirm(`Fortschritt für „${deck.name}" wirklich zurücksetzen? Kartenlevel, Kursstand, Gold-Lektionen, Themen-Abzeichen und gemerkte Fehler dieses Decks werden gelöscht.`)) return;
     resetDeckProgress(deckId);
     resetCourse(deckId);
     resetGoldLessons(deckId);
+    resetThemeBadges(deckId);
     clearErrors(deckId);
     renderLearnWidgets();
     showToast(`<i class="fas fa-rotate-left toast__icon"></i><div class="toast__body"><b>Zurückgesetzt</b><span>„${deck.name}" startet wieder bei Lektion 1.</span></div>`);

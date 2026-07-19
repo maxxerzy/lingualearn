@@ -1,7 +1,7 @@
 import { getDailyQuests, claimQuest } from '../core/quests.js';
 import { getLeague, clearLastResult } from '../core/league.js';
 import { SHOP, buy } from '../core/shop.js';
-import { getGems, getInventory, getWager, startWager } from '../core/gamification.js';
+import { getGems, getInventory, getWager, startWager, getGame } from '../core/gamification.js';
 import { showToast } from './toast.js';
 import { startBlitz } from '../core/session.js';
 import { renderGamiHeader } from './gami.js';
@@ -40,7 +40,7 @@ function questsHtml() {
     <button type="button" class="blitz-cta" data-blitz>
       <span class="blitz-cta__icon"><i class="fas fa-bolt"></i></span>
       <span class="blitz-cta__main">
-        <b>⚡ Blitzrunde</b>
+        <b>⚡ Blitzrunde${(getGame().bestBlitz || 0) > 0 ? ` <span class="blitz-cta__best"><i class="fas fa-trophy"></i> ${getGame().bestBlitz}</span>` : ''}</b>
         <span>60 Sekunden, so viele Antworten wie möglich — erste Runde des Tages bringt bis zu 15 💎</span>
       </span>
       <span class="blitz-cta__go">Start</span>

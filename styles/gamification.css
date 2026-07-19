@@ -674,6 +674,19 @@
   box-shadow: 0 4px 12px color-mix(in srgb, var(--bn) 35%, transparent);
 }
 .map-banner i { margin-right: 6px; opacity: 0.85; }
+/* Themen-Quiz: komplett gelernte Themen-Banner sind antippbar. */
+.map-banner--quiz { cursor: pointer; display: flex; align-items: center; }
+.map-banner__quiz {
+  margin-left: auto;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.22);
+  font-size: 0.74rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.map-banner__quiz i { margin-right: 4px; opacity: 1; }
+.map-banner__quiz--earned { background: linear-gradient(135deg, #ffd60a, #e8a80c); color: #7a5800; }
 .map-node--right { transform: translateX(7%); }
 .map-node--left  { transform: translateX(-3%); }
 .map-node--gold .map-node__dot {
@@ -713,6 +726,20 @@
 }
 .blitz-timer--low { background: #fdeaec; color: #e05260; animation: blitzPulse 1s ease infinite; }
 @keyframes blitzPulse { 50% { transform: scale(1.08); } }
+.blitz-cta__best {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-left: 6px; padding: 1px 8px; border-radius: 999px;
+  background: rgba(255,255,255,.22); font-size: 0.74rem; font-weight: 800;
+}
+
+/* ── Themen-Quiz (Prüfung über ein Pfad-Thema) ────────────────── */
+.quiz-head { display: flex; justify-content: space-between; align-items: center; max-width: 480px; margin: 0 auto 10px; }
+.quiz-progress { font-weight: 800; color: var(--primary, #4361ee); font-size: 0.95rem; }
+.quiz-score {
+  font-weight: 700; font-size: 0.85rem; color: var(--gray, #6c757d);
+  padding: 4px 12px; border-radius: 999px;
+  background: color-mix(in srgb, var(--primary, #4361ee) 10%, var(--surface, #fff));
+}
 
 /* ── Wochen-Bilanz (Statistik) ────────────────────────────────── */
 .week-summary { color: var(--gray, #6c757d); font-size: .88rem; margin: -6px 0 10px; font-weight: 600; }
