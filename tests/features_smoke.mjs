@@ -146,7 +146,8 @@ await page.evaluate(async () => {
   const raw = JSON.parse(localStorage.getItem('lingualearn_game_' + u));
   const t = new Date().toISOString().slice(0, 10);
   raw.gems = 100; raw.dailyGoal = 20;
-  raw.daily = { date: t, count: 40, correct: 40, lessons: 5, xp: 200, perfect: 2, goalHit: true };
+  // Alle Quest-Typen abdecken (inkl. blitz) — die Tagesrotation ist datumsabhängig.
+  raw.daily = { date: t, count: 40, correct: 40, lessons: 5, xp: 200, perfect: 2, combo: 0, blitz: 1, goalHit: true };
   localStorage.setItem('lingualearn_game_' + u, JSON.stringify(raw));
   (await import('/core/gamification.js')).reinitGame();
 });
@@ -292,7 +293,7 @@ await click('#pathBackBtn'); await page.waitForTimeout(200);
 // ── Dark Mode (System) + FX-Schalter + Karten-Animation ──
 await page.emulateMedia({ colorScheme: 'dark' }); await page.waitForTimeout(200);
 const surface = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--surface').trim());
-check('System-Dark-Mode greift ohne Cosmetic-Theme', surface === '#1e2530', surface);
+check('System-Dark-Mode greift ohne Cosmetic-Theme', surface === '#1d2531', surface);
 await page.emulateMedia({ colorScheme: 'light' });
 await click('#userChipBtn'); await page.waitForTimeout(150);
 await click('.user-dropdown__item[data-action="settings"]'); await page.waitForTimeout(200);
@@ -311,6 +312,7 @@ await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(20
 await click('#userChipBtn'); await page.waitForTimeout(150);
 await click('.user-dropdown__item[data-action="arena"]'); await page.waitForTimeout(300);
 check('Arena: Blitz-Karte im Quests-Tab', await page.evaluate(() => !!document.querySelector('[data-blitz]')));
+const blitzBefore = await page.evaluate(async () => (await import('/core/gamification.js')).getGame().daily.blitz || 0);
 await page.evaluate(() => document.querySelector('[data-blitz]').click());
 await page.waitForTimeout(700);
 const blitzUi = await page.evaluate(() => ({
@@ -345,7 +347,7 @@ const blitzEnd = await page.evaluate(async () => ({
   best: (await import('/core/gamification.js')).getGame().bestBlitz,
   bestShown: document.getElementById('learnArea').textContent.includes('Bestleistung'),
 }));
-check('Blitz-Ende: Zusammenfassung + Tageszähler', blitzEnd.summary && blitzEnd.score && blitzEnd.daily === 1, JSON.stringify(blitzEnd));
+check('Blitz-Ende: Zusammenfassung + Tageszähler', blitzEnd.summary && blitzEnd.score && blitzEnd.daily === blitzBefore + 1, JSON.stringify({ ...blitzEnd, blitzBefore }));
 check('Blitz-Highscore gespeichert & auf Endkarte', blitzEnd.best >= 1 && blitzEnd.bestShown, JSON.stringify(blitzEnd));
 await click('#sessionBackBtn'); await page.waitForTimeout(250);
 
