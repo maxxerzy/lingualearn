@@ -1,20 +1,11 @@
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCardStates, MAX_LEVEL } from '../core/cardProgress.js';
+import { speak } from '../utils/speech.js';
 
 // Wörterbuch: alle bereits gesehenen Wörter des gewählten Decks,
 // durchsuchbar, mit SRS-Stärke (Punkte) und Aussprache.
-const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU', ja: 'ja-JP' };
 
 function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-
-function speak(text, lang) {
-  if (!window.speechSynthesis) return;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = LANG_CODES[lang] || lang;
-  u.rate = 0.85;
-  window.speechSynthesis.speak(u);
-}
 
 function strengthDots(level) {
   let dots = '';

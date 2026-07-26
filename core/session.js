@@ -11,6 +11,7 @@ import { checkNewCosmetics } from './cosmetics.js';
 import { pendingQuestClaims } from './quests.js';
 import { saveErrors, clearErrors } from './errorLog.js';
 import { playCorrect, playWrong } from '../utils/feedback.js';
+import { speak, latinPron } from '../utils/speech.js';
 import { createUserStore } from './userStore.js';
 
 // Vergoldete (nach Abschluss wiederholte) Lektionen pro Deck.
@@ -95,12 +96,27 @@ function getLangName(lang) {
 }
 
 function speakWord(text, lang) {
-  if (!window.speechSynthesis) return;
-  window.speechSynthesis.cancel();
-  const utt = new SpeechSynthesisUtterance(text);
-  utt.lang = getLangCode(lang);
-  utt.rate = 0.85;
-  window.speechSynthesis.speak(utt);
+  speak(text, lang);
+}
+
+// ── Abfragerichtung ──────────────────────────────────────────────
+// Latein wird in Prüfungsrichtung gelernt: die Abfrage zeigt das
+// LATEINISCHE Wort, geantwortet wird auf Deutsch (wie im Unterricht).
+// Alle anderen Sprachen fragen weiterhin Deutsch → Fremdsprache ab.
+function isReverse(deck) { return deck?.language === 'la'; }
+function promptText(session, card) { return isReverse(session.deck) ? card.back : card.front; }
+function answerText(session, card) { return isReverse(session.deck) ? card.front : card.back; }
+function promptLabel(session) { return isReverse(session.deck) ? getLangName(session.deck.language) : 'Deutsch'; }
+function answerLabel(session) { return isReverse(session.deck) ? 'Deutsch' : getLangName(session.deck.language); }
+// Aussprache-Knopf neben dem fremdsprachigen Abfragewort (nur umgekehrte Richtung).
+function promptAudioBtn(session) {
+  return isReverse(session.deck)
+    ? '<button type="button" class="audio-btn" id="promptAudioBtn" title="Aussprache anhören"><i class="fas fa-volume-up"></i></button>'
+    : '';
+}
+function wirePromptAudio(session, card) {
+  document.getElementById('promptAudioBtn')?.addEventListener('click', () =>
+    speakWord(card.back, session.deck.language));
 }
 
 export function getSelectedMode() {
@@ -280,8 +296,8 @@ function showFlashcard() {
 
   learnArea.innerHTML = `
     <div class="flashcard-front">
-      <p class="fc-label">Deutsch</p>
-      <div class="fc-word">${escHtml(card.front)}</div>
+      <p class="fc-label">${promptLabel(session)}</p>
+      <div class="fc-word">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
       <div class="actions">
         <button type="button" class="btn btn-primary" id="showAnswer">
           <i class="fas fa-eye"></i> Antwort zeigen
@@ -295,6 +311,8 @@ function showFlashcard() {
     </div>
   `;
 
+  wirePromptAudio(session, card);
+  if (isReverse(session.deck)) speakWord(card.back, session.deck.language);
   document.getElementById('showAnswer').addEventListener('click', () => showFlashcardBack(card));
   updateProgress();
 }
@@ -308,20 +326,25 @@ function showFlashcardBack(card) {
   const ipaParts = [];
   if (card.ipa)   ipaParts.push(`<span class="fc-ipa-tip__ipa">/${escHtml(card.ipa)}/</span>`);
   if (card.roman) ipaParts.push(`<span class="fc-ipa-tip__roman">${escHtml(card.roman)}</span>`);
+  // Latein: zusätzlich die klassische Aussprache in deutscher Umschrift.
+  if (lang === 'la') ipaParts.push(`<span class="fc-ipa-tip__roman">gesprochen: „${escHtml(latinPron(card.back))}"</span>`);
   const ipaMarkup = ipaParts.join('');
   const pron = ipaParts.length > 0;
 
-  learnArea.innerHTML = `
-    <div class="flashcard-back">
-      <p class="fc-label">Deutsch</p>
-      <div class="fc-word fc-word-source">${escHtml(card.front)}</div>
-      <div class="fc-arrow"><i class="fas fa-arrow-down"></i></div>
-      <p class="fc-label">${getLangName(lang)}</p>
-      <div class="fc-word fc-word-target">
-        ${escHtml(card.back)}
+  // Der Aussprache-Knopf gehört immer zum fremdsprachigen Wort — bei
+  // umgekehrter Richtung (Latein) steht das oben als Abfrage.
+  const audioBtnHtml = `
         <button type="button" class="audio-btn" id="audioBtn" title="Aussprache anhören">
           <i class="fas fa-volume-up"></i>
-        </button>
+        </button>`;
+  learnArea.innerHTML = `
+    <div class="flashcard-back">
+      <p class="fc-label">${promptLabel(session)}</p>
+      <div class="fc-word fc-word-source">${escHtml(promptText(session, card))}${isReverse(session.deck) ? audioBtnHtml : ''}</div>
+      <div class="fc-arrow"><i class="fas fa-arrow-down"></i></div>
+      <p class="fc-label">${answerLabel(session)}</p>
+      <div class="fc-word fc-word-target">
+        ${escHtml(answerText(session, card))}${isReverse(session.deck) ? '' : audioBtnHtml}
       </div>
       ${cognateChip(card)}
       ${card.example ? `
@@ -427,10 +450,10 @@ function showMultipleChoice() {
   const learnArea = document.getElementById('learnArea');
   learnArea.innerHTML = `
     <div class="mc-card">
-      <p class="fc-label">Deutsch</p>
-      <div class="fc-word mc-question">${escHtml(card.front)}</div>
-      <p class="prompt">${getLangName(lang)} — welche Übersetzung stimmt?</p>
-      ${mcOptionsMarkup(options, { withAudio: true })}
+      <p class="fc-label">${promptLabel(session)}</p>
+      <div class="fc-word mc-question">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
+      <p class="prompt">${answerLabel(session)} — welche Übersetzung stimmt?</p>
+      ${mcOptionsMarkup(options, { withAudio: !isReverse(session.deck), textOf: o => answerText(session, o) })}
     </div>
   `;
 
@@ -438,6 +461,8 @@ function showMultipleChoice() {
   session.currentPrompt = { card, options };
   setCurrentSession(session);
   updateProgress();
+  wirePromptAudio(session, card);
+  if (isReverse(session.deck)) speakWord(card.back, lang);
 
   learnArea.querySelectorAll('.mc-audio').forEach(btn => {
     btn.addEventListener('click', e => {
@@ -459,20 +484,23 @@ function showMultipleChoice() {
 }
 
 function buildMCOptions(card, cards) {
-  const wrongs = shuffleArray(cards.filter(c => c.back !== card.back)).slice(0, 3);
+  // Distraktoren müssen sich auf BEIDEN Seiten unterscheiden — sonst
+  // gäbe es bei umgekehrter Richtung doppelte Antworttexte.
+  const wrongs = shuffleArray(cards.filter(c => c.back !== card.back && c.front !== card.front)).slice(0, 3);
   return shuffleArray([card, ...wrongs]);
 }
 
 // Gemeinsames Markup der Antwort-Optionen (A–D) + Feedback-Container.
 // withAudio blendet je Option einen Aussprache-Knopf ein (nur MC-Modus).
-function mcOptionsMarkup(options, { withAudio = false } = {}) {
+// textOf bestimmt die angezeigte Seite (Standard: Fremdsprache/back).
+function mcOptionsMarkup(options, { withAudio = false, textOf = o => o.back } = {}) {
   return `
       <div class="mc-options">
         ${options.map((opt, i) => `
           <button type="button" class="btn mc-option" data-idx="${i}">
             <span class="mc-key">${'ABCD'[i]}</span>
-            <span class="mc-text">${escHtml(opt.back)}${withAudio ? `
-              <span class="audio-btn mc-audio" role="button" tabindex="0" data-text="${escHtml(opt.back)}" title="Aussprache">
+            <span class="mc-text">${escHtml(textOf(opt))}${withAudio ? `
+              <span class="audio-btn mc-audio" role="button" tabindex="0" data-text="${escHtml(textOf(opt))}" title="Aussprache">
                 <i class="fas fa-volume-up"></i>
               </span>` : ''}</span>
           </button>
@@ -575,7 +603,7 @@ function checkMCAnswer(selectedIdx) {
   fb.innerHTML = isCorrect
     ? `<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>`
     : `<div class="incorrect" style="margin-top:14px">
-         <p>❌ Falsch — richtig: <b>${escHtml(card.back)}</b></p>
+         <p>❌ Falsch — richtig: <b>${escHtml(answerText(session, card))}</b></p>
        </div>`;
 
   fb.innerHTML += `
@@ -690,9 +718,9 @@ function showTyping() {
 
   learnArea.innerHTML = `
     <div class="mc-card typing-card">
-      <p class="fc-label">Deutsch</p>
-      <div class="fc-word">${escHtml(card.front)}</div>
-      <p class="prompt">Schreibe die Übersetzung (${getLangName(lang)}):</p>
+      <p class="fc-label">${promptLabel(session)}</p>
+      <div class="fc-word">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
+      <p class="prompt">Schreibe die Übersetzung (${answerLabel(session)}):</p>
       <input type="text" id="typingInput" class="input typing-input" autocomplete="off"
         autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done">
       <div class="actions">
@@ -707,6 +735,7 @@ function showTyping() {
   session.currentPrompt = { card };
   setCurrentSession(session);
   updateProgress();
+  wirePromptAudio(session, card);
 
   const input = document.getElementById('typingInput');
   input.focus();
@@ -726,9 +755,10 @@ function checkTyping(revealed) {
   const guess = input?.value || '';
   if (!revealed && normAnswer(guess) === '') { input?.focus(); return; }
 
+  const expected = answerText(session, card);
   const isCorrect = !revealed && (
-    normAnswer(guess) === normAnswer(card.back) ||
-    (card.roman && normAnswer(guess) === normAnswer(card.roman))
+    normAnswer(guess) === normAnswer(expected) ||
+    (!isReverse(session.deck) && card.roman && normAnswer(guess) === normAnswer(card.roman))
   );
 
   if (input) input.disabled = true;
@@ -753,11 +783,12 @@ function checkTyping(revealed) {
   const pron = [];
   if (card.roman) pron.push(escHtml(card.roman));
   if (card.ipa) pron.push('/' + escHtml(card.ipa) + '/');
+  if (lang === 'la') pron.push(`gesprochen: „${escHtml(latinPron(card.back))}"`);
   const fb = document.getElementById('mc-fb');
   fb.innerHTML = `
     ${isCorrect
       ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
-      : `<div class="incorrect" style="margin-top:14px"><p>${revealed ? '👁 Lösung' : '❌ Falsch'} — richtig: <b>${escHtml(card.back)}</b></p></div>`}
+      : `<div class="incorrect" style="margin-top:14px"><p>${revealed ? '👁 Lösung' : '❌ Falsch'} — richtig: <b>${escHtml(expected)}</b></p></div>`}
     ${pron.length ? `<p class="listen-reveal">${pron.join(' · ')}</p>` : ''}
     <div class="actions" style="margin-top:14px">
       <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
@@ -1130,33 +1161,34 @@ export function showNextCard() {
   }
 
   const card = session.cards[session.currentIndex];
-  const prompt = createComparisonPrompt(card, session.cards);
-  renderComparisonCard(card, prompt, session.deck.language);
+  const prompt = createComparisonPrompt(session, card, session.cards);
+  renderComparisonCard(session, card, prompt, session.deck.language);
   session.currentIndex++;
   session.currentPrompt = { ...prompt, card };
   setCurrentSession(session);
   updateProgress();
 }
 
-function createComparisonPrompt(card, cards) {
-  if (cards.length <= 1) return { translation: card.back, isMatch: true };
+function createComparisonPrompt(session, card, cards) {
+  const own = answerText(session, card);
+  if (cards.length <= 1) return { translation: own, isMatch: true };
 
-  if (Math.random() < 0.5) return { translation: card.back, isMatch: true };
+  if (Math.random() < 0.5) return { translation: own, isMatch: true };
 
-  const alts = cards.filter(c => c.back !== card.back);
-  if (alts.length === 0) return { translation: card.back, isMatch: true };
+  const alts = cards.filter(c => c.back !== card.back && c.front !== card.front);
+  if (alts.length === 0) return { translation: own, isMatch: true };
 
-  return { translation: alts[Math.floor(Math.random() * alts.length)].back, isMatch: false };
+  return { translation: answerText(session, alts[Math.floor(Math.random() * alts.length)]), isMatch: false };
 }
 
-function renderComparisonCard(card, prompt, lang) {
+function renderComparisonCard(session, card, prompt, lang) {
   const learnArea = document.getElementById('learnArea');
 
   learnArea.innerHTML = `
-    <div class="q">${escHtml(card.front)}</div>
+    <div class="q">${escHtml(promptText(session, card))}</div>
     <p class="prompt">Stimmt diese Übersetzung?</p>
     <div class="comparison-card">
-      <span class="word word-source">${escHtml(card.front)}</span>
+      <span class="word word-source">${escHtml(promptText(session, card))}</span>
       <i class="fas fa-arrow-right"></i>
       <span class="word word-target">
         ${escHtml(prompt.translation)}
@@ -1177,7 +1209,10 @@ function renderComparisonCard(card, prompt, lang) {
     <div id="fb"></div>
   `;
 
-  document.getElementById('audioBtn').addEventListener('click', () => speakWord(prompt.translation, lang));
+  // Der Hör-Knopf spricht immer die fremdsprachige Seite — bei Latein
+  // also das Abfragewort links, sonst den gezeigten Übersetzungsvorschlag.
+  document.getElementById('audioBtn').addEventListener('click', () =>
+    speakWord(isReverse(session.deck) ? card.back : prompt.translation, lang));
   document.getElementById('answerMatch').addEventListener('click', () => checkComparisonAnswer(true));
   document.getElementById('answerMismatch').addEventListener('click', () => checkComparisonAnswer(false));
   document.getElementById('skipCard').addEventListener('click', showNextCard);
@@ -1199,7 +1234,7 @@ function checkComparisonAnswer(userSaysMatch) {
     fb.innerHTML = `
       <div class="correct">
         <p>✅ Richtig!</p>
-        <p>Zuordnung: <b>${escHtml(prompt.card.front)}</b> → <b>${escHtml(prompt.card.back)}</b></p>
+        <p>Zuordnung: <b>${escHtml(promptText(session, prompt.card))}</b> → <b>${escHtml(answerText(session, prompt.card))}</b></p>
       </div>
       <div class="actions" style="margin-top:14px">
         <button type="button" class="btn btn-primary" id="nextCard">Weiter</button>
@@ -1212,7 +1247,7 @@ function checkComparisonAnswer(userSaysMatch) {
     fb.innerHTML = `
       <div class="incorrect">
         <p>❌ Falsch!</p>
-        <p>Korrekt: <b>${escHtml(prompt.card.front)}</b> → <b>${escHtml(prompt.card.back)}</b></p>
+        <p>Korrekt: <b>${escHtml(promptText(session, prompt.card))}</b> → <b>${escHtml(answerText(session, prompt.card))}</b></p>
       </div>
       <div class="actions" style="margin-top:14px">
         <button type="button" class="btn btn-primary" id="nextCard">Weiter</button>
@@ -1563,13 +1598,15 @@ function renderCourseWordMC(session) {
   learnArea.innerHTML = `
     <div class="mc-card">
       ${courseBadge(`<i class="fas fa-dumbbell"></i> Wörter üben — noch ${session.queue.length}`)}
-      <p class="fc-label">Deutsch</p>
-      <div class="fc-word mc-question">${escHtml(card.front)}</div>
-      <p class="prompt">${getLangName(lang)} — welche Übersetzung stimmt?</p>
-      ${mcOptionsMarkup(options)}
+      <p class="fc-label">${promptLabel(session)}</p>
+      <div class="fc-word mc-question">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
+      <p class="prompt">${answerLabel(session)} — welche Übersetzung stimmt?</p>
+      ${mcOptionsMarkup(options, { textOf: o => answerText(session, o) })}
     </div>
   `;
 
+  wirePromptAudio(session, card);
+  if (isReverse(session.deck)) speakWord(card.back, lang);
   learnArea.querySelectorAll('.mc-option').forEach(btn => {
     btn.addEventListener('click', () => {
       const { isCorrect } = markMcAnswer(options, Number(btn.dataset.idx), card);
@@ -1578,7 +1615,7 @@ function renderCourseWordMC(session) {
       courseGrade(session, card, isCorrect);
 
       document.getElementById('mc-fb').innerHTML = `
-        ${courseFeedbackHtml(isCorrect, card)}
+        ${courseFeedbackHtml(isCorrect, card, '', answerText(session, card))}
         <div class="actions" style="margin-top:14px">
           <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
         </div>
@@ -1589,10 +1626,10 @@ function renderCourseWordMC(session) {
 }
 
 // Feedback-Text für die Kurs-Übungen (richtig / falsch mit Lösung).
-function courseFeedbackHtml(isCorrect, card, extra = '') {
+function courseFeedbackHtml(isCorrect, card, extra = '', answer = card.back) {
   return `${isCorrect
     ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
-    : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(card.back)}</b>. Kommt gleich nochmal.</p></div>`}${extra}`;
+    : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(answer)}</b>. Kommt gleich nochmal.</p></div>`}${extra}`;
 }
 
 // Sucht im Beispielsatz das Wort, das zum Zielwort gehört (auch gebeugte
@@ -1861,7 +1898,7 @@ function showBlitz() {
 
   const card = session.cards[session.currentIndex % session.cards.length];
   session.currentIndex++;
-  const pool = session.cards.filter(c => c !== card);
+  const pool = session.cards.filter(c => c.back !== card.back && c.front !== card.front);
   const options = shuffleArray([card, ...shuffleArray(pool).slice(0, 3)]);
   session.currentPrompt = { card, options };
   setCurrentSession(session);
@@ -1873,12 +1910,12 @@ function showBlitz() {
         <span class="blitz-score"><i class="fas fa-bolt"></i> ${session.correctAnswers}</span>
         <span class="blitz-timer" id="blitzTimer">${left}s</span>
       </div>
-      <p class="mc-question">${escHtml(card.front)}</p>
+      <p class="mc-question">${escHtml(promptText(session, card))}</p>
       <div class="mc-options">
         ${options.map((o, i) => `
           <button type="button" class="mc-option" data-idx="${i}">
             <span class="mc-key">${String.fromCharCode(65 + i)}</span>
-            <span class="mc-text">${escHtml(o.back)}</span>
+            <span class="mc-text">${escHtml(answerText(session, o))}</span>
           </button>`).join('')}
       </div>
     </div>
@@ -2007,7 +2044,7 @@ function showThemeQuiz() {
 
   const card = session.cards[session.currentIndex];
   // Ablenker aus dem ganzen Deck, damit auch kleine Themen 4 Optionen haben.
-  const pool = session.deck.cards.filter(c => c.back !== card.back);
+  const pool = session.deck.cards.filter(c => c.back !== card.back && c.front !== card.front);
   const options = shuffleArray([card, ...shuffleArray(pool).slice(0, 3)]);
   session.currentPrompt = { card, options };
   setCurrentSession(session);
@@ -2018,12 +2055,12 @@ function showThemeQuiz() {
         <span class="quiz-progress"><i class="fas fa-award"></i> Frage ${session.currentIndex + 1}/${session.totalCards}</span>
         <span class="quiz-score">${session.correctAnswers} richtig</span>
       </div>
-      <p class="mc-question">${escHtml(card.front)}</p>
+      <p class="mc-question">${escHtml(promptText(session, card))}</p>
       <div class="mc-options">
         ${options.map((o, i) => `
           <button type="button" class="mc-option" data-idx="${i}">
             <span class="mc-key">${String.fromCharCode(65 + i)}</span>
-            <span class="mc-text">${escHtml(o.back)}</span>
+            <span class="mc-text">${escHtml(answerText(session, o))}</span>
           </button>`).join('')}
       </div>
     </div>

@@ -506,6 +506,60 @@ check('Deck-Reset löscht Karten, Kursstand, Gold & Themen-Abzeichen',
   reset.states === 0 && reset.course === 0 && reset.gold === 0 && reset.badges === 0, JSON.stringify(reset));
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
 
+// ── Latein: Abfragerichtung Latein→Deutsch + klassische Aussprache ──
+const laPron = await page.evaluate(async () => {
+  const { latinPron } = await import('/utils/speech.js');
+  return { caesar: latinPron('Caesar'), quaeso: latinPron('quaeso'), salve: latinPron('salve'), poena: latinPron('poena') };
+});
+check('Lateinische Aussprache-Umschrift (c→k, ae→ei, v→w, oe→eu)',
+  laPron.caesar === 'keisar' && laPron.quaeso === 'queiso' && laPron.salve === 'salwe' && laPron.poena === 'peuna',
+  JSON.stringify(laPron));
+
+await page.selectOption('#deckSelect', 'basic-la'); await page.waitForTimeout(400);
+await click('.mode-btn[data-mode="flashcard"]'); await click('#startBtn'); await page.waitForTimeout(600);
+const laFc = await page.evaluate(async () => {
+  const st = (await import('/core/state.js')).getCurrentSession();
+  const card = st.queue[0];
+  const label = document.querySelector('.flashcard-front .fc-label')?.textContent;
+  const word = document.querySelector('.flashcard-front .fc-word')?.textContent.trim();
+  return { label, matches: word.startsWith(card.back), audio: !!document.getElementById('promptAudioBtn') };
+});
+check('Latein-Karteikarte fragt Lateinisch ab (+ Hör-Knopf)',
+  laFc.label === 'Latein' && laFc.matches && laFc.audio, JSON.stringify(laFc));
+await page.evaluate(() => document.getElementById('showAnswer').click()); await page.waitForTimeout(300);
+const laBack = await page.evaluate(() => ({
+  labels: [...document.querySelectorAll('.flashcard-back .fc-label')].map(e => e.textContent.trim()),
+  hint: document.getElementById('learnArea').innerHTML.includes('gesprochen:'),
+}));
+check('Latein-Rückseite: Latein → Deutsch + Aussprache-Hinweis',
+  laBack.labels[0] === 'Latein' && laBack.labels[1] === 'Deutsch' && laBack.hint, JSON.stringify(laBack));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+await click('.mode-btn[data-mode="multiplechoice"]'); await click('#startBtn'); await page.waitForTimeout(500);
+const laMc = await page.evaluate(async () => {
+  const st = (await import('/core/state.js')).getCurrentSession();
+  const card = st.currentPrompt.card;
+  const q = document.querySelector('.mc-question').textContent.trim();
+  const opts = [...document.querySelectorAll('.mc-option .mc-text')].map(e => e.textContent.trim());
+  const idx = opts.findIndex(t => t === card.front);
+  document.querySelector(`.mc-option[data-idx="${idx}"]`)?.click();
+  return { qIsLatin: q.startsWith(card.back), german: idx >= 0 };
+});
+await page.waitForTimeout(300);
+check('Latein-MC: Frage Latein, Antworten Deutsch',
+  laMc.qIsLatin && laMc.german && await page.evaluate(() => !!document.querySelector('#mc-fb .correct')), JSON.stringify(laMc));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+await click('.mode-btn[data-mode="typing"]'); await click('#startBtn'); await page.waitForTimeout(500);
+const laFront = await page.evaluate(async () =>
+  (await import('/core/state.js')).getCurrentSession().currentPrompt.card.front);
+await page.fill('#typingInput', laFront);
+await click('#typingCheck'); await page.waitForTimeout(300);
+check('Latein-Tippen: deutsche Übersetzung zählt',
+  await page.evaluate(() => !!document.querySelector('#mc-fb .correct')), laFront);
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+
 // ── Update-Logout: Konto bleibt, Sitzung endet ──
 await page.evaluate(() => localStorage.setItem('lingualearn_app_version', 'alt-0'));
 await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(400);

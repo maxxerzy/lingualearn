@@ -50,6 +50,7 @@ const PRECACHE = [
   './ui/onboarding.js',
   './core/errorLog.js',
   './utils/feedback.js',
+  './utils/speech.js',
   './core/state.js',
   './core/stats.js',
   './ui/gami.js',
