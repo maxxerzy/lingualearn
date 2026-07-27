@@ -20,6 +20,8 @@ import { initDictionary, renderDictionary } from '../ui/dictionary.js';
 import { initOnboarding, maybeShowOnboarding } from '../ui/onboarding.js';
 import { reinitErrorLog } from '../core/errorLog.js';
 import { reinitGold, reinitThemeBadges } from '../core/session.js';
+import { reinitGrammar } from '../core/grammar.js';
+import { initGrammar } from '../ui/grammar.js';
 import { showToast } from '../ui/toast.js';
 
 let appInitialized = false;
@@ -52,6 +54,7 @@ function reinitUser() {
   reinitErrorLog();
   reinitGold();
   reinitThemeBadges();
+  reinitGrammar();
 }
 
 function showApp() {
@@ -67,6 +70,7 @@ function showApp() {
     const activateView = initNavigation();
     initSettings();
     initPath(activateView, startSession);
+    initGrammar(activateView);
     document.getElementById('coursemapBtn')?.addEventListener('click', showPath);
     initWotdModal();
     initArena(activateView);

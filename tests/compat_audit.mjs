@@ -12,6 +12,8 @@ const DEVICES = {
   ipadmini: { ...devices['iPad Mini'] },
   ipad11:   { ...devices['iPad Pro 11'] },
   ipad11l:  { ...devices['iPad Pro 11 landscape'] },
+  // iPad Pro 13" quer (Safari: ~1366×950 CSS-px nutzbar) — Desktop-Layout
+  ipad13l:  { viewport: { width: 1366, height: 950 }, hasTouch: true },
   mac13:    { viewport: { width: 1280, height: 800 } },
   mac16:    { viewport: { width: 1440, height: 900 } },
 };
@@ -51,8 +53,8 @@ await page.waitForTimeout(200);
 await page.selectOption('#deckSelect', 'basic-da');
 await page.waitForTimeout(400);
 
-// ── 1) Konfig-Screen: kein Scrollen, kein Overflow ──
-if (isNarrow) {
+// ── 1) Konfig-Screen: kein Scrollen, kein Overflow (alle Breiten) ──
+{
   const v = await overflowV();
   check(`Konfig ohne vertikales Scrollen (≤${V_TOL_CONFIG}px)`, v <= V_TOL_CONFIG, `${v}px`);
 }

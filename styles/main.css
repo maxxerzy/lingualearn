@@ -246,7 +246,7 @@ header {
 
 .user-dropdown__item--danger { color: #e53e3e; }
 .user-dropdown__item--danger i { color: #e53e3e; }
-.user-dropdown__item--danger:hover { background: #fff5f5; }
+.user-dropdown__item--danger:hover { background: color-mix(in srgb, #e53e3e 10%, var(--surface, #fff)); }
 
 .nav { display: flex; gap: 8px; }
 
@@ -308,7 +308,9 @@ main { display: block; }
   grid-template-columns: 280px 1fr;
   gap: 24px;
   align-items: stretch;
-  min-height: calc(100vh - 140px);
+  /* Header (~76px) + Content-Padding (2×24px) + Puffer — so füllt das
+     Layout den Bildschirm, ohne ihn je zu überlaufen. */
+  min-height: calc(100vh - 160px);
 }
 
 .config-panel {
@@ -495,14 +497,15 @@ label {
 .btn-secondary:hover { background: var(--light-gray); }
 .btn:disabled  { opacity: .6; cursor: not-allowed; }
 
-/* Rating buttons */
-.btn-again { background: #fff0f3; color: #c9184a; border: 2px solid #ffb3c1; }
+/* Rating buttons — Farben über color-mix mit Surface/Textfarbe, damit
+   sie im hellen wie im dunklen Theme guten Kontrast behalten. */
+.btn-again { background: color-mix(in srgb, #e0356b 10%, var(--surface, #fff)); color: color-mix(in srgb, #e0356b 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #e0356b 35%, var(--surface, #fff)); }
 .btn-again:hover  { background: #c9184a; color: white; border-color: #c9184a; }
-.btn-hard  { background: #fff3e0; color: #e65100; border: 2px solid #ffcc80; }
+.btn-hard  { background: color-mix(in srgb, #f27007 10%, var(--surface, #fff)); color: color-mix(in srgb, #f27007 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #f27007 35%, var(--surface, #fff)); }
 .btn-hard:hover   { background: #e65100; color: white; border-color: #e65100; }
-.btn-good  { background: #e8f5e9; color: #2e7d32; border: 2px solid #a5d6a7; }
+.btn-good  { background: color-mix(in srgb, #37984c 10%, var(--surface, #fff)); color: color-mix(in srgb, #37984c 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #37984c 35%, var(--surface, #fff)); }
 .btn-good:hover   { background: #2e7d32; color: white; border-color: #2e7d32; }
-.btn-easy  { background: #e3f2fd; color: #1565c0; border: 2px solid #90caf9; }
+.btn-easy  { background: color-mix(in srgb, #2683e0 10%, var(--surface, #fff)); color: color-mix(in srgb, #2683e0 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #2683e0 35%, var(--surface, #fff)); }
 .btn-easy:hover   { background: #1565c0; color: white; border-color: #1565c0; }
 
 /* ── Row helper ─────────────────────────────────────────────────── */
@@ -776,13 +779,13 @@ label {
 .fc-queue-info { margin-top: 12px; min-height: 24px; }
 
 .review-badge {
-  background: #fff3e0;
-  color: #e65100;
+  background: color-mix(in srgb, #f27007 12%, var(--surface, #fff));
+  color: color-mix(in srgb, #f27007 68%, var(--dark, #212529));
   font-size: 0.78rem;
   font-weight: 600;
   padding: 4px 12px;
   border-radius: 999px;
-  border: 1px solid #ffcc80;
+  border: 1px solid color-mix(in srgb, #f27007 35%, var(--surface, #fff));
 }
 
 /* ── Audio Button ───────────────────────────────────────────────── */
@@ -1023,6 +1026,37 @@ label {
     line-height: 1.1;
   }
   .mode-btn i { font-size: 1.02rem; }
+}
+
+/* ── Desktop & iPad 13" quer (> 1200px): auch hier passt die Konfig-
+   Spalte ohne Scrollen — Modus-Auswahl als 3×3-Icon-Raster statt
+   langer Liste, Abstände leicht verdichtet. ──────────────────────── */
+@media (min-width: 1201px) {
+  #view-learn:not(.session-active) .mode-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  #view-learn:not(.session-active) .mode-btn {
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    gap: 3px;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.1;
+    padding: 7px 4px;
+    font-size: 0.72rem;
+  }
+  #view-learn:not(.session-active) .mode-btn i { display: block; font-size: 1.02rem; }
+  #view-learn:not(.session-active) .config-head { margin-bottom: 12px; }
+  #view-learn:not(.session-active) .form-group { margin-bottom: 10px; }
+  #view-learn:not(.session-active) label { margin-bottom: 4px; }
+  #view-learn:not(.session-active) .smart-bar { margin-bottom: 10px; padding: 7px 12px; font-size: 0.82rem; }
+  #view-learn:not(.session-active) .daily-goal { margin-top: 8px; }
+  #view-learn:not(.session-active) .daily-goal__head { margin-bottom: 4px; }
+  #view-learn:not(.session-active) .deck-progress__text { margin-top: 3px; font-size: 0.76rem; }
 }
 
 /* ── Fokus-Modus (Handy + Tablet, inkl. iPad quer): läuft eine
@@ -1399,3 +1433,92 @@ label {
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 30%, transparent);
 }
 .ob-footer { display: flex; justify-content: space-between; gap: 10px; margin-top: 18px; }
+
+/* ── Grammatik im Lernkurs ─────────────────────────────────────── */
+/* Karte mit intern scrollendem Text — der Bildschirm scrollt nie.  */
+.grammar-card {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.grammar-head { color: var(--primary); font-size: 1.15rem; margin: 6px 0 10px; }
+.grammar-subhead { color: var(--primary); font-size: 1rem; margin: 16px 0 8px; }
+.grammar-body {
+  overflow-y: auto;
+  max-height: calc(100vh - 340px);
+  min-height: 120px;
+  padding-right: 6px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--dark);
+  -webkit-overflow-scrolling: touch;
+}
+.grammar-body--flow { max-height: none; overflow: visible; }
+.grammar-body p { margin: 0 0 10px; }
+.grammar-body ul { margin: 0 0 10px 18px; }
+.grammar-body li { margin-bottom: 4px; }
+.grammar-body b, .grammar-body strong { color: var(--primary); }
+.grammar-tip {
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+  border-left: 3px solid var(--primary);
+  border-radius: 0 10px 10px 0;
+  padding: 8px 12px;
+  margin: 0 0 10px;
+  font-size: 0.88rem;
+}
+.gr-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6px 0 12px;
+  font-size: 0.88rem;
+}
+.gr-table th, .gr-table td {
+  border: 1px solid var(--light-gray);
+  padding: 5px 9px;
+  text-align: left;
+}
+.gr-table th { background: color-mix(in srgb, var(--primary) 9%, var(--surface)); color: var(--primary); font-weight: 700; }
+.gr-table td:first-child { font-weight: 600; }
+.grammar-actions { margin-top: 14px; justify-content: center; }
+
+/* Handys/Tablets (Fokus-Modus): Textfenster knapper bemessen, damit die
+   Seite selbst garantiert nicht scrollt. */
+@media (max-width: 1200px) {
+  #view-learn.session-active .grammar-body { max-height: calc(100vh - 390px); min-height: 90px; }
+}
+/* Sehr kurze Screens: noch etwas kleiner */
+@media (max-height: 700px) {
+  .grammar-body { max-height: calc(100vh - 390px); min-height: 80px; }
+}
+
+/* ── Grammatik-Übersicht (Nachlesen) ───────────────────────────── */
+.grammar-chapters { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.grammar-chapter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border: 1.5px solid var(--light-gray);
+  border-radius: 12px;
+  background: var(--surface);
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition);
+  color: var(--dark);
+}
+.grammar-chapter:hover { border-color: var(--primary); }
+.grammar-chapter__icon {
+  width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--primary) 12%, var(--surface));
+  color: var(--primary);
+}
+.grammar-chapter__main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.grammar-chapter__main span { font-size: 0.78rem; color: var(--gray); }
+.grammar-chapter__state { font-size: 0.78rem; font-weight: 700; color: var(--gray); white-space: nowrap; }
+.grammar-chapter--read .grammar-chapter__state { color: #2e9e5b; }
+.grammar-card--reader { max-width: none; margin-top: 14px; }

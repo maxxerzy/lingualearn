@@ -146,7 +146,8 @@ await page.evaluate(async () => {
   const raw = JSON.parse(localStorage.getItem('lingualearn_game_' + u));
   const t = new Date().toISOString().slice(0, 10);
   raw.gems = 100; raw.dailyGoal = 20;
-  raw.daily = { date: t, count: 40, correct: 40, lessons: 5, xp: 200, perfect: 2, goalHit: true };
+  // Alle Quest-Typen abdecken (inkl. blitz) — die Tagesrotation ist datumsabhängig.
+  raw.daily = { date: t, count: 40, correct: 40, lessons: 5, xp: 200, perfect: 2, combo: 0, blitz: 1, goalHit: true };
   localStorage.setItem('lingualearn_game_' + u, JSON.stringify(raw));
   (await import('/core/gamification.js')).reinitGame();
 });
@@ -292,7 +293,7 @@ await click('#pathBackBtn'); await page.waitForTimeout(200);
 // ── Dark Mode (System) + FX-Schalter + Karten-Animation ──
 await page.emulateMedia({ colorScheme: 'dark' }); await page.waitForTimeout(200);
 const surface = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--surface').trim());
-check('System-Dark-Mode greift ohne Cosmetic-Theme', surface === '#1e2530', surface);
+check('System-Dark-Mode greift ohne Cosmetic-Theme', surface === '#1d2531', surface);
 await page.emulateMedia({ colorScheme: 'light' });
 await click('#userChipBtn'); await page.waitForTimeout(150);
 await click('.user-dropdown__item[data-action="settings"]'); await page.waitForTimeout(200);
@@ -311,6 +312,7 @@ await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(20
 await click('#userChipBtn'); await page.waitForTimeout(150);
 await click('.user-dropdown__item[data-action="arena"]'); await page.waitForTimeout(300);
 check('Arena: Blitz-Karte im Quests-Tab', await page.evaluate(() => !!document.querySelector('[data-blitz]')));
+const blitzBefore = await page.evaluate(async () => (await import('/core/gamification.js')).getGame().daily.blitz || 0);
 await page.evaluate(() => document.querySelector('[data-blitz]').click());
 await page.waitForTimeout(700);
 const blitzUi = await page.evaluate(() => ({
@@ -345,7 +347,7 @@ const blitzEnd = await page.evaluate(async () => ({
   best: (await import('/core/gamification.js')).getGame().bestBlitz,
   bestShown: document.getElementById('learnArea').textContent.includes('Bestleistung'),
 }));
-check('Blitz-Ende: Zusammenfassung + Tageszähler', blitzEnd.summary && blitzEnd.score && blitzEnd.daily === 1, JSON.stringify(blitzEnd));
+check('Blitz-Ende: Zusammenfassung + Tageszähler', blitzEnd.summary && blitzEnd.score && blitzEnd.daily === blitzBefore + 1, JSON.stringify({ ...blitzEnd, blitzBefore }));
 check('Blitz-Highscore gespeichert & auf Endkarte', blitzEnd.best >= 1 && blitzEnd.bestShown, JSON.stringify(blitzEnd));
 await click('#sessionBackBtn'); await page.waitForTimeout(250);
 
@@ -503,6 +505,119 @@ const reset = await page.evaluate(async () => ({
 check('Deck-Reset löscht Karten, Kursstand, Gold & Themen-Abzeichen',
   reset.states === 0 && reset.course === 0 && reset.gold === 0 && reset.badges === 0, JSON.stringify(reset));
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
+
+// ── Grammatik im Lernkurs ──
+const gramData = await page.evaluate(async () => {
+  const out = {};
+  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja']) {
+    const { grammar } = await import(`/js/data/grammar/${l}.js`);
+    out[l] = grammar.length && grammar.every(ch => ch.pages.length > 0 && ch.beforeLesson >= 1 && ch.title) ? grammar.length : 0;
+  }
+  return out;
+});
+check('Grammatik-Daten für alle 7 Sprachen (≥5 Kapitel)', Object.values(gramData).every(n => n >= 5), JSON.stringify(gramData));
+
+// Frisches Deck (nach Reset): der Kurs beginnt mit dem Grammatik-Kapitel.
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(300);
+await click('#startBtn'); await page.waitForTimeout(800);
+const gram = await page.evaluate(() => ({
+  badge: document.querySelector('.course-phase-badge')?.textContent || '',
+  head: document.querySelector('.grammar-head')?.textContent || '',
+  table: !!document.querySelector('.grammar-body .gr-table'),
+  title: document.getElementById('session-title').textContent,
+}));
+check('Lernkurs beginnt „basic basic" mit Grammatik-Kapitel',
+  /Grammatik/.test(gram.badge) && gram.head.length > 0 && /Lektion 1/.test(gram.title), JSON.stringify(gram));
+// Durchblättern bis „Zur Lektion" — danach startet die Wortlektion.
+for (let i = 0; i < 12; i++) {
+  const wasLast = await page.evaluate(() => {
+    const btn = document.getElementById('gramNext');
+    if (!btn) return true;
+    const last = btn.textContent.includes('Zur Lektion');
+    btn.click();
+    return last;
+  });
+  await page.waitForTimeout(400);
+  if (wasLast) break;
+}
+await page.waitForTimeout(500);
+const afterGram = await page.evaluate(async () => ({
+  teach: !!document.querySelector('.course-teach'),
+  read: (await import('/core/grammar.js')).readChapters('basic-da').length,
+}));
+check('Kapitel gelesen → Wortlektion startet, Lesestand gespeichert',
+  afterGram.teach && afterGram.read === 1, JSON.stringify(afterGram));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// Grammatik-Knopf (nur im Kurs) öffnet die Übersicht mit Lesestatus.
+const gBtnVis = await page.evaluate(() => getComputedStyle(document.getElementById('grammarBtn')).display !== 'none');
+await click('#grammarBtn'); await page.waitForTimeout(500);
+const overview = await page.evaluate(() => ({
+  active: document.getElementById('view-grammar').classList.contains('active'),
+  chapters: document.querySelectorAll('.grammar-chapter').length,
+  read: document.querySelectorAll('.grammar-chapter--read').length,
+}));
+check('Grammatik-Übersicht: Kapitel-Liste + Lesestatus',
+  gBtnVis && overview.active && overview.chapters >= 5 && overview.read === 1, JSON.stringify(overview));
+await page.evaluate(() => document.querySelector('.grammar-chapter')?.click()); await page.waitForTimeout(300);
+check('Kapitel-Reader zeigt Inhalt mit Tabellen',
+  await page.evaluate(() => !!document.querySelector('#grammarReader .gr-table')));
+await page.evaluate(() => document.getElementById('grammarBackBtn').click()); await page.waitForTimeout(250);
+
+// ── Latein: Abfragerichtung Latein→Deutsch + klassische Aussprache ──
+const laPron = await page.evaluate(async () => {
+  const { latinPron } = await import('/utils/speech.js');
+  return { caesar: latinPron('Caesar'), quaeso: latinPron('quaeso'), salve: latinPron('salve'), poena: latinPron('poena') };
+});
+check('Lateinische Aussprache-Umschrift (c→k, ae→ei, v→w, oe→eu)',
+  laPron.caesar === 'keisar' && laPron.quaeso === 'queiso' && laPron.salve === 'salwe' && laPron.poena === 'peuna',
+  JSON.stringify(laPron));
+
+await page.selectOption('#deckSelect', 'basic-la'); await page.waitForTimeout(400);
+await click('.mode-btn[data-mode="flashcard"]'); await click('#startBtn'); await page.waitForTimeout(600);
+const laFc = await page.evaluate(async () => {
+  const st = (await import('/core/state.js')).getCurrentSession();
+  const card = st.queue[0];
+  const label = document.querySelector('.flashcard-front .fc-label')?.textContent;
+  const word = document.querySelector('.flashcard-front .fc-word')?.textContent.trim();
+  return { label, matches: word.startsWith(card.back), audio: !!document.getElementById('promptAudioBtn') };
+});
+check('Latein-Karteikarte fragt Lateinisch ab (+ Hör-Knopf)',
+  laFc.label === 'Latein' && laFc.matches && laFc.audio, JSON.stringify(laFc));
+await page.evaluate(() => document.getElementById('showAnswer').click()); await page.waitForTimeout(300);
+const laBack = await page.evaluate(() => ({
+  labels: [...document.querySelectorAll('.flashcard-back .fc-label')].map(e => e.textContent.trim()),
+  hint: document.getElementById('learnArea').innerHTML.includes('gesprochen:'),
+}));
+check('Latein-Rückseite: Latein → Deutsch + Aussprache-Hinweis',
+  laBack.labels[0] === 'Latein' && laBack.labels[1] === 'Deutsch' && laBack.hint, JSON.stringify(laBack));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+await click('.mode-btn[data-mode="multiplechoice"]'); await click('#startBtn'); await page.waitForTimeout(500);
+const laMc = await page.evaluate(async () => {
+  const st = (await import('/core/state.js')).getCurrentSession();
+  const card = st.currentPrompt.card;
+  const q = document.querySelector('.mc-question').textContent.trim();
+  const opts = [...document.querySelectorAll('.mc-option .mc-text')].map(e => e.textContent.trim());
+  const idx = opts.findIndex(t => t === card.front);
+  document.querySelector(`.mc-option[data-idx="${idx}"]`)?.click();
+  return { qIsLatin: q.startsWith(card.back), german: idx >= 0 };
+});
+await page.waitForTimeout(300);
+check('Latein-MC: Frage Latein, Antworten Deutsch',
+  laMc.qIsLatin && laMc.german && await page.evaluate(() => !!document.querySelector('#mc-fb .correct')), JSON.stringify(laMc));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+await click('.mode-btn[data-mode="typing"]'); await click('#startBtn'); await page.waitForTimeout(500);
+const laFront = await page.evaluate(async () =>
+  (await import('/core/state.js')).getCurrentSession().currentPrompt.card.front);
+await page.fill('#typingInput', laFront);
+await click('#typingCheck'); await page.waitForTimeout(300);
+check('Latein-Tippen: deutsche Übersetzung zählt',
+  await page.evaluate(() => !!document.querySelector('#mc-fb .correct')), laFront);
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
 
 // ── Update-Logout: Konto bleibt, Sitzung endet ──
 await page.evaluate(() => localStorage.setItem('lingualearn_app_version', 'alt-0'));

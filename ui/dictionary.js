@@ -1,20 +1,11 @@
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCardStates, MAX_LEVEL } from '../core/cardProgress.js';
+import { speak } from '../utils/speech.js';
 
 // Wörterbuch: alle bereits gesehenen Wörter des gewählten Decks,
 // durchsuchbar, mit SRS-Stärke (Punkte) und Aussprache.
-const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU', ja: 'ja-JP' };
 
 function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-
-function speak(text, lang) {
-  if (!window.speechSynthesis) return;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = LANG_CODES[lang] || lang;
-  u.rate = 0.85;
-  window.speechSynthesis.speak(u);
-}
 
 function strengthDots(level) {
   let dots = '';
@@ -48,14 +39,16 @@ export async function renderDictionary(filter = '') {
   }
   if (!list.length) { body.innerHTML = '<p class="dict-empty">Kein Treffer.</p>'; return; }
 
+  // Bei Latein steht das lateinische Wort vorn (Lernrichtung La→De).
+  const rev = deck.language === 'la';
   body.innerHTML = `
     <p class="dict-count">${seen.length} Wörter gelernt · ${deck.name}</p>
     <ul class="dict-list">
       ${list.map(c => `
         <li class="dict-row">
           <div class="dict-words">
-            <b>${esc(c.front)}</b>
-            <span class="dict-back">${esc(c.back)}${c.roman ? ` · ${esc(c.roman)}` : ''}</span>
+            <b>${esc(rev ? c.back : c.front)}</b>
+            <span class="dict-back">${esc(rev ? c.front : c.back)}${c.roman ? ` · ${esc(c.roman)}` : ''}</span>
           </div>
           <span class="dict-strength" title="Stärke ${states[c.front].level}/${MAX_LEVEL}">${strengthDots(states[c.front].level)}</span>
           <button type="button" class="audio-btn dict-audio" data-say="${esc(c.back)}" title="Anhören"><i class="fas fa-volume-up"></i></button>

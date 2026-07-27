@@ -20,16 +20,17 @@
   --primary: #7b2cbf; --secondary: #3c096c; --accent: #ffbe0b;
   --app-bg: linear-gradient(135deg, #e0c3fc 0%, #b298dc 100%);
 }
-/* Mitternacht — echtes Dunkeldesign: Flächen und Textfarben tauschen. */
+/* Mitternacht — echtes Dunkeldesign: Flächen und Textfarben tauschen.
+   Text/Rahmen bewusst hell genug für guten Kontrast (WCAG-orientiert). */
 :root[data-theme="dark"] {
-  --primary: #6c8cff; --secondary: #4361ee; --accent: #f72585;
-  --app-bg: #12161c;
-  --surface: #1e2530;
-  --bg: #12161c;
-  --light: #262f3d;
-  --light-gray: #2c3440;
-  --dark: #e9ecef;
-  --gray: #9aa5b1;
+  --primary: #7d9dff; --secondary: #5273f0; --accent: #ff5ca8;
+  --app-bg: #10151c;
+  --surface: #1d2531;
+  --bg: #10151c;
+  --light: #293342;
+  --light-gray: #3a4658;
+  --dark: #f2f5fa;
+  --gray: #aab6c6;
   --shadow: 0 4px 12px rgba(0,0,0,.4);
   --shadow-lg: 0 8px 32px rgba(0,0,0,.55);
 }
@@ -277,14 +278,14 @@
    solange kein eigenes Cosmetic-Theme gewählt wurde. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --primary: #6c8cff; --secondary: #4361ee; --accent: #f72585;
-    --app-bg: #12161c;
-    --surface: #1e2530;
-    --bg: #12161c;
-    --light: #262f3d;
-    --light-gray: #2c3440;
-    --dark: #e9ecef;
-    --gray: #9aa5b1;
+    --primary: #7d9dff; --secondary: #5273f0; --accent: #ff5ca8;
+    --app-bg: #10151c;
+    --surface: #1d2531;
+    --bg: #10151c;
+    --light: #293342;
+    --light-gray: #3a4658;
+    --dark: #f2f5fa;
+    --gray: #aab6c6;
     --shadow: 0 4px 12px rgba(0,0,0,.4);
     --shadow-lg: 0 8px 32px rgba(0,0,0,.55);
   }
