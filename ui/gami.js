@@ -54,10 +54,12 @@ export function renderLearnWidgets() {
 
   renderSmartBar(deckId);
 
-  // Lernpfad-Knopf gehört zum Lernkurs — in anderen Modi ausblenden.
+  // Lernpfad- und Grammatik-Knopf gehören zum Lernkurs — sonst ausblenden.
   const modeNow = document.querySelector('.mode-btn.active')?.dataset.mode;
   const mapCfgBtn = document.getElementById('coursemapBtn');
   if (mapCfgBtn) mapCfgBtn.style.display = modeNow === 'course' ? '' : 'none';
+  const gramCfgBtn = document.getElementById('grammarBtn');
+  if (gramCfgBtn) gramCfgBtn.style.display = modeNow === 'course' ? '' : 'none';
 
   if (deckId && decks[deckId]) {
     const total = decks[deckId].cards?.length ?? decks[deckId].count ?? 0;

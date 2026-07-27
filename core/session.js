@@ -4,7 +4,8 @@ import { updateStats } from './stats.js';
 import { shuffleArray } from '../utils/helpers.js';
 import { isCognate } from '../utils/cognate.js';
 import { recordCardAnswer, getDueFronts } from './cardProgress.js';
-import { recordGameAnswer, recordSessionEnd, checkAchievements, consumeXpBoost, consumeCelebrations, noteCombo, noteBlitz, getGame, XP } from './gamification.js';
+import { recordGameAnswer, recordSessionEnd, checkAchievements, consumeXpBoost, consumeCelebrations, noteCombo, noteBlitz, addBonusXp, getGame, XP } from './gamification.js';
+import { pendingChapter, markChapterRead } from './grammar.js';
 import { renderGamiHeader, renderLearnWidgets } from '../ui/gami.js';
 import { showToast, toastAchievements, toastCosmetics, confettiBurst } from '../ui/toast.js';
 import { checkNewCosmetics } from './cosmetics.js';
@@ -234,6 +235,10 @@ export async function startSession() {
   enterFocus(mode);
 
   if (mode === 'course') {
+    // Grammatik zuerst: steht vor dieser Lektion ein ungelesenes Kapitel
+    // an (z. B. „So funktioniert Dänisch" vor Lektion 1), kommt es vor
+    // die Vokabeln — Sprache lernen heißt auch Grammatik lernen.
+    if (await maybeStartGrammar(deck, deckId)) return;
     startCourseLesson(deck, deckId);
     return;
   }
@@ -629,14 +634,15 @@ function showListenDuel() {
   const options = buildMCOptions(card, session.cards);
 
   const learnArea = document.getElementById('learnArea');
+  // Bei Latein: gehörtes Wort ins Deutsche übersetzen (statt Schreibweise wählen).
   learnArea.innerHTML = `
     <div class="mc-card listen-card">
       <p class="fc-label">Hörverständnis</p>
       <button type="button" class="listen-play" id="listenPlay" title="Nochmal abspielen">
         <i class="fas fa-volume-up"></i>
       </button>
-      <p class="prompt">Welches Wort hast du gehört?</p>
-      ${mcOptionsMarkup(options)}
+      <p class="prompt">${isReverse(session.deck) ? 'Was bedeutet das gehörte Wort?' : 'Welches Wort hast du gehört?'}</p>
+      ${mcOptionsMarkup(options, { textOf: o => answerText(session, o) })}
     </div>
   `;
 
@@ -680,7 +686,7 @@ function checkListenAnswer(selectedIdx) {
   fb.innerHTML = `
     ${isCorrect
       ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
-      : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(card.back)}</b></p></div>`}
+      : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(answerText(session, card))}</b></p></div>`}
     <p class="listen-reveal">${escHtml(card.back)} — <b>${escHtml(card.front)}</b></p>
     <div class="actions" style="margin-top:14px">
       <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
@@ -811,7 +817,10 @@ function showSentenceBuild() {
   const lang = session.deck.language;
   // Jede 2. Karte: Hör-Variante — der Satz wird vorgesprochen statt gezeigt.
   const byEar = session.currentIndex % 2 === 1;
-  const tokens = card.example.trim().split(/\s+/);
+  // Bei Latein wird der DEUTSCHE Satz gebaut — Vorlage ist der lateinische
+  // Satz (gezeigt oder nur gehört); sonst wie gehabt der fremdsprachige.
+  const rev = isReverse(session.deck);
+  const tokens = (rev ? card.exampleDE : card.example).trim().split(/\s+/);
   const order = shuffleArray(tokens.map((_, i) => i));
   const learnArea = document.getElementById('learnArea');
 
@@ -820,9 +829,9 @@ function showSentenceBuild() {
       <p class="fc-label">${byEar ? 'Hör-Satzbau' : 'Satzbau'}</p>
       ${byEar
         ? `<button type="button" class="listen-play" id="buildPlay" title="Satz anhören"><i class="fas fa-volume-up"></i></button>
-           <p class="prompt">Höre den Satz und baue ihn nach:</p>`
-        : `<p class="build-src">„${escHtml(card.exampleDE)}"</p>
-           <p class="prompt">Setze den Satz zusammen:</p>`}
+           <p class="prompt">${rev ? 'Höre den Satz und baue die deutsche Übersetzung:' : 'Höre den Satz und baue ihn nach:'}</p>`
+        : `<p class="build-src">„${escHtml(rev ? card.example : card.exampleDE)}"</p>
+           <p class="prompt">${rev ? 'Setze die deutsche Übersetzung zusammen:' : 'Setze den Satz zusammen:'}</p>`}
       <div class="build-answer" id="buildAnswer" aria-label="Deine Antwort"></div>
       <div class="build-pool" id="buildPool">
         ${order.map(i => `<button type="button" class="build-tile" data-i="${i}">${escHtml(tokens[i])}</button>`).join('')}
@@ -914,12 +923,13 @@ function checkSentenceBuild() {
   recordAnswerEffects(session, card, isCorrect, isCorrect);
   if (isCorrect) speakWord(card.example, lang);
 
+  const rev = isReverse(session.deck);
   const fb = document.getElementById('mc-fb');
   fb.innerHTML = `
     ${isCorrect
       ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
-      : `<div class="incorrect" style="margin-top:14px"><p>❌ Nicht ganz — richtig wäre:</p><p style="margin-top:6px"><b>${escHtml(card.example)}</b></p></div>`}
-    <p class="listen-reveal">„${escHtml(card.exampleDE)}"</p>
+      : `<div class="incorrect" style="margin-top:14px"><p>❌ Nicht ganz — richtig wäre:</p><p style="margin-top:6px"><b>${escHtml(rev ? card.exampleDE : card.example)}</b></p></div>`}
+    <p class="listen-reveal">„${escHtml(rev ? card.example : card.exampleDE)}"</p>
     <div class="actions" style="margin-top:14px">
       <button type="button" class="btn btn-primary" id="mcNext">Weiter</button>
     </div>
@@ -1372,6 +1382,90 @@ export function startErrorReview(deck, deckId, cards) {
   showFlashcard();
 }
 
+// ── GRAMMATIK IM LERNKURS ────────────────────────────────────────
+// Vor bestimmten Lektionen wird ein Grammatik-Kapitel eingeschoben
+// (Konjugation, Satzbau, wie die Sprache funktioniert). Mehrseitiger
+// Reader; die letzte Seite führt direkt in die Lektion. Der Text
+// scrollt INNERHALB der Karte — der Bildschirm selbst scrollt nie.
+async function maybeStartGrammar(deck, deckId) {
+  const chapter = await pendingChapter(deckId, deck.language, lessonNumber(deckId));
+  if (!chapter) return false;
+
+  const session = {
+    deck,
+    deckId,
+    mode: 'course',
+    phase: 'grammar',
+    chapter,
+    pageIdx: 0,
+    cards: [],
+    queue: [],
+    currentPrompt: null,
+    currentIndex: 0,
+    totalCards: chapter.pages.length,
+    correctAnswers: 0,
+    combo: 0,
+    boosted: false,
+  };
+  setCurrentSession(session);
+  enterFocus('course');
+  document.getElementById('session-title').textContent =
+    `${deck.name} — Lektion ${lessonNumber(deckId)}`;
+  renderGrammarPage();
+  return true;
+}
+
+function renderGrammarPage() {
+  const session = getCurrentSession();
+  if (!session || session.phase !== 'grammar') return;
+  const ch = session.chapter;
+  const page = ch.pages[session.pageIdx];
+  const last = session.pageIdx >= ch.pages.length - 1;
+
+  document.getElementById('learnArea').innerHTML = `
+    <div class="grammar-card">
+      ${courseBadge(`<i class="fas ${ch.icon || 'fa-book-open'}"></i> Grammatik · ${escHtml(ch.title)}`)}
+      <h3 class="grammar-head">${escHtml(page.heading)}</h3>
+      <div class="grammar-body">${page.html}</div>
+      <div class="actions grammar-actions">
+        ${session.pageIdx > 0 ? '<button type="button" class="btn" id="gramPrev"><i class="fas fa-arrow-left"></i> Zurück</button>' : ''}
+        <button type="button" class="btn btn-primary" id="gramNext">
+          ${last ? 'Zur Lektion <i class="fas fa-arrow-right"></i>' : 'Weiter <i class="fas fa-arrow-right"></i>'}
+        </button>
+      </div>
+    </div>
+  `;
+
+  const t = document.getElementById('progress-text');
+  if (t) t.textContent = `Seite ${session.pageIdx + 1}/${ch.pages.length}`;
+  const b = document.getElementById('progress-bar');
+  if (b) b.style.width = `${Math.round(((session.pageIdx + 1) / ch.pages.length) * 100)}%`;
+
+  document.getElementById('gramPrev')?.addEventListener('click', () => {
+    session.pageIdx--;
+    setCurrentSession(session);
+    renderGrammarPage();
+  });
+  document.getElementById('gramNext').addEventListener('click', () => {
+    if (!last) {
+      session.pageIdx++;
+      setCurrentSession(session);
+      renderGrammarPage();
+      return;
+    }
+    // Kapitel abgeschlossen: merken, kleinen XP-Bonus geben, weiter
+    // zur eigentlichen Lektion (oder zum nächsten fälligen Kapitel).
+    markChapterRead(session.deckId, ch.id);
+    addBonusXp(10);
+    renderGamiHeader();
+    showToast(`<i class="fas fa-book-open toast__icon"></i><div class="toast__body"><b>Kapitel gelesen: ${escHtml(ch.title)}</b><span>+10 XP — jetzt anwenden!</span></div>`);
+    const { deck, deckId } = session;
+    maybeStartGrammar(deck, deckId).then(started => {
+      if (!started) startCourseLesson(deck, deckId);
+    });
+  });
+}
+
 // ── LERNKURS-MODUS (Basic101) ────────────────────────────────────
 // Drei Phasen pro Lektion: Kennenlernen → Wörter üben → Sätze üben.
 // Der Fortschritt (welche Wörter schon eingeführt wurden) wird pro
@@ -1518,19 +1612,22 @@ function renderCourseTeach(session) {
   const ipaParts = [];
   if (card.ipa)   ipaParts.push(`<span class="course-ipa">/${escHtml(card.ipa)}/</span>`);
   if (card.roman) ipaParts.push(`<span class="course-roman">${escHtml(card.roman)}</span>`);
+  if (lang === 'la') ipaParts.push(`<span class="course-roman">gesprochen: „${escHtml(latinPron(card.back))}"</span>`);
 
+  // Bei Latein steht das lateinische Wort oben (Abfragerichtung La→De).
+  const audioBtnHtml = `
+        <button type="button" class="audio-btn" id="audioBtn" title="Aussprache anhören">
+          <i class="fas fa-volume-up"></i>
+        </button>`;
   learnArea.innerHTML = `
     <div class="course-teach">
       ${courseBadge(`<i class="fas fa-lightbulb"></i> Neues Wort ${session.teachIndex + 1}/${session.lessonCards.length}`)}
-      <p class="fc-label">Deutsch</p>
-      <div class="fc-word fc-word-source">${escHtml(card.front)}</div>
+      <p class="fc-label">${promptLabel(session)}</p>
+      <div class="fc-word fc-word-source">${escHtml(promptText(session, card))}${isReverse(session.deck) ? audioBtnHtml : ''}</div>
       <div class="fc-arrow"><i class="fas fa-arrow-down"></i></div>
-      <p class="fc-label">${getLangName(lang)}</p>
+      <p class="fc-label">${answerLabel(session)}</p>
       <div class="fc-word fc-word-target">
-        ${escHtml(card.back)}
-        <button type="button" class="audio-btn" id="audioBtn" title="Aussprache anhören">
-          <i class="fas fa-volume-up"></i>
-        </button>
+        ${escHtml(answerText(session, card))}${isReverse(session.deck) ? '' : audioBtnHtml}
       </div>
       ${ipaParts.length ? `<div class="course-pron">${ipaParts.join(' · ')}</div>` : ''}
       ${cognateChip(card)}

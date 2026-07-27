@@ -6,6 +6,7 @@ import { fxEnabled, setFxEnabled } from '../utils/feedback.js';
 import { resetDeckProgress } from '../core/cardProgress.js';
 import { resetCourse } from '../core/course.js';
 import { resetGoldLessons, resetThemeBadges } from '../core/session.js';
+import { resetGrammar } from '../core/grammar.js';
 import { clearErrors } from '../core/errorLog.js';
 import { getDecks } from '../core/state.js';
 
@@ -22,6 +23,7 @@ export function initSettings() {
     resetCourse(deckId);
     resetGoldLessons(deckId);
     resetThemeBadges(deckId);
+    resetGrammar(deckId);
     clearErrors(deckId);
     renderLearnWidgets();
     showToast(`<i class="fas fa-rotate-left toast__icon"></i><div class="toast__body"><b>Zurückgesetzt</b><span>„${deck.name}" startet wieder bei Lektion 1.</span></div>`);

@@ -64,9 +64,9 @@ export async function renderWotd() {
     <div class="wotd__deck">${esc(deck.name)}</div>
     <div class="wotd__row">
       <div class="wotd__word">
-        <span class="wotd__de">${esc(card.front)}</span>
+        <span class="wotd__de">${esc(deck.language === 'la' ? card.back : card.front)}</span>
         <span class="wotd__arrow">→</span>
-        <span class="wotd__target">${esc(card.back)}</span>
+        <span class="wotd__target">${esc(deck.language === 'la' ? card.front : card.back)}</span>
         <button type="button" class="audio-btn wotd__audio" title="Aussprache"><i class="fas fa-volume-up"></i></button>
       </div>
       ${pron.length ? `<div class="wotd__pron">${pron.join(' · ')}</div>` : ''}

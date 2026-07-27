@@ -506,6 +506,65 @@ check('Deck-Reset löscht Karten, Kursstand, Gold & Themen-Abzeichen',
   reset.states === 0 && reset.course === 0 && reset.gold === 0 && reset.badges === 0, JSON.stringify(reset));
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
 
+// ── Grammatik im Lernkurs ──
+const gramData = await page.evaluate(async () => {
+  const out = {};
+  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja']) {
+    const { grammar } = await import(`/js/data/grammar/${l}.js`);
+    out[l] = grammar.length && grammar.every(ch => ch.pages.length > 0 && ch.beforeLesson >= 1 && ch.title) ? grammar.length : 0;
+  }
+  return out;
+});
+check('Grammatik-Daten für alle 7 Sprachen (≥5 Kapitel)', Object.values(gramData).every(n => n >= 5), JSON.stringify(gramData));
+
+// Frisches Deck (nach Reset): der Kurs beginnt mit dem Grammatik-Kapitel.
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(300);
+await click('#startBtn'); await page.waitForTimeout(800);
+const gram = await page.evaluate(() => ({
+  badge: document.querySelector('.course-phase-badge')?.textContent || '',
+  head: document.querySelector('.grammar-head')?.textContent || '',
+  table: !!document.querySelector('.grammar-body .gr-table'),
+  title: document.getElementById('session-title').textContent,
+}));
+check('Lernkurs beginnt „basic basic" mit Grammatik-Kapitel',
+  /Grammatik/.test(gram.badge) && gram.head.length > 0 && /Lektion 1/.test(gram.title), JSON.stringify(gram));
+// Durchblättern bis „Zur Lektion" — danach startet die Wortlektion.
+for (let i = 0; i < 12; i++) {
+  const wasLast = await page.evaluate(() => {
+    const btn = document.getElementById('gramNext');
+    if (!btn) return true;
+    const last = btn.textContent.includes('Zur Lektion');
+    btn.click();
+    return last;
+  });
+  await page.waitForTimeout(400);
+  if (wasLast) break;
+}
+await page.waitForTimeout(500);
+const afterGram = await page.evaluate(async () => ({
+  teach: !!document.querySelector('.course-teach'),
+  read: (await import('/core/grammar.js')).readChapters('basic-da').length,
+}));
+check('Kapitel gelesen → Wortlektion startet, Lesestand gespeichert',
+  afterGram.teach && afterGram.read === 1, JSON.stringify(afterGram));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// Grammatik-Knopf (nur im Kurs) öffnet die Übersicht mit Lesestatus.
+const gBtnVis = await page.evaluate(() => getComputedStyle(document.getElementById('grammarBtn')).display !== 'none');
+await click('#grammarBtn'); await page.waitForTimeout(500);
+const overview = await page.evaluate(() => ({
+  active: document.getElementById('view-grammar').classList.contains('active'),
+  chapters: document.querySelectorAll('.grammar-chapter').length,
+  read: document.querySelectorAll('.grammar-chapter--read').length,
+}));
+check('Grammatik-Übersicht: Kapitel-Liste + Lesestatus',
+  gBtnVis && overview.active && overview.chapters >= 5 && overview.read === 1, JSON.stringify(overview));
+await page.evaluate(() => document.querySelector('.grammar-chapter')?.click()); await page.waitForTimeout(300);
+check('Kapitel-Reader zeigt Inhalt mit Tabellen',
+  await page.evaluate(() => !!document.querySelector('#grammarReader .gr-table')));
+await page.evaluate(() => document.getElementById('grammarBackBtn').click()); await page.waitForTimeout(250);
+
 // ── Latein: Abfragerichtung Latein→Deutsch + klassische Aussprache ──
 const laPron = await page.evaluate(async () => {
   const { latinPron } = await import('/utils/speech.js');

@@ -39,14 +39,16 @@ export async function renderDictionary(filter = '') {
   }
   if (!list.length) { body.innerHTML = '<p class="dict-empty">Kein Treffer.</p>'; return; }
 
+  // Bei Latein steht das lateinische Wort vorn (Lernrichtung La→De).
+  const rev = deck.language === 'la';
   body.innerHTML = `
     <p class="dict-count">${seen.length} Wörter gelernt · ${deck.name}</p>
     <ul class="dict-list">
       ${list.map(c => `
         <li class="dict-row">
           <div class="dict-words">
-            <b>${esc(c.front)}</b>
-            <span class="dict-back">${esc(c.back)}${c.roman ? ` · ${esc(c.roman)}` : ''}</span>
+            <b>${esc(rev ? c.back : c.front)}</b>
+            <span class="dict-back">${esc(rev ? c.front : c.back)}${c.roman ? ` · ${esc(c.roman)}` : ''}</span>
           </div>
           <span class="dict-strength" title="Stärke ${states[c.front].level}/${MAX_LEVEL}">${strengthDots(states[c.front].level)}</span>
           <button type="button" class="audio-btn dict-audio" data-say="${esc(c.back)}" title="Anhören"><i class="fas fa-volume-up"></i></button>
