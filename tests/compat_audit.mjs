@@ -66,6 +66,8 @@ const header = await page.evaluate(() => {
   const ids = ['userChipBtn', 'gemChip', 'levelChip', 'streakChip'];
   const rects = {};
   for (const id of ids) { const e = document.getElementById(id); rects[id] = e ? e.getBoundingClientRect().toJSON() : null; }
+  // Logo mitprüfen — der Profil-Chip darf es nie überlappen.
+  rects.logo = document.querySelector('.logo')?.getBoundingClientRect().toJSON() || null;
   return { rects, name: document.getElementById('userNameChip')?.textContent || '', vw: window.innerWidth };
 });
 check('Profil-Chip zeigt Kontonamen nach dem Rang', header.name === 'cmp' + key, header.name);
@@ -103,7 +105,7 @@ if (vw <= 768) {
   check('Level-Chip heißt „Lvl."', lvl.startsWith('Lvl.'), lvl);
 }
 
-// ── 3) Modus-Karten: 9 Stück, Icon sichtbar, Label nicht abgeschnitten ──
+// ── 3) Modus-Karten: 2 Stück (Lernkurs + Karteikarten), Icon sichtbar ──
 const modes = await page.evaluate(() => [...document.querySelectorAll('.mode-btn')].map(b => {
   const i = b.querySelector('i');
   const ir = i ? i.getBoundingClientRect() : { width: 0 };
@@ -115,16 +117,23 @@ const modes = await page.evaluate(() => [...document.querySelectorAll('.mode-btn
     clippedH: b.scrollHeight > b.clientHeight + 1,
   };
 }));
-check('9 Modus-Karten', modes.length === 9, String(modes.length));
+check('2 Modus-Karten (Lernkurs + Karteikarten)', modes.length === 2
+  && modes[0].mode === 'course' && modes[1].mode === 'flashcard', JSON.stringify(modes.map(m => m.mode)));
 check('Jede Karte mit sichtbarem Icon', modes.every(m => m.iconVisible), JSON.stringify(modes.filter(m => !m.iconVisible).map(m => m.mode)));
 check('Kein Label abgeschnitten', modes.every(m => !m.clippedW && !m.clippedH), JSON.stringify(modes.filter(m => m.clippedW || m.clippedH).map(m => m.mode)));
 
-// ── 4) Lernpfad-Knopf nur im Lernkurs ──
+// ── 4) Lernpfad-Knopf nur im Lernkurs (Kurs ist jetzt Standard) ──
+const mapShown0 = await page.evaluate(() => getComputedStyle(document.getElementById('coursemapBtn')).display !== 'none');
+check('Lernpfad-Knopf im Lernkurs (Standard) sichtbar', mapShown0);
+await click('.mode-btn[data-mode="flashcard"]'); await page.waitForTimeout(200);
 const mapHidden = await page.evaluate(() => getComputedStyle(document.getElementById('coursemapBtn')).display === 'none');
 check('Lernpfad-Knopf im Karteikarten-Modus ausgeblendet', mapHidden);
 await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(200);
 const mapShown = await page.evaluate(() => getComputedStyle(document.getElementById('coursemapBtn')).display !== 'none');
 check('Lernpfad-Knopf im Lernkurs sichtbar', mapShown);
+// Shop-Knopf ist immer auf der Hauptseite erreichbar
+check('Shop-Knopf auf der Hauptseite', await page.evaluate(() =>
+  getComputedStyle(document.getElementById('shopBtn')).display !== 'none'));
 
 // ── 5) Zurück-Knöpfe aller Ansichten ──
 async function menuView(action, backId) {
@@ -147,17 +156,11 @@ await click('#pathBackBtn'); await page.waitForTimeout(250);
 const pathBack = await page.evaluate(() => document.getElementById('view-learn').classList.contains('active'));
 check('Zurück-Knopf „Lernpfad" funktioniert', pathOpen && pathBack, JSON.stringify({ pathOpen, pathBack }));
 
-// ── 6) Alle 9 Modi: starten, sichtbar, kein Overflow, zurück ──
+// ── 6) Beide Modi: starten, sichtbar, kein Overflow, zurück ──
+// (Alle früheren Einzelmodi sind jetzt Phasen des Lernkurses.)
 const MARKERS = {
   course: '.course-phase-badge, .course-teach, #courseNext, .course-word',
   flashcard: '#showAnswer, .fc-word',
-  multiplechoice: '.mc-option',
-  comparison: '.comparison-card, .word',
-  listen: '#listenPlay',
-  typing: '#typingInput',
-  build: '#buildPool',
-  speak: '.speak-card',
-  story: '.story-sent',
 };
 for (const mode of Object.keys(MARKERS)) {
   await click(`.mode-btn[data-mode="${mode}"]`); await page.waitForTimeout(150);

@@ -102,43 +102,19 @@ const started = await page.evaluate(() => ({
 check('Pfad → Lektion startet im Fokus', started.learn && started.focus && /Lektion 1/.test(started.title), JSON.stringify(started));
 await click('#sessionBackBtn'); await page.waitForTimeout(250);
 
-// ── Tippen: tolerant richtig / Aufdecken falsch ──
-await click('.mode-btn[data-mode="typing"]'); await click('#startBtn'); await page.waitForTimeout(500);
-const back1 = await page.evaluate(async () => {
-  const front = document.querySelector('.typing-card .fc-word').textContent.trim();
-  const { cards } = await import('/js/data/decks/da.js');
-  return cards.find(c => c.front === front).back;
-});
-await page.fill('#typingInput', back1.toUpperCase() + '.');
-await click('#typingCheck'); await page.waitForTimeout(250);
-check('Tippen: tolerante Prüfung → richtig', await page.evaluate(() => !!document.querySelector('#mc-fb .correct')));
-await click('#mcNext'); await page.waitForTimeout(250);
-await click('#typingReveal'); await page.waitForTimeout(250);
-check('Tippen: Aufdecken zählt als falsch', await page.evaluate(() => !!document.querySelector('#mc-fb .incorrect')));
-await click('#sessionBackBtn'); await page.waitForTimeout(250);
-
-// ── Satzbau: Karte 1 Text, Karte 2 nach Gehör ──
-await click('.mode-btn[data-mode="build"]'); await click('#startBtn'); await page.waitForTimeout(500);
-const n1 = await page.evaluate(() => document.querySelectorAll('.build-pool .build-tile').length);
-for (let k = 0; k < n1; k++) await page.evaluate(kk => document.querySelector(`.build-pool .build-tile[data-i="${kk}"]`)?.click(), k);
-await click('#buildCheck'); await page.waitForTimeout(200);
-const b1ok = await page.evaluate(() => !!document.querySelector('#mc-fb .correct'));
-await click('#mcNext'); await page.waitForTimeout(300);
-const byEar = await page.evaluate(() => !!document.getElementById('buildPlay') && !document.querySelector('.build-src'));
-check('Satzbau: Karte 1 richtig, Karte 2 = Hör-Variante', b1ok && byEar, JSON.stringify({ b1ok, byEar }));
-await click('#sessionBackBtn'); await page.waitForTimeout(250);
-
-// ── Story: richtige Bedeutung unter 4 Optionen ──
-await click('.mode-btn[data-mode="story"]'); await click('#startBtn'); await page.waitForTimeout(500);
-const story = await page.evaluate(async () => {
-  const sent = document.querySelector('.story-sent')?.textContent.trim().replace(/\s+/g, ' ') || '';
-  const { cards } = await import('/js/data/decks/da.js');
-  const card = cards.find(c => c.example && sent.startsWith(c.example.slice(0, 20)));
-  const opts = [...document.querySelectorAll('.mc-option .mc-text')].map(e => e.textContent.trim());
-  return { n: opts.length, hit: card ? opts.includes(card.exampleDE) : false };
-});
-check('Story: 4 Optionen inkl. richtiger Bedeutung', story.n === 4 && story.hit, JSON.stringify(story));
-await click('#sessionBackBtn'); await page.waitForTimeout(250);
+// ── Nur noch 2 Modi + Shop auf der Hauptseite ──
+const modeGrid = await page.evaluate(() => [...document.querySelectorAll('.mode-btn')].map(b => b.dataset.mode));
+check('Modus-Auswahl fusioniert: nur Lernkurs + Karteikarten',
+  modeGrid.length === 2 && modeGrid[0] === 'course' && modeGrid[1] === 'flashcard', JSON.stringify(modeGrid));
+await click('#shopBtn'); await page.waitForTimeout(400);
+const shop = await page.evaluate(() => ({
+  active: document.getElementById('view-rewards').classList.contains('active'),
+  title: document.querySelector('#view-rewards h2')?.textContent.trim() || '',
+  items: document.querySelectorAll('.cosmetic').length,
+}));
+check('Shop-Knopf auf der Hauptseite öffnet den Shop',
+  shop.active && /Shop/.test(shop.title) && shop.items >= 10, JSON.stringify(shop));
+await click('#rewardsBackBtn'); await page.waitForTimeout(250);
 
 // ── Arena: Quests/Liga/Shop + Kauf + Abholen ──
 await page.evaluate(async () => {
@@ -204,21 +180,17 @@ await click('#importBtn'); await page.waitForTimeout(400);
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
 const dId = await page.$$eval('#deckSelect option', os => os.find(o => o.textContent.includes('SmokeDeck'))?.value);
 await page.selectOption('#deckSelect', dId);
-await click('.mode-btn[data-mode="multiplechoice"]'); await click('#startBtn'); await page.waitForTimeout(400);
-let wrongDone = false;
-for (let i = 0; i < 5; i++) {
-  const front = await page.evaluate(() => document.querySelector('.mc-question')?.textContent.trim());
-  if (!front) break;
-  const idx = await page.evaluate(({ back, wrong }) => {
-    const opts = [...document.querySelectorAll('.mc-option')];
-    const t = wrong ? opts.find(o => !o.textContent.includes(back)) : opts.find(o => o.textContent.includes(back));
-    return opts.indexOf(t);
-  }, { back: F2B[front], wrong: !wrongDone });
-  wrongDone = true;
-  await page.evaluate(i2 => document.querySelector(`.mc-option[data-idx="${i2}"]`)?.click(), idx);
+// Karteikarten-Session: erste Karte „Schwer" (zählt als Fehler), Rest „Gut".
+await click('.mode-btn[data-mode="flashcard"]'); await click('#startBtn'); await page.waitForTimeout(400);
+let firstCard = true;
+for (let i = 0; i < 7; i++) {
+  const showing = await page.evaluate(() => !!document.getElementById('showAnswer'));
+  if (!showing) break;
+  await page.evaluate(() => document.getElementById('showAnswer').click());
   await page.waitForTimeout(200);
-  await page.evaluate(() => document.getElementById('mcNext')?.click());
-  await page.waitForTimeout(250);
+  await page.evaluate(r => document.querySelector(`[data-rating="${r}"]`)?.click(), firstCard ? 'hard' : 'good');
+  firstCard = false;
+  await page.waitForTimeout(200);
 }
 check('„Fehler üben (1)" nach Session', await page.evaluate(() => /\(1\)/.test(document.getElementById('reviewErrorsBtn')?.textContent || '')));
 await page.evaluate(() => document.getElementById('reviewErrorsBtn')?.click()); await page.waitForTimeout(400);
@@ -249,6 +221,12 @@ check('Wette: Kauf (−50) und Gewinn (+100)', wager.ok && wager.won === true &&
 
 // ── Wörterbuch: gesehene Wörter, Suche, Stärke ──
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+// Ein paar Karten als gesehen markieren (früher taten das die Einzelmodi).
+await page.evaluate(async () => {
+  const cp = await import('/core/cardProgress.js');
+  const { cards } = await import('/js/data/decks/da.js');
+  cards.slice(0, 3).forEach(c => cp.recordCardAnswer('basic-da', c.front, 'good'));
+});
 await click('#userChipBtn'); await page.waitForTimeout(150);
 await click('.user-dropdown__item[data-action="dict"]'); await page.waitForTimeout(500);
 const dict = await page.evaluate(() => ({
@@ -575,37 +553,64 @@ await page.evaluate(async () => {
   window.__phases = [];
 });
 await click('#startBtn'); await page.waitForTimeout(700);
+// Generischer Schritt-Treiber: beantwortet jede Kurs-Übungsform korrekt
+// (Kennenlernen, Hören, MC, Vergleich, Sprechen, Schreiben, Lücke,
+// Satzbau, Bedeutung). rev = Latein (Antwortseite ist Deutsch).
+const driveStep = lang => page.evaluate(async l => {
+  const st = (await import('/core/state.js')).getCurrentSession();
+  if (!st || st.mode !== 'course') {
+    return document.getElementById('learnArea').textContent.includes('geschafft') ? 'done' : 'gone';
+  }
+  window.__phases = window.__phases || [];
+  if (!window.__phases.includes(st.phase)) window.__phases.push(st.phase);
+  const rev = l === 'la';
+  const next = document.getElementById('courseNext');
+  if (next) { next.click(); return null; }        // Kennenlernen / Feedback
+  if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return null; }
+  const card = st.queue[0];
+  const typeIn = document.getElementById('courseTypeInput');
+  if (typeIn && card) {
+    typeIn.value = rev ? card.front : card.back;
+    document.getElementById('courseTypeCheck')?.click();
+    return null;
+  }
+  if (document.getElementById('courseCompYes') && st.currentPrompt) {
+    document.getElementById(st.currentPrompt.isMatch ? 'courseCompYes' : 'courseCompNo').click();
+    return null;
+  }
+  const pool = document.getElementById('courseBuildPool');
+  if (pool && st.currentPrompt?.tokens) {
+    for (let k = 0; k < st.currentPrompt.tokens.length; k++) pool.querySelector(`.build-tile[data-i="${k}"]`)?.click();
+    document.getElementById('courseBuildCheck')?.click();
+    return null;
+  }
+  const opts = [...document.querySelectorAll('.mc-option')];
+  if (opts.length && card) {
+    const answer = document.querySelector('.story-sent') ? card.exampleDE
+      : st.phase === 'listen' ? card.front
+      : st.phase === 'words' ? (rev ? card.front : card.back)
+      : card.back;   // Lückentext
+    const idx = opts.findIndex(o => o.querySelector('.mc-text')?.textContent.trim() === answer);
+    opts[idx >= 0 ? idx : 0].click();
+  }
+  return null;
+}, lang);
+
 let courseEnd = null;
 for (let i = 0; i < 500 && !courseEnd; i++) {
-  courseEnd = await page.evaluate(async () => {
-    const st = (await import('/core/state.js')).getCurrentSession();
-    if (!st || st.mode !== 'course') {
-      return document.getElementById('learnArea').textContent.includes('geschafft') ? 'done' : 'gone';
-    }
-    if (!window.__phases.includes(st.phase)) window.__phases.push(st.phase);
-    const next = document.getElementById('courseNext');
-    if (next) { next.click(); return null; }        // Kennenlernen / Feedback
-    if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return null; }
-    const card = st.queue[0];
-    const opts = [...document.querySelectorAll('.mc-option')];
-    if (opts.length && card) {
-      const answer = st.phase === 'listen' ? card.front : card.back;
-      const idx = opts.findIndex(o => o.querySelector('.mc-text')?.textContent.trim() === answer);
-      opts[idx >= 0 ? idx : 0].click();
-    }
-    return null;
-  });
+  courseEnd = await driveStep('da');
   await page.waitForTimeout(120);
 }
 const coursePhases = await page.evaluate(async () => ({
   phases: window.__phases,
   introduced: (await import('/core/course.js')).getCourseState('basic-da').introduced,
 }));
-check('Lektion komplett: 2er-Häppchen mit Hören & Sprechen integriert',
+check('Lektion komplett: Häppchen mit Hören, Sprechen & Schreiben integriert',
   courseEnd === 'done'
-    && ['teach', 'listen', 'words', 'speak'].every(p => coursePhases.phases.includes(p))
+    && ['teach', 'listen', 'words', 'speak', 'write'].every(p => coursePhases.phases.includes(p))
     && coursePhases.phases.indexOf('listen') > coursePhases.phases.indexOf('teach')
     && coursePhases.phases.indexOf('speak') > coursePhases.phases.indexOf('words')
+    && coursePhases.phases.indexOf('write') > coursePhases.phases.indexOf('speak')
     && coursePhases.introduced > 0,
   JSON.stringify({ courseEnd, ...coursePhases }));
 await click('#sessionBackBtn'); await page.waitForTimeout(300);
@@ -639,28 +644,46 @@ check('Latein-Rückseite: Latein → Deutsch + Aussprache-Hinweis',
   laBack.labels[0] === 'Latein' && laBack.labels[1] === 'Deutsch' && laBack.hint, JSON.stringify(laBack));
 await click('#sessionBackBtn'); await page.waitForTimeout(250);
 
-await click('.mode-btn[data-mode="multiplechoice"]'); await click('#startBtn'); await page.waitForTimeout(500);
-const laMc = await page.evaluate(async () => {
-  const st = (await import('/core/state.js')).getCurrentSession();
-  const card = st.currentPrompt.card;
-  const q = document.querySelector('.mc-question').textContent.trim();
-  const opts = [...document.querySelectorAll('.mc-option .mc-text')].map(e => e.textContent.trim());
-  const idx = opts.findIndex(t => t === card.front);
-  document.querySelector(`.mc-option[data-idx="${idx}"]`)?.click();
-  return { qIsLatin: q.startsWith(card.back), german: idx >= 0 };
+// Latein im LERNKURS: Lektion 1 komplett durchspielen und dabei erfassen,
+// dass MC/Hören/Schreiben durchweg Latein zeigen und Deutsch verlangen.
+await page.evaluate(async () => {
+  const g = await import('/core/grammar.js');
+  const { grammar } = await import('/js/data/grammar/la.js');
+  grammar.forEach(ch => g.markChapterRead('basic-la', ch.id));
+  window.__phases = [];
+  window.__laCap = {};
 });
-await page.waitForTimeout(300);
-check('Latein-MC: Frage Latein, Antworten Deutsch',
-  laMc.qIsLatin && laMc.german && await page.evaluate(() => !!document.querySelector('#mc-fb .correct')), JSON.stringify(laMc));
-await click('#sessionBackBtn'); await page.waitForTimeout(250);
-
-await click('.mode-btn[data-mode="typing"]'); await click('#startBtn'); await page.waitForTimeout(500);
-const laFront = await page.evaluate(async () =>
-  (await import('/core/state.js')).getCurrentSession().currentPrompt.card.front);
-await page.fill('#typingInput', laFront);
-await click('#typingCheck'); await page.waitForTimeout(300);
-check('Latein-Tippen: deutsche Übersetzung zählt',
-  await page.evaluate(() => !!document.querySelector('#mc-fb .correct')), laFront);
+await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(300);
+await click('#startBtn'); await page.waitForTimeout(700);
+let laEnd = null;
+for (let i = 0; i < 500 && !laEnd; i++) {
+  await page.evaluate(async () => {
+    const st = (await import('/core/state.js')).getCurrentSession();
+    if (!st || st.mode !== 'course') return;
+    const cap = window.__laCap;
+    const card = st.queue?.[0];
+    if (!cap.mc && st.phase === 'words' && document.querySelector('.mc-question') && card) {
+      const q = document.querySelector('.mc-question').textContent.trim();
+      const opts = [...document.querySelectorAll('.mc-option .mc-text')].map(e => e.textContent.trim());
+      cap.mc = { qIsLatin: q.startsWith(card.back), german: opts.includes(card.front) };
+    }
+    if (!cap.listen && st.phase === 'listen' && document.querySelectorAll('.mc-option').length && card) {
+      const opts = [...document.querySelectorAll('.mc-option .mc-text')].map(e => e.textContent.trim());
+      cap.listen = { german: opts.includes(card.front) };
+    }
+    if (!cap.write && document.getElementById('courseTypeInput') && card) {
+      const shown = document.querySelector('.typing-card .fc-word')?.textContent.trim() || '';
+      cap.write = { latinShown: shown.startsWith(card.back) };
+    }
+  });
+  laEnd = await driveStep('la');
+  await page.waitForTimeout(120);
+}
+const laCourse = await page.evaluate(() => window.__laCap);
+check('Latein-Kurs: MC & Hören & Schreiben durchweg La→De (Lektion beendet)',
+  laEnd === 'done' && laCourse.mc?.qIsLatin && laCourse.mc?.german
+    && laCourse.listen?.german && laCourse.write?.latinShown,
+  JSON.stringify({ laEnd, ...laCourse }));
 await click('#sessionBackBtn'); await page.waitForTimeout(250);
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
 

@@ -1574,22 +1574,40 @@ function showCourseStep() {
       session.queue = shuffleArray([...session.lessonCards]);
       setCurrentSession(session);
     } else {
-      renderCourseWordMC(session);
+      // Abwechslung im Üben: mal Multiple Choice, mal Vergleich (Passt?).
+      if (session.queue.length % 2 === 0) renderCourseCompare(session);
+      else renderCourseWordMC(session);
       return;
     }
   }
 
   if (session.phase === 'speak') {
     if (session.queue.length === 0) {
-      // Übergang zur Satz-Phase: nur Sätze aufnehmen, deren Wörter ALLE
-      // schon gelernt sind (echtes Basic 101 — keine unbekannten Wörter).
-      session.phase = 'sentences';
-      session.queue = collectUnlockedSentences(session);
-      session.totalCards = session.lessonCards.length * 4 + session.queue.length;
+      // Schreib-Runde: ein paar Wörter der Lektion selbst tippen.
+      session.phase = 'write';
+      session.queue = shuffleArray([...session.lessonCards]).slice(0, 3);
+      session.writeCount = session.queue.length;
+      session.totalCards = session.lessonCards.length * 4 + session.writeCount;
       setCurrentSession(session);
       updateProgress();
     } else {
       renderCourseSpeak(session);
+      return;
+    }
+  }
+
+  if (session.phase === 'write') {
+    if (session.queue.length === 0) {
+      // Übergang zur Satz-Phase: nur Sätze aufnehmen, deren Wörter ALLE
+      // schon gelernt sind (echtes Basic 101 — keine unbekannten Wörter).
+      session.phase = 'sentences';
+      session.queue = collectUnlockedSentences(session);
+      session.sentOrder = session.queue.map(c => c.front);
+      session.totalCards = session.lessonCards.length * 4 + (session.writeCount || 0) + session.queue.length;
+      setCurrentSession(session);
+      updateProgress();
+    } else {
+      renderCourseWrite(session);
       return;
     }
   }
@@ -1599,8 +1617,29 @@ function showCourseStep() {
       endCourseLesson(session);
       return;
     }
-    renderCourseGapFill(session);
+    // Abwechslung: Lückentext, Satzbau oder „Was bedeutet dieser Satz?"
+    const variant = sentenceVariant(session, session.queue[0]);
+    if (variant === 'build') renderCourseBuild(session);
+    else if (variant === 'meaning') renderCourseMeaning(session);
+    else renderCourseGapFill(session);
   }
+}
+
+// Stabile Übungs-Variante je Satz (bleibt bei Wiederholung gleich);
+// fällt auf den Lückentext zurück, wenn Satzbau/Bedeutung nicht passen.
+function sentenceVariant(session, card) {
+  const i = (session.sentOrder || []).indexOf(card.front);
+  const v = ['gap', 'build', 'meaning'][(i < 0 ? 0 : i) % 3];
+  if (v === 'build') {
+    const target = isReverse(session.deck) ? card.exampleDE : card.example;
+    const n = (target || '').trim().split(/\s+/).length;
+    if (n < 3 || n > 12) return 'gap';
+  }
+  if (v === 'meaning') {
+    const alts = session.knownCards.filter(c => c.exampleDE && c.exampleDE !== card.exampleDE);
+    if (alts.length < 3) return 'gap';
+  }
+  return v;
 }
 
 // Wortabgleich mit Toleranz für Beugung: exakt / solider Teilstring /
@@ -1896,6 +1935,251 @@ function renderCourseWordMC(session) {
 
       document.getElementById('mc-fb').innerHTML = `
         ${courseFeedbackHtml(isCorrect, card, '', answerText(session, card))}
+        <div class="actions" style="margin-top:14px">
+          <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+        </div>
+      `;
+      document.getElementById('courseNext').addEventListener('click', showCourseStep);
+    });
+  });
+}
+
+// Übungs-Variante „Vergleich": Stimmt diese Übersetzung? (Passt / Passt nicht)
+function renderCourseCompare(session) {
+  const card = session.queue[0];
+  const lang = session.deck.language;
+  const alts = session.knownCards.filter(c => c.back !== card.back && c.front !== card.front);
+  const isMatch = alts.length === 0 || Math.random() < 0.5;
+  const other = isMatch ? card : alts[Math.floor(Math.random() * alts.length)];
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card">
+      ${courseBadge(`<i class="fas fa-scale-balanced"></i> Wörter üben — noch ${session.queue.length}`)}
+      <p class="prompt">Stimmt diese Übersetzung?</p>
+      <div class="comparison-card">
+        <span class="word word-source">${escHtml(promptText(session, card))}</span>
+        <i class="fas fa-arrow-right"></i>
+        <span class="word word-target">
+          ${escHtml(answerText(session, other))}
+          <button type="button" class="audio-btn" id="audioBtn" title="Aussprache anhören"><i class="fas fa-volume-up"></i></button>
+        </span>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="courseCompYes"><i class="fas fa-check"></i> Passt</button>
+        <button type="button" class="btn btn-secondary" id="courseCompNo"><i class="fas fa-times"></i> Passt nicht</button>
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentPrompt = { card, isMatch };
+  setCurrentSession(session);
+  document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
+
+  const answer = says => {
+    const isCorrect = says === isMatch;
+    document.getElementById('courseCompYes').disabled = true;
+    document.getElementById('courseCompNo').disabled = true;
+    session.currentPrompt = null;
+    courseGrade(session, card, isCorrect);
+    if (isCorrect) speakWord(card.back, lang);
+    document.getElementById('mc-fb').innerHTML = `
+      ${courseFeedbackHtml(isCorrect, card, `<p class="listen-reveal">${escHtml(promptText(session, card))} → <b>${escHtml(answerText(session, card))}</b></p>`, answerText(session, card))}
+      <div class="actions" style="margin-top:14px">
+        <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+      </div>
+    `;
+    document.getElementById('courseNext').addEventListener('click', showCourseStep);
+  };
+  document.getElementById('courseCompYes').addEventListener('click', () => answer(true));
+  document.getElementById('courseCompNo').addEventListener('click', () => answer(false));
+}
+
+// Phase 5: SCHREIBEN — ein paar Wörter der Lektion selbst tippen
+// (tolerant wie der frühere Tippen-Modus).
+function renderCourseWrite(session) {
+  const card = session.queue[0];
+  const lang = session.deck.language;
+  const expected = answerText(session, card);
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card typing-card">
+      ${courseBadge(`<i class="fas fa-keyboard"></i> Schreiben — noch ${session.queue.length}`)}
+      <p class="fc-label">${promptLabel(session)}</p>
+      <div class="fc-word">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
+      <p class="prompt">Schreibe die Übersetzung (${answerLabel(session)}):</p>
+      <input type="text" id="courseTypeInput" class="input typing-input" autocomplete="off"
+        autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done">
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="courseTypeCheck">Prüfen</button>
+        <button type="button" class="btn" id="courseTypeReveal">Aufdecken</button>
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentPrompt = { card };
+  setCurrentSession(session);
+  wirePromptAudio(session, card);
+
+  const input = document.getElementById('courseTypeInput');
+  input.focus();
+  const doCheck = revealed => {
+    if (!session.currentPrompt) return;
+    const guess = input.value || '';
+    if (!revealed && normAnswer(guess) === '') { input.focus(); return; }
+    const isCorrect = !revealed && (
+      normAnswer(guess) === normAnswer(expected) ||
+      (!isReverse(session.deck) && card.roman && normAnswer(guess) === normAnswer(card.roman))
+    );
+    input.disabled = true;
+    document.getElementById('courseTypeCheck')?.setAttribute('disabled', '');
+    document.getElementById('courseTypeReveal')?.setAttribute('disabled', '');
+    session.currentPrompt = null;
+    courseGrade(session, card, isCorrect);
+    speakWord(card.back, lang);
+    document.getElementById('mc-fb').innerHTML = `
+      ${courseFeedbackHtml(isCorrect, card, '', expected)}
+      <div class="actions" style="margin-top:14px">
+        <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+      </div>
+    `;
+    document.getElementById('courseNext').addEventListener('click', showCourseStep);
+  };
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') doCheck(false); });
+  document.getElementById('courseTypeCheck').addEventListener('click', () => doCheck(false));
+  document.getElementById('courseTypeReveal').addEventListener('click', () => doCheck(true));
+}
+
+// Satz-Variante „Satzbau": den Beispielsatz aus Kacheln zusammensetzen
+// (bei Latein: die deutsche Übersetzung zur lateinischen Vorlage).
+function renderCourseBuild(session) {
+  const card = session.queue[0];
+  const lang = session.deck.language;
+  const rev = isReverse(session.deck);
+  const tokens = (rev ? card.exampleDE : card.example).trim().split(/\s+/);
+  const order = shuffleArray(tokens.map((_, i) => i));
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card build-card">
+      ${courseBadge(`<i class="fas fa-comment-dots"></i> Sätze üben — noch ${session.queue.length}`)}
+      <p class="build-src">„${escHtml(rev ? card.example : card.exampleDE)}"</p>
+      <p class="prompt">${rev ? 'Setze die deutsche Übersetzung zusammen:' : 'Setze den Satz zusammen:'}</p>
+      <div class="build-answer" id="courseBuildAnswer" aria-label="Deine Antwort"></div>
+      <div class="build-pool" id="courseBuildPool">
+        ${order.map(i => `<button type="button" class="build-tile" data-i="${i}">${escHtml(tokens[i])}</button>`).join('')}
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="courseBuildCheck" disabled>Prüfen</button>
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  const placed = [];
+  session.currentPrompt = { card, tokens };
+  setCurrentSession(session);
+  const pool = document.getElementById('courseBuildPool');
+  const answerEl = document.getElementById('courseBuildAnswer');
+  const checkBtn = document.getElementById('courseBuildCheck');
+
+  pool.addEventListener('click', e => {
+    const tile = e.target.closest('.build-tile');
+    if (!tile || tile.disabled) return;
+    tile.disabled = true;
+    tile.classList.add('build-tile--used');
+    placed.push(Number(tile.dataset.i));
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'build-tile build-tile--placed';
+    chip.dataset.i = tile.dataset.i;
+    chip.textContent = tokens[Number(tile.dataset.i)];
+    answerEl.appendChild(chip);
+    checkBtn.disabled = placed.length !== tokens.length;
+  });
+  answerEl.addEventListener('click', e => {
+    const chip = e.target.closest('.build-tile--placed');
+    if (!chip) return;
+    const i = Number(chip.dataset.i);
+    placed.splice(placed.indexOf(i), 1);
+    chip.remove();
+    const orig = pool.querySelector(`.build-tile[data-i="${i}"]`);
+    if (orig) { orig.disabled = false; orig.classList.remove('build-tile--used'); }
+    checkBtn.disabled = placed.length !== tokens.length;
+  });
+
+  checkBtn.addEventListener('click', () => {
+    const built = placed.map(i => tokens[i]).join(' ');
+    const isCorrect = built === tokens.join(' ');
+    checkBtn.disabled = true;
+    document.querySelectorAll('.build-tile').forEach(t => (t.disabled = true));
+    session.currentPrompt = null;
+    courseGrade(session, card, isCorrect);
+    if (isCorrect) speakWord(card.example, lang);
+    document.getElementById('mc-fb').innerHTML = `
+      ${isCorrect
+        ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
+        : `<div class="incorrect" style="margin-top:14px"><p>❌ Nicht ganz — richtig wäre:</p><p style="margin-top:6px"><b>${escHtml(rev ? card.exampleDE : card.example)}</b></p><p style="color:var(--gray);font-size:.85rem">Kommt gleich nochmal.</p></div>`}
+      <div class="actions" style="margin-top:14px">
+        <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+      </div>
+    `;
+    document.getElementById('courseNext').addEventListener('click', showCourseStep);
+  });
+}
+
+// Satz-Variante „Bedeutung": Satz lesen/hören → deutsche Bedeutung wählen.
+function renderCourseMeaning(session) {
+  const card = session.queue[0];
+  const lang = session.deck.language;
+  const alts = shuffleArray(session.knownCards.filter(c => c.exampleDE && c.exampleDE !== card.exampleDE)).slice(0, 3);
+  const options = shuffleArray([
+    { text: card.exampleDE, correct: true },
+    ...alts.map(c => ({ text: c.exampleDE, correct: false })),
+  ]);
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card story-card">
+      ${courseBadge(`<i class="fas fa-comment-dots"></i> Sätze üben — noch ${session.queue.length}`)}
+      <p class="story-sent">
+        ${escHtml(card.example)}
+        <button type="button" class="audio-btn" id="storyAudio" title="Anhören"><i class="fas fa-volume-up"></i></button>
+      </p>
+      <p class="prompt">Was bedeutet dieser Satz?</p>
+      <div class="mc-options">
+        ${options.map((o, i) => `
+          <button type="button" class="mc-option" data-idx="${i}">
+            <span class="mc-key">${String.fromCharCode(65 + i)}</span>
+            <span class="mc-text">${escHtml(o.text)}</span>
+          </button>`).join('')}
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentPrompt = { card, options };
+  setCurrentSession(session);
+  speakWord(card.example, lang);
+  document.getElementById('storyAudio').addEventListener('click', () => speakWord(card.example, lang));
+
+  learnArea.querySelectorAll('.mc-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = Number(btn.dataset.idx);
+      const correctIdx = options.findIndex(o => o.correct);
+      const isCorrect = idx === correctIdx;
+      document.querySelectorAll('.mc-option').forEach((b, i) => {
+        b.disabled = true;
+        if (i === correctIdx) b.classList.add('mc-correct');
+        else if (i === idx) b.classList.add('mc-wrong');
+      });
+      session.currentPrompt = null;
+      courseGrade(session, card, isCorrect);
+      document.getElementById('mc-fb').innerHTML = `
+        ${courseFeedbackHtml(isCorrect, card, '', card.exampleDE)}
         <div class="actions" style="margin-top:14px">
           <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
         </div>
