@@ -565,6 +565,51 @@ check('Kapitel-Reader zeigt Inhalt mit Tabellen',
   await page.evaluate(() => !!document.querySelector('#grammarReader .gr-table')));
 await page.evaluate(() => document.getElementById('grammarBackBtn').click()); await page.waitForTimeout(250);
 
+// ── Lernkurs-Durchlauf: Häppchen → Hören → Üben → Sprechen → Ende ──
+// Restliche Grammatik-Kapitel als gelesen markieren, dann die komplette
+// Lektion 1 automatisch durchspielen (immer richtig antworten).
+await page.evaluate(async () => {
+  const g = await import('/core/grammar.js');
+  const { grammar } = await import('/js/data/grammar/da.js');
+  grammar.forEach(ch => g.markChapterRead('basic-da', ch.id));
+  window.__phases = [];
+});
+await click('#startBtn'); await page.waitForTimeout(700);
+let courseEnd = null;
+for (let i = 0; i < 500 && !courseEnd; i++) {
+  courseEnd = await page.evaluate(async () => {
+    const st = (await import('/core/state.js')).getCurrentSession();
+    if (!st || st.mode !== 'course') {
+      return document.getElementById('learnArea').textContent.includes('geschafft') ? 'done' : 'gone';
+    }
+    if (!window.__phases.includes(st.phase)) window.__phases.push(st.phase);
+    const next = document.getElementById('courseNext');
+    if (next) { next.click(); return null; }        // Kennenlernen / Feedback
+    if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return null; }
+    const card = st.queue[0];
+    const opts = [...document.querySelectorAll('.mc-option')];
+    if (opts.length && card) {
+      const answer = st.phase === 'listen' ? card.front : card.back;
+      const idx = opts.findIndex(o => o.querySelector('.mc-text')?.textContent.trim() === answer);
+      opts[idx >= 0 ? idx : 0].click();
+    }
+    return null;
+  });
+  await page.waitForTimeout(120);
+}
+const coursePhases = await page.evaluate(async () => ({
+  phases: window.__phases,
+  introduced: (await import('/core/course.js')).getCourseState('basic-da').introduced,
+}));
+check('Lektion komplett: 2er-Häppchen mit Hören & Sprechen integriert',
+  courseEnd === 'done'
+    && ['teach', 'listen', 'words', 'speak'].every(p => coursePhases.phases.includes(p))
+    && coursePhases.phases.indexOf('listen') > coursePhases.phases.indexOf('teach')
+    && coursePhases.phases.indexOf('speak') > coursePhases.phases.indexOf('words')
+    && coursePhases.introduced > 0,
+  JSON.stringify({ courseEnd, ...coursePhases }));
+await click('#sessionBackBtn'); await page.waitForTimeout(300);
+
 // ── Latein: Abfragerichtung Latein→Deutsch + klassische Aussprache ──
 const laPron = await page.evaluate(async () => {
   const { latinPron } = await import('/utils/speech.js');

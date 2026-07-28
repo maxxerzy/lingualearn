@@ -1467,9 +1467,23 @@ function renderGrammarPage() {
 }
 
 // ── LERNKURS-MODUS (Basic101) ────────────────────────────────────
-// Drei Phasen pro Lektion: Kennenlernen → Wörter üben → Sätze üben.
-// Der Fortschritt (welche Wörter schon eingeführt wurden) wird pro
-// Account in core/course.js gespeichert.
+// Wirklich Schritt für Schritt: Die Lektion wird in 2er-HÄPPCHEN
+// eingeführt — kennenlernen → HÖREN → üben, dann erst das nächste
+// Häppchen. Am Ende eine SPRECH-Runde über alle neuen Wörter und die
+// Satz-Phase. Hören und Sprechen sind damit fest in jeder Lektion.
+// Der Fortschritt wird pro Account in core/course.js gespeichert.
+
+const COURSE_CHUNK = 2;
+function chunkLesson(cards) {
+  const chunks = [];
+  for (let i = 0; i < cards.length; i += COURSE_CHUNK) chunks.push(cards.slice(i, i + COURSE_CHUNK));
+  // Kein einsames Einzelwort am Schluss — ans vorige Häppchen anhängen.
+  if (chunks.length > 1 && chunks[chunks.length - 1].length === 1) {
+    const last = chunks.pop();
+    chunks[chunks.length - 1] = [...chunks[chunks.length - 1], ...last];
+  }
+  return chunks;
+}
 
 function startCourseLesson(deck, deckId) {
   const lessonCards = nextLessonCards(deckId, deck.cards);
@@ -1484,7 +1498,7 @@ function startCourseLesson(deck, deckId) {
     return;
   }
 
-  // Bereits gelernter Wortschatz (bisherige Lektionen + die 8 dieser Lektion).
+  // Bereits gelernter Wortschatz (bisherige Lektionen + die dieser Lektion).
   const introducedStart = getCourseState(deckId).introduced;
   const knownCards = deck.cards.slice(0, introducedStart + lessonCards.length);
 
@@ -1495,13 +1509,15 @@ function startCourseLesson(deck, deckId) {
     lesson: lessonNumber(deckId),
     lessonCards,
     knownCards,
-    phase: 'teach',          // teach → words → sentences
-    teachIndex: 0,
+    phase: 'teach',          // je Häppchen: teach → listen → words; dann speak → sentences
+    chunks: chunkLesson(lessonCards),
+    chunkIdx: 0,
+    teachPos: 0,
     queue: [],
     sentencesCompleted: [],
     currentPrompt: null,
     currentIndex: 0,                       // erledigte Schritte (für Fortschrittsbalken)
-    totalCards: lessonCards.length * 2,    // Kennenlernen + Wörter (Sätze kommen dynamisch dazu)
+    totalCards: lessonCards.length * 4,    // Kennenlernen + Hören + Üben + Sprechen (Sätze dynamisch)
     correctAnswers: 0,
     gradedAnswers: 0,
     combo: 0,
@@ -1518,10 +1534,12 @@ function showCourseStep() {
   const session = getCurrentSession();
   if (!session) return;
 
+  // Häppchen-Schleife: 2 Wörter kennenlernen → hören → üben.
   if (session.phase === 'teach') {
-    if (session.teachIndex >= session.lessonCards.length) {
-      session.phase = 'words';
-      session.queue = shuffleArray([...session.lessonCards]);
+    const chunk = session.chunks[session.chunkIdx];
+    if (session.teachPos >= chunk.length) {
+      session.phase = 'listen';
+      session.queue = shuffleArray([...chunk]);
       setCurrentSession(session);
     } else {
       renderCourseTeach(session);
@@ -1529,17 +1547,49 @@ function showCourseStep() {
     }
   }
 
+  if (session.phase === 'listen') {
+    if (session.queue.length === 0) {
+      session.phase = 'words';
+      session.queue = shuffleArray([...session.chunks[session.chunkIdx]]);
+      setCurrentSession(session);
+    } else {
+      renderCourseListen(session);
+      return;
+    }
+  }
+
   if (session.phase === 'words') {
+    if (session.queue.length === 0) {
+      if (session.chunkIdx < session.chunks.length - 1) {
+        // Nächstes 2er-Häppchen kennenlernen.
+        session.chunkIdx++;
+        session.teachPos = 0;
+        session.phase = 'teach';
+        setCurrentSession(session);
+        showCourseStep();
+        return;
+      }
+      // Alle Häppchen durch → Sprech-Runde über die ganze Lektion.
+      session.phase = 'speak';
+      session.queue = shuffleArray([...session.lessonCards]);
+      setCurrentSession(session);
+    } else {
+      renderCourseWordMC(session);
+      return;
+    }
+  }
+
+  if (session.phase === 'speak') {
     if (session.queue.length === 0) {
       // Übergang zur Satz-Phase: nur Sätze aufnehmen, deren Wörter ALLE
       // schon gelernt sind (echtes Basic 101 — keine unbekannten Wörter).
       session.phase = 'sentences';
       session.queue = collectUnlockedSentences(session);
-      session.totalCards = session.lessonCards.length * 2 + session.queue.length;
+      session.totalCards = session.lessonCards.length * 4 + session.queue.length;
       setCurrentSession(session);
       updateProgress();
     } else {
-      renderCourseWordMC(session);
+      renderCourseSpeak(session);
       return;
     }
   }
@@ -1605,7 +1655,11 @@ function courseBadge(text) {
 
 // Phase 1: Neues Wort vorstellen — ohne Abfrage, nur kennenlernen.
 function renderCourseTeach(session) {
-  const card = session.lessonCards[session.teachIndex];
+  const chunk = session.chunks[session.chunkIdx];
+  const card = chunk[session.teachPos];
+  let wordsBefore = 0;
+  for (let k = 0; k < session.chunkIdx; k++) wordsBefore += session.chunks[k].length;
+  const wordNum = wordsBefore + session.teachPos + 1;
   const lang = session.deck.language;
   const learnArea = document.getElementById('learnArea');
 
@@ -1621,7 +1675,7 @@ function renderCourseTeach(session) {
         </button>`;
   learnArea.innerHTML = `
     <div class="course-teach">
-      ${courseBadge(`<i class="fas fa-lightbulb"></i> Neues Wort ${session.teachIndex + 1}/${session.lessonCards.length}`)}
+      ${courseBadge(`<i class="fas fa-lightbulb"></i> Neues Wort ${wordNum}/${session.lessonCards.length}`)}
       <p class="fc-label">${promptLabel(session)}</p>
       <div class="fc-word fc-word-source">${escHtml(promptText(session, card))}${isReverse(session.deck) ? audioBtnHtml : ''}</div>
       <div class="fc-arrow"><i class="fas fa-arrow-down"></i></div>
@@ -1648,12 +1702,141 @@ function renderCourseTeach(session) {
   speakWord(card.back, lang);
   document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
   document.getElementById('courseNext').addEventListener('click', () => {
-    session.teachIndex++;
+    session.teachPos++;
     session.currentIndex++;
     setCurrentSession(session);
     updateProgress();
     showCourseStep();
   });
+}
+
+// Phase 2 (je Häppchen): HÖREN — das gehörte Wort seiner deutschen
+// Bedeutung zuordnen. Autoplay + Wiederholen auf Knopfdruck.
+function renderCourseListen(session) {
+  const card = session.queue[0];
+  const lang = session.deck.language;
+  const options = buildMCOptions(card, session.knownCards);
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card listen-card">
+      ${courseBadge(`<i class="fas fa-headphones"></i> Hören — noch ${session.queue.length}`)}
+      <button type="button" class="listen-play" id="listenPlay" title="Nochmal abspielen">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <p class="prompt">Was bedeutet das gehörte Wort?</p>
+      ${mcOptionsMarkup(options, { textOf: o => o.front })}
+    </div>
+  `;
+
+  speakWord(card.back, lang);
+  document.getElementById('listenPlay').addEventListener('click', () => speakWord(card.back, lang));
+
+  learnArea.querySelectorAll('.mc-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const { isCorrect } = markMcAnswer(options, Number(btn.dataset.idx), card);
+      courseGrade(session, card, isCorrect);
+      document.getElementById('mc-fb').innerHTML = `
+        ${courseFeedbackHtml(isCorrect, card, `<p class="listen-reveal">${escHtml(card.back)} — <b>${escHtml(card.front)}</b></p>`, card.front)}
+        <div class="actions" style="margin-top:14px">
+          <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+        </div>
+      `;
+      document.getElementById('courseNext').addEventListener('click', showCourseStep);
+    });
+  });
+}
+
+// Phase 4: SPRECHEN — jedes neue Wort einmal laut aussprechen. Mit
+// Web-Speech-Erkennung, wo verfügbar; sonst Referenz-Audio + ehrliche
+// Selbsteinschätzung (z. B. auf iOS).
+function renderCourseSpeak(session) {
+  const card = session.queue[0];
+  const lang = session.deck.language;
+  const SR = speechRecognitionCtor();
+  const pron = [];
+  if (card.roman) pron.push(escHtml(card.roman));
+  if (card.ipa) pron.push('/' + escHtml(card.ipa) + '/');
+  if (lang === 'la') pron.push(`gesprochen: „${escHtml(latinPron(card.back))}"`);
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card speak-card">
+      ${courseBadge(`<i class="fas fa-microphone"></i> Sprechen — noch ${session.queue.length}`)}
+      <div class="fc-word fc-word-target">
+        ${escHtml(card.back)}
+        <button type="button" class="audio-btn" id="speakListen" title="Anhören"><i class="fas fa-volume-up"></i></button>
+      </div>
+      <p class="fc-example-de" style="margin:2px 0 6px">${escHtml(card.front)}</p>
+      ${pron.length ? `<p class="course-pron">${pron.join(' · ')}</p>` : ''}
+      <p class="prompt">Hör zu und sprich das Wort laut nach${SR ? ' — ich höre zu' : ''}:</p>
+      ${SR ? `<div class="actions">
+        <button type="button" class="btn btn-primary" id="courseSpeakRec"><i class="fas fa-microphone"></i> Aufnehmen</button>
+      </div>` : ''}
+      <div class="actions" style="margin-top:8px">
+        <button type="button" class="btn ${SR ? '' : 'btn-good'}" id="courseSpeakOk"><i class="fas fa-check"></i> Hat geklappt</button>
+        <button type="button" class="btn" id="courseSpeakRetry"><i class="fas fa-rotate-left"></i> Nochmal üben</button>
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  speakWord(card.back, lang);
+  document.getElementById('speakListen').addEventListener('click', () => speakWord(card.back, lang));
+
+  // Genau EIN Abschluss pro Karte — egal ob per Knopf oder Erkennung.
+  // Ohne diesen Riegel könnte ein Klick während des Auto-Weiter-Fensters
+  // dieselbe Karte doppelt werten und die nächste ungeübt überspringen.
+  let settled = false;
+  let activeRec = null;
+  const finish = ok => {
+    if (settled) return;
+    settled = true;
+    if (quizTimeout) { clearTimeout(quizTimeout); quizTimeout = null; }
+    try { activeRec?.abort(); } catch { /* Erkennung lief nicht mehr */ }
+    const st = getCurrentSession();
+    if (!st || st.mode !== 'course' || st.phase !== 'speak') return;
+    courseGrade(session, card, ok);
+    showCourseStep();
+  };
+  document.getElementById('courseSpeakOk').addEventListener('click', () => finish(true));
+  document.getElementById('courseSpeakRetry').addEventListener('click', () => finish(false));
+
+  if (SR) {
+    document.getElementById('courseSpeakRec').addEventListener('click', () => {
+      if (settled) return;
+      const btn = document.getElementById('courseSpeakRec');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-microphone-lines"></i> Ich höre …';
+      let done = false;
+      const rec = new SR();
+      activeRec = rec;
+      rec.lang = lang === 'la' ? 'de-DE' : getLangCode(lang);
+      rec.interimResults = false;
+      rec.maxAlternatives = 3;
+      const finishRec = (ok, heard) => {
+        if (done || settled) return;
+        done = true;
+        const fb = document.getElementById('mc-fb');
+        if (fb) fb.innerHTML = ok
+          ? `<div class="correct" style="margin-top:10px"><p>✅ Klang gut${heard ? ` — gehört: „${escHtml(heard)}"` : ''}!</p></div>`
+          : `<div class="incorrect" style="margin-top:10px"><p>🎤 ${heard ? `Gehört: „${escHtml(heard)}" — ` : ''}probier es gleich nochmal.</p></div>`;
+        quizTimeout = setTimeout(() => { quizTimeout = null; finish(ok); }, ok ? 700 : 1200);
+      };
+      rec.onresult = e => {
+        const alts = [...(e.results[0] || [])].map(a => a.transcript || '');
+        const target = normAnswer(lang === 'la' ? latinPron(card.back) : card.back);
+        const ok = alts.some(t => {
+          const h = normAnswer(t);
+          return h === target || h.includes(target) || (target.includes(h) && h.length >= 3);
+        });
+        finishRec(ok, alts[0] || '');
+      };
+      rec.onerror = () => { if (!done) { done = true; btn.disabled = false; btn.innerHTML = '<i class="fas fa-microphone"></i> Aufnehmen'; } };
+      rec.onend = () => { if (!done) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-microphone"></i> Aufnehmen'; } };
+      try { rec.start(); } catch { if (!done) { done = true; btn.disabled = false; } }
+    });
+  }
 }
 
 // Gemeinsame Auswertung für beide Übungsphasen.
