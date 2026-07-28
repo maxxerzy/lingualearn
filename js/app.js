@@ -115,6 +115,12 @@ function showApp() {
     document.getElementById('settingsBackBtn').addEventListener('click', () => activateView('learn'));
     document.getElementById('rewardsBackBtn').addEventListener('click', () => activateView('learn'));
 
+    // Shop direkt von der Hauptseite (Cosmetics & Abzeichen).
+    document.getElementById('shopBtn')?.addEventListener('click', () => {
+      activateView('rewards');
+      renderRewards();
+    });
+
     // Deck-Wechsel aktualisiert Fortschritt & Fällig-Zähler.
     // (Wort des Tages wird beim Öffnen des Overlays frisch gerendert.)
     document.getElementById('deckSelect').addEventListener('change', () => {

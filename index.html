@@ -90,7 +90,7 @@
               <i class="fas fa-trophy"></i> Arena
             </button>
             <button type="button" class="user-dropdown__item" data-action="rewards">
-              <i class="fas fa-gift"></i> Belohnungen
+              <i class="fas fa-store"></i> Shop
             </button>
             <button type="button" class="user-dropdown__item" data-action="dict">
               <i class="fas fa-book"></i> Wörterbuch
@@ -131,6 +131,9 @@
               <div class="config-head">
                 <h2>Lernsession</h2>
                 <div class="config-actions">
+                  <button type="button" class="config-icon-btn" id="shopBtn" title="Shop" aria-label="Shop">
+                    <i class="fas fa-store"></i>
+                  </button>
                   <button type="button" class="config-icon-btn" id="grammarBtn" title="Grammatik" aria-label="Grammatik">
                     <i class="fas fa-book-open"></i>
                   </button>
@@ -167,33 +170,15 @@
               </div>
               <div class="form-group">
                 <label>Modus</label>
+                <!-- Nur noch zwei Wege: der geführte Lernkurs (mit Hören,
+                     Sprechen, Tippen, Satzbau & Sätzen integriert) und freie
+                     Karteikarten-Wiederholung. -->
                 <div class="mode-tabs">
-                  <button type="button" class="mode-btn" data-mode="course">
+                  <button type="button" class="mode-btn active" data-mode="course">
                     <i class="fas fa-graduation-cap"></i> Lernkurs
                   </button>
-                  <button type="button" class="mode-btn active" data-mode="flashcard">
+                  <button type="button" class="mode-btn" data-mode="flashcard">
                     <i class="fas fa-clone"></i> Karteikarten
-                  </button>
-                  <button type="button" class="mode-btn" data-mode="multiplechoice">
-                    <i class="fas fa-list-ul"></i> Multiple Choice
-                  </button>
-                  <button type="button" class="mode-btn" data-mode="comparison">
-                    <i class="fas fa-scale-balanced"></i> Vergleich
-                  </button>
-                  <button type="button" class="mode-btn" data-mode="listen">
-                    <i class="fas fa-headphones"></i> Hören
-                  </button>
-                  <button type="button" class="mode-btn" data-mode="typing">
-                    <i class="fas fa-keyboard"></i> Tippen
-                  </button>
-                  <button type="button" class="mode-btn" data-mode="build">
-                    <i class="fas fa-puzzle-piece"></i> Satzbau
-                  </button>
-                  <button type="button" class="mode-btn" data-mode="speak">
-                    <i class="fas fa-microphone"></i> Sprechen
-                  </button>
-                  <button type="button" class="mode-btn" data-mode="story">
-                    <i class="fas fa-book-open"></i> Story
                   </button>
                 </div>
                 <div class="course-progress" id="courseProgress">
@@ -397,7 +382,7 @@
               <button type="button" class="btn-back" id="rewardsBackBtn">
                 <i class="fas fa-arrow-left"></i> Lernen
               </button>
-              <h2><i class="fas fa-gift"></i> Belohnungen</h2>
+              <h2><i class="fas fa-store"></i> Shop</h2>
             </div>
             <p style="color:var(--gray);margin-bottom:16px">Schalte Themes, Avatare, Titel und Karten-Designs frei, indem du lernst, Level aufsteigst und Serien hältst.</p>
             <div class="rewards-tabs" id="rewardsTabs">
@@ -531,7 +516,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v23';
+    var APP_VERSION = 'v24';
     var loginMode = 'login';
 
     function hp(pw) {
