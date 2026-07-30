@@ -239,6 +239,7 @@ const courseStep = () => page.evaluate(async () => {
   const next = document.getElementById('courseNext');
   if (next) { next.click(); return phase; }
   if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return phase; }
+  if (st.phase === 'talk') { document.getElementById('talkOk')?.click(); return phase; }
   const card = st.queue?.[0];
   const typeIn = document.getElementById('courseTypeInput');
   if (typeIn && card) {
@@ -285,7 +286,7 @@ for (let i = 0; i < 220 && state !== 'done' && state !== 'gone'; i++) {
   state = await courseStep();
   await page.waitForTimeout(140);
 }
-const PHASES = ['grammar', 'teach', 'listen', 'words', 'speak', 'write'];
+const PHASES = ['grammar', 'teach', 'listen', 'words', 'speak', 'write', 'talk'];
 const missing = PHASES.filter(p => !seen.has(p));
 check('Lernkurs komplett durchlaufen (alle Phasen erreicht)',
   state === 'done' && missing.length === 0, `state=${state} fehlend=${missing.join(',') || '—'}`);

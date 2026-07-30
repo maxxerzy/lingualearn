@@ -167,6 +167,27 @@ export function exitSession() {
   renderLearnWidgets();
 }
 
+// Beispielsatz mit Aussprache-Knopf rechts daneben. Der Knopf trägt den
+// Satz als data-Attribut; ein einziger Listener im Lernbereich spricht ihn.
+function exampleLine(sentence, { strong = true } = {}) {
+  const text = escHtml(sentence);
+  const inner = strong ? `<strong>${text}</strong>` : text;
+  return `<span class="ex-line">${inner}
+    <button type="button" class="audio-btn ex-audio" data-say="${text}" title="Satz anhören" aria-label="Satz anhören">
+      <i class="fas fa-volume-up"></i>
+    </button></span>`;
+}
+
+// Einmal pro Render aktivieren: alle Satz-Knöpfe im Lernbereich verdrahten.
+function wireExampleAudio(lang) {
+  document.querySelectorAll('#learnArea .ex-audio').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      speakWord(btn.dataset.say, lang);
+    });
+  });
+}
+
 // Kognat-Hinweis: verwandte Wörter merkt man sich leichter.
 function cognateChip(card) {
   if (!isCognate(card.front, card.back, card.roman)) return '';
@@ -356,7 +377,7 @@ function showFlashcardBack(card) {
       ${card.example ? `
         <div class="fc-example-block">
           <p class="fc-example${pron ? ' has-ipa' : ''}"${pron ? ' tabindex="0"' : ''}>
-            <strong>${escHtml(card.example)}</strong>
+            ${exampleLine(card.example)}
             ${pron ? `<span class="fc-ipa-tip" role="tooltip">
               <span class="fc-ipa-tip__word">${escHtml(card.back)}</span>${ipaMarkup}
             </span>` : ''}
@@ -384,6 +405,7 @@ function showFlashcardBack(card) {
   speakWord(card.back, lang);
 
   document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
+  wireExampleAudio(lang);
 
   // Touch devices have no hover — let a tap toggle the pronunciation tooltip.
   const exampleEl = learnArea.querySelector('.fc-example.has-ipa');
@@ -1475,6 +1497,30 @@ function renderGrammarPage() {
 // Satz-Phase. Hören und Sprechen sind damit fest in jeder Lektion.
 // Der Fortschritt wird pro Account in core/course.js gespeichert.
 
+// Konversations-Bausteine der Sprache (js/data/phrases/<code>.js).
+const phraseCache = {};
+async function loadPhrases(lang) {
+  if (phraseCache[lang]) return phraseCache[lang];
+  try {
+    const mod = await import(`../js/data/phrases/${lang}.js`);
+    phraseCache[lang] = mod.phrases || [];
+  } catch {
+    phraseCache[lang] = [];
+  }
+  return phraseCache[lang];
+}
+
+// Zwei Bausteine je Lektion, fortlaufend durch die Liste — so kommt man
+// vom ersten Tag an ins Sprechen und wiederholt später von vorn.
+function pickPhrases(list, lessonNum) {
+  if (!list.length) return [];
+  const per = 2;
+  const start = ((lessonNum - 1) * per) % list.length;
+  const out = [];
+  for (let i = 0; i < Math.min(per, list.length); i++) out.push(list[(start + i) % list.length]);
+  return out;
+}
+
 const COURSE_CHUNK = 2;
 function chunkLesson(cards) {
   const chunks = [];
@@ -1487,7 +1533,7 @@ function chunkLesson(cards) {
   return chunks;
 }
 
-function startCourseLesson(deck, deckId) {
+async function startCourseLesson(deck, deckId) {
   const lessonCards = nextLessonCards(deckId, deck.cards);
 
   if (lessonCards.length === 0) {
@@ -1503,6 +1549,8 @@ function startCourseLesson(deck, deckId) {
   // Bereits gelernter Wortschatz (bisherige Lektionen + die dieser Lektion).
   const introducedStart = getCourseState(deckId).introduced;
   const knownCards = deck.cards.slice(0, introducedStart + lessonCards.length);
+  // Konversations-Bausteine dieser Lektion (schnell ins Sprechen kommen).
+  const talkCards = pickPhrases(await loadPhrases(deck.language), lessonNumber(deckId));
 
   const session = {
     deck,
@@ -1511,6 +1559,7 @@ function startCourseLesson(deck, deckId) {
     lesson: lessonNumber(deckId),
     lessonCards,
     knownCards,
+    talkCards,
     phase: 'teach',          // je Häppchen: teach → listen → words; dann speak → sentences
     chunks: chunkLesson(lessonCards),
     chunkIdx: 0,
@@ -1519,7 +1568,7 @@ function startCourseLesson(deck, deckId) {
     sentencesCompleted: [],
     currentPrompt: null,
     currentIndex: 0,                       // erledigte Schritte (für Fortschrittsbalken)
-    totalCards: lessonCards.length * 4,    // Kennenlernen + Hören + Üben + Sprechen (Sätze dynamisch)
+    totalCards: lessonCards.length * 4 + talkCards.length,   // + Konversation (Sätze dynamisch)
     correctAnswers: 0,
     gradedAnswers: 0,
     combo: 0,
@@ -1600,16 +1649,29 @@ function showCourseStep() {
 
   if (session.phase === 'write') {
     if (session.queue.length === 0) {
+      // Konversation: echte Alltagswendungen hören und nachsprechen.
+      session.phase = 'talk';
+      session.queue = [...(session.talkCards || [])];
+      setCurrentSession(session);
+    } else {
+      renderCourseWrite(session);
+      return;
+    }
+  }
+
+  if (session.phase === 'talk') {
+    if (session.queue.length === 0) {
       // Übergang zur Satz-Phase: nur Sätze aufnehmen, deren Wörter ALLE
       // schon gelernt sind (echtes Basic 101 — keine unbekannten Wörter).
       session.phase = 'sentences';
       session.queue = collectUnlockedSentences(session);
       session.sentOrder = session.queue.map(c => c.front);
-      session.totalCards = session.lessonCards.length * 4 + (session.writeCount || 0) + session.queue.length;
+      session.totalCards = session.lessonCards.length * 4 + (session.writeCount || 0)
+        + (session.talkCards?.length || 0) + session.queue.length;
       setCurrentSession(session);
       updateProgress();
     } else {
-      renderCourseWrite(session);
+      renderCourseTalk(session);
       return;
     }
   }
@@ -1728,7 +1790,7 @@ function renderCourseTeach(session) {
       ${cognateChip(card)}
       ${card.example ? `
         <div class="fc-example-block">
-          <p class="fc-example"><strong>${escHtml(card.example)}</strong></p>
+          <p class="fc-example">${exampleLine(card.example)}</p>
           ${card.exampleDE ? `<p class="fc-example-de">${escHtml(card.exampleDE)}</p>` : ''}
         </div>
       ` : ''}
@@ -1742,6 +1804,7 @@ function renderCourseTeach(session) {
 
   speakWord(card.back, lang);
   document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
+  wireExampleAudio(lang);
   document.getElementById('courseNext').addEventListener('click', () => {
     session.teachPos++;
     session.currentIndex++;
@@ -2055,6 +2118,127 @@ function renderCourseWrite(session) {
   document.getElementById('courseTypeReveal').addEventListener('click', () => doCheck(true));
 }
 
+// Phase „Konversation": eine echte Alltagswendung hören, verstehen und
+// laut nachsprechen — inklusive typischer Antwort des Gegenübers, damit
+// man den Baustein sofort in einem Mini-Dialog erlebt.
+function renderCourseTalk(session) {
+  const phrase = session.queue[0];
+  const lang = session.deck.language;
+  const SR = speechRecognitionCtor();
+  const learnArea = document.getElementById('learnArea');
+
+  const pron = [];
+  if (phrase.roman) pron.push(escHtml(phrase.roman));
+  if (lang === 'la') pron.push(`gesprochen: „${escHtml(latinPron(phrase.target))}"`);
+
+  learnArea.innerHTML = `
+    <div class="mc-card talk-card">
+      ${courseBadge(`<i class="fas fa-comments"></i> Konversation — noch ${session.queue.length}`)}
+      <p class="fc-label">${escHtml(phrase.de)}</p>
+      <div class="talk-bubble talk-bubble--you">
+        <span class="talk-bubble__text">${escHtml(phrase.target)}</span>
+        <button type="button" class="audio-btn" id="talkSay" title="Anhören"><i class="fas fa-volume-up"></i></button>
+      </div>
+      ${pron.length ? `<p class="course-pron">${pron.join(' · ')}</p>` : ''}
+      ${phrase.reply ? `
+        <div class="talk-bubble talk-bubble--other">
+          <span class="talk-bubble__text">${escHtml(phrase.reply)}</span>
+          <button type="button" class="audio-btn" id="talkReply" title="Antwort anhören"><i class="fas fa-volume-up"></i></button>
+        </div>
+        <p class="talk-reply-de">${escHtml(phrase.replyDe || '')}</p>` : ''}
+      ${phrase.hint ? `<p class="talk-hint"><i class="fas fa-lightbulb"></i> ${escHtml(phrase.hint)}</p>` : ''}
+      <p class="prompt">Sprich die Wendung laut nach${SR ? ' — ich höre zu' : ''}:</p>
+      ${SR ? `<div class="actions">
+        <button type="button" class="btn btn-primary" id="talkRec"><i class="fas fa-microphone"></i> Aufnehmen</button>
+      </div>` : ''}
+      <div class="actions" style="margin-top:8px">
+        <button type="button" class="btn ${SR ? '' : 'btn-good'}" id="talkOk"><i class="fas fa-check"></i> Hat geklappt</button>
+        <button type="button" class="btn" id="talkAgain"><i class="fas fa-rotate-left"></i> Nochmal hören</button>
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  const sayPhrase = () => speakWord(phrase.target, lang);
+  sayPhrase();
+  document.getElementById('talkSay').addEventListener('click', sayPhrase);
+  document.getElementById('talkReply')?.addEventListener('click', () => speakWord(phrase.reply, lang));
+  document.getElementById('talkAgain').addEventListener('click', sayPhrase);
+
+  // Genau ein Abschluss pro Baustein (wie in der Sprech-Runde).
+  let settled = false;
+  let activeRec = null;
+  const finish = () => {
+    if (settled) return;
+    settled = true;
+    if (quizTimeout) { clearTimeout(quizTimeout); quizTimeout = null; }
+    try { activeRec?.abort(); } catch { /* lief nicht mehr */ }
+    const st = getCurrentSession();
+    if (!st || st.mode !== 'course' || st.phase !== 'talk') return;
+    talkGrade(session);
+    showCourseStep();
+  };
+  document.getElementById('talkOk').addEventListener('click', finish);
+
+  if (SR) {
+    document.getElementById('talkRec').addEventListener('click', () => {
+      if (settled) return;
+      const btn = document.getElementById('talkRec');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-microphone-lines"></i> Ich höre …';
+      let done = false;
+      const rec = new SR();
+      activeRec = rec;
+      rec.lang = lang === 'la' ? 'de-DE' : getLangCode(lang);
+      rec.interimResults = false;
+      rec.maxAlternatives = 3;
+      const settle = (ok, heard) => {
+        if (done || settled) return;
+        done = true;
+        const fb = document.getElementById('mc-fb');
+        if (fb) fb.innerHTML = ok
+          ? `<div class="correct" style="margin-top:10px"><p>✅ Sehr gut${heard ? ` — gehört: „${escHtml(heard)}"` : ''}!</p></div>`
+          : `<div class="incorrect" style="margin-top:10px"><p>🎤 ${heard ? `Gehört: „${escHtml(heard)}" — ` : ''}hör noch einmal hin und sprich nach.</p></div>`;
+        if (ok) quizTimeout = setTimeout(() => { quizTimeout = null; finish(); }, 800);
+        else { btn.disabled = false; btn.innerHTML = '<i class="fas fa-microphone"></i> Nochmal aufnehmen'; }
+      };
+      rec.onresult = e => {
+        const alts = [...(e.results[0] || [])].map(a => a.transcript || '');
+        const target = normAnswer(lang === 'la' ? latinPron(phrase.target) : (phrase.roman || phrase.target));
+        const ok = alts.some(t => {
+          const h = normAnswer(t);
+          if (!h) return false;
+          if (h === target || target.includes(h) || h.includes(target)) return true;
+          // Teiltreffer: die Hälfte der Wörter genügt für ein „gut gemacht".
+          const words = target.split(' ').filter(w => w.length > 2);
+          const hit = words.filter(w => h.includes(w)).length;
+          return words.length > 0 && hit >= Math.ceil(words.length / 2);
+        });
+        settle(ok, alts[0] || '');
+      };
+      rec.onerror = () => { if (!done) { done = true; btn.disabled = false; btn.innerHTML = '<i class="fas fa-microphone"></i> Aufnehmen'; } };
+      rec.onend = () => { if (!done) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-microphone"></i> Aufnehmen'; } };
+      try { rec.start(); } catch { if (!done) { done = true; btn.disabled = false; } }
+    });
+  }
+}
+
+// Konversations-Bausteine sind keine Deck-Vokabeln — sie zählen für den
+// Fortschritt und XP, aber nicht für den Karten-Lernstand (SRS).
+function talkGrade(session) {
+  session.queue.shift();
+  session.currentIndex++;
+  session.correctAnswers++;
+  session.gradedAnswers++;
+  const { gained } = recordGameAnswer(true, { boost: !!session.boosted });
+  session.xpFromAnswers = (session.xpFromAnswers || 0) + gained;
+  setCurrentSession(session);
+  renderGamiHeader();
+  renderLearnWidgets();
+  announceUnlocks();
+  updateProgress();
+}
+
 // Satz-Variante „Satzbau": den Beispielsatz aus Kacheln zusammensetzen
 // (bei Latein: die deutsche Übersetzung zur lateinischen Vorlage).
 function renderCourseBuild(session) {
@@ -2263,7 +2447,7 @@ function renderCourseGapFill(session) {
       courseGrade(session, card, isCorrect);
 
       const extra = `
-        <p class="fc-example" style="margin-top:10px"><strong>${escHtml(card.example || '')}</strong></p>
+        <p class="fc-example" style="margin-top:10px">${card.example ? exampleLine(card.example) : ''}</p>
         ${card.exampleDE ? `<p class="fc-example-de">${escHtml(card.exampleDE)}</p>` : ''}`;
       document.getElementById('mc-fb').innerHTML = `
         ${courseFeedbackHtml(isCorrect, card, extra)}
@@ -2271,6 +2455,7 @@ function renderCourseGapFill(session) {
           <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
         </div>
       `;
+      wireExampleAudio(lang);
       document.getElementById('courseNext').addEventListener('click', showCourseStep);
     });
   });

@@ -11,6 +11,17 @@ import { clearErrors } from '../core/errorLog.js';
 import { getDecks } from '../core/state.js';
 import { syncNow, getLastSync } from '../core/sync.js';
 import { getCurrentUser } from '../core/auth.js';
+import { getSpeechRate, setSpeechRate, rateLabel, speak } from '../utils/speech.js';
+
+// Hörprobe im aktuell gewählten Deck — so hört man das Tempo dort,
+// wo man es später braucht.
+function speakSample() {
+  const deckId = document.getElementById('deckSelect')?.value;
+  const deck = getDecks()[deckId];
+  const lang = deck?.language || 'da';
+  const card = deck?.cards?.find(c => c.example) || deck?.cards?.[0];
+  speak(card?.example || card?.back || 'Hallo', lang);
+}
 
 // Status der Geräte-Synchronisation anzeigen.
 const SYNC_TEXT = {
@@ -76,6 +87,23 @@ export function initSettings() {
     renderLearnWidgets();
     showToast(`<i class="fas fa-rotate-left toast__icon"></i><div class="toast__body"><b>Zurückgesetzt</b><span>„${deck.name}" startet wieder bei Lektion 1.</span></div>`);
   });
+
+  // Sprechtempo: Regler + Hörprobe (pro Konto gespeichert).
+  const rate = document.getElementById('speechRate');
+  const rateLbl = document.getElementById('speechRateLabel');
+  if (rate) {
+    const paint = v => { if (rateLbl) rateLbl.textContent = `${rateLabel(v)} (${v.toFixed(2)}×)`; };
+    rate.value = String(getSpeechRate());
+    paint(getSpeechRate());
+    rate.addEventListener('input', () => paint(Number(rate.value)));
+    rate.addEventListener('change', () => {
+      const v = setSpeechRate(rate.value);
+      rate.value = String(v);
+      paint(v);
+      speakSample();
+    });
+    document.getElementById('speechRateTest')?.addEventListener('click', speakSample);
+  }
 
   const fx = document.getElementById('fxToggle');
   if (fx) {

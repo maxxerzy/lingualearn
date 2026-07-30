@@ -348,6 +348,21 @@
               <input type="number" id="dailyGoalInput" class="input" min="1" max="500" step="1" value="20">
             </div>
             <div class="form-group">
+              <label for="speechRate">Sprechtempo der Aussprache</label>
+              <div class="rate-row">
+                <i class="fas fa-volume-low rate-row__icon"></i>
+                <input type="range" id="speechRate" class="rate-slider"
+                  min="0.5" max="1.2" step="0.05" value="0.85">
+                <i class="fas fa-volume-high rate-row__icon"></i>
+              </div>
+              <div class="rate-foot">
+                <span id="speechRateLabel">normal</span>
+                <button type="button" class="btn" id="speechRateTest">
+                  <i class="fas fa-play"></i> Probe hören
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
               <label class="fx-toggle" for="fxToggle">
                 <input type="checkbox" id="fxToggle" checked>
                 <span><i class="fas fa-volume-up"></i> Töne &amp; Vibration bei Antworten</span>
@@ -531,7 +546,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v26';
+    var APP_VERSION = 'v27';
     var loginMode = 'login';
 
     function hp(pw) {
