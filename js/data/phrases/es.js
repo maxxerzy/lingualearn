@@ -1,0 +1,18 @@
+// Konversations-Bausteine Spanisch — kurze Alltagswendungen, die im
+// Lernkurs gehört, verstanden und nachgesprochen werden.
+export const phrases = [
+  { de: 'Hallo!', target: '¡Hola!', hint: 'Passt immer, zu jeder Tageszeit.', reply: '¡Hola! ¿Qué tal?', replyDe: 'Hallo! Wie geht’s?' },
+  { de: 'Guten Morgen!', target: '¡Buenos días!', hint: 'Bis mittags; danach „buenas tardes".', reply: '¡Buenos días!', replyDe: 'Guten Morgen!' },
+  { de: 'Wie geht es dir?', target: '¿Cómo estás?', hint: 'Mit „estar", weil es um das Befinden geht.', reply: 'Muy bien, ¿y tú?', replyDe: 'Sehr gut, und dir?' },
+  { de: 'Ich heiße …', target: 'Me llamo …', hint: 'Wörtlich „ich nenne mich".', reply: 'Encantado de conocerte.', replyDe: 'Freut mich, dich kennenzulernen.' },
+  { de: 'Wie heißt du?', target: '¿Cómo te llamas?', hint: 'Die Gegenfrage zur Vorstellung.', reply: 'Me llamo Ana.', replyDe: 'Ich heiße Ana.' },
+  { de: 'Vielen Dank!', target: '¡Muchas gracias!', hint: 'Herzlicher als das schlichte „gracias".', reply: 'De nada.', replyDe: 'Gern geschehen.' },
+  { de: 'Entschuldigung!', target: '¡Perdón!', hint: 'Für Versehen; „disculpe" beim Ansprechen Fremder.', reply: 'No pasa nada.', replyDe: 'Kein Problem.' },
+  { de: 'Sprichst du Englisch?', target: '¿Hablas inglés?', hint: 'Höflicher zu Fremden: „¿Habla usted inglés?"', reply: 'Un poco.', replyDe: 'Ein bisschen.' },
+  { de: 'Ich verstehe nicht.', target: 'No entiendo.', hint: 'Zwei Wörter, die dich aus jeder Klemme holen.', reply: 'Te lo explico otra vez.', replyDe: 'Ich erkläre es dir noch einmal.' },
+  { de: 'Kannst du langsamer sprechen?', target: '¿Puedes hablar más despacio?', hint: 'Der nützlichste Satz für Anfänger überhaupt.', reply: 'Claro, perdona.', replyDe: 'Klar, entschuldige.' },
+  { de: 'Was kostet das?', target: '¿Cuánto cuesta?', hint: 'Auf Märkten und in Läden unverzichtbar.', reply: 'Son diez euros.', replyDe: 'Das macht zehn Euro.' },
+  { de: 'Einen Kaffee, bitte.', target: 'Un café, por favor.', hint: '„por favor" macht jede Bestellung höflich.', reply: 'Ahora mismo.', replyDe: 'Sofort.' },
+  { de: 'Wo ist der Bahnhof?', target: '¿Dónde está la estación?', hint: 'Mit „¿dónde está …?" findest du jeden Ort.', reply: 'Está a la derecha.', replyDe: 'Er ist rechts.' },
+  { de: 'Auf Wiedersehen!', target: '¡Hasta luego!', hint: 'Wörtlich „bis später" — der übliche Abschied.', reply: '¡Adiós!', replyDe: 'Tschüss!' },
+];

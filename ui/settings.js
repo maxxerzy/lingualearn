@@ -9,9 +9,68 @@ import { resetGoldLessons, resetThemeBadges } from '../core/session.js';
 import { resetGrammar } from '../core/grammar.js';
 import { clearErrors } from '../core/errorLog.js';
 import { getDecks } from '../core/state.js';
+import { syncNow, getLastSync } from '../core/sync.js';
+import { getCurrentUser } from '../core/auth.js';
+import { getSpeechRate, setSpeechRate, rateLabel, speak } from '../utils/speech.js';
+
+// Hörprobe im aktuell gewählten Deck — so hört man das Tempo dort,
+// wo man es später braucht.
+function speakSample() {
+  const deckId = document.getElementById('deckSelect')?.value;
+  const deck = getDecks()[deckId];
+  const lang = deck?.language || 'da';
+  const card = deck?.cards?.find(c => c.example) || deck?.cards?.[0];
+  speak(card?.example || card?.back || 'Hallo', lang);
+}
+
+// Status der Geräte-Synchronisation anzeigen.
+const SYNC_TEXT = {
+  offline: ['fa-plug-circle-xmark', 'Offline — wird nachgeholt'],
+  'not-configured': ['fa-circle-info', 'Server-Sync noch nicht eingerichtet'],
+  forbidden: ['fa-triangle-exclamation', 'Zugang abgelehnt — Passwort weicht ab'],
+  network: ['fa-plug-circle-xmark', 'Server nicht erreichbar'],
+  server: ['fa-triangle-exclamation', 'Server-Fehler'],
+  'no-token': ['fa-circle-info', 'Kein Konto-Schlüssel gefunden'],
+  'no-user': ['fa-circle-info', 'Nicht angemeldet'],
+};
+
+export function renderSyncState(res) {
+  const el = document.getElementById('syncState');
+  if (!el) return;
+  if (res?.ok) {
+    const when = new Date(getLastSync(getCurrentUser())).toLocaleTimeString('de-DE',
+      { hour: '2-digit', minute: '2-digit' });
+    el.className = 'sync-box__state sync-box__state--ok';
+    el.innerHTML = `<i class="fas fa-circle-check"></i> Synchron${when ? ` · ${when}` : ''}`;
+    return;
+  }
+  const [icon, text] = SYNC_TEXT[res?.reason] || ['fa-rotate', 'Noch nicht synchronisiert'];
+  el.className = 'sync-box__state';
+  el.innerHTML = `<i class="fas ${icon}"></i> ${text}`;
+}
 
 // Initialize settings
 export function initSettings() {
+  // Geräte-Sync: Status zeigen und manuell auslösen.
+  const syncBtn = document.getElementById('syncNowBtn');
+  if (syncBtn) {
+    syncBtn.addEventListener('click', async () => {
+      syncBtn.disabled = true;
+      const el = document.getElementById('syncState');
+      if (el) el.innerHTML = '<i class="fas fa-rotate fa-spin"></i> Synchronisiere …';
+      const res = await syncNow();
+      renderSyncState(res);
+      syncBtn.disabled = false;
+      if (res.ok && res.changed) {
+        showToast('<i class="fas fa-cloud-arrow-down toast__icon"></i><div class="toast__body"><b>Stand zusammengeführt</b><span>Fortschritt der anderen Geräte übernommen.</span></div>');
+        document.dispatchEvent(new CustomEvent('lingua:synced'));
+      } else if (res.ok) {
+        showToast('<i class="fas fa-circle-check toast__icon"></i><div class="toast__body"><b>Alles synchron</b><span>Alle Geräte auf demselben Stand.</span></div>');
+      } else if (res.reason === 'not-configured') {
+        showToast('<i class="fas fa-circle-info toast__icon"></i><div class="toast__body"><b>Sync noch nicht aktiv</b><span>Der Server-Speicher ist noch nicht eingerichtet.</span></div>', { variant: 'warn' });
+      }
+    });
+  }
   // Töne & Vibration pro Konto an/aus.
   // Deck-Fortschritt zurücksetzen (mit Bestätigung).
   document.getElementById('deckResetBtn')?.addEventListener('click', () => {
@@ -28,6 +87,23 @@ export function initSettings() {
     renderLearnWidgets();
     showToast(`<i class="fas fa-rotate-left toast__icon"></i><div class="toast__body"><b>Zurückgesetzt</b><span>„${deck.name}" startet wieder bei Lektion 1.</span></div>`);
   });
+
+  // Sprechtempo: Regler + Hörprobe (pro Konto gespeichert).
+  const rate = document.getElementById('speechRate');
+  const rateLbl = document.getElementById('speechRateLabel');
+  if (rate) {
+    const paint = v => { if (rateLbl) rateLbl.textContent = `${rateLabel(v)} (${v.toFixed(2)}×)`; };
+    rate.value = String(getSpeechRate());
+    paint(getSpeechRate());
+    rate.addEventListener('input', () => paint(Number(rate.value)));
+    rate.addEventListener('change', () => {
+      const v = setSpeechRate(rate.value);
+      rate.value = String(v);
+      paint(v);
+      speakSample();
+    });
+    document.getElementById('speechRateTest')?.addEventListener('click', speakSample);
+  }
 
   const fx = document.getElementById('fxToggle');
   if (fx) {

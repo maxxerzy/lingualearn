@@ -20,12 +20,48 @@ export function latinPron(text) {
     .replace(/y/g, 'ü');
 }
 
-export function speak(text, lang, rate = 0.85) {
+// ── Sprechtempo (pro Konto einstellbar) ──────────────────────────
+export const RATE_MIN = 0.5;
+export const RATE_MAX = 1.2;
+export const RATE_DEFAULT = 0.85;
+const RATE_KEY = 'lingualearn_speechrate_';
+
+function currentUser() {
+  try { return localStorage.getItem('lingualearn_current_user') || ''; } catch { return ''; }
+}
+
+export function getSpeechRate() {
+  try {
+    const raw = localStorage.getItem(RATE_KEY + currentUser());
+    const n = Number(raw);
+    if (!raw || !Number.isFinite(n)) return RATE_DEFAULT;
+    return Math.min(RATE_MAX, Math.max(RATE_MIN, n));
+  } catch { return RATE_DEFAULT; }
+}
+
+export function setSpeechRate(value) {
+  const n = Math.min(RATE_MAX, Math.max(RATE_MIN, Number(value) || RATE_DEFAULT));
+  try { localStorage.setItem(RATE_KEY + currentUser(), String(n)); } catch { /* egal */ }
+  return n;
+}
+
+// Sprechtempo als verständliche Bezeichnung (für die Einstellungen).
+export function rateLabel(rate = getSpeechRate()) {
+  if (rate <= 0.6) return 'sehr langsam';
+  if (rate <= 0.75) return 'langsam';
+  if (rate <= 0.95) return 'normal';
+  if (rate <= 1.1) return 'zügig';
+  return 'schnell';
+}
+
+export function speak(text, lang, rate) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
   const spoken = lang === 'la' ? latinPron(text) : text;
   const u = new SpeechSynthesisUtterance(spoken);
   u.lang = LANG_CODES[lang] || lang;
-  u.rate = lang === 'la' ? 0.8 : rate;
+  const base = Number.isFinite(rate) ? rate : getSpeechRate();
+  // Latein etwas ruhiger — die Umschrift liest sich sonst hastig.
+  u.rate = lang === 'la' ? Math.max(RATE_MIN, base - 0.05) : base;
   window.speechSynthesis.speak(u);
 }

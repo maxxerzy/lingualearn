@@ -329,8 +329,38 @@
               <h2>Einstellungen</h2>
             </div>
             <div class="form-group">
+              <label>Geräte-Synchronisation</label>
+              <div class="sync-box">
+                <div class="sync-box__head">
+                  <span class="sync-box__state" id="syncState"><i class="fas fa-rotate"></i> Prüfe …</span>
+                  <button type="button" class="btn" id="syncNowBtn">
+                    <i class="fas fa-rotate"></i> Jetzt synchronisieren
+                  </button>
+                </div>
+                <p class="sync-box__hint" id="syncHint">
+                  Melde dich auf jedem Gerät mit denselben Zugangsdaten an — dein Lernstand
+                  wird dann automatisch zusammengeführt.
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
               <label for="dailyGoalInput">Tagesziel (Karten pro Tag)</label>
               <input type="number" id="dailyGoalInput" class="input" min="1" max="500" step="1" value="20">
+            </div>
+            <div class="form-group">
+              <label for="speechRate">Sprechtempo der Aussprache</label>
+              <div class="rate-row">
+                <i class="fas fa-volume-low rate-row__icon"></i>
+                <input type="range" id="speechRate" class="rate-slider"
+                  min="0.5" max="1.2" step="0.05" value="0.85">
+                <i class="fas fa-volume-high rate-row__icon"></i>
+              </div>
+              <div class="rate-foot">
+                <span id="speechRateLabel">normal</span>
+                <button type="button" class="btn" id="speechRateTest">
+                  <i class="fas fa-play"></i> Probe hören
+                </button>
+              </div>
             </div>
             <div class="form-group">
               <label class="fx-toggle" for="fxToggle">
@@ -516,7 +546,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v24';
+    var APP_VERSION = 'v27';
     var loginMode = 'login';
 
     function hp(pw) {

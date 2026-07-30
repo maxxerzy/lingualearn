@@ -10,3 +10,9 @@ package.json
 package-lock.json
 README.md
 .DS_Store
+worker.js
+tests/
+CLAUDE.md
+DECKS.md
+.assetsignore
+SYNC-SETUP.md
