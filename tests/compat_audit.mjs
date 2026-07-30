@@ -185,6 +185,148 @@ for (const mode of Object.keys(MARKERS)) {
   }
 }
 
+// Nach der Modus-Schleife ggf. noch laufende Session verlassen (Desktop).
+await page.evaluate(() => {
+  if (document.getElementById('view-learn')?.classList.contains('session-active')) {
+    document.getElementById('sessionBackBtn')?.click();
+  }
+});
+await page.waitForTimeout(250);
+
+// ── 7) KOMPLETTER LERNKURS: jeder einzelne Schritt ohne Scrollen/Overlap ──
+// Der Kurs enthält alle Übungsformen (Grammatik-Reader, Kennenlernen,
+// Hören, MC, Vergleich, Sprechen, Schreiben, Lücke, Satzbau, Bedeutung).
+// Jede dieser Ansichten wird auf JEDEM Gerät einzeln vermessen.
+await page.evaluate(t => { window.__vtol = t; }, V_TOL_SESSION);
+async function measureStep() {
+  const v = await overflowV();
+  const h = await overflowH();
+  const geo = await page.evaluate(() => {
+    const vis = el => {
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      return r.width > 1 && r.height > 1 ? r.toJSON() : null;
+    };
+    const bar = ['sessionBackBtn', 'session-title', 'sessionModeBtn']
+      .map(id => vis(document.getElementById(id))).filter(Boolean);
+    // Ragt Inhalt aus dem sichtbaren Bereich (unten/rechts) heraus?
+    // Dieselbe Toleranz wie beim Scroll-Check (Browser-UI auf kleinen Geräten).
+    const tol = window.__vtol || 2;
+    const area = document.getElementById('learnArea');
+    const ar = area ? area.getBoundingClientRect() : null;
+    const clipped = ar ? (ar.bottom > window.innerHeight + tol || ar.right > window.innerWidth + 2) : false;
+    // Aktionsknöpfe müssen erreichbar (im Viewport) sein.
+    const btns = [...document.querySelectorAll('#learnArea .btn, #learnArea .mc-option, #learnArea .build-tile')]
+      .map(b => b.getBoundingClientRect());
+    const offscreen = btns.some(r => r.height > 1 && (r.bottom > window.innerHeight + tol || r.top < -2));
+    return { bar, clipped, offscreen };
+  });
+  let barOverlap = false;
+  const b = geo.bar;
+  for (let i = 0; i < b.length; i++) for (let j = i + 1; j < b.length; j++) if (rectsOverlap(b[i], b[j])) barOverlap = true;
+  return { v, h, barOverlap, clipped: geo.clipped, offscreen: geo.offscreen };
+}
+
+// Einen Kursschritt korrekt beantworten (alle Übungsformen).
+const courseStep = () => page.evaluate(async () => {
+  const st = (await import('/core/state.js')).getCurrentSession();
+  if (!st || st.mode !== 'course') {
+    return document.getElementById('learnArea')?.textContent.includes('geschafft') ? 'done' : 'gone';
+  }
+  const phase = document.getElementById('gramNext') ? 'grammar' : st.phase;
+  const gram = document.getElementById('gramNext');
+  if (gram) { gram.click(); return phase; }
+  const next = document.getElementById('courseNext');
+  if (next) { next.click(); return phase; }
+  if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return phase; }
+  const card = st.queue?.[0];
+  const typeIn = document.getElementById('courseTypeInput');
+  if (typeIn && card) {
+    typeIn.value = card.back;
+    document.getElementById('courseTypeCheck')?.click();
+    return phase;
+  }
+  if (document.getElementById('courseCompYes') && st.currentPrompt) {
+    document.getElementById(st.currentPrompt.isMatch ? 'courseCompYes' : 'courseCompNo').click();
+    return phase;
+  }
+  const pool = document.getElementById('courseBuildPool');
+  if (pool && st.currentPrompt?.tokens) {
+    for (let k = 0; k < st.currentPrompt.tokens.length; k++) pool.querySelector(`.build-tile[data-i="${k}"]`)?.click();
+    document.getElementById('courseBuildCheck')?.click();
+    return phase;
+  }
+  const opts = [...document.querySelectorAll('.mc-option')];
+  if (opts.length && card) {
+    const answer = document.querySelector('.story-sent') ? card.exampleDE
+      : st.phase === 'listen' ? card.front : card.back;
+    const idx = opts.findIndex(o => o.querySelector('.mc-text')?.textContent.trim() === answer);
+    opts[idx >= 0 ? idx : 0].click();
+  }
+  return phase;
+});
+
+await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(200);
+await click('#startBtn'); await page.waitForTimeout(800);
+const seen = new Set();
+const bad = [];
+let state = null;
+for (let i = 0; i < 220 && state !== 'done' && state !== 'gone'; i++) {
+  const m = await measureStep();
+  const phaseNow = await page.evaluate(async () => {
+    if (document.getElementById('gramNext')) return 'grammar';
+    const st = (await import('/core/state.js')).getCurrentSession();
+    return st?.phase || 'end';
+  });
+  seen.add(phaseNow);
+  if (m.v > V_TOL_SESSION || m.h > 1 || m.barOverlap || m.clipped || m.offscreen) {
+    bad.push(`${phaseNow}: v=${m.v} h=${m.h}${m.barOverlap ? ' overlap' : ''}${m.clipped ? ' clipped' : ''}${m.offscreen ? ' btn-offscreen' : ''}`);
+  }
+  state = await courseStep();
+  await page.waitForTimeout(140);
+}
+const PHASES = ['grammar', 'teach', 'listen', 'words', 'speak', 'write'];
+const missing = PHASES.filter(p => !seen.has(p));
+check('Lernkurs komplett durchlaufen (alle Phasen erreicht)',
+  state === 'done' && missing.length === 0, `state=${state} fehlend=${missing.join(',') || '—'}`);
+check(`Jeder Kursschritt ohne Scrollen/Überlappung (≤${V_TOL_SESSION}px)`,
+  bad.length === 0, bad.slice(0, 4).join(' | '));
+await page.evaluate(() => document.getElementById('sessionBackBtn')?.click());
+await page.waitForTimeout(300);
+
+// ── 8) Dark Mode: gleiche Layout-Garantien, nichts überlappt ──
+await page.emulateMedia({ colorScheme: 'dark' });
+await page.waitForTimeout(300);
+{
+  const v = await overflowV(); const h = await overflowH();
+  check(`Dark Mode: Konfiguration ohne Scrollen (≤${V_TOL_CONFIG}px)`, v <= V_TOL_CONFIG && h <= 1, `v=${v} h=${h}`);
+  const hdr = await page.evaluate(() => {
+    const r = id => document.getElementById(id)?.getBoundingClientRect().toJSON() || null;
+    return { logo: document.querySelector('.logo')?.getBoundingClientRect().toJSON() || null, chip: r('userChipBtn') };
+  });
+  check('Dark Mode: Logo & Profil-Chip überlappen nicht',
+    !(hdr.logo && hdr.chip && rectsOverlap(hdr.logo, hdr.chip)));
+  // Kontrast: Textfarbe muss sich klar vom Hintergrund abheben.
+  const contrast = await page.evaluate(() => {
+    const lum = c => {
+      const [r, g, b] = c.match(/\d+/g).slice(0, 3).map(n => {
+        const s = Number(n) / 255;
+        return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+      });
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    };
+    const el = document.querySelector('.config-head h2') || document.body;
+    const cs = getComputedStyle(el);
+    const panel = getComputedStyle(document.querySelector('.config-panel') || document.body);
+    const l1 = lum(cs.color), l2 = lum(panel.backgroundColor.includes('rgba(0, 0, 0, 0)') ? getComputedStyle(document.body).backgroundColor : panel.backgroundColor);
+    const ratio = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+    return Math.round(ratio * 10) / 10;
+  });
+  check('Dark Mode: Titel-Kontrast ≥ 3:1', contrast >= 3, `${contrast}:1`);
+}
+await page.emulateMedia({ colorScheme: 'light' });
+await page.waitForTimeout(200);
+
 check('keine JS-Fehler', errs.length === 0, errs.slice(0, 2).join('; '));
 await page.screenshot({ path: `${SHOT}/compat_${key}.png` });
 await ctx.close();

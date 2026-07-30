@@ -35,6 +35,21 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
   Kurs-Schritten auf allen Geräteprofilen; lange Inhalte scrollen
   innerhalb ihrer Karte.
 
+## Geräte-Kompatibilität (WICHTIGSTE Regel, Nutzer-Vorgabe)
+**JEDE einzelne Änderung — auch reine Text-, Logik- oder Datenänderungen —
+wird vor dem Push auf ALLEN 9 Geräteprofilen geprüft.** UI, GUI und
+Overlays müssen auf iPhone, iPad und macOS gleichermaßen funktionieren:
+- kein Seiten-Scrollen (Konfiguration UND jeder einzelne Kursschritt),
+- keine Überlappungen (Kopfzeile/Logo/Profil-Chip, Fokus-Leiste),
+- kein Inhalt außerhalb des Sichtbereichs, alle Knöpfe erreichbar,
+- gleiche Garantien im Dark Mode.
+`tests/compat_audit.mjs` spielt dafür eine komplette Kurslektion durch
+und vermisst JEDEN Schritt einzeln (Grammatik-Reader, Kennenlernen,
+Hören, MC, Vergleich, Sprechen, Schreiben, Sätze). Ein neues UI-Element
+ohne bestandene 9/9-Matrix wird nicht gepusht. Reicht die Höhe nicht,
+gilt: erst verdichten (Fokus-Modus-Regeln), sonst innerhalb der Karte
+scrollen lassen — niemals die Seite.
+
 ## Tests (vor jedem Push ausführen)
 ```
 (python3 -m http.server 4173 &)          # aus der Repo-Wurzel

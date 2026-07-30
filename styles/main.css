@@ -1153,9 +1153,17 @@ label {
   #view-learn.session-active .prompt { margin-bottom: 8px; }
   #view-learn.session-active .fc-label { margin-bottom: 2px; }
   #view-learn.session-active .listen-play {
-    width: 58px; height: 58px; font-size: 1.25rem; margin: 2px 0;
+    width: 52px; height: 52px; font-size: 1.15rem; margin: 2px 0;
   }
-  #view-learn.session-active .listen-reveal { margin-top: 6px; }
+  #view-learn.session-active .listen-reveal { margin-top: 6px; font-size: 0.86rem; }
+  /* Kurs-Phasen tragen zusätzlich eine Badge — im Fokus-Modus knapper
+     halten, damit auch Hören/Sprechen/Schreiben ohne Scrollen passen. */
+  #view-learn.session-active .course-phase-badge {
+    margin-bottom: 8px; padding: 4px 10px; font-size: 0.75rem;
+  }
+  #view-learn.session-active .speak-card .course-pron { margin: 2px 0; font-size: 0.85rem; }
+  #view-learn.session-active .speak-card .actions { margin-top: 8px; }
+  #view-learn.session-active .typing-input { margin: 4px 0; }
 
   /* Karteikarten-Rückseite (der höchste Modus) zusätzlich verdichten */
   #view-learn.session-active .fc-word { font-size: 1.5rem; padding: 8px 14px; margin: 2px 0; }
@@ -1166,6 +1174,34 @@ label {
   #view-learn.session-active .fc-rating .btn { min-height: 44px; padding: 8px 10px; }
   #view-learn.session-active .fc-queue-info { margin-top: 4px; min-height: 0; }
   #view-learn.session-active .cognate-chip { margin: 4px 0; }
+}
+
+/* ── Desktop/großes iPad quer (>1200px): auch hier gilt die No-Scroll-
+   Garantie. Die zweispaltige Ansicht bleibt, aber der Lernbereich wird
+   verdichtet und deckelt seine Höhe — lange Inhalte scrollen INNERHALB
+   der Karte, die Seite selbst nie. ─────────────────────────────────── */
+@media (min-width: 1201px) {
+  #view-learn.session-active .learn-panel {
+    /* Kopfzeile (~76px) + Content-Padding (2×24px) + Panel-Innenabstand
+       + Sicherheitsmarge — lieber intern scrollen als die Seite. */
+    max-height: calc(100vh - 195px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #view-learn.session-active .card { min-height: 0; padding: 8px 10px 12px; }
+  #view-learn.session-active .card .actions { margin-top: 12px; }
+  #view-learn.session-active .mc-options { gap: 8px; margin-top: 10px; }
+  #view-learn.session-active .mc-option { padding: 9px 12px; }
+  #view-learn.session-active .prompt { margin-bottom: 8px; }
+  #view-learn.session-active .course-phase-badge { margin-bottom: 8px; padding: 4px 10px; }
+  #view-learn.session-active .listen-play { width: 56px; height: 56px; font-size: 1.2rem; margin: 2px 0; }
+  #view-learn.session-active .fc-word { font-size: 1.6rem; padding: 8px 14px; margin: 2px 0; }
+  #view-learn.session-active .fc-arrow { margin: 0; font-size: 1.05rem; }
+  #view-learn.session-active .fc-example { margin: 6px 0 2px; }
+  #view-learn.session-active .fc-example-de { margin: 4px 0 6px; }
+  #view-learn.session-active .fc-rating { margin-top: 12px; gap: 8px; }
+  #view-learn.session-active .speak-card .course-pron { margin: 2px 0; }
+  #view-learn.session-active .grammar-body { max-height: calc(100vh - 460px); }
 }
 
 /* Auf hohen Screens (iPad hochkant, iPad quer) den Lerninhalt vertikal
@@ -1194,8 +1230,8 @@ label {
   #view-learn:not(.session-active) .mode-tabs { gap: 5px; }
 }
 
-/* (Fokus-Modus – gleiche kurze Screens) */
-@media (max-width: 1200px) and (max-height: 620px) {
+/* (Fokus-Modus – kurze Screens, inkl. iPhone SE mit 667px Höhe) */
+@media (max-width: 1200px) and (max-height: 700px) {
   #view-learn.session-active .learn-panel { padding: 8px 10px; }
   #view-learn.session-active .session-header { margin-bottom: 2px; }
   #view-learn.session-active .session-progress { display: none; } /* Fortschritt im Titel genügt */
