@@ -861,6 +861,69 @@ check('Einstellungen zeigen Sync-Bereich',
   await page.evaluate(() => !!document.getElementById('syncNowBtn') && !!document.getElementById('syncState')));
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
 
+// ── Zwei lokale Konten zusammenführen (Handy-Konto behält die Führung) ──
+const mergeAcc = await page.evaluate(async () => {
+  const s = await import('/core/sync.js');
+  const u = localStorage.getItem('lingualearn_current_user');          // Zielkonto
+  // Ein zweites lokales Konto („alter Mac-Stand") anlegen.
+  const users = JSON.parse(localStorage.getItem('lingualearn_users') || '{}');
+  users['alt-mac'] = { passwordHash: 'x'.repeat(32) };
+  localStorage.setItem('lingualearn_users', JSON.stringify(users));
+  localStorage.setItem('lingualearn_game_alt-mac', JSON.stringify({
+    xp: 250000, gems: 7, achievements: { 'polyglott': '2026-02-02' },
+    activity: { '2026-07-01': 42 }, streak: { current: 1, longest: 25, lastDate: '2026-07-01' },
+    inventory: { xpBoost: 3 }, langsPlayed: ['fr'], perfectSessions: 9,
+  }));
+  localStorage.setItem('lingualearn_cards_alt-mac', JSON.stringify({
+    'basic-da:Buch': { level: 5, correct: 9 },
+  }));
+  localStorage.setItem('lingualearn_course_alt-mac', JSON.stringify({
+    'basic-el': { introduced: 24, sentencesDone: [] },
+  }));
+
+  const listed = s.listLocalAccounts(u);
+  const hasData = s.accountHasData('alt-mac');
+  const before = JSON.parse(localStorage.getItem('lingualearn_game_' + u) || '{}');
+  const res = s.mergeLocalAccount('alt-mac', u);
+  const after = JSON.parse(localStorage.getItem('lingualearn_game_' + u) || '{}');
+  const cards = JSON.parse(localStorage.getItem('lingualearn_cards_' + u) || '{}');
+  const course = JSON.parse(localStorage.getItem('lingualearn_course_' + u) || '{}');
+  // Quellkonto muss unangetastet bleiben.
+  const sourceStill = JSON.parse(localStorage.getItem('lingualearn_game_alt-mac') || '{}');
+  const accountsKept = Object.keys(JSON.parse(localStorage.getItem('lingualearn_users') || '{}'));
+  return {
+    ok: res.ok, listed: listed.includes('alt-mac'), hasData,
+    xpBefore: before.xp || 0, xpAfter: after.xp,
+    polyglott: !!after.achievements?.polyglott,
+    longest: after.streak?.longest, boost: after.inventory?.xpBoost,
+    perfect: after.perfectSessions, langs: (after.langsPlayed || []).sort().join(','),
+    buch: cards['basic-da:Buch']?.level, greek: course['basic-el']?.introduced,
+    sourceIntact: sourceStill.xp === 250000, accountsKept,
+    selfMerge: s.mergeLocalAccount(u, u).ok, unknown: s.mergeLocalAccount('gibtsnicht', u).ok,
+  };
+});
+check('Konten-Zusammenführung: Fortschritt kommt an, Quellkonto bleibt',
+  mergeAcc.ok && mergeAcc.listed && mergeAcc.hasData
+  && mergeAcc.xpAfter === 250000 && mergeAcc.xpAfter > mergeAcc.xpBefore
+  && mergeAcc.polyglott && mergeAcc.longest === 25 && mergeAcc.boost === 3
+  && mergeAcc.perfect === 9 && /fr/.test(mergeAcc.langs)
+  && mergeAcc.buch === 5 && mergeAcc.greek === 24
+  && mergeAcc.sourceIntact && mergeAcc.accountsKept.includes('alt-mac')
+  && mergeAcc.selfMerge === false && mergeAcc.unknown === false,
+  JSON.stringify(mergeAcc));
+
+// Auswahl erscheint in den Einstellungen
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="settings"]'); await page.waitForTimeout(300);
+const mergeUi = await page.evaluate(() => ({
+  visible: !document.getElementById('mergeGroup')?.hidden,
+  options: [...document.querySelectorAll('#mergeAccount option')].map(o => o.value),
+  btn: !!document.getElementById('mergeBtn'),
+}));
+check('Einstellungen: Konten-Auswahl sichtbar mit dem anderen Konto',
+  mergeUi.visible && mergeUi.options.includes('alt-mac') && mergeUi.btn, JSON.stringify(mergeUi));
+await click('#settingsBackBtn'); await page.waitForTimeout(200);
+
 // ── Update-Logout: Konto bleibt, Sitzung endet ──
 await page.evaluate(() => localStorage.setItem('lingualearn_app_version', 'alt-0'));
 await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(400);

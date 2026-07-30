@@ -1634,3 +1634,7 @@ label {
   #view-learn.session-active .talk-hint { padding: 6px 10px; margin: 6px 0 2px; font-size: 0.78rem; }
   #view-learn.session-active .talk-reply-de { font-size: 0.78rem; margin-bottom: 4px; }
 }
+
+/* Konten-Zusammenführung (Einstellungen) */
+.merge-row { display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
+.merge-row .input { flex: 1; min-width: 140px; }

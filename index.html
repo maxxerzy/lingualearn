@@ -343,6 +343,24 @@
                 </p>
               </div>
             </div>
+            <!-- Sichtbar, sobald es auf diesem Gerät weitere Konten gibt -->
+            <div class="form-group" id="mergeGroup" hidden>
+              <label for="mergeAccount">Fortschritt eines anderen Kontos übernehmen</label>
+              <div class="sync-box">
+                <p class="sync-box__hint" style="margin-top:0">
+                  Hast du früher auf diesem Gerät ein anderes Konto benutzt? Hier holst du
+                  dessen Fortschritt in dein aktuelles Konto. Es wird zusammengeführt
+                  (höheres Level, mehr gemeisterte Karten, alle Erfolge) — das andere Konto
+                  bleibt unverändert erhalten.
+                </p>
+                <div class="merge-row">
+                  <select id="mergeAccount" class="input"></select>
+                  <button type="button" class="btn" id="mergeBtn">
+                    <i class="fas fa-code-merge"></i> Übernehmen
+                  </button>
+                </div>
+              </div>
+            </div>
             <div class="form-group">
               <label for="dailyGoalInput">Tagesziel (Karten pro Tag)</label>
               <input type="number" id="dailyGoalInput" class="input" min="1" max="500" step="1" value="20">
@@ -546,7 +564,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v27';
+    var APP_VERSION = 'v28';
     var loginMode = 'login';
 
     function hp(pw) {

@@ -9,7 +9,7 @@ import { resetGoldLessons, resetThemeBadges } from '../core/session.js';
 import { resetGrammar } from '../core/grammar.js';
 import { clearErrors } from '../core/errorLog.js';
 import { getDecks } from '../core/state.js';
-import { syncNow, getLastSync } from '../core/sync.js';
+import { syncNow, getLastSync, listLocalAccounts, accountHasData, mergeLocalAccount } from '../core/sync.js';
 import { getCurrentUser } from '../core/auth.js';
 import { getSpeechRate, setSpeechRate, rateLabel, speak } from '../utils/speech.js';
 
@@ -49,8 +49,41 @@ export function renderSyncState(res) {
   el.innerHTML = `<i class="fas ${icon}"></i> ${text}`;
 }
 
+// Auswahl der weiteren Konten auf diesem Gerät füllen (nur Konten mit
+// Lerndaten — leere Konten bringen bei einer Übernahme nichts).
+export function renderMergeAccounts() {
+  const group = document.getElementById('mergeGroup');
+  const select = document.getElementById('mergeAccount');
+  if (!group || !select) return;
+  const others = listLocalAccounts().filter(accountHasData);
+  if (!others.length) { group.hidden = true; return; }
+  group.hidden = false;
+  select.innerHTML = others.map(u =>
+    `<option value="${u.replace(/"/g, '&quot;')}">${u.replace(/</g, '&lt;')}</option>`).join('');
+}
+
 // Initialize settings
 export function initSettings() {
+  // Fortschritt eines anderen lokalen Kontos übernehmen.
+  renderMergeAccounts();
+  document.getElementById('mergeBtn')?.addEventListener('click', async () => {
+    const from = document.getElementById('mergeAccount')?.value;
+    const to = getCurrentUser();
+    if (!from || !to) return;
+    if (!confirm(`Fortschritt von „${from}" in dein Konto „${to}" übernehmen?\n\n`
+      + 'Beide Stände werden zusammengeführt — es geht nichts verloren, '
+      + `und „${from}" bleibt als Konto erhalten.`)) return;
+    const res = mergeLocalAccount(from, to);
+    if (!res.ok) {
+      showToast('<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>Übernahme nicht möglich</b></div>', { variant: 'warn' });
+      return;
+    }
+    showToast(`<i class="fas fa-code-merge toast__icon"></i><div class="toast__body"><b>Fortschritt übernommen</b><span>„${from}" ist jetzt Teil von „${to}".</span></div>`);
+    // Stores neu laden, Oberfläche auffrischen und auf die anderen Geräte spiegeln.
+    document.dispatchEvent(new CustomEvent('lingua:synced'));
+    renderMergeAccounts();
+  });
+
   // Geräte-Sync: Status zeigen und manuell auslösen.
   const syncBtn = document.getElementById('syncNowBtn');
   if (syncBtn) {
