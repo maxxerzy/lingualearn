@@ -1,5 +1,9 @@
 # Geräte-Sync aktivieren — Schritt für Schritt
 
+> **Status: eingerichtet.** Der Namespace `lingualearn-sync` ist angelegt und in
+> `wrangler.jsonc` hinterlegt. Diese Anleitung bleibt als Referenz — etwa, wenn
+> der Sync später auf ein anderes Cloudflare-Konto umziehen soll.
+
 Damit dein Konto auf Handy, iPad und Mac denselben Stand hat, braucht die App
 einen kleinen Speicher bei Cloudflare („KV"). Den legst du **einmal** an; danach
 läuft alles automatisch. Dauer: ca. 2 Minuten.
@@ -20,8 +24,8 @@ LinguaLearn läuft (dasselbe Konto, das die Seite deployt).
    *(Je nach Sprache/Version heißt der Punkt auch „Speicher & Datenbanken";
    in älteren Oberflächen findest du KV unter **Workers & Pages → KV**.)*
 2. Dort **KV** auswählen.
-3. Rechts oben den Knopf **Create a namespace** (bzw. „Namespace erstellen")
-   klicken.
+3. Rechts oben den blauen Knopf **+ Create Instance** klicken
+   (in älteren Oberflächen hieß er „Create a namespace").
 4. Als Namen eingeben:
 
    ```
@@ -33,8 +37,14 @@ LinguaLearn läuft (dasselbe Konto, das die Seite deployt).
 
 ## Schritt 3 — Die ID kopieren
 
-Nach dem Anlegen erscheint der Namespace in der Liste. Daneben steht die
-**Namespace ID** — eine lange Zeichenfolge aus Ziffern und Buchstaben, etwa:
+Nach dem Anlegen öffnet sich der Namespace. Die **Namespace ID** steht in der
+Adressleiste ganz am Ende der URL:
+
+```
+dash.cloudflare.com/<konto-id>/workers/kv/namespaces/<HIER-STEHT-DIE-ID>
+```
+
+Alternativ findest du sie im Tab **Settings** des Namespace. Sie sieht so aus:
 
 ```
 8f4c2a19d7b4419e93c05e6b1a2f7d3c

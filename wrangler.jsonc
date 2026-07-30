@@ -14,15 +14,12 @@
   "assets": {
     "directory": ".",
     "binding": "ASSETS"
-  }
+  },
 
-  // ── Geräte-Sync aktivieren ────────────────────────────────────────
-  // Solange das KV-Binding fehlt, läuft die App normal weiter; die
-  // Sync-Endpunkte antworten mit „nicht eingerichtet".
-  // Zum Aktivieren im Cloudflare-Dashboard einen KV-Namespace anlegen
-  // (Storage & Databases → KV → Create) und hier eintragen:
-  //
-  // ,"kv_namespaces": [
-  //   { "binding": "SYNC", "id": "<NAMESPACE-ID>" }
-  // ]
+  // Geräte-Sync: KV-Namespace „lingualearn-sync".
+  // Fehlt dieses Binding, läuft die App normal weiter und die Sync-
+  // Endpunkte antworten mit „nicht eingerichtet".
+  "kv_namespaces": [
+    { "binding": "SYNC", "id": "c21e52b41493402c93774835dafe3537" }
+  ]
 }
