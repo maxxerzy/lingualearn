@@ -1559,3 +1559,35 @@ label {
 .grammar-chapter__state { font-size: 0.78rem; font-weight: 700; color: var(--gray); white-space: nowrap; }
 .grammar-chapter--read .grammar-chapter__state { color: #2e9e5b; }
 .grammar-card--reader { max-width: none; margin-top: 14px; }
+
+/* ── Geräte-Synchronisation (Einstellungen) ────────────────────── */
+.sync-box {
+  border: 1.5px solid var(--light-gray);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: var(--surface);
+}
+.sync-box__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.sync-box__state {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--gray);
+}
+.sync-box__state i { color: var(--primary); }
+.sync-box__state--ok { color: #2e9e5b; }
+.sync-box__state--ok i { color: #2e9e5b; }
+.sync-box__hint {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--gray);
+  line-height: 1.45;
+}

@@ -23,6 +23,8 @@ import { reinitGold, reinitThemeBadges } from '../core/session.js';
 import { reinitGrammar } from '../core/grammar.js';
 import { initGrammar } from '../ui/grammar.js';
 import { showToast } from '../ui/toast.js';
+import { syncNow, syncSoon } from '../core/sync.js';
+import { renderSyncState } from '../ui/settings.js';
 
 let appInitialized = false;
 
@@ -147,6 +149,17 @@ function showApp() {
   // Erster Login? → Onboarding (Sprache, Ziel, Motivation → Lektion 1).
   maybeShowOnboarding(() => startSession());
 
+  // Geräte-Sync: beim Start Stand der anderen Geräte holen & zusammenführen.
+  runSync({ announce: true });
+  // Beim Verlassen/Wechseln der App den Stand sichern.
+  if (!window.__syncHooked) {
+    window.__syncHooked = true;
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') syncSoon(0);
+    });
+    window.addEventListener('online', () => syncSoon(1000));
+  }
+
   // Lokale Serien-Erinnerung: gestern gelernt, heute noch nicht → Hinweis.
   const g = getGame();
   const yest = (() => { const d = new Date(); d.setDate(d.getDate() - 1); return d.toISOString().slice(0, 10); })();
@@ -154,6 +167,26 @@ function showApp() {
     showToast(`<i class="fas fa-fire toast__icon"></i><div class="toast__body"><b>Deine Serie: ${g.streak.current} ${g.streak.current === 1 ? 'Tag' : 'Tage'} 🔥</b><span>Lern heute eine Runde, um sie zu halten!</span></div>`, { duration: 5000 });
   }
 }
+
+// Abgleich ausführen und — falls fremder Fortschritt dazukam — die
+// Oberfläche mit dem zusammengeführten Stand neu aufbauen.
+async function runSync({ announce = false } = {}) {
+  let res;
+  try { res = await syncNow(); } catch { return; }
+  renderSyncState(res);
+  if (!res.ok || !res.changed) return;
+  reinitUser();
+  populateDeckSelect();
+  updateStats();
+  renderGamiHeader();
+  renderLearnWidgets();
+  applyCosmetics();
+  if (announce) {
+    showToast('<i class="fas fa-cloud-arrow-down toast__icon"></i><div class="toast__body"><b>Fortschritt übernommen</b><span>Stand deiner anderen Geräte zusammengeführt.</span></div>');
+  }
+}
+
+document.addEventListener('lingua:synced', () => runSync());
 
 function doLogout() {
   setCurrentSession(null);

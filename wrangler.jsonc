@@ -1,12 +1,28 @@
-// Cloudflare-Workers-Konfiguration — reine statische Assets, kein Worker-Code.
+// Cloudflare-Workers-Konfiguration.
 // Diese Datei muss committet sein: ohne sie generiert wranglers Auto-Setup im
 // Build-Container eine eigene Config UND installiert wrangler als devDependency,
 // wodurch node_modules (u. a. die 121-MB-workerd-Binary) im Assets-Upload
 // landet und das 25-MiB-Limit sprengt.
+//
+// Statische Dateien werden weiterhin direkt ausgeliefert (Workers Static
+// Assets greifen VOR dem Worker-Code) — der Worker bedient nur /api/… für
+// die Geräte-Synchronisation.
 {
   "name": "lingualearn",
   "compatibility_date": "2026-07-06",
+  "main": "worker.js",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "binding": "ASSETS"
   }
+
+  // ── Geräte-Sync aktivieren ────────────────────────────────────────
+  // Solange das KV-Binding fehlt, läuft die App normal weiter; die
+  // Sync-Endpunkte antworten mit „nicht eingerichtet".
+  // Zum Aktivieren im Cloudflare-Dashboard einen KV-Namespace anlegen
+  // (Storage & Databases → KV → Create) und hier eintragen:
+  //
+  // ,"kv_namespaces": [
+  //   { "binding": "SYNC", "id": "<NAMESPACE-ID>" }
+  // ]
 }

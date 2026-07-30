@@ -687,6 +687,117 @@ check('Latein-Kurs: MC & Hören & Schreiben durchweg La→De (Lektion beendet)',
 await click('#sessionBackBtn'); await page.waitForTimeout(250);
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
 
+// ── Geräte-Sync: Zusammenführen zweier Stände (Handy ↔ Mac) ──
+const mergeRes = await page.evaluate(async () => {
+  const s = await import('/core/sync.js');
+  // „Mac": weiter im Kurs, mehr XP. „Handy": andere Erfolge, andere Karten.
+  const mac = { version: 1, updatedAt: 2000, data: {
+    'lingualearn_game_': {
+      xp: 900, gems: 50, streak: { current: 4, longest: 9, lastDate: '2026-07-20' },
+      achievements: { 'erste-session': '2026-07-01' }, activity: { '2026-07-20': 30 },
+      inventory: { streakFreeze: 1 }, langsPlayed: ['da'], perfectSessions: 2,
+      daily: { date: '2026-07-20', count: 30, correct: 20 },
+    },
+    'lingualearn_cards_': { 'basic-da:Haus': { level: 4, correct: 6 }, 'basic-da:Auto': { level: 1, correct: 1 } },
+    'lingualearn_course_': { 'basic-da': { introduced: 40, sentencesDone: ['Haus'] } },
+    'lingualearn_gold_': { 'basic-da': [0, 1] },
+  } };
+  const handy = { version: 1, updatedAt: 1000, data: {
+    'lingualearn_game_': {
+      xp: 400, gems: 120, streak: { current: 2, longest: 3, lastDate: '2026-07-19' },
+      achievements: { 'serie-3': '2026-06-15' }, activity: { '2026-07-19': 12, '2026-07-20': 5 },
+      inventory: { xpBoost: 2 }, langsPlayed: ['la'], perfectSessions: 5,
+      daily: { date: '2026-07-20', count: 12, correct: 25 },
+    },
+    'lingualearn_cards_': { 'basic-da:Haus': { level: 2, correct: 2 }, 'basic-da:Buch': { level: 3, correct: 4 } },
+    'lingualearn_course_': { 'basic-da': { introduced: 16, sentencesDone: ['Buch'] } },
+    'lingualearn_gold_': { 'basic-da': [1, 5] },
+  } };
+  const m = s.mergeSnapshots(mac, handy).data;
+  const g = m['lingualearn_game_'];
+  return {
+    xp: g.xp, gems: g.gems, perfect: g.perfectSessions,
+    longest: g.streak.longest, current: g.streak.current, lastDate: g.streak.lastDate,
+    achievements: Object.keys(g.achievements).sort(),
+    activity20: g.activity['2026-07-20'], activity19: g.activity['2026-07-19'],
+    inventory: g.inventory, langs: g.langsPlayed.sort(),
+    dailyCount: g.daily.count, dailyCorrect: g.daily.correct,
+    haus: m['lingualearn_cards_']['basic-da:Haus'].level,
+    buch: m['lingualearn_cards_']['basic-da:Buch'].level,
+    intro: m['lingualearn_course_']['basic-da'].introduced,
+    sentences: m['lingualearn_course_']['basic-da'].sentencesDone.sort(),
+    gold: m['lingualearn_gold_']['basic-da'].sort(),
+  };
+});
+check('Sync führt zwei Geräte-Stände zusammen (nichts geht verloren)',
+  mergeRes.xp === 900 && mergeRes.gems === 120 && mergeRes.perfect === 5
+  && mergeRes.longest === 9 && mergeRes.current === 4 && mergeRes.lastDate === '2026-07-20'
+  && mergeRes.achievements.join(',') === 'erste-session,serie-3'
+  && mergeRes.activity20 === 30 && mergeRes.activity19 === 12
+  && mergeRes.inventory.streakFreeze === 1 && mergeRes.inventory.xpBoost === 2
+  && mergeRes.langs.join(',') === 'da,la'
+  && mergeRes.dailyCount === 30 && mergeRes.dailyCorrect === 25
+  && mergeRes.haus === 4 && mergeRes.buch === 3
+  && mergeRes.intro === 40 && mergeRes.sentences.join(',') === 'Buch,Haus'
+  && mergeRes.gold.join(',') === '0,1,5',
+  JSON.stringify(mergeRes));
+
+// Kompletter Ablauf gegen einen simulierten Server (fetch abgefangen).
+const syncFlow = await page.evaluate(async () => {
+  const s = await import('/core/sync.js');
+  const u = localStorage.getItem('lingualearn_current_user');
+  // Server-Attrappe mit dem Stand eines „anderen Geräts".
+  const server = { snap: { version: 1, updatedAt: 5000, data: {
+    'lingualearn_game_': { xp: 99999, achievements: { 'polyglott': '2026-01-01' }, activity: {}, streak: { current: 1, longest: 1, lastDate: '2026-07-20' } },
+    'lingualearn_grammar_': { 'basic-el': ['intro'] },
+  } } };
+  const realFetch = window.fetch;
+  let pushedXp = null;
+  window.fetch = async (url, opts) => {
+    const body = JSON.parse(opts.body);
+    if (String(url).endsWith('/pull')) {
+      return new Response(JSON.stringify({ ok: true, snapshot: server.snap }), { status: 200 });
+    }
+    pushedXp = body.snapshot.data['lingualearn_game_']?.xp ?? null;
+    server.snap = { ...body.snapshot, updatedAt: 6000 };
+    return new Response(JSON.stringify({ ok: true }), { status: 200 });
+  };
+  const before = JSON.parse(localStorage.getItem('lingualearn_game_' + u) || '{}').xp || 0;
+  const res = await s.syncNow({ user: u });
+  const after = JSON.parse(localStorage.getItem('lingualearn_game_' + u) || '{}');
+  const grammar = JSON.parse(localStorage.getItem('lingualearn_grammar_' + u) || '{}');
+  window.fetch = realFetch;
+  return {
+    ok: res.ok, changed: res.changed, before, afterXp: after.xp,
+    polyglott: !!after.achievements?.polyglott, pushedXp,
+    grammarEl: grammar['basic-el']?.[0] || null,
+    lastSync: s.getLastSync(u) > 0,
+  };
+});
+check('Sync-Ablauf: holen → zusammenführen → anwenden → hochladen',
+  syncFlow.ok && syncFlow.changed && syncFlow.afterXp === 99999 && syncFlow.polyglott
+  && syncFlow.pushedXp === 99999 && syncFlow.grammarEl === 'intro' && syncFlow.lastSync,
+  JSON.stringify(syncFlow));
+
+// Ohne eingerichteten Server bleibt die App nutzbar.
+const syncOff = await page.evaluate(async () => {
+  const s = await import('/core/sync.js');
+  const realFetch = window.fetch;
+  window.fetch = async () => new Response(JSON.stringify({ ok: false, error: 'sync-not-configured' }), { status: 503 });
+  const res = await s.syncNow({ user: localStorage.getItem('lingualearn_current_user') });
+  window.fetch = realFetch;
+  return res;
+});
+check('Ohne Server-Speicher: klare Rückmeldung, kein Absturz',
+  syncOff.ok === false && syncOff.reason === 'not-configured', JSON.stringify(syncOff));
+
+// Statusanzeige in den Einstellungen
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="settings"]'); await page.waitForTimeout(250);
+check('Einstellungen zeigen Sync-Bereich',
+  await page.evaluate(() => !!document.getElementById('syncNowBtn') && !!document.getElementById('syncState')));
+await click('#settingsBackBtn'); await page.waitForTimeout(200);
+
 // ── Update-Logout: Konto bleibt, Sitzung endet ──
 await page.evaluate(() => localStorage.setItem('lingualearn_app_version', 'alt-0'));
 await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(400);

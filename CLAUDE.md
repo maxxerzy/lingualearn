@@ -22,8 +22,11 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
 ## Architektur-Kurzüberblick
 - Statische PWA ohne Build-Schritt, ES-Module: `core/` (Logik, Stores),
   `ui/` (Ansichten), `js/data/` (Decks, Themen, Grammatik), `utils/`.
-- Alles Nutzerdaten liegen im localStorage pro Gerät (kein Server, kein
-  Sync); pro Konto über `core/userStore.js`-Präfixe.
+- Nutzerdaten liegen im localStorage pro Konto (`core/userStore.js`-Präfixe)
+  und werden über `core/sync.js` + `worker.js` (Cloudflare KV) zwischen
+  Geräten abgeglichen. Der Abgleich FÜHRT ZUSAMMEN (höheres Level, mehr
+  gemeisterte Karten, vereinigte Erfolge) — kein „letztes Gerät gewinnt".
+  Ohne KV-Binding läuft die App unverändert lokal weiter.
 - Nur ZWEI Modi: geführter **Lernkurs** (Grammatik-Kapitel → 2er-Häppchen
   kennenlernen → Hören → Üben (MC/Vergleich) → Sprechen → Schreiben →
   Sätze (Lücke/Satzbau/Bedeutung)) und **Karteikarten** (SRS). Alle
@@ -54,6 +57,7 @@ scrollen lassen — niemals die Seite.
 ```
 (python3 -m http.server 4173 &)          # aus der Repo-Wurzel
 node tests/features_smoke.mjs            # Funktions-Regression
+node tests/worker_sync.mjs               # Sync-Server (ohne Browser/Cloudflare)
 node tests/compat_audit.mjs <gerät>      # je: se iph14 iph14pm ipadmini
                                          #     ipad11 ipad11l ipad13l mac13 mac16
 ```

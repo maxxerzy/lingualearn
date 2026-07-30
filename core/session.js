@@ -13,6 +13,7 @@ import { pendingQuestClaims } from './quests.js';
 import { saveErrors, clearErrors } from './errorLog.js';
 import { playCorrect, playWrong } from '../utils/feedback.js';
 import { speak, latinPron } from '../utils/speech.js';
+import { syncSoon } from './sync.js';
 import { createUserStore } from './userStore.js';
 
 // Vergoldete (nach Abschluss wiederholte) Lektionen pro Deck.
@@ -1343,6 +1344,7 @@ function endSession() {
   toastAchievements(freshAchievements);
   toastCosmetics(checkNewCosmetics());
   celebrateSessionEnd();
+  syncSoon();                       // Fortschritt auf die anderen Geräte spiegeln
   document.getElementById('restartSession').addEventListener('click', startSession);
   const wrong = session?.wrongCards || [];
   document.getElementById('reviewErrorsBtn')?.addEventListener('click', () =>
@@ -2331,6 +2333,7 @@ function endCourseLesson(session) {
   toastAchievements(freshAchievements);
   toastCosmetics(checkNewCosmetics());
   celebrateSessionEnd();
+  syncSoon();                       // Fortschritt auf die anderen Geräte spiegeln
   document.getElementById('restartSession').addEventListener('click', startSession);
   setCurrentSession(null);
 
