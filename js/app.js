@@ -24,7 +24,7 @@ import { reinitGrammar } from '../core/grammar.js';
 import { initGrammar } from '../ui/grammar.js';
 import { showToast } from '../ui/toast.js';
 import { syncNow, syncSoon } from '../core/sync.js';
-import { renderSyncState } from '../ui/settings.js';
+import { renderSyncState, renderMergeAccounts } from '../ui/settings.js';
 
 let appInitialized = false;
 
@@ -102,6 +102,8 @@ function showApp() {
         if (item.dataset.action === 'stats') renderStatsExtras();
         if (item.dataset.action === 'rewards') renderRewards();
         if (item.dataset.action === 'arena') renderArena();
+        // Konten-Auswahl frisch aufbauen (kann sich nach Kontowechsel ändern).
+        if (item.dataset.action === 'settings') renderMergeAccounts();
         if (item.dataset.action === 'dict') {
           const q = document.getElementById('dictSearch');
           if (q) q.value = '';
@@ -170,23 +172,25 @@ function showApp() {
 
 // Abgleich ausführen und — falls fremder Fortschritt dazukam — die
 // Oberfläche mit dem zusammengeführten Stand neu aufbauen.
-async function runSync({ announce = false } = {}) {
+async function runSync({ announce = false, force = false } = {}) {
   let res;
-  try { res = await syncNow(); } catch { return; }
-  renderSyncState(res);
-  if (!res.ok || !res.changed) return;
+  try { res = await syncNow(); } catch { res = null; }
+  if (res) renderSyncState(res);
+  // force: nach einer lokalen Konten-Zusammenführung muss die Oberfläche
+  // den neuen Stand auch dann zeigen, wenn der Server nichts beisteuert.
+  if (!force && (!res?.ok || !res.changed)) return;
   reinitUser();
   populateDeckSelect();
   updateStats();
   renderGamiHeader();
   renderLearnWidgets();
   applyCosmetics();
-  if (announce) {
+  if (announce && res?.changed) {
     showToast('<i class="fas fa-cloud-arrow-down toast__icon"></i><div class="toast__body"><b>Fortschritt übernommen</b><span>Stand deiner anderen Geräte zusammengeführt.</span></div>');
   }
 }
 
-document.addEventListener('lingua:synced', () => runSync());
+document.addEventListener('lingua:synced', () => runSync({ force: true }));
 
 function doLogout() {
   setCurrentSession(null);

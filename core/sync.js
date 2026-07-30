@@ -212,6 +212,47 @@ export function mergeSnapshots(local, remote) {
   return { version: 1, updatedAt: Math.max(local.updatedAt || 0, remote.updatedAt || 0), data };
 }
 
+// ── Konten auf DIESEM Gerät zusammenführen ───────────────────────
+// Für den Fall, dass auf zwei Geräten unterschiedliche Kontonamen
+// benutzt wurden: Der Fortschritt eines anderen lokalen Kontos wird in
+// das aktuelle Konto eingeschmolzen — nach denselben Regeln wie beim
+// Geräte-Abgleich (höheres Level, stärkere Karten, vereinigte Erfolge).
+// Das Quellkonto bleibt dabei unverändert erhalten.
+export function listLocalAccounts(exceptUser = getCurrentUser()) {
+  try {
+    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '{}');
+    return Object.keys(users).filter(u => u !== exceptUser);
+  } catch { return []; }
+}
+
+// Hat ein Konto überhaupt Lerndaten? (Leere Konten lohnen die Übernahme nicht.)
+export function accountHasData(user) {
+  return PREFIXES.some(p => {
+    const v = readJson(p + user);
+    if (v === undefined || v === null) return false;
+    if (typeof v === 'object') return Object.keys(v).length > 0;
+    return true;
+  });
+}
+
+export function mergeLocalAccount(fromUser, toUser = getCurrentUser()) {
+  if (!fromUser || !toUser || fromUser === toUser) return { ok: false, reason: 'bad-args' };
+  const users = (() => {
+    try { return JSON.parse(localStorage.getItem(USERS_KEY) || '{}'); } catch { return {}; }
+  })();
+  if (!users[fromUser]) return { ok: false, reason: 'unknown-account' };
+
+  const target = collectSnapshot(toUser);
+  const source = collectSnapshot(fromUser);
+  // Das aktuelle Konto gilt als das jüngere: Bei Einstellungen, die sich
+  // nicht verrechnen lassen (ausgerüstete Cosmetics, Tagesziel), behält
+  // es die Oberhand; Zählwerte werden zusammengeführt.
+  const merged = mergeSnapshots({ ...target, updatedAt: Date.now() },
+                                { ...source, updatedAt: Date.now() - 1 });
+  applySnapshot(toUser, merged);
+  return { ok: true, from: fromUser, to: toUser };
+}
+
 // ── Server-Kommunikation ─────────────────────────────────────────
 async function api(path, payload) {
   const res = await fetch(path, {
