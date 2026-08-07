@@ -343,6 +343,47 @@
                 </p>
               </div>
             </div>
+            <div class="form-group">
+              <label>Konto-Schlüssel (verbindet deine Geräte)</label>
+              <div class="sync-box">
+                <p class="sync-box__hint" style="margin-top:0">
+                  Normalerweise brauchst du ihn nicht — Geräte mit denselben Zugangsdaten
+                  finden sich von allein. Weicht auf einem Gerät das Passwort ab, trägst du
+                  hier den Schlüssel des anderen Geräts ein.
+                </p>
+                <div class="key-row">
+                  <input type="text" id="syncKeyField" class="input" readonly
+                    autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"
+                    placeholder="wird beim ersten Abgleich erzeugt">
+                  <button type="button" class="btn" id="syncKeyToggle" title="Anzeigen">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn" id="syncKeyCopy" title="Kopieren">
+                    <i class="fas fa-copy"></i>
+                  </button>
+                </div>
+                <div class="key-row" style="margin-top:8px">
+                  <input type="text" id="syncKeyInput" class="input" placeholder="Schlüssel von anderem Gerät einfügen"
+                    autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">
+                  <button type="button" class="btn" id="syncKeyApply">Verbinden</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Passwort ändern</label>
+              <div class="sync-box">
+                <div class="pw-grid">
+                  <input type="password" id="pwOld" class="input" placeholder="Aktuelles Passwort" autocomplete="current-password">
+                  <input type="password" id="pwNew" class="input" placeholder="Neues Passwort (mind. 4 Zeichen)" autocomplete="new-password">
+                  <input type="password" id="pwNew2" class="input" placeholder="Neues Passwort wiederholen" autocomplete="new-password">
+                  <button type="button" class="btn" id="pwSaveBtn"><i class="fas fa-key"></i> Passwort ändern</button>
+                </div>
+                <p class="sync-box__hint">
+                  Dein Konto-Schlüssel bleibt dabei unverändert — der Abgleich mit deinen
+                  anderen Geräten läuft nahtlos weiter.
+                </p>
+              </div>
+            </div>
             <!-- Sichtbar, sobald es auf diesem Gerät weitere Konten gibt -->
             <div class="form-group" id="mergeGroup" hidden>
               <label for="mergeAccount">Fortschritt eines anderen Kontos übernehmen</label>
@@ -564,7 +605,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v28';
+    var APP_VERSION = 'v29';
     var loginMode = 'login';
 
     function hp(pw) {
@@ -652,7 +693,25 @@
       try { if (un) un.focus(); } catch (e) {}
     }
 
-    window.LinguaAuth = { getUser: getUser, clearUser: clearUser, showLoginScreen: showLoginScreen };
+    // Passwort des angemeldeten Kontos ändern. Der Sync-Schlüssel liegt
+    // separat und bleibt dabei bestehen — der Cloud-Stand ist weiterhin
+    // erreichbar.
+    function changePassword(oldPw, newPw) {
+      var u = getUser();
+      if (!u) return { ok: false, err: 'Nicht angemeldet.' };
+      if ((newPw || '').length < 4) return { ok: false, err: 'Neues Passwort zu kurz (mind. 4 Zeichen).' };
+      var users = getUsers();
+      if (!users[u]) return { ok: false, err: 'Konto nicht gefunden.' };
+      if (users[u].passwordHash !== hp(oldPw || '')) return { ok: false, err: 'Aktuelles Passwort stimmt nicht.' };
+      users[u].passwordHash = hp(newPw);
+      saveUsers(users);
+      return { ok: true };
+    }
+
+    window.LinguaAuth = {
+      getUser: getUser, clearUser: clearUser, showLoginScreen: showLoginScreen,
+      changePassword: changePassword,
+    };
 
     document.addEventListener('DOMContentLoaded', function () {
       var tL   = document.getElementById('tabLogin');

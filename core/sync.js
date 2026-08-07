@@ -34,10 +34,47 @@ function writeJson(key, value) {
   } catch { /* Speicher voll — lokal weiterarbeiten */ }
 }
 
-// ── Zugangstoken ─────────────────────────────────────────────────
-// Wird aus Nutzername + gespeichertem Passwort-Hash abgeleitet. Damit
-// erhält dasselbe Konto auf jedem Gerät denselben Schlüssel, ohne dass
-// das Passwort das Gerät verlässt.
+// ── Konto-Schlüssel ──────────────────────────────────────────────
+// Der Schlüssel identifiziert das Konto gegenüber dem Server. Er ist
+// bewusst ein EIGENSTÄNDIGES Geheimnis und nicht dauerhaft ans Passwort
+// gebunden — sonst würde jede Passwortänderung den Zugang zum
+// Cloud-Stand kappen.
+//
+// Erstkontakt: Gibt es lokal noch keinen Schlüssel, wird er aus Konto +
+// Passwort abgeleitet. Dadurch finden sich Geräte mit denselben
+// Zugangsdaten weiterhin von allein — und bestehende Stände bleiben
+// erreichbar. Ab dann ist der Schlüssel gespeichert und überlebt jeden
+// Passwortwechsel. Auf einem Gerät mit abweichendem Passwort kann man
+// ihn stattdessen von Hand eintragen.
+const KEY_STORE = 'lingualearn_synckey_';
+
+export function readSyncKey(user = getCurrentUser()) {
+  try { return localStorage.getItem(KEY_STORE + user) || null; } catch { return null; }
+}
+
+export function isValidSyncKey(key) {
+  return typeof key === 'string' && /^[a-f0-9]{64}$/i.test(key.trim());
+}
+
+export function setSyncKey(key, user = getCurrentUser()) {
+  if (!user || !isValidSyncKey(key)) return false;
+  try { localStorage.setItem(KEY_STORE + user, key.trim().toLowerCase()); } catch { return false; }
+  return true;
+}
+
+// Schlüssel besorgen: gespeicherten nehmen, sonst einmalig aus den
+// Zugangsdaten ableiten und ab dann festschreiben.
+export async function getSyncKey(user = getCurrentUser()) {
+  if (!user) return null;
+  const stored = readSyncKey(user);
+  if (stored) return stored;
+  const derived = await deriveToken(user);
+  if (derived) setSyncKey(derived, user);
+  return derived;
+}
+
+// Aus Nutzername + gespeichertem Passwort-Hash abgeleiteter Schlüssel.
+// Das Passwort selbst verlässt das Gerät nie.
 export async function deriveToken(user) {
   try {
     const users = JSON.parse(localStorage.getItem(USERS_KEY) || '{}');
@@ -277,7 +314,7 @@ function setLastSync(user) {
 export async function syncNow({ user = getCurrentUser() } = {}) {
   if (!user) return { ok: false, reason: 'no-user' };
   if (!navigator.onLine) return { ok: false, reason: 'offline' };
-  const token = await deriveToken(user);
+  const token = await getSyncKey(user);
   if (!token) return { ok: false, reason: 'no-token' };
 
   let pulled;

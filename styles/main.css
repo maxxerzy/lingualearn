@@ -1638,3 +1638,9 @@ label {
 /* Konten-Zusammenführung (Einstellungen) */
 .merge-row { display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
 .merge-row .input { flex: 1; min-width: 140px; }
+
+/* Konto-Schlüssel & Passwortwechsel (Einstellungen) */
+.key-row { display: flex; gap: 8px; align-items: center; }
+.key-row .input { flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.82rem; }
+.key-row .btn { flex-shrink: 0; padding: 10px 12px; }
+.pw-grid { display: flex; flex-direction: column; gap: 8px; }
