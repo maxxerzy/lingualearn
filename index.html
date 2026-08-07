@@ -228,7 +228,11 @@
                 </div>
               </div>
               <div id="learnArea" class="card" role="region" aria-live="polite" aria-label="Lernbereich">
-                <p>Wähle ein Deck und einen Modus, dann starte die Session.</p>
+                <div class="learn-empty">
+                  <div class="learn-empty__icon"><i class="fas fa-graduation-cap"></i></div>
+                  <h3 class="learn-empty__title">Bereit zum Lernen</h3>
+                  <p>Wähle ein Deck und einen Modus, dann starte die Session.</p>
+                </div>
               </div>
             </div>
 
@@ -643,7 +647,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v30';
+    var APP_VERSION = 'v31';
     var loginMode = 'login';
 
     function hp(pw) {

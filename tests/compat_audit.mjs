@@ -16,6 +16,9 @@ const DEVICES = {
   ipad13l:  { viewport: { width: 1366, height: 950 }, hasTouch: true },
   mac13:    { viewport: { width: 1280, height: 800 } },
   mac16:    { viewport: { width: 1440, height: 900 } },
+  // Große Mac-Fenster: skaliertes MacBook-Vollbild und QHD/27".
+  mac21:    { viewport: { width: 2048, height: 1120 } },
+  mac27:    { viewport: { width: 2560, height: 1400 } },
 };
 
 const key = process.argv[2];
@@ -81,6 +84,51 @@ check('Profil-Chip zeigt Kontonamen nach dem Rang', header.name === 'cmp' + key,
   check('Header: keine überlappenden Elemente', !overlap, overlap || '');
   const out = ids.find(id => header.rects[id] && (header.rects[id].right > header.vw + 1 || header.rects[id].left < -1));
   check('Header: alles im Viewport', !out, out || '');
+}
+
+// ── 2b) Desktop (≥1201): Konfig-Spalte und Lernbereich strikt getrennt,
+// im Leerlauf mittiger Empty-State statt verwaister „Bereit zum
+// Lernen"-Kopfzeile im Gedränge neben „Lernsession".
+if (!isNarrow) {
+  const desk = await page.evaluate(() => {
+    const r = s => document.querySelector(s)?.getBoundingClientRect().toJSON() || null;
+    const cfg = r('.config-panel'), panel = r('.learn-panel');
+    const empty = document.querySelector('.learn-empty');
+    const emptyRect = empty ? empty.getBoundingClientRect().toJSON() : null;
+    const title = document.getElementById('session-title');
+    return {
+      cfg, panel, emptyRect,
+      gap: cfg && panel ? Math.round(panel.left - cfg.right) : -999,
+      titleHidden: !title || title.offsetParent === null,
+      emptyVisible: !!empty && emptyRect.height > 40,
+      emptyCentered: emptyRect && cfg
+        ? Math.abs((emptyRect.top + emptyRect.height / 2) - window.innerHeight / 2) < window.innerHeight * 0.2
+        : false,
+    };
+  });
+  check('Desktop: Lernbereich überlappt die Konfig-Spalte nicht (≥8px Abstand)',
+    desk.gap >= 8, `${desk.gap}px`);
+  // DER Mac-Bug: die Icon-Knöpfe neben „Lernsession" ragten aus dem
+  // Panel heraus bis über die Überschrift des Lernbereichs.
+  const iconsInside = await page.evaluate(() => {
+    const panel = document.querySelector('.config-panel').getBoundingClientRect();
+    return [...document.querySelectorAll('.config-icon-btn')].map(b => {
+      const r = b.getBoundingClientRect();
+      return { id: b.id, out: Math.round(r.right - panel.right) };
+    }).filter(x => x.out > 1);
+  });
+  check('Desktop: alle Konfig-Icons bleiben im Panel',
+    iconsInside.length === 0, JSON.stringify(iconsInside));
+  check('Desktop: Leerlauf zeigt mittigen Empty-State, Kopfzeile ruht',
+    desk.emptyVisible && desk.titleHidden && desk.emptyCentered,
+    JSON.stringify({ empty: desk.emptyVisible, titleHidden: desk.titleHidden, centered: desk.emptyCentered }));
+  const smart = await page.evaluate(() => {
+    const t = document.querySelector('.smart-bar__text');
+    if (!t || t.closest('[hidden]')) return { skipped: true };
+    return { skipped: false, clipped: t.scrollWidth > t.clientWidth + 1 };
+  });
+  check('Desktop: „Für dich"-Text nicht mitten im Wort abgeschnitten',
+    smart.skipped || !smart.clipped, JSON.stringify(smart));
 }
 
 // Handy-Layout (≤768): Profil auf der Logo-Zeile (rechtsbündig), Chips in Zeile 2

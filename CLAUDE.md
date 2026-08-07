@@ -40,7 +40,7 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
 
 ## Geräte-Kompatibilität (WICHTIGSTE Regel, Nutzer-Vorgabe)
 **JEDE einzelne Änderung — auch reine Text-, Logik- oder Datenänderungen —
-wird vor dem Push auf ALLEN 9 Geräteprofilen geprüft.** UI, GUI und
+wird vor dem Push auf ALLEN 11 Geräteprofilen geprüft.** UI, GUI und
 Overlays müssen auf iPhone, iPad und macOS gleichermaßen funktionieren:
 - kein Seiten-Scrollen (Konfiguration UND jeder einzelne Kursschritt),
 - keine Überlappungen (Kopfzeile/Logo/Profil-Chip, Fokus-Leiste),
@@ -49,7 +49,7 @@ Overlays müssen auf iPhone, iPad und macOS gleichermaßen funktionieren:
 `tests/compat_audit.mjs` spielt dafür eine komplette Kurslektion durch
 und vermisst JEDEN Schritt einzeln (Grammatik-Reader, Kennenlernen,
 Hören, MC, Vergleich, Sprechen, Schreiben, Sätze). Ein neues UI-Element
-ohne bestandene 9/9-Matrix wird nicht gepusht. Reicht die Höhe nicht,
+ohne bestandene 11/11-Matrix wird nicht gepusht. Reicht die Höhe nicht,
 gilt: erst verdichten (Fokus-Modus-Regeln), sonst innerhalb der Karte
 scrollen lassen — niemals die Seite.
 
@@ -59,8 +59,9 @@ scrollen lassen — niemals die Seite.
 node tests/features_smoke.mjs            # Funktions-Regression
 node tests/worker_sync.mjs               # Sync-Server (ohne Browser/Cloudflare)
 node tests/compat_audit.mjs <gerät>      # je: se iph14 iph14pm ipadmini
-                                         #     ipad11 ipad11l ipad13l mac13 mac16
+                                         #     ipad11 ipad11l ipad13l mac13
+                                         #     mac16 mac21 mac27
 ```
-Alle Smoke-Checks und 9/9 Geräte müssen PASS sein. Neue Features immer
+Alle Smoke-Checks und 11/11 Geräte müssen PASS sein. Neue Features immer
 mit Checks in `tests/features_smoke.mjs` absichern; Zähler-Erwartungen
 (Kataloge, Erfolge) beim Erweitern mitziehen.

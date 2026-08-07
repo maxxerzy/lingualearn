@@ -305,13 +305,17 @@ main { display: block; }
 /* ── Learn Layout (2-column) ────────────────────────────────────── */
 .learn-layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  /* minmax(0, 1fr) statt 1fr: verhindert Grid-Blowout — breiter Inhalt
+     im Lernbereich darf die Spalten NIE über- oder untereinander
+     schieben (sichtbar als „Panel frisst die Überschrift"). */
+  grid-template-columns: 280px minmax(0, 1fr);
   gap: 24px;
   align-items: stretch;
   /* Header (~76px) + Content-Padding (2×24px) + Puffer — so füllt das
      Layout den Bildschirm, ohne ihn je zu überlaufen. */
   min-height: calc(100vh - 160px);
 }
+.learn-layout > * { min-width: 0; }
 
 .config-panel {
   position: sticky;
@@ -326,11 +330,15 @@ main { display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* Wird es eng (schmale Desktop-Spalte), rutschen die Icons in eine
+     eigene Zeile — sie dürfen NIEMALS aus dem Panel in den Lernbereich
+     ragen (genau das sah auf dem Mac wie ein kaputtes Overlay aus). */
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 18px;
 }
 .config-head h2 { margin: 0; }
-.config-actions { display: flex; gap: 6px; }
+.config-actions { display: flex; gap: 6px; margin-left: auto; }
 .config-icon-btn {
   position: relative;
   width: 40px;
@@ -1203,6 +1211,74 @@ label {
   #view-learn.session-active .speak-card .course-pron { margin: 2px 0; }
   #view-learn.session-active .grammar-body { max-height: calc(100vh - 460px); }
 }
+
+/* ── Desktop-Ansicht (Mac, große Fenster) ───────────────────────
+   Ohne laufende Session zeigte der Lernbereich nur „Bereit zum
+   Lernen" + 0/0-Balken direkt neben „Lernsession" — zwei Kopfzeilen
+   im Gedränge über einer riesigen leeren Fläche. Stattdessen: die
+   Kopfzeile verschwindet im Leerlauf, ein mittiger Empty-State füllt
+   den Bereich; Übungen laufen in einer komfortablen Lesespalte. */
+@media (min-width: 1201px) {
+  #view-learn:not(.session-active) .session-header { display: none; }
+  /* Während einer Session: Schnellzugriffe (Shop/Grammatik/Karte/WdT)
+     ausblenden — die (ggf. umgebrochene) Icon-Zeile würde die Spalte
+     sonst so hoch machen, dass 800px-Displays scrollen müssten. */
+  #view-learn.session-active .config-actions { display: none; }
+  #view-learn.session-active .config-head { margin-bottom: 12px; }
+  #view-learn:not(.session-active) .learn-panel { display: flex; flex-direction: column; }
+  #view-learn:not(.session-active) #learnArea {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  /* „Für dich"-Hinweis nie mitten im Wort abschneiden — hier ist Platz
+     für eine zweite Zeile. (ID im Selektor: gewinnt gegen die
+     nowrap-Basisregel, die später im Stylesheet folgt.) */
+  #view-learn .smart-bar__text {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  /* Lesespalte: Kopfzeile und Übungskarte gemeinsam zentriert, statt
+     randlos über die volle Panel-Breite zu laufen. */
+  #view-learn.session-active .session-header,
+  #view-learn.session-active #learnArea {
+    width: 100%;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* Ab 1440px verdient die Konfig-Spalte etwas mehr Luft. */
+@media (min-width: 1440px) {
+  .learn-layout { grid-template-columns: 320px minmax(0, 1fr); gap: 28px; }
+}
+/* Sehr breite Displays (QHD+): App-Rahmen moderat mitwachsen lassen. */
+@media (min-width: 2200px) {
+  .app-container { max-width: 1500px; }
+}
+
+/* Empty-State des Lernbereichs (sichtbar nur auf Desktop-Breiten —
+   auf Handy/Tablet ist der Bereich im Leerlauf komplett ausgeblendet). */
+.learn-empty { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 24px; }
+.learn-empty__icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, var(--surface));
+  margin-bottom: 10px;
+}
+.learn-empty__title { margin: 0; font-size: 1.35rem; }
+.learn-empty p { color: var(--gray); max-width: 400px; margin: 0; }
 
 /* Auf hohen Screens (iPad hochkant, iPad quer) den Lerninhalt vertikal
    zentrieren — genug Platz, kein Scrollen, sieht ausgewogener aus. */
