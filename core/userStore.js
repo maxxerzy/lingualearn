@@ -1,5 +1,15 @@
 import { getCurrentUser } from './auth.js';
 
+// Meldet der Oberfläche, wenn Schreibzugriffe scheitern (voller Speicher,
+// privater Modus). Ohne diese Rückmeldung bliebe Datenverlust unbemerkt.
+let writeFailed = false;
+function notifyStorage(ok) {
+  try {
+    document.dispatchEvent(new CustomEvent('lingua:storage', { detail: { ok } }));
+  } catch { /* kein DOM (Tests) */ }
+}
+export function storageHealthy() { return !writeFailed; }
+
 // Fabrik für einen pro-Nutzer-getrennten localStorage-Speicher.
 // Kapselt das früher 4× kopierte Muster: nutzerbezogener Schlüssel,
 // Cache mit Invalidierung bei Nutzerwechsel, defensives Lesen/Schreiben.
@@ -47,7 +57,14 @@ export function createUserStore(keyPrefix, options = {}) {
     if (!key) return;
     cache = value;
     cacheKey = key;
-    try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* Speicher voll — ignorieren */ }
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+      if (writeFailed) { writeFailed = false; notifyStorage(true); }
+    } catch {
+      // Speicher voll o. Ä.: NICHT verschlucken — sonst lernt man weiter,
+      // während nichts mehr gespeichert wird.
+      if (!writeFailed) { writeFailed = true; notifyStorage(false); }
+    }
   }
 
   function mutate(fn) {

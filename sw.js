@@ -2,7 +2,7 @@
 // vollständig offline nutzbar.
 // WICHTIG: CACHE_VERSION bei jedem Release erhöhen, damit Clients
 // die neuen Dateien bekommen.
-const CACHE_VERSION = 'v29';
+const CACHE_VERSION = 'v30';
 const CACHE_NAME = `lingualearn-${CACHE_VERSION}`;
 
 // Komplette App-Shell — alles relative Pfade, funktioniert daher auf
@@ -21,13 +21,11 @@ const PRECACHE = [
   './icons/icon-512.png',
   './js/app.js',
   './js/data/decks/meta.js',
-  './js/data/decks/da.js',
-  './js/data/decks/el.js',
-  './js/data/decks/fr.js',
-  './js/data/decks/es.js',
-  './js/data/decks/la.js',
-  './js/data/decks/ru.js',
-  './js/data/decks/ja.js',
+  // Die Deck-Dateien selbst (zusammen ~800 KB) sind bewusst NICHT im
+  // Precache: Beim ersten Start würde sonst jedes der sieben Decks
+  // geladen, obwohl man meist nur eines lernt. Das Deck, das man
+  // tatsächlich öffnet, landet über die Fetch-Regel unten im selben
+  // Cache und ist danach offline verfügbar.
   './js/data/themes.js',
   './js/data/phrases/da.js',
   './js/data/phrases/el.js',
@@ -44,6 +42,7 @@ const PRECACHE = [
   './js/data/grammar/ru.js',
   './js/data/grammar/ja.js',
   './core/grammar.js',
+  './core/reminder.js',
   './ui/grammar.js',
   './core/userStore.js',
   './core/cosmetics.js',

@@ -305,17 +305,42 @@ async function api(path, payload) {
 export function getLastSync(user) {
   try { return Number(localStorage.getItem(LAST_SYNC_KEY + user)) || 0; } catch { return 0; }
 }
-function setLastSync(user) {
-  try { localStorage.setItem(LAST_SYNC_KEY + user, String(Date.now())); } catch { /* egal */ }
+function setLastSync(user, data) {
+  try {
+    localStorage.setItem(LAST_SYNC_KEY + user, String(Date.now()));
+    if (data !== undefined) localStorage.setItem(SIG_KEY + user, signature(data));
+  } catch { /* egal */ }
 }
+
+// Kurze Signatur des lokalen Stands. Damit erkennt der Abgleich, ob sich
+// seit dem letzten Mal überhaupt etwas geändert hat — sonst wird bei
+// jedem App-Wechsel unnötig gefunkt.
+const SIG_KEY = 'lingualearn_syncsig_';
+function signature(data) {
+  const s = JSON.stringify(data);
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
+  return `${s.length}:${h}`;
+}
+const QUIET_MS = 5 * 60 * 1000;   // so lange gilt ein unveränderter Stand als frisch
 
 // Vollständiger Abgleich: holen → zusammenführen → anwenden → hochladen.
 // Gibt einen Status zurück, den die Oberfläche anzeigen kann.
-export async function syncNow({ user = getCurrentUser() } = {}) {
+export async function syncNow({ user = getCurrentUser(), force = false } = {}) {
   if (!user) return { ok: false, reason: 'no-user' };
   if (!navigator.onLine) return { ok: false, reason: 'offline' };
   const token = await getSyncKey(user);
   if (!token) return { ok: false, reason: 'no-token' };
+
+  // Nichts gelernt und gerade eben erst abgeglichen? Dann gar nicht erst
+  // funken. Beim App-Start (force) wird immer geholt, damit der Stand
+  // anderer Geräte ankommt.
+  const sigNow = signature(collectSnapshot(user).data);
+  if (!force && Date.now() - getLastSync(user) < QUIET_MS) {
+    let lastSig = null;
+    try { lastSig = localStorage.getItem(SIG_KEY + user); } catch { /* egal */ }
+    if (lastSig === sigNow) return { ok: true, changed: false, uploaded: false, skipped: true };
+  }
 
   let pulled;
   try {
@@ -328,24 +353,104 @@ export async function syncNow({ user = getCurrentUser() } = {}) {
   if (pulled.status !== 200) return { ok: false, reason: 'server' };
 
   const local = collectSnapshot(user);
-  const remote = pulled.body?.snapshot || null;
-  const merged = mergeSnapshots(local, remote);
+  let remote = pulled.body?.snapshot || null;
+  let merged = mergeSnapshots(local, remote);
   const changed = remote ? JSON.stringify(merged.data) !== JSON.stringify(local.data) : false;
   if (changed) applySnapshot(user, merged);
 
-  let pushed;
-  try {
-    pushed = await api('/api/sync/push', {
-      user, token,
-      snapshot: { data: merged.data, device: navigator.platform || '' },
-    });
-  } catch {
-    return { ok: false, reason: 'network', changed };
+  // Hat der Server bereits genau diesen Stand, wird nicht hochgeladen.
+  // Sonst würde jeder App-Wechsel einen überflüssigen Schreibvorgang
+  // auslösen (Datenvolumen, KV-Kontingent).
+  if (remote && JSON.stringify(merged.data) === JSON.stringify(remote.data)) {
+    setLastSync(user, merged.data);
+    return { ok: true, changed, hadRemote: true, uploaded: false };
   }
-  if (pushed.status !== 200) return { ok: false, reason: 'server', changed };
 
-  setLastSync(user);
-  return { ok: true, changed, hadRemote: !!remote };
+  // Optimistisches Sperren: Der Push nennt die Revision, auf der das
+  // Zusammenführen beruht. Kommt 409 zurück, hat ein anderes Gerät
+  // dazwischengefunkt — wir führen mit dessen Stand neu zusammen und
+  // versuchen es einmal erneut.
+  let baseRev = Number(remote?.rev) || 0;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    let pushed;
+    try {
+      pushed = await api('/api/sync/push', {
+        user, token, baseRev,
+        snapshot: { data: merged.data, device: navigator.platform || '' },
+      });
+    } catch {
+      return { ok: false, reason: 'network', changed };
+    }
+    if (pushed.status === 200) {
+      setLastSync(user, merged.data);
+      return { ok: true, changed, hadRemote: !!remote, uploaded: true };
+    }
+    if (pushed.status !== 409 || attempt === 1) return { ok: false, reason: 'server', changed };
+
+    remote = pushed.body?.snapshot || null;
+    baseRev = Number(pushed.body?.rev) || Number(remote?.rev) || 0;
+    merged = mergeSnapshots(merged, remote);
+    applySnapshot(user, merged);
+  }
+  return { ok: false, reason: 'conflict', changed };
+}
+
+// ── Sicherung & Konto-Löschung ───────────────────────────────────
+// Der komplette Fortschritt eines Kontos als Datei — zum Aufheben, zum
+// Umziehen auf ein Gerät ohne Netz und als Rettungsanker vor dem Löschen.
+export function exportProgress(user = getCurrentUser()) {
+  const snap = collectSnapshot(user);
+  return {
+    app: 'lingualearn',
+    kind: 'progress',
+    version: 1,
+    user,
+    exportedAt: new Date().toISOString(),
+    data: snap.data,
+  };
+}
+
+// Eine Sicherung einspielen: sie wird mit dem aktuellen Stand
+// ZUSAMMENGEFÜHRT, nicht darübergebügelt — so kann ein Einspielen
+// niemals Fortschritt vernichten.
+export function importProgress(payload, user = getCurrentUser()) {
+  if (!user) return { ok: false, reason: 'no-user' };
+  if (!payload || payload.app !== 'lingualearn' || typeof payload.data !== 'object' || !payload.data) {
+    return { ok: false, reason: 'bad-file' };
+  }
+  const local = collectSnapshot(user);
+  const merged = mergeSnapshots(local, { version: 1, updatedAt: 0, data: payload.data });
+  applySnapshot(user, merged);
+  return { ok: true, from: payload.user || null };
+}
+
+// Konto vollständig entfernen: lokale Daten, Konto-Schlüssel und — wenn
+// erreichbar — der Stand auf dem Server.
+export async function deleteAccount(user = getCurrentUser()) {
+  if (!user) return { ok: false, reason: 'no-user' };
+
+  let server = 'skipped';
+  const token = readSyncKey(user) || await deriveToken(user);
+  if (token && navigator.onLine) {
+    try {
+      const res = await api('/api/sync/delete', { user, token });
+      server = res.status === 200 ? 'deleted' : 'failed';
+    } catch { server = 'failed'; }
+  }
+
+  for (const p of PREFIXES) {
+    try { localStorage.removeItem(p + user); } catch { /* egal */ }
+  }
+  for (const k of [KEY_STORE, LAST_SYNC_KEY, SIG_KEY]) {
+    try { localStorage.removeItem(k + user); } catch { /* egal */ }
+  }
+  try {
+    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '{}');
+    delete users[user];
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+  } catch { /* egal */ }
+
+  return { ok: true, server };
 }
 
 // Nach einer Lektion nicht sofort funken, sondern gebündelt.

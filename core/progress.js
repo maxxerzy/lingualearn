@@ -4,10 +4,13 @@ export function updateProgress() {
   const session = getCurrentSession();
   const textEl = document.getElementById('progress-text');
   const barEl  = document.getElementById('progress-bar');
+  const track  = document.getElementById('progress-track');
+  const setPct = v => track?.setAttribute('aria-valuenow', String(v));
 
   if (!session) {
     textEl.textContent = '0/0 Karten';
     barEl.style.width = '0%';
+    setPct(0);
     return;
   }
 
@@ -18,4 +21,5 @@ export function updateProgress() {
 
   textEl.textContent = `${done}/${total} ${unit}`;
   barEl.style.width  = `${pct}%`;
+  setPct(pct);
 }

@@ -842,17 +842,72 @@ check('Sync-Ablauf: holen → zusammenführen → anwenden → hochladen',
   && syncFlow.pushedXp === 99999 && syncFlow.grammarEl === 'intro' && syncFlow.lastSync,
   JSON.stringify(syncFlow));
 
+// Unverändert + gerade eben abgeglichen → gar nicht erst funken.
+const syncQuiet = await page.evaluate(async () => {
+  const s = await import('/core/sync.js');
+  const realFetch = window.fetch;
+  let calls = 0;
+  window.fetch = async () => { calls++; return new Response('{}', { status: 200 }); };
+  const res = await s.syncNow({ user: localStorage.getItem('lingualearn_current_user') });
+  window.fetch = realFetch;
+  return { res, calls };
+});
+check('Unveränderter Stand löst keinen Server-Aufruf aus',
+  syncQuiet.res.ok && syncQuiet.res.skipped === true && syncQuiet.calls === 0,
+  JSON.stringify(syncQuiet));
+
 // Ohne eingerichteten Server bleibt die App nutzbar.
 const syncOff = await page.evaluate(async () => {
   const s = await import('/core/sync.js');
   const realFetch = window.fetch;
   window.fetch = async () => new Response(JSON.stringify({ ok: false, error: 'sync-not-configured' }), { status: 503 });
-  const res = await s.syncNow({ user: localStorage.getItem('lingualearn_current_user') });
+  const res = await s.syncNow({ user: localStorage.getItem('lingualearn_current_user'), force: true });
   window.fetch = realFetch;
   return res;
 });
 check('Ohne Server-Speicher: klare Rückmeldung, kein Absturz',
   syncOff.ok === false && syncOff.reason === 'not-configured', JSON.stringify(syncOff));
+
+// Sicherung: Export → Konto leeren → Import führt alles zurück.
+const backup = await page.evaluate(async () => {
+  const s = await import('/core/sync.js');
+  const u = localStorage.getItem('lingualearn_current_user');
+  const dump = s.exportProgress(u);
+  const xpBefore = JSON.parse(localStorage.getItem('lingualearn_game_' + u) || '{}').xp || 0;
+  localStorage.setItem('lingualearn_game_' + u, JSON.stringify({ xp: 1 }));
+  const bad = s.importProgress({ hallo: 'nein' }, u);
+  const good = s.importProgress(dump, u);
+  const xpAfter = JSON.parse(localStorage.getItem('lingualearn_game_' + u) || '{}').xp || 0;
+  return { xpBefore, xpAfter, badRejected: bad.ok === false, goodOk: good.ok === true, kind: dump.kind };
+});
+check('Fortschritt sichern & wieder einspielen',
+  backup.goodOk && backup.badRejected && backup.kind === 'progress'
+  && backup.xpAfter === backup.xpBefore, JSON.stringify(backup));
+
+// Konto löschen entfernt alle Daten dieses Kontos.
+const wiped = await page.evaluate(async () => {
+  const s = await import('/core/sync.js');
+  const u = 'wegwerf-konto';
+  const users = JSON.parse(localStorage.getItem('lingualearn_users') || '{}');
+  users[u] = { passwordHash: 'x' };
+  localStorage.setItem('lingualearn_users', JSON.stringify(users));
+  localStorage.setItem('lingualearn_game_' + u, JSON.stringify({ xp: 42 }));
+  localStorage.setItem('lingualearn_cards_' + u, JSON.stringify({ 'basic-da:Haus': { level: 3 } }));
+  const realFetch = window.fetch;
+  window.fetch = async () => new Response(JSON.stringify({ ok: true }), { status: 200 });
+  const res = await s.deleteAccount(u);
+  window.fetch = realFetch;
+  const after = JSON.parse(localStorage.getItem('lingualearn_users') || '{}');
+  return {
+    ok: res.ok,
+    game: localStorage.getItem('lingualearn_game_' + u),
+    cards: localStorage.getItem('lingualearn_cards_' + u),
+    userGone: !after[u],
+  };
+});
+check('Konto löschen entfernt Daten und Konto',
+  wiped.ok && wiped.game === null && wiped.cards === null && wiped.userGone,
+  JSON.stringify(wiped));
 
 // Statusanzeige in den Einstellungen
 await click('#userChipBtn'); await page.waitForTimeout(150);
@@ -1048,7 +1103,111 @@ const keyUi = await page.evaluate(() => ({
 }));
 check('Einstellungen: Schlüssel (verdeckt) + Passwortwechsel vorhanden',
   keyUi.field && keyUi.masked && keyUi.apply && keyUi.pw, JSON.stringify(keyUi));
+
+// ── Einstellungen: Datensicherung, Konto-Löschung, Erinnerung ──
+const dataUi = await page.evaluate(() => ({
+  exp: !!document.getElementById('dataExportBtn'),
+  imp: !!document.getElementById('dataImportBtn'),
+  del: !!document.getElementById('accountDeleteBtn'),
+  rem: !!document.getElementById('reminderToggle'),
+  hours: document.getElementById('reminderHour')?.options.length || 0,
+}));
+check('Einstellungen: Sicherung, Konto-Löschung und Erinnerung vorhanden',
+  dataUi.exp && dataUi.imp && dataUi.del && dataUi.rem && dataUi.hours === 24, JSON.stringify(dataUi));
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
+
+// ── SRS: längere Intervalle für sicher Gelerntes ──
+const srs = await page.evaluate(async () => {
+  const cp = await import('/core/cardProgress.js');
+  const u = localStorage.getItem('lingualearn_current_user');
+  localStorage.setItem('lingualearn_cards_' + u, '{}');
+  cp.reinitCardProgress();
+  const seen = [];
+  for (let i = 0; i < 10; i++) seen.push(cp.recordCardAnswer('basic-da', 'Haus', 'good').level);
+  const st = cp.getCardState('basic-da', 'Haus');
+  const days = Math.round((new Date(st.due) - new Date(new Date().toISOString().slice(0, 10))) / 86400000);
+  return { top: Math.max(...seen), days, maxLevel: cp.MAX_LEVEL, mastered: cp.countMasteredAll() };
+});
+check('SRS: Stufen bis 8, längstes Intervall 120 Tage, „gemeistert" ab 5',
+  srs.top === 8 && srs.days === 120 && srs.maxLevel === 5 && srs.mastered === 1, JSON.stringify(srs));
+
+// ── Tastatur: Ziffer wählt eine Antwort im Kurs ──
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  localStorage.setItem('lingualearn_course_' + u, JSON.stringify({ 'basic-da': { introduced: 0 } }));
+  const gm = await import('/core/grammar.js');
+  const chapters = await gm.loadGrammar('da');
+  localStorage.setItem('lingualearn_grammar_' + u, JSON.stringify({ 'basic-da': chapters.map(c => c.id) }));
+  (await import('/core/course.js')).reinitCourse();
+  gm.reinitGrammar();
+});
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+await page.evaluate(() => document.querySelector('.mode-btn[data-mode="course"]')?.click());
+await click('#startBtn'); await page.waitForTimeout(600);
+// Kennenlernen durchklicken bis zur ersten Frage mit Antwortknöpfen
+for (let i = 0; i < 12 && !(await page.evaluate(() => !!document.querySelector('#learnArea .mc-option'))); i++) {
+  await page.evaluate(() => document.querySelector('#learnArea .btn-primary')?.click());
+  await page.waitForTimeout(200);
+}
+const kb = await page.evaluate(() => ({ options: document.querySelectorAll('#learnArea .mc-option').length }));
+await page.keyboard.press('1'); await page.waitForTimeout(300);
+const kbAfter = await page.evaluate(() => ({
+  graded: !!document.querySelector('#learnArea .correct, #learnArea .incorrect'),
+  shortcut: document.querySelector('#learnArea .mc-option')?.getAttribute('aria-keyshortcuts') || '',
+}));
+check('Tastatur: Ziffer 1 wählt die erste Antwort',
+  kb.options >= 2 && kbAfter.graded, JSON.stringify({ ...kb, ...kbAfter }));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// ── Endlos-Runden statt Sackgasse am Deck-Ende ──
+const endless = await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const { getDecks, loadDeck } = await import('/core/state.js');
+  const deck = await loadDeck('basic-da');
+  localStorage.setItem('lingualearn_course_' + u,
+    JSON.stringify({ 'basic-da': { introduced: deck.cards.length } }));
+  const gm = await import('/core/grammar.js');
+  const chapters = await gm.loadGrammar('da');
+  localStorage.setItem('lingualearn_grammar_' + u, JSON.stringify({ 'basic-da': chapters.map(c => c.id) }));
+  gm.reinitGrammar();
+  (await import('/core/course.js')).reinitCourse();
+  (await import('/ui/gami.js')).renderLearnWidgets();
+  return { total: deck.cards.length };
+});
+await page.waitForTimeout(300);
+const endlessUi = await page.evaluate(() => ({
+  startBtn: document.getElementById('startBtn')?.textContent.trim(),
+  courseText: document.getElementById('courseProgressText')?.textContent.trim(),
+}));
+await click('#startBtn'); await page.waitForTimeout(900);
+const endlessRun = await page.evaluate(() => ({
+  title: document.getElementById('session-title')?.textContent || '',
+  hasContent: (document.getElementById('learnArea')?.textContent || '').trim().length > 20,
+  deadEnd: /Deck komplett/.test(document.getElementById('learnArea')?.textContent || ''),
+}));
+check('Deck-Ende: Endlos-Runde statt Sackgasse',
+  /Endlos-Runde/.test(endlessUi.startBtn || '') && /Endlos-Runde 1/.test(endlessRun.title)
+  && endlessRun.hasContent && !endlessRun.deadEnd,
+  JSON.stringify({ ...endless, ...endlessUi, ...endlessRun }));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// ── Japanisch-Deck deutlich erweitert ──
+const jaDeck = await page.evaluate(async () => {
+  const deck = await (await import('/core/state.js')).loadDeck('basic-ja');
+  const fronts = new Set(deck.cards.map(c => c.front));
+  const complete = deck.cards.every(c => c.front && c.back && c.example && c.exampleDE && c.roman);
+  return {
+    cards: deck.cards.length,
+    unique: fronts.size,
+    lessons: deck.lessonSizes.length,
+    sum: deck.lessonSizes.reduce((a, b) => a + b, 0),
+    titles: deck.lessonTitles.length,
+    complete,
+  };
+});
+check('Japanisch: Deck erweitert, Lektionsplan stimmt',
+  jaDeck.cards >= 220 && jaDeck.unique === jaDeck.cards && jaDeck.sum === jaDeck.cards
+  && jaDeck.titles === jaDeck.lessons && jaDeck.complete, JSON.stringify(jaDeck));
 
 // ── Update-Logout: Konto bleibt, Sitzung endet ──
 await page.evaluate(() => localStorage.setItem('lingualearn_app_version', 'alt-0'));

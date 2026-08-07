@@ -4,6 +4,9 @@ export function showToast(html, { variant = '', duration = 3500 } = {}) {
   if (!root) {
     root = document.createElement('div');
     root.id = 'toastRoot';
+    // Vorlesehilfen sollen Hinweise mitbekommen, ohne den Fokus zu klauen.
+    root.setAttribute('role', 'status');
+    root.setAttribute('aria-live', 'polite');
     document.body.appendChild(root);
   }
   const t = document.createElement('div');

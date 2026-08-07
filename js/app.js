@@ -21,6 +21,7 @@ import { initOnboarding, maybeShowOnboarding } from '../ui/onboarding.js';
 import { reinitErrorLog } from '../core/errorLog.js';
 import { reinitGold, reinitThemeBadges } from '../core/session.js';
 import { reinitGrammar } from '../core/grammar.js';
+import { reinitReminder, maybeRemind } from '../core/reminder.js';
 import { initGrammar } from '../ui/grammar.js';
 import { showToast } from '../ui/toast.js';
 import { syncNow, syncSoon } from '../core/sync.js';
@@ -57,6 +58,7 @@ function reinitUser() {
   reinitGold();
   reinitThemeBadges();
   reinitGrammar();
+  reinitReminder();
 }
 
 function showApp() {
@@ -162,6 +164,9 @@ function showApp() {
     window.addEventListener('online', () => syncSoon(1000));
   }
 
+  // Tägliche Erinnerung (falls eingeschaltet und heute noch nicht gelernt).
+  maybeRemind();
+
   // Lokale Serien-Erinnerung: gestern gelernt, heute noch nicht → Hinweis.
   const g = getGame();
   const yest = (() => { const d = new Date(); d.setDate(d.getDate() - 1); return d.toISOString().slice(0, 10); })();
@@ -174,7 +179,9 @@ function showApp() {
 // Oberfläche mit dem zusammengeführten Stand neu aufbauen.
 async function runSync({ announce = false, force = false } = {}) {
   let res;
-  try { res = await syncNow(); } catch { res = null; }
+  // Beim App-Start (announce) immer holen, damit der Stand der anderen
+  // Geräte ankommt — auch wenn sich lokal nichts geändert hat.
+  try { res = await syncNow({ force: announce || force }); } catch { res = null; }
   if (res) renderSyncState(res);
   // force: nach einer lokalen Konten-Zusammenführung muss die Oberfläche
   // den neuen Stand auch dann zeigen, wenn der Server nichts beisteuert.
@@ -191,6 +198,20 @@ async function runSync({ announce = false, force = false } = {}) {
 }
 
 document.addEventListener('lingua:synced', () => runSync({ force: true }));
+
+// Speicher voll / privater Modus: Der Fortschritt kann nicht gesichert
+// werden — das muss sichtbar sein, sonst lernt man ins Leere.
+document.addEventListener('lingua:storage', e => {
+  if (e.detail?.ok) {
+    showToast('<i class="fas fa-circle-check toast__icon"></i><div class="toast__body"><b>Speichern klappt wieder</b><span>Dein Fortschritt wird gesichert.</span></div>');
+    return;
+  }
+  showToast('<i class="fas fa-triangle-exclamation toast__icon"></i><div class="toast__body">'
+    + '<b>Fortschritt kann nicht gespeichert werden!</b>'
+    + '<span>Der Gerätespeicher ist voll oder der private Modus blockiert das Sichern. '
+    + 'Schließe andere Seiten oder gib Speicher frei — sonst geht dein Lernstand verloren.</span></div>',
+    { variant: 'warn', duration: 12000 });
+});
 
 function doLogout() {
   setCurrentSession(null);
