@@ -159,7 +159,12 @@ export function exitSession() {
   const title = document.getElementById('session-title');
   if (title) title.textContent = 'Bereit zum Lernen';
   const area = document.getElementById('learnArea');
-  if (area) area.innerHTML = '<p>Wähle ein Deck und einen Modus, dann starte die Session.</p>';
+  if (area) area.innerHTML = `
+    <div class="learn-empty">
+      <div class="learn-empty__icon"><i class="fas fa-graduation-cap"></i></div>
+      <h3 class="learn-empty__title">Bereit zum Lernen</h3>
+      <p>Wähle ein Deck und einen Modus, dann starte die Session.</p>
+    </div>`;
   const t = document.getElementById('progress-text');
   if (t) t.textContent = '0/0 Karten';
   const b = document.getElementById('progress-bar');
