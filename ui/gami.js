@@ -89,11 +89,13 @@ export function renderLearnWidgets() {
     if (courseWrap) courseWrap.style.display = activeMode === 'course' ? '' : 'none';
 
     setText('courseProgressText', done
-      ? `Kurs abgeschlossen — alle ${total} Wörter gelernt`
+      ? `Alle ${total} Wörter gelernt — Endlos-Runden halten sie frisch`
       : `Lektion ${lessonNumber(deckId)} · ${introduced}/${total} Wörter`);
     const startBtn = document.getElementById('startBtn');
     if (startBtn && activeMode !== 'course') {
       startBtn.innerHTML = '<i class="fas fa-play"></i> Session starten';
+    } else if (startBtn && done) {
+      startBtn.innerHTML = '<i class="fas fa-rotate"></i> Endlos-Runde starten';
     }
 
     if (!done) {

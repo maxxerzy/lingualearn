@@ -26,7 +26,7 @@ export async function renderGrammarOverview() {
   const read = new Set(readChapters(deckId));
 
   body.innerHTML = `
-    <p class="dict-count">${deck.name} · ${chapters.length} Kapitel — ungelesene Kapitel erscheinen automatisch im Lernkurs</p>
+    <p class="dict-count">${esc(deck.name)} · ${chapters.length} Kapitel — ungelesene Kapitel erscheinen automatisch im Lernkurs</p>
     <ul class="grammar-chapters">
       ${chapters.map((ch, i) => `
         <li>

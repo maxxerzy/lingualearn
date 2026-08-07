@@ -11,6 +11,7 @@ function makeEnv() {
     SYNC: {
       get: async k => (store.has(k) ? store.get(k) : null),
       put: async (k, v) => { store.set(k, v); },
+      delete: async k => { store.delete(k); },
     },
     _store: store,
   };
@@ -94,6 +95,55 @@ const env = makeEnv();
   check('Konten sind sauber getrennt',
     (await res.json()).snapshot.data['lingualearn_game_'].xp === 7 &&
     (await other.json()).snapshot.data['lingualearn_game_'].xp === 500);
+}
+
+// ── Optimistisches Sperren: veraltete Revision wird abgewiesen ──
+{
+  const env2 = makeEnv();
+  const p1 = await call(env2, '/api/sync/push', {
+    user: 'maxim', token: TOKEN_A, baseRev: 0, snapshot: snap({ 'lingualearn_game_': { xp: 10 } }),
+  });
+  const b1 = await p1.json();
+  check('Push liefert eine Revision', p1.status === 200 && b1.rev === 1, JSON.stringify(b1));
+
+  // Gerät B hat noch rev 0 gesehen → Push muss abgelehnt werden.
+  const stale = await call(env2, '/api/sync/push', {
+    user: 'maxim', token: TOKEN_A, baseRev: 0, snapshot: snap({ 'lingualearn_game_': { xp: 5 } }),
+  });
+  const sb = await stale.json();
+  check('Veralteter Push wird mit 409 + aktuellem Stand abgelehnt',
+    stale.status === 409 && sb.rev === 1 && sb.snapshot?.data?.['lingualearn_game_']?.xp === 10,
+    `${stale.status} ${JSON.stringify(sb.rev)}`);
+
+  // Mit der frischen Revision klappt es.
+  const retry = await call(env2, '/api/sync/push', {
+    user: 'maxim', token: TOKEN_A, baseRev: 1, snapshot: snap({ 'lingualearn_game_': { xp: 12 } }),
+  });
+  check('Nach erneutem Zusammenführen geht der Push durch',
+    retry.status === 200 && (await retry.json()).rev === 2);
+
+  // Ohne baseRev (Client ohne Sperr-Unterstützung) bleibt alles nutzbar.
+  const legacy = await call(env2, '/api/sync/push', {
+    user: 'maxim', token: TOKEN_A, snapshot: snap({ 'lingualearn_game_': { xp: 13 } }),
+  });
+  check('Push ohne Revisionsangabe bleibt möglich', legacy.status === 200);
+}
+
+// ── Konto löschen ──
+{
+  const env3 = makeEnv();
+  await call(env3, '/api/sync/push', { user: 'maxim', token: TOKEN_A, snapshot: snap({ x: 1 }) });
+  const wrong = await call(env3, '/api/sync/delete', { user: 'maxim', token: TOKEN_B });
+  check('Löschen mit fremdem Schlüssel wird abgelehnt', wrong.status === 403);
+
+  const del = await call(env3, '/api/sync/delete', { user: 'maxim', token: TOKEN_A });
+  check('Konto löschen entfernt Stand und Zugang',
+    del.status === 200 && env3._store.size === 0, `size=${env3._store.size}`);
+
+  // Danach ist der Name wieder frei (neuer Zugang wird angelegt).
+  const after = await call(env3, '/api/sync/pull', { user: 'maxim', token: TOKEN_B });
+  check('Nach dem Löschen ist der Kontoname wieder frei',
+    after.status === 200 && (await after.json()).snapshot === null);
 }
 
 console.log(`\n${failures === 0 ? '🎉 WORKER-SYNC OK' : `❌ ${failures} Fehler`}`);

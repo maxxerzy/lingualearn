@@ -1,10 +1,16 @@
 import { createUserStore } from './userStore.js';
 
-// Leitner-style spaced repetition: each card has a level 0-5.
+// Leitner-style spaced repetition: each card has a level 0-8.
 // Correct answers move it up, wrong answers move it down.
 // Each level maps to a review interval; a card is "due" once its date passes.
-const INTERVALS_DAYS = [0, 1, 2, 4, 8, 16];
+//
+// Ab Stufe 5 gilt eine Karte als „gemeistert" (MAX_LEVEL) — die Stufen
+// darüber verlängern nur noch das Intervall, damit sicher Gelerntes nicht
+// alle zwei Wochen wieder auf dem Stapel liegt. Erfolge, Wörterbuch-Punkte
+// und Statistiken bleiben dadurch unverändert gültig.
+const INTERVALS_DAYS = [0, 1, 2, 4, 8, 16, 30, 60, 120];
 export const MAX_LEVEL = 5;
+const MAX_STAGE = INTERVALS_DAYS.length - 1;
 
 const store = createUserStore('lingualearn_cards_');
 const load = () => store.get();
@@ -35,7 +41,7 @@ export function recordCardAnswer(deckId, front, rating) {
   else delta = -2; // 'again' oder false
 
   if (delta > 0) st.correct++; else st.wrong++;
-  st.level = Math.min(MAX_LEVEL, Math.max(0, st.level + delta));
+  st.level = Math.min(MAX_STAGE, Math.max(0, st.level + delta));
   st.due = dateStr(INTERVALS_DAYS[st.level]);
   map[k] = st;
   store.save(map);

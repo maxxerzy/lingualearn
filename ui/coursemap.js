@@ -100,9 +100,11 @@ export function renderPath(deckId) {
 
   if (startBtn) {
     if (finished) {
+      // Kein Sackgassen-Ende: der Kurs läuft mit Endlos-Runden weiter,
+      // die die schwächsten und fälligen Wörter auffrischen.
       startBtn.hidden = false;
-      startBtn.disabled = true;
-      startBtn.innerHTML = '<i class="fas fa-check"></i> Kurs abgeschlossen';
+      startBtn.disabled = false;
+      startBtn.innerHTML = '<i class="fas fa-rotate"></i> Endlos-Runde starten';
     } else {
       const t = deck.lessonTitles?.[current - 1];
       startBtn.hidden = false;

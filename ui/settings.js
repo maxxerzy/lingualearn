@@ -10,9 +10,19 @@ import { resetGrammar } from '../core/grammar.js';
 import { clearErrors } from '../core/errorLog.js';
 import { getDecks } from '../core/state.js';
 import { syncNow, getLastSync, listLocalAccounts, accountHasData, mergeLocalAccount,
-         getSyncKey, readSyncKey, setSyncKey, isValidSyncKey } from '../core/sync.js';
+         getSyncKey, readSyncKey, setSyncKey, isValidSyncKey,
+         exportProgress, importProgress, deleteAccount } from '../core/sync.js';
 import { getCurrentUser } from '../core/auth.js';
 import { getSpeechRate, setSpeechRate, rateLabel, speak } from '../utils/speech.js';
+import { getReminder, setReminder, notificationsSupported,
+         requestNotificationPermission } from '../core/reminder.js';
+
+// Freitext (Deck- und Kontonamen) darf nie ungeprüft in innerHTML landen —
+// importierte Decks bringen einen frei wählbaren Namen mit.
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 
 // Hörprobe im aktuell gewählten Deck — so hört man das Tempo dort,
 // wo man es später braucht.
@@ -60,7 +70,7 @@ export function renderMergeAccounts() {
   if (!others.length) { group.hidden = true; return; }
   group.hidden = false;
   select.innerHTML = others.map(u =>
-    `<option value="${u.replace(/"/g, '&quot;')}">${u.replace(/</g, '&lt;')}</option>`).join('');
+    `<option value="${esc(u)}">${esc(u)}</option>`).join('');
 }
 
 // Konto-Schlüssel anzeigen (standardmäßig verdeckt — er ist das
@@ -109,7 +119,7 @@ export function initSettings() {
     setSyncKey(val);
     if (input) input.value = '';
     renderSyncKey();
-    const res = await syncNow();
+    const res = await syncNow({ force: true });   // neu verbunden → immer holen
     renderSyncState(res);
     if (res.ok) {
       showToast('<i class="fas fa-link toast__icon"></i><div class="toast__body"><b>Gerät verbunden</b><span>Stand abgeglichen.</span></div>');
@@ -149,7 +159,7 @@ export function initSettings() {
       showToast('<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>Übernahme nicht möglich</b></div>', { variant: 'warn' });
       return;
     }
-    showToast(`<i class="fas fa-code-merge toast__icon"></i><div class="toast__body"><b>Fortschritt übernommen</b><span>„${from}" ist jetzt Teil von „${to}".</span></div>`);
+    showToast(`<i class="fas fa-code-merge toast__icon"></i><div class="toast__body"><b>Fortschritt übernommen</b><span>„${esc(from)}" ist jetzt Teil von „${esc(to)}".</span></div>`);
     // Stores neu laden, Oberfläche auffrischen und auf die anderen Geräte spiegeln.
     document.dispatchEvent(new CustomEvent('lingua:synced'));
     renderMergeAccounts();
@@ -189,7 +199,7 @@ export function initSettings() {
     resetGrammar(deckId);
     clearErrors(deckId);
     renderLearnWidgets();
-    showToast(`<i class="fas fa-rotate-left toast__icon"></i><div class="toast__body"><b>Zurückgesetzt</b><span>„${deck.name}" startet wieder bei Lektion 1.</span></div>`);
+    showToast(`<i class="fas fa-rotate-left toast__icon"></i><div class="toast__body"><b>Zurückgesetzt</b><span>„${esc(deck.name)}" startet wieder bei Lektion 1.</span></div>`);
   });
 
   // Sprechtempo: Regler + Hörprobe (pro Konto gespeichert).
@@ -209,6 +219,38 @@ export function initSettings() {
     document.getElementById('speechRateTest')?.addEventListener('click', speakSample);
   }
 
+  // Tägliche Erinnerung: Schalter + Uhrzeit.
+  const rem = document.getElementById('reminderToggle');
+  const remRow = document.getElementById('reminderTimeRow');
+  const remHour = document.getElementById('reminderHour');
+  if (rem && remHour) {
+    remHour.innerHTML = Array.from({ length: 24 }, (_, h) =>
+      `<option value="${h}">${String(h).padStart(2, '0')}:00</option>`).join('');
+    const st = getReminder();
+    rem.checked = st.enabled;
+    remHour.value = String(st.hour);
+    if (remRow) remRow.hidden = !st.enabled;
+    if (!notificationsSupported()) {
+      rem.disabled = true;
+      const hint = document.getElementById('reminderHint');
+      if (hint) hint.textContent = 'Dieses Gerät unterstützt keine System-Benachrichtigungen. '
+        + 'Tipp: Auf dem iPhone/iPad funktioniert es, wenn du LinguaLearn über „Zum Home-Bildschirm" installierst.';
+    }
+    rem.addEventListener('change', async () => {
+      if (rem.checked) {
+        const perm = await requestNotificationPermission();
+        if (perm !== 'granted') {
+          rem.checked = false;
+          showToast('<i class="fas fa-bell-slash toast__icon"></i><div class="toast__body"><b>Keine Erlaubnis</b><span>Benachrichtigungen sind für diese Seite blockiert.</span></div>', { variant: 'warn' });
+          return;
+        }
+      }
+      setReminder({ enabled: rem.checked });
+      if (remRow) remRow.hidden = !rem.checked;
+    });
+    remHour.addEventListener('change', () => setReminder({ hour: Number(remHour.value) }));
+  }
+
   const fx = document.getElementById('fxToggle');
   if (fx) {
     fx.checked = fxEnabled();
@@ -220,6 +262,63 @@ export function initSettings() {
 
   if (importBtn) importBtn.addEventListener('click', handleImport);
   if (exportBtn) exportBtn.addEventListener('click', handleExport);
+
+  // ── Kompletten Fortschritt sichern / einspielen ──
+  document.getElementById('dataExportBtn')?.addEventListener('click', () => {
+    const user = getCurrentUser();
+    const payload = exportProgress(user);
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `lingualearn-fortschritt-${user}-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showToast('<i class="fas fa-download toast__icon"></i><div class="toast__body"><b>Sicherung erstellt</b><span>Datei liegt in deinen Downloads.</span></div>');
+  });
+
+  const importFile = document.getElementById('dataImportFile');
+  document.getElementById('dataImportBtn')?.addEventListener('click', () => importFile?.click());
+  importFile?.addEventListener('change', async () => {
+    const file = importFile.files?.[0];
+    if (!file) return;
+    importFile.value = '';
+    let payload = null;
+    try { payload = JSON.parse(await file.text()); } catch { /* unten abgefangen */ }
+    const res = importProgress(payload);
+    if (!res.ok) {
+      showToast('<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>Sicherung nicht lesbar</b><span>Bitte eine LinguaLearn-Fortschrittsdatei wählen.</span></div>', { variant: 'warn' });
+      return;
+    }
+    showToast('<i class="fas fa-upload toast__icon"></i><div class="toast__body"><b>Sicherung eingespielt</b><span>Beide Stände wurden zusammengeführt.</span></div>');
+    document.dispatchEvent(new CustomEvent('lingua:synced'));
+  });
+
+  // ── Konto löschen (unwiderruflich) ──
+  document.getElementById('accountDeleteBtn')?.addEventListener('click', async () => {
+    const user = getCurrentUser();
+    if (!user) return;
+    if (!confirm(`Konto „${user}" mit allem Fortschritt löschen?\n\n`
+      + 'Level, XP, Kartenlevel, Kursstand und Erfolge werden auf diesem Gerät '
+      + 'und auf dem Server entfernt. Das lässt sich nicht rückgängig machen.')) return;
+    const typed = prompt(`Zur Sicherheit: Tippe deinen Kontonamen „${user}" ein.`);
+    if (typed?.trim() !== user) {
+      showToast('<i class="fas fa-circle-info toast__icon"></i><div class="toast__body"><b>Abgebrochen</b><span>Name stimmte nicht überein.</span></div>');
+      return;
+    }
+    const res = await deleteAccount(user);
+    if (!res.ok) {
+      showToast('<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>Löschen nicht möglich</b></div>', { variant: 'warn' });
+      return;
+    }
+    if (res.server === 'failed') {
+      alert('Die lokalen Daten wurden gelöscht, der Server war aber nicht erreichbar. '
+        + 'Melde dich später noch einmal an und wiederhole das Löschen, um auch den '
+        + 'Server-Stand zu entfernen.');
+    }
+    window.LinguaAuth?.clearUser?.();
+    window.LinguaAuth?.showLoginScreen?.();
+  });
 
   const goalInput = document.getElementById('dailyGoalInput');
   if (goalInput) {

@@ -83,21 +83,51 @@ export async function handleApi(request, env, url) {
   }
 
   if (path === '/api/sync/push') {
-    const { snapshot } = body;
+    const { snapshot, baseRev } = body;
     if (!snapshot || typeof snapshot !== 'object' || typeof snapshot.data !== 'object') {
       return json({ ok: false, error: 'bad-snapshot' }, 400);
     }
     const auth = await authorize(env, user, token, { create: true });
     if (!auth.ok) return json({ ok: false, error: 'forbidden' }, 403);
+
+    // Optimistisches Sperren: Der Client schickt die Revision, auf der
+    // sein Zusammenführen beruht. Hat inzwischen ein anderes Gerät
+    // hochgeladen, wird der Push mit 409 + aktuellem Stand abgelehnt —
+    // der Client führt neu zusammen und versucht es erneut. Ohne diese
+    // Prüfung könnte der Stand eines Geräts den eines anderen
+    // überschreiben, das im selben Moment gepusht hat.
+    const rawNow = await env.SYNC.get(`snap:${user}`);
+    const current = rawNow ? JSON.parse(rawNow) : null;
+    const currentRev = Number(current?.rev) || 0;
+    if (baseRev !== undefined && Number(baseRev) !== currentRev) {
+      return json({ ok: false, error: 'conflict', rev: currentRev, snapshot: current }, 409);
+    }
+
+    const updatedAt = Date.now();
+    const rev = currentRev + 1;
     const payload = JSON.stringify({
       version: 1,
-      updatedAt: Date.now(),
+      rev,
+      updatedAt,
       device: typeof snapshot.device === 'string' ? snapshot.device.slice(0, 40) : '',
       data: snapshot.data,
     });
     if (payload.length > MAX_BODY) return json({ ok: false, error: 'too-large' }, 413);
     await env.SYNC.put(`snap:${user}`, payload);
-    return json({ ok: true, updatedAt: JSON.parse(payload).updatedAt });
+    return json({ ok: true, updatedAt, rev });
+  }
+
+  // Konto löschen: entfernt Stand UND Zugangsabdruck. Danach ist der
+  // Kontoname wieder frei (erneutes Anlegen legt einen neuen Abdruck an).
+  if (path === '/api/sync/delete') {
+    const auth = await authorize(env, user, token, { create: false });
+    if (!auth.ok && auth.status === 404) return json({ ok: true, deleted: false });
+    if (!auth.ok) return json({ ok: false, error: 'forbidden' }, 403);
+    if (typeof env.SYNC.delete === 'function') {
+      await env.SYNC.delete(`snap:${user}`);
+      await env.SYNC.delete(`auth:${user}`);
+    }
+    return json({ ok: true, deleted: true });
   }
 
   return json({ ok: false, error: 'not-found' }, 404);

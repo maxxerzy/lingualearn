@@ -42,7 +42,7 @@ export async function renderDictionary(filter = '') {
   // Bei Latein steht das lateinische Wort vorn (Lernrichtung La→De).
   const rev = deck.language === 'la';
   body.innerHTML = `
-    <p class="dict-count">${seen.length} Wörter gelernt · ${deck.name}</p>
+    <p class="dict-count">${seen.length} Wörter gelernt · ${esc(deck.name)}</p>
     <ul class="dict-list">
       ${list.map(c => `
         <li class="dict-row">
@@ -50,7 +50,7 @@ export async function renderDictionary(filter = '') {
             <b>${esc(rev ? c.back : c.front)}</b>
             <span class="dict-back">${esc(rev ? c.front : c.back)}${c.roman ? ` · ${esc(c.roman)}` : ''}</span>
           </div>
-          <span class="dict-strength" title="Stärke ${states[c.front].level}/${MAX_LEVEL}">${strengthDots(states[c.front].level)}</span>
+          <span class="dict-strength" title="Stärke ${Math.min(MAX_LEVEL, states[c.front].level)}/${MAX_LEVEL}">${strengthDots(states[c.front].level)}</span>
           <button type="button" class="audio-btn dict-audio" data-say="${esc(c.back)}" title="Anhören"><i class="fas fa-volume-up"></i></button>
         </li>`).join('')}
     </ul>

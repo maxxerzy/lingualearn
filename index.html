@@ -221,12 +221,13 @@
                 </div>
                 <div class="session-progress">
                   <div class="progress-text" id="progress-text">0/0 Karten</div>
-                  <div class="progress">
+                  <div class="progress" role="progressbar" id="progress-track"
+                       aria-labelledby="progress-text" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
                     <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
                   </div>
                 </div>
               </div>
-              <div id="learnArea" class="card">
+              <div id="learnArea" class="card" role="region" aria-live="polite" aria-label="Lernbereich">
                 <p>Wähle ein Deck und einen Modus, dann starte die Session.</p>
               </div>
             </div>
@@ -421,6 +422,20 @@
                 </button>
               </div>
             </div>
+            <div class="form-group" id="reminderGroup">
+              <label class="fx-toggle" for="reminderToggle">
+                <input type="checkbox" id="reminderToggle">
+                <span><i class="fas fa-bell"></i> Tägliche Lern-Erinnerung</span>
+              </label>
+              <div class="rate-foot" id="reminderTimeRow" hidden>
+                <label for="reminderHour">Ab welcher Uhrzeit</label>
+                <select id="reminderHour" class="input" style="max-width:120px"></select>
+              </div>
+              <p class="settings-hint" id="reminderHint">Erinnert dich, wenn du an einem Tag noch
+                nicht gelernt hast. Die Meldung erscheint, sobald du die App nach der gewählten
+                Uhrzeit öffnest — eine Push-Nachricht bei geschlossener App braucht einen
+                Push-Server und ist noch nicht eingerichtet.</p>
+            </div>
             <div class="form-group">
               <label class="fx-toggle" for="fxToggle">
                 <input type="checkbox" id="fxToggle" checked>
@@ -445,6 +460,29 @@
               <button type="button" id="exportBtn" class="btn btn-secondary">
                 <i class="fas fa-file-export"></i> Exportieren
               </button>
+            </div>
+            <div class="form-group">
+              <label>Deine Daten</label>
+              <div class="row">
+                <button type="button" id="dataExportBtn" class="btn btn-secondary">
+                  <i class="fas fa-download"></i> Kompletten Fortschritt sichern
+                </button>
+                <button type="button" id="dataImportBtn" class="btn btn-secondary">
+                  <i class="fas fa-upload"></i> Sicherung einspielen
+                </button>
+              </div>
+              <input type="file" id="dataImportFile" class="input" accept=".json" hidden>
+              <p class="settings-hint">Sichert bzw. lädt alles: Level, XP, Kartenlevel, Kursstand,
+                Erfolge, Diamanten und Einstellungen deines Kontos als JSON-Datei.</p>
+            </div>
+            <div class="form-group">
+              <label>Konto löschen</label>
+              <button type="button" id="accountDeleteBtn" class="btn btn-danger-outline">
+                <i class="fas fa-trash"></i> Konto und alle Daten löschen
+              </button>
+              <p class="settings-hint">Löscht dein Konto samt Fortschritt auf diesem Gerät
+                und — sofern der Abgleich aktiv ist — auch den Stand auf dem Server.
+                Das lässt sich nicht rückgängig machen; sichere vorher deinen Fortschritt.</p>
             </div>
             <div class="form-group" style="margin-top: 20px;">
               <h3>Deck-Schema</h3>
@@ -605,7 +643,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v29';
+    var APP_VERSION = 'v30';
     var loginMode = 'login';
 
     function hp(pw) {
