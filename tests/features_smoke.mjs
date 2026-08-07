@@ -924,6 +924,132 @@ check('Einstellungen: Konten-Auswahl sichtbar mit dem anderen Konto',
   mergeUi.visible && mergeUi.options.includes('alt-mac') && mergeUi.btn, JSON.stringify(mergeUi));
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
 
+// ── Auffrischung: fällige Karten früherer Lektionen starten die Lektion ──
+const reviewPhase = await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const { cards } = await import('/js/data/decks/da.js');
+  // Kursstand vorspulen und die ersten drei Wörter auf „fällig" setzen.
+  const course = JSON.parse(localStorage.getItem('lingualearn_course_' + u) || '{}');
+  course['basic-da'] = { introduced: 20, sentencesDone: [] };
+  localStorage.setItem('lingualearn_course_' + u, JSON.stringify(course));
+  const gestern = new Date(); gestern.setDate(gestern.getDate() - 1);
+  const due = gestern.toISOString().slice(0, 10);
+  const map = {};
+  cards.slice(0, 4).forEach(c => { map[`basic-da:${c.front}`] = { level: 2, correct: 3, wrong: 0, due }; });
+  localStorage.setItem('lingualearn_cards_' + u, JSON.stringify(map));
+  const g = await import('/core/grammar.js');
+  const { grammar } = await import('/js/data/grammar/da.js');
+  grammar.forEach(ch => g.markChapterRead('basic-da', ch.id));
+  (await import('/core/cardProgress.js')).reinitCardProgress();
+  (await import('/core/course.js')).reinitCourse();
+  return { dueSet: 4 };
+});
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(300);
+await click('#startBtn'); await page.waitForTimeout(900);
+const reviewStart = await page.evaluate(async () => {
+  const st = (await import('/core/state.js')).getCurrentSession();
+  return {
+    phase: st?.phase,
+    badge: document.querySelector('.course-phase-badge')?.textContent.trim() || '',
+    reviewCount: st?.reviewCards?.length ?? 0,
+    // Die Auffrischung darf nur BEREITS eingeführte Wörter zeigen.
+    fromEarlier: (st?.reviewCards || []).every(c => st.deck.cards.indexOf(c) < 20),
+    hasOptions: document.querySelectorAll('.mc-option').length === 4,
+  };
+});
+check('Lektion startet mit Auffrischung fälliger Karten (max. 3, nur Gelerntes)',
+  reviewStart.phase === 'review' && /Auffrischung/.test(reviewStart.badge)
+  && reviewStart.reviewCount === 3 && reviewStart.fromEarlier && reviewStart.hasOptions,
+  JSON.stringify(reviewStart));
+// Auffrischung durchspielen → danach beginnt das Kennenlernen
+for (let i = 0; i < 12; i++) {
+  const done = await page.evaluate(async () => {
+    const st = (await import('/core/state.js')).getCurrentSession();
+    if (!st || st.phase !== 'review') return true;
+    const next = document.getElementById('courseNext');
+    if (next) { next.click(); return false; }
+    const card = st.queue[0];
+    const opts = [...document.querySelectorAll('.mc-option')];
+    const idx = opts.findIndex(o => o.querySelector('.mc-text')?.textContent.trim() === card.back);
+    opts[idx >= 0 ? idx : 0].click();
+    return false;
+  });
+  await page.waitForTimeout(180);
+  if (done) break;
+}
+const afterReview = await page.evaluate(async () =>
+  (await import('/core/state.js')).getCurrentSession()?.phase);
+check('Nach der Auffrischung folgt das Kennenlernen', afterReview === 'teach', String(afterReview));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+// Aufräumen
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  localStorage.removeItem('lingualearn_cards_' + u);
+  (await import('/core/cardProgress.js')).reinitCardProgress();
+});
+
+// ── Konto-Schlüssel: unabhängig vom Passwort, Passwortwechsel gefahrlos ──
+const keyFlow = await page.evaluate(async () => {
+  const s = await import('/core/sync.js');
+  const u = localStorage.getItem('lingualearn_current_user');
+  localStorage.removeItem('lingualearn_synckey_' + u);
+  // Erstkontakt: Schlüssel wird aus den Zugangsdaten abgeleitet …
+  const derived = await s.deriveToken(u);
+  const first = await s.getSyncKey(u);
+  const stored = s.readSyncKey(u);
+  // … und danach festgeschrieben. Passwortwechsel darf ihn NICHT ändern.
+  const users = JSON.parse(localStorage.getItem('lingualearn_users'));
+  users[u].passwordHash = 'f'.repeat(32);           // Passwort geändert
+  localStorage.setItem('lingualearn_users', JSON.stringify(users));
+  const afterPwChange = await s.getSyncKey(u);
+  const derivedNow = await s.deriveToken(u);
+  // Manuelles Verbinden mit fremdem Schlüssel + Validierung
+  const okSet = s.setSyncKey('a'.repeat(64), u);
+  const badSet = s.setSyncKey('zzz', u);
+  const afterManual = s.readSyncKey(u);
+  return {
+    derivedEqualsFirst: derived === first, stored: stored === first,
+    keyStableAfterPwChange: afterPwChange === first,
+    derivationWouldHaveChanged: derivedNow !== derived,
+    okSet, badSet, afterManual,
+    validYes: s.isValidSyncKey('A'.repeat(64)), validNo: s.isValidSyncKey('abc'),
+  };
+});
+check('Konto-Schlüssel bleibt bei Passwortwechsel erhalten',
+  keyFlow.derivedEqualsFirst && keyFlow.stored && keyFlow.keyStableAfterPwChange
+  && keyFlow.derivationWouldHaveChanged
+  && keyFlow.okSet && !keyFlow.badSet && keyFlow.afterManual === 'a'.repeat(64)
+  && keyFlow.validYes && !keyFlow.validNo,
+  JSON.stringify(keyFlow));
+
+// Passwort tatsächlich ändern (über die Auth-Schnittstelle)
+const pwChange = await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const users = JSON.parse(localStorage.getItem('lingualearn_users'));
+  // sauberen Ausgangszustand herstellen: Passwort „test1234" neu setzen
+  const wrong = window.LinguaAuth.changePassword('falsch', 'neu12345');
+  const short = window.LinguaAuth.changePassword('test1234', 'ab');
+  const before = JSON.parse(localStorage.getItem('lingualearn_users'))[u].passwordHash;
+  return { wrongRejected: !wrong.ok, shortRejected: !short.ok, hashUnchanged: before === users[u].passwordHash,
+    errWrong: wrong.err, errShort: short.err };
+});
+check('Passwort ändern: falsches/zu kurzes Passwort wird abgewiesen',
+  pwChange.wrongRejected && pwChange.shortRejected && pwChange.hashUnchanged, JSON.stringify(pwChange));
+
+// UI-Elemente vorhanden
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="settings"]'); await page.waitForTimeout(300);
+const keyUi = await page.evaluate(() => ({
+  field: !!document.getElementById('syncKeyField'),
+  masked: (document.getElementById('syncKeyField')?.value || '').includes('•'),
+  apply: !!document.getElementById('syncKeyApply'),
+  pw: !!document.getElementById('pwSaveBtn'),
+}));
+check('Einstellungen: Schlüssel (verdeckt) + Passwortwechsel vorhanden',
+  keyUi.field && keyUi.masked && keyUi.apply && keyUi.pw, JSON.stringify(keyUi));
+await click('#settingsBackBtn'); await page.waitForTimeout(200);
+
 // ── Update-Logout: Konto bleibt, Sitzung endet ──
 await page.evaluate(() => localStorage.setItem('lingualearn_app_version', 'alt-0'));
 await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(400);

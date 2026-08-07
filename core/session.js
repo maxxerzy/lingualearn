@@ -1533,6 +1533,19 @@ function chunkLesson(cards) {
   return chunks;
 }
 
+// Wiederholung zu Beginn jeder Lektion: bis zu drei fällige Karten aus
+// FRÜHEREN Lektionen. So bleibt Gelerntes im Umlauf, ohne dass man daran
+// denken muss — der Kern von verteiltem Lernen.
+const COURSE_REVIEW_MAX = 3;
+function collectDueReview(deck, deckId, introducedStart) {
+  if (introducedStart <= 0) return [];
+  const due = new Set(getDueFronts(deckId));
+  if (!due.size) return [];
+  const earlier = deck.cards.slice(0, introducedStart);
+  // Älteste zuerst — die liegen am längsten zurück.
+  return earlier.filter(c => due.has(c.front)).slice(0, COURSE_REVIEW_MAX);
+}
+
 async function startCourseLesson(deck, deckId) {
   const lessonCards = nextLessonCards(deckId, deck.cards);
 
@@ -1541,7 +1554,8 @@ async function startCourseLesson(deck, deckId) {
     document.getElementById('learnArea').innerHTML = `
       <h3 style="font-size:1.5rem;margin-bottom:12px">🎓 Deck komplett!</h3>
       <p style="color:var(--gray);max-width:420px">Du hast alle ${deck.cards.length} Wörter dieses Decks im Lernkurs
-      kennengelernt. Nutze „Nur fällige Karten" oder die anderen Modi, um sie langfristig zu festigen.</p>
+      kennengelernt. Über „Für dich" auf der Startseite hältst du sie mit Wiederholungen frisch —
+      und im Lernpfad kannst du jede Lektion erneut üben oder ein Themen-Quiz bestehen.</p>
     `;
     return;
   }
@@ -1551,6 +1565,8 @@ async function startCourseLesson(deck, deckId) {
   const knownCards = deck.cards.slice(0, introducedStart + lessonCards.length);
   // Konversations-Bausteine dieser Lektion (schnell ins Sprechen kommen).
   const talkCards = pickPhrases(await loadPhrases(deck.language), lessonNumber(deckId));
+  // Fällige Wiederholungen aus früheren Lektionen (Auffrischung vorweg).
+  const reviewCards = collectDueReview(deck, deckId, introducedStart);
 
   const session = {
     deck,
@@ -1560,15 +1576,16 @@ async function startCourseLesson(deck, deckId) {
     lessonCards,
     knownCards,
     talkCards,
-    phase: 'teach',          // je Häppchen: teach → listen → words; dann speak → sentences
+    reviewCards,
+    phase: reviewCards.length ? 'review' : 'teach',          // je Häppchen: teach → listen → words; dann speak → sentences
     chunks: chunkLesson(lessonCards),
     chunkIdx: 0,
     teachPos: 0,
-    queue: [],
+    queue: reviewCards.length ? [...reviewCards] : [],
     sentencesCompleted: [],
     currentPrompt: null,
     currentIndex: 0,                       // erledigte Schritte (für Fortschrittsbalken)
-    totalCards: lessonCards.length * 4 + talkCards.length,   // + Konversation (Sätze dynamisch)
+    totalCards: lessonCards.length * 4 + talkCards.length + reviewCards.length,   // + Konversation & Auffrischung
     correctAnswers: 0,
     gradedAnswers: 0,
     combo: 0,
@@ -1584,6 +1601,17 @@ async function startCourseLesson(deck, deckId) {
 function showCourseStep() {
   const session = getCurrentSession();
   if (!session) return;
+
+  // Auffrischung: fällige Karten früherer Lektionen, bevor Neues kommt.
+  if (session.phase === 'review') {
+    if (session.queue.length === 0) {
+      session.phase = 'teach';
+      setCurrentSession(session);
+    } else {
+      renderCourseReview(session);
+      return;
+    }
+  }
 
   // Häppchen-Schleife: 2 Wörter kennenlernen → hören → üben.
   if (session.phase === 'teach') {
@@ -1998,6 +2026,42 @@ function renderCourseWordMC(session) {
 
       courseGrade(session, card, isCorrect);
 
+      document.getElementById('mc-fb').innerHTML = `
+        ${courseFeedbackHtml(isCorrect, card, '', answerText(session, card))}
+        <div class="actions" style="margin-top:14px">
+          <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+        </div>
+      `;
+      document.getElementById('courseNext').addEventListener('click', showCourseStep);
+    });
+  });
+}
+
+// Phase „Auffrischung": fällige Karten aus früheren Lektionen als kurze
+// Multiple-Choice-Runde. Falsch beantwortete kommen sofort wieder dran.
+function renderCourseReview(session) {
+  const card = session.queue[0];
+  const lang = session.deck.language;
+  const options = buildMCOptions(card, session.knownCards);
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card">
+      ${courseBadge(`<i class="fas fa-clock-rotate-left"></i> Auffrischung — noch ${session.queue.length}`)}
+      <p class="fc-label">${promptLabel(session)}</p>
+      <div class="fc-word mc-question">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
+      <p class="prompt">Kennst du das noch?</p>
+      ${mcOptionsMarkup(options, { textOf: o => answerText(session, o) })}
+    </div>
+  `;
+
+  wirePromptAudio(session, card);
+  if (isReverse(session.deck)) speakWord(card.back, lang);
+  learnArea.querySelectorAll('.mc-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const { isCorrect } = markMcAnswer(options, Number(btn.dataset.idx), card);
+      if (isCorrect) speakWord(card.back, lang);
+      courseGrade(session, card, isCorrect);
       document.getElementById('mc-fb').innerHTML = `
         ${courseFeedbackHtml(isCorrect, card, '', answerText(session, card))}
         <div class="actions" style="margin-top:14px">

@@ -9,7 +9,8 @@ import { resetGoldLessons, resetThemeBadges } from '../core/session.js';
 import { resetGrammar } from '../core/grammar.js';
 import { clearErrors } from '../core/errorLog.js';
 import { getDecks } from '../core/state.js';
-import { syncNow, getLastSync, listLocalAccounts, accountHasData, mergeLocalAccount } from '../core/sync.js';
+import { syncNow, getLastSync, listLocalAccounts, accountHasData, mergeLocalAccount,
+         getSyncKey, readSyncKey, setSyncKey, isValidSyncKey } from '../core/sync.js';
 import { getCurrentUser } from '../core/auth.js';
 import { getSpeechRate, setSpeechRate, rateLabel, speak } from '../utils/speech.js';
 
@@ -62,8 +63,78 @@ export function renderMergeAccounts() {
     `<option value="${u.replace(/"/g, '&quot;')}">${u.replace(/</g, '&lt;')}</option>`).join('');
 }
 
+// Konto-Schlüssel anzeigen (standardmäßig verdeckt — er ist das
+// Zugangsgeheimnis zum Cloud-Stand).
+let keyVisible = false;
+export async function renderSyncKey() {
+  const field = document.getElementById('syncKeyField');
+  if (!field) return;
+  const key = readSyncKey() || await getSyncKey();
+  field.value = !key ? '' : keyVisible ? key : key.slice(0, 6) + '••••••••••••••••••••' + key.slice(-4);
+  field.dataset.key = key || '';
+}
+
 // Initialize settings
 export function initSettings() {
+  // ── Konto-Schlüssel: anzeigen, kopieren, von anderem Gerät übernehmen ──
+  renderSyncKey();
+  document.getElementById('syncKeyToggle')?.addEventListener('click', () => {
+    keyVisible = !keyVisible;
+    const icon = document.querySelector('#syncKeyToggle i');
+    if (icon) icon.className = keyVisible ? 'fas fa-eye-slash' : 'fas fa-eye';
+    renderSyncKey();
+  });
+  document.getElementById('syncKeyCopy')?.addEventListener('click', async () => {
+    const key = document.getElementById('syncKeyField')?.dataset.key;
+    if (!key) return;
+    try {
+      await navigator.clipboard.writeText(key);
+      showToast('<i class="fas fa-copy toast__icon"></i><div class="toast__body"><b>Schlüssel kopiert</b><span>Auf dem anderen Gerät einfügen.</span></div>');
+    } catch {
+      // Zwischenablage gesperrt → Schlüssel sichtbar machen zum Abschreiben.
+      keyVisible = true;
+      renderSyncKey();
+      showToast('<i class="fas fa-circle-info toast__icon"></i><div class="toast__body"><b>Kopieren nicht möglich</b><span>Schlüssel ist jetzt sichtbar.</span></div>', { variant: 'warn' });
+    }
+  });
+  document.getElementById('syncKeyApply')?.addEventListener('click', async () => {
+    const input = document.getElementById('syncKeyInput');
+    const val = (input?.value || '').trim();
+    if (!isValidSyncKey(val)) {
+      showToast('<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>Ungültiger Schlüssel</b><span>Er besteht aus 64 Zeichen (0–9, a–f).</span></div>', { variant: 'warn' });
+      return;
+    }
+    if (!confirm('Dieses Gerät mit dem eingegebenen Konto verbinden?\n\n'
+      + 'Dein aktueller Fortschritt bleibt erhalten und wird beim nächsten Abgleich zusammengeführt.')) return;
+    setSyncKey(val);
+    if (input) input.value = '';
+    renderSyncKey();
+    const res = await syncNow();
+    renderSyncState(res);
+    if (res.ok) {
+      showToast('<i class="fas fa-link toast__icon"></i><div class="toast__body"><b>Gerät verbunden</b><span>Stand abgeglichen.</span></div>');
+      document.dispatchEvent(new CustomEvent('lingua:synced'));
+    } else {
+      showToast('<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>Abgleich fehlgeschlagen</b><span>Schlüssel prüfen.</span></div>', { variant: 'warn' });
+    }
+  });
+
+  // ── Passwort ändern (Konto-Schlüssel bleibt bestehen) ──
+  document.getElementById('pwSaveBtn')?.addEventListener('click', async () => {
+    const oldEl = document.getElementById('pwOld');
+    const newEl = document.getElementById('pwNew');
+    const new2El = document.getElementById('pwNew2');
+    const warn = msg => showToast(`<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>${msg}</b></div>`, { variant: 'warn' });
+    if ((newEl?.value || '') !== (new2El?.value || '')) { warn('Die neuen Passwörter stimmen nicht überein.'); return; }
+    // Schlüssel festschreiben, BEVOR sich der Passwort-Hash ändert —
+    // sonst ließe er sich später nicht mehr ableiten.
+    await getSyncKey();
+    const res = window.LinguaAuth?.changePassword(oldEl?.value, newEl?.value);
+    if (!res?.ok) { warn(res?.err || 'Änderung nicht möglich.'); return; }
+    [oldEl, newEl, new2El].forEach(el => { if (el) el.value = ''; });
+    showToast('<i class="fas fa-key toast__icon"></i><div class="toast__body"><b>Passwort geändert</b><span>Deine Geräte bleiben verbunden.</span></div>');
+  });
+
   // Fortschritt eines anderen lokalen Kontos übernehmen.
   renderMergeAccounts();
   document.getElementById('mergeBtn')?.addEventListener('click', async () => {

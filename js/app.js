@@ -24,7 +24,7 @@ import { reinitGrammar } from '../core/grammar.js';
 import { initGrammar } from '../ui/grammar.js';
 import { showToast } from '../ui/toast.js';
 import { syncNow, syncSoon } from '../core/sync.js';
-import { renderSyncState, renderMergeAccounts } from '../ui/settings.js';
+import { renderSyncState, renderMergeAccounts, renderSyncKey } from '../ui/settings.js';
 
 let appInitialized = false;
 
@@ -103,7 +103,7 @@ function showApp() {
         if (item.dataset.action === 'rewards') renderRewards();
         if (item.dataset.action === 'arena') renderArena();
         // Konten-Auswahl frisch aufbauen (kann sich nach Kontowechsel ändern).
-        if (item.dataset.action === 'settings') renderMergeAccounts();
+        if (item.dataset.action === 'settings') { renderMergeAccounts(); renderSyncKey(); }
         if (item.dataset.action === 'dict') {
           const q = document.getElementById('dictSearch');
           if (q) q.value = '';
