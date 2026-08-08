@@ -621,6 +621,50 @@
 .build-tile--used { opacity: .25; }
 .build-tile--placed { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, var(--surface)); }
 
+/* Buchstaben-Kacheln („Wort bauen"): kompakter als Satz-Kacheln,
+   damit auch 10-Buchstaben-Wörter auf ein iPhone SE passen. */
+.letter-tile { padding: 8px 0; min-width: 38px; text-align: center; font-size: 1.05rem; }
+.tile-answer { min-height: 48px; letter-spacing: 1px; }
+
+/* ── Paare verbinden (Kurs) ───────────────────────────────────── */
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  max-width: 520px;
+  margin: 10px auto 0;
+}
+.match-col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.match-btn {
+  width: 100%;
+  min-height: 46px;
+  padding: 8px 10px;
+  border: 1.5px solid var(--light-gray);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--dark);
+  font-weight: 600;
+  font-size: .92rem;
+  /* Lange Wörter (dänische Komposita!) umbrechen statt überlaufen. */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  transition: var(--transition);
+}
+.match-btn--selected { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, var(--surface)); color: var(--primary); }
+.match-btn--matched {
+  border-color: var(--success);
+  background: color-mix(in srgb, var(--success) 14%, var(--surface));
+  color: var(--dark);
+  opacity: .75;
+}
+.match-btn--wrong { border-color: #e53e3e; background: color-mix(in srgb, #e53e3e 12%, var(--surface)); animation: matchShake .3s ease; }
+@keyframes matchShake {
+  0%, 100% { transform: translateX(0); }
+  30% { transform: translateX(-4px); }
+  60% { transform: translateX(4px); }
+}
+
 /* ── Fehler-Training-Button ───────────────────────────────────── */
 .btn-error-review {
   border: 1.5px solid #e05260; color: #e05260; background: var(--surface);

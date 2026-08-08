@@ -568,6 +568,32 @@ const driveStep = lang => page.evaluate(async l => {
   if (next) { next.click(); return null; }        // Kennenlernen / Feedback
   if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return null; }
   if (st.phase === 'talk') { document.getElementById('talkOk')?.click(); return null; }
+  // Paare-Brett: Paare der Reihe nach links→rechts anklicken.
+  const matchGrid = document.getElementById('matchGrid');
+  if (matchGrid && st.currentPrompt?.pairs) {
+    // Kopie ziehen: das letzte Paar setzt currentPrompt auf null,
+    // während die Schleife noch läuft.
+    const nPairs = st.currentPrompt.pairs.length;
+    window.__matchSeen = {
+      buttons: matchGrid.querySelectorAll('.match-btn').length,
+      pairs: nPairs,
+    };
+    for (let k = 0; k < nPairs; k++) {
+      matchGrid.querySelector(`.match-btn[data-side="l"][data-i="${k}"]`)?.click();
+      matchGrid.querySelector(`.match-btn[data-side="r"][data-i="${k}"]`)?.click();
+    }
+    window.__matchSeen.matched = matchGrid.querySelectorAll('.match-btn--matched').length;
+    return null;
+  }
+  // Buchstaben-Kacheln: Buchstaben in Wort-Reihenfolge tippen (auto-check).
+  const tilePool = document.getElementById('tilePool');
+  if (tilePool) {
+    const tiles = [...tilePool.querySelectorAll('.letter-tile')];
+    window.__tilesSeen = (window.__tilesSeen || 0) + 1;
+    tiles.sort((a, b) => Number(a.dataset.i) - Number(b.dataset.i)).forEach(t => t.click());
+    window.__tilesCorrect = !!document.querySelector('#mc-fb .correct');
+    return null;
+  }
   const card = st.queue[0];
   const typeIn = document.getElementById('courseTypeInput');
   if (typeIn && card) {
@@ -608,13 +634,33 @@ const coursePhases = await page.evaluate(async () => ({
 }));
 check('Lektion komplett: Hören, Sprechen, Schreiben & Konversation integriert',
   courseEnd === 'done'
-    && ['teach', 'listen', 'words', 'speak', 'write', 'talk'].every(p => coursePhases.phases.includes(p))
+    && ['teach', 'listen', 'words', 'match', 'speak', 'write', 'talk'].every(p => coursePhases.phases.includes(p))
     && coursePhases.phases.indexOf('listen') > coursePhases.phases.indexOf('teach')
     && coursePhases.phases.indexOf('speak') > coursePhases.phases.indexOf('words')
     && coursePhases.phases.indexOf('write') > coursePhases.phases.indexOf('speak')
     && coursePhases.phases.indexOf('talk') > coursePhases.phases.indexOf('write')
     && coursePhases.introduced > 0,
   JSON.stringify({ courseEnd, ...coursePhases }));
+
+// Neue interaktive Übungen: Paare-Brett (4 Paare, alle gelöst) und
+// Buchstaben-Kacheln (mindestens ein Wort gebaut, korrekt gewertet).
+const newExercises = await page.evaluate(() => ({
+  match: window.__matchSeen || null,
+  tiles: window.__tilesSeen || 0,
+  tilesCorrect: window.__tilesCorrect === true,
+}));
+check('Paare verbinden: 4 Paare auf dem Brett, alle gelöst',
+  newExercises.match && newExercises.match.pairs === 4
+    && newExercises.match.buttons === 8 && newExercises.match.matched === 8,
+  JSON.stringify(newExercises.match));
+check('Wort bauen: Buchstaben-Kacheln erscheinen und werten korrekt',
+  newExercises.tiles >= 1 && newExercises.tilesCorrect, JSON.stringify(newExercises));
+
+// Fortschrittsbalken: am Lektionsende exakt voll (die Schritt-Basis
+// vergaß früher Auffrischung & Konversation beim Neuberechnen).
+const progressEnd = await page.evaluate(() => document.getElementById('progress-text')?.textContent || '');
+check('Fortschritt endet exakt bei X/X Schritten',
+  /^(\d+)\/\1 Schritte$/.test(progressEnd.trim()), progressEnd);
 await click('#sessionBackBtn'); await page.waitForTimeout(300);
 
 // ── Latein: Abfragerichtung Latein→Deutsch + klassische Aussprache ──
@@ -1208,6 +1254,61 @@ const jaDeck = await page.evaluate(async () => {
 check('Japanisch: Deck erweitert, Lektionsplan stimmt',
   jaDeck.cards >= 220 && jaDeck.unique === jaDeck.cards && jaDeck.sum === jaDeck.cards
   && jaDeck.titles === jaDeck.lessons && jaDeck.complete, JSON.stringify(jaDeck));
+
+// ── Funktions-Tiefentests: Shop, Wort des Tages, Quests ──
+// Shop: Kauf zieht Diamanten ab, Inventar wächst, Kappe greift.
+const shopFlow = await page.evaluate(async () => {
+  const shop = await import('/core/shop.js');
+  const gami = await import('/core/gamification.js');
+  gami.addGems?.(200);
+  // Fallback: Gems direkt in den Spielstand schreiben, falls kein addGems.
+  if (shop && gami.getGems() < 80) {
+    const u = localStorage.getItem('lingualearn_current_user');
+    const key = 'lingualearn_game_' + u;
+    const g = JSON.parse(localStorage.getItem(key) || '{}');
+    g.gems = 200;
+    localStorage.setItem(key, JSON.stringify(g));
+    gami.reinitGame();
+  }
+  const before = gami.getGems();
+  const r1 = shop.buy('xpBoost');
+  const after = gami.getGems();
+  let capped = { ok: true };
+  for (let i = 0; i < 6 && capped.ok; i++) capped = shop.buy('xpBoost');
+  return { before, after, ok: r1.ok, priced: before - after === 30,
+           inv: gami.getInventory().xpBoost || 0, capErr: capped.err || null };
+});
+check('Shop: Kauf bucht 30 Diamanten ab und füllt das Inventar',
+  shopFlow.ok && shopFlow.priced && shopFlow.inv >= 1, JSON.stringify(shopFlow));
+check('Shop: Vorrats-Kappe verhindert Horten', shopFlow.capErr !== null, String(shopFlow.capErr));
+
+// Wort des Tages: Overlay öffnet mit Wort + Aussprache-Knopf.
+const wotdDeep = await page.evaluate(async () => {
+  (await import('/ui/wotd.js')).openWotd();
+  await new Promise(r => setTimeout(r, 400));   // renderWotd lädt das Deck
+  const ov = document.getElementById('wotdModal');
+  const panel = document.getElementById('wotd');
+  return {
+    open: !!ov && !ov.hidden,
+    word: (panel?.textContent || '').trim().length > 10,
+    audio: !!panel?.querySelector('.audio-btn, button [class*=volume], .wotd-audio, [id*=Say]'),
+  };
+});
+await page.evaluate(async () => (await import('/ui/wotd.js')).closeWotd());
+check('Wort des Tages: Overlay mit Wort und Aussprache', wotdDeep.open && wotdDeep.word && wotdDeep.audio, JSON.stringify(wotdDeep));
+
+// Tagesquests: 3 Quests, Fortschritt gezählt, Einlösen bucht Belohnung.
+const quests = await page.evaluate(async () => {
+  const q = await import('/core/quests.js');
+  const gami = await import('/core/gamification.js');
+  const list = q.getDailyQuests();
+  const done = list.find(x => x.done && !x.claimed);
+  let claim = null, gemsBefore = gami.getGems(), gemsAfter = gemsBefore;
+  if (done) { claim = q.claimQuest(done.id); gemsAfter = gami.getGems(); }
+  return { count: list.length, anyProgress: list.some(x => x.progress > 0),
+           claimed: claim ? { ok: !!claim, gained: gemsAfter >= gemsBefore } : 'keine fertig' };
+});
+check('Tagesquests: 3 Stück mit echtem Fortschritt', quests.count === 3 && quests.anyProgress, JSON.stringify(quests));
 
 // ── Update-Logout: Konto bleibt, Sitzung endet ──
 await page.evaluate(() => localStorage.setItem('lingualearn_app_version', 'alt-0'));
