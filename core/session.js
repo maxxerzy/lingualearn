@@ -875,7 +875,7 @@ async function loadPhrases(lang) {
 // vom ersten Tag an ins Sprechen und wiederholt später von vorn.
 function pickPhrases(list, lessonNum) {
   if (!list.length) return [];
-  const per = 2;
+  const per = 3;
   const start = ((lessonNum - 1) * per) % list.length;
   const out = [];
   for (let i = 0; i < Math.min(per, list.length); i++) out.push(list[(start + i) % list.length]);
@@ -936,7 +936,8 @@ async function startEndlessRound(deck, deckId) {
   if (!cards.length) return;
   endlessRound++;
 
-  const talkCards = pickPhrases(await loadPhrases(deck.language), lessonNumber(deckId) + endlessRound);
+  const phrasePool = await loadPhrases(deck.language);
+  const talkCards = pickPhrases(phrasePool, lessonNumber(deckId) + endlessRound);
 
   const session = {
     deck,
@@ -947,6 +948,7 @@ async function startEndlessRound(deck, deckId) {
     lessonCards: cards,
     knownCards: deck.cards,                  // alles ist gelernt → alle Sätze offen
     talkCards,
+    phrasePool,
     reviewCards: [],
     phase: 'teach',                          // wird sofort übersprungen (endless)
     chunks: chunkLesson(cards),
@@ -979,15 +981,10 @@ function courseBaseSteps(session) {
   return session.lessonCards.length * 4
     + (session.reviewCards?.length || 0)
     + (session.talkCards?.length || 0)
+    + (session.talkCards || []).filter(p => p.reply).length   // Dialog-Runde
     + (session.lessonCards.length >= 4 ? 1 : 0);   // Paare-Brett
 }
 
-// Für Buchstaben-Bausteine geeignet: ein Wort ohne Leerzeichen in
-// tippbarer Länge (sonst wird das Kachel-Feld unübersichtlich).
-function tileable(word) {
-  const s = String(word);
-  return !s.includes(' ') && s.length >= 2 && s.length <= 12;
-}
 
 async function startCourseLesson(deck, deckId) {
   const lessonCards = nextLessonCards(deckId, deck.cards);
@@ -1004,7 +1001,8 @@ async function startCourseLesson(deck, deckId) {
   const introducedStart = getCourseState(deckId).introduced;
   const knownCards = deck.cards.slice(0, introducedStart + lessonCards.length);
   // Konversations-Bausteine dieser Lektion (schnell ins Sprechen kommen).
-  const talkCards = pickPhrases(await loadPhrases(deck.language), lessonNumber(deckId));
+  const phrasePool = await loadPhrases(deck.language);
+  const talkCards = pickPhrases(phrasePool, lessonNumber(deckId));
   // Fällige Wiederholungen aus früheren Lektionen (Auffrischung vorweg).
   const reviewCards = collectDueReview(deck, deckId, introducedStart);
 
@@ -1016,6 +1014,7 @@ async function startCourseLesson(deck, deckId) {
     lessonCards,
     knownCards,
     talkCards,
+    phrasePool,
     reviewCards,
     phase: reviewCards.length ? 'review' : 'teach',          // je Häppchen: teach → listen → words; dann speak → sentences
     chunks: chunkLesson(lessonCards),
@@ -1120,16 +1119,7 @@ function showCourseStep() {
       // zweite (geeignete) Wort als Buchstaben-Bausteine statt Tastatur.
       session.phase = 'write';
       session.queue = shuffleArray([...session.lessonCards]).slice(0, 3);
-      // Mindestens ein „Wort bauen": ist kein geeignetes (Einzel-)Wort in
-      // der Stichprobe, das erste geeignete der Lektion hineintauschen.
-      if (!session.queue.some(c => tileable(answerText(session, c)))) {
-        const t = session.lessonCards.find(c => tileable(answerText(session, c)));
-        if (t && !session.queue.includes(t)) session.queue[session.queue.length - 1] = t;
-      }
       session.writeCount = session.queue.length;
-      // Jeder zweite geeignete Kandidat wird gebaut statt getippt.
-      const cand = session.queue.filter(c => tileable(answerText(session, c)));
-      session.tileFronts = cand.filter((c, i) => i % 2 === 0).map(c => c.front);
       session.totalCards = courseBaseSteps(session) + session.writeCount;
       setCurrentSession(session);
       updateProgress();
@@ -1153,6 +1143,19 @@ function showCourseStep() {
 
   if (session.phase === 'talk') {
     if (session.queue.length === 0) {
+      // Dialog-Runde: die eben gehörten Wendungen jetzt aktiv einsetzen —
+      // auf die Frage die passende Antwort wählen.
+      session.phase = 'dialog';
+      session.queue = (session.talkCards || []).filter(p => p.reply);
+      setCurrentSession(session);
+    } else {
+      renderCourseTalk(session);
+      return;
+    }
+  }
+
+  if (session.phase === 'dialog') {
+    if (session.queue.length === 0) {
       // Übergang zur Satz-Phase: nur Sätze aufnehmen, deren Wörter ALLE
       // schon gelernt sind (echtes Basic 101 — keine unbekannten Wörter).
       session.phase = 'sentences';
@@ -1163,7 +1166,7 @@ function showCourseStep() {
       setCurrentSession(session);
       updateProgress();
     } else {
-      renderCourseTalk(session);
+      renderCourseDialog(session);
       return;
     }
   }
@@ -1604,26 +1607,30 @@ function renderCourseMatch(session) {
   });
 }
 
-// Schreib-Variante „Wort bauen": das Zielwort aus gemischten
-// Buchstaben-Kacheln zusammensetzen — der sanfte Einstieg ins Schreiben,
-// bevor die Tastatur drankommt.
+// Schreib-Runde OHNE Tastatur: Das Zielwort wird aus Bausteinen
+// zusammengesetzt — Einzelwörter aus Buchstaben-Kacheln, Wortgruppen aus
+// Wort-Kacheln. Bewusst KEIN Eingabefeld: Für Griechisch, Russisch oder
+// Japanisch ist die passende Tastatur auf dem Gerät meist gar nicht
+// installiert; hier sind alle nötigen Zeichen immer da — antippen legt
+// sie ab, erneutes Antippen holt sie zurück.
 function renderCourseWordTiles(session) {
   const card = session.queue[0];
   const lang = session.deck.language;
   const expected = answerText(session, card);
-  const letters = expected.split('');
+  const multi = /\s/.test(expected.trim());
+  const letters = multi ? expected.trim().split(/\s+/) : expected.split('');
   const order = shuffleArray(letters.map((_, i) => i));
   const learnArea = document.getElementById('learnArea');
 
   learnArea.innerHTML = `
     <div class="mc-card build-card">
-      ${courseBadge(`<i class="fas fa-keyboard"></i> Schreiben — noch ${session.queue.length}`)}
+      ${courseBadge(`<i class="fas fa-shapes"></i> Schreiben — noch ${session.queue.length}`)}
       <p class="fc-label">${promptLabel(session)}</p>
       <div class="fc-word">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
-      <p class="prompt">Baue die Übersetzung aus den Buchstaben (${answerLabel(session)}):</p>
+      <p class="prompt">Baue die Übersetzung aus den ${multi ? 'Wörtern' : 'Buchstaben'} (${answerLabel(session)}):</p>
       <div class="build-answer tile-answer" id="tileAnswer" aria-label="Deine Antwort"></div>
       <div class="build-pool" id="tilePool">
-        ${order.map(i => `<button type="button" class="build-tile letter-tile" data-i="${i}">${escHtml(letters[i])}</button>`).join('')}
+        ${order.map(i => `<button type="button" class="build-tile${multi ? '' : ' letter-tile'}" data-i="${i}">${escHtml(letters[i])}</button>`).join('')}
       </div>
       <div id="mc-fb"></div>
     </div>
@@ -1637,6 +1644,7 @@ function renderCourseWordTiles(session) {
   const pool = document.getElementById('tilePool');
   const answerEl = document.getElementById('tileAnswer');
 
+  const joiner = multi ? ' ' : '';
   const finish = isCorrect => {
     session.currentPrompt = null;
     document.querySelectorAll('.build-tile').forEach(t => (t.disabled = true));
@@ -1652,20 +1660,20 @@ function renderCourseWordTiles(session) {
   };
 
   pool.addEventListener('click', e => {
-    const tile = e.target.closest('.letter-tile');
+    const tile = e.target.closest('.build-tile');
     if (!tile || tile.disabled) return;
     tile.disabled = true;
     tile.classList.add('build-tile--used');
     placed.push(Number(tile.dataset.i));
     const chip = document.createElement('button');
     chip.type = 'button';
-    chip.className = 'build-tile letter-tile build-tile--placed';
+    chip.className = tile.className.replace('build-tile--used', '').trim() + ' build-tile--placed';
     chip.dataset.i = tile.dataset.i;
     chip.textContent = letters[Number(tile.dataset.i)];
     answerEl.appendChild(chip);
     // Voll? Dann sofort prüfen — ein extra Knopf wäre nur ein Klick mehr.
     if (placed.length === letters.length) {
-      finish(placed.map(i => letters[i]).join('') === expected);
+      finish(placed.map(i => letters[i]).join(joiner) === (multi ? expected.trim().split(/\s+/).join(' ') : expected));
     }
   });
   answerEl.addEventListener('click', e => {
@@ -1674,7 +1682,7 @@ function renderCourseWordTiles(session) {
     const i = Number(chip.dataset.i);
     placed.splice(placed.indexOf(i), 1);
     chip.remove();
-    const orig = pool.querySelector(`.letter-tile[data-i="${i}"]`);
+    const orig = pool.querySelector(`.build-tile[data-i="${i}"]`);
     if (orig) { orig.disabled = false; orig.classList.remove('build-tile--used'); }
   });
 }
@@ -1770,63 +1778,8 @@ function renderCourseCompare(session) {
 // Phase 5: SCHREIBEN — ein paar Wörter der Lektion selbst tippen
 // (tolerant wie der frühere Tippen-Modus).
 function renderCourseWrite(session) {
-  const card = session.queue[0];
-  // Jedes zweite geeignete Wort als Buchstaben-Bausteine statt Tastatur.
-  if (session.tileFronts?.includes(card.front)) {
-    renderCourseWordTiles(session);
-    return;
-  }
-  const lang = session.deck.language;
-  const expected = answerText(session, card);
-  const learnArea = document.getElementById('learnArea');
-
-  learnArea.innerHTML = `
-    <div class="mc-card typing-card">
-      ${courseBadge(`<i class="fas fa-keyboard"></i> Schreiben — noch ${session.queue.length}`)}
-      <p class="fc-label">${promptLabel(session)}</p>
-      <div class="fc-word">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
-      <p class="prompt">Schreibe die Übersetzung (${answerLabel(session)}):</p>
-      <input type="text" id="courseTypeInput" class="input typing-input" autocomplete="off"
-        autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done">
-      <div class="actions">
-        <button type="button" class="btn btn-primary" id="courseTypeCheck">Prüfen</button>
-        <button type="button" class="btn" id="courseTypeReveal">Aufdecken</button>
-      </div>
-      <div id="mc-fb"></div>
-    </div>
-  `;
-
-  session.currentPrompt = { card };
-  setCurrentSession(session);
-  wirePromptAudio(session, card);
-
-  const input = document.getElementById('courseTypeInput');
-  input.focus();
-  const doCheck = revealed => {
-    if (!session.currentPrompt) return;
-    const guess = input.value || '';
-    if (!revealed && normAnswer(guess) === '') { input.focus(); return; }
-    const isCorrect = !revealed && (
-      normAnswer(guess) === normAnswer(expected) ||
-      (!isReverse(session.deck) && card.roman && normAnswer(guess) === normAnswer(card.roman))
-    );
-    input.disabled = true;
-    document.getElementById('courseTypeCheck')?.setAttribute('disabled', '');
-    document.getElementById('courseTypeReveal')?.setAttribute('disabled', '');
-    session.currentPrompt = null;
-    courseGrade(session, card, isCorrect);
-    speakWord(card.back, lang);
-    document.getElementById('mc-fb').innerHTML = `
-      ${courseFeedbackHtml(isCorrect, card, '', expected)}
-      <div class="actions" style="margin-top:14px">
-        <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
-      </div>
-    `;
-    document.getElementById('courseNext').addEventListener('click', showCourseStep);
-  };
-  input.addEventListener('keydown', e => { if (e.key === 'Enter') doCheck(false); });
-  document.getElementById('courseTypeCheck').addEventListener('click', () => doCheck(false));
-  document.getElementById('courseTypeReveal').addEventListener('click', () => doCheck(true));
+  // Immer Bausteine, nie Tastatur — siehe renderCourseWordTiles.
+  renderCourseWordTiles(session);
 }
 
 // Phase „Konversation": eine echte Alltagswendung hören, verstehen und
@@ -1936,6 +1889,90 @@ function renderCourseTalk(session) {
 
 // Konversations-Bausteine sind keine Deck-Vokabeln — sie zählen für den
 // Fortschritt und XP, aber nicht für den Karten-Lernstand (SRS).
+// Phase „Dialog": eine der eben gelernten Wendungen hören und die
+// passende Antwort wählen — das ist der Moment, in dem aus Nachsprechen
+// echte Konversation wird. Falsche Wahl → die Frage kommt nochmal.
+function renderCourseDialog(session) {
+  const phrase = session.queue[0];
+  const lang = session.deck.language;
+  // Distraktoren: Antworten ANDERER Wendungen derselben Sprache.
+  const others = shuffleArray((session.phrasePool || [])
+    .filter(p => p.reply && p.reply !== phrase.reply)).slice(0, 2);
+  const options = shuffleArray([phrase, ...others]);
+  const correctIdx = options.indexOf(phrase);
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card talk-card">
+      ${courseBadge(`<i class="fas fa-comments"></i> Dialog — noch ${session.queue.length}`)}
+      <div class="talk-bubble talk-bubble--other">
+        <span class="talk-bubble__text">${escHtml(phrase.target)}</span>
+        <button type="button" class="audio-btn" id="dialogSay" title="Anhören"><i class="fas fa-volume-up"></i></button>
+      </div>
+      <p class="talk-reply-de">${escHtml(phrase.de)}</p>
+      <p class="prompt">Was antwortest du?</p>
+      <div class="mc-options" role="group" aria-label="Antwortmöglichkeiten">
+        ${options.map((opt, i) => `
+          <button type="button" class="btn mc-option" data-idx="${i}" aria-keyshortcuts="${i + 1} ${'abc'[i]}">
+            <span class="mc-key" aria-hidden="true">${'ABC'[i]}</span>
+            <span class="mc-text">${escHtml(opt.reply)}${opt.replyDe ? `<span class="dialog-reply-de">${escHtml(opt.replyDe)}</span>` : ''}</span>
+          </button>`).join('')}
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentPrompt = { correctIdx };
+  setCurrentSession(session);
+  const say = () => speakWord(phrase.target, lang);
+  say();
+  document.getElementById('dialogSay').addEventListener('click', say);
+
+  learnArea.querySelectorAll('.mc-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = Number(btn.dataset.idx);
+      const isCorrect = idx === correctIdx;
+      learnArea.querySelectorAll('.mc-option').forEach((b, i) => {
+        b.disabled = true;
+        if (i === correctIdx) b.classList.add('mc-correct');
+        else if (i === idx && !isCorrect) b.classList.add('mc-wrong');
+      });
+      if (isCorrect) { playCorrect(); speakWord(phrase.reply, lang); } else playWrong();
+      session.currentPrompt = null;
+      dialogGrade(session, isCorrect);
+      document.getElementById('mc-fb').innerHTML = `
+        ${isCorrect
+          ? '<div class="correct" style="margin-top:14px"><p>✅ Genau so antwortet man!</p></div>'
+          : `<div class="incorrect" style="margin-top:14px"><p>❌ Passt nicht — die Antwort wäre: <b>${escHtml(phrase.reply)}</b>${phrase.replyDe ? ` („${escHtml(phrase.replyDe)}")` : ''}</p><p style="color:var(--gray);font-size:.85rem">Kommt gleich nochmal.</p></div>`}
+        <div class="actions" style="margin-top:14px">
+          <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+        </div>
+      `;
+      document.getElementById('courseNext').addEventListener('click', showCourseStep);
+    });
+  });
+}
+
+// Dialog-Wertung: wie die Kurs-Wertung, aber ohne SRS-Eintrag — die
+// Wendungen sind keine Vokabelkarten des Decks.
+function dialogGrade(session, isCorrect) {
+  session.gradedAnswers++;
+  if (isCorrect) {
+    session.queue.shift();
+    session.currentIndex++;
+    session.correctAnswers++;
+  } else {
+    session.queue.push(session.queue.shift());
+  }
+  const { gained } = recordGameAnswer(isCorrect, { boost: !!session.boosted });
+  session.xpFromAnswers = (session.xpFromAnswers || 0) + gained;
+  setCurrentSession(session);
+  renderGamiHeader();
+  renderLearnWidgets();
+  announceUnlocks();
+  updateProgress();
+}
+
 function talkGrade(session) {
   session.queue.shift();
   session.currentIndex++;
