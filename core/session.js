@@ -956,17 +956,37 @@ async function startEndlessRound(deck, deckId) {
     sentencesCompleted: [],
     currentPrompt: null,
     currentIndex: 0,
-    totalCards: cards.length * 4 + talkCards.length,
+    totalCards: 0,                           // unten über courseBaseSteps
     correctAnswers: 0,
     gradedAnswers: 0,
     combo: 0,
     boosted: consumeXpBoost(),
   };
 
+  session.totalCards = courseBaseSteps(session);
   setCurrentSession(session);
   document.getElementById('session-title').textContent = `${deck.name} — Endlos-Runde ${endlessRound}`;
   updateProgress();
   showCourseStep();
+}
+
+// Feste Schritte einer Lektion: 4 je Wort (kennenlernen, hören, üben,
+// sprechen) + Auffrischung + Konversation + ggf. das Paare-Brett.
+// Schreib- und Satz-Schritte kommen dazu, sobald ihr Umfang feststeht —
+// WICHTIG: immer über diese Basis rechnen, sonst „vergisst" der
+// Fortschrittsbalken bereits erledigte Phasen und springt zurück.
+function courseBaseSteps(session) {
+  return session.lessonCards.length * 4
+    + (session.reviewCards?.length || 0)
+    + (session.talkCards?.length || 0)
+    + (session.lessonCards.length >= 4 ? 1 : 0);   // Paare-Brett
+}
+
+// Für Buchstaben-Bausteine geeignet: ein Wort ohne Leerzeichen in
+// tippbarer Länge (sonst wird das Kachel-Feld unübersichtlich).
+function tileable(word) {
+  const s = String(word);
+  return !s.includes(' ') && s.length >= 2 && s.length <= 12;
 }
 
 async function startCourseLesson(deck, deckId) {
@@ -1005,13 +1025,14 @@ async function startCourseLesson(deck, deckId) {
     sentencesCompleted: [],
     currentPrompt: null,
     currentIndex: 0,                       // erledigte Schritte (für Fortschrittsbalken)
-    totalCards: lessonCards.length * 4 + talkCards.length + reviewCards.length,   // + Konversation & Auffrischung
+    totalCards: 0,                         // wird unten über courseBaseSteps gesetzt
     correctAnswers: 0,
     gradedAnswers: 0,
     combo: 0,
     boosted: consumeXpBoost(),             // XP-Boost aus dem Shop einlösen
   };
 
+  session.totalCards = courseBaseSteps(session);
   setCurrentSession(session);
   document.getElementById('session-title').textContent = `${deck.name} — Lektion ${session.lesson}`;
   updateProgress();
@@ -1069,9 +1090,8 @@ function showCourseStep() {
         showCourseStep();
         return;
       }
-      // Alle Häppchen durch → Sprech-Runde über die ganze Lektion.
-      session.phase = 'speak';
-      session.queue = shuffleArray([...session.lessonCards]);
+      // Alle Häppchen durch → Paare verbinden über die ganze Lektion.
+      session.phase = 'match';
       setCurrentSession(session);
     } else {
       // Abwechslung im Üben: mal Multiple Choice, mal Vergleich (Passt?).
@@ -1081,13 +1101,36 @@ function showCourseStep() {
     }
   }
 
+  // Paare verbinden: alle Wörter der Lektion auf einem Brett zuordnen —
+  // ein schneller, spielerischer Abruf, bevor das Sprechen beginnt.
+  if (session.phase === 'match') {
+    if (session.matchDone || session.lessonCards.length < 4) {
+      session.phase = 'speak';
+      session.queue = shuffleArray([...session.lessonCards]);
+      setCurrentSession(session);
+    } else {
+      renderCourseMatch(session);
+      return;
+    }
+  }
+
   if (session.phase === 'speak') {
     if (session.queue.length === 0) {
-      // Schreib-Runde: ein paar Wörter der Lektion selbst tippen.
+      // Schreib-Runde: ein paar Wörter der Lektion selbst tippen — jedes
+      // zweite (geeignete) Wort als Buchstaben-Bausteine statt Tastatur.
       session.phase = 'write';
       session.queue = shuffleArray([...session.lessonCards]).slice(0, 3);
+      // Mindestens ein „Wort bauen": ist kein geeignetes (Einzel-)Wort in
+      // der Stichprobe, das erste geeignete der Lektion hineintauschen.
+      if (!session.queue.some(c => tileable(answerText(session, c)))) {
+        const t = session.lessonCards.find(c => tileable(answerText(session, c)));
+        if (t && !session.queue.includes(t)) session.queue[session.queue.length - 1] = t;
+      }
       session.writeCount = session.queue.length;
-      session.totalCards = session.lessonCards.length * 4 + session.writeCount;
+      // Jeder zweite geeignete Kandidat wird gebaut statt getippt.
+      const cand = session.queue.filter(c => tileable(answerText(session, c)));
+      session.tileFronts = cand.filter((c, i) => i % 2 === 0).map(c => c.front);
+      session.totalCards = courseBaseSteps(session) + session.writeCount;
       setCurrentSession(session);
       updateProgress();
     } else {
@@ -1115,8 +1158,8 @@ function showCourseStep() {
       session.phase = 'sentences';
       session.queue = collectUnlockedSentences(session);
       session.sentOrder = session.queue.map(c => c.front);
-      session.totalCards = session.lessonCards.length * 4 + (session.writeCount || 0)
-        + (session.talkCards?.length || 0) + session.queue.length;
+      session.totalCards = courseBaseSteps(session) + (session.writeCount || 0)
+        + session.queue.length;
       setCurrentSession(session);
       updateProgress();
     } else {
@@ -1458,6 +1501,184 @@ function renderCourseWordMC(session) {
   });
 }
 
+// Phase „Paare verbinden": 4 Wörter der Lektion und ihre Übersetzungen
+// gemischt auf einem Brett — links antippen, rechts das Gegenstück.
+// Ein Paar ohne Fehlversuch zählt als richtige Antwort für dieses Wort.
+function renderCourseMatch(session) {
+  const lang = session.deck.language;
+  const pairs = shuffleArray([...session.lessonCards]).slice(0, 4);
+  const left = shuffleArray(pairs.map((c, i) => ({ c, i })));
+  const right = shuffleArray(pairs.map((c, i) => ({ c, i })));
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card match-card">
+      ${courseBadge('<i class="fas fa-link"></i> Paare verbinden')}
+      <p class="prompt">Tippe ein Wort und dann seine Übersetzung:</p>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-col">
+          ${left.map(({ c, i }) => `<button type="button" class="btn match-btn" data-side="l" data-i="${i}">${escHtml(promptText(session, c))}</button>`).join('')}
+        </div>
+        <div class="match-col">
+          ${right.map(({ c, i }) => `<button type="button" class="btn match-btn" data-side="r" data-i="${i}">${escHtml(answerText(session, c))}</button>`).join('')}
+        </div>
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentPrompt = { pairs: pairs.map(c => c.front) };
+  setCurrentSession(session);
+
+  const grid = document.getElementById('matchGrid');
+  const missed = new Set();     // Paare mit Fehlversuch
+  let selected = null;          // aktuell gewählter Knopf
+  let solved = 0;
+
+  grid.addEventListener('click', e => {
+    const btn = e.target.closest('.match-btn');
+    if (!btn || btn.disabled) return;
+
+    if (!selected) {
+      selected = btn;
+      btn.classList.add('match-btn--selected');
+      return;
+    }
+    if (btn === selected) {           // Abwahl
+      btn.classList.remove('match-btn--selected');
+      selected = null;
+      return;
+    }
+    if (btn.dataset.side === selected.dataset.side) {   // Seite gewechselt
+      selected.classList.remove('match-btn--selected');
+      selected = btn;
+      btn.classList.add('match-btn--selected');
+      return;
+    }
+
+    const a = selected;
+    selected = null;
+    a.classList.remove('match-btn--selected');
+    const card = pairs[Number(btn.dataset.i)];
+
+    if (a.dataset.i === btn.dataset.i) {
+      // Treffer: Paar einfrieren, Wort vorlesen, werten.
+      [a, btn].forEach(el => { el.disabled = true; el.classList.add('match-btn--matched'); });
+      speakWord(card.back, lang);
+      const ok = !missed.has(btn.dataset.i);
+      session.gradedAnswers++;
+      if (ok) session.correctAnswers++;
+      const userStats = getUserStats();
+      if (ok) {
+        userStats.learnedWords = (userStats.learnedWords || 0) + 1;
+        userStats.totalCorrect = (userStats.totalCorrect || 0) + 1;
+      }
+      userStats.totalAnswered = (userStats.totalAnswered || 0) + 1;
+      setUserStats(userStats);
+      recordAnswerEffects(session, card, ok, ok);
+      solved++;
+      if (solved === pairs.length) {
+        session.matchDone = true;
+        session.currentIndex++;        // das Brett zählt als ein Schritt
+        session.currentPrompt = null;
+        setCurrentSession(session);
+        updateProgress();
+        document.getElementById('mc-fb').innerHTML = `
+          <div class="correct" style="margin-top:14px"><p>✅ Alle Paare gefunden!</p></div>
+          <div class="actions" style="margin-top:14px">
+            <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+          </div>
+        `;
+        document.getElementById('courseNext').addEventListener('click', showCourseStep);
+      }
+    } else {
+      // Daneben: beide kurz rot, das Zielpaar gilt als „mit Fehlversuch".
+      missed.add(a.dataset.i);
+      missed.add(btn.dataset.i);
+      [a, btn].forEach(el => {
+        el.classList.add('match-btn--wrong');
+        setTimeout(() => el.classList.remove('match-btn--wrong'), 500);
+      });
+      playWrong();
+    }
+  });
+}
+
+// Schreib-Variante „Wort bauen": das Zielwort aus gemischten
+// Buchstaben-Kacheln zusammensetzen — der sanfte Einstieg ins Schreiben,
+// bevor die Tastatur drankommt.
+function renderCourseWordTiles(session) {
+  const card = session.queue[0];
+  const lang = session.deck.language;
+  const expected = answerText(session, card);
+  const letters = expected.split('');
+  const order = shuffleArray(letters.map((_, i) => i));
+  const learnArea = document.getElementById('learnArea');
+
+  learnArea.innerHTML = `
+    <div class="mc-card build-card">
+      ${courseBadge(`<i class="fas fa-keyboard"></i> Schreiben — noch ${session.queue.length}`)}
+      <p class="fc-label">${promptLabel(session)}</p>
+      <div class="fc-word">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
+      <p class="prompt">Baue die Übersetzung aus den Buchstaben (${answerLabel(session)}):</p>
+      <div class="build-answer tile-answer" id="tileAnswer" aria-label="Deine Antwort"></div>
+      <div class="build-pool" id="tilePool">
+        ${order.map(i => `<button type="button" class="build-tile letter-tile" data-i="${i}">${escHtml(letters[i])}</button>`).join('')}
+      </div>
+      <div id="mc-fb"></div>
+    </div>
+  `;
+
+  session.currentPrompt = { card };
+  setCurrentSession(session);
+  wirePromptAudio(session, card);
+
+  const placed = [];
+  const pool = document.getElementById('tilePool');
+  const answerEl = document.getElementById('tileAnswer');
+
+  const finish = isCorrect => {
+    session.currentPrompt = null;
+    document.querySelectorAll('.build-tile').forEach(t => (t.disabled = true));
+    courseGrade(session, card, isCorrect);
+    speakWord(card.back, lang);
+    document.getElementById('mc-fb').innerHTML = `
+      ${courseFeedbackHtml(isCorrect, card, '', expected)}
+      <div class="actions" style="margin-top:14px">
+        <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+      </div>
+    `;
+    document.getElementById('courseNext').addEventListener('click', showCourseStep);
+  };
+
+  pool.addEventListener('click', e => {
+    const tile = e.target.closest('.letter-tile');
+    if (!tile || tile.disabled) return;
+    tile.disabled = true;
+    tile.classList.add('build-tile--used');
+    placed.push(Number(tile.dataset.i));
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'build-tile letter-tile build-tile--placed';
+    chip.dataset.i = tile.dataset.i;
+    chip.textContent = letters[Number(tile.dataset.i)];
+    answerEl.appendChild(chip);
+    // Voll? Dann sofort prüfen — ein extra Knopf wäre nur ein Klick mehr.
+    if (placed.length === letters.length) {
+      finish(placed.map(i => letters[i]).join('') === expected);
+    }
+  });
+  answerEl.addEventListener('click', e => {
+    const chip = e.target.closest('.build-tile--placed');
+    if (!chip || !session.currentPrompt) return;
+    const i = Number(chip.dataset.i);
+    placed.splice(placed.indexOf(i), 1);
+    chip.remove();
+    const orig = pool.querySelector(`.letter-tile[data-i="${i}"]`);
+    if (orig) { orig.disabled = false; orig.classList.remove('build-tile--used'); }
+  });
+}
+
 // Phase „Auffrischung": fällige Karten aus früheren Lektionen als kurze
 // Multiple-Choice-Runde. Falsch beantwortete kommen sofort wieder dran.
 function renderCourseReview(session) {
@@ -1550,6 +1771,11 @@ function renderCourseCompare(session) {
 // (tolerant wie der frühere Tippen-Modus).
 function renderCourseWrite(session) {
   const card = session.queue[0];
+  // Jedes zweite geeignete Wort als Buchstaben-Bausteine statt Tastatur.
+  if (session.tileFronts?.includes(card.front)) {
+    renderCourseWordTiles(session);
+    return;
+  }
   const lang = session.deck.language;
   const expected = answerText(session, card);
   const learnArea = document.getElementById('learnArea');

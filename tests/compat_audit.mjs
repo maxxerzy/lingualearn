@@ -288,6 +288,24 @@ const courseStep = () => page.evaluate(async () => {
   if (next) { next.click(); return phase; }
   if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return phase; }
   if (st.phase === 'talk') { document.getElementById('talkOk')?.click(); return phase; }
+  // Paare-Brett: jedes Paar in Originalreihenfolge links→rechts antippen.
+  const matchGrid = document.getElementById('matchGrid');
+  if (matchGrid && st.currentPrompt?.pairs) {
+    const nPairs = st.currentPrompt.pairs.length;   // Kopie: wird beim letzten Paar genullt
+    for (let k = 0; k < nPairs; k++) {
+      matchGrid.querySelector(`.match-btn[data-side="l"][data-i="${k}"]`)?.click();
+      matchGrid.querySelector(`.match-btn[data-side="r"][data-i="${k}"]`)?.click();
+    }
+    return phase;
+  }
+  // Buchstaben-Kacheln: Buchstaben in Wort-Reihenfolge tippen (auto-check).
+  const tilePool = document.getElementById('tilePool');
+  if (tilePool) {
+    [...tilePool.querySelectorAll('.letter-tile')]
+      .sort((a, b) => Number(a.dataset.i) - Number(b.dataset.i))
+      .forEach(t => t.click());
+    return phase;
+  }
   const card = st.queue?.[0];
   const typeIn = document.getElementById('courseTypeInput');
   if (typeIn && card) {
@@ -334,7 +352,7 @@ for (let i = 0; i < 220 && state !== 'done' && state !== 'gone'; i++) {
   state = await courseStep();
   await page.waitForTimeout(140);
 }
-const PHASES = ['grammar', 'teach', 'listen', 'words', 'speak', 'write', 'talk'];
+const PHASES = ['grammar', 'teach', 'listen', 'words', 'match', 'speak', 'write', 'talk'];
 const missing = PHASES.filter(p => !seen.has(p));
 check('Lernkurs komplett durchlaufen (alle Phasen erreicht)',
   state === 'done' && missing.length === 0, `state=${state} fehlend=${missing.join(',') || '—'}`);
