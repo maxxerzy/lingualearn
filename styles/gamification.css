@@ -665,6 +665,9 @@
   60% { transform: translateX(4px); }
 }
 
+/* Dialog-Runde: deutsche Übersetzung klein unter der Antwortoption. */
+.dialog-reply-de { display: block; font-size: .78rem; color: var(--gray); font-weight: 400; margin-top: 2px; }
+
 /* ── Fehler-Training-Button ───────────────────────────────────── */
 .btn-error-review {
   border: 1.5px solid #e05260; color: #e05260; background: var(--surface);

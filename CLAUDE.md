@@ -28,9 +28,12 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
   gemeisterte Karten, vereinigte Erfolge) — kein „letztes Gerät gewinnt".
   Ohne KV-Binding läuft die App unverändert lokal weiter.
 - Nur ZWEI Modi: geführter **Lernkurs** (Grammatik-Kapitel → 2er-Häppchen
-  kennenlernen → Hören → Üben (MC/Vergleich) → Sprechen → Schreiben →
-  Sätze (Lücke/Satzbau/Bedeutung)) und **Karteikarten** (SRS). Alle
-  weiteren Übungsformen existieren nur als Kurs-Phasen.
+  kennenlernen → Hören → Üben (MC/Vergleich) → Paare verbinden →
+  Sprechen → Schreiben (NUR Bausteine — nie ein Tastatur-Eingabefeld,
+  da Zielsprachen-Tastaturen auf den Geräten fehlen) → Konversation →
+  Dialog (Antwort wählen) → Sätze (Lücke/Satzbau/Bedeutung)) und
+  **Karteikarten** (SRS). Alle weiteren Übungsformen existieren nur
+  als Kurs-Phasen.
 - Latein wird überall in Prüfungsrichtung gelernt (Latein → Deutsch,
   `isReverse` in `core/session.js`) mit klassischer Aussprache über
   `utils/speech.js` (c→k, ae→ei, oe→eu, v→w, y→ü).

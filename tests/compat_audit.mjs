@@ -288,6 +288,11 @@ const courseStep = () => page.evaluate(async () => {
   if (next) { next.click(); return phase; }
   if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return phase; }
   if (st.phase === 'talk') { document.getElementById('talkOk')?.click(); return phase; }
+  // Dialog-Runde: passende Antwort über den gespeicherten Index wählen.
+  if (st.phase === 'dialog' && st.currentPrompt && st.currentPrompt.correctIdx !== undefined) {
+    document.querySelector(`.mc-option[data-idx="${st.currentPrompt.correctIdx}"]`)?.click();
+    return phase;
+  }
   // Paare-Brett: jedes Paar in Originalreihenfolge links→rechts antippen.
   const matchGrid = document.getElementById('matchGrid');
   if (matchGrid && st.currentPrompt?.pairs) {
@@ -301,7 +306,7 @@ const courseStep = () => page.evaluate(async () => {
   // Buchstaben-Kacheln: Buchstaben in Wort-Reihenfolge tippen (auto-check).
   const tilePool = document.getElementById('tilePool');
   if (tilePool) {
-    [...tilePool.querySelectorAll('.letter-tile')]
+    [...tilePool.querySelectorAll('.build-tile')]
       .sort((a, b) => Number(a.dataset.i) - Number(b.dataset.i))
       .forEach(t => t.click());
     return phase;
@@ -352,7 +357,7 @@ for (let i = 0; i < 220 && state !== 'done' && state !== 'gone'; i++) {
   state = await courseStep();
   await page.waitForTimeout(140);
 }
-const PHASES = ['grammar', 'teach', 'listen', 'words', 'match', 'speak', 'write', 'talk'];
+const PHASES = ['grammar', 'teach', 'listen', 'words', 'match', 'speak', 'write', 'talk', 'dialog'];
 const missing = PHASES.filter(p => !seen.has(p));
 check('Lernkurs komplett durchlaufen (alle Phasen erreicht)',
   state === 'done' && missing.length === 0, `state=${state} fehlend=${missing.join(',') || '—'}`);

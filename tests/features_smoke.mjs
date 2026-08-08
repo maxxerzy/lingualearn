@@ -568,6 +568,13 @@ const driveStep = lang => page.evaluate(async l => {
   if (next) { next.click(); return null; }        // Kennenlernen / Feedback
   if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return null; }
   if (st.phase === 'talk') { document.getElementById('talkOk')?.click(); return null; }
+  // Dialog-Runde: die richtige Antwort per gespeicherten Index wählen.
+  if (st.phase === 'dialog' && st.currentPrompt && st.currentPrompt.correctIdx !== undefined) {
+    window.__dialogSeen = (window.__dialogSeen || 0) + 1;
+    document.querySelector(`.mc-option[data-idx="${st.currentPrompt.correctIdx}"]`)?.click();
+    window.__dialogCorrect = !!document.querySelector('#mc-fb .correct');
+    return null;
+  }
   // Paare-Brett: Paare der Reihe nach links→rechts anklicken.
   const matchGrid = document.getElementById('matchGrid');
   if (matchGrid && st.currentPrompt?.pairs) {
@@ -588,12 +595,16 @@ const driveStep = lang => page.evaluate(async l => {
   // Buchstaben-Kacheln: Buchstaben in Wort-Reihenfolge tippen (auto-check).
   const tilePool = document.getElementById('tilePool');
   if (tilePool) {
-    const tiles = [...tilePool.querySelectorAll('.letter-tile')];
+    // Deckt Buchstaben- UND Wort-Kacheln ab (kein Tastatur-Feld mehr).
+    const tiles = [...tilePool.querySelectorAll('.build-tile')];
     window.__tilesSeen = (window.__tilesSeen || 0) + 1;
+    if (tiles.some(t => t.classList.contains('letter-tile'))) window.__letterTilesSeen = true;
+    else window.__wordTilesSeen = true;
     tiles.sort((a, b) => Number(a.dataset.i) - Number(b.dataset.i)).forEach(t => t.click());
     window.__tilesCorrect = !!document.querySelector('#mc-fb .correct');
     return null;
   }
+  if (document.getElementById('courseTypeInput')) window.__sawTypeInput = true;
   const card = st.queue[0];
   const typeIn = document.getElementById('courseTypeInput');
   if (typeIn && card) {
@@ -634,7 +645,7 @@ const coursePhases = await page.evaluate(async () => ({
 }));
 check('Lektion komplett: Hören, Sprechen, Schreiben & Konversation integriert',
   courseEnd === 'done'
-    && ['teach', 'listen', 'words', 'match', 'speak', 'write', 'talk'].every(p => coursePhases.phases.includes(p))
+    && ['teach', 'listen', 'words', 'match', 'speak', 'write', 'talk', 'dialog'].every(p => coursePhases.phases.includes(p))
     && coursePhases.phases.indexOf('listen') > coursePhases.phases.indexOf('teach')
     && coursePhases.phases.indexOf('speak') > coursePhases.phases.indexOf('words')
     && coursePhases.phases.indexOf('write') > coursePhases.phases.indexOf('speak')
@@ -655,6 +666,23 @@ check('Paare verbinden: 4 Paare auf dem Brett, alle gelöst',
   JSON.stringify(newExercises.match));
 check('Wort bauen: Buchstaben-Kacheln erscheinen und werten korrekt',
   newExercises.tiles >= 1 && newExercises.tilesCorrect, JSON.stringify(newExercises));
+
+// Schreiben komplett ohne Tastatur: Im ganzen Kursdurchlauf darf NIE ein
+// Eingabefeld auftauchen — alle Schreib-Schritte laufen über Bausteine.
+const noKeyboard = await page.evaluate(() => ({
+  sawInput: window.__sawTypeInput === true,
+  tiles: window.__tilesSeen || 0,
+}));
+check('Schreiben ohne Tastatur: nur Bausteine, nie ein Eingabefeld',
+  !noKeyboard.sawInput && noKeyboard.tiles >= 3, JSON.stringify(noKeyboard));
+
+// Dialog-Runde: Frage hören, passende Antwort wählen.
+const dialogSeen = await page.evaluate(() => ({
+  n: window.__dialogSeen || 0,
+  correct: window.__dialogCorrect === true,
+}));
+check('Dialog-Runde: Wendung gehört, passende Antwort gewählt (3 je Lektion)',
+  dialogSeen.n >= 3 && dialogSeen.correct, JSON.stringify(dialogSeen));
 
 // Fortschrittsbalken: am Lektionsende exakt voll (die Schritt-Basis
 // vergaß früher Auffrischung & Konversation beim Neuberechnen).
@@ -719,8 +747,8 @@ for (let i = 0; i < 500 && !laEnd; i++) {
       const opts = [...document.querySelectorAll('.mc-option .mc-text')].map(e => e.textContent.trim());
       cap.listen = { german: opts.includes(card.front) };
     }
-    if (!cap.write && document.getElementById('courseTypeInput') && card) {
-      const shown = document.querySelector('.typing-card .fc-word')?.textContent.trim() || '';
+    if (!cap.write && st.phase === 'write' && document.getElementById('tilePool') && card) {
+      const shown = document.querySelector('.build-card .fc-word')?.textContent.trim() || '';
       cap.write = { latinShown: shown.startsWith(card.back) };
     }
   });
@@ -789,12 +817,12 @@ const talkData = await page.evaluate(async () => {
   const out = {};
   for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja']) {
     const { phrases } = await import(`/js/data/phrases/${l}.js`);
-    out[l] = phrases.length && phrases.every(p => p.de && p.target) ? phrases.length : 0;
+    out[l] = phrases.length && phrases.every(p => p.de && p.target && p.reply) ? phrases.length : 0;
   }
   return out;
 });
-check('Konversations-Bausteine für alle 7 Sprachen (≥12)',
-  Object.values(talkData).every(n => n >= 12), JSON.stringify(talkData));
+check('Konversations-Bausteine für alle 7 Sprachen (≥24, mit Dialog-Antworten)',
+  Object.values(talkData).every(n => n >= 24), JSON.stringify(talkData));
 
 // ── Geräte-Sync: Zusammenführen zweier Stände (Handy ↔ Mac) ──
 const mergeRes = await page.evaluate(async () => {
