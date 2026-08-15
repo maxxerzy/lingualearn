@@ -86,8 +86,8 @@ function celebrateSessionEnd() {
   }
 }
 
-const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU', ja: 'ja-JP' };
-const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch', fr: 'Französisch', es: 'Spanisch', la: 'Latein', ru: 'Russisch', ja: 'Japanisch' };
+const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU', ja: 'ja-JP', zh: 'zh-CN' };
+const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch', fr: 'Französisch', es: 'Spanisch', la: 'Latein', ru: 'Russisch', ja: 'Japanisch', zh: 'Chinesisch' };
 
 function getLangCode(lang) {
   return LANG_CODES[lang] || lang;
@@ -129,6 +129,7 @@ export function getSelectedMode() {
 // Fokus-Modus: blendet (mobil) die Konfiguration aus und zeigt nur den
 // Lernbereich mit Zurück-/Modus-Leiste. Die Lernkarte gibt's im Kurs.
 function enterFocus(mode) {
+  setTimeout(fitLearnArea, 0);   // nach dem Umschalten des Layouts messen
   document.getElementById('view-learn')?.classList.add('session-active');
   const mapBtn = document.getElementById('sessionMapBtn');
   if (mapBtn) mapBtn.hidden = mode !== 'course';
@@ -170,6 +171,49 @@ export function exitSession() {
   const b = document.getElementById('progress-bar');
   if (b) b.style.width = '0%';
   renderLearnWidgets();
+}
+
+// Scrollt die Karte INNERHALB des Lernbereichs so, dass der Weiter-Knopf
+// sichtbar ist. Nötig auf kleinen Geräten, wenn Aufgabe + Rückmeldung
+// zusammen höher werden als der Bildschirm (z. B. langer Lückensatz mit
+// Schriftzeichen). Ein einziger Beobachter deckt alle Kurs-Phasen ab.
+// No-Scroll-Garantie, exakt gemessen statt geschätzt: Passt der Inhalt
+// nicht in den Bildschirm, bekommt NUR der Lernbereich einen Deckel und
+// scrollt intern — die Seite selbst nie. Ohne Überlauf bleibt alles
+// ungedeckelt (kein Deckel „auf Verdacht", der Knöpfe verstecken würde).
+function fitLearnArea() {
+  const area = document.getElementById('learnArea');
+  if (!area) return;
+  area.style.maxHeight = '';
+  area.style.overflowY = '';
+  if (!document.getElementById('view-learn')?.classList.contains('session-active')) return;
+  const over = document.documentElement.scrollHeight - window.innerHeight;
+  if (over <= 2) return;
+  const h = area.getBoundingClientRect().height;
+  area.style.maxHeight = `${Math.max(180, Math.floor(h - over - 4))}px`;
+  area.style.overflowY = 'auto';
+}
+
+if (typeof MutationObserver !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    const area = document.getElementById('learnArea');
+    if (!area) return;
+    window.addEventListener('resize', fitLearnArea);
+    window.addEventListener('orientationchange', fitLearnArea);
+    // Style-Änderungen lösen den Beobachter nicht aus (nur childList),
+    // deshalb kann fitLearnArea hier gefahrlos die Höhe setzen.
+    new MutationObserver(() => {
+      fitLearnArea();
+      // Ist der Weiter-Knopf unter den sichtbaren Rand gerutscht, die
+      // Karte (nicht die Seite!) so weit scrollen, dass er erscheint.
+      const btn = area.querySelector('#courseNext, #mcNext');
+      if (!btn) return;
+      const areaBox = area.getBoundingClientRect();
+      if (btn.getBoundingClientRect().bottom > areaBox.bottom - 4) {
+        btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+    }).observe(area, { childList: true, subtree: true });
+  });
 }
 
 // ── Tastatur-Steuerung (Mac/iPad mit Tastatur) ───────────────────
@@ -1190,9 +1234,13 @@ function sentenceVariant(session, card) {
   const i = (session.sentOrder || []).indexOf(card.front);
   const v = ['gap', 'build', 'meaning'][(i < 0 ? 0 : i) % 3];
   if (v === 'build') {
-    const target = isReverse(session.deck) ? card.exampleDE : card.example;
-    const n = (target || '').trim().split(/\s+/).length;
-    if (n < 3 || n > 12) return 'gap';
+    const lang = session.deck.language;
+    const rev = isReverse(session.deck);
+    const target = rev ? card.exampleDE : card.example;
+    // Ohne Leerzeichen (zh/ja) werden Zeichen sortiert — dann passen auch
+    // etwas längere Sätze; Deutsch bleibt wortweise.
+    const n = splitSentence(target, rev ? 'de' : lang).length;
+    if (n < 3 || n > (isSpaceless(rev ? 'de' : lang) ? 14 : 12)) return 'gap';
   }
   if (v === 'meaning') {
     const alts = session.knownCards.filter(c => c.exampleDE && c.exampleDE !== card.exampleDE);
@@ -1203,6 +1251,17 @@ function sentenceVariant(session, card) {
 
 // Wortabgleich mit Toleranz für Beugung: exakt / solider Teilstring /
 // gemeinsames Präfix ≥5. Kurze Funktionswörter matchen dadurch nicht.
+// Chinesisch und Japanisch schreiben OHNE Leerzeichen. Alle Satz-Übungen
+// (Lücke, Satzbau, Freischalten) trennten bisher an Leerzeichen und
+// behandelten deshalb einen ganzen Satz als ein einziges Wort — die
+// Lücke verschluckte den kompletten Satz. Für diese Sprachen wird
+// zeichenweise gearbeitet.
+function isSpaceless(lang) { return lang === 'zh' || lang === 'ja'; }
+function splitSentence(text, lang) {
+  return isSpaceless(lang) ? [...String(text || '').trim()] : String(text || '').trim().split(/\s+/);
+}
+function joinSentence(parts, lang) { return parts.join(isSpaceless(lang) ? '' : ' '); }
+
 function backMatchScore(word, back) {
   if (word === back) return 100;
   const short = Math.min(word.length, back.length);
@@ -1215,7 +1274,13 @@ function backMatchScore(word, back) {
 
 // Ist der Beispielsatz vollständig aus bekannten Wörtern gebildet?
 // Tokens, die zu keinem Deck-Wort passen, gelten als Funktionswörter.
-function sentenceIsKnown(example, knownBackSet, knownBackList, deckBackList) {
+function sentenceIsKnown(example, knownBackSet, knownBackList, deckBackList, lang) {
+  // Ohne Leerzeichen: prüfen, ob im Satz ein Deck-Wort steckt, das noch
+  // nicht gelernt ist. Zeichen, die zu keinem Deck-Wort gehören, sind
+  // Funktionswörter (的, は …) und stören nicht.
+  if (isSpaceless(lang)) {
+    return !deckBackList.some(b => b && example.includes(b) && !knownBackSet.has(b));
+  }
   const tokens = example.toLowerCase().split(/[\s.,!?;:„“"»«()¿¡'’-]+/).filter(Boolean);
   for (const t of tokens) {
     if (knownBackSet.has(t)) continue;                    // exakt bekannt
@@ -1230,6 +1295,7 @@ function sentenceIsKnown(example, knownBackSet, knownBackList, deckBackList) {
 // die noch nicht geübt wurden.
 function collectUnlockedSentences(session) {
   const { knownCards, deck } = session;
+  const lang = deck.language;
   const done = new Set(getSentencesDone(session.deckId));
   const knownBackList = knownCards.map(c => c.back.toLowerCase());
   const knownBackSet = new Set(knownBackList);
@@ -1239,8 +1305,8 @@ function collectUnlockedSentences(session) {
   for (let i = knownCards.length - 1; i >= 0 && eligible.length < 6; i--) {
     const card = knownCards[i];
     if (done.has(card.front) || !card.example) continue;
-    if (!findGapSentence(card.example, card.back)) continue;
-    if (sentenceIsKnown(card.example, knownBackSet, knownBackList, deckBackList)) {
+    if (!findGapSentence(card.example, card.back, lang)) continue;
+    if (sentenceIsKnown(card.example, knownBackSet, knownBackList, deckBackList, lang)) {
       eligible.push(card);
     }
   }
@@ -1993,7 +2059,9 @@ function renderCourseBuild(session) {
   const card = session.queue[0];
   const lang = session.deck.language;
   const rev = isReverse(session.deck);
-  const tokens = (rev ? card.exampleDE : card.example).trim().split(/\s+/);
+  // Chinesisch/Japanisch werden zeichenweise sortiert (keine Leerzeichen).
+  const splitLang = rev ? 'de' : lang;
+  const tokens = splitSentence(rev ? card.exampleDE : card.example, splitLang);
   const order = shuffleArray(tokens.map((_, i) => i));
   const learnArea = document.getElementById('learnArea');
 
@@ -2046,8 +2114,8 @@ function renderCourseBuild(session) {
   });
 
   checkBtn.addEventListener('click', () => {
-    const built = placed.map(i => tokens[i]).join(' ');
-    const isCorrect = built === tokens.join(' ');
+    const built = joinSentence(placed.map(i => tokens[i]), splitLang);
+    const isCorrect = built === joinSentence(tokens, splitLang);
     checkBtn.disabled = true;
     document.querySelectorAll('.build-tile').forEach(t => (t.disabled = true));
     session.currentPrompt = null;
@@ -2132,7 +2200,12 @@ function courseFeedbackHtml(isCorrect, card, extra = '', answer = card.back) {
 
 // Sucht im Beispielsatz das Wort, das zum Zielwort gehört (auch gebeugte
 // Formen wie hus→huset oder mit Artikel verklebt wie l'école).
-function findGapSentence(example, back) {
+function findGapSentence(example, back, lang) {
+  // Ohne Leerzeichen (zh/ja): das Zielwort direkt im Satz ausblenden.
+  if (isSpaceless(lang)) {
+    const at = example.indexOf(back);
+    return at < 0 ? null : example.slice(0, at) + '____' + example.slice(at + back.length);
+  }
   const norm = s => s.toLowerCase();
   const target = norm(back);
   const tokens = example.split(/(\s+)/);
@@ -2172,7 +2245,7 @@ function renderCourseGapFill(session) {
   const learnArea = document.getElementById('learnArea');
 
   // Sätze in der Warteschlange sind garantiert lückenfähig (Vorauswahl).
-  const gapped = findGapSentence(card.example, card.back);
+  const gapped = findGapSentence(card.example, card.back, lang);
 
   const question =
     `<p class="fc-label">${getLangName(lang)}</p>

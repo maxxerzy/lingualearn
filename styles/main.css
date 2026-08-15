@@ -1182,6 +1182,21 @@ label {
   #view-learn.session-active .fc-rating .btn { min-height: 44px; padding: 8px 10px; }
   #view-learn.session-active .fc-queue-info { margin-top: 4px; min-height: 0; }
   #view-learn.session-active .cognate-chip { margin: 4px 0; }
+
+  /* Lückensatz verdichten — mit Schriftzeichen (zh/ja) fällt der Satz
+     höher aus als mit lateinischen Buchstaben. */
+  #view-learn.session-active .gap-sentence {
+    font-size: 1.1rem; line-height: 1.45; padding: 10px 12px; margin: 4px auto 2px;
+  }
+
+  /* Letzte Sicherung der No-Scroll-Garantie: Reicht die Höhe trotz aller
+     Verdichtung nicht, deckelt fitLearnArea() in core/session.js die
+     Höhe exakt auf den freien Platz — dann scrollt der Lernbereich
+     INNERHALB seiner Karte, die Seite selbst nie. */
+  #view-learn.session-active #learnArea {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
 }
 
 /* ── Desktop/großes iPad quer (>1200px): auch hier gilt die No-Scroll-

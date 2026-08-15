@@ -366,6 +366,42 @@ check(`Jeder Kursschritt ohne Scrollen/Überlappung (≤${V_TOL_SESSION}px)`,
 await page.evaluate(() => document.getElementById('sessionBackBtn')?.click());
 await page.waitForTimeout(300);
 
+// ── 7b) Chinesisch: Schriftzeichen sind breiter/höher als lateinische
+// Buchstaben — der Kurs muss auch damit ohne Scrollen auskommen.
+await page.selectOption('#deckSelect', 'basic-zh');
+await page.waitForTimeout(500);
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const deck = await (await import('/core/state.js')).loadDeck('basic-zh');
+  const intro = deck.lessonSizes.slice(0, 3).reduce((a, b) => a + b, 0);
+  localStorage.setItem('lingualearn_course_' + u, JSON.stringify({ 'basic-zh': { introduced: intro } }));
+  (await import('/core/course.js')).reinitCourse();
+  const g = await import('/core/grammar.js');
+  const { grammar } = await import('/js/data/grammar/zh.js');
+  grammar.forEach(ch => g.markChapterRead('basic-zh', ch.id));
+});
+await click('#startBtn'); await page.waitForTimeout(800);
+{
+  const badZh = [];
+  let st = null;
+  for (let i = 0; i < 220 && st !== 'done' && st !== 'gone'; i++) {
+    const m = await measureStep();
+    if (m.v > V_TOL_SESSION || m.h > 1 || m.barOverlap || m.clipped || m.offscreen) {
+      const ph = await page.evaluate(async () =>
+        (await import('/core/state.js')).getCurrentSession()?.phase || 'end');
+      badZh.push(`${ph}: v=${m.v} h=${m.h}${m.clipped ? ' clipped' : ''}${m.offscreen ? ' btn-offscreen' : ''}`);
+    }
+    st = await courseStep();
+    await page.waitForTimeout(140);
+  }
+  check('Chinesisch: jeder Kursschritt ohne Scrollen/Überlappung',
+    st === 'done' && badZh.length === 0, `state=${st} ${badZh.slice(0, 3).join(' | ')}`);
+}
+await page.evaluate(() => document.getElementById('sessionBackBtn')?.click());
+await page.waitForTimeout(250);
+await page.selectOption('#deckSelect', 'basic-da');
+await page.waitForTimeout(300);
+
 // ── 8) Dark Mode: gleiche Layout-Garantien, nichts überlappt ──
 await page.emulateMedia({ colorScheme: 'dark' });
 await page.waitForTimeout(300);

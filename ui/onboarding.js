@@ -5,7 +5,7 @@ import { renderLearnWidgets } from './gami.js';
 
 // Drei-Schritte-Onboarding beim allerersten Login:
 // Sprache wählen → Tagesziel → Motivation → direkt in Lektion 1.
-const FLAGS = { da: '🇩🇰', el: '🇬🇷', la: '🏛️', fr: '🇫🇷', es: '🇪🇸', ru: '🇷🇺', ja: '🇯🇵' };
+const FLAGS = { da: '🇩🇰', el: '🇬🇷', la: '🏛️', fr: '🇫🇷', es: '🇪🇸', ru: '🇷🇺', ja: '🇯🇵', zh: '🇨🇳' };
 
 function key() {
   const u = getCurrentUser();
