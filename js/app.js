@@ -8,7 +8,7 @@ import { reinitCardProgress } from '../core/cardProgress.js';
 import { reinitGame } from '../core/gamification.js';
 import { reinitCourse } from '../core/course.js';
 import { reinitCosmetics } from '../core/cosmetics.js';
-import { renderGamiHeader, renderLearnWidgets, renderStatsExtras } from '../ui/gami.js';
+import { renderGamiHeader, renderLearnWidgets, renderStatsExtras, initGamiNav } from '../ui/gami.js';
 import { applyCosmetics, initRewards, renderRewards } from '../ui/cosmetics.js';
 import { reinitWotd, initWotdModal } from '../ui/wotd.js';
 import { initPath, showPath } from '../ui/coursemap.js';
@@ -72,6 +72,7 @@ function showApp() {
   if (!appInitialized) {
     appInitialized = true;
     const activateView = initNavigation();
+    initGamiNav(activateView);
     initSettings();
     initPath(activateView, startSession);
     initGrammar(activateView);

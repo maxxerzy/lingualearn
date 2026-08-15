@@ -3,8 +3,9 @@ import { getDeckProgress, getDueFronts } from '../core/cardProgress.js';
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
 import { getErrors } from '../core/errorLog.js';
-import { startErrorReviewByFronts } from '../core/session.js';
+import { startErrorReviewByFronts, startWeakThemePractice } from '../core/session.js';
 import { themeOf } from '../js/data/themes.js';
+import { themeProfile, weakThemes, weakestForRecommendation, ratePercent, WEAK_RATE, SHOW_RATE, MIN_THEME_ANSWERS } from '../core/weakness.js';
 
 // Fallback-Titel, falls ein Deck (noch) keine thematischen Lektions-Titel
 // mitbringt: häufigstes Thema der 8 Wörter, sonst das markanteste Wort.
@@ -18,6 +19,11 @@ function fallbackLessonTitle(deck, lessonNum) {
   if (best && best[1] >= 2) return best[0];
   return slice.map(c => c.front).sort((a, b) => b.length - a.length)[0];
 }
+
+// Ansichtswechsel (aus der Navigation) — nötig, damit ein Übungspaket
+// aus der Statistik heraus direkt in der Lern-Ansicht startet.
+let navigate = null;
+export function initGamiNav(activateView) { navigate = activateView; }
 
 function setText(id, value) {
   const el = document.getElementById(id);
@@ -150,7 +156,57 @@ export function renderStatsExtras() {
   setText('weekSummary', `Diese Woche: ${weekCards} Karten · ${weekDays}/7 Tage aktiv`);
 
   renderHeatmap(g.activity);
+  renderWeakThemes();
   renderAchievements(g.achievements);
+}
+
+// ── Schwächen-Profil: die drei schwächsten Themen ────────────────
+// Ein Tippen startet sofort eine Runde aus den schwächsten Wörtern des
+// Themas. Solange zu wenig Daten da sind, sagt die Ansicht das ehrlich,
+// statt aus drei Antworten eine „Schwäche" zu erfinden.
+function renderWeakThemes() {
+  const root = document.getElementById('weakThemes');
+  const hint = document.getElementById('weakHint');
+  if (!root) return;
+  const deckId = document.getElementById('deckSelect')?.value;
+  const deckName = getDecks()[deckId]?.name || '';
+  const themes = deckId ? weakThemes(deckId, 3) : [];
+
+  if (!themes.length) {
+    root.innerHTML = '';
+    if (!hint) return;
+    if (!deckId) hint.textContent = 'Kein Deck gewählt.';
+    else if (themeProfile(deckId).length) hint.textContent = `${deckName}: Gerade hakt kein Thema — alles über ${Math.round(SHOW_RATE * 100)} %.`;
+    else hint.textContent = `${deckName}: noch zu wenige Antworten — ab ${MIN_THEME_ANSWERS} Antworten je Thema erscheint hier dein Profil.`;
+    return;
+  }
+
+  if (hint) hint.textContent = `${deckName}: Tippe ein Thema an, um genau diese Wörter zu üben.`;
+  root.innerHTML = themes.map(t => `
+    <button type="button" class="weak-theme${t.rate < WEAK_RATE ? ' weak-theme--bad' : ''}"
+            data-weak-theme="${escAttr(t.theme)}">
+      <span class="weak-theme__main">
+        <b>${escHtml(t.theme)}</b>
+        <span>${t.words} Wörter · ${t.answers} Antworten</span>
+      </span>
+      <span class="weak-theme__rate">${ratePercent(t.rate)}%</span>
+      <span class="weak-theme__bar"><i style="width:${ratePercent(t.rate)}%"></i></span>
+      <span class="weak-theme__go"><i class="fas fa-play"></i> Üben</span>
+    </button>
+  `).join('');
+
+  root.querySelectorAll('[data-weak-theme]').forEach(btn =>
+    btn.addEventListener('click', () => {
+      navigate?.('learn');
+      startWeakThemePractice(deckId, btn.dataset.weakTheme);
+    }));
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+function escAttr(s) {
+  return escHtml(s).replace(/"/g, '&quot;');
 }
 
 // GitHub-Style-Aktivitätskalender der letzten 12 Wochen.
@@ -211,13 +267,19 @@ function renderAchievements(unlocked) {
 
 
 // ── „Für dich": Ein-Klick-Empfehlung über der Modus-Wahl ─────────
-// Priorität: fällige Karten → gemerkte Fehler → Kurs fortsetzen → Kurs beginnen.
+// Priorität: fällige Karten → gemerkte Fehler → Themen-Schwäche →
+// Kurs fortsetzen → Kurs beginnen.
 function smartRecommendation(deckId) {
   const total = getDecks()[deckId]?.cards?.length ?? getDecks()[deckId]?.count ?? 0;
   const due = getDueFronts(deckId).length;
   if (due > 0) return { type: 'due', text: `${due} fällige ${due === 1 ? 'Karte' : 'Karten'} wiederholen` };
   const errs = getErrors(deckId);
   if (errs.length) return { type: 'errors', fronts: errs, text: `${errs.length} Fehler von zuletzt üben` };
+  const weak = weakestForRecommendation(deckId);
+  if (weak) {
+    return { type: 'weak', theme: weak.theme,
+      text: `Schwäche üben: ${weak.theme} — ${ratePercent(weak.rate)} %` };
+  }
   const { introduced } = getCourseState(deckId);
   if (total > 0 && introduced >= total) return null;   // Kurs fertig, nichts fällig
   return introduced > 0
@@ -242,6 +304,8 @@ function renderSmartBar(deckId) {
       document.getElementById('startBtn')?.click();
     } else if (rec.type === 'errors') {
       startErrorReviewByFronts(deckId, rec.fronts);
+    } else if (rec.type === 'weak') {
+      startWeakThemePractice(deckId, rec.theme);
     } else {
       document.querySelectorAll('.mode-btn').forEach(b =>
         b.classList.toggle('active', b.dataset.mode === 'course'));

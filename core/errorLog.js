@@ -6,10 +6,24 @@ const store = createUserStore('lingualearn_errors_');
 
 export function reinitErrorLog() { store.reinit(); }
 
-export function saveErrors(deckId, fronts) {
-  if (!deckId || !fronts?.length) return;
+// Neue Fehler kommen VOR die bereits gemerkten, statt sie zu ersetzen —
+// sonst löscht eine Session mit einem einzigen Fehler alles, was davor
+// nicht saß. Was chronisch hakt, wertet das Schwächen-Profil aus
+// (`core/weakness.js`); diese Liste bleibt der Kurzzeit-Merker.
+const MAX_ERRORS = 30;
+
+export function saveErrors(deckId, fronts = [], solved = []) {
+  if (!deckId) return;
   const map = store.get();
-  map[deckId] = { date: new Date().toISOString().slice(0, 10), fronts: [...new Set(fronts)].slice(0, 30) };
+  const prev = map[deckId]?.fronts || [];
+  if (!fronts.length && !prev.length) return;
+
+  // Gemerkte Fehler, die in dieser Session saßen, fallen raus — es sei
+  // denn, sie gingen dabei erneut daneben (dann stehen sie in `fronts`).
+  const done = new Set(solved);
+  const merged = [...new Set([...fronts, ...prev.filter(f => !done.has(f))])].slice(0, MAX_ERRORS);
+  if (!merged.length) { delete map[deckId]; store.save(map); return; }
+  map[deckId] = { date: new Date().toISOString().slice(0, 10), fronts: merged };
   store.save(map);
 }
 

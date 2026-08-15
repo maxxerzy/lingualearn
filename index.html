@@ -304,6 +304,10 @@
               </div>
             </div>
 
+            <h3 class="stats-subhead"><i class="fas fa-bullseye"></i> Deine schwächsten Themen</h3>
+            <p class="week-summary" id="weakHint"></p>
+            <div class="weak-themes" id="weakThemes"></div>
+
             <h3 class="stats-subhead"><i class="fas fa-calendar-alt"></i> Aktivität (letzte 12 Wochen)</h3>
             <p class="week-summary" id="weekSummary"></p>
             <div class="heatmap-wrap">
@@ -647,7 +651,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v39';
+    var APP_VERSION = 'v40';
     var loginMode = 'login';
 
     function hp(pw) {

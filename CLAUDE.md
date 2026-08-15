@@ -36,6 +36,12 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
   Geräten abgeglichen. Der Abgleich FÜHRT ZUSAMMEN (höheres Level, mehr
   gemeisterte Karten, vereinigte Erfolge) — kein „letztes Gerät gewinnt".
   Ohne KV-Binding läuft die App unverändert lokal weiter.
+- Das Schwächen-Profil (`core/weakness.js`) ist eine reine AUSWERTUNG des
+  Karten-Zustands (`core/cardProgress.js`: richtig/falsch + die letzten
+  fünf Antworten je Karte) — es speichert und synchronisiert nichts
+  Eigenes. Daraus entstehen Themen-Trefferquoten, die Statistik-Liste
+  „Deine schwächsten Themen" (ein Tippen startet die Runde) und die
+  „Für dich"-Empfehlung.
 - Nur ZWEI Modi: geführter **Lernkurs** (Grammatik-Kapitel → 2er-Häppchen
   kennenlernen → Hören → Üben (MC/Vergleich) → Paare verbinden →
   Sprechen → Schreiben (NUR Bausteine — nie ein Tastatur-Eingabefeld,

@@ -28,6 +28,12 @@ export function getCardState(deckId, front) {
   return load()[`${deckId}:${front}`] || null;
 }
 
+// Länge des Kurzzeit-Gedächtnisses pro Karte: die letzten fünf Antworten
+// als Zeichenkette aus '1' (richtig) und '0' (falsch), die jüngste rechts.
+// Damit lässt sich „sitzt gerade nicht" von „saß früher mal nicht" trennen —
+// die Gesamt-Trefferquote (correct/wrong) verwässert das über Monate.
+export const HIST_LEN = 5;
+
 // rating: 'easy' | 'good' | 'hard' | 'again' — oder boolean (MC/Vergleich)
 export function recordCardAnswer(deckId, front, rating) {
   const map = load();
@@ -41,11 +47,25 @@ export function recordCardAnswer(deckId, front, rating) {
   else delta = -2; // 'again' oder false
 
   if (delta > 0) st.correct++; else st.wrong++;
+  st.hist = `${st.hist || ''}${delta > 0 ? '1' : '0'}`.slice(-HIST_LEN);
   st.level = Math.min(MAX_STAGE, Math.max(0, st.level + delta));
   st.due = dateStr(INTERVALS_DAYS[st.level]);
   map[k] = st;
   store.save(map);
   return st;
+}
+
+// Trefferquote einer Karte (0–1) oder null, wenn sie noch nie dran war.
+// Die letzten Antworten zählen doppelt, damit ein aktuelles Loch schwerer
+// wiegt als ein alter Fehler, den man längst ausgebügelt hat.
+export function cardAccuracy(st) {
+  if (!st) return null;
+  const answers = (st.correct || 0) + (st.wrong || 0);
+  if (!answers) return null;
+  const hist = st.hist || '';
+  const recentRight = [...hist].filter(c => c === '1').length;
+  const total = answers + hist.length;
+  return ((st.correct || 0) + recentRight) / total;
 }
 
 export function levelName(level) {
