@@ -665,6 +665,33 @@
   60% { transform: translateX(4px); }
 }
 
+/* ── Satz hören ───────────────────────────────────────────────── */
+/* Der gehörte Satz erscheint erst NACH der Antwort — vorher wäre es
+   Lesen statt Hören. */
+.hear-reveal {
+  margin: 10px auto 0;
+  max-width: 520px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--light, #f8f9fa);
+  color: var(--dark);
+  font-weight: 600;
+  line-height: 1.45;
+}
+/* Der Abspiel-Knopf folgt direkt auf die Phasen-Plakette (inline-flex) —
+   ohne eigene Zeile würde er sich daraufschieben. Der Selektor trägt
+   bewusst #view-learn, sonst gewinnt die Fokus-Modus-Regel
+   „#view-learn.session-active .listen-play { margin: 2px 0 }" und der
+   Knopf klebt am linken Rand. */
+#view-learn .hear-card .listen-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hear-card .gap-sentence { margin-top: 4px; }
+
 /* Dialog-Runde: deutsche Übersetzung klein unter der Antwortoption. */
 .dialog-reply-de { display: block; font-size: .78rem; color: var(--gray); font-weight: 400; margin-top: 2px; }
 

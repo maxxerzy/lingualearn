@@ -568,6 +568,24 @@ const driveStep = lang => page.evaluate(async l => {
   if (next) { next.click(); return null; }        // Kennenlernen / Feedback
   if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return null; }
   if (st.phase === 'talk') { document.getElementById('talkOk')?.click(); return null; }
+  // Satz hören: bei „Bedeutung" den gespeicherten Index, bei „Lücke"
+  // das Wort der Karte wählen.
+  if (st.phase === 'hearing' && st.currentPrompt) {
+    window.__hearSeen = window.__hearSeen || {};
+    window.__hearSeen[st.currentPrompt.variant] = (window.__hearSeen[st.currentPrompt.variant] || 0) + 1;
+    if (st.currentPrompt.variant === 'meaning') {
+      // Der Satz darf VOR der Antwort nirgends im Lernbereich stehen.
+      const shown = document.getElementById('learnArea').textContent;
+      window.__hearHidden = !shown.includes(st.currentPrompt.card.example);
+      document.querySelector(`.mc-option[data-idx="${st.currentPrompt.correctIdx}"]`)?.click();
+    } else {
+      const opts = [...document.querySelectorAll('.mc-option')];
+      const i = opts.findIndex(o => o.querySelector('.mc-text')?.textContent.trim() === st.currentPrompt.card.back);
+      opts[i >= 0 ? i : 0].click();
+    }
+    window.__hearRevealed = !!document.querySelector('.hear-reveal');
+    return null;
+  }
   // Dialog-Runde: die richtige Antwort per gespeicherten Index wählen.
   if (st.phase === 'dialog' && st.currentPrompt && st.currentPrompt.correctIdx !== undefined) {
     window.__dialogSeen = (window.__dialogSeen || 0) + 1;
@@ -645,7 +663,7 @@ const coursePhases = await page.evaluate(async () => ({
 }));
 check('Lektion komplett: Hören, Sprechen, Schreiben & Konversation integriert',
   courseEnd === 'done'
-    && ['teach', 'listen', 'words', 'match', 'speak', 'write', 'talk', 'dialog'].every(p => coursePhases.phases.includes(p))
+    && ['teach', 'listen', 'words', 'match', 'speak', 'write', 'talk', 'dialog', 'hearing'].every(p => coursePhases.phases.includes(p))
     && coursePhases.phases.indexOf('listen') > coursePhases.phases.indexOf('teach')
     && coursePhases.phases.indexOf('speak') > coursePhases.phases.indexOf('words')
     && coursePhases.phases.indexOf('write') > coursePhases.phases.indexOf('speak')
@@ -675,6 +693,17 @@ const noKeyboard = await page.evaluate(() => ({
 }));
 check('Schreiben ohne Tastatur: nur Bausteine, nie ein Eingabefeld',
   !noKeyboard.sawInput && noKeyboard.tiles >= 3, JSON.stringify(noKeyboard));
+
+// Satz hören: beide Varianten, Satz bleibt bis zur Antwort verborgen.
+const hearSeen = await page.evaluate(() => ({
+  variants: window.__hearSeen || {},
+  hiddenBeforeAnswer: window.__hearHidden === true,
+  revealedAfter: window.__hearRevealed === true,
+}));
+check('Satz hören: Bedeutung und Lücke, Satz erst nach der Antwort sichtbar',
+  (hearSeen.variants.meaning || 0) >= 1 && (hearSeen.variants.gap || 0) >= 1
+    && hearSeen.hiddenBeforeAnswer && hearSeen.revealedAfter,
+  JSON.stringify(hearSeen));
 
 // Dialog-Runde: Frage hören, passende Antwort wählen.
 const dialogSeen = await page.evaluate(() => ({
