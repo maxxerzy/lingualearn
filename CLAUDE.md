@@ -20,6 +20,11 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
 - Merge auf `main` deployt automatisch via Cloudflare Pages.
 
 ## Architektur-Kurzüberblick
+- Grammatik deckt den GANZEN Kurs ab: `js/data/grammar/<lang>.js`, je
+  Sprache so viele Kapitel, dass zwischen zwei Kapiteln nie mehr als 12
+  Lektionen liegen. Die Prüfung dazu steht in `tests/features_smoke.mjs`
+  (`AUSGEBAUT` + `MAX_GAP`) — neue Kapitel immer an den inhaltlich
+  passenden Lektionsblock hängen.
 - Statische PWA ohne Build-Schritt, ES-Module: `core/` (Logik, Stores),
   `ui/` (Ansichten), `js/data/` (Decks, Themen, Grammatik), `utils/`.
 - Nutzerdaten liegen im localStorage pro Konto (`core/userStore.js`-Präfixe)
