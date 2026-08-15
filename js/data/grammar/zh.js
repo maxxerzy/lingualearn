@@ -4,6 +4,12 @@
 export const grammar = [
   {
     id: 'intro', title: 'So funktioniert Chinesisch', icon: 'fa-compass', beforeLesson: 1,
+    drills: [
+      {"q": "Wie viele Töne hat das Hochchinesische?", "options": ["vier plus den neutralen", "drei", "fünf betonte", "zwei"], "answer": 0, "why": "mā, má, mǎ, mà — dazu der neutrale Ton ohne Zeichen."},
+      {"q": "Was bedeutet „mā“ (1. Ton)?", "options": ["Mutter", "Pferd", "Hanf", "schimpfen"], "answer": 0, "why": "妈 = Mutter; 马 (mǎ) wäre das Pferd."},
+      {"q": "Was gibt es im Chinesischen NICHT?", "options": ["Verbformen", "Töne", "Schriftzeichen", "Wortarten"], "answer": 0, "why": "吃 heißt ich esse, du isst, er aß — eine Form für alles."},
+      {"q": "电 (Strom) + 话 (Sprache) ergibt ____", "options": ["Telefon", "Radio", "Zeitung", "Computer"], "answer": 0, "why": "电话 — so wachsen chinesische Wörter."},
+    ],
     pages: [
       { heading: 'Die gute Nachricht zuerst', html: `
         <p>Chinesisch hat den Ruf, schwer zu sein — die <b>Grammatik</b> ist aber die einfachste, die dir je begegnet ist. Es gibt schlicht nicht:</p>
@@ -39,6 +45,12 @@ export const grammar = [
   },
   {
     id: 'syntax', title: 'Satzbau: Wer – tut – was', icon: 'fa-arrows-left-right', beforeLesson: 2,
+    drills: [
+      {"q": "Wie lautet die Grundordnung?", "options": ["Subjekt – Verb – Objekt", "Subjekt – Objekt – Verb", "Verb – Subjekt – Objekt", "frei"], "answer": 0, "why": "我喝茶 — ich trinke Tee."},
+      {"q": "Wo stehen Zeit- und Ortsangaben?", "options": ["vor dem Verb", "nach dem Verb", "am Satzende", "beliebig"], "answer": 0, "why": "Wer – wann – wo – was tut."},
+      {"q": "我 ____ 喝咖啡。(Ich trinke keinen Kaffee.)", "options": ["不", "没", "别", "无"], "answer": 0, "why": "不 für Gegenwart und Gewohnheit."},
+      {"q": "我 ____ 有钱。(Ich habe kein Geld.)", "options": ["没", "不", "别", "未"], "answer": 0, "why": "没 steht bei 有 und in der Vergangenheit."},
+    ],
     pages: [
       { heading: 'Die Grundordnung', html: `
         <p>Chinesische Sätze folgen fast immer <b>Subjekt – Verb – Objekt</b>, genau wie im deutschen Hauptsatz:</p>
@@ -61,6 +73,12 @@ export const grammar = [
   },
   {
     id: 'measure', title: 'Zählwörter: 一个人', icon: 'fa-list-ol', beforeLesson: 3,
+    drills: [
+      {"q": "三 ____ 人 (drei Menschen)", "options": ["个", "本", "杯", "只"], "answer": 0, "why": "个 ist das Allzweck-Zählwort."},
+      {"q": "两 ____ 茶 (zwei Tassen Tee)", "options": ["杯", "个", "本", "条"], "answer": 0, "why": "杯 für Tassen und Gläser."},
+      {"q": "Wie sagt man „zwei Menschen“?", "options": ["两个人", "二个人", "两人个", "二人"], "answer": 0, "why": "Vor Zählwörtern heißt zwei 两, nicht 二."},
+      {"q": "Welches Zählwort passt zu Büchern?", "options": ["本", "个", "只", "杯"], "answer": 0, "why": "两本书 — zwei Bücher."},
+    ],
     pages: [
       { heading: 'Zwischen Zahl und Nomen gehört ein Wort', html: `
         <p>Man sagt nie „zwei Bücher", sondern immer <b>Zahl + Zählwort + Nomen</b> — wie im Deutschen „zwei <i>Tassen</i> Kaffee":</p>
@@ -82,6 +100,12 @@ export const grammar = [
   },
   {
     id: 'questions', title: 'Fragen stellen', icon: 'fa-circle-question', beforeLesson: 5,
+    drills: [
+      {"q": "你是学生 ____？(Bist du Student?)", "options": ["吗", "呢", "吧", "了"], "answer": 0, "why": "吗 macht aus jeder Aussage eine Frage."},
+      {"q": "你叫 ____ 名字？", "options": ["什么", "谁", "哪里", "怎么"], "answer": 0, "why": "Das Fragewort steht dort, wo die Antwort stehen wird."},
+      {"q": "他在 ____？(Wo ist er?)", "options": ["哪里", "什么", "谁", "为什么"], "answer": 0, "why": "哪里 = wo."},
+      {"q": "Braucht ein Satz mit Fragewort noch 吗?", "options": ["nein", "ja", "nur höflich", "nur schriftlich"], "answer": 0, "why": "Beides zusammen wäre doppelt gemoppelt."},
+    ],
     pages: [
       { heading: 'Das Zauberwort 吗', html: `
         <p>Eine Ja/Nein-Frage baust du, indem du an den <b>fertigen Aussagesatz</b> einfach <b>吗 (ma)</b> hängst. Nichts wird umgestellt:</p>
@@ -105,6 +129,12 @@ export const grammar = [
   },
   {
     id: 'tense', title: 'Zeit ausdrücken ohne Zeitform', icon: 'fa-clock', beforeLesson: 12,
+    drills: [
+      {"q": "我 ____ 天去北京。(Ich fuhr gestern nach Peking.)", "options": ["昨", "明", "今", "后"], "answer": 0, "why": "Das Zeitwort sagt die Zeit — das Verb bleibt gleich."},
+      {"q": "我吃 ____。(Ich habe gegessen.)", "options": ["了", "过", "在", "要"], "answer": 0, "why": "了 markiert eine abgeschlossene Handlung."},
+      {"q": "我去 ____ 中国。(Ich war schon mal in China.)", "options": ["过", "了", "在", "要"], "answer": 0, "why": "过 heißt „schon einmal erlebt“."},
+      {"q": "我 ____ 吃饭。(Ich esse gerade.)", "options": ["在", "了", "过", "要"], "answer": 0, "why": "在 vor dem Verb heißt „gerade dabei“."},
+    ],
     pages: [
       { heading: 'Das Verb bleibt gleich — die Zeit sagt der Satz', html: `
         <p>Chinesische Verben verändern sich nie. Wann etwas passiert, verrät ein <b>Zeitwort</b> am Satzanfang:</p>
@@ -123,6 +153,12 @@ export const grammar = [
   },
   {
     id: 'possess', title: 'Besitz & Beschreibung mit 的', icon: 'fa-link', beforeLesson: 18,
+    drills: [
+      {"q": "我 ____ 书 (mein Buch)", "options": ["的", "了", "吗", "在"], "answer": 0, "why": "的 verbindet Besitzer und Sache."},
+      {"q": "红色 ____ 裙子 (der rote Rock)", "options": ["的", "了", "很", "是"], "answer": 0, "why": "的 schließt auch Beschreibungen an."},
+      {"q": "这个菜 ____ 好吃。(Dieses Gericht ist lecker.)", "options": ["很", "是", "的", "在"], "answer": 0, "why": "Vor Adjektiven steht 很, nicht 是."},
+      {"q": "Wann lässt man 的 weg?", "options": ["bei enger Verbundenheit", "nie", "immer im Plural", "bei Farben"], "answer": 0, "why": "我妈妈, 我家 — ohne 的."},
+    ],
     pages: [
       { heading: 'Ein Wort für alles Zugehörige', html: `
         <p><b>的 (de)</b> verbindet zwei Dinge — links der Besitzer oder die Beschreibung, rechts die Sache:</p>

@@ -532,7 +532,7 @@ check(`Grammatik deckt den ganzen Kurs ab (Lücke ≤ ${MAX_GAP} Lektionen)`,
 // ── Grammatik ÜBEN: jedes Kapitel bringt Aufgaben mit ──
 // Gelesen ist nicht gekonnt. MIT_UEBUNGEN wächst wie AUSGEBAUT mit
 // jeder Sprache, die ihre Aufgaben bekommen hat.
-const MIT_UEBUNGEN = ['da', 'la'];
+const MIT_UEBUNGEN = ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh'];   // alle acht
 const drillData = await page.evaluate(async (langs) => {
   const out = {};
   for (const l of langs) {

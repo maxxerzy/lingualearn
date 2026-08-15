@@ -3,6 +3,12 @@
 export const grammar = [
   {
     id: 'intro', title: 'Das griechische Alphabet', icon: 'fa-compass', beforeLesson: 1,
+    drills: [
+      {"q": "Welches Zeichen ist im Griechischen das Fragezeichen?", "options": ["das Semikolon ;", "das Fragezeichen ?", "der Doppelpunkt :", "der Punkt ."], "answer": 0, "why": "Τι κάνεις; ist eine Frage — das Semikolon steht für unser Fragezeichen."},
+      {"q": "Wie viele Buchstaben hat das griechische Alphabet?", "options": ["24", "26", "21", "28"], "answer": 0, "why": "Von Alpha bis Omega sind es 24."},
+      {"q": "Was zeigt der Akzent auf einem Wort an?", "options": ["die betonte Silbe", "die Länge", "den Fall", "das Geschlecht"], "answer": 0, "why": "Jedes mehrsilbige Wort trägt genau einen Akzent auf der betonten Silbe."},
+      {"q": "„καλημέρα“ betont man auf ____", "options": ["μέ", "κα", "λη", "ρα"], "answer": 0, "why": "Der Akzent steht über dem έ — kali-MÉ-ra."},
+    ],
     pages: [
       { heading: '24 Buchstaben — viele alte Bekannte', html: `
         <p>Neugriechisch benutzt das älteste Alphabet Europas. Aus Mathe und Physik kennst du schon viele Zeichen (π, Σ, Ω …). Die wichtigsten Buchstaben:</p>
@@ -32,6 +38,12 @@ export const grammar = [
   },
   {
     id: 'nouns', title: 'Artikel & Substantive', icon: 'fa-cube', beforeLesson: 2,
+    drills: [
+      {"q": "____ άντρας (der Mann)", "options": ["ο", "η", "το", "οι"], "answer": 0, "why": "Männliche Substantive tragen den Artikel ο."},
+      {"q": "____ γυναίκα (die Frau)", "options": ["η", "ο", "το", "τα"], "answer": 0, "why": "Weibliche Substantive tragen η."},
+      {"q": "____ παιδί (das Kind)", "options": ["το", "ο", "η", "οι"], "answer": 0, "why": "Sächliche Substantive tragen το."},
+      {"q": "Wie viele Geschlechter kennt das Griechische?", "options": ["drei", "zwei", "vier", "eins"], "answer": 0, "why": "Männlich, weiblich und sächlich — wie im Deutschen."},
+    ],
     pages: [
       { heading: 'Drei Geschlechter mit Artikel', html: `
         <p>Wie im Deutschen gibt es <b>drei Geschlechter</b> — und der Artikel wird überall mitbenutzt (sogar vor Namen: <i>ο Γιώργος</i> — „der Jorgos"):</p>
@@ -46,6 +58,12 @@ export const grammar = [
   },
   {
     id: 'verbs', title: 'Verben: Endungen statt Pronomen', icon: 'fa-bolt', beforeLesson: 4,
+    drills: [
+      {"q": "γράφ____ (ich schreibe)", "options": ["ω", "εις", "ει", "ουμε"], "answer": 0, "why": "Die 1. Person Singular endet auf -ω."},
+      {"q": "γράφ____ (wir schreiben)", "options": ["ουμε", "ετε", "ουν", "εις"], "answer": 0, "why": "-ουμε steht für „wir“."},
+      {"q": "Braucht Griechisch das Personalpronomen im Satz?", "options": ["nein, die Endung genügt", "ja, immer", "nur in Fragen", "nur in der Vergangenheit"], "answer": 0, "why": "εγώ und εσύ betonen nur — die Endung nennt die Person."},
+      {"q": "είμαι heißt ____", "options": ["ich bin", "ich habe", "ich gehe", "ich mache"], "answer": 0, "why": "είμαι ist die Grundform von „sein“ in der 1. Person."},
+    ],
     pages: [
       { heading: 'Präsens auf -ω', html: `
         <p>Wie im Spanischen steckt die Person in der <b>Endung</b> — Pronomen lässt man meist weg:</p>
@@ -75,6 +93,12 @@ export const grammar = [
   },
   {
     id: 'cases', title: 'Die Fälle des Griechischen', icon: 'fa-layer-group', beforeLesson: 7,
+    drills: [
+      {"q": "Welchen Fall verlangt ein direktes Objekt?", "options": ["Akkusativ", "Nominativ", "Genitiv", "Vokativ"], "answer": 0, "why": "Βλέπω τον άντρα — ich sehe den Mann."},
+      {"q": "τον, την, το sind Artikel im ____", "options": ["Akkusativ", "Nominativ", "Genitiv", "Plural"], "answer": 0, "why": "Im Nominativ hieße es ο, η, το."},
+      {"q": "Wie viele Fälle nutzt das Neugriechische im Alltag?", "options": ["drei", "sechs", "vier", "zwei"], "answer": 0, "why": "Nominativ, Genitiv und Akkusativ — der Dativ ist verschwunden."},
+      {"q": "Der Genitiv drückt vor allem ____ aus", "options": ["Besitz", "Richtung", "Zeit", "Mittel"], "answer": 0, "why": "το σπίτι του φίλου — das Haus des Freundes."},
+    ],
     pages: [
       { heading: 'Vier Fälle — meist reicht der Artikel', html: `
         <p>Neugriechisch hat vier Fälle (Nominativ, Genitiv, Akkusativ, Vokativ) — dekliniert wird vor allem der <b>Artikel</b>:</p>
@@ -90,6 +114,12 @@ export const grammar = [
   },
   {
     id: 'questions', title: 'Fragen & Verneinung', icon: 'fa-circle-question', beforeLesson: 11,
+    drills: [
+      {"q": "____ είσαι; (Wer bist du?)", "options": ["Ποιος", "Πού", "Τι", "Πότε"], "answer": 0, "why": "ποιος fragt nach der Person."},
+      {"q": "____ μένεις; (Wo wohnst du?)", "options": ["Πού", "Πώς", "Τι", "Ποιος"], "answer": 0, "why": "πού fragt nach dem Ort."},
+      {"q": "Δεν ____ ελληνικά. (Ich spreche kein Griechisch.)", "options": ["μιλάω", "μιλάς", "μιλάει", "μιλάμε"], "answer": 0, "why": "δεν verneint, das Verb bleibt in der 1. Person."},
+      {"q": "Welches Wort verneint eine Aussage?", "options": ["δεν", "μην", "όχι", "ναι"], "answer": 0, "why": "δεν vor dem Verb; μην nur beim Befehl."},
+    ],
     pages: [
       { heading: 'Fragen mit dem Strichpunkt', html: `
         <p>Ja/Nein-Fragen entstehen <b>nur durch die Satzmelodie</b> — geschrieben mit dem griechischen Fragezeichen „;":</p>
@@ -111,6 +141,12 @@ export const grammar = [
   },
   {
     id: 'past', title: 'Vergangenheit & Zukunft', icon: 'fa-clock-rotate-left', beforeLesson: 16,
+    drills: [
+      {"q": "Χθες ____ ένα βιβλίο. (Gestern las ich ein Buch — abgeschlossen.)", "options": ["διάβασα", "διαβάζω", "διάβαζα", "θα διαβάσω"], "answer": 0, "why": "Aorist für ein einmaliges, abgeschlossenes Ereignis."},
+      {"q": "Welche Vorsilbe tragen kurze Verben in der Vergangenheit?", "options": ["έ-", "θα-", "να-", "δεν-"], "answer": 0, "why": "Das Augment: γράφω → έγραψα."},
+      {"q": "Wohin wandert der Akzent in der Vergangenheit?", "options": ["auf die drittletzte Silbe", "auf die letzte", "er bleibt", "auf die erste"], "answer": 0, "why": "έγραψα — das ist beim Hören der auffälligste Unterschied."},
+      {"q": "ήμουν heißt ____", "options": ["ich war", "ich bin", "ich werde sein", "ich hatte"], "answer": 0, "why": "Die Vergangenheit von είμαι."},
+    ],
     pages: [
       { heading: 'Aorist: die Erzählvergangenheit', html: `
         <p>Die wichtigste Vergangenheitsform ist der <b>Aorist</b> („ich machte / habe gemacht"). Kennzeichen: Endung <b>-α</b> und Betonung rutscht nach vorn, oft mit <b>έ-</b> davor:</p>
@@ -133,6 +169,12 @@ export const grammar = [
   },
   {
     id: 'adjectives', title: 'Adjektive & Angleichung', icon: 'fa-palette', beforeLesson: 21,
+    drills: [
+      {"q": "ο καλ____ άντρας (der gute Mann)", "options": ["ός", "ή", "ό", "οί"], "answer": 0, "why": "Männlich Singular endet auf -ός."},
+      {"q": "η καλ____ γυναίκα", "options": ["ή", "ός", "ό", "ές"], "answer": 0, "why": "Weiblich Singular endet auf -ή."},
+      {"q": "οι καλ____ άντρες (die guten Männer)", "options": ["οί", "ός", "ές", "ά"], "answer": 0, "why": "Männlich Plural endet auf -οί."},
+      {"q": "Wo steht das Adjektiv?", "options": ["vor dem Substantiv", "nach dem Substantiv", "am Satzende", "beliebig"], "answer": 0, "why": "ο καλός άντρας — davor, mit mitgebeugtem Artikel."},
+    ],
     pages: [
       { heading: 'Das Adjektiv folgt dem Substantiv in allem', html: `
         <p>Geschlecht, Zahl und Fall müssen übereinstimmen. Die Grundendungen <b>-ος, -η, -ο</b> decken die meisten Adjektive ab:</p>
@@ -146,6 +188,12 @@ export const grammar = [
   },
   {
     id: 'possessive', title: 'Besitz ausdrücken', icon: 'fa-hand-holding', beforeLesson: 28,
+    drills: [
+      {"q": "το σπίτι ____ (mein Haus)", "options": ["μου", "σου", "του", "μας"], "answer": 0, "why": "Das Besitzwort steht hinten und ist unbetont."},
+      {"q": "η μητέρα ____ (seine Mutter)", "options": ["του", "της", "μου", "τους"], "answer": 0, "why": "του für ihn, της für sie."},
+      {"q": "Wo steht das Besitzwort?", "options": ["hinter dem Substantiv", "davor", "am Satzanfang", "vor dem Verb"], "answer": 0, "why": "Anders als im Deutschen: το σπίτι μου."},
+      {"q": "Warum trägt „αυτοκίνητό μου“ zwei Akzente?", "options": ["Betonung auf der drittletzten Silbe", "Rechtschreibfehler", "wegen des Plurals", "wegen des Genitivs"], "answer": 0, "why": "Dann bekommt das Wort einen zweiten Akzent — das ist Regel."},
+    ],
     pages: [
       { heading: 'Das Besitzwort steht hinten', html: `
         <p>Anders als im Deutschen hängt der Besitz hinter dem Substantiv — und ist unbetont:</p>
@@ -162,6 +210,12 @@ export const grammar = [
   },
   {
     id: 'plural', title: 'Mehrzahl & Betonung', icon: 'fa-clone', beforeLesson: 34,
+    drills: [
+      {"q": "ο φίλος → οι ____", "options": ["φίλοι", "φίλες", "φίλα", "φίλους"], "answer": 0, "why": "Männliche Wörter auf -ος bilden den Plural auf -οι."},
+      {"q": "η γυναίκα → οι ____", "options": ["γυναίκες", "γυναίκοι", "γυναίκα", "γυναικών"], "answer": 0, "why": "Weibliche Wörter auf -α enden im Plural auf -ες."},
+      {"q": "το παιδί → τα ____", "options": ["παιδιά", "παιδιές", "παιδιοί", "παιδί"], "answer": 0, "why": "Sächliche Wörter auf -ί enden im Plural auf -ιά."},
+      {"q": "Wie lautet der Artikel im Plural für männlich?", "options": ["οι", "ο", "τα", "τους"], "answer": 0, "why": "οι für männlich und weiblich, τα für sächlich."},
+    ],
     pages: [
       { heading: 'Die Endung verrät das Geschlecht', html: `
         <table class="grammar-table">
@@ -178,6 +232,12 @@ export const grammar = [
   },
   {
     id: 'future', title: 'Zukunft mit θα', icon: 'fa-forward', beforeLesson: 41,
+    drills: [
+      {"q": "____ γράψω (ich werde schreiben)", "options": ["θα", "να", "δεν", "για"], "answer": 0, "why": "Ein Wörtchen genügt: θα vor dem Verb."},
+      {"q": "Was unterscheidet θα γράφω von θα γράψω?", "options": ["Verlauf gegen Abschluss", "Gegenwart gegen Zukunft", "Höflichkeit", "Singular gegen Plural"], "answer": 0, "why": "Der Aspekt: -ω beschreibt einen Verlauf, -ψω eine abgeschlossene Handlung."},
+      {"q": "Braucht das griechische Futur ein Hilfsverb?", "options": ["nein", "ja, είμαι", "ja, έχω", "nur im Plural"], "answer": 0, "why": "Nur die Partikel θα."},
+      {"q": "Welche Form brauchst du später auch für den Aorist?", "options": ["γράψω", "γράφω", "έγραφα", "γράφεις"], "answer": 0, "why": "θα γράψω → έγραψα — einmal gelernt, zweimal genutzt."},
+    ],
     pages: [
       { heading: 'Ein Wörtchen genügt', html: `
         <p>Griechisch bildet die Zukunft mit <b>θα</b> vor dem Verb — keine Hilfsverben, keine Umschreibung:</p>
@@ -189,6 +249,12 @@ export const grammar = [
   },
   {
     id: 'numbers', title: 'Zahlen, Uhrzeit & Datum', icon: 'fa-clock', beforeLesson: 47,
+    drills: [
+      {"q": "Welche Zahlen werden gebeugt?", "options": ["1, 3 und 4", "alle", "nur 1", "keine"], "answer": 0, "why": "ένας/μία/ένα, τρεις/τρία, τέσσερις/τέσσερα."},
+      {"q": "____ φίλη (eine Freundin)", "options": ["μία", "ένας", "ένα", "τρεις"], "answer": 0, "why": "Weiblich: μία."},
+      {"q": "„τρεις και μισή“ bedeutet ____", "options": ["3:30", "2:30", "3:15", "4:30"], "answer": 0, "why": "Griechisch zählt von der vollen Stunde vorwärts."},
+      {"q": "„τέσσερις παρά τέταρτο“ heißt ____", "options": ["Viertel vor vier", "Viertel nach vier", "halb vier", "vier Uhr"], "answer": 0, "why": "παρά = vor, και = nach."},
+    ],
     pages: [
       { heading: 'Nur drei Zahlen werden gebeugt', html: `
         <p><b>ένας/μία/ένα</b> (1), <b>τρεις/τρία</b> (3) und <b>τέσσερις/τέσσερα</b> (4) richten sich nach dem Substantiv — alle übrigen bleiben unverändert.</p>
@@ -204,6 +270,12 @@ export const grammar = [
   },
   {
     id: 'subjunctive', title: 'να — der Ersatz für den Infinitiv', icon: 'fa-wand-sparkles', beforeLesson: 54,
+    drills: [
+      {"q": "Θέλω ____ πάω. (Ich will gehen.)", "options": ["να", "θα", "δεν", "για"], "answer": 0, "why": "Griechisch hat keinen Infinitiv — να plus gebeugtes Verb."},
+      {"q": "In welcher Person steht das zweite Verb nach να?", "options": ["in derselben wie das erste", "immer 3. Person", "immer 1. Person", "im Infinitiv"], "answer": 0, "why": "Θέλει να πάει — beide in der 3. Person."},
+      {"q": "Μπορείς ____ με βοηθήσεις; (Kannst du mir helfen?)", "options": ["να", "θα", "να μην", "ότι"], "answer": 0, "why": "Auch nach μπορώ steht να."},
+      {"q": "„Να προσέχεις!“ heißt ____", "options": ["Pass auf!", "Ich passe auf.", "Er passt auf.", "Aufpassen"], "answer": 0, "why": "να drückt auch Wünsche und Aufforderungen aus."},
+    ],
     pages: [
       { heading: 'Griechisch hat keinen Infinitiv', html: `
         <p>Wo das Deutsche „ich will <b>gehen</b>" sagt, baut Griechisch einen kleinen Nebensatz mit <b>να</b> — und beugt das zweite Verb mit:</p>
@@ -216,6 +288,12 @@ export const grammar = [
   },
   {
     id: 'pronouns', title: 'Pronomen & ihre Stellung', icon: 'fa-hand-point-right', beforeLesson: 61,
+    drills: [
+      {"q": "____ βλέπεις. (Du siehst mich.)", "options": ["Με", "Μου", "Σε", "Τον"], "answer": 0, "why": "με ist die Akkusativform von „ich“."},
+      {"q": "____ λέω. (Ich sage dir.)", "options": ["Σου", "Σε", "Μου", "Του"], "answer": 0, "why": "σου ist die Dativform von „du“."},
+      {"q": "Wo stehen die kurzen Pronomen normalerweise?", "options": ["vor dem Verb", "nach dem Verb", "am Satzanfang", "am Satzende"], "answer": 0, "why": "Nur beim Imperativ rutschen sie dahinter."},
+      {"q": "Δώσε ____! (Gib es mir!)", "options": ["μου το", "το μου", "με το", "μου τον"], "answer": 0, "why": "Beim Imperativ hinter das Verb, Dativ zuerst."},
+    ],
     pages: [
       { heading: 'Kurze Formen stehen VOR dem Verb', html: `
         <table class="grammar-table">
@@ -230,6 +308,12 @@ export const grammar = [
   },
   {
     id: 'imperative', title: 'Imperativ & höfliche Bitten', icon: 'fa-bullhorn', beforeLesson: 69,
+    drills: [
+      {"q": "____! (Schreib! — an eine Person)", "options": ["Γράψε", "Γράψτε", "Γράφω", "Να γράψω"], "answer": 0, "why": "Die Einzahl endet auf -ε."},
+      {"q": "____! (Kommt! — an mehrere)", "options": ["Ελάτε", "Έλα", "Έρχομαι", "Να έρθεις"], "answer": 0, "why": "Die Mehrzahl endet auf -τε."},
+      {"q": "____ πας! (Geh nicht!)", "options": ["Μην", "Δεν", "Όχι", "Να μη"], "answer": 0, "why": "Der verneinte Befehl steht mit μην, nie mit dem Imperativ."},
+      {"q": "Wie bittet man höflicher?", "options": ["mit να oder einer Frage", "lauter sprechen", "mit dem Imperativ", "mit θα"], "answer": 0, "why": "Μπορείτε να με βοηθήσετε; klingt freundlicher als ein Befehl."},
+    ],
     pages: [
       { heading: 'Befehlen, bitten, vorschlagen', html: `
         <p class="grammar-example">Γράψε! <span>Schreib!</span> — Γράψτε! <span>Schreibt! / Schreiben Sie!</span><br>
@@ -242,6 +326,12 @@ export const grammar = [
   },
   {
     id: 'comparison', title: 'Steigern & vergleichen', icon: 'fa-ranking-star', beforeLesson: 77,
+    drills: [
+      {"q": "μεγάλος → ____ μεγάλος (größer)", "options": ["πιο", "πολύ", "και", "από"], "answer": 0, "why": "πιο ist das Allzweckwort für die Steigerung."},
+      {"q": "Είναι πιο ψηλός ____ μένα.", "options": ["από", "παρά", "σαν", "με"], "answer": 0, "why": "Verglichen wird mit από."},
+      {"q": "καλός → ____ (besser)", "options": ["καλύτερος", "πιο καλός μόνο", "κακύτερος", "καλότερος"], "answer": 0, "why": "Unregelmäßig: καλός → καλύτερος."},
+      {"q": "Wie bildet man den Superlativ?", "options": ["Artikel + πιο", "πολύ + Adjektiv", "με + Adjektiv", "από + Adjektiv"], "answer": 0, "why": "ο πιο μεγάλος — der größte."},
+    ],
     pages: [
       { heading: 'πιο — das Allzweckwort', html: `
         <p>Der bequemste Weg: <b>πιο</b> vor das Adjektiv, fertig.</p>
@@ -254,6 +344,12 @@ export const grammar = [
   },
   {
     id: 'aorist', title: 'Aorist & Imperfekt: der Aspekt', icon: 'fa-clock-rotate-left', beforeLesson: 85,
+    drills: [
+      {"q": "Κάθε μέρα ____. (Jeden Tag las ich.)", "options": ["διάβαζα", "διάβασα", "διαβάζω", "θα διαβάσω"], "answer": 0, "why": "Imperfekt für Gewohnheiten."},
+      {"q": "Χθες ____ ένα βιβλίο. (Gestern las ich es zu Ende.)", "options": ["διάβασα", "διάβαζα", "διαβάζω", "έχω διαβάσει"], "answer": 0, "why": "Aorist für den einmaligen Abschluss."},
+      {"q": "Worauf zielt der Aspekt im Griechischen?", "options": ["auf das Wie, nicht das Wann", "auf die Person", "auf die Höflichkeit", "auf den Fall"], "answer": 0, "why": "Punktuell oder andauernd — das ist die Frage."},
+      {"q": "πηγαίνω → ____ (ich ging)", "options": ["πήγα", "πήγαινα μόνο", "πηγαίνα", "θα πάω"], "answer": 0, "why": "Unregelmäßiger Aorist: πήγα."},
+    ],
     pages: [
       { heading: 'Zwei Vergangenheiten, zwei Blickwinkel', html: `
         <p>Griechisch fragt nicht „wann", sondern „wie" — punktuell oder andauernd:</p>
@@ -274,6 +370,12 @@ export const grammar = [
   },
   {
     id: 'passive', title: 'Mediopassiv', icon: 'fa-arrows-turn-right', beforeLesson: 94,
+    drills: [
+      {"q": "πλένω → πλέν____ (ich wasche mich)", "options": ["ομαι", "εις", "ει", "ουμε"], "answer": 0, "why": "Die Mediopassiv-Endung -ομαι."},
+      {"q": "Welches Verb gibt es NUR im Mediopassiv?", "options": ["έρχομαι", "γράφω", "βλέπω", "τρώω"], "answer": 0, "why": "Ein *έρχω existiert nicht — wie die lateinischen Deponentien."},
+      {"q": "„σκέφτομαι“ heißt ____", "options": ["ich denke", "ich werde gedacht", "er denkt", "denk nach!"], "answer": 0, "why": "Passiv gebaut, aktiv gemeint."},
+      {"q": "Braucht das Mediopassiv ein Hilfsverb?", "options": ["nein", "ja, είμαι", "ja, έχω", "nur in der Vergangenheit"], "answer": 0, "why": "Die Endung am Verb genügt."},
+    ],
     pages: [
       { heading: 'Eine Endung für Passiv und Rückbezug', html: `
         <p>Statt eines Hilfsverbs trägt das Verb selbst die Endung <b>-μαι</b>:</p>
@@ -285,6 +387,12 @@ export const grammar = [
   },
   {
     id: 'subclause', title: 'Nebensätze & Bindewörter', icon: 'fa-code-branch', beforeLesson: 105,
+    drills: [
+      {"q": "Ξέρω ____ έρχεσαι. (Ich weiß, dass du kommst.)", "options": ["ότι", "να", "αν", "που"], "answer": 0, "why": "ότι oder πως für „dass“."},
+      {"q": "____ έρθεις, θα χαρώ. (Wenn du kommst, freue ich mich.)", "options": ["Αν", "Όταν", "Ότι", "Ενώ"], "answer": 0, "why": "αν für eine Bedingung."},
+      {"q": "Ο άντρας ____ είδα … (Der Mann, den ich sah …)", "options": ["που", "ότι", "ποιος", "τον"], "answer": 0, "why": "που ist unveränderlich — ein Wort für alle Relativsätze."},
+      {"q": "Ändert sich που nach Fall oder Geschlecht?", "options": ["nein, nie", "ja, nach Fall", "ja, nach Geschlecht", "nur im Plural"], "answer": 0, "why": "Das ist der bequemste Teil der griechischen Grammatik."},
+    ],
     pages: [
       { heading: 'Die wichtigsten Verbindungen', html: `
         <ul>

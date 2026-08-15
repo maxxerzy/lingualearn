@@ -3,6 +3,12 @@
 export const grammar = [
   {
     id: 'intro', title: 'Das kyrillische Alphabet', icon: 'fa-compass', beforeLesson: 1,
+    drills: [
+      {"q": "Wie viele Buchstaben hat das kyrillische Alphabet?", "options": ["33", "26", "30", "36"], "answer": 0, "why": "Von А bis Я sind es 33."},
+      {"q": "Wie spricht man „в“?", "options": ["wie deutsches w", "wie f", "wie b", "wie v in Vater"], "answer": 0, "why": "в = w, wie in вода (wada)."},
+      {"q": "Wie klingt „о“ in unbetonter Silbe?", "options": ["wie a", "wie o", "wie u", "stumm"], "answer": 0, "why": "молоко klingt wie „malako“ — nur die betonte Silbe behält das o."},
+      {"q": "Was bedeutet „р“?", "options": ["r", "p", "b", "n"], "answer": 0, "why": "Vorsicht bei den falschen Freunden: р = r, н = n, с = s."},
+    ],
     pages: [
       { heading: 'Keine Angst vor Kyrillisch', html: `
         <p>Russisch schreibt man <b>kyrillisch</b> — 33 Buchstaben, von denen du viele schon kennst. Drei Gruppen:</p>
@@ -41,6 +47,12 @@ export const grammar = [
   },
   {
     id: 'nouns', title: 'Substantive: drei Genera, keine Artikel', icon: 'fa-cube', beforeLesson: 2,
+    drills: [
+      {"q": "Woran erkennt man weibliche Substantive meist?", "options": ["an -а oder -я", "an -о", "an einem Konsonanten", "am Artikel"], "answer": 0, "why": "книга, неделя — Artikel gibt es im Russischen nicht."},
+      {"q": "„окно“ ist ____", "options": ["sächlich", "männlich", "weiblich", "Plural"], "answer": 0, "why": "Wörter auf -о und -е sind sächlich."},
+      {"q": "Braucht Russisch einen Artikel?", "options": ["nein", "ja, bestimmt", "ja, unbestimmt", "nur im Plural"], "answer": 0, "why": "Es gibt weder der/die/das noch ein/eine."},
+      {"q": "„стол“ ist ____", "options": ["männlich", "weiblich", "sächlich", "Plural"], "answer": 0, "why": "Wörter auf Konsonant sind männlich."},
+    ],
     pages: [
       { heading: 'Das Geschlecht steht am Wortende', html: `
         <p>Gute Nachricht: Russisch hat <b>keine Artikel</b> — <i>дом</i> heißt „Haus", „ein Haus" und „das Haus". Das Geschlecht erkennst du fast immer an der Endung:</p>
@@ -55,6 +67,12 @@ export const grammar = [
   },
   {
     id: 'verbs', title: 'Verben im Präsens — und das fehlende „sein"', icon: 'fa-bolt', beforeLesson: 4,
+    drills: [
+      {"q": "я чита____ (ich lese)", "options": ["ю", "ешь", "ет", "ем"], "answer": 0, "why": "1. Person Singular auf -ю oder -у."},
+      {"q": "мы чита____ (wir lesen)", "options": ["ем", "ете", "ют", "ешь"], "answer": 0, "why": "-ем steht für „wir“."},
+      {"q": "Wie heißt „ich bin Student“?", "options": ["Я студент", "Я есть студент", "Я быть студент", "Я буду студент"], "answer": 0, "why": "Im Präsens fehlt „sein“ vollständig."},
+      {"q": "Wie viele Konjugationsmuster gibt es?", "options": ["zwei", "drei", "vier", "eins"], "answer": 0, "why": "Die e-Konjugation und die i-Konjugation."},
+    ],
     pages: [
       { heading: 'Zwei Konjugationsmuster', html: `
         <table class="gr-table">
@@ -80,6 +98,12 @@ export const grammar = [
   },
   {
     id: 'cases', title: 'Die sechs Fälle', icon: 'fa-layer-group', beforeLesson: 7,
+    drills: [
+      {"q": "Wie viele Fälle hat das Russische?", "options": ["sechs", "vier", "fünf", "sieben"], "answer": 0, "why": "Nominativ, Genitiv, Dativ, Akkusativ, Instrumental, Präpositiv."},
+      {"q": "Welcher Fall steht nach „в“ bei der Frage wo?", "options": ["Präpositiv", "Akkusativ", "Genitiv", "Dativ"], "answer": 0, "why": "в школе — in der Schule."},
+      {"q": "Welchen Fall verlangt die Verneinung mit „нет“?", "options": ["Genitiv", "Akkusativ", "Dativ", "Nominativ"], "answer": 0, "why": "У меня нет книги."},
+      {"q": "Der Präpositiv steht ____", "options": ["nur nach Präpositionen", "als Subjekt", "als Objekt", "nach Zahlen"], "answer": 0, "why": "Daher sein Name."},
+    ],
     pages: [
       { heading: 'Endungen statt Präpositionen', html: `
         <p>Russisch dekliniert wie Latein — <b>sechs Fälle</b>, erkennbar an den Endungen (Beispiel: <i>книга</i> — das Buch):</p>
@@ -97,6 +121,12 @@ export const grammar = [
   },
   {
     id: 'questions', title: 'Fragen & Verneinung', icon: 'fa-circle-question', beforeLesson: 11,
+    drills: [
+      {"q": "____ тебя зовут? (Wie heißt du?)", "options": ["Как", "Что", "Где", "Кто"], "answer": 0, "why": "как fragt nach der Art und Weise."},
+      {"q": "____ ты живёшь? (Wo wohnst du?)", "options": ["Где", "Куда", "Как", "Когда"], "answer": 0, "why": "где fragt nach dem Ort, куда nach der Richtung."},
+      {"q": "Я ____ говорю по-русски. (Ich spreche kein Russisch.)", "options": ["не", "нет", "ни", "без"], "answer": 0, "why": "не verneint das Verb, нет verneint die Existenz."},
+      {"q": "Braucht eine Ja-Nein-Frage eine Umstellung?", "options": ["nein, nur die Betonung", "ja, immer", "nur schriftlich", "nur mit ли"], "answer": 0, "why": "Ты дома? — allein die Satzmelodie macht die Frage."},
+    ],
     pages: [
       { heading: 'Fragen ohne Umbau', html: `
         <p>Ja/Nein-Fragen brauchen <b>keine Umstellung</b> — nur die Stimme steigt: <i>Ты говоришь по-русски?</i> — Sprichst du Russisch?</p>
@@ -115,6 +145,12 @@ export const grammar = [
   },
   {
     id: 'past', title: 'Vergangenheit & Aspekte', icon: 'fa-clock-rotate-left', beforeLesson: 16,
+    drills: [
+      {"q": "Она читал____ (Sie las.)", "options": ["а", "", "о", "и"], "answer": 0, "why": "Die Vergangenheit richtet sich nach dem Geschlecht."},
+      {"q": "Они читал____ (Sie lasen — Plural.)", "options": ["и", "а", "о", "ы"], "answer": 0, "why": "Im Plural steht -и, unabhängig vom Geschlecht."},
+      {"q": "Womit wird die Vergangenheit gebildet?", "options": ["mit -л", "mit -ть", "mit был", "mit будет"], "answer": 0, "why": "Infinitivstamm plus -л."},
+      {"q": "Warum trägt die Vergangenheit kein Personalzeichen?", "options": ["sie war ein Partizip", "sie ist unregelmäßig", "sie ist neu", "sie wird nicht gebeugt"], "answer": 0, "why": "Deshalb richtet sie sich nach Geschlecht und Zahl statt nach der Person."},
+    ],
     pages: [
       { heading: 'Vergangenheit auf -л', html: `
         <p>Die Vergangenheit ist herrlich einfach: Stamm + <b>-л</b>. Sie richtet sich nicht nach der Person, sondern nach dem <b>Geschlecht des Subjekts</b>:</p>
@@ -137,6 +173,12 @@ export const grammar = [
   },
   {
     id: 'adjectives', title: 'Adjektive & Angleichung', icon: 'fa-palette', beforeLesson: 21,
+    drills: [
+      {"q": "нов____ дом (neues Haus)", "options": ["ый", "ая", "ое", "ые"], "answer": 0, "why": "Männlich Singular endet auf -ый oder -ой."},
+      {"q": "нов____ книга", "options": ["ая", "ый", "ое", "ые"], "answer": 0, "why": "Weiblich Singular endet auf -ая."},
+      {"q": "нов____ окно", "options": ["ое", "ый", "ая", "ые"], "answer": 0, "why": "Sächlich Singular endet auf -ое."},
+      {"q": "Beugt sich das Adjektiv in allen Fällen mit?", "options": ["ja", "nein", "nur im Plural", "nur im Nominativ"], "answer": 0, "why": "Es übernimmt Geschlecht, Zahl und Fall."},
+    ],
     pages: [
       { heading: 'Drei Endungen im Nominativ', html: `
         <p class="grammar-example">нов<b>ый</b> дом <span>neues Haus (m.)</span><br>
@@ -149,6 +191,12 @@ export const grammar = [
   },
   {
     id: 'plural', title: 'Mehrzahl & die Zahlen-Regel', icon: 'fa-clone', beforeLesson: 27,
+    drills: [
+      {"q": "дом → ____", "options": ["дома", "домы", "домов", "доме"], "answer": 0, "why": "Manche männliche Wörter bilden den Plural auf -а."},
+      {"q": "книга → ____", "options": ["книги", "книгы", "книгов", "книге"], "answer": 0, "why": "Nach г steht immer и, nie ы."},
+      {"q": "два дом____ (zwei Häuser)", "options": ["а", "ов", "ы", ""], "answer": 0, "why": "Nach 2, 3, 4 steht der Genitiv Singular."},
+      {"q": "пять дом____ (fünf Häuser)", "options": ["ов", "а", "ы", ""], "answer": 0, "why": "Ab 5 steht der Genitiv Plural."},
+    ],
     pages: [
       { heading: 'Plural bilden', html: `
         <table class="grammar-table">
@@ -171,6 +219,12 @@ export const grammar = [
   },
   {
     id: 'aspect', title: 'Der Verbaspekt', icon: 'fa-hourglass-half', beforeLesson: 34,
+    drills: [
+      {"q": "Я ____ книгу. (Ich habe sie zu Ende gelesen.)", "options": ["прочитал", "читал", "читаю", "буду читать"], "answer": 0, "why": "Vollendeter Aspekt für das Ergebnis."},
+      {"q": "Я ____ книгу. (Ich war dabei zu lesen.)", "options": ["читал", "прочитал", "прочитаю", "почитаю"], "answer": 0, "why": "Unvollendeter Aspekt für den Verlauf."},
+      {"q": "Welche Zeit fehlt dem vollendeten Aspekt?", "options": ["die Gegenwart", "die Vergangenheit", "die Zukunft", "keine"], "answer": 0, "why": "Was abgeschlossen ist, kann nicht gerade laufen."},
+      {"q": "„прочитаю“ ist ____", "options": ["Zukunft", "Gegenwart", "Vergangenheit", "Befehl"], "answer": 0, "why": "Vollendetes Präsens gibt es nicht — die Form ist automatisch Zukunft."},
+    ],
     pages: [
       { heading: 'Jedes Verb kommt im Doppelpack', html: `
         <p>Russisch hat kaum Zeiten, dafür zu fast jedem Verb <b>zwei Partner</b>: unvollendet (Verlauf, Gewohnheit) und vollendet (Ergebnis, einmalig).</p>
@@ -196,6 +250,12 @@ export const grammar = [
   },
   {
     id: 'motion', title: 'Bewegungsverben', icon: 'fa-person-walking', beforeLesson: 41,
+    drills: [
+      {"q": "Я ____ в школу. (Ich bin gerade auf dem Weg.)", "options": ["иду", "хожу", "еду", "езжу"], "answer": 0, "why": "идти für die gerichtete Bewegung zu Fuß."},
+      {"q": "Я ____ в школу. (Ich gehe regelmäßig hin.)", "options": ["хожу", "иду", "еду", "пойду"], "answer": 0, "why": "ходить für die Gewohnheit."},
+      {"q": "Я ____ в Москву. (Ich fahre gerade hin.)", "options": ["еду", "иду", "хожу", "езжу"], "answer": 0, "why": "ехать nur mit einem Verkehrsmittel."},
+      {"q": "Kann man „идти в Москву“ sagen?", "options": ["nur wenn man zu Fuß geht", "ja, immer", "nein, nie", "nur im Plural"], "answer": 0, "why": "идти geht ausschließlich zu Fuß."},
+    ],
     pages: [
       { heading: 'Einmal hin oder immer wieder?', html: `
         <p>Russisch trennt bei Bewegung zwei Arten — eine gerichtete Fahrt und eine allgemeine Gewohnheit:</p>
@@ -214,6 +274,12 @@ export const grammar = [
   },
   {
     id: 'numbers', title: 'Zahlen, Uhrzeit & Datum', icon: 'fa-clock', beforeLesson: 45,
+    drills: [
+      {"q": "____ (Es ist zwei Uhr.)", "options": ["Два часа", "Два час", "Два часов", "Две часа"], "answer": 0, "why": "Nach 2 steht der Genitiv Singular."},
+      {"q": "____ (Es ist fünf Uhr.)", "options": ["Пять часов", "Пять часа", "Пять час", "Пятый час"], "answer": 0, "why": "Ab 5 steht der Genitiv Plural."},
+      {"q": "Сегодня ____ мая. (Heute ist der fünfte Mai.)", "options": ["пятое", "пять", "пятый", "пятого"], "answer": 0, "why": "Ordnungszahl im Nominativ, Monat im Genitiv."},
+      {"q": "____ понедельник (am Montag)", "options": ["в", "на", "о", "с"], "answer": 0, "why": "Wochentage stehen mit в."},
+    ],
     pages: [
       { heading: 'Wie spät ist es?', html: `
         <p class="grammar-example">Который час? / Сколько времени? <span>Wie spät ist es?</span><br>
@@ -229,6 +295,12 @@ export const grammar = [
   },
   {
     id: 'prepositions', title: 'Präpositionen und ihre Fälle', icon: 'fa-map-signs', beforeLesson: 52,
+    drills: [
+      {"q": "Я в школ____ (Ich bin in der Schule.)", "options": ["е", "у", "ы", "ой"], "answer": 0, "why": "Wo? → Präpositiv."},
+      {"q": "Я иду в школ____ (Ich gehe in die Schule.)", "options": ["у", "е", "ы", "ой"], "answer": 0, "why": "Wohin? → Akkusativ."},
+      {"q": "Я из школ____ (Ich komme aus der Schule.)", "options": ["ы", "у", "е", "ой"], "answer": 0, "why": "Woher? → Genitiv."},
+      {"q": "Welche Präposition steht bei „на почте“?", "options": ["на", "в", "о", "к"], "answer": 0, "why": "Offene Flächen und Veranstaltungen nehmen на."},
+    ],
     pages: [
       { heading: 'Wo? Wohin? Woher?', html: `
         <table class="grammar-table">
@@ -244,6 +316,12 @@ export const grammar = [
   },
   {
     id: 'tenses', title: 'Vergangenheit & Zukunft', icon: 'fa-clock-rotate-left', beforeLesson: 58,
+    drills: [
+      {"q": "Я ____ читать. (Ich werde eine Weile lesen.)", "options": ["буду", "прочитаю", "читал", "читаю"], "answer": 0, "why": "Unvollendete Zukunft mit быть + Infinitiv."},
+      {"q": "Wie lautet быть in der 3. Person Zukunft?", "options": ["будет", "есть", "был", "буду"], "answer": 0, "why": "буду, будешь, будет …"},
+      {"q": "Он был____ дома. (Er war zu Hause.)", "options": ["", "а", "о", "и"], "answer": 0, "why": "Männlich Singular ohne Endung: был."},
+      {"q": "Steht „быть“ im Präsens?", "options": ["nein", "ja", "nur in Fragen", "nur im Plural"], "answer": 0, "why": "Я студент — ohne Verb."},
+    ],
     pages: [
       { heading: 'Die Vergangenheit richtet sich nach dem Geschlecht', html: `
         <p>Statt Personalendungen trägt die Vergangenheit das Geschlecht des Subjekts — sie war ursprünglich ein Partizip:</p>
@@ -260,6 +338,12 @@ export const grammar = [
   },
   {
     id: 'possessive', title: 'Besitz: у меня есть & свой', icon: 'fa-hand-holding', beforeLesson: 67,
+    drills: [
+      {"q": "____ есть книга. (Ich habe ein Buch.)", "options": ["У меня", "Я имею", "Мне", "Мой"], "answer": 0, "why": "Wörtlich: bei mir ist ein Buch."},
+      {"q": "У меня нет книг____ (Ich habe kein Buch.)", "options": ["и", "а", "у", "е"], "answer": 0, "why": "Nach нет steht der Genitiv."},
+      {"q": "Он читает ____ книгу. (sein eigenes Buch)", "options": ["свою", "его", "её", "их"], "answer": 0, "why": "свой zeigt auf das Subjekt zurück."},
+      {"q": "Он читает ____ книгу. (das Buch eines anderen)", "options": ["его", "свою", "свой", "себя"], "answer": 0, "why": "его für eine andere Person."},
+    ],
     pages: [
       { heading: 'Russisch hat kein „haben"', html: `
         <p>Besitz wird umgedreht — wörtlich: „bei mir ist":</p>
@@ -275,6 +359,12 @@ export const grammar = [
   },
   {
     id: 'comparison', title: 'Steigern & vergleichen', icon: 'fa-ranking-star', beforeLesson: 74,
+    drills: [
+      {"q": "быстрый → ____ (schneller)", "options": ["быстрее", "быстрый более", "быстрейший", "быстро"], "answer": 0, "why": "Die Endung -ее bildet den Komparativ."},
+      {"q": "Он выше ____. (größer als ich)", "options": ["меня", "я", "мне", "мной"], "answer": 0, "why": "Verglichen wird mit dem Genitiv — oder mit чем плюс Nominativ."},
+      {"q": "хороший → ____ (besser)", "options": ["лучше", "хорошее", "более хороший", "хорошее всего"], "answer": 0, "why": "Unregelmäßig: хороший → лучше."},
+      {"q": "Wie bildet man den Superlativ?", "options": ["самый + Adjektiv", "-ейший nur", "более + Adjektiv", "очень + Adjektiv"], "answer": 0, "why": "самый красивый город."},
+    ],
     pages: [
       { heading: '-ее und более', html: `
         <p class="grammar-example">быстрый → быстр<b>ее</b> <span>schnell → schneller</span><br>
@@ -287,6 +377,12 @@ export const grammar = [
   },
   {
     id: 'imperative', title: 'Imperativ & Bitten', icon: 'fa-bullhorn', beforeLesson: 80,
+    drills: [
+      {"q": "читаешь → ____! (Lies!)", "options": ["читай", "читаешь", "читать", "читаю"], "answer": 0, "why": "Endung -ешь abtrennen, -й anhängen."},
+      {"q": "говоришь → ____! (Sprich!)", "options": ["говори", "говорь", "говорий", "говорить"], "answer": 0, "why": "Bei betonter Endung steht -и."},
+      {"q": "Wie wird der Imperativ höflich?", "options": ["mit -те", "mit не", "mit бы", "mit ли"], "answer": 0, "why": "читайте, говорите."},
+      {"q": "Was bewirkt der Aspekt beim Befehl?", "options": ["einladen gegen verlangen", "nichts", "Höflichkeit", "Zeitangabe"], "answer": 0, "why": "Читайте! lädt ein, Прочитайте! verlangt ein Ergebnis."},
+    ],
     pages: [
       { heading: 'Aus der du-Form gebildet', html: `
         <p>Endung <i>-ешь</i> abtrennen, dann <b>-й</b>, <b>-и</b> oder <b>-ь</b> anhängen:</p>
@@ -301,6 +397,12 @@ export const grammar = [
   },
   {
     id: 'cases-all', title: 'Die sechs Fälle im Überblick', icon: 'fa-table', beforeLesson: 88,
+    drills: [
+      {"q": "Welchen Fall verlangt „с“ (mit)?", "options": ["Instrumental", "Genitiv", "Dativ", "Akkusativ"], "answer": 0, "why": "с другом — mit einem Freund."},
+      {"q": "Welchen Fall verlangt „к“ (zu)?", "options": ["Dativ", "Genitiv", "Akkusativ", "Instrumental"], "answer": 0, "why": "к другу — zu einem Freund."},
+      {"q": "Wie lautet der Akkusativ von „брат“?", "options": ["брата", "брат", "брату", "братом"], "answer": 0, "why": "Belebte männliche Wörter nehmen im Akkusativ den Genitiv."},
+      {"q": "Wie lautet der Akkusativ von „стол“?", "options": ["стол", "стола", "столу", "столом"], "answer": 0, "why": "Unbelebtes bleibt wie im Nominativ."},
+    ],
     pages: [
       { heading: 'Wozu jeder Fall da ist', html: `
         <table class="grammar-table">
@@ -327,6 +429,12 @@ export const grammar = [
   },
   {
     id: 'subclause', title: 'Nebensätze: что, чтобы, который', icon: 'fa-code-branch', beforeLesson: 99,
+    drills: [
+      {"q": "Я знаю, ____ он дома. (Ich weiß, dass er zu Hause ist.)", "options": ["что", "чтобы", "который", "если"], "answer": 0, "why": "что für eine Tatsache."},
+      {"q": "Я хочу, ____ ты пришёл. (Ich will, dass du kommst.)", "options": ["чтобы", "что", "если", "когда"], "answer": 0, "why": "чтобы für Wunsch und Absicht — danach die Vergangenheitsform."},
+      {"q": "Книга, ____ я читаю … (das Buch, das ich lese)", "options": ["которую", "который", "которое", "которым"], "answer": 0, "why": "Akkusativ, weil Objekt — Geschlecht und Zahl vom Bezugswort."},
+      {"q": "Steht vor einem russischen Nebensatz ein Komma?", "options": ["ja, immer", "nein", "nur bei что", "nur schriftlich"], "answer": 0, "why": "Ausnahmslos — strenger als im Deutschen."},
+    ],
     pages: [
       { heading: 'Die drei wichtigsten Anschlüsse', html: `
         <ul>
@@ -342,6 +450,12 @@ export const grammar = [
   },
   {
     id: 'particles', title: 'Kleine Wörter: же, ведь, ли, бы', icon: 'fa-comment', beforeLesson: 108,
+    drills: [
+      {"q": "Ты ____ знаешь. (Du weißt es doch.)", "options": ["ведь", "же", "ли", "бы"], "answer": 0, "why": "ведь beruft sich auf gemeinsames Wissen."},
+      {"q": "Я не знаю, придёт ____ он. (… ob er kommt.)", "options": ["ли", "же", "бы", "ведь"], "answer": 0, "why": "ли bildet die indirekte Frage."},
+      {"q": "Я ____ хотел … (Ich würde gern …)", "options": ["бы", "же", "ли", "ведь"], "answer": 0, "why": "бы mit der Vergangenheitsform bildet den Konjunktiv."},
+      {"q": "„кто-то“ heißt ____", "options": ["irgendjemand", "wer", "niemand", "jeder"], "answer": 0, "why": "Die Silbe -то macht aus dem Fragewort ein unbestimmtes."},
+    ],
     pages: [
       { heading: 'Der Ton macht die Sprache', html: `
         <table class="grammar-table">

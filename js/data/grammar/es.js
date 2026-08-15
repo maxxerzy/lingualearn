@@ -3,6 +3,12 @@
 export const grammar = [
   {
     id: 'intro', title: 'So funktioniert Spanisch', icon: 'fa-compass', beforeLesson: 1,
+    drills: [
+      {"q": "Wie spricht man das spanische „j“?", "options": ["wie deutsches ch in Bach", "wie j in ja", "wie sch", "wie dsch"], "answer": 0, "why": "jamón klingt wie „chamón“."},
+      {"q": "Wie klingt „ll“ in „llamar“?", "options": ["wie j in ja", "wie l", "wie lch", "wie sch"], "answer": 0, "why": "In den meisten Regionen wie ein deutsches j."},
+      {"q": "Wozu dient das ¿ am Satzanfang?", "options": ["es kündigt eine Frage an", "es betont", "es verneint", "es ist Zierde"], "answer": 0, "why": "Spanisch stellt Frage- und Ausrufezeichen auch vorn."},
+      {"q": "Wo liegt die Betonung bei „hablo“?", "options": ["auf ha", "auf blo", "auf o", "gleichmäßig"], "answer": 0, "why": "Wörter auf Vokal, -n oder -s betonen die vorletzte Silbe."},
+    ],
     pages: [
       { heading: 'Eine romanische Sprache', html: `
         <p>Spanisch gehört zu den <b>romanischen Sprachen</b> (aus dem Latein entstanden) und wird von über 500 Millionen Menschen gesprochen. Für Deutsche ist es eine der zugänglichsten Sprachen: Man spricht fast alles <b>so, wie man es schreibt</b>.</p>
@@ -28,6 +34,12 @@ export const grammar = [
   },
   {
     id: 'nouns', title: 'Substantive, Artikel & Adjektive', icon: 'fa-cube', beforeLesson: 2,
+    drills: [
+      {"q": "____ libro (ein Buch)", "options": ["un", "una", "unos", "el"], "answer": 0, "why": "Wörter auf -o sind meist männlich."},
+      {"q": "____ casa (ein Haus)", "options": ["una", "un", "unas", "la"], "answer": 0, "why": "Wörter auf -a sind meist weiblich."},
+      {"q": "Wie lautet der Plural von „el libro“?", "options": ["los libros", "las libros", "el libros", "los libro"], "answer": 0, "why": "Artikel und Substantiv bekommen beide den Plural."},
+      {"q": "Welches Wort ist eine Ausnahme?", "options": ["el problema", "la casa", "el libro", "la mesa"], "answer": 0, "why": "Griechischstämmige Wörter auf -ma sind männlich."},
+    ],
     pages: [
       { heading: 'Männlich oder weiblich', html: `
         <p>Jedes Substantiv ist <b>männlich oder weiblich</b> — ein sächliches „das" gibt es nicht. Meist verrät die Endung das Geschlecht:</p>
@@ -50,6 +62,12 @@ export const grammar = [
   },
   {
     id: 'verbs', title: 'Verben: -ar, -er, -ir', icon: 'fa-bolt', beforeLesson: 4,
+    drills: [
+      {"q": "yo habl____ (ich spreche)", "options": ["o", "as", "a", "amos"], "answer": 0, "why": "1. Person Singular auf -o."},
+      {"q": "nosotros com____ (wir essen)", "options": ["emos", "éis", "en", "es"], "answer": 0, "why": "-er-Verben: comemos."},
+      {"q": "Braucht Spanisch das Personalpronomen?", "options": ["nein, die Endung genügt", "ja, immer", "nur in Fragen", "nur im Plural"], "answer": 0, "why": "yo und tú betonen nur."},
+      {"q": "Wie viele Konjugationen gibt es?", "options": ["drei", "zwei", "vier", "eine"], "answer": 0, "why": "-ar, -er und -ir."},
+    ],
     pages: [
       { heading: 'Die drei Konjugationen im Präsens', html: `
         <p>Alle spanischen Verben enden auf <b>-ar, -er oder -ir</b>. Man streicht die Endung und hängt die Personalendung an. Weil jede Person ihre eigene Endung hat, kann das Pronomen wegfallen:</p>
@@ -78,6 +96,12 @@ export const grammar = [
   },
   {
     id: 'serestar', title: 'ser oder estar?', icon: 'fa-scale-balanced', beforeLesson: 7,
+    drills: [
+      {"q": "Yo ____ alemán. (Ich bin Deutscher.)", "options": ["soy", "estoy", "tengo", "hago"], "answer": 0, "why": "Herkunft und Eigenschaft mit ser."},
+      {"q": "____ en casa. (Ich bin zu Hause.)", "options": ["Estoy", "Soy", "Tengo", "Hay"], "answer": 0, "why": "Ort immer mit estar."},
+      {"q": "La sopa ____ fría. (Die Suppe ist kalt geworden.)", "options": ["está", "es", "tiene", "hay"], "answer": 0, "why": "Vorübergehender Zustand mit estar."},
+      {"q": "____ un libro en la mesa. (Es liegt ein Buch auf dem Tisch.)", "options": ["Hay", "Es", "Está", "Tiene"], "answer": 0, "why": "hay für die bloße Existenz."},
+    ],
     pages: [
       { heading: 'Wesen oder Zustand', html: `
         <p>Die goldene Regel: <b>ser</b> für <b>dauerhafte Eigenschaften</b> (was etwas <i>ist</i>), <b>estar</b> für <b>Zustände und Orte</b> (wie/wo etwas gerade <i>ist</i>).</p>
@@ -93,6 +117,12 @@ export const grammar = [
   },
   {
     id: 'questions', title: 'Fragen & Verneinung', icon: 'fa-circle-question', beforeLesson: 11,
+    drills: [
+      {"q": "¿____ te llamas? (Wie heißt du?)", "options": ["Cómo", "Qué", "Dónde", "Quién"], "answer": 0, "why": "cómo fragt nach der Art und Weise."},
+      {"q": "¿____ vives? (Wo wohnst du?)", "options": ["Dónde", "Cómo", "Cuándo", "Qué"], "answer": 0, "why": "dónde fragt nach dem Ort."},
+      {"q": "No ____ español. (Ich spreche kein Spanisch.)", "options": ["hablo", "hablas", "habla", "hablamos"], "answer": 0, "why": "no steht vor dem Verb, das gebeugt bleibt."},
+      {"q": "Tragen Fragewörter einen Akzent?", "options": ["ja, immer", "nein", "nur im Plural", "nur bei Höflichkeit"], "answer": 0, "why": "qué, dónde, cómo — der Akzent unterscheidet sie vom Bindewort."},
+    ],
     pages: [
       { heading: '¿Auf den Kopf gestellt?', html: `
         <p>Fragen erkennst du an den <b>umgedrehten Zeichen</b> ¿ und ¡ am Satzanfang. Die Wortstellung ändert sich kaum — oft reicht die Satzmelodie: <i>¿Hablas español?</i> — Sprichst du Spanisch?</p>
@@ -111,6 +141,12 @@ export const grammar = [
   },
   {
     id: 'past', title: 'Vergangenheit & Zukunft', icon: 'fa-clock-rotate-left', beforeLesson: 16,
+    drills: [
+      {"q": "Ayer ____ a las dos. (Gestern aß ich um zwei.)", "options": ["comí", "comía", "como", "comeré"], "answer": 0, "why": "Indefinido für ein abgeschlossenes Ereignis."},
+      {"q": "Wie lautet das Indefinido von „ser“ und „ir“?", "options": ["fui", "era", "iba", "estuve"], "answer": 0, "why": "Beide teilen sich dieselbe Form."},
+      {"q": "He ____ mucho hoy. (Ich habe heute viel gearbeitet.)", "options": ["trabajado", "trabajar", "trabajé", "trabajaba"], "answer": 0, "why": "Perfekt: haber + Partizip."},
+      {"q": "Welches Partizip ist unregelmäßig?", "options": ["hecho", "hablado", "comido", "vivido"], "answer": 0, "why": "hacer → hecho, ebenso ver → visto."},
+    ],
     pages: [
       { heading: 'Das Perfekt: he hablado', html: `
         <p>Für „ich habe gesprochen" nutzt du <b>haber</b> + Partizip. Das Partizip endet auf <b>-ado</b> (-ar) bzw. <b>-ido</b> (-er/-ir):</p>
@@ -136,6 +172,12 @@ export const grammar = [
   },
   {
     id: 'adjectives', title: 'Adjektive: Angleichung & Stellung', icon: 'fa-palette', beforeLesson: 22,
+    drills: [
+      {"q": "un coche ____ (ein rotes Auto)", "options": ["rojo", "roja", "rojos", "rojas"], "answer": 0, "why": "coche ist männlich Singular."},
+      {"q": "una casa ____", "options": ["roja", "rojo", "rojas", "rojos"], "answer": 0, "why": "casa ist weiblich."},
+      {"q": "____ día (guten Tag — verkürzt)", "options": ["buen", "bueno", "buena", "buenos"], "answer": 0, "why": "bueno verkürzt sich vor männlichem Substantiv."},
+      {"q": "„un viejo amigo“ heißt ____", "options": ["ein langjähriger Freund", "ein betagter Freund", "ein alter Mann", "ein früherer Freund"], "answer": 0, "why": "Vorangestellt ändert viejo die Bedeutung."},
+    ],
     pages: [
       { heading: 'Hinter dem Substantiv, in Geschlecht und Zahl angeglichen', html: `
         <p class="grammar-example">un libro <b>interesante</b> · una historia <b>interesante</b><br>
@@ -147,6 +189,12 @@ export const grammar = [
   },
   {
     id: 'gustar', title: 'gustar & der umgekehrte Satzbau', icon: 'fa-heart', beforeLesson: 29,
+    drills: [
+      {"q": "____ gusta el café. (Ich mag Kaffee.)", "options": ["Me", "Yo", "Mi", "A mí"], "answer": 0, "why": "Wörtlich: mir gefällt der Kaffee."},
+      {"q": "Me gusta____ los libros.", "options": ["n", "", "s", "mos"], "answer": 0, "why": "Die Bücher sind das Subjekt — daher Plural."},
+      {"q": "Welches Verb ist genauso gebaut?", "options": ["doler", "comer", "hablar", "vivir"], "answer": 0, "why": "Me duele la cabeza — mir schmerzt der Kopf."},
+      {"q": "Wozu dient „a mí“ in „A mí me gusta“?", "options": ["zur Verdeutlichung", "es ist Pflicht", "es verneint", "es fragt"], "answer": 0, "why": "Es betont, wem etwas gefällt."},
+    ],
     pages: [
       { heading: 'Nicht ich mag es — es gefällt mir', html: `
         <p>Bei <b>gustar</b> ist das, was gefällt, das <b>Subjekt</b>. Die Person steht im Dativ davor:</p>
@@ -160,6 +208,12 @@ export const grammar = [
   },
   {
     id: 'possessive', title: 'Besitz & Demonstrativa', icon: 'fa-hand-holding', beforeLesson: 36,
+    drills: [
+      {"q": "____ casa (mein Haus)", "options": ["mi", "mí", "mío", "me"], "answer": 0, "why": "mi vor dem Substantiv."},
+      {"q": "____ libros (deine Bücher)", "options": ["tus", "tu", "tuyos", "te"], "answer": 0, "why": "Im Plural bekommt auch das Possessiv ein -s."},
+      {"q": "„su“ kann heißen ____", "options": ["sein, ihr, Ihr", "nur sein", "nur ihr", "nur Ihr"], "answer": 0, "why": "Bei Unklarheit hilft de él, de ella, de usted."},
+      {"q": "____ libro (jenes Buch dort drüben)", "options": ["aquel", "este", "ese", "el"], "answer": 0, "why": "Drei Entfernungsstufen: este, ese, aquel."},
+    ],
     pages: [
       { heading: 'mi, tu, su …', html: `
         <p class="grammar-example">mi casa · tus libros · su coche · nuestra familia · vuestros amigos</p>
@@ -177,6 +231,12 @@ export const grammar = [
   },
   {
     id: 'future', title: 'Zukunft: ir a & Futuro', icon: 'fa-forward', beforeLesson: 42,
+    drills: [
+      {"q": "____ a comer. (Ich werde essen.)", "options": ["Voy", "Iré", "Vaya", "Fui"], "answer": 0, "why": "ir a + Infinitiv ist das alltägliche Futur."},
+      {"q": "hablar____ (ich werde sprechen)", "options": ["é", "ás", "emos", "án"], "answer": 0, "why": "Futuro simple: Infinitiv + é."},
+      {"q": "Wie lautet der Futur-Stamm von „tener“?", "options": ["tendr-", "tener-", "teng-", "tuv-"], "answer": 0, "why": "tendré, tendrás …"},
+      {"q": "„¿Qué hora será?“ drückt aus ____", "options": ["eine Vermutung", "eine Zukunft", "eine Frage nach morgen", "einen Befehl"], "answer": 0, "why": "Das Futuro vermutet oft über die Gegenwart."},
+    ],
     pages: [
       { heading: 'Der bequeme und der förmliche Weg', html: `
         <p><b>ir a</b> + Infinitiv — das alltägliche Futur:</p>
@@ -193,6 +253,12 @@ export const grammar = [
   },
   {
     id: 'numbers', title: 'Zahlen, Uhrzeit & Datum', icon: 'fa-clock', beforeLesson: 48,
+    drills: [
+      {"q": "Wie schreibt man 31?", "options": ["treinta y uno", "treintayuno", "treinta uno", "trentaiuno"], "answer": 0, "why": "Ab 31 getrennt mit y."},
+      {"q": "____ euros (hundert Euro)", "options": ["cien", "ciento", "cientos", "un cien"], "answer": 0, "why": "Vor Substantiven wird ciento zu cien."},
+      {"q": "____ las tres. (Es ist drei Uhr.)", "options": ["Son", "Es", "Está", "Hay"], "answer": 0, "why": "Plural — nur bei eins heißt es Es la una."},
+      {"q": "„las cuatro menos cuarto“ ist ____", "options": ["Viertel vor vier", "Viertel nach vier", "halb vier", "vier Uhr"], "answer": 0, "why": "menos = vor, y = nach."},
+    ],
     pages: [
       { heading: 'Zählen auf Spanisch', html: `
         <p>Bis 30 wird zusammengeschrieben (<i>veintiuno</i>), ab 31 getrennt mit <b>y</b>: <i>treinta y uno</i>.</p>
@@ -207,6 +273,12 @@ export const grammar = [
   },
   {
     id: 'pronouns', title: 'Objektpronomen & ihre Stellung', icon: 'fa-hand-point-right', beforeLesson: 54,
+    drills: [
+      {"q": "____ veo. (Ich sehe ihn.)", "options": ["Lo", "Le", "Él", "Se"], "answer": 0, "why": "Direktes Objekt männlich: lo."},
+      {"q": "____ doy el libro. (Ich gebe ihm das Buch.)", "options": ["Le", "Lo", "La", "Se"], "answer": 0, "why": "Indirektes Objekt: le."},
+      {"q": "Was wird aus „le lo doy“?", "options": ["se lo doy", "le lo doy", "lo le doy", "se le doy"], "answer": 0, "why": "Treffen le und lo aufeinander, wird le zu se."},
+      {"q": "Wo dürfen Pronomen angehängt werden?", "options": ["an Infinitiv, Gerundium, Imperativ", "nie", "immer", "nur im Plural"], "answer": 0, "why": "Quiero verlo = Lo quiero ver."},
+    ],
     pages: [
       { heading: 'Vor dem Verb — oder angehängt', html: `
         <p>Direkt: <b>me, te, lo/la, nos, os, los/las</b>. Indirekt: <b>me, te, le, nos, os, les</b>.</p>
@@ -219,6 +291,12 @@ export const grammar = [
   },
   {
     id: 'imperfecto', title: 'Indefinido oder Imperfecto?', icon: 'fa-clock-rotate-left', beforeLesson: 60,
+    drills: [
+      {"q": "Cuando era niño, ____ al fútbol.", "options": ["jugaba", "jugué", "juego", "jugaré"], "answer": 0, "why": "Gewohnheit → Imperfecto."},
+      {"q": "Ayer ____ al fútbol.", "options": ["jugué", "jugaba", "juego", "jugaré"], "answer": 0, "why": "Einmaliges Ereignis → Indefinido."},
+      {"q": "Dormía cuando ____ el teléfono.", "options": ["sonó", "sonaba", "suena", "sonará"], "answer": 0, "why": "Hintergrund im Imperfecto, Einschnitt im Indefinido."},
+      {"q": "Welches Verb ist im Imperfecto unregelmäßig?", "options": ["ir", "hablar", "comer", "vivir"], "answer": 0, "why": "Nur ser (era), ir (iba) und ver (veía)."},
+    ],
     pages: [
       { heading: 'Ereignis gegen Kulisse', html: `
         <table class="grammar-table">
@@ -242,6 +320,12 @@ export const grammar = [
   },
   {
     id: 'reflexive', title: 'Reflexive Verben', icon: 'fa-rotate', beforeLesson: 68,
+    drills: [
+      {"q": "____ levanto a las seis.", "options": ["Me", "Te", "Se", "Nos"], "answer": 0, "why": "1. Person: me."},
+      {"q": "„dormirse“ heißt ____", "options": ["einschlafen", "schlafen", "aufwachen", "träumen"], "answer": 0, "why": "Reflexiv ändert dormir die Bedeutung."},
+      {"q": "„Aquí se habla español“ heißt ____", "options": ["Hier spricht man Spanisch", "Hier spricht er Spanisch", "Sprich hier Spanisch", "Hier wurde Spanisch gesprochen"], "answer": 0, "why": "se bildet das unpersönliche Passiv."},
+      {"q": "Welches Verb ist typisch reflexiv?", "options": ["llamarse", "comer", "beber", "leer"], "answer": 0, "why": "Me llamo … — ich heiße …"},
+    ],
     pages: [
       { heading: 'Der Tagesablauf ist reflexiv', html: `
         <p class="grammar-example">me levanto · te duchas · se viste · nos acostamos</p>
@@ -252,6 +336,12 @@ export const grammar = [
   },
   {
     id: 'comparison', title: 'Steigern & vergleichen', icon: 'fa-ranking-star', beforeLesson: 74,
+    drills: [
+      {"q": "Es ____ alto que yo.", "options": ["más", "mejor", "muy", "tan"], "answer": 0, "why": "más … que für den Vergleich."},
+      {"q": "Es ____ rápido como tú. (genauso schnell)", "options": ["tan", "más", "menos", "muy"], "answer": 0, "why": "tan … como für Gleichheit."},
+      {"q": "bueno → ____ (besser)", "options": ["mejor", "más bueno", "buenísimo", "óptimo"], "answer": 0, "why": "Unregelmäßig: bueno → mejor."},
+      {"q": "Was bedeutet „guapísimo“?", "options": ["sehr gut aussehend", "gut aussehend", "weniger gut aussehend", "am schlechtesten"], "answer": 0, "why": "-ísimo ist die stärkste Steigerung des Spanischen."},
+    ],
     pages: [
       { heading: 'más, menos, tan … como', html: `
         <p class="grammar-example">Es <b>más</b> alto <b>que</b> yo. <span>größer als ich</span><br>
@@ -264,6 +354,12 @@ export const grammar = [
   },
   {
     id: 'subjunctive', title: 'Der Subjuntivo', icon: 'fa-wand-sparkles', beforeLesson: 82,
+    drills: [
+      {"q": "Quiero que ____.", "options": ["vengas", "vienes", "vendrás", "venir"], "answer": 0, "why": "Wille löst den Subjuntivo aus."},
+      {"q": "No creo que ____ verdad.", "options": ["sea", "es", "será", "era"], "answer": 0, "why": "Zweifel löst ihn aus — die Verneinung kippt den Modus."},
+      {"q": "Cuando ____, llámame. (Wenn du ankommst, ruf mich an.)", "options": ["llegues", "llegas", "llegarás", "llegaste"], "answer": 0, "why": "Zukunft in Zeitsätzen verlangt den Subjuntivo."},
+      {"q": "Wie lautet der Subjuntivo von „ir“?", "options": ["vaya", "voy", "iré", "fui"], "answer": 0, "why": "Unregelmäßig: vaya, vayas, vaya …"},
+    ],
     pages: [
       { heading: 'Wunsch, Zweifel, Gefühl', html: `
         <p>Der Subjuntivo steht im Nebensatz, wenn der Hauptsatz keinen Tatsachenbericht liefert:</p>
@@ -280,6 +376,12 @@ export const grammar = [
   },
   {
     id: 'conditional', title: 'Condicional & Bedingungssätze', icon: 'fa-code-branch', beforeLesson: 91,
+    drills: [
+      {"q": "¿____ ayudarme? (Könntest du mir helfen?)", "options": ["Podrías", "Puedes", "Podrás", "Pudiste"], "answer": 0, "why": "Condicional für die höfliche Bitte."},
+      {"q": "Si tuviera tiempo, ____.", "options": ["iría", "iré", "voy", "fui"], "answer": 0, "why": "si + Imperfecto de subjuntivo → Condicional."},
+      {"q": "Si tengo tiempo, ____.", "options": ["iré", "iría", "fuera", "iba"], "answer": 0, "why": "si + Presente → Futuro."},
+      {"q": "Woraus bildet man die -ra-Form?", "options": ["3. Person Plural des Indefinido", "dem Infinitiv", "der 1. Person Präsens", "dem Partizip"], "answer": 0, "why": "tuvieron → tuviera."},
+    ],
     pages: [
       { heading: 'Höflich bitten, Mögliches ausdrücken', html: `
         <p>Futur-Stamm + <i>-ía, -ías, -ía, -íamos, -íais, -ían</i>:</p>
@@ -297,6 +399,12 @@ export const grammar = [
   },
   {
     id: 'porpara', title: 'Relativsätze und por / para', icon: 'fa-link', beforeLesson: 101,
+    drills: [
+      {"q": "El hombre ____ habla …", "options": ["que", "quien", "cual", "cuyo"], "answer": 0, "why": "que deckt Personen wie Dinge ab."},
+      {"q": "Gracias ____ la ayuda.", "options": ["por", "para", "de", "en"], "answer": 0, "why": "por nennt den Grund."},
+      {"q": "Este regalo es ____ ti.", "options": ["para", "por", "de", "a"], "answer": 0, "why": "para nennt den Empfänger."},
+      {"q": "Salgo ____ Madrid. (Ziel)", "options": ["para", "por", "en", "a por"], "answer": 0, "why": "para blickt nach vorn, por blickt zurück."},
+    ],
     pages: [
       { heading: 'que, quien, donde', html: `
         <p><b>que</b> deckt fast alles ab — für Personen wie für Dinge, als Subjekt wie als Objekt:</p>
@@ -317,6 +425,12 @@ export const grammar = [
   },
   {
     id: 'commands', title: 'Imperativ', icon: 'fa-bullhorn', beforeLesson: 110,
+    drills: [
+      {"q": "¡____! (Sprich! — an tú)", "options": ["Habla", "Hables", "Hablas", "Hable"], "answer": 0, "why": "Bejahter Imperativ bei -ar-Verben endet auf -a."},
+      {"q": "¡No ____! (Sprich nicht!)", "options": ["hables", "habla", "hablas", "hable"], "answer": 0, "why": "Der verneinte Imperativ ist der Subjuntivo."},
+      {"q": "Wie lautet der Imperativ von „hacer“ (tú)?", "options": ["haz", "hace", "haga", "hazte"], "answer": 0, "why": "Unregelmäßig: haz, di, ven, pon, sal, ten, sé, ve."},
+      {"q": "Wo stehen Pronomen im verneinten Imperativ?", "options": ["vor dem Verb", "angehängt", "am Satzende", "beliebig"], "answer": 0, "why": "¡No me lo digas! gegen ¡Dímelo!"},
+    ],
     pages: [
       { heading: 'Bejaht und verneint — zwei verschiedene Formen', html: `
         <p class="grammar-example">¡Habl<b>a</b>! <span>Sprich!</span> — ¡No habl<b>es</b>! <span>Sprich nicht!</span><br>
