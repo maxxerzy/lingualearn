@@ -129,4 +129,213 @@ export const grammar = [
         <div class="grammar-tip">💡 <b>on</b> („man") ersetzt im Alltag fast immer <i>nous</i>: <i>On y va !</i> — Los geht's!</div>` },
     ],
   },
+  {
+    id: 'adjectives', title: 'Adjektive: Angleichung & Stellung', icon: 'fa-palette', beforeLesson: 22,
+    pages: [
+      { heading: 'Meistens hinter dem Substantiv', html: `
+        <p>Anders als im Deutschen steht das Adjektiv in der Regel <b>nach</b> dem Substantiv — und richtet sich in Geschlecht und Zahl danach:</p>
+        <p class="grammar-example">un livre <b>intéressant</b> · une histoire <b>intéressante</b><br>
+           des livres <b>intéressants</b> · des histoires <b>intéressantes</b></p>
+        <p>Weiblich: <b>-e</b> anhängen. Plural: <b>-s</b>. Beides zusammen: <b>-es</b>. Endet es schon auf <i>-e</i>, ändert sich nichts.</p>` },
+      { heading: 'Die Ausnahmen stehen vorn', html: `
+        <p>Eine kleine, aber sehr häufige Gruppe steht <b>vor</b> dem Substantiv — Merkwort <b>BAGS</b>: Beauty, Age, Goodness, Size.</p>
+        <p class="grammar-example">un <b>beau</b> jardin · un <b>jeune</b> homme · un <b>bon</b> vin · une <b>grande</b> maison<br>
+           auch: petit, gros, nouveau, vieux, joli, mauvais</p>
+        <div class="grammar-tip">💡 Manche wechseln mit der Stellung die Bedeutung: <i>un <b>ancien</b> professeur</i> = ein ehemaliger Lehrer, <i>un vase <b>ancien</b></i> = eine antike Vase.</div>` },
+    ],
+  },
+  {
+    id: 'partitive', title: 'Der Teilungsartikel', icon: 'fa-utensils', beforeLesson: 29,
+    pages: [
+      { heading: 'du, de la, des — „etwas von"', html: `
+        <p>Wo das Deutsche gar keinen Artikel setzt, verlangt Französisch einen. „Ich esse Brot" wird zu „ich esse <i>vom</i> Brot":</p>
+        <p class="grammar-example">Je mange <b>du</b> pain. <span>männlich</span><br>
+           Je bois <b>de la</b> bière. <span>weiblich</span><br>
+           Je mange <b>de l'</b>ail. <span>vor Vokal</span><br>
+           J'achète <b>des</b> pommes. <span>Plural</span></p>` },
+      { heading: 'Nach Verneinung und Mengen: nur de', html: `
+        <p>Zwei Regeln, die fast jeder Lernende zuerst falsch macht:</p>
+        <p class="grammar-example">Je ne mange pas <b>de</b> pain. <span>nicht „du pain"</span><br>
+           beaucoup <b>de</b> pain · un peu <b>de</b> lait · un kilo <b>de</b> pommes</p>
+        <div class="grammar-tip">💡 Nach <i>ne … pas</i> und nach jeder Mengenangabe schrumpft der Teilungsartikel auf ein nacktes <b>de</b>. Ausnahme: nach <i>être</i> bleibt er — <i>Ce n'est pas du vin.</i></div>` },
+    ],
+  },
+  {
+    id: 'possessive', title: 'Besitz & Demonstrativa', icon: 'fa-hand-holding', beforeLesson: 36,
+    pages: [
+      { heading: 'Es zählt das Ding, nicht der Besitzer', html: `
+        <table class="grammar-table">
+          <tr><th></th><th>m.</th><th>f.</th><th>Plural</th></tr>
+          <tr><td>mein</td><td>mon</td><td>ma</td><td>mes</td></tr>
+          <tr><td>dein</td><td>ton</td><td>ta</td><td>tes</td></tr>
+          <tr><td>sein/ihr</td><td>son</td><td>sa</td><td>ses</td></tr>
+          <tr><td>unser</td><td>notre</td><td>notre</td><td>nos</td></tr>
+          <tr><td>euer</td><td>votre</td><td>votre</td><td>vos</td></tr>
+          <tr><td>ihr (Pl.)</td><td>leur</td><td>leur</td><td>leurs</td></tr>
+        </table>
+        <p><b>son livre</b> heißt „sein Buch" <i>und</i> „ihr Buch" — das Französische unterscheidet hier nicht. Nur das Buch zählt.</p>
+        <p>Vor Vokal wird <i>ma/ta/sa</i> zu <i>mon/ton/son</i>: <b>mon</b> amie.</p>
+        <p>Hinweisend: <b>ce</b> livre, <b>cet</b> homme (vor Vokal), <b>cette</b> maison, <b>ces</b> enfants.</p>` },
+    ],
+  },
+  {
+    id: 'future', title: 'Zukunft: proche & simple', icon: 'fa-forward', beforeLesson: 42,
+    pages: [
+      { heading: 'Zwei Zukunftsformen, klar getrennt', html: `
+        <p><b>Futur proche</b> — <i>aller</i> + Infinitiv, für alles Nahe und Geplante:</p>
+        <p class="grammar-example">Je <b>vais</b> partir. <span>Ich werde (gleich) losfahren.</span></p>
+        <p><b>Futur simple</b> — Infinitiv + Endung, für Fernes, Versprechen, Vorhersagen:</p>
+        <table class="grammar-table">
+          <tr><td>je parler<b>ai</b></td><td>nous parler<b>ons</b></td></tr>
+          <tr><td>tu parler<b>as</b></td><td>vous parler<b>ez</b></td></tr>
+          <tr><td>il parler<b>a</b></td><td>ils parler<b>ont</b></td></tr>
+        </table>
+        <p>Unregelmäßige Stämme, die man kennen muss: <i>être → ser-</i>, <i>avoir → aur-</i>, <i>aller → ir-</i>, <i>faire → fer-</i>, <i>venir → viendr-</i>, <i>pouvoir → pourr-</i>.</p>
+        <div class="grammar-tip">💡 Die Endungen sind die Präsensformen von <i>avoir</i> — ai, as, a, ons, ez, ont. Einmal gesehen, nie vergessen.</div>` },
+    ],
+  },
+  {
+    id: 'numbers', title: 'Zahlen, Uhrzeit & Datum', icon: 'fa-clock', beforeLesson: 46,
+    pages: [
+      { heading: 'Ab 70 wird gerechnet', html: `
+        <p>Französisch zählt oberhalb von sechzig in Zwanzigerschritten — das ist gewöhnungsbedürftig, aber logisch:</p>
+        <table class="grammar-table">
+          <tr><td>70</td><td>soixante-dix</td><td>60 + 10</td></tr>
+          <tr><td>71</td><td>soixante et onze</td><td>60 + 11</td></tr>
+          <tr><td>80</td><td>quatre-vingts</td><td>4 × 20</td></tr>
+          <tr><td>90</td><td>quatre-vingt-dix</td><td>4 × 20 + 10</td></tr>
+          <tr><td>99</td><td>quatre-vingt-dix-neuf</td><td>4 × 20 + 19</td></tr>
+        </table>` },
+      { heading: 'Uhrzeit & Datum', html: `
+        <p class="grammar-example">Il est trois heures. <span>Es ist drei Uhr.</span><br>
+           trois heures <b>et quart</b> <span>Viertel nach drei</span><br>
+           trois heures <b>et demie</b> <span>halb vier</span><br>
+           quatre heures <b>moins le quart</b> <span>Viertel vor vier</span></p>
+        <p>Beim Datum steht die Grundzahl, nur der Erste macht eine Ausnahme: <i>le <b>premier</b> mai</i>, aber <i>le <b>deux</b> mai</i>.</p>` },
+    ],
+  },
+  {
+    id: 'pronouns', title: 'Objektpronomen, y und en', icon: 'fa-hand-point-right', beforeLesson: 52,
+    pages: [
+      { heading: 'Sie stehen vor dem Verb', html: `
+        <p class="grammar-example">Je <b>le</b> vois. <span>Ich sehe ihn.</span><br>
+           Je <b>lui</b> parle. <span>Ich spreche mit ihm.</span><br>
+           Je ne <b>les</b> connais pas. <span>Ich kenne sie nicht.</span></p>
+        <p>Direktes Objekt: <b>me, te, le/la, nous, vous, les</b>. Indirektes: <b>me, te, lui, nous, vous, leur</b>.</p>` },
+      { heading: 'y und en — zwei kleine Wörter, viel Arbeit', html: `
+        <ul>
+          <li><b>y</b> ersetzt einen Ort oder <i>à</i> + Sache: <i>J'<b>y</b> vais.</i> — Ich gehe dorthin.</li>
+          <li><b>en</b> ersetzt <i>de</i> + Sache oder eine Menge: <i>J'<b>en</b> veux deux.</i> — Ich will zwei davon.</li>
+        </ul>
+        <p>Treffen mehrere zusammen, gilt diese Reihenfolge: <b>me/te/nous/vous → le/la/les → lui/leur → y → en</b>.</p>
+        <p class="grammar-example">Il <b>me le</b> donne. <span>Er gibt es mir.</span><br>
+           Il y <b>en</b> a trois. <span>Es gibt drei davon.</span></p>` },
+    ],
+  },
+  {
+    id: 'imparfait', title: 'Imparfait oder Passé composé?', icon: 'fa-clock-rotate-left', beforeLesson: 59,
+    pages: [
+      { heading: 'Die Frage lautet nicht wann, sondern wie', html: `
+        <table class="grammar-table">
+          <tr><th>Zeit</th><th>Blick</th><th>Beispiel</th></tr>
+          <tr><td><b>Passé composé</b></td><td>Ereignis, abgeschlossen</td><td>J'<b>ai mangé</b>. — Ich habe gegessen.</td></tr>
+          <tr><td><b>Imparfait</b></td><td>Zustand, Gewohnheit, Kulisse</td><td>Je <b>mangeais</b>. — Ich aß gerade / immer.</td></tr>
+        </table>
+        <p class="grammar-example">Quand j'<b>étais</b> petit, je <b>jouais</b> au foot. <span>Kulisse und Gewohnheit</span><br>
+           Hier, j'<b>ai joué</b> au foot. <span>ein einzelnes Ereignis</span><br>
+           Je <b>dormais</b> quand le téléphone <b>a sonné</b>. <span>Hintergrund + Einschnitt</span></p>` },
+      { heading: 'Die Formen', html: `
+        <p><b>Imparfait</b>: Stamm der <i>nous</i>-Form + <i>-ais, -ais, -ait, -ions, -iez, -aient</i>. Einzige Ausnahme: <i>être → ét-</i>.</p>
+        <p><b>Passé composé</b>: <i>avoir</i> + Partizip — außer bei Bewegungs- und Zustandsverben (aller, venir, partir, arriver, rester, naître, mourir …) und allen reflexiven Verben, die <b>être</b> nehmen.</p>
+        <p class="grammar-example">Elle <b>est</b> allé<b>e</b> à Paris. <span>mit être richtet sich das Partizip nach dem Subjekt</span></p>` },
+    ],
+  },
+  {
+    id: 'reflexive', title: 'Reflexive Verben', icon: 'fa-rotate', beforeLesson: 67,
+    pages: [
+      { heading: 'Der Alltag steckt voll davon', html: `
+        <p class="grammar-example">je <b>me</b> lève · tu <b>te</b> laves · il <b>se</b> couche<br>
+           nous <b>nous</b> levons · vous <b>vous</b> levez · ils <b>se</b> lèvent</p>
+        <p>Fast der ganze Tagesablauf ist reflexiv: <i>se réveiller</i> (aufwachen), <i>s'habiller</i> (sich anziehen), <i>se dépêcher</i> (sich beeilen), <i>s'amuser</i> (sich amüsieren), <i>se souvenir</i> (sich erinnern).</p>
+        <p>Im Passé composé nehmen sie <b>immer être</b>: <i>Je me suis levé.</i></p>
+        <div class="grammar-tip">💡 Manche Verben ändern reflexiv ihre Bedeutung: <i>passer</i> (vorbeigehen) → <i>se passer</i> (geschehen); <i>rendre</i> (zurückgeben) → <i>se rendre compte</i> (bemerken).</div>` },
+    ],
+  },
+  {
+    id: 'comparison', title: 'Steigern & vergleichen', icon: 'fa-ranking-star', beforeLesson: 74,
+    pages: [
+      { heading: 'plus, moins, aussi', html: `
+        <p class="grammar-example">Il est <b>plus</b> grand <b>que</b> moi. <span>größer als ich</span><br>
+           Elle est <b>moins</b> rapide <b>que</b> lui. <span>weniger schnell als er</span><br>
+           Tu es <b>aussi</b> fort <b>que</b> moi. <span>genauso stark wie ich</span></p>
+        <p>Superlativ mit Artikel: <i>le plus grand</i>, <i>la plus belle</i>, <i>les plus intéressants</i>.</p>
+        <p>Unregelmäßig, aber alltäglich: <i>bon → <b>meilleur</b> → le meilleur</i> und <i>bien → <b>mieux</b> → le mieux</i>.</p>
+        <div class="grammar-tip">💡 <b>meilleur</b> steigert ein Adjektiv (ein besserer Wein), <b>mieux</b> ein Adverb (er spricht besser). Diese Verwechslung ist die häufigste überhaupt.</div>` },
+    ],
+  },
+  {
+    id: 'subjunctive', title: 'Der Subjonctif', icon: 'fa-wand-sparkles', beforeLesson: 82,
+    pages: [
+      { heading: 'Nach Gefühl, Wille und Zweifel', html: `
+        <p>Der Subjonctif steht nicht für sich, sondern wird von bestimmten Ausdrücken <b>ausgelöst</b>:</p>
+        <ul>
+          <li>Wille: <i>Je veux que tu <b>viennes</b>.</i></li>
+          <li>Gefühl: <i>Je suis content que tu <b>sois</b> là.</i></li>
+          <li>Notwendigkeit: <i>Il faut que je <b>parte</b>.</i></li>
+          <li>Zweifel: <i>Je ne pense pas qu'il <b>ait</b> raison.</i></li>
+          <li>Bindewörter: <i>bien que</i>, <i>avant que</i>, <i>pour que</i>, <i>jusqu'à ce que</i></li>
+        </ul>
+        <p>Gebildet aus dem Stamm der <i>ils</i>-Form + <i>-e, -es, -e, -ions, -iez, -ent</i>. Unregelmäßig: <i>être (sois)</i>, <i>avoir (aie)</i>, <i>aller (aille)</i>, <i>faire (fasse)</i>, <i>pouvoir (puisse)</i>, <i>savoir (sache)</i>.</p>
+        <div class="grammar-tip">💡 Merksatz: Steht ein <i>que</i> nach einem Verb des Wollens, Fühlens oder Zweifelns, folgt fast sicher der Subjonctif. Nach Verben des Wissens und Sagens dagegen nicht.</div>` },
+    ],
+  },
+  {
+    id: 'conditional', title: 'Conditionnel & Bedingungssätze', icon: 'fa-code-branch', beforeLesson: 91,
+    pages: [
+      { heading: 'Höflichkeit und Möglichkeit', html: `
+        <p>Futur-Stamm + Imparfait-Endungen — mehr ist es nicht:</p>
+        <p class="grammar-example">Je <b>voudrais</b> un café. <span>Ich hätte gern einen Kaffee.</span><br>
+           Tu <b>pourrais</b> m'aider ? <span>Könntest du mir helfen?</span></p>` },
+      { heading: 'Die drei si-Sätze', html: `
+        <table class="grammar-table">
+          <tr><th>Bedingung</th><th>Folge</th><th>Beispiel</th></tr>
+          <tr><td>si + Präsens</td><td>Futur</td><td>Si j'ai le temps, je viendr<b>ai</b>.</td></tr>
+          <tr><td>si + Imparfait</td><td>Conditionnel</td><td>Si j'avais le temps, je viendr<b>ais</b>.</td></tr>
+          <tr><td>si + Plus-que-parfait</td><td>Cond. passé</td><td>Si j'avais eu le temps, je serais venu.</td></tr>
+        </table>
+        <div class="grammar-tip">💡 Eiserne Regel: Nach <b>si</b> steht <b>nie</b> ein Futur und nie ein Conditionnel. Kein „si je serais" — das ist im Französischen ein hörbarer Fehler.</div>` },
+    ],
+  },
+  {
+    id: 'relative', title: 'Relativpronomen', icon: 'fa-link', beforeLesson: 101,
+    pages: [
+      { heading: 'qui, que, dont, où', html: `
+        <table class="grammar-table">
+          <tr><th>Wort</th><th>Rolle</th><th>Beispiel</th></tr>
+          <tr><td><b>qui</b></td><td>Subjekt</td><td>L'homme <b>qui</b> parle — der Mann, der spricht</td></tr>
+          <tr><td><b>que</b></td><td>Objekt</td><td>Le livre <b>que</b> je lis — das Buch, das ich lese</td></tr>
+          <tr><td><b>dont</b></td><td>ersetzt <i>de</i></td><td>Le film <b>dont</b> je parle — der Film, von dem ich spreche</td></tr>
+          <tr><td><b>où</b></td><td>Ort und Zeit</td><td>La ville <b>où</b> j'habite · le jour <b>où</b> …</td></tr>
+        </table>
+        <div class="grammar-tip">💡 Faustregel: Folgt direkt ein Verb, steht <b>qui</b>. Folgt ein Subjekt, steht <b>que</b>. Damit sind neun von zehn Fällen entschieden.</div>` },
+    ],
+  },
+  {
+    id: 'negation', title: 'Verneinen über ne … pas hinaus', icon: 'fa-ban', beforeLesson: 108,
+    pages: [
+      { heading: 'Die Klammer und ihre Varianten', html: `
+        <p>Die Verneinung umschließt das gebeugte Verb:</p>
+        <table class="grammar-table">
+          <tr><td>ne … pas</td><td>nicht</td></tr>
+          <tr><td>ne … jamais</td><td>nie</td></tr>
+          <tr><td>ne … plus</td><td>nicht mehr</td></tr>
+          <tr><td>ne … rien</td><td>nichts</td></tr>
+          <tr><td>ne … personne</td><td>niemand</td></tr>
+          <tr><td>ne … que</td><td>nur (keine echte Verneinung!)</td></tr>
+        </table>
+        <p class="grammar-example">Je <b>n'</b>ai <b>plus</b> faim. <span>Ich habe keinen Hunger mehr.</span><br>
+           Il <b>ne</b> boit <b>que</b> de l'eau. <span>Er trinkt nur Wasser.</span></p>
+        <div class="grammar-tip">💡 Gesprochen fällt das <i>ne</i> fast immer weg: <i>J'sais pas.</i> Beim Schreiben gehört es aber dazu.</div>` },
+    ],
+  },
 ];

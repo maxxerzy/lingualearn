@@ -134,4 +134,196 @@ export const grammar = [
         <div class="grammar-tip">💡 Für erzählte Vergangenheit („ich sprach") gibt es das Indefinido (<i>hablé, comí, viví</i>) — das lohnt sich, sobald du Geschichten erzählen willst.</div>` },
     ],
   },
+  {
+    id: 'adjectives', title: 'Adjektive: Angleichung & Stellung', icon: 'fa-palette', beforeLesson: 22,
+    pages: [
+      { heading: 'Hinter dem Substantiv, in Geschlecht und Zahl angeglichen', html: `
+        <p class="grammar-example">un libro <b>interesante</b> · una historia <b>interesante</b><br>
+           un coche <b>rojo</b> · una casa <b>roja</b> · unos coches <b>rojos</b></p>
+        <p>Adjektive auf <b>-o</b> haben vier Formen (-o, -a, -os, -as). Alle anderen nur zwei: Singular und Plural.</p>
+        <p>Ein paar verkürzen sich vor männlichem Substantiv: <i>bueno → <b>buen</b> día</i>, <i>grande → <b>gran</b> hombre</i> (dann: bedeutender Mann), <i>primero → <b>primer</b> piso</i>.</p>
+        <div class="grammar-tip">💡 Die Stellung kann die Bedeutung kippen: <i>un <b>viejo</b> amigo</i> = ein langjähriger Freund, <i>un amigo <b>viejo</b></i> = ein alter (betagter) Freund.</div>` },
+    ],
+  },
+  {
+    id: 'gustar', title: 'gustar & der umgekehrte Satzbau', icon: 'fa-heart', beforeLesson: 29,
+    pages: [
+      { heading: 'Nicht ich mag es — es gefällt mir', html: `
+        <p>Bei <b>gustar</b> ist das, was gefällt, das <b>Subjekt</b>. Die Person steht im Dativ davor:</p>
+        <p class="grammar-example"><b>Me</b> gusta el café. <span>Mir gefällt der Kaffee = ich mag Kaffee.</span><br>
+           <b>Me</b> gusta<b>n</b> los libros. <span>Plural! Weil „die Bücher" das Subjekt sind.</span><br>
+           <b>Te</b> gusta bailar. <span>Du tanzt gern.</span></p>
+        <p>Die Dativpronomen: <b>me, te, le, nos, os, les</b>. Zur Verdeutlichung stellt man <i>a mí</i>, <i>a ti</i>, <i>a Juan</i> voran: <i><b>A mí</b> me gusta.</i></p>
+        <p>Genauso gebaut: <i>encantar</i> (lieben), <i>interesar</i>, <i>doler</i> (wehtun), <i>faltar</i> (fehlen), <i>parecer</i> (erscheinen).</p>
+        <div class="grammar-tip">💡 <i>Me duele la cabeza</i> — wörtlich „mir schmerzt der Kopf". Genau so denkt das Spanische.</div>` },
+    ],
+  },
+  {
+    id: 'possessive', title: 'Besitz & Demonstrativa', icon: 'fa-hand-holding', beforeLesson: 36,
+    pages: [
+      { heading: 'mi, tu, su …', html: `
+        <p class="grammar-example">mi casa · tus libros · su coche · nuestra familia · vuestros amigos</p>
+        <p>Sie richten sich nach dem <b>besessenen</b> Ding, nicht nach dem Besitzer — nur <i>nuestro/vuestro</i> haben auch weibliche Formen.</p>
+        <p><b>su</b> heißt sein, ihr, Ihr und deren zugleich. Wird es unklar, hilft <i>de él</i>, <i>de ella</i>, <i>de usted</i>.</p>` },
+      { heading: 'Drei Entfernungen statt zwei', html: `
+        <table class="grammar-table">
+          <tr><th>Wort</th><th>Entfernung</th><th>Beispiel</th></tr>
+          <tr><td>este, esta, estos</td><td>hier bei mir</td><td><b>este</b> libro — dieses Buch hier</td></tr>
+          <tr><td>ese, esa, esos</td><td>bei dir</td><td><b>ese</b> libro — das Buch da</td></tr>
+          <tr><td>aquel, aquella</td><td>weit weg</td><td><b>aquel</b> libro — jenes Buch dort</td></tr>
+        </table>
+        <p>Diese dritte Stufe kennt das Deutsche nicht — sie ist einer der schönsten Züge des Spanischen.</p>` },
+    ],
+  },
+  {
+    id: 'future', title: 'Zukunft: ir a & Futuro', icon: 'fa-forward', beforeLesson: 42,
+    pages: [
+      { heading: 'Der bequeme und der förmliche Weg', html: `
+        <p><b>ir a</b> + Infinitiv — das alltägliche Futur:</p>
+        <p class="grammar-example">Voy a comer. <span>Ich werde essen.</span><br>Vamos a ver. <span>Mal sehen.</span></p>
+        <p><b>Futuro simple</b> — Infinitiv + Endung, für alle drei Konjugationen gleich:</p>
+        <table class="grammar-table">
+          <tr><td>hablar<b>é</b></td><td>hablar<b>emos</b></td></tr>
+          <tr><td>hablar<b>ás</b></td><td>hablar<b>éis</b></td></tr>
+          <tr><td>hablar<b>á</b></td><td>hablar<b>án</b></td></tr>
+        </table>
+        <p>Unregelmäßige Stämme: <i>tener → tendr-</i>, <i>poder → podr-</i>, <i>hacer → har-</i>, <i>decir → dir-</i>, <i>salir → saldr-</i>, <i>venir → vendr-</i>.</p>
+        <div class="grammar-tip">💡 Das Futuro drückt oft eine Vermutung über die <b>Gegenwart</b> aus: <i>¿Qué hora será?</i> — Wie spät mag es wohl sein?</div>` },
+    ],
+  },
+  {
+    id: 'numbers', title: 'Zahlen, Uhrzeit & Datum', icon: 'fa-clock', beforeLesson: 48,
+    pages: [
+      { heading: 'Zählen auf Spanisch', html: `
+        <p>Bis 30 wird zusammengeschrieben (<i>veintiuno</i>), ab 31 getrennt mit <b>y</b>: <i>treinta y uno</i>.</p>
+        <p><i>uno</i> verkürzt sich vor männlichem Substantiv zu <b>un</b>: <i>un libro</i>, aber <i>veintiún libros</i>. <b>ciento</b> wird vor Substantiven zu <b>cien</b>: <i>cien euros</i>, aber <i>ciento veinte</i>.</p>` },
+      { heading: 'Uhrzeit & Datum', html: `
+        <p class="grammar-example">¿Qué hora es? — <b>Son</b> las tres. <span>Plural! Nur bei eins: <b>Es</b> la una.</span><br>
+           las tres <b>y</b> cuarto <span>Viertel nach drei</span><br>
+           las tres <b>y</b> media <span>halb vier</span><br>
+           las cuatro <b>menos</b> cuarto <span>Viertel vor vier</span></p>
+        <p>Datum mit Grundzahl und <i>de</i>: <i>el <b>quince de</b> mayo <b>de</b> 2026</i>.</p>` },
+    ],
+  },
+  {
+    id: 'pronouns', title: 'Objektpronomen & ihre Stellung', icon: 'fa-hand-point-right', beforeLesson: 54,
+    pages: [
+      { heading: 'Vor dem Verb — oder angehängt', html: `
+        <p>Direkt: <b>me, te, lo/la, nos, os, los/las</b>. Indirekt: <b>me, te, le, nos, os, les</b>.</p>
+        <p class="grammar-example"><b>Lo</b> veo. <span>Ich sehe ihn/es.</span><br>
+           <b>Te lo</b> doy. <span>Ich gebe es dir. — indirekt vor direkt</span></p>
+        <p>Bei Infinitiv, Gerundium und Imperativ dürfen sie ans Verb angehängt werden:</p>
+        <p class="grammar-example">Quiero ver<b>lo</b>. = <b>Lo</b> quiero ver.<br>¡Dáme<b>lo</b>! <span>Gib es mir!</span></p>
+        <div class="grammar-tip">💡 Treffen <i>le</i> und <i>lo</i> aufeinander, wird aus <i>le</i> ein <b>se</b>: nicht „le lo doy", sondern <i><b>se lo</b> doy</i>.</div>` },
+    ],
+  },
+  {
+    id: 'imperfecto', title: 'Indefinido oder Imperfecto?', icon: 'fa-clock-rotate-left', beforeLesson: 60,
+    pages: [
+      { heading: 'Ereignis gegen Kulisse', html: `
+        <table class="grammar-table">
+          <tr><th>Zeit</th><th>Blick</th><th>Beispiel</th></tr>
+          <tr><td><b>Indefinido</b></td><td>einmalig, abgeschlossen</td><td><b>Comí</b> a las dos. — Ich aß um zwei.</td></tr>
+          <tr><td><b>Imperfecto</b></td><td>Gewohnheit, Zustand, Hintergrund</td><td><b>Comía</b> a las dos. — Ich aß immer um zwei.</td></tr>
+        </table>
+        <p class="grammar-example">Cuando <b>era</b> niño, <b>jugaba</b> al fútbol. <span>Zustand + Gewohnheit</span><br>
+           Ayer <b>jugué</b> al fútbol. <span>ein Ereignis</span><br>
+           <b>Dormía</b> cuando <b>sonó</b> el teléfono. <span>Hintergrund + Einschnitt</span></p>` },
+      { heading: 'Die Formen', html: `
+        <p><b>Imperfecto</b> ist die regelmäßigste Zeit überhaupt — nur drei Ausnahmen: <i>ser (era)</i>, <i>ir (iba)</i>, <i>ver (veía)</i>.</p>
+        <table class="grammar-table">
+          <tr><th></th><th>-ar</th><th>-er / -ir</th></tr>
+          <tr><td>yo</td><td>hablaba</td><td>comía</td></tr>
+          <tr><td>tú</td><td>hablabas</td><td>comías</td></tr>
+          <tr><td>él</td><td>hablaba</td><td>comía</td></tr>
+        </table>
+        <p><b>Indefinido</b> unregelmäßig, aber unverzichtbar: <i>ser/ir → fui</i>, <i>tener → tuve</i>, <i>hacer → hice</i>, <i>estar → estuve</i>, <i>poder → pude</i>, <i>decir → dije</i>.</p>` },
+    ],
+  },
+  {
+    id: 'reflexive', title: 'Reflexive Verben', icon: 'fa-rotate', beforeLesson: 68,
+    pages: [
+      { heading: 'Der Tagesablauf ist reflexiv', html: `
+        <p class="grammar-example">me levanto · te duchas · se viste · nos acostamos</p>
+        <p>Häufig: <i>levantarse</i> (aufstehen), <i>ducharse</i> (duschen), <i>vestirse</i> (sich anziehen), <i>acostarse</i> (ins Bett gehen), <i>despertarse</i> (aufwachen), <i>llamarse</i> (heißen).</p>
+        <p>Oft ändert sich die Bedeutung: <i>ir</i> (gehen) → <i>irse</i> (weggehen), <i>dormir</i> (schlafen) → <i>dormirse</i> (einschlafen), <i>poner</i> (stellen) → <i>ponerse</i> (anziehen, werden).</p>
+        <div class="grammar-tip">💡 <b>se</b> bildet auch das unpersönliche Passiv: <i>Aquí <b>se habla</b> español.</i> — Hier spricht man Spanisch. Genau das steht auf unzähligen Schildern.</div>` },
+    ],
+  },
+  {
+    id: 'comparison', title: 'Steigern & vergleichen', icon: 'fa-ranking-star', beforeLesson: 74,
+    pages: [
+      { heading: 'más, menos, tan … como', html: `
+        <p class="grammar-example">Es <b>más</b> alto <b>que</b> yo. <span>größer als ich</span><br>
+           Es <b>menos</b> caro <b>que</b> ese. <span>weniger teuer als jener</span><br>
+           Es <b>tan</b> rápido <b>como</b> tú. <span>so schnell wie du</span></p>
+        <p>Superlativ mit Artikel: <i><b>el</b> más grande</i>, <i><b>la</b> más bonita</i>.</p>
+        <p>Unregelmäßig: <i>bueno → <b>mejor</b></i>, <i>malo → <b>peor</b></i>, <i>grande → <b>mayor</b></i>, <i>pequeño → <b>menor</b></i>.</p>
+        <p>Und die schönste Steigerung des Spanischen — <b>-ísimo</b>: <i>guapo → guap<b>ísimo</b></i>, <i>bueno → buen<b>ísimo</b></i>.</p>` },
+    ],
+  },
+  {
+    id: 'subjunctive', title: 'Der Subjuntivo', icon: 'fa-wand-sparkles', beforeLesson: 82,
+    pages: [
+      { heading: 'Wunsch, Zweifel, Gefühl', html: `
+        <p>Der Subjuntivo steht im Nebensatz, wenn der Hauptsatz keinen Tatsachenbericht liefert:</p>
+        <ul>
+          <li>Wunsch: <i>Quiero que <b>vengas</b>.</i></li>
+          <li>Gefühl: <i>Me alegro de que <b>estés</b> aquí.</i></li>
+          <li>Zweifel: <i>No creo que <b>sea</b> verdad.</i></li>
+          <li>Absicht: <i>para que <b>puedas</b> entender</i></li>
+          <li>Zukunft in Zeitsätzen: <i>cuando <b>llegues</b></i> — wenn du ankommst</li>
+        </ul>
+        <p>Gebildet aus der <i>yo</i>-Form mit getauschtem Vokal: <i>hablo → habl<b>e</b></i>, <i>como → com<b>a</b></i>. Unregelmäßig: <i>ser (sea)</i>, <i>ir (vaya)</i>, <i>haber (haya)</i>, <i>saber (sepa)</i>, <i>estar (esté)</i>.</p>
+        <div class="grammar-tip">💡 Prüfstein: <i>Creo que viene</i> (ich glaube, er kommt — Indikativ) gegen <i>No creo que <b>venga</b></i> (ich glaube nicht, dass er kommt — Subjuntivo). Die Verneinung kippt den Modus.</div>` },
+    ],
+  },
+  {
+    id: 'conditional', title: 'Condicional & Bedingungssätze', icon: 'fa-code-branch', beforeLesson: 91,
+    pages: [
+      { heading: 'Höflich bitten, Mögliches ausdrücken', html: `
+        <p>Futur-Stamm + <i>-ía, -ías, -ía, -íamos, -íais, -ían</i>:</p>
+        <p class="grammar-example"><b>Querría</b> un café. <span>Ich hätte gern einen Kaffee.</span><br>
+           ¿<b>Podrías</b> ayudarme? <span>Könntest du mir helfen?</span></p>` },
+      { heading: 'Die si-Sätze', html: `
+        <table class="grammar-table">
+          <tr><th>Bedingung</th><th>Folge</th><th>Beispiel</th></tr>
+          <tr><td>si + Presente</td><td>Futuro</td><td>Si tengo tiempo, ir<b>é</b>.</td></tr>
+          <tr><td>si + Imperfecto de subjuntivo</td><td>Condicional</td><td>Si <b>tuviera</b> tiempo, ir<b>ía</b>.</td></tr>
+        </table>
+        <p>Die Form auf <b>-ra</b> (<i>tuviera, fuera, pudiera</i>) bildest du aus der 3. Person Plural des Indefinido: <i>tuvieron → tuviera</i>.</p>
+        <div class="grammar-tip">💡 Nach <b>si</b> steht nie ein Futur und nie ein Condicional — dieselbe Regel wie im Französischen.</div>` },
+    ],
+  },
+  {
+    id: 'porpara', title: 'Relativsätze und por / para', icon: 'fa-link', beforeLesson: 101,
+    pages: [
+      { heading: 'que, quien, donde', html: `
+        <p><b>que</b> deckt fast alles ab — für Personen wie für Dinge, als Subjekt wie als Objekt:</p>
+        <p class="grammar-example">El hombre <b>que</b> habla … · El libro <b>que</b> leo …<br>
+           La ciudad <b>donde</b> vivo … · La persona <b>con quien</b> hablo …</p>` },
+      { heading: 'por oder para — die berühmte Frage', html: `
+        <table class="grammar-table">
+          <tr><th>por</th><th>para</th></tr>
+          <tr><td>Grund, Ursache</td><td>Ziel, Zweck</td></tr>
+          <tr><td>Zeitraum, Weg</td><td>Termin, Richtung</td></tr>
+          <tr><td>Tausch, Preis</td><td>Empfänger</td></tr>
+        </table>
+        <p class="grammar-example">Gracias <b>por</b> la ayuda. <span>Grund</span><br>
+           Este regalo es <b>para</b> ti. <span>Empfänger</span><br>
+           Salgo <b>para</b> Madrid. <span>Ziel</span> — Paso <b>por</b> Madrid. <span>Weg</span></p>
+        <div class="grammar-tip">💡 Eselsbrücke: <b>por</b> blickt zurück (warum?), <b>para</b> blickt nach vorn (wozu?).</div>` },
+    ],
+  },
+  {
+    id: 'commands', title: 'Imperativ', icon: 'fa-bullhorn', beforeLesson: 110,
+    pages: [
+      { heading: 'Bejaht und verneint — zwei verschiedene Formen', html: `
+        <p class="grammar-example">¡Habl<b>a</b>! <span>Sprich!</span> — ¡No habl<b>es</b>! <span>Sprich nicht!</span><br>
+           ¡Com<b>e</b>! <span>Iss!</span> — ¡No com<b>as</b>! <span>Iss nicht!</span></p>
+        <p>Der verneinte Imperativ ist der <b>Subjuntivo</b> — deshalb wechselt die Endung. Für <i>usted</i> gilt der Subjuntivo immer: <i>¡Hable usted!</i></p>
+        <p>Unregelmäßig bei <i>tú</i>: <i>ser → sé</i>, <i>ir → ve</i>, <i>tener → ten</i>, <i>hacer → haz</i>, <i>decir → di</i>, <i>venir → ven</i>, <i>poner → pon</i>, <i>salir → sal</i>.</p>
+        <p>Pronomen hängen bejaht hinten an, verneint stehen sie davor: <i>¡Dí<b>melo</b>!</i> gegen <i>¡<b>No me lo</b> digas!</i></p>` },
+    ],
+  },
 ];

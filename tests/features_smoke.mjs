@@ -502,7 +502,7 @@ check('Grammatik-Daten für alle 8 Sprachen (≥5 Kapitel)', Object.values(gramD
 // AUSGEBAUT wächst mit jeder Sprache, die das volle Raster bekommt —
 // die übrigen werden nur berichtet, damit der Rückstand sichtbar ist.
 const MAX_GAP = 12;
-const AUSGEBAUT = ['da', 'la'];
+const AUSGEBAUT = ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh'];   // alle acht
 const coverage = await page.evaluate(async (max) => {
   const out = {};
   const decks = { da: 'basic-da', el: 'basic-el', fr: 'basic-fr', es: 'basic-es',
@@ -526,8 +526,8 @@ const offen = Object.entries(coverage).filter(([l]) => !AUSGEBAUT.includes(l))
   .map(([l, c]) => `${l}:${c.groessteLuecke}`).join(' ');
 check(`Grammatik deckt den ganzen Kurs ab (Lücke ≤ ${MAX_GAP} Lektionen)`,
   AUSGEBAUT.every(l => coverage[l].ok),
-  AUSGEBAUT.map(l => `${l}: ${coverage[l].kapitel} Kapitel / ${coverage[l].lektionen} Lektionen, größte Lücke ${coverage[l].groessteLuecke} ab ${coverage[l].abLektion}`).join(' · ')
-  + ` — noch offen: ${offen}`);
+  AUSGEBAUT.map(l => `${l} ${coverage[l].kapitel}K/${coverage[l].lektionen}L Lücke ${coverage[l].groessteLuecke}`).join(' · ')
+  + (offen ? ` — noch offen: ${offen}` : ''));
 
 // Frisches Deck (nach Reset): der Kurs beginnt mit dem Grammatik-Kapitel.
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);

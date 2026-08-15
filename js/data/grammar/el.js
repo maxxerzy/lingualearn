@@ -131,4 +131,173 @@ export const grammar = [
         <div class="grammar-tip">💡 Drei kleine Wörter für riesige Wirkung: <b>θα</b> (Zukunft), <b>να</b> (dass/zu), <b>δεν</b> (nicht). Wer sie hört, versteht die Satzstruktur sofort.</div>` },
     ],
   },
+  {
+    id: 'adjectives', title: 'Adjektive & Angleichung', icon: 'fa-palette', beforeLesson: 21,
+    pages: [
+      { heading: 'Das Adjektiv folgt dem Substantiv in allem', html: `
+        <p>Geschlecht, Zahl und Fall müssen übereinstimmen. Die Grundendungen <b>-ος, -η, -ο</b> decken die meisten Adjektive ab:</p>
+        <p class="grammar-example">ο καλ<b>ός</b> άντρας <span>der gute Mann</span><br>
+           η καλ<b>ή</b> γυναίκα <span>die gute Frau</span><br>
+           το καλ<b>ό</b> παιδί <span>das gute Kind</span><br>
+           οι καλ<b>οί</b> άντρες <span>die guten Männer</span></p>
+        <p>Das Adjektiv steht <b>vor</b> dem Substantiv — und der Artikel davor wird mitgebeugt.</p>
+        <div class="grammar-tip">💡 Steht das Adjektiv allein hinter dem Verb, fällt der Artikel weg: <i>Ο άντρας είναι καλός.</i> — Der Mann ist gut.</div>` },
+    ],
+  },
+  {
+    id: 'possessive', title: 'Besitz ausdrücken', icon: 'fa-hand-holding', beforeLesson: 28,
+    pages: [
+      { heading: 'Das Besitzwort steht hinten', html: `
+        <p>Anders als im Deutschen hängt der Besitz hinter dem Substantiv — und ist unbetont:</p>
+        <table class="grammar-table">
+          <tr><th>deutsch</th><th>griechisch</th><th>Beispiel</th></tr>
+          <tr><td>mein</td><td>μου</td><td>το σπίτι <b>μου</b> — mein Haus</td></tr>
+          <tr><td>dein</td><td>σου</td><td>ο φίλος <b>σου</b> — dein Freund</td></tr>
+          <tr><td>sein/ihr</td><td>του / της</td><td>η μητέρα <b>του</b> — seine Mutter</td></tr>
+          <tr><td>unser</td><td>μας</td><td>τα παιδιά <b>μας</b> — unsere Kinder</td></tr>
+          <tr><td>euer/ihr</td><td>σας / τους</td><td>το αυτοκίνητό <b>τους</b> — ihr Auto</td></tr>
+        </table>
+        <div class="grammar-tip">💡 Trägt das Substantiv die Betonung auf der drittletzten Silbe, bekommt es einen zweiten Akzent: <i>το αυτοκίνητ<b>ό</b> μου</i>. Das ist keine Schlamperei, sondern Regel.</div>` },
+    ],
+  },
+  {
+    id: 'plural', title: 'Mehrzahl & Betonung', icon: 'fa-clone', beforeLesson: 34,
+    pages: [
+      { heading: 'Die Endung verrät das Geschlecht', html: `
+        <table class="grammar-table">
+          <tr><th>Geschlecht</th><th>Singular</th><th>Plural</th></tr>
+          <tr><td>männlich</td><td>ο φίλ<b>ος</b></td><td>οι φίλ<b>οι</b></td></tr>
+          <tr><td>männlich</td><td>ο άντρ<b>ας</b></td><td>οι άντρ<b>ες</b></td></tr>
+          <tr><td>weiblich</td><td>η γυναίκ<b>α</b></td><td>οι γυναίκ<b>ες</b></td></tr>
+          <tr><td>sächlich</td><td>το παιδ<b>ί</b></td><td>τα παιδ<b>ιά</b></td></tr>
+          <tr><td>sächlich</td><td>το βουν<b>ό</b></td><td>τα βουν<b>ά</b></td></tr>
+        </table>
+        <p>Der Artikel wechselt mit: <b>ο/η/το</b> im Singular, <b>οι/οι/τα</b> im Plural.</p>
+        <div class="grammar-tip">💡 Der Akzent wandert manchmal: <i>ο άνθρωπος → οι άνθρωποι</i>, aber <i>το πρόσωπο → τα πρόσωπα</i>. Beim Hören ist das der auffälligste Unterschied.</div>` },
+    ],
+  },
+  {
+    id: 'future', title: 'Zukunft mit θα', icon: 'fa-forward', beforeLesson: 41,
+    pages: [
+      { heading: 'Ein Wörtchen genügt', html: `
+        <p>Griechisch bildet die Zukunft mit <b>θα</b> vor dem Verb — keine Hilfsverben, keine Umschreibung:</p>
+        <p class="grammar-example">γράφω <span>ich schreibe</span><br>
+           <b>θα</b> γράφω <span>ich werde (regelmäßig) schreiben</span><br>
+           <b>θα</b> γράψω <span>ich werde (einmal) schreiben</span></p>
+        <p>Der Unterschied liegt im <b>Aspekt</b>: Die Form auf <i>-ω</i> beschreibt einen Verlauf, die auf <i>-ψω/-σω</i> eine abgeschlossene Handlung. Diese zweite Form brauchst du auch später beim Aorist.</p>` },
+    ],
+  },
+  {
+    id: 'numbers', title: 'Zahlen, Uhrzeit & Datum', icon: 'fa-clock', beforeLesson: 47,
+    pages: [
+      { heading: 'Nur drei Zahlen werden gebeugt', html: `
+        <p><b>ένας/μία/ένα</b> (1), <b>τρεις/τρία</b> (3) und <b>τέσσερις/τέσσερα</b> (4) richten sich nach dem Substantiv — alle übrigen bleiben unverändert.</p>
+        <p class="grammar-example">ένας φίλος · μία φίλη · ένα παιδί<br>τρεις μέρες · τρία παιδιά</p>` },
+      { heading: 'Wie spät ist es?', html: `
+        <p class="grammar-example">Τι ώρα είναι; <span>Wie spät ist es?</span><br>
+           Είναι τρεις. <span>Es ist drei.</span><br>
+           τρεις <b>και</b> τέταρτο <span>Viertel nach drei</span><br>
+           τρεις <b>και</b> μισή <span>halb vier (wörtlich: drei und halb)</span><br>
+           τέσσερις <b>παρά</b> τέταρτο <span>Viertel vor vier</span></p>
+        <div class="grammar-tip">💡 Achtung: <i>τρεις και μισή</i> heißt 3:30 — anders als im Deutschen zählt Griechisch von der vollen Stunde <b>vorwärts</b>.</div>` },
+    ],
+  },
+  {
+    id: 'subjunctive', title: 'να — der Ersatz für den Infinitiv', icon: 'fa-wand-sparkles', beforeLesson: 54,
+    pages: [
+      { heading: 'Griechisch hat keinen Infinitiv', html: `
+        <p>Wo das Deutsche „ich will <b>gehen</b>" sagt, baut Griechisch einen kleinen Nebensatz mit <b>να</b> — und beugt das zweite Verb mit:</p>
+        <p class="grammar-example">Θέλω <b>να</b> πάω. <span>Ich will gehen. (wörtlich: ich will, dass ich gehe)</span><br>
+           Θέλει <b>να</b> πάει. <span>Er will gehen.</span><br>
+           Μπορείς <b>να</b> με βοηθήσεις; <span>Kannst du mir helfen?</span></p>
+        <p>Beide Verben stehen in derselben Person. Das ist die wichtigste Konstruktion des Neugriechischen — sie steckt in fast jedem Satz mit zwei Verben.</p>
+        <div class="grammar-tip">💡 <b>να</b> drückt auch Wünsche und Aufforderungen aus: <i>Να προσέχεις!</i> — Pass auf!</div>` },
+    ],
+  },
+  {
+    id: 'pronouns', title: 'Pronomen & ihre Stellung', icon: 'fa-hand-point-right', beforeLesson: 61,
+    pages: [
+      { heading: 'Kurze Formen stehen VOR dem Verb', html: `
+        <table class="grammar-table">
+          <tr><th>Person</th><th>mich/mir</th><th>Beispiel</th></tr>
+          <tr><td>1. Sg.</td><td>με / μου</td><td><b>Με</b> βλέπεις. — Du siehst mich.</td></tr>
+          <tr><td>2. Sg.</td><td>σε / σου</td><td><b>Σου</b> λέω. — Ich sage dir.</td></tr>
+          <tr><td>3. Sg.</td><td>τον/την/το · του/της</td><td><b>Τον</b> ξέρω. — Ich kenne ihn.</td></tr>
+        </table>
+        <p>Treffen zwei aufeinander, steht das <b>Dativ</b>-Pronomen zuerst: <i><b>Σου το</b> δίνω.</i> — Ich gebe es dir.</p>
+        <div class="grammar-tip">💡 Nur beim Imperativ rutschen sie <b>hinter</b> das Verb: <i>Δώσε <b>μου το</b>!</i> — Gib es mir!</div>` },
+    ],
+  },
+  {
+    id: 'imperative', title: 'Imperativ & höfliche Bitten', icon: 'fa-bullhorn', beforeLesson: 69,
+    pages: [
+      { heading: 'Befehlen, bitten, vorschlagen', html: `
+        <p class="grammar-example">Γράψε! <span>Schreib!</span> — Γράψτε! <span>Schreibt! / Schreiben Sie!</span><br>
+           Έλα! <span>Komm!</span> — Ελάτε! <span>Kommt!</span></p>
+        <p>Höflicher wird es mit <b>να</b> oder einer Frage:</p>
+        <p class="grammar-example">Να καθίσεις. <span>Setz dich doch.</span><br>
+           Μπορείτε να με βοηθήσετε; <span>Können Sie mir helfen?</span></p>
+        <p>Verneint wird der Befehl <b>nie</b> mit dem Imperativ, sondern mit <b>μην</b> + Verb: <i>Μην πας!</i> — Geh nicht!</p>` },
+    ],
+  },
+  {
+    id: 'comparison', title: 'Steigern & vergleichen', icon: 'fa-ranking-star', beforeLesson: 77,
+    pages: [
+      { heading: 'πιο — das Allzweckwort', html: `
+        <p>Der bequemste Weg: <b>πιο</b> vor das Adjektiv, fertig.</p>
+        <p class="grammar-example">μεγάλος → <b>πιο</b> μεγάλος <span>größer</span><br>
+           ο <b>πιο</b> μεγάλος <span>der größte</span></p>
+        <p>Daneben gibt es die Endung <b>-τερος</b>: <i>μεγαλύ<b>τερος</b></i>. Beide sind richtig; <i>πιο</i> hört man häufiger.</p>
+        <p>Verglichen wird mit <b>από</b>: <i>Είναι πιο ψηλός <b>από</b> μένα.</i> — Er ist größer als ich.</p>
+        <p>Unregelmäßig: <i>καλός → καλύτερος</i> (gut → besser), <i>κακός → χειρότερος</i> (schlecht → schlechter).</p>` },
+    ],
+  },
+  {
+    id: 'aorist', title: 'Aorist & Imperfekt: der Aspekt', icon: 'fa-clock-rotate-left', beforeLesson: 85,
+    pages: [
+      { heading: 'Zwei Vergangenheiten, zwei Blickwinkel', html: `
+        <p>Griechisch fragt nicht „wann", sondern „wie" — punktuell oder andauernd:</p>
+        <table class="grammar-table">
+          <tr><th>Form</th><th>Blick</th><th>Beispiel</th></tr>
+          <tr><td><b>Aorist</b></td><td>einmalig, abgeschlossen</td><td>έγρα<b>ψα</b> — ich schrieb (fertig)</td></tr>
+          <tr><td><b>Imperfekt</b></td><td>andauernd, gewohnheitsmäßig</td><td>έγρα<b>φα</b> — ich schrieb (gerade, immer)</td></tr>
+        </table>
+        <p class="grammar-example">Χθες <b>διάβασα</b> ένα βιβλίο. <span>Gestern las ich ein Buch (zu Ende).</span><br>
+           Κάθε μέρα <b>διάβαζα</b>. <span>Jeden Tag las ich.</span></p>` },
+      { heading: 'Woran du sie erkennst', html: `
+        <p>Beide Vergangenheiten ziehen die Betonung auf die drittletzte Silbe und setzen bei kurzen Verben ein <b>έ-</b> davor (das Augment):</p>
+        <p class="grammar-example">γράφω → <b>έ</b>γραψα / <b>έ</b>γραφα<br>
+           πηγαίνω → πήγα <span>ich ging</span><br>
+           είμαι → ήμουν <span>ich war</span></p>
+        <div class="grammar-tip">💡 Der Aorist-Stamm ist derselbe, den du schon beim Futur mit <i>θα</i> gelernt hast: <i>θα γράψω</i> → <i>έγραψα</i>. Einmal gelernt, zweimal genutzt.</div>` },
+    ],
+  },
+  {
+    id: 'passive', title: 'Mediopassiv', icon: 'fa-arrows-turn-right', beforeLesson: 94,
+    pages: [
+      { heading: 'Eine Endung für Passiv und Rückbezug', html: `
+        <p>Statt eines Hilfsverbs trägt das Verb selbst die Endung <b>-μαι</b>:</p>
+        <p class="grammar-example">πλένω <span>ich wasche</span> → πλέν<b>ομαι</b> <span>ich wasche mich</span><br>
+           χάνω <span>ich verliere</span> → χάν<b>ομαι</b> <span>ich verliere mich, gehe verloren</span></p>
+        <p>Manche Verben gibt es <b>nur</b> in dieser Form, ohne passive Bedeutung — genau wie die lateinischen Deponentien: <i>έρχομαι</i> (ich komme), <i>κάθομαι</i> (ich sitze), <i>σκέφτομαι</i> (ich denke), <i>θυμάμαι</i> (ich erinnere mich).</p>
+        <div class="grammar-tip">💡 Diese Verben lernst du am besten gleich als Ganzes — ein <i>*έρχω</i> gibt es nicht.</div>` },
+    ],
+  },
+  {
+    id: 'subclause', title: 'Nebensätze & Bindewörter', icon: 'fa-code-branch', beforeLesson: 105,
+    pages: [
+      { heading: 'Die wichtigsten Verbindungen', html: `
+        <ul>
+          <li><b>ότι / πως</b> — dass: <i>Ξέρω ότι έρχεσαι.</i></li>
+          <li><b>γιατί</b> — weil (und zugleich das Fragewort „warum")</li>
+          <li><b>αν</b> — wenn, falls: <i>Αν έρθεις, θα χαρώ.</i></li>
+          <li><b>όταν</b> — wenn, als (Zeitpunkt)</li>
+          <li><b>ενώ</b> — während, obwohl</li>
+          <li><b>που</b> — der/die/das (Relativpronomen, unveränderlich!)</li>
+        </ul>
+        <p><b>που</b> ist der bequemste Teil der Sprache: ein einziges Wort für alle Relativsätze, egal welches Geschlecht, welche Zahl, welcher Fall.</p>
+        <p class="grammar-example">Ο άντρας <b>που</b> είδα … <span>Der Mann, den ich sah …</span><br>
+           Η πόλη <b>που</b> μένω … <span>Die Stadt, in der ich wohne …</span></p>` },
+    ],
+  },
 ];

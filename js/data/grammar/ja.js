@@ -120,4 +120,54 @@ export const grammar = [
         <div class="grammar-tip">💡 Unter Freunden fällt später das <i>masu/desu</i> weg (<i>taberu</i> statt <i>tabemasu</i>) — verstehe die Kurzformen passiv, benutze aktiv die höfliche Form. Damit machst du nie etwas falsch.</div>` },
     ],
   },
+  {
+    id: 'past', title: 'Vergangenheit & Verneinung', icon: 'fa-clock-rotate-left', beforeLesson: 20,
+    pages: [
+      { heading: 'Vier Endungen decken alles ab', html: `
+        <p>Aus der höflichen <b>masu</b>-Form entstehen alle vier Grundaussagen — ohne jede Ausnahme:</p>
+        <table class="grammar-table">
+          <tr><th></th><th>bejaht</th><th>verneint</th></tr>
+          <tr><td>Gegenwart</td><td>たべ<b>ます</b> (tabemasu)</td><td>たべ<b>ません</b> (tabemasen)</td></tr>
+          <tr><td>Vergangenheit</td><td>たべ<b>ました</b> (tabemashita)</td><td>たべ<b>ませんでした</b> (tabemasen deshita)</td></tr>
+        </table>
+        <p>Dasselbe gilt für <b>desu</b>: <i>です → でした</i> (war), <i>じゃありません</i> (ist nicht), <i>じゃありませんでした</i> (war nicht).</p>
+        <div class="grammar-tip">💡 Keine Personalformen: <i>tabemashita</i> heißt „ich aß", „du aßt", „sie aßen" — wer gemeint ist, sagt der Zusammenhang.</div>` },
+    ],
+  },
+  {
+    id: 'particles2', title: 'Die weiteren Partikeln', icon: 'fa-tags', beforeLesson: 25,
+    pages: [
+      { heading: 'Jede Partikel hat genau eine Aufgabe', html: `
+        <p>Sie stehen <b>hinter</b> dem Wort, auf das sie sich beziehen — wie kleine Wegweiser:</p>
+        <table class="grammar-table">
+          <tr><th>Partikel</th><th>Bedeutung</th><th>Beispiel</th></tr>
+          <tr><td><b>に</b> (ni)</td><td>Zeitpunkt, Ziel, Ort des Seins</td><td>七時<b>に</b> — um sieben Uhr</td></tr>
+          <tr><td><b>で</b> (de)</td><td>Ort der Handlung, Mittel</td><td>うち<b>で</b> — zu Hause (tun)</td></tr>
+          <tr><td><b>へ</b> (e)</td><td>Richtung</td><td>東京<b>へ</b> — Richtung Tokio</td></tr>
+          <tr><td><b>と</b> (to)</td><td>und, zusammen mit</td><td>友だち<b>と</b> — mit einem Freund</td></tr>
+          <tr><td><b>から</b> (kara)</td><td>von, ab, weil</td><td>九時<b>から</b> — ab neun</td></tr>
+          <tr><td><b>まで</b> (made)</td><td>bis</td><td>五時<b>まで</b> — bis fünf</td></tr>
+          <tr><td><b>も</b> (mo)</td><td>auch</td><td>私<b>も</b> — ich auch</td></tr>
+        </table>
+        <div class="grammar-tip">💡 <b>に</b> oder <b>で</b>? <i>に</i> steht, wo etwas <b>ist</b> (いえに いる — zu Hause sein), <i>で</i>, wo etwas <b>geschieht</b> (いえで たべる — zu Hause essen).</div>` },
+    ],
+  },
+  {
+    id: 'counters', title: 'Zählwörter', icon: 'fa-list-ol', beforeLesson: 29,
+    pages: [
+      { heading: 'Was man zählt, entscheidet wie man zählt', html: `
+        <p>Zwischen Zahl und Ding gehört ein Zählwort — welches, hängt von der Form des Dings ab:</p>
+        <table class="grammar-table">
+          <tr><th>Zählwort</th><th>für</th><th>Beispiel</th></tr>
+          <tr><td><b>つ</b> (tsu)</td><td>alles Allgemeine (bis 9)</td><td>ひとつ, ふたつ, みっつ</td></tr>
+          <tr><td><b>人</b> (nin)</td><td>Menschen</td><td>ひとり, ふたり, さんにん</td></tr>
+          <tr><td><b>本</b> (hon)</td><td>Langes: Flaschen, Stifte</td><td>いっぽん, にほん, さんぼん</td></tr>
+          <tr><td><b>枚</b> (mai)</td><td>Flaches: Blätter, Karten</td><td>いちまい, にまい</td></tr>
+          <tr><td><b>匹</b> (hiki)</td><td>kleine Tiere</td><td>いっぴき, にひき</td></tr>
+          <tr><td><b>歳</b> (sai)</td><td>Lebensjahre</td><td>にじゅっさい — 20 Jahre alt</td></tr>
+        </table>
+        <p>Das Zählwort steht meist <b>hinter</b> dem Ding: <i>りんごを<b>みっつ</b>ください。</i> — Drei Äpfel bitte.</p>
+        <div class="grammar-tip">💡 Im Zweifel <b>つ</b> nehmen — bis neun deckt es fast alles ab, und man wird verstanden. Die ersten beiden Menschenzähler <i>ひとり</i> und <i>ふたり</i> sind allerdings unregelmäßig und lohnen sich sofort.</div>` },
+    ],
+  },
 ];
