@@ -25,8 +25,18 @@ export async function renderGrammarOverview() {
   }
   const read = new Set(readChapters(deckId));
 
+  // Mit dem vollen Kapitelraster wird die Liste lang — ein Balken zeigt
+  // auf einen Blick, wie weit die Grammatik schon gelesen ist.
+  const readCount = chapters.filter(ch => read.has(ch.id)).length;
+  const pct = Math.round((readCount / chapters.length) * 100);
+
   body.innerHTML = `
-    <p class="dict-count">${esc(deck.name)} · ${chapters.length} Kapitel — ungelesene Kapitel erscheinen automatisch im Lernkurs</p>
+    <p class="dict-count">${esc(deck.name)} · ${readCount} von ${chapters.length} Kapiteln gelesen — ungelesene erscheinen automatisch im Lernkurs</p>
+    <div class="progress grammar-progress" role="progressbar"
+         aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"
+         aria-label="Gelesene Grammatik-Kapitel">
+      <div class="progress-bar" style="width:${pct}%"></div>
+    </div>
     <ul class="grammar-chapters">
       ${chapters.map((ch, i) => `
         <li>

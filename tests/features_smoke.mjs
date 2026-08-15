@@ -495,6 +495,40 @@ const gramData = await page.evaluate(async () => {
 });
 check('Grammatik-Daten für alle 8 Sprachen (≥5 Kapitel)', Object.values(gramData).every(n => n >= 5), JSON.stringify(gramData));
 
+// ── Grammatik-Abdeckung über den GANZEN Kurs ──
+// Ein Deck hat über 100 Lektionen; erklärt die Grammatik nur die ersten
+// 16, ist der Rest reines Vokabellernen. Diese Prüfung erzwingt, dass
+// kein Abschnitt von mehr als MAX_GAP Lektionen ohne Kapitel bleibt.
+// AUSGEBAUT wächst mit jeder Sprache, die das volle Raster bekommt —
+// die übrigen werden nur berichtet, damit der Rückstand sichtbar ist.
+const MAX_GAP = 12;
+const AUSGEBAUT = ['da', 'la'];
+const coverage = await page.evaluate(async (max) => {
+  const out = {};
+  const decks = { da: 'basic-da', el: 'basic-el', fr: 'basic-fr', es: 'basic-es',
+                  la: 'basic-la', ru: 'basic-ru', ja: 'basic-ja', zh: 'basic-zh' };
+  const { loadDeck } = await import('/core/state.js');
+  for (const [l, id] of Object.entries(decks)) {
+    const deck = await loadDeck(id);
+    const { grammar } = await import(`/js/data/grammar/${l}.js`);
+    const marks = grammar.map(c => c.beforeLesson).sort((a, b) => a - b);
+    const total = deck.lessonSizes.length;
+    let worst = 0, prev = 0, at = 0;
+    for (const m of [...marks, total + 1]) {
+      if (m - prev > worst) { worst = m - prev; at = prev; }
+      prev = m;
+    }
+    out[l] = { kapitel: marks.length, lektionen: total, groessteLuecke: worst, abLektion: at, ok: worst <= max };
+  }
+  return out;
+}, MAX_GAP);
+const offen = Object.entries(coverage).filter(([l]) => !AUSGEBAUT.includes(l))
+  .map(([l, c]) => `${l}:${c.groessteLuecke}`).join(' ');
+check(`Grammatik deckt den ganzen Kurs ab (Lücke ≤ ${MAX_GAP} Lektionen)`,
+  AUSGEBAUT.every(l => coverage[l].ok),
+  AUSGEBAUT.map(l => `${l}: ${coverage[l].kapitel} Kapitel / ${coverage[l].lektionen} Lektionen, größte Lücke ${coverage[l].groessteLuecke} ab ${coverage[l].abLektion}`).join(' · ')
+  + ` — noch offen: ${offen}`);
+
 // Frisches Deck (nach Reset): der Kurs beginnt mit dem Grammatik-Kapitel.
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
 await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(300);
@@ -531,13 +565,22 @@ await click('#sessionBackBtn'); await page.waitForTimeout(250);
 // Grammatik-Knopf (nur im Kurs) öffnet die Übersicht mit Lesestatus.
 const gBtnVis = await page.evaluate(() => getComputedStyle(document.getElementById('grammarBtn')).display !== 'none');
 await click('#grammarBtn'); await page.waitForTimeout(500);
-const overview = await page.evaluate(() => ({
-  active: document.getElementById('view-grammar').classList.contains('active'),
-  chapters: document.querySelectorAll('.grammar-chapter').length,
-  read: document.querySelectorAll('.grammar-chapter--read').length,
-}));
+const overview = await page.evaluate(() => {
+  const bar = document.querySelector('.grammar-progress');
+  return {
+    active: document.getElementById('view-grammar').classList.contains('active'),
+    chapters: document.querySelectorAll('.grammar-chapter').length,
+    read: document.querySelectorAll('.grammar-chapter--read').length,
+    fortschritt: bar ? Number(bar.getAttribute('aria-valuenow')) : null,
+    zeile: document.querySelector('.dict-count')?.textContent.trim() || '',
+  };
+});
 check('Grammatik-Übersicht: Kapitel-Liste + Lesestatus',
   gBtnVis && overview.active && overview.chapters >= 5 && overview.read === 1, JSON.stringify(overview));
+check('Grammatik-Übersicht: Lesefortschritt sichtbar',
+  overview.fortschritt === Math.round((overview.read / overview.chapters) * 100)
+    && /von \d+ Kapiteln gelesen/.test(overview.zeile),
+  JSON.stringify({ pct: overview.fortschritt, zeile: overview.zeile }));
 await page.evaluate(() => document.querySelector('.grammar-chapter')?.click()); await page.waitForTimeout(300);
 check('Kapitel-Reader zeigt Inhalt mit Tabellen',
   await page.evaluate(() => !!document.querySelector('#grammarReader .gr-table')));

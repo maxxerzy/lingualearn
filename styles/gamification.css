@@ -665,6 +665,9 @@
   60% { transform: translateX(4px); }
 }
 
+/* Lesefortschritt der Grammatik-Übersicht. */
+.grammar-progress { height: 8px; margin: 0 0 14px; }
+
 /* ── Satz hören ───────────────────────────────────────────────── */
 /* Der gehörte Satz erscheint erst NACH der Antwort — vorher wäre es
    Lesen statt Hören. */
