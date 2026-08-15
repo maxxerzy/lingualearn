@@ -487,13 +487,13 @@ await click('#settingsBackBtn'); await page.waitForTimeout(200);
 // ── Grammatik im Lernkurs ──
 const gramData = await page.evaluate(async () => {
   const out = {};
-  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja']) {
+  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh']) {
     const { grammar } = await import(`/js/data/grammar/${l}.js`);
     out[l] = grammar.length && grammar.every(ch => ch.pages.length > 0 && ch.beforeLesson >= 1 && ch.title) ? grammar.length : 0;
   }
   return out;
 });
-check('Grammatik-Daten für alle 7 Sprachen (≥5 Kapitel)', Object.values(gramData).every(n => n >= 5), JSON.stringify(gramData));
+check('Grammatik-Daten für alle 8 Sprachen (≥5 Kapitel)', Object.values(gramData).every(n => n >= 5), JSON.stringify(gramData));
 
 // Frisches Deck (nach Reset): der Kurs beginnt mit dem Grammatik-Kapitel.
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
@@ -763,6 +763,73 @@ check('Latein-Kurs: MC & Hören & Schreiben durchweg La→De (Lektion beendet)',
 await click('#sessionBackBtn'); await page.waitForTimeout(250);
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
 
+// ── Chinesisch: kompletter Kursdurchlauf mit zeichenweisen Sätzen ──
+// Zeichensprachen (zh/ja) kennen keine Leerzeichen — Lückensatz und
+// Satzbau müssen deshalb zeichenweise arbeiten (früher verschluckte die
+// Lücke den ganzen Satz).
+await page.selectOption('#deckSelect', 'basic-zh'); await page.waitForTimeout(400);
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  // Ab Lektion 4: Funktionswörter (Lektion 2) und Kernverben (Lektion 3)
+  // sind gelernt — erst dann schaltet die Satz-Phase Lückensätze frei.
+  const zhDeck = await (await import('/core/state.js')).loadDeck('basic-zh');
+  const zhIntro = zhDeck.lessonSizes.slice(0, 3).reduce((a, b) => a + b, 0);
+  localStorage.setItem('lingualearn_course_' + u, JSON.stringify({ 'basic-zh': { introduced: zhIntro } }));
+  (await import('/core/course.js')).reinitCourse();
+  const g = await import('/core/grammar.js');
+  const { grammar } = await import('/js/data/grammar/zh.js');
+  grammar.forEach(ch => g.markChapterRead('basic-zh', ch.id));
+  window.__phases = [];
+  window.__zhCap = {};
+});
+await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(300);
+await click('#startBtn'); await page.waitForTimeout(700);
+let zhEnd = null;
+for (let i = 0; i < 500 && !zhEnd; i++) {
+  await page.evaluate(async () => {
+    const st = (await import('/core/state.js')).getCurrentSession();
+    if (!st || st.mode !== 'course') return;
+    const cap = window.__zhCap;
+    const card = st.queue?.[0];
+    // Hanzi steht auf der Frageseite, Pinyin als Aussprachehilfe darunter
+    if (!cap.teach && st.phase === 'teach') {
+      const w = document.querySelector('.fc-word-target')?.textContent.trim() || '';
+      const pron = document.querySelector('.course-pron')?.textContent.trim() || '';
+      cap.teach = { hanzi: /[\u4e00-\u9fff]/.test(w), pinyin: pron.length > 0 };
+    }
+    // Buchstaben-Kacheln = einzelne Schriftzeichen
+    if (!cap.tiles && document.getElementById('tilePool') && card) {
+      const tiles = [...document.querySelectorAll('#tilePool .build-tile')].map(t => t.textContent);
+      cap.tiles = { n: tiles.length, chars: tiles.length === [...card.back].length };
+    }
+    // Lückensatz darf NIE den ganzen Satz ausblenden
+    const gap = document.querySelector('.gap-sentence')?.textContent.trim();
+    if (gap && !cap.gap) cap.gap = { text: gap, onlyBlank: gap.replace(/_/g, '').trim().length === 0 };
+  });
+  zhEnd = await driveStep('zh');
+  await page.waitForTimeout(120);
+}
+const zhCourse = await page.evaluate(() => ({ cap: window.__zhCap, phases: window.__phases }));
+check('Chinesisch: Lektion komplett, Hanzi vorn, Pinyin als Hilfe, Zeichen-Kacheln',
+  zhEnd === 'done' && zhCourse.cap.teach?.hanzi && zhCourse.cap.teach?.pinyin
+    && zhCourse.cap.tiles?.chars,
+  JSON.stringify({ zhEnd, ...zhCourse.cap }));
+check('Chinesisch: Lückensatz blendet nur ein Wort aus, nicht den ganzen Satz',
+  !zhCourse.cap.gap || zhCourse.cap.gap.onlyBlank === false,
+  JSON.stringify(zhCourse.cap.gap || 'keine Lücke in Lektion 1'));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// Zeichenweise Satz-Logik direkt prüfen (zh + ja).
+const spaceless = await page.evaluate(async () => {
+  const zh = await (await import('/core/state.js')).loadDeck('basic-zh');
+  const withEx = zh.cards.find(c => c.example.includes(c.back));
+  return { deck: zh.cards.length, name: zh.name, lang: zh.language, hasEx: !!withEx };
+});
+check('Chinesisch-Deck geladen (336 Karten, Lektionsplan stimmt)',
+  spaceless.deck === 336 && spaceless.lang === 'zh' && spaceless.hasEx, JSON.stringify(spaceless));
+
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+
 // ── Beispielsätze mit Aussprache-Knopf ──
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
 await click('.mode-btn[data-mode="flashcard"]'); await click('#startBtn'); await page.waitForTimeout(500);
@@ -815,13 +882,13 @@ await click('#settingsBackBtn'); await page.waitForTimeout(200);
 // ── Konversations-Bausteine für alle Sprachen ──
 const talkData = await page.evaluate(async () => {
   const out = {};
-  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja']) {
+  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh']) {
     const { phrases } = await import(`/js/data/phrases/${l}.js`);
     out[l] = phrases.length && phrases.every(p => p.de && p.target && p.reply) ? phrases.length : 0;
   }
   return out;
 });
-check('Konversations-Bausteine für alle 7 Sprachen (≥24, mit Dialog-Antworten)',
+check('Konversations-Bausteine für alle 8 Sprachen (≥24, mit Dialog-Antworten)',
   Object.values(talkData).every(n => n >= 24), JSON.stringify(talkData));
 
 // ── Geräte-Sync: Zusammenführen zweier Stände (Handy ↔ Mac) ──

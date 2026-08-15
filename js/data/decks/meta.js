@@ -5,5 +5,6 @@ export const deckMeta = [
   { id: 'basic-fr', name: 'Französisch', language: 'fr', count: 750 },
   { id: 'basic-es', name: 'Spanisch', language: 'es', count: 750 },
   { id: 'basic-ru', name: 'Russisch', language: 'ru', count: 728 },
-  { id: 'basic-ja', name: 'Japanisch', language: 'ja', count: 100 }
+  { id: 'basic-ja', name: 'Japanisch', language: 'ja', count: 224 },
+  { id: 'basic-zh', name: 'Chinesisch (Mandarin)', language: 'zh', count: 336 }
 ];

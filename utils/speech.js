@@ -8,7 +8,7 @@
 //   oe → eu  (oe wie deutsches „eu")
 //   v  → w   (v wie deutsches „w": salve → „salwe")
 //   y  → ü   (griechisches y wie „ü")
-const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'de-DE', ru: 'ru-RU', ja: 'ja-JP' };
+const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'de-DE', ru: 'ru-RU', ja: 'ja-JP', zh: 'zh-CN' };
 
 export function latinPron(text) {
   return String(text || '')
