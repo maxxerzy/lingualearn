@@ -3,6 +3,12 @@
 export const grammar = [
   {
     id: 'intro', title: 'So funktioniert Dänisch', icon: 'fa-compass', beforeLesson: 1,
+    drills: [
+      {"q": "Wie schreibt man den Laut „ö“ im Dänischen?", "options": ["ø", "æ", "å", "ö"], "answer": 0, "why": "ø entspricht dem deutschen ö — æ ist ä, å ist ein langes o."},
+      {"q": "Welcher Buchstabe steht für ein langes „o“?", "options": ["å", "ø", "æ", "aa"], "answer": 0, "why": "å wurde früher aa geschrieben, daher „Aarhus“ neben „Århus“."},
+      {"q": "„hus“ ist mit dem deutschen Wort ____ verwandt.", "options": ["Haus", "Hut", "Husten", "Hase"], "answer": 0, "why": "Dänisch und Deutsch sind germanische Schwestersprachen — viele Wörter erkennst du sofort."},
+      {"q": "Das dänische æ klingt wie deutsches ____", "options": ["ä", "ö", "ü", "o"], "answer": 0, "why": "æ = ä, ø = ö, å = langes o."},
+    ],
     pages: [
       { heading: 'Eine germanische Schwestersprache', html: `
         <p>Dänisch ist wie Deutsch eine <b>germanische Sprache</b> — sehr viele Wörter sind mit deutschen oder englischen verwandt: <i>hus</i> = Haus, <i>mand</i> = Mann, <i>drikke</i> = trinken. Diese Verwandtschaft ist dein größter Vorteil: Oft kannst du Wörter erraten.</p>
@@ -26,6 +32,12 @@ export const grammar = [
   },
   {
     id: 'nouns', title: 'Substantive & Artikel', icon: 'fa-cube', beforeLesson: 2,
+    drills: [
+      {"q": "____ hus (ein Haus)", "options": ["et", "en", "de", "det"], "answer": 0, "why": "hus ist ein et-Wort. Rund 25 % aller Substantive sind et-Wörter."},
+      {"q": "____ bil (ein Auto)", "options": ["en", "et", "de", "den"], "answer": 0, "why": "bil ist ein en-Wort — die häufigere Gruppe."},
+      {"q": "Wie heißt „das Haus“ (bestimmt)?", "options": ["huset", "det hus", "en hus", "husen"], "answer": 0, "why": "Der bestimmte Artikel hängt hinten an: hus → huset."},
+      {"q": "Wie heißt „das Auto“ (bestimmt)?", "options": ["bilen", "bilet", "den bil", "bilene"], "answer": 0, "why": "en-Wörter bekommen -en: bil → bilen."},
+    ],
     pages: [
       { heading: 'Zwei Geschlechter: en und et', html: `
         <p>Dänisch kennt nur <b>zwei</b> grammatische Geschlechter: <b>Utrum</b> (en-Wörter, ca. 75 %) und <b>Neutrum</b> (et-Wörter, ca. 25 %). Der unbestimmte Artikel („ein/eine") steht wie im Deutschen davor:</p>
@@ -48,6 +60,12 @@ export const grammar = [
   },
   {
     id: 'verbs', title: 'Verben: eine Form für alle', icon: 'fa-bolt', beforeLesson: 4,
+    drills: [
+      {"q": "jeg ____ (ich bin)", "options": ["er", "være", "var", "es"], "answer": 0, "why": "være ist der Infinitiv; die Präsensform lautet für alle Personen er."},
+      {"q": "vi ____ (wir haben)", "options": ["har", "have", "havde", "haver"], "answer": 0, "why": "Eine Form für alle Personen — jeg har, du har, vi har."},
+      {"q": "Wie viele Präsensformen hat ein dänisches Verb?", "options": ["eine", "zwei", "drei", "sechs"], "answer": 0, "why": "Das ist die beste Nachricht des Dänischen: eine Form für alle Personen."},
+      {"q": "du ____ dansk (du sprichst Dänisch)", "options": ["taler", "tale", "talte", "talar"], "answer": 0, "why": "Präsens auf -r: tale → taler."},
+    ],
     pages: [
       { heading: 'Die beste Nachricht des Dänischen', html: `
         <p>Dänische Verben werden <b>nicht nach der Person konjugiert</b>. Im Präsens gibt es genau <b>eine Form für alle</b> — sie endet fast immer auf <b>-r</b>:</p>
@@ -76,6 +94,12 @@ export const grammar = [
   },
   {
     id: 'syntax', title: 'Satzbau & Wortstellung', icon: 'fa-arrows-left-right', beforeLesson: 7,
+    drills: [
+      {"q": "I dag ____ jeg hjem. (Heute gehe ich nach Hause.)", "options": ["går", "jeg går", "gå", "går jeg"], "answer": 0, "why": "Das Verb steht an zweiter Stelle — steht die Zeitangabe vorn, folgt sofort das Verb."},
+      {"q": "Welche Stelle nimmt das Verb im Hauptsatz ein?", "options": ["die zweite", "die erste", "die letzte", "eine beliebige"], "answer": 0, "why": "Verbzweitstellung — genau wie im Deutschen."},
+      {"q": "Jeg drikker ____ om morgenen.", "options": ["kaffe", "kaffen drikker", "drikker kaffe", "om kaffe"], "answer": 0, "why": "Subjekt – Verb – Objekt, dann die Zeitangabe."},
+      {"q": "I morgen ____ vi til København.", "options": ["rejser", "vi rejser", "rejse", "rejser vi til"], "answer": 0, "why": "Nach der vorangestellten Zeitangabe kommt das Verb, dann das Subjekt."},
+    ],
     pages: [
       { heading: 'Das Verb steht an zweiter Stelle', html: `
         <p>Wie das Deutsche ist Dänisch eine <b>V2-Sprache</b>: Im Aussagesatz steht das konjugierte Verb an <b>zweiter Position</b>.</p>
@@ -89,6 +113,12 @@ export const grammar = [
   },
   {
     id: 'questions', title: 'Fragen & Verneinung', icon: 'fa-circle-question', beforeLesson: 11,
+    drills: [
+      {"q": "____ hedder du? (Wie heißt du?)", "options": ["Hvad", "Hvem", "Hvor", "Hvornår"], "answer": 0, "why": "Hvad = was, hvem = wer, hvor = wo, hvornår = wann."},
+      {"q": "____ bor du? (Wo wohnst du?)", "options": ["Hvor", "Hvad", "Hvem", "Hvorfor"], "answer": 0, "why": "hvor fragt nach dem Ort."},
+      {"q": "Jeg taler ____ dansk. (Ich spreche kein Dänisch.)", "options": ["ikke", "ingen", "nej", "ej"], "answer": 0, "why": "ikke verneint das Verb und steht im Hauptsatz dahinter."},
+      {"q": "____ du kaffe? (Trinkst du Kaffee?)", "options": ["Drikker", "Du drikker", "At drikke", "Drikke"], "answer": 0, "why": "In der Frage tauschen Verb und Subjekt die Plätze."},
+    ],
     pages: [
       { heading: 'Fragen stellen', html: `
         <p>Ja/Nein-Fragen bildest du durch <b>Umstellung</b> (Verb zuerst) — wie im Deutschen:</p>
@@ -111,6 +141,12 @@ export const grammar = [
   },
   {
     id: 'past', title: 'Über Vergangenes sprechen', icon: 'fa-clock-rotate-left', beforeLesson: 16,
+    drills: [
+      {"q": "I går ____ jeg en bog. (Gestern las ich ein Buch.)", "options": ["læste", "læser", "har læst", "læse"], "answer": 0, "why": "Präteritum für abgeschlossene Handlungen mit Zeitangabe."},
+      {"q": "Jeg ____ boet i Danmark i tre år. (Ich habe drei Jahre in Dänemark gewohnt.)", "options": ["har", "er", "havde", "var"], "answer": 0, "why": "Perfekt mit har + Partizip."},
+      {"q": "Welche Endung ist im Präteritum die häufigste?", "options": ["-ede", "-te", "-de", "-er"], "answer": 0, "why": "Die meisten Verben bilden das Präteritum auf -ede: talte man von tale, so heißt es talte — kürzere Verben nehmen -te."},
+      {"q": "Han ____ til Aarhus i går. (Er fuhr gestern nach Aarhus.)", "options": ["rejste", "rejser", "har rejst", "rejse"], "answer": 0, "why": "Konkreter Zeitpunkt in der Vergangenheit → Präteritum."},
+    ],
     pages: [
       { heading: 'Präteritum: -ede und -te', html: `
         <p>Regelmäßige Verben bilden die Vergangenheit mit <b>-ede</b> oder <b>-te</b> — wieder <b>eine Form für alle Personen</b>:</p>
@@ -133,6 +169,12 @@ export const grammar = [
   },
   {
     id: 'plural', title: 'Mehrzahl der Substantive', icon: 'fa-clone', beforeLesson: 20,
+    drills: [
+      {"q": "en bil → to ____", "options": ["biler", "bile", "bil", "bilene"], "answer": 0, "why": "Die häufigste Pluralendung ist -er."},
+      {"q": "et hus → to ____", "options": ["huse", "huser", "hus", "husene"], "answer": 0, "why": "Viele einsilbige et-Wörter nehmen -e."},
+      {"q": "Wie heißt „die Autos“ (bestimmter Plural)?", "options": ["bilerne", "bilene", "bilerne­s", "biler"], "answer": 0, "why": "Plural + -ne: biler → bilerne."},
+      {"q": "en pige → to ____", "options": ["piger", "pigee", "pige", "pigene"], "answer": 0, "why": "Endet das Wort schon auf -e, kommt nur ein -r dazu."},
+    ],
     pages: [
       { heading: 'Drei Endungen — und ein Muster dahinter', html: `
         <p>Der Plural hängt an drei Endungen, und welche greift, verrät meist die Wortform:</p>
@@ -154,6 +196,12 @@ export const grammar = [
   },
   {
     id: 'adjectives', title: 'Adjektive: die drei Formen', icon: 'fa-palette', beforeLesson: 29,
+    drills: [
+      {"q": "et ____ hus (ein großes Haus)", "options": ["stort", "stor", "store", "storet"], "answer": 0, "why": "et-Wörter verlangen die t-Form."},
+      {"q": "en ____ bil (ein großes Auto)", "options": ["stor", "stort", "store", "storen"], "answer": 0, "why": "Bei en-Wörtern steht die Grundform."},
+      {"q": "to ____ huse (zwei große Häuser)", "options": ["store", "stort", "stor", "storer"], "answer": 0, "why": "Im Plural endet das Adjektiv immer auf -e."},
+      {"q": "____ store hus (das große Haus)", "options": ["det", "den", "de", "et"], "answer": 0, "why": "Doppelte Bestimmtheit: Artikelwort davor, Adjektiv auf -e, Substantiv ohne Endung."},
+    ],
     pages: [
       { heading: 'Grundform, t-Form, e-Form', html: `
         <p>Ein dänisches Adjektiv hat nur drei Gestalten. Welche du brauchst, entscheidet das Wort daneben:</p>
@@ -173,6 +221,12 @@ export const grammar = [
   },
   {
     id: 'possessive', title: 'Besitz — und die Falle sin', icon: 'fa-hand-holding', beforeLesson: 33,
+    drills: [
+      {"q": "Peter tager ____ bog. (Peter nimmt sein eigenes Buch.)", "options": ["sin", "hans", "hendes", "deres"], "answer": 0, "why": "sin zeigt auf das Subjekt desselben Satzes zurück."},
+      {"q": "Peter tager ____ bog. (Peter nimmt das Buch eines anderen.)", "options": ["hans", "sin", "sit", "sine"], "answer": 0, "why": "hans zeigt auf eine andere Person."},
+      {"q": "____ hus (mein Haus)", "options": ["mit", "min", "mine", "mig"], "answer": 0, "why": "hus ist ein et-Wort, also mit."},
+      {"q": "____ bil (meine Autos … nein: mein Auto)", "options": ["min", "mit", "mine", "mig"], "answer": 0, "why": "bil ist ein en-Wort, also min."},
+    ],
     pages: [
       { heading: 'min, din, hans …', html: `
         <p>Possessive richten sich nach dem <b>besessenen</b> Wort, nicht nach dem Besitzer:</p>
@@ -193,6 +247,12 @@ export const grammar = [
   },
   {
     id: 'compounds', title: 'Zusammengesetzte Wörter', icon: 'fa-link', beforeLesson: 40,
+    drills: [
+      {"q": "vinter + jakke = ____", "options": ["vinterjakke", "vinter jakke", "jakkevinter", "vinters jakke"], "answer": 0, "why": "Zusammensetzungen werden zusammengeschrieben, wie im Deutschen."},
+      {"q": "Welches Glied bestimmt Geschlecht und Plural?", "options": ["das letzte", "das erste", "beide", "keines"], "answer": 0, "why": "en jakke → en vinterjakke."},
+      {"q": "køkken + bord = ____", "options": ["køkkenbord", "bordkøkken", "køkken bord", "køkkens bord"], "answer": 0, "why": "Das Bestimmungswort steht vorn, das Grundwort hinten."},
+      {"q": "Was heißt „regnvejr“?", "options": ["Regenwetter", "Regenweg", "Wetterregen", "Regenschirm"], "answer": 0, "why": "regn (Regen) + vejr (Wetter)."},
+    ],
     pages: [
       { heading: 'Ein Wort, keine Leerzeichen', html: `
         <p>Wie im Deutschen wächst der dänische Wortschatz durch Zusammensetzen — und wie im Deutschen wird zusammengeschrieben:</p>
@@ -205,6 +265,12 @@ export const grammar = [
   },
   {
     id: 'numbers', title: 'Zahlen & Uhrzeit', icon: 'fa-clock', beforeLesson: 46,
+    drills: [
+      {"q": "Was heißt 50 auf Dänisch?", "options": ["halvtreds", "tres", "firs", "halvfjerds"], "answer": 0, "why": "halvtreds = halb-drittes mal 20."},
+      {"q": "Was heißt 60?", "options": ["tres", "halvtreds", "firs", "seksti"], "answer": 0, "why": "tres = 3 × 20."},
+      {"q": "„halv fire“ bedeutet ____", "options": ["3:30", "4:30", "3:15", "4:15"], "answer": 0, "why": "Wie im Deutschen: halb vier ist 3:30."},
+      {"q": "21 heißt auf Dänisch ____", "options": ["enogtyve", "tyveogen", "tyve en", "enogtredive"], "answer": 0, "why": "Einer zuerst, dann og, dann Zehner — wie „einundzwanzig“."},
+    ],
     pages: [
       { heading: 'Das dänische Zwanzigersystem', html: `
         <p>Ab fünfzig zählt Dänisch in Zwanzigerschritten — das ist der berüchtigtste Teil der Sprache, aber es steckt ein System dahinter (<i>tres</i> = 3 × 20):</p>
@@ -228,6 +294,12 @@ export const grammar = [
   },
   {
     id: 'future', title: 'Über Zukünftiges sprechen', icon: 'fa-forward', beforeLesson: 52,
+    drills: [
+      {"q": "Jeg ____ til København i morgen. (fest geplant)", "options": ["skal", "vil", "er", "har"], "answer": 0, "why": "skal für Verabredetes und Geplantes."},
+      {"q": "Det ____ regne i morgen. (Vorhersage)", "options": ["vil", "skal", "er", "har"], "answer": 0, "why": "vil für Wille und Vorhersage."},
+      {"q": "Nach skal und vil steht der Infinitiv ____", "options": ["ohne at", "mit at", "mit -r", "im Präteritum"], "answer": 0, "why": "Jeg skal køre — nicht „at køre“."},
+      {"q": "Jeg rejser i morgen. Diese Form ist ____", "options": ["Präsens mit Zukunftsbedeutung", "Präteritum", "Perfekt", "Imperativ"], "answer": 0, "why": "Mit Zeitangabe reicht das Präsens für die Zukunft."},
+    ],
     pages: [
       { heading: 'Meistens reicht die Gegenwart', html: `
         <p>Steht eine Zeitangabe im Satz, genügt das Präsens — genau wie im Deutschen:</p>
@@ -242,6 +314,12 @@ export const grammar = [
   },
   {
     id: 'subclause', title: 'Nebensätze & die Stellung von ikke', icon: 'fa-code-branch', beforeLesson: 59,
+    drills: [
+      {"q": "Jeg kommer ____ i dag. (Hauptsatz: Ich komme heute nicht.)", "options": ["ikke", "ej", "ingen", "nej"], "answer": 0, "why": "Im Hauptsatz steht ikke nach dem Verb."},
+      {"q": "… at jeg ____ kommer i dag. (Nebensatz)", "options": ["ikke", "ej", "ingen", "slet"], "answer": 0, "why": "Im Nebensatz wandert ikke VOR das Verb — der wichtigste Unterschied."},
+      {"q": "____ du kommer, laver jeg mad. (Wenn du kommst …)", "options": ["Hvis", "Når", "At", "Fordi"], "answer": 0, "why": "hvis für eine Bedingung, når für einen wiederkehrenden Zeitpunkt."},
+      {"q": "Jeg bliver hjemme, ____ jeg er syg.", "options": ["fordi", "hvis", "at", "når"], "answer": 0, "why": "fordi = weil."},
+    ],
     pages: [
       { heading: 'Im Nebensatz wandert ikke nach vorn', html: `
         <p>Das ist der klarste Unterschied zwischen Haupt- und Nebensatz im Dänischen:</p>
@@ -262,6 +340,12 @@ export const grammar = [
   },
   {
     id: 'modals', title: 'Modalverben', icon: 'fa-key', beforeLesson: 66,
+    drills: [
+      {"q": "Jeg ____ tale dansk. (Ich kann Dänisch sprechen.)", "options": ["kan", "skal", "må", "vil"], "answer": 0, "why": "kunne → kan."},
+      {"q": "Du ____ gerne spørge. (Du darfst gern fragen.)", "options": ["må", "kan", "skal", "bør"], "answer": 0, "why": "må drückt hier die Erlaubnis aus."},
+      {"q": "Nach einem Modalverb folgt ____", "options": ["der reine Infinitiv", "at + Infinitiv", "das Präteritum", "ein Partizip"], "answer": 0, "why": "Jeg kan tale — ohne at."},
+      {"q": "Du ____ spise mere grønt. (Du solltest mehr Gemüse essen — Rat.)", "options": ["bør", "må", "kan", "tør"], "answer": 0, "why": "burde → bør für Empfehlungen."},
+    ],
     pages: [
       { heading: 'Sechs Verben, die fast alles ausdrücken', html: `
         <table class="grammar-table">
@@ -281,6 +365,12 @@ export const grammar = [
   },
   {
     id: 'adverbs', title: 'Die kleinen Wörter, die den Ton machen', icon: 'fa-comment', beforeLesson: 78,
+    drills: [
+      {"q": "Det er ____ dyrt. (Das ist doch teuer — das wissen wir beide.)", "options": ["jo", "da", "nok", "vist"], "answer": 0, "why": "jo beruft sich auf gemeinsames Wissen."},
+      {"q": "Han kommer ____. (Er kommt wohl / wahrscheinlich.)", "options": ["nok", "jo", "da", "vel"], "answer": 0, "why": "nok drückt Wahrscheinlichkeit aus."},
+      {"q": "Hun er ____ syg. (Sie ist wohl krank — habe ich gehört.)", "options": ["vist", "jo", "da", "nok"], "answer": 0, "why": "vist gibt Gehörtes wieder."},
+      {"q": "Du kommer ____? (Du kommst doch, oder?)", "options": ["vel", "jo", "nok", "da"], "answer": 0, "why": "vel sucht Zustimmung."},
+    ],
     pages: [
       { heading: 'jo, da, nok, vist, vel', html: `
         <p>Diese Partikeln übersetzt kein Wörterbuch sauber — aber sie entscheiden, ob du wie ein Lehrbuch klingst oder wie ein Mensch:</p>
@@ -298,6 +388,12 @@ export const grammar = [
   },
   {
     id: 'comparison', title: 'Steigern & vergleichen', icon: 'fa-ranking-star', beforeLesson: 90,
+    drills: [
+      {"q": "stor → ____ (größer)", "options": ["større", "storere", "mere stor", "storst"], "answer": 0, "why": "Unregelmäßig: stor – større – størst."},
+      {"q": "god → ____ (besser)", "options": ["bedre", "godere", "mere god", "bedst"], "answer": 0, "why": "god – bedre – bedst."},
+      {"q": "Han er højere ____ mig.", "options": ["end", "som", "af", "fra"], "answer": 0, "why": "Verglichen wird mit end."},
+      {"q": "Hun er lige så hurtig ____ dig.", "options": ["som", "end", "af", "ved"], "answer": 0, "why": "Gleichheit: lige så … som."},
+    ],
     pages: [
       { heading: '-ere und -est', html: `
         <p>Kurze Adjektive steigern mit Endungen, lange mit <i>mere</i> und <i>mest</i> — dieselbe Logik wie im Englischen:</p>
@@ -314,6 +410,12 @@ export const grammar = [
   },
   {
     id: 'passive', title: 'Passiv: zwei Wege', icon: 'fa-arrows-turn-right', beforeLesson: 100,
+    drills: [
+      {"q": "Døren ____ klokken seks. (s-Passiv: Die Tür wird um sechs geschlossen.)", "options": ["lukkes", "lukker", "lukket", "er lukke"], "answer": 0, "why": "Das -s hängt direkt am Verb."},
+      {"q": "Døren ____ lukket klokken seks. (gesprochener)", "options": ["bliver", "er", "har", "var"], "answer": 0, "why": "blive + Partizip ist der übliche Weg im Gespräch."},
+      {"q": "„vi ses!“ heißt ____", "options": ["wir sehen uns!", "wir werden gesehen!", "sieh uns!", "wir sahen"], "answer": 0, "why": "ses trägt das -s ohne Passivbedeutung."},
+      {"q": "Welches Verb trägt das -s immer?", "options": ["synes", "lukke", "spise", "købe"], "answer": 0, "why": "synes (finden, meinen) gibt es nur mit -s."},
+    ],
     pages: [
       { heading: 's-Passiv und blive-Passiv', html: `
         <p>Dänisch bildet das Passiv auf zwei Arten, und beide sind gebräuchlich:</p>
@@ -328,6 +430,12 @@ export const grammar = [
   },
   {
     id: 'reported', title: 'Meinung äußern & indirekte Rede', icon: 'fa-comments', beforeLesson: 107,
+    drills: [
+      {"q": "Jeg ____, at han kommer. (Ich glaube — ohne Beleg.)", "options": ["tror", "synes", "mener", "ved"], "answer": 0, "why": "tro für Vermutungen."},
+      {"q": "Jeg ____, filmen er god. (Ich finde — ich habe ihn gesehen.)", "options": ["synes", "tror", "mener", "kender"], "answer": 0, "why": "synes für den persönlichen Eindruck aus Erfahrung."},
+      {"q": "Han sagde, at han ____ dagen efter. (Er sagte, dass er am nächsten Tag komme.)", "options": ["kom", "kommer", "er kommet", "vil komme"], "answer": 0, "why": "Steht das einleitende Verb in der Vergangenheit, rückt auch der Nebensatz zurück."},
+      {"q": "Braucht Dänisch für die indirekte Rede einen Konjunktiv?", "options": ["nein", "ja, immer", "nur schriftlich", "nur bei at"], "answer": 0, "why": "Es genügen at und die angepasste Zeit."},
+    ],
     pages: [
       { heading: 'tro, synes, mene — drei Arten von „finden"', html: `
         <p>Dänisch trennt sauber, was das Deutsche in ein Wort presst:</p>

@@ -529,6 +529,27 @@ check(`Grammatik deckt den ganzen Kurs ab (Lücke ≤ ${MAX_GAP} Lektionen)`,
   AUSGEBAUT.map(l => `${l} ${coverage[l].kapitel}K/${coverage[l].lektionen}L Lücke ${coverage[l].groessteLuecke}`).join(' · ')
   + (offen ? ` — noch offen: ${offen}` : ''));
 
+// ── Grammatik ÜBEN: jedes Kapitel bringt Aufgaben mit ──
+// Gelesen ist nicht gekonnt. MIT_UEBUNGEN wächst wie AUSGEBAUT mit
+// jeder Sprache, die ihre Aufgaben bekommen hat.
+const MIT_UEBUNGEN = ['da', 'la'];
+const drillData = await page.evaluate(async (langs) => {
+  const out = {};
+  for (const l of langs) {
+    const { grammar } = await import(`/js/data/grammar/${l}.js`);
+    const zuWenig = grammar.filter(c => (c.drills?.length || 0) < 4).map(c => c.id);
+    const kaputt = grammar.flatMap(c => (c.drills || []).filter(d =>
+      !d.q || !d.why || !Array.isArray(d.options) || d.options.length < 3
+      || typeof d.answer !== 'number' || d.answer < 0 || d.answer >= d.options.length
+      || new Set(d.options).size !== d.options.length));
+    out[l] = { kapitel: grammar.length, uebungen: grammar.reduce((a, c) => a + (c.drills?.length || 0), 0), zuWenig, kaputt: kaputt.length };
+  }
+  return out;
+}, MIT_UEBUNGEN);
+check('Grammatik-Übungen: ≥4 gültige Aufgaben je Kapitel',
+  MIT_UEBUNGEN.every(l => drillData[l].zuWenig.length === 0 && drillData[l].kaputt === 0),
+  MIT_UEBUNGEN.map(l => `${l}: ${drillData[l].uebungen} Aufgaben in ${drillData[l].kapitel} Kapiteln`).join(' · '));
+
 // Frisches Deck (nach Reset): der Kurs beginnt mit dem Grammatik-Kapitel.
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
 await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(300);
@@ -541,17 +562,28 @@ const gram = await page.evaluate(() => ({
 }));
 check('Lernkurs beginnt „basic basic" mit Grammatik-Kapitel',
   /Grammatik/.test(gram.badge) && gram.head.length > 0 && /Lektion 1/.test(gram.title), JSON.stringify(gram));
-// Durchblättern bis „Zur Lektion" — danach startet die Wortlektion.
-for (let i = 0; i < 12; i++) {
+// Durchblättern und die Übungen lösen — danach startet die Wortlektion.
+for (let i = 0; i < 30; i++) {
   const wasLast = await page.evaluate(() => {
     const btn = document.getElementById('gramNext');
     if (!btn) return true;
-    const last = btn.textContent.includes('Zur Lektion');
     btn.click();
-    return last;
+    return false;
   });
   await page.waitForTimeout(400);
   if (wasLast) break;
+  // Nach der letzten Seite folgen die Übungen — sie richtig beantworten,
+  // sonst gilt das Kapitel zu Recht nicht als durchgearbeitet.
+  const fertig = await page.evaluate(async () => {
+    const st = (await import('/core/state.js')).getCurrentSession();
+    if (st?.phase !== 'drill') return !st || st.phase !== 'grammar';
+    if (st.currentPrompt) {
+      document.querySelector(`.drill-card .mc-option[data-oi="${st.currentPrompt.correctOi}"]`)?.click();
+    }
+    return false;
+  });
+  await page.waitForTimeout(200);
+  if (fertig) break;
 }
 await page.waitForTimeout(500);
 const afterGram = await page.evaluate(async () => ({
@@ -585,6 +617,83 @@ await page.evaluate(() => document.querySelector('.grammar-chapter')?.click()); 
 check('Kapitel-Reader zeigt Inhalt mit Tabellen',
   await page.evaluate(() => !!document.querySelector('#grammarReader .gr-table')));
 await page.evaluate(() => document.getElementById('grammarBackBtn').click()); await page.waitForTimeout(250);
+
+// ── Grammatik-Übungen im Kurs: Kapitel gilt erst nach dem Üben als gelesen ──
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  localStorage.setItem('lingualearn_grammar_' + u, JSON.stringify({}));
+  localStorage.setItem('lingualearn_course_' + u, JSON.stringify({ 'basic-da': { introduced: 0 } }));
+  (await import('/core/grammar.js')).reinitGrammar();
+  (await import('/core/course.js')).reinitCourse();
+});
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(150);
+await click('#startBtn'); await page.waitForTimeout(700);
+// Kapitelseiten durchblättern
+for (let i = 0; i < 8 && await page.evaluate(() => !!document.getElementById('gramNext') && !document.querySelector('.drill-card')); i++) {
+  await page.evaluate(() => document.getElementById('gramNext').click());
+  await page.waitForTimeout(200);
+}
+const drillStart = await page.evaluate(async () => {
+  const st = (await import('/core/state.js')).getCurrentSession();
+  const g = await import('/core/grammar.js');
+  return {
+    phase: st?.phase,
+    frage: document.querySelector('.drill-question')?.textContent.trim() || '',
+    optionen: document.querySelectorAll('.drill-card .mc-option').length,
+    nochNichtGelesen: g.readChapters('basic-da').length === 0,
+  };
+});
+check('Grammatik-Übung erscheint nach der letzten Seite',
+  drillStart.phase === 'drill' && drillStart.optionen >= 3 && drillStart.frage.length > 0
+    && drillStart.nochNichtGelesen,
+  JSON.stringify(drillStart));
+
+// Absichtlich falsch antworten → Aufgabe muss erneut kommen
+const wrongRun = await page.evaluate(async () => {
+  const st = (await import('/core/state.js')).getCurrentSession();
+  const richtig = st.currentPrompt.correctOi;
+  const vorher = st.queue.length;
+  const falsch = [...document.querySelectorAll('.drill-card .mc-option')]
+    .find(b => Number(b.dataset.oi) !== richtig);
+  falsch.click();
+  await new Promise(r => setTimeout(r, 120));
+  const st2 = (await import('/core/state.js')).getCurrentSession();
+  return {
+    begruendung: !!document.querySelector('.drill-why'),
+    markiert: !!document.querySelector('.mc-option.mc-correct'),
+    gleicheLaenge: st2.queue.length === vorher,   // ans Ende gehängt, nicht entfernt
+  };
+});
+check('Falsche Antwort: Begründung erscheint, Aufgabe kommt erneut',
+  wrongRun.begruendung && wrongRun.markiert && wrongRun.gleicheLaenge, JSON.stringify(wrongRun));
+
+// Alle Aufgaben korrekt lösen, bis das Kapitel abgeschlossen ist
+for (let i = 0; i < 40; i++) {
+  const fertig = await page.evaluate(async () => {
+    const next = document.getElementById('gramNext');
+    const st = (await import('/core/state.js')).getCurrentSession();
+    if (st?.phase !== 'drill' && !next) return true;
+    if (document.querySelector('#mc-fb .correct, #mc-fb .incorrect')) { next?.click(); return false; }
+    if (st?.phase === 'drill' && st.currentPrompt) {
+      document.querySelector(`.drill-card .mc-option[data-oi="${st.currentPrompt.correctOi}"]`)?.click();
+      return false;
+    }
+    next?.click();
+    return false;
+  });
+  await page.waitForTimeout(150);
+  if (fertig) break;
+}
+const afterDrills = await page.evaluate(async () => {
+  const g = await import('/core/grammar.js');
+  const st = (await import('/core/state.js')).getCurrentSession();
+  return { gelesen: g.readChapters('basic-da').length, phase: st?.phase || 'keine' };
+});
+check('Kapitel wird erst nach den Übungen als gelesen abgehakt',
+  afterDrills.gelesen >= 1, JSON.stringify(afterDrills));
+await page.evaluate(() => document.getElementById('sessionBackBtn')?.click());
+await page.waitForTimeout(250);
 
 // ── Lernkurs-Durchlauf: Häppchen → Hören → Üben → Sprechen → Ende ──
 // Restliche Grammatik-Kapitel als gelesen markieren, dann die komplette
