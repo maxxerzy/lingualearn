@@ -193,6 +193,41 @@ async function menuView(action, backId) {
   check(`Zurück-Knopf „${action}" funktioniert`, opened && back, JSON.stringify({ opened, back }));
 }
 await menuView('stats', 'statsBackBtn');
+// ── 5a) Statistik: Schwächen-Themen (Zeilen dürfen nirgends klemmen) ──
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="stats"]'); await page.waitForTimeout(250);
+const weakUi = await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const deckId = document.getElementById('deckSelect').value;
+  const map = JSON.parse(localStorage.getItem('lingualearn_cards_' + u) || '{}');
+  for (const f of ['Hund', 'Katze', 'Pferd', 'Vogel'])
+    map[`${deckId}:${f}`] = { level: 1, correct: 1, wrong: 4, hist: '00010' };
+  for (const f of ['Rot', 'Blau', 'Grün', 'Gelb'])
+    map[`${deckId}:${f}`] = { level: 2, correct: 3, wrong: 2, hist: '10110' };
+  localStorage.setItem('lingualearn_cards_' + u, JSON.stringify(map));
+  (await import('/core/cardProgress.js')).reinitCardProgress();
+  (await import('/ui/gami.js')).renderStatsExtras();
+  const rows = [...document.querySelectorAll('#weakThemes .weak-theme')];
+  const clipped = rows.filter(r => r.scrollWidth > r.clientWidth + 1).length;
+  const outside = rows.filter(r => {
+    const b = r.getBoundingClientRect();
+    return b.left < -1 || b.right > window.innerWidth + 1;
+  }).length;
+  // Titel darf weder Quote noch „Üben" überlappen.
+  const overlap = rows.filter(r => {
+    const main = r.querySelector('.weak-theme__main').getBoundingClientRect();
+    const rate = r.querySelector('.weak-theme__rate').getBoundingClientRect();
+    const go = r.querySelector('.weak-theme__go').getBoundingClientRect();
+    return main.right > rate.left + 1 || rate.right > go.left + 1;
+  }).length;
+  return { rows: rows.length, clipped, outside, overlap,
+           hOverflow: document.documentElement.scrollWidth - window.innerWidth };
+});
+check('Statistik: Schwächen-Themen ohne Überlauf/Überlappung',
+  weakUi.rows === 2 && !weakUi.clipped && !weakUi.outside && !weakUi.overlap && weakUi.hOverflow <= 0,
+  JSON.stringify(weakUi));
+await click('#statsBackBtn'); await page.waitForTimeout(200);
+
 await menuView('arena', 'arenaBackBtn');
 await menuView('rewards', 'rewardsBackBtn');
 await menuView('settings', 'settingsBackBtn');

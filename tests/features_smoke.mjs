@@ -197,6 +197,99 @@ await page.evaluate(() => document.getElementById('reviewErrorsBtn')?.click()); 
 check('Fehler-Training startet', await page.evaluate(() => document.getElementById('session-title').textContent.includes('Fehler-Training')));
 await click('#sessionBackBtn'); await page.waitForTimeout(200);
 
+// ── Schwächen-Profil: Themen-Trefferquote statt Fehlerliste ──
+const weak = await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const map = JSON.parse(localStorage.getItem('lingualearn_cards_' + u) || '{}');
+  // „Tiere" hakt chronisch (20 %), „Farben" sitzt (100 %).
+  for (const f of ['Hund', 'Katze', 'Pferd', 'Vogel'])
+    map[`basic-da:${f}`] = { level: 1, correct: 1, wrong: 4, hist: '00010' };
+  for (const f of ['Rot', 'Blau', 'Grün', 'Gelb'])
+    map[`basic-da:${f}`] = { level: 3, correct: 5, wrong: 0, hist: '11111' };
+  // Zu dünne Datenlage → darf NICHT als Schwäche gelten.
+  map['basic-da:Käse'] = { level: 0, correct: 0, wrong: 2, hist: '00' };
+  localStorage.setItem('lingualearn_cards_' + u, JSON.stringify(map));
+  (await import('/core/cardProgress.js')).reinitCardProgress();
+  const w = await import('/core/weakness.js');
+  const profile = w.themeProfile('basic-da');
+  return {
+    top: profile[0]?.theme,
+    rate: profile[0] ? Math.round(profile[0].rate * 100) : null,
+    answers: profile[0]?.answers,
+    last: profile[profile.length - 1]?.theme,
+    themes: profile.map(t => t.theme),
+    pack: w.themePack('basic-da', 'Tiere'),
+    rec: w.weakestForRecommendation('basic-da')?.theme || null,
+  };
+});
+check('Schwächen-Profil: „Tiere" ist das schwächste Thema (20 %)',
+  weak.top === 'Tiere' && weak.rate === 20 && weak.answers === 20, JSON.stringify(weak));
+check('Schwächen-Profil: „Farben" ist das stärkste Thema', weak.last === 'Farben', JSON.stringify(weak.themes));
+check('Schwächen-Profil: zu dünne Datenlage („Essen") zählt nicht',
+  !weak.themes.includes('Essen'), JSON.stringify(weak.themes));
+check('Übungspaket enthält die 4 schwachen Wörter', weak.pack.length === 4, JSON.stringify(weak.pack));
+check('„Für dich" empfiehlt das schwache Thema', weak.rec === 'Tiere', String(weak.rec));
+
+// Trefferquote pro Wort inkl. der letzten fünf Antworten
+const acc = await page.evaluate(async () => {
+  const cp = await import('/core/cardProgress.js');
+  const first = cp.recordCardAnswer('smoke-hist', 'Test', true).hist;
+  for (let i = 0; i < 6; i++) cp.recordCardAnswer('smoke-hist', 'Test', false);
+  const after = cp.getCardState('smoke-hist', 'Test');
+  return { hist: after.hist, len: after.hist.length, first,
+           rate: Math.round(cp.cardAccuracy(after) * 100) };
+});
+check('Karte merkt sich die letzten fünf Antworten', acc.first === '1' && acc.hist === '00000' && acc.len === 5, JSON.stringify(acc));
+check('Wort-Trefferquote gewichtet die jüngsten Antworten', acc.rate === 8, JSON.stringify(acc));
+
+// Statistik zeigt die drei schwächsten Themen und startet die Runde
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(300);
+await page.evaluate(() => document.getElementById('userChipBtn').click());
+await page.evaluate(() => document.querySelector('[data-action="stats"]').click());
+await page.waitForTimeout(300);
+const weakUi = await page.evaluate(() => ({
+  rows: document.querySelectorAll('#weakThemes [data-weak-theme]').length,
+  listed: [...document.querySelectorAll('#weakThemes [data-weak-theme]')].map(e => e.dataset.weakTheme),
+  first: document.querySelector('#weakThemes [data-weak-theme]')?.dataset.weakTheme,
+  rate: document.querySelector('.weak-theme__rate')?.textContent,
+  bad: !!document.querySelector('.weak-theme--bad'),
+  hint: document.getElementById('weakHint').textContent,
+}));
+check('Statistik listet die schwächsten Themen mit Quote',
+  weakUi.rows >= 1 && weakUi.rows <= 3 && weakUi.first === 'Tiere' && weakUi.rate === '20%' && weakUi.bad,
+  JSON.stringify(weakUi));
+check('Statistik: fehlerfreie Themen stehen nicht unter den Schwächen',
+  !weakUi.listed.includes('Farben'), JSON.stringify(weakUi.listed));
+await page.evaluate(() => document.querySelector('#weakThemes [data-weak-theme]').click());
+await page.waitForTimeout(500);
+const weakRun = await page.evaluate(() => ({
+  learn: document.getElementById('view-learn').classList.contains('active'),
+  focus: document.getElementById('view-learn').classList.contains('session-active'),
+  title: document.getElementById('session-title').textContent,
+  mc: !!document.querySelector('.mc-card'),
+}));
+check('Ein Tippen startet sofort die Runde aus dem Thema',
+  weakRun.learn && weakRun.focus && /Schwäche üben — Tiere/.test(weakRun.title) && weakRun.mc,
+  JSON.stringify(weakRun));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// Fehlerliste wird ergänzt statt überschrieben
+const errLog = await page.evaluate(async () => {
+  const el = await import('/core/errorLog.js');
+  el.clearErrors('basic-el');
+  el.saveErrors('basic-el', ['A', 'B', 'C']);
+  el.saveErrors('basic-el', ['D']);                 // ergänzen, nicht ersetzen
+  const merged = el.getErrors('basic-el');
+  el.saveErrors('basic-el', [], ['A', 'B']);        // richtig beantwortet → raus
+  return { merged, pruned: el.getErrors('basic-el') };
+});
+check('Fehlerliste wird ergänzt statt überschrieben',
+  errLog.merged.length === 4 && errLog.merged.includes('A') && errLog.merged.includes('D'),
+  JSON.stringify(errLog.merged));
+check('Gelöste Fehler fallen wieder aus der Liste',
+  errLog.pruned.length === 2 && !errLog.pruned.includes('A') && errLog.pruned.includes('C'),
+  JSON.stringify(errLog.pruned));
+
 // ── Doppelt-oder-nichts: Kauf + Gewinn-Auswertung ──
 const wager = await page.evaluate(async () => {
   const g = await import('/core/gamification.js');

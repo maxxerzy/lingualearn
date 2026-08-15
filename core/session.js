@@ -11,6 +11,7 @@ import { showToast, toastAchievements, toastCosmetics, confettiBurst } from '../
 import { checkNewCosmetics } from './cosmetics.js';
 import { pendingQuestClaims } from './quests.js';
 import { saveErrors, clearErrors } from './errorLog.js';
+import { themePack } from './weakness.js';
 import { playCorrect, playWrong } from '../utils/feedback.js';
 import { speak, latinPron } from '../utils/speech.js';
 import { syncSoon } from './sync.js';
@@ -604,10 +605,13 @@ function recordAnswerEffects(session, card, isCorrect, ratingOrBool) {
   const comboBonus = isCorrect && session.combo >= 2 ? Math.min(session.combo - 1, 5) * 2 : 0;
   const { gained } = recordGameAnswer(isCorrect, { bonus: comboBonus, boost: !!session.boosted });
   session.xpFromAnswers = (session.xpFromAnswers || 0) + gained;
-  // Falsche Antworten fürs anschließende Fehler-Training merken.
+  // Falsche Antworten fürs anschließende Fehler-Training merken; richtige
+  // merken, damit sie am Ende aus der gespeicherten Fehlerliste fallen.
   if (!isCorrect) {
     session.wrongCards = session.wrongCards || [];
     if (!session.wrongCards.some(c => c.front === card.front)) session.wrongCards.push(card);
+  } else {
+    (session.rightFronts = session.rightFronts || new Set()).add(card.front);
   }
   renderGamiHeader();
   renderLearnWidgets();
@@ -742,7 +746,11 @@ function endSession() {
   const freshAchievements = checkAchievements();
 
   // Fehler für „Für dich"/Fehler-Training über Neustarts hinweg merken.
-  if (session?.wrongCards?.length) saveErrors(session.deckId, session.wrongCards.map(c => c.front));
+  if (session?.deckId) {
+    saveErrors(session.deckId,
+      (session.wrongCards || []).map(c => c.front),
+      [...(session.rightFronts || [])]);
+  }
   // Wiederholung einer abgeschlossenen Lektion → Knoten vergolden.
   if (session?.reviewLesson) {
     markGoldLesson(session.reviewLesson.deckId, session.reviewLesson.index);
@@ -2622,6 +2630,47 @@ export async function startErrorReviewByFronts(deckId, fronts) {
   clearErrors(deckId);
   document.getElementById('view-learn')?.classList.add('session-active');
   startErrorReview(deck, deckId, cards);
+  return true;
+}
+
+// Gezieltes Übungspaket zu einer Themen-Schwäche (Statistik / „Für dich").
+// Genommen werden die schwächsten Wörter des Themas — Multiple Choice mit
+// Wiederholungsschleife, damit falsch Beantwortetes in derselben Runde
+// nochmal drankommt. Zählt ganz normal für SRS, XP und Statistik.
+export async function startWeakThemePractice(deckId, theme) {
+  const fronts = themePack(deckId, theme);
+  if (!fronts.length) return false;
+  const deck = await loadDeck(deckId);
+  const order = new Map(fronts.map((f, i) => [f, i]));
+  const cards = (deck?.cards || [])
+    .filter(c => order.has(c.front))
+    .sort((a, b) => order.get(a.front) - order.get(b.front));
+  if (!cards.length) return false;
+
+  clearBlitzTimer();
+  const mode = cards.length >= 4 ? 'multiplechoice' : 'flashcard';
+  const shuffled = shuffleArray([...cards]);
+  const session = {
+    deck,
+    deckId,
+    cards: shuffled,
+    mode,
+    currentIndex: 0,
+    correctAnswers: 0,
+    gradedAnswers: 0,
+    totalCards: shuffled.length,
+    currentPrompt: null,
+    combo: 0,
+    boosted: false,
+    queue: [...shuffled],
+    reviewQueue: [],
+    reviewRound: 1,
+  };
+  setCurrentSession(session);
+  enterFocus(mode);
+  document.getElementById('session-title').textContent = `Schwäche üben — ${theme}`;
+  updateProgress();
+  if (mode === 'multiplechoice') showMultipleChoice(); else showFlashcard();
   return true;
 }
 
