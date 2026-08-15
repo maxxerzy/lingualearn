@@ -281,7 +281,14 @@ const courseStep = () => page.evaluate(async () => {
   if (!st || st.mode !== 'course') {
     return document.getElementById('learnArea')?.textContent.includes('geschafft') ? 'done' : 'gone';
   }
-  const phase = document.getElementById('gramNext') ? 'grammar' : st.phase;
+  const phase = st.phase === 'drill' ? 'drill'
+    : document.getElementById('gramNext') ? 'grammar' : st.phase;
+  // Grammatik-Übung: richtige Antwort über den gespeicherten Index.
+  if (st.phase === 'drill' && st.currentPrompt
+      && !document.querySelector('#mc-fb .correct, #mc-fb .incorrect')) {
+    document.querySelector(`.drill-card .mc-option[data-oi="${st.currentPrompt.correctOi}"]`)?.click();
+    return phase;
+  }
   const gram = document.getElementById('gramNext');
   if (gram) { gram.click(); return phase; }
   const next = document.getElementById('courseNext');
@@ -368,7 +375,7 @@ for (let i = 0; i < 220 && state !== 'done' && state !== 'gone'; i++) {
   state = await courseStep();
   await page.waitForTimeout(140);
 }
-const PHASES = ['grammar', 'teach', 'listen', 'words', 'match', 'speak', 'write', 'talk', 'dialog', 'hearing'];
+const PHASES = ['grammar', 'drill', 'teach', 'listen', 'words', 'match', 'speak', 'write', 'talk', 'dialog', 'hearing'];
 const missing = PHASES.filter(p => !seen.has(p));
 check('Lernkurs komplett durchlaufen (alle Phasen erreicht)',
   state === 'done' && missing.length === 0, `state=${state} fehlend=${missing.join(',') || '—'}`);

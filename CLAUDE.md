@@ -25,6 +25,10 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
   Lektionen liegen. Die Prüfung dazu steht in `tests/features_smoke.mjs`
   (`AUSGEBAUT` + `MAX_GAP`) — neue Kapitel immer an den inhaltlich
   passenden Lektionsblock hängen.
+- Jedes Kapitel bringt `drills` mit (≥4 Aufgaben: `q` mit `____`,
+  `options`, `answer`, `why`). Nach der letzten Seite fragt die Phase
+  `drill` sie ab; erst danach gilt das Kapitel als gelesen. Geprüft über
+  `MIT_UEBUNGEN` in `tests/features_smoke.mjs`.
 - Statische PWA ohne Build-Schritt, ES-Module: `core/` (Logik, Stores),
   `ui/` (Ansichten), `js/data/` (Decks, Themen, Grammatik), `utils/`.
 - Nutzerdaten liegen im localStorage pro Konto (`core/userStore.js`-Präfixe)

@@ -1185,9 +1185,11 @@ label {
 
   /* Lückensatz verdichten — mit Schriftzeichen (zh/ja) fällt der Satz
      höher aus als mit lateinischen Buchstaben. */
-  #view-learn.session-active .gap-sentence {
+  #view-learn.session-active .gap-sentence,
+  #view-learn.session-active .drill-question {
     font-size: 1.1rem; line-height: 1.45; padding: 10px 12px; margin: 4px auto 2px;
   }
+  #view-learn.session-active .drill-why { font-size: .82rem; margin-top: 8px; }
 
   /* Letzte Sicherung der No-Scroll-Garantie: Reicht die Höhe trotz aller
      Verdichtung nicht, deckelt fitLearnArea() in core/session.js die

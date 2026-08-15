@@ -3,6 +3,12 @@
 export const grammar = [
   {
     id: 'intro', title: 'So funktioniert Latein', icon: 'fa-compass', beforeLesson: 1,
+    drills: [
+      {"q": "In welche Richtung wird Latein hier gelernt?", "options": ["Latein → Deutsch", "Deutsch → Latein", "beides gleichzeitig", "je nach Lektion"], "answer": 0, "why": "Prüfungsrichtung: Du übersetzt immer aus dem Lateinischen."},
+      {"q": "Wie wird „Caesar“ klassisch ausgesprochen?", "options": ["Kaisar", "Zäsar", "Tschesar", "Sesar"], "answer": 0, "why": "c ist immer hart wie k, ae klingt wie deutsches ei."},
+      {"q": "Wie klingt „salve“ klassisch?", "options": ["salwe", "salfe", "salve wie im Deutschen", "saldschve"], "answer": 0, "why": "v wird wie deutsches w gesprochen."},
+      {"q": "Was trägt im Lateinischen die grammatische Information?", "options": ["die Endung", "die Wortstellung", "der Artikel", "die Betonung"], "answer": 0, "why": "Latein ist eine Sprache der Endungen — Artikel gibt es gar nicht."},
+    ],
     pages: [
       { heading: 'Eine Sprache der Endungen', html: `
         <p>Latein ist die Mutter der romanischen Sprachen und funktioniert grundlegend anders als Deutsch oder Englisch: <b>Die Endung eines Wortes sagt, welche Rolle es im Satz spielt.</b> Deshalb gibt es:</p>
@@ -28,6 +34,12 @@ export const grammar = [
   },
   {
     id: 'cases', title: 'Die sechs Fälle', icon: 'fa-layer-group', beforeLesson: 2,
+    drills: [
+      {"q": "Welcher Fall bezeichnet das Subjekt?", "options": ["Nominativ", "Akkusativ", "Dativ", "Ablativ"], "answer": 0, "why": "Wer oder was? — der Nominativ."},
+      {"q": "„des Königs“ steht im ____", "options": ["Genitiv", "Dativ", "Akkusativ", "Vokativ"], "answer": 0, "why": "Der Genitiv antwortet auf „wessen?“."},
+      {"q": "Mit welchem Fall spricht man jemanden an?", "options": ["Vokativ", "Nominativ", "Dativ", "Akkusativ"], "answer": 0, "why": "Der Vokativ ist der Anredefall: „Marce!“"},
+      {"q": "Wie viele Fälle hat das Lateinische?", "options": ["sechs", "vier", "fünf", "sieben"], "answer": 0, "why": "Nominativ, Genitiv, Dativ, Akkusativ, Ablativ und Vokativ."},
+    ],
     pages: [
       { heading: 'Wer, wessen, wem, wen?', html: `
         <p>Latein hat <b>sechs Fälle</b> (Kasus) — vier kennst du aus dem Deutschen, zwei sind neu:</p>
@@ -45,6 +57,12 @@ export const grammar = [
   },
   {
     id: 'declensions', title: 'Deklinationen: a, o & Konsonanten', icon: 'fa-table', beforeLesson: 4,
+    drills: [
+      {"q": "rosa gehört zur ____", "options": ["a-Deklination", "o-Deklination", "konsonantischen Deklination", "u-Deklination"], "answer": 0, "why": "Weibliche Wörter auf -a bilden die a-Deklination."},
+      {"q": "Wie lautet der Genitiv Singular von dominus?", "options": ["domini", "domino", "dominum", "dominis"], "answer": 0, "why": "o-Deklination: -us im Nominativ, -i im Genitiv."},
+      {"q": "templum ist ____", "options": ["sächlich", "männlich", "weiblich", "männlich und sächlich"], "answer": 0, "why": "Wörter auf -um sind Neutra der o-Deklination."},
+      {"q": "Woran erkennt man die Deklination eines Wortes?", "options": ["am Genitiv Singular", "am Nominativ", "an der Bedeutung", "an der Silbenzahl"], "answer": 0, "why": "Deshalb steht im Wörterbuch immer der Genitiv dabei: rex, regis."},
+    ],
     pages: [
       { heading: 'a-Deklination (weiblich): rosa', html: `
         <table class="gr-table">
@@ -81,6 +99,12 @@ export const grammar = [
   },
   {
     id: 'verbs', title: 'Konjugation: das Subjekt steckt im Verb', icon: 'fa-bolt', beforeLesson: 7,
+    drills: [
+      {"q": "voca____ (ich rufe)", "options": ["o", "s", "t", "mus"], "answer": 0, "why": "Die Endung -o kennzeichnet die 1. Person Singular."},
+      {"q": "voca____ (wir rufen)", "options": ["mus", "tis", "nt", "t"], "answer": 0, "why": "-mus steht für „wir“."},
+      {"q": "Welches Verb ist unregelmäßig?", "options": ["esse", "vocare", "monere", "audire"], "answer": 0, "why": "esse (sum, es, est …) folgt keinem der vier Muster."},
+      {"q": "Warum braucht Latein kein „ich“ oder „du“?", "options": ["die Endung nennt die Person", "es gibt keine Pronomen", "sie stehen am Satzende", "sie werden mitgedacht"], "answer": 0, "why": "Das Subjekt steckt im Verb — ego und tu betonen nur."},
+    ],
     pages: [
       { heading: 'Die Personalendungen', html: `
         <p>Lateinische Verben tragen ihr Subjekt in der <b>Endung</b> — Personalpronomen sind unnötig:</p>
@@ -117,6 +141,12 @@ export const grammar = [
   },
   {
     id: 'syntax', title: 'Satzbau & Übersetzen', icon: 'fa-arrows-left-right', beforeLesson: 11,
+    drills: [
+      {"q": "Wo steht das Prädikat im lateinischen Satz meistens?", "options": ["am Ende", "am Anfang", "an zweiter Stelle", "in der Mitte"], "answer": 0, "why": "Deshalb beginnt man beim Übersetzen hinten."},
+      {"q": "Womit fängt man beim Übersetzen an?", "options": ["mit dem Prädikat", "mit dem ersten Wort", "mit dem Objekt", "mit den Adjektiven"], "answer": 0, "why": "Das Prädikat nennt schon das Subjekt und gibt das Satzgerüst vor."},
+      {"q": "Braucht Latein einen Artikel?", "options": ["nein", "ja, immer", "nur im Nominativ", "nur bei Personen"], "answer": 0, "why": "Es gibt schlicht keinen — der Zusammenhang entscheidet."},
+      {"q": "Was verrät die Rolle eines Wortes im Satz?", "options": ["die Endung", "die Stellung", "die Länge", "die Betonung"], "answer": 0, "why": "Deshalb ist die Wortstellung im Lateinischen frei."},
+    ],
     pages: [
       { heading: 'Das Verb ans Ende — und zurück', html: `
         <p>Der typische lateinische Satz ist <b>Subjekt – Objekt – Verb</b> (SOV):</p>
@@ -136,6 +166,12 @@ export const grammar = [
   },
   {
     id: 'perfect', title: 'Perfekt & Imperfekt', icon: 'fa-clock-rotate-left', beforeLesson: 16,
+    drills: [
+      {"q": "„veni, vidi, vici“ steht im ____", "options": ["Perfekt", "Imperfekt", "Präsens", "Futur"], "answer": 0, "why": "Ein abgeschlossenes Ereignis — das Perfekt."},
+      {"q": "Welches Kennzeichen trägt das Imperfekt?", "options": ["-ba-", "-v-", "-er-", "-isse-"], "answer": 0, "why": "vocabam, vocabas, vocabat — das -ba- ist unverkennbar."},
+      {"q": "Welche Zeit beschreibt eine andauernde Handlung der Vergangenheit?", "options": ["Imperfekt", "Perfekt", "Plusquamperfekt", "Futur II"], "answer": 0, "why": "Das Imperfekt zeigt den Verlauf, das Perfekt das Ergebnis."},
+      {"q": "vocav____ (ich habe gerufen)", "options": ["i", "it", "imus", "erunt"], "answer": 0, "why": "Perfektstamm vocav- plus die Perfektendung -i."},
+    ],
     pages: [
       { heading: 'Das Perfekt: veni, vidi, vici', html: `
         <p>Das Perfekt erzählt <b>abgeschlossene</b> Ereignisse — es hat eigene Endungen am Perfektstamm:</p>
@@ -161,6 +197,12 @@ export const grammar = [
   },
   {
     id: 'pronouns', title: 'Pronomen: is, hic, ille', icon: 'fa-hand-point-right', beforeLesson: 21,
+    drills: [
+      {"q": "Wofür steht „se“?", "options": ["auf das Subjekt zurück", "auf eine andere Person", "auf eine Sache", "auf den Sprecher"], "answer": 0, "why": "se lavat — er wäscht sich selbst; eum lavat — er wäscht einen anderen."},
+      {"q": "„hic“ zeigt auf ____", "options": ["etwas Nahes", "etwas Fernes", "etwas Unbekanntes", "den Sprecher"], "answer": 0, "why": "hic = dieser hier, ille = jener dort."},
+      {"q": "Welches Pronomen ersetzt das fehlende „er/sie/es“?", "options": ["is, ea, id", "hic, haec, hoc", "ipse, ipsa, ipsum", "qui, quae, quod"], "answer": 0, "why": "is, ea, id ist die neutrale Form ohne Zeigegeste."},
+      {"q": "„Caesar ipse“ heißt ____", "options": ["Caesar selbst", "dieser Caesar", "derselbe Caesar", "Caesars"], "answer": 0, "why": "ipse betont die Person."},
+    ],
     pages: [
       { heading: 'Die Personalpronomen', html: `
         <p>Weil die Endung das Subjekt schon nennt, stehen <i>ego</i> und <i>tu</i> nur zur <b>Betonung</b>: <i>ego venio</i> = „<b>ich</b> komme (nicht du)".</p>
@@ -186,6 +228,12 @@ export const grammar = [
   },
   {
     id: 'adjectives', title: 'Adjektive & KNG-Kongruenz', icon: 'fa-palette', beforeLesson: 27,
+    drills: [
+      {"q": "Worin muss ein Adjektiv mit seinem Substantiv übereinstimmen?", "options": ["Kasus, Numerus, Genus", "nur im Genus", "nur im Kasus", "in der Deklination"], "answer": 0, "why": "KNG-Kongruenz — die Endungen müssen dabei nicht gleich aussehen."},
+      {"q": "nauta bon____ (der gute Seemann)", "options": ["us", "a", "um", "i"], "answer": 0, "why": "nauta ist männlich, obwohl es auf -a endet — das Adjektiv richtet sich nach dem Geschlecht."},
+      {"q": "reg____ bon____ (des guten Königs)", "options": ["is / i", "em / um", "i / o", "es / i"], "answer": 0, "why": "Genitiv Singular: regis boni."},
+      {"q": "Welche Adjektive folgen der 3. Deklination?", "options": ["fortis, forte", "bonus, bona, bonum", "magnus, magna, magnum", "longus, longa, longum"], "answer": 0, "why": "fortis (tapfer) und omnis (jeder) gehören zur zweiten großen Gruppe."},
+    ],
     pages: [
       { heading: 'Kasus, Numerus, Genus — alle drei müssen stimmen', html: `
         <p>Ein Adjektiv übernimmt <b>Fall, Zahl und Geschlecht</b> seines Substantivs. Die Endungen müssen dabei nicht gleich <i>aussehen</i>:</p>
@@ -198,6 +246,12 @@ export const grammar = [
   },
   {
     id: 'futures', title: 'Futur & Plusquamperfekt', icon: 'fa-forward', beforeLesson: 34,
+    drills: [
+      {"q": "Welches Zeichen trägt das Futur der a-Konjugation?", "options": ["-b-", "-a-", "-er-", "-isse-"], "answer": 0, "why": "amabo, amabis, amabit."},
+      {"q": "vener____ (ich war gekommen)", "options": ["am", "o", "it", "o eram"], "answer": 0, "why": "Perfektstamm + -eram ergibt das Plusquamperfekt."},
+      {"q": "„ero“ heißt ____", "options": ["ich werde sein", "ich war", "ich bin", "ich wäre"], "answer": 0, "why": "esse hat ein eigenes Futur: ero, eris, erit."},
+      {"q": "Warum ist „regam“ zweideutig?", "options": ["Futur oder Konjunktiv", "Perfekt oder Futur", "Aktiv oder Passiv", "Singular oder Plural"], "answer": 0, "why": "Der Zusammenhang entscheidet — ein klassischer Prüfungsstolperstein."},
+    ],
     pages: [
       { heading: 'Zwei Wege ins Futur', html: `
         <p>Welches Zeichen das Futur trägt, hängt von der Konjugation ab:</p>
@@ -217,6 +271,12 @@ export const grammar = [
   },
   {
     id: 'pronouns-rel', title: 'Der Relativsatz', icon: 'fa-code-branch', beforeLesson: 43,
+    drills: [
+      {"q": "Woher nimmt das Relativpronomen seinen Fall?", "options": ["aus dem Nebensatz", "vom Bezugswort", "vom Hauptsatz", "vom Prädikat"], "answer": 0, "why": "Zahl und Geschlecht kommen vom Bezugswort, der Fall aus dem eigenen Satz."},
+      {"q": "Vir, ____ video, venit. (Der Mann, den ich sehe, kommt.)", "options": ["quem", "qui", "cuius", "quo"], "answer": 0, "why": "Akkusativ, weil er Objekt von video ist — männlich Singular vom vir."},
+      {"q": "Wie lautet der Genitiv von qui?", "options": ["cuius", "cui", "quem", "quo"], "answer": 0, "why": "cuius gilt für alle drei Geschlechter."},
+      {"q": "„qui“ am Satzanfang nach einem Punkt ist meist ____", "options": ["ein relativer Satzanschluss", "ein Fragewort", "ein Fehler", "ein Nominativ"], "answer": 0, "why": "Dann übersetzt man „und dieser …“."},
+    ],
     pages: [
       { heading: 'qui, quae, quod', html: `
         <table class="grammar-table">
@@ -234,6 +294,12 @@ export const grammar = [
   },
   {
     id: 'aci', title: 'Der AcI — die wichtigste Konstruktion', icon: 'fa-quote-left', beforeLesson: 50,
+    drills: [
+      {"q": "Scio te venire. heißt ____", "options": ["Ich weiß, dass du kommst.", "Ich weiß dich kommen.", "Ich will, dass du kommst.", "Ich sehe dich kommen."], "answer": 0, "why": "Der Akkusativ wird im Deutschen zum Subjekt des dass-Satzes."},
+      {"q": "Welcher Infinitiv drückt Vorzeitigkeit aus?", "options": ["venisse", "venire", "venturum esse", "veniendum"], "answer": 0, "why": "Perfekt-Infinitiv: … dass er gekommen ist."},
+      {"q": "Welches Verb löst KEINEN AcI aus?", "options": ["ire", "dicere", "putare", "audire"], "answer": 0, "why": "Auslöser sind Verben des Sagens, Meinens und Wahrnehmens."},
+      {"q": "Woraus besteht ein AcI?", "options": ["Akkusativ + Infinitiv", "Ablativ + Partizip", "Nominativ + Infinitiv", "Dativ + Gerundium"], "answer": 0, "why": "Daher der Name."},
+    ],
     pages: [
       { heading: 'Akkusativ mit Infinitiv', html: `
         <p>Nach Verben des Sagens, Meinens und Wahrnehmens baut Latein keinen dass-Satz, sondern hängt <b>Akkusativ + Infinitiv</b> an:</p>
@@ -253,6 +319,12 @@ export const grammar = [
   },
   {
     id: 'ablatives', title: 'Ablativ absolutus & Partizipien', icon: 'fa-layer-group', beforeLesson: 57,
+    drills: [
+      {"q": "Urbe capta, milites redierunt. — Wie übersetzt man den Anfang?", "options": ["Nachdem die Stadt erobert war", "Die eroberte Stadt", "Mit der eroberten Stadt", "Für die eroberte Stadt"], "answer": 0, "why": "Ablativus absolutus: Substantiv und Partizip im Ablativ, ohne Anschluss an den Rest."},
+      {"q": "In welchem Fall stehen beide Teile des Abl. abs.?", "options": ["Ablativ", "Akkusativ", "Genitiv", "Dativ"], "answer": 0, "why": "Daher der Name."},
+      {"q": "vocatus, -a, -um ist ____", "options": ["vorzeitig und passiv", "gleichzeitig und aktiv", "nachzeitig und aktiv", "gleichzeitig und passiv"], "answer": 0, "why": "Das PPP: gerufen (worden)."},
+      {"q": "Welches Partizip ist gleichzeitig und aktiv?", "options": ["PPA", "PPP", "PFA", "Gerundivum"], "answer": 0, "why": "vocans, vocantis — rufend."},
+    ],
     pages: [
       { heading: 'Zwei Wörter, ein ganzer Nebensatz', html: `
         <p>Ein Substantiv und ein Partizip, beide im <b>Ablativ</b>, ohne Bezug zum Rest des Satzes — das ist der Ablativus absolutus:</p>
@@ -271,6 +343,12 @@ export const grammar = [
   },
   {
     id: 'subjunctive', title: 'Der Konjunktiv', icon: 'fa-wand-sparkles', beforeLesson: 66,
+    drills: [
+      {"q": "Wie bildet man den Imperfekt-Konjunktiv?", "options": ["Infinitiv + Endung", "Stamm + -e-", "Perfektstamm + -eri-", "Stamm + -ba-"], "answer": 0, "why": "vocare + t = vocaret. Die leichteste Konjunktivform."},
+      {"q": "„Gaudeamus!“ heißt ____", "options": ["Lasst uns fröhlich sein!", "Wir sind fröhlich.", "Wir waren fröhlich.", "Seid fröhlich!"], "answer": 0, "why": "Der Konjunktiv im Hauptsatz drückt eine Aufforderung aus."},
+      {"q": "Welches Bindewort verlangt den Konjunktiv?", "options": ["ut", "et", "sed", "nam"], "answer": 0, "why": "ut, ne, cum und si ziehen den Konjunktiv nach sich."},
+      {"q": "Welches Zeichen trägt der Plusquamperfekt-Konjunktiv?", "options": ["-isse-", "-eri-", "-e-", "-ba-"], "answer": 0, "why": "vocavisset."},
+    ],
     pages: [
       { heading: 'Woran du ihn erkennst', html: `
         <table class="grammar-table">
@@ -292,6 +370,12 @@ export const grammar = [
   },
   {
     id: 'comparison', title: 'Steigern & vergleichen', icon: 'fa-ranking-star', beforeLesson: 75,
+    drills: [
+      {"q": "altus → ____ (höher)", "options": ["altior", "altissimus", "magis altus", "altus quam"], "answer": 0, "why": "Der Komparativ endet auf -ior."},
+      {"q": "bonus → ____ (besser)", "options": ["melior", "bonior", "magis bonus", "optimus"], "answer": 0, "why": "Unregelmäßig: bonus – melior – optimus."},
+      {"q": "Marcus est altior ____. (als Titus)", "options": ["Tito", "Titus", "Titum", "Titi"], "answer": 0, "why": "Der Vergleich steht im Ablativ — oder mit quam plus Nominativ."},
+      {"q": "„quam celerrime“ heißt ____", "options": ["so schnell wie möglich", "schneller als", "am schnellsten", "wie schnell"], "answer": 0, "why": "quam vor einem Superlativ bedeutet „möglichst“."},
+    ],
     pages: [
       { heading: '-ior und -issimus', html: `
         <p class="grammar-example">altus → alt<b>ior</b> → alt<b>issimus</b><br><span>hoch – höher – am höchsten</span></p>
@@ -314,6 +398,12 @@ export const grammar = [
   },
   {
     id: 'passive', title: 'Passiv & Deponentien', icon: 'fa-arrows-turn-right', beforeLesson: 86,
+    drills: [
+      {"q": "voca____ (er wird gerufen)", "options": ["tur", "t", "nt", "mus"], "answer": 0, "why": "Die Passivendung der 3. Person Singular ist -tur."},
+      {"q": "Wie bildet man das Perfekt Passiv?", "options": ["PPP + esse", "Perfektstamm + -or", "Stamm + -tur", "PPA + esse"], "answer": 0, "why": "vocatus est — er ist gerufen worden."},
+      {"q": "„loquor“ heißt ____", "options": ["ich spreche", "ich werde gesprochen", "er spricht", "sprich!"], "answer": 0, "why": "Ein Deponens: passiv gebaut, aktiv gemeint."},
+      {"q": "Welches Verb ist ein Deponens?", "options": ["sequi", "vocare", "monere", "regere"], "answer": 0, "why": "sequi (folgen), ebenso hortari, conari, uti."},
+    ],
     pages: [
       { heading: 'Die Passiv-Endungen', html: `
         <table class="grammar-table">
@@ -337,6 +427,12 @@ export const grammar = [
   },
   {
     id: 'numerals', title: 'Zahlen, Zeit & Maße', icon: 'fa-clock', beforeLesson: 97,
+    drills: [
+      {"q": "Welche Grundzahlen werden gebeugt?", "options": ["unus, duo, tres", "alle", "nur unus", "keine"], "answer": 0, "why": "Ab quattuor bleiben sie unverändert."},
+      {"q": "„tertia hora“ bedeutet ____", "options": ["zur dritten Stunde", "drei Stunden lang", "die dritte Stunde ist", "nach drei Stunden"], "answer": 0, "why": "Ablativ = Zeitpunkt."},
+      {"q": "„tres horas“ bedeutet ____", "options": ["drei Stunden lang", "zur dritten Stunde", "drei Uhr", "in drei Stunden"], "answer": 0, "why": "Akkusativ = Zeitdauer."},
+      {"q": "„Romae“ heißt ____", "options": ["in Rom", "nach Rom", "von Rom", "Roms"], "answer": 0, "why": "Lokativ für den Ort; Romam wäre die Richtung."},
+    ],
     pages: [
       { heading: 'Zählen auf Latein', html: `
         <table class="grammar-table">
@@ -362,6 +458,12 @@ export const grammar = [
   },
   {
     id: 'reading', title: 'Lange Sätze knacken', icon: 'fa-magnifying-glass', beforeLesson: 105,
+    drills: [
+      {"q": "Womit beginnt man beim Zerlegen eines langen Satzes?", "options": ["mit dem Prädikat", "mit dem ersten Wort", "mit den Adjektiven", "mit dem Objekt"], "answer": 0, "why": "Seine Endung nennt schon das Subjekt."},
+      {"q": "Zwei Ablative ohne Anschluss deuten auf ____", "options": ["einen Ablativus absolutus", "einen AcI", "einen Relativsatz", "ein Passiv"], "answer": 0, "why": "Substantiv plus Partizip, beide im Ablativ."},
+      {"q": "Ein Akkusativ mit Infinitiv nach „dicit“ ist ____", "options": ["ein AcI", "ein Relativsatz", "ein Abl. abs.", "ein Imperativ"], "answer": 0, "why": "Verben des Sagens lösen den AcI aus."},
+      {"q": "Was macht man mit den übrigen Wörtern?", "options": ["jedem einen Baustein zuordnen", "sie weglassen", "frei übersetzen", "raten"], "answer": 0, "why": "Jedes Wort gehört zu genau einem Satzteil."},
+    ],
     pages: [
       { heading: 'Eine Reihenfolge, die immer funktioniert', html: `
         <p>Ein lateinischer Satz wird nicht von links nach rechts gelesen, sondern <b>zerlegt</b>:</p>
