@@ -31,7 +31,7 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
   kennenlernen → Hören → Üben (MC/Vergleich) → Paare verbinden →
   Sprechen → Schreiben (NUR Bausteine — nie ein Tastatur-Eingabefeld,
   da Zielsprachen-Tastaturen auf den Geräten fehlen) → Konversation →
-  Dialog (Antwort wählen) → Sätze (Lücke/Satzbau/Bedeutung)) und
+  Dialog (Antwort wählen) → Satz hören → Sätze (Lücke/Satzbau/Bedeutung)) und
   **Karteikarten** (SRS). Alle weiteren Übungsformen existieren nur
   als Kurs-Phasen.
 - Latein wird überall in Prüfungsrichtung gelernt (Latein → Deutsch,

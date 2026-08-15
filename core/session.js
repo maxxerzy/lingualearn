@@ -1026,7 +1026,17 @@ function courseBaseSteps(session) {
     + (session.reviewCards?.length || 0)
     + (session.talkCards?.length || 0)
     + (session.talkCards || []).filter(p => p.reply).length   // Dialog-Runde
-    + (session.lessonCards.length >= 4 ? 1 : 0);   // Paare-Brett
+    + (session.lessonCards.length >= 4 ? 1 : 0)               // Paare-Brett
+    + Math.min(COURSE_HEARING, hearingPool(session).length);  // Satz-Hören
+}
+
+// Satz-Hören: Karten der Lektion, die einen Beispielsatz mitbringen.
+// Anders als die Satz-Phase verlangt das KEIN vollständig bekanntes
+// Vokabular — beim Hören darf man aus dem Zusammenhang schließen, genau
+// wie im echten Gespräch.
+const COURSE_HEARING = 2;
+function hearingPool(session) {
+  return session.lessonCards.filter(c => c.example && c.exampleDE);
 }
 
 
@@ -1200,6 +1210,23 @@ function showCourseStep() {
 
   if (session.phase === 'dialog') {
     if (session.queue.length === 0) {
+      // Satz-Hören: ganze Sätze verstehen, nicht nur einzelne Wörter.
+      session.phase = 'hearing';
+      const pool = shuffleArray(hearingPool(session)).slice(0, COURSE_HEARING);
+      session.queue = pool;
+      // Variante pro Karte vorab festlegen — bei falscher Antwort wandert
+      // die Karte nach hinten, ein Index-basierter Wechsel würde springen.
+      session.hearVariants = {};
+      pool.forEach((c, i) => { session.hearVariants[c.front] = i % 2 === 0 ? 'meaning' : 'gap'; });
+      setCurrentSession(session);
+    } else {
+      renderCourseDialog(session);
+      return;
+    }
+  }
+
+  if (session.phase === 'hearing') {
+    if (session.queue.length === 0) {
       // Übergang zur Satz-Phase: nur Sätze aufnehmen, deren Wörter ALLE
       // schon gelernt sind (echtes Basic 101 — keine unbekannten Wörter).
       session.phase = 'sentences';
@@ -1210,7 +1237,7 @@ function showCourseStep() {
       setCurrentSession(session);
       updateProgress();
     } else {
-      renderCourseDialog(session);
+      renderCourseHearing(session);
       return;
     }
   }
@@ -1955,6 +1982,122 @@ function renderCourseTalk(session) {
 
 // Konversations-Bausteine sind keine Deck-Vokabeln — sie zählen für den
 // Fortschritt und XP, aber nicht für den Karten-Lernstand (SRS).
+// Phase „Satz hören": Verstehen scheitert im echten Gespräch selten am
+// einzelnen Wort, sondern am Tempo eines ganzen Satzes. Zwei Varianten:
+//   meaning — Satz nur HÖREN (kein Text!) und die Bedeutung wählen.
+//   gap     — Satz hören, den Lückentext mitlesen, das fehlende Wort wählen.
+function renderCourseHearing(session) {
+  const card = session.queue[0];
+  const lang = session.deck.language;
+  const learnArea = document.getElementById('learnArea');
+  const badge = `<i class="fas fa-headphones"></i> Satz hören — noch ${session.queue.length}`;
+
+  // Für die Bedeutungs-Variante braucht es zwei echte Alternativsätze.
+  const alts = shuffleArray(session.knownCards.filter(c => c.exampleDE && c.exampleDE !== card.exampleDE)).slice(0, 2);
+  const gapped = findGapSentence(card.example, card.back, lang);
+  let variant = session.hearVariants?.[card.front] || 'meaning';
+  if (variant === 'meaning' && alts.length < 2) variant = 'gap';
+  if (variant === 'gap' && !gapped) variant = alts.length >= 2 ? 'meaning' : null;
+  if (!variant) {                       // weder das eine noch das andere möglich
+    session.queue.shift();
+    setCurrentSession(session);
+    showCourseStep();
+    return;
+  }
+
+  const play = () => speakWord(card.example, lang);
+
+  if (variant === 'meaning') {
+    const options = shuffleArray([
+      { text: card.exampleDE, correct: true },
+      ...alts.map(c => ({ text: c.exampleDE, correct: false })),
+    ]);
+    const correctIdx = options.findIndex(o => o.correct);
+    learnArea.innerHTML = `
+      <div class="mc-card hear-card">
+        ${courseBadge(badge)}
+        <button type="button" class="listen-play" id="hearPlay" title="Nochmal anhören">
+          <i class="fas fa-volume-up"></i>
+        </button>
+        <p class="prompt">Was bedeutet dieser Satz?</p>
+        <div class="mc-options" role="group" aria-label="Antwortmöglichkeiten">
+          ${options.map((o, i) => `
+            <button type="button" class="mc-option" data-idx="${i}" aria-keyshortcuts="${i + 1} ${'abc'[i]}">
+              <span class="mc-key" aria-hidden="true">${'ABC'[i]}</span>
+              <span class="mc-text">${escHtml(o.text)}</span>
+            </button>`).join('')}
+        </div>
+        <div id="mc-fb"></div>
+      </div>
+    `;
+    session.currentPrompt = { card, variant, correctIdx };
+    setCurrentSession(session);
+    play();
+    document.getElementById('hearPlay').addEventListener('click', play);
+
+    learnArea.querySelectorAll('.mc-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.dataset.idx);
+        const isCorrect = idx === correctIdx;
+        learnArea.querySelectorAll('.mc-option').forEach((b, i) => {
+          b.disabled = true;
+          if (i === correctIdx) b.classList.add('mc-correct');
+          else if (i === idx) b.classList.add('mc-wrong');
+        });
+        if (isCorrect) playCorrect(); else playWrong();
+        session.currentPrompt = null;
+        courseGrade(session, card, isCorrect);
+        // Erst jetzt den Satz zeigen — vorher wäre es Lesen, nicht Hören.
+        document.getElementById('mc-fb').innerHTML = `
+          ${isCorrect
+            ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig gehört!</p></div>'
+            : '<div class="incorrect" style="margin-top:14px"><p>❌ Nicht ganz — hör noch mal hin.</p></div>'}
+          <p class="hear-reveal">${escHtml(card.example)}</p>
+          <div class="actions" style="margin-top:12px">
+            <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+          </div>
+        `;
+        document.getElementById('courseNext').addEventListener('click', showCourseStep);
+      });
+    });
+    return;
+  }
+
+  // Variante „gap": Lücke hören und lesen.
+  const options = buildMCOptions(card, session.knownCards);
+  learnArea.innerHTML = `
+    <div class="mc-card hear-card">
+      ${courseBadge(badge)}
+      <button type="button" class="listen-play" id="hearPlay" title="Nochmal anhören">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <div class="gap-sentence">${escHtml(gapped)}</div>
+      <p class="prompt">Welches Wort hast du gehört?</p>
+      ${mcOptionsMarkup(options, { textOf: o => o.back })}
+    </div>
+  `;
+  session.currentPrompt = { card, variant, options };
+  setCurrentSession(session);
+  play();
+  document.getElementById('hearPlay').addEventListener('click', play);
+
+  learnArea.querySelectorAll('.mc-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const { isCorrect } = markMcAnswer(options, Number(btn.dataset.idx), card);
+      session.currentPrompt = null;
+      courseGrade(session, card, isCorrect);
+      document.getElementById('mc-fb').innerHTML = `
+        ${courseFeedbackHtml(isCorrect, card, '', card.back)}
+        <p class="hear-reveal">${escHtml(card.example)}</p>
+        <div class="actions" style="margin-top:12px">
+          <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
+        </div>
+      `;
+      document.getElementById('courseNext').addEventListener('click', showCourseStep);
+    });
+  });
+}
+
 // Phase „Dialog": eine der eben gelernten Wendungen hören und die
 // passende Antwort wählen — das ist der Moment, in dem aus Nachsprechen
 // echte Konversation wird. Falsche Wahl → die Frage kommt nochmal.

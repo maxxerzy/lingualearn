@@ -288,6 +288,17 @@ const courseStep = () => page.evaluate(async () => {
   if (next) { next.click(); return phase; }
   if (st.phase === 'speak') { document.getElementById('courseSpeakOk')?.click(); return phase; }
   if (st.phase === 'talk') { document.getElementById('talkOk')?.click(); return phase; }
+  // Satz hören: Bedeutung über den Index, Lücke über das Kartenwort.
+  if (st.phase === 'hearing' && st.currentPrompt) {
+    if (st.currentPrompt.variant === 'meaning') {
+      document.querySelector(`.mc-option[data-idx="${st.currentPrompt.correctIdx}"]`)?.click();
+    } else {
+      const opts = [...document.querySelectorAll('.mc-option')];
+      const i = opts.findIndex(o => o.querySelector('.mc-text')?.textContent.trim() === st.currentPrompt.card.back);
+      opts[i >= 0 ? i : 0].click();
+    }
+    return phase;
+  }
   // Dialog-Runde: passende Antwort über den gespeicherten Index wählen.
   if (st.phase === 'dialog' && st.currentPrompt && st.currentPrompt.correctIdx !== undefined) {
     document.querySelector(`.mc-option[data-idx="${st.currentPrompt.correctIdx}"]`)?.click();
@@ -357,7 +368,7 @@ for (let i = 0; i < 220 && state !== 'done' && state !== 'gone'; i++) {
   state = await courseStep();
   await page.waitForTimeout(140);
 }
-const PHASES = ['grammar', 'teach', 'listen', 'words', 'match', 'speak', 'write', 'talk', 'dialog'];
+const PHASES = ['grammar', 'teach', 'listen', 'words', 'match', 'speak', 'write', 'talk', 'dialog', 'hearing'];
 const missing = PHASES.filter(p => !seen.has(p));
 check('Lernkurs komplett durchlaufen (alle Phasen erreicht)',
   state === 'done' && missing.length === 0, `state=${state} fehlend=${missing.join(',') || '—'}`);
