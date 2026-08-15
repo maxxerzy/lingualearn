@@ -3,6 +3,12 @@
 export const grammar = [
   {
     id: 'intro', title: 'So funktioniert Französisch', icon: 'fa-compass', beforeLesson: 1,
+    drills: [
+      {"q": "Wie spricht man das Endungs-s in „amis“?", "options": ["gar nicht", "wie s", "wie z", "wie sch"], "answer": 0, "why": "Endkonsonanten bleiben im Französischen meist stumm."},
+      {"q": "Was ist eine Liaison?", "options": ["Bindung zum nächsten Wort", "eine Betonung", "ein Akzent", "eine Verneinung"], "answer": 0, "why": "les_amis wird als „lesami“ gesprochen."},
+      {"q": "Wie viele Geschlechter hat das Französische?", "options": ["zwei", "drei", "eins", "vier"], "answer": 0, "why": "Männlich und weiblich — ein Neutrum gibt es nicht."},
+      {"q": "Wo liegt die Betonung im französischen Wort?", "options": ["auf der letzten Silbe", "auf der ersten", "auf der zweiten", "wechselnd"], "answer": 0, "why": "Immer am Ende der Wortgruppe."},
+    ],
     pages: [
       { heading: 'Schreiben ≠ Sprechen', html: `
         <p>Französisch ist eine <b>romanische Sprache</b>. Ihre größte Eigenheit: Die Schrift bewahrt alte Formen, die man längst nicht mehr spricht — <b>viele Endungen sind stumm</b>. <i>parlent</i> (sie sprechen) klingt exakt wie <i>parle</i> (er spricht): „parl".</p>
@@ -26,6 +32,12 @@ export const grammar = [
   },
   {
     id: 'nouns', title: 'Artikel & Substantive', icon: 'fa-cube', beforeLesson: 2,
+    drills: [
+      {"q": "____ livre (ein Buch)", "options": ["un", "une", "des", "le"], "answer": 0, "why": "livre ist männlich."},
+      {"q": "____ maison (ein Haus)", "options": ["une", "un", "des", "la"], "answer": 0, "why": "maison ist weiblich."},
+      {"q": "Wie lautet der Plural von „le livre“?", "options": ["les livres", "les livre", "des livre", "la livres"], "answer": 0, "why": "Artikel und Substantiv bekommen beide den Plural."},
+      {"q": "Was passiert mit „le“ vor einem Vokal?", "options": ["es wird l’", "es bleibt", "es wird la", "es fällt weg"], "answer": 0, "why": "l’ami, l’heure — die Elision."},
+    ],
     pages: [
       { heading: 'le, la, les', html: `
         <p>Jedes Substantiv ist <b>männlich oder weiblich</b>. Der Artikel gehört immer dazu:</p>
@@ -41,6 +53,12 @@ export const grammar = [
   },
   {
     id: 'verbs', title: 'Verben: -er, être & avoir', icon: 'fa-bolt', beforeLesson: 4,
+    drills: [
+      {"q": "je parl____ (ich spreche)", "options": ["e", "es", "ons", "ent"], "answer": 0, "why": "Die Endung der 1. Person Singular bei -er-Verben."},
+      {"q": "nous parl____ (wir sprechen)", "options": ["ons", "ez", "ent", "es"], "answer": 0, "why": "-ons steht für „wir“."},
+      {"q": "j’____ (ich habe)", "options": ["ai", "es", "suis", "as"], "answer": 0, "why": "avoir: j’ai, tu as, il a."},
+      {"q": "je ____ (ich bin)", "options": ["suis", "es", "ai", "sont"], "answer": 0, "why": "être: je suis, tu es, il est."},
+    ],
     pages: [
       { heading: 'Die große -er-Familie', html: `
         <p>Rund 90 % aller Verben enden auf <b>-er</b> und werden gleich konjugiert. Wichtig: Vier der sechs Formen <b>klingen identisch</b>:</p>
@@ -70,6 +88,12 @@ export const grammar = [
   },
   {
     id: 'syntax', title: 'Satzbau', icon: 'fa-arrows-left-right', beforeLesson: 7,
+    drills: [
+      {"q": "Wie lautet die Grundordnung im französischen Satz?", "options": ["Subjekt – Verb – Objekt", "Verb – Subjekt – Objekt", "Objekt – Verb – Subjekt", "Subjekt – Objekt – Verb"], "answer": 0, "why": "Je mange une pomme."},
+      {"q": "Wo steht das Adverb meistens?", "options": ["nach dem Verb", "vor dem Verb", "am Satzanfang", "am Satzende"], "answer": 0, "why": "Je parle bien français."},
+      {"q": "Braucht Französisch immer ein Subjekt?", "options": ["ja", "nein", "nur in Fragen", "nur in der Vergangenheit"], "answer": 0, "why": "Anders als im Spanischen steht das Pronomen immer da."},
+      {"q": "Il ____ beau aujourd’hui.", "options": ["fait", "est", "a", "va"], "answer": 0, "why": "Wetter wird mit faire gebildet."},
+    ],
     pages: [
       { heading: 'Feste Reihenfolge: Subjekt–Verb–Objekt', html: `
         <p>Weil man Fälle nicht mehr hört, hält Französisch die Wortstellung <b>streng</b> ein: <b>Subjekt – Verb – Objekt</b>, auch wenn etwas anderes vorn steht (kein V2 wie im Deutschen!):</p>
@@ -82,6 +106,12 @@ export const grammar = [
   },
   {
     id: 'questions', title: 'Fragen & Verneinung', icon: 'fa-circle-question', beforeLesson: 11,
+    drills: [
+      {"q": "Welche Frageform ist am förmlichsten?", "options": ["die Inversion", "est-ce que", "die Betonung", "alle gleich"], "answer": 0, "why": "Parlez-vous français ? klingt gehobener als Est-ce que vous parlez … ?"},
+      {"q": "____ tu viens ? (Kommst du?)", "options": ["Est-ce que", "Qui", "Quoi", "Où"], "answer": 0, "why": "est-ce que macht aus jeder Aussage eine Frage."},
+      {"q": "____ habites-tu ? (Wo wohnst du?)", "options": ["Où", "Qui", "Quand", "Comment"], "answer": 0, "why": "où fragt nach dem Ort."},
+      {"q": "Je ne parle ____ anglais.", "options": ["pas", "rien", "jamais", "plus"], "answer": 0, "why": "ne … pas umschließt das gebeugte Verb."},
+    ],
     pages: [
       { heading: 'Drei Wege zu fragen', html: `
         <p>Vom Alltag zur Schriftsprache:</p>
@@ -104,6 +134,12 @@ export const grammar = [
   },
   {
     id: 'past', title: 'Vergangenheit & Zukunft', icon: 'fa-clock-rotate-left', beforeLesson: 16,
+    drills: [
+      {"q": "J’____ mangé. (Ich habe gegessen.)", "options": ["ai", "suis", "est", "as"], "answer": 0, "why": "Die meisten Verben bilden das Perfekt mit avoir."},
+      {"q": "Elle est allé____ à Paris.", "options": ["e", "", "s", "es"], "answer": 0, "why": "Mit être richtet sich das Partizip nach dem Subjekt."},
+      {"q": "Welches Verb nimmt être?", "options": ["aller", "manger", "parler", "faire"], "answer": 0, "why": "Bewegungs- und Zustandsverben sowie alle reflexiven."},
+      {"q": "Wie lautet das Partizip von „faire“?", "options": ["fait", "faisé", "fais", "faire"], "answer": 0, "why": "Unregelmäßig: fait."},
+    ],
     pages: [
       { heading: 'Passé composé: j’ai parlé', html: `
         <p>Die Alltagsvergangenheit bildet man mit <b>avoir</b> + Partizip (bei -er-Verben: Endung <b>-é</b>):</p>
@@ -131,6 +167,12 @@ export const grammar = [
   },
   {
     id: 'adjectives', title: 'Adjektive: Angleichung & Stellung', icon: 'fa-palette', beforeLesson: 22,
+    drills: [
+      {"q": "un livre ____ (ein interessantes Buch)", "options": ["intéressant", "intéressante", "intéressants", "intéressantes"], "answer": 0, "why": "Männlich Singular bleibt in der Grundform."},
+      {"q": "une histoire ____", "options": ["intéressante", "intéressant", "intéressants", "intéressante s"], "answer": 0, "why": "Weiblich hängt -e an."},
+      {"q": "Welches Adjektiv steht VOR dem Substantiv?", "options": ["beau", "intéressant", "rouge", "français"], "answer": 0, "why": "BAGS: Beauty, Age, Goodness, Size."},
+      {"q": "„un ancien professeur“ heißt ____", "options": ["ein ehemaliger Lehrer", "ein alter Lehrer", "ein antiker Lehrer", "ein früher Lehrer"], "answer": 0, "why": "Vorangestellt ändert ancien die Bedeutung."},
+    ],
     pages: [
       { heading: 'Meistens hinter dem Substantiv', html: `
         <p>Anders als im Deutschen steht das Adjektiv in der Regel <b>nach</b> dem Substantiv — und richtet sich in Geschlecht und Zahl danach:</p>
@@ -146,6 +188,12 @@ export const grammar = [
   },
   {
     id: 'partitive', title: 'Der Teilungsartikel', icon: 'fa-utensils', beforeLesson: 29,
+    drills: [
+      {"q": "Je mange ____ pain.", "options": ["du", "de la", "des", "le"], "answer": 0, "why": "pain ist männlich: du."},
+      {"q": "Je bois ____ bière.", "options": ["de la", "du", "des", "la"], "answer": 0, "why": "bière ist weiblich: de la."},
+      {"q": "Je ne mange pas ____ pain.", "options": ["de", "du", "de la", "des"], "answer": 0, "why": "Nach der Verneinung schrumpft der Teilungsartikel auf de."},
+      {"q": "beaucoup ____ pain", "options": ["de", "du", "de la", "des"], "answer": 0, "why": "Nach jeder Mengenangabe steht nur de."},
+    ],
     pages: [
       { heading: 'du, de la, des — „etwas von"', html: `
         <p>Wo das Deutsche gar keinen Artikel setzt, verlangt Französisch einen. „Ich esse Brot" wird zu „ich esse <i>vom</i> Brot":</p>
@@ -162,6 +210,12 @@ export const grammar = [
   },
   {
     id: 'possessive', title: 'Besitz & Demonstrativa', icon: 'fa-hand-holding', beforeLesson: 36,
+    drills: [
+      {"q": "____ livre (mein Buch)", "options": ["mon", "ma", "mes", "moi"], "answer": 0, "why": "livre ist männlich: mon."},
+      {"q": "____ amie (meine Freundin)", "options": ["mon", "ma", "mes", "une"], "answer": 0, "why": "Vor Vokal wird ma zu mon."},
+      {"q": "„son livre“ kann heißen ____", "options": ["sein oder ihr Buch", "nur sein Buch", "nur ihr Buch", "ihr Buch (Plural)"], "answer": 0, "why": "Es zählt das Ding, nicht der Besitzer."},
+      {"q": "____ homme (dieser Mann)", "options": ["cet", "ce", "cette", "ces"], "answer": 0, "why": "Vor Vokal steht cet."},
+    ],
     pages: [
       { heading: 'Es zählt das Ding, nicht der Besitzer', html: `
         <table class="grammar-table">
@@ -180,6 +234,12 @@ export const grammar = [
   },
   {
     id: 'future', title: 'Zukunft: proche & simple', icon: 'fa-forward', beforeLesson: 42,
+    drills: [
+      {"q": "Je ____ partir. (Ich werde gleich losfahren.)", "options": ["vais", "irai", "suis", "ai"], "answer": 0, "why": "Futur proche: aller + Infinitiv."},
+      {"q": "je parler____ (ich werde sprechen)", "options": ["ai", "as", "ons", "ez"], "answer": 0, "why": "Futur simple: Infinitiv + Endung."},
+      {"q": "Wie lautet der Futur-Stamm von „être“?", "options": ["ser-", "êtr-", "étai-", "soi-"], "answer": 0, "why": "je serai, tu seras …"},
+      {"q": "Woher kommen die Futur-Endungen?", "options": ["von avoir im Präsens", "von être", "von aller", "sie sind eigen"], "answer": 0, "why": "ai, as, a, ons, ez, ont."},
+    ],
     pages: [
       { heading: 'Zwei Zukunftsformen, klar getrennt', html: `
         <p><b>Futur proche</b> — <i>aller</i> + Infinitiv, für alles Nahe und Geplante:</p>
@@ -196,6 +256,12 @@ export const grammar = [
   },
   {
     id: 'numbers', title: 'Zahlen, Uhrzeit & Datum', icon: 'fa-clock', beforeLesson: 46,
+    drills: [
+      {"q": "Was heißt 70 auf Französisch?", "options": ["soixante-dix", "septante", "quatre-vingts", "soixante"], "answer": 0, "why": "60 + 10."},
+      {"q": "Was heißt 80?", "options": ["quatre-vingts", "octante", "soixante-vingt", "huitante"], "answer": 0, "why": "4 × 20."},
+      {"q": "„trois heures et demie“ ist ____", "options": ["3:30", "2:30", "3:15", "4:30"], "answer": 0, "why": "et demie = und halb."},
+      {"q": "Welcher Tag nimmt die Ordnungszahl?", "options": ["der Erste", "der Zweite", "alle", "keiner"], "answer": 0, "why": "le premier mai, aber le deux mai."},
+    ],
     pages: [
       { heading: 'Ab 70 wird gerechnet', html: `
         <p>Französisch zählt oberhalb von sechzig in Zwanzigerschritten — das ist gewöhnungsbedürftig, aber logisch:</p>
@@ -216,6 +282,12 @@ export const grammar = [
   },
   {
     id: 'pronouns', title: 'Objektpronomen, y und en', icon: 'fa-hand-point-right', beforeLesson: 52,
+    drills: [
+      {"q": "Je ____ vois. (Ich sehe ihn.)", "options": ["le", "lui", "y", "en"], "answer": 0, "why": "Direktes Objekt: le."},
+      {"q": "Je ____ parle. (Ich spreche mit ihm.)", "options": ["lui", "le", "y", "en"], "answer": 0, "why": "Indirektes Objekt: lui."},
+      {"q": "J’____ vais. (Ich gehe dorthin.)", "options": ["y", "en", "le", "lui"], "answer": 0, "why": "y ersetzt einen Ort."},
+      {"q": "J’____ veux deux. (Ich will zwei davon.)", "options": ["en", "y", "les", "leur"], "answer": 0, "why": "en ersetzt eine Menge oder de + Sache."},
+    ],
     pages: [
       { heading: 'Sie stehen vor dem Verb', html: `
         <p class="grammar-example">Je <b>le</b> vois. <span>Ich sehe ihn.</span><br>
@@ -234,6 +306,12 @@ export const grammar = [
   },
   {
     id: 'imparfait', title: 'Imparfait oder Passé composé?', icon: 'fa-clock-rotate-left', beforeLesson: 59,
+    drills: [
+      {"q": "Quand j’étais petit, je ____ au foot.", "options": ["jouais", "ai joué", "jouerai", "joue"], "answer": 0, "why": "Gewohnheit in der Vergangenheit → Imparfait."},
+      {"q": "Hier, j’____ au foot.", "options": ["ai joué", "jouais", "joue", "jouerai"], "answer": 0, "why": "Ein einzelnes Ereignis → Passé composé."},
+      {"q": "Je dormais quand le téléphone ____.", "options": ["a sonné", "sonnait", "sonne", "sonnera"], "answer": 0, "why": "Hintergrund im Imparfait, Einschnitt im Passé composé."},
+      {"q": "Welches Verb hat einen unregelmäßigen Imparfait-Stamm?", "options": ["être", "parler", "finir", "vendre"], "answer": 0, "why": "être → ét- ist die einzige Ausnahme."},
+    ],
     pages: [
       { heading: 'Die Frage lautet nicht wann, sondern wie', html: `
         <table class="grammar-table">
@@ -252,6 +330,12 @@ export const grammar = [
   },
   {
     id: 'reflexive', title: 'Reflexive Verben', icon: 'fa-rotate', beforeLesson: 67,
+    drills: [
+      {"q": "je ____ lève (ich stehe auf)", "options": ["me", "te", "se", "nous"], "answer": 0, "why": "1. Person: me."},
+      {"q": "Welches Hilfsverb nehmen reflexive Verben im Passé composé?", "options": ["être", "avoir", "aller", "faire"], "answer": 0, "why": "Je me suis levé."},
+      {"q": "„se passer“ heißt ____", "options": ["geschehen", "vorbeigehen", "sich beeilen", "sich erinnern"], "answer": 0, "why": "Reflexiv ändert passer seine Bedeutung."},
+      {"q": "Welches Verb ist NICHT reflexiv gebräuchlich?", "options": ["manger", "se réveiller", "s’habiller", "se dépêcher"], "answer": 0, "why": "manger steht normalerweise ohne Reflexivpronomen."},
+    ],
     pages: [
       { heading: 'Der Alltag steckt voll davon', html: `
         <p class="grammar-example">je <b>me</b> lève · tu <b>te</b> laves · il <b>se</b> couche<br>
@@ -263,6 +347,12 @@ export const grammar = [
   },
   {
     id: 'comparison', title: 'Steigern & vergleichen', icon: 'fa-ranking-star', beforeLesson: 74,
+    drills: [
+      {"q": "Il est ____ grand que moi.", "options": ["plus", "meilleur", "mieux", "très"], "answer": 0, "why": "plus … que für den Vergleich."},
+      {"q": "Tu es ____ fort que moi. (genauso stark)", "options": ["aussi", "plus", "moins", "très"], "answer": 0, "why": "aussi … que für Gleichheit."},
+      {"q": "bon → ____ (besser)", "options": ["meilleur", "mieux", "plus bon", "bien"], "answer": 0, "why": "meilleur steigert das Adjektiv."},
+      {"q": "Il parle ____ que moi. (Er spricht besser.)", "options": ["mieux", "meilleur", "plus bon", "bien"], "answer": 0, "why": "mieux steigert das Adverb — die häufigste Verwechslung."},
+    ],
     pages: [
       { heading: 'plus, moins, aussi', html: `
         <p class="grammar-example">Il est <b>plus</b> grand <b>que</b> moi. <span>größer als ich</span><br>
@@ -275,6 +365,12 @@ export const grammar = [
   },
   {
     id: 'subjunctive', title: 'Der Subjonctif', icon: 'fa-wand-sparkles', beforeLesson: 82,
+    drills: [
+      {"q": "Je veux que tu ____.", "options": ["viennes", "viens", "viendras", "venir"], "answer": 0, "why": "Wille löst den Subjonctif aus."},
+      {"q": "Il faut que je ____.", "options": ["parte", "pars", "partirai", "partir"], "answer": 0, "why": "Notwendigkeit löst ihn ebenfalls aus."},
+      {"q": "Welches Bindewort verlangt den Subjonctif?", "options": ["bien que", "parce que", "puisque", "quand"], "answer": 0, "why": "bien que, avant que, pour que, jusqu’à ce que."},
+      {"q": "Nach welchem Verb steht KEIN Subjonctif?", "options": ["savoir", "vouloir", "douter", "craindre"], "answer": 0, "why": "Verben des Wissens und Sagens nehmen den Indikativ."},
+    ],
     pages: [
       { heading: 'Nach Gefühl, Wille und Zweifel', html: `
         <p>Der Subjonctif steht nicht für sich, sondern wird von bestimmten Ausdrücken <b>ausgelöst</b>:</p>
@@ -291,6 +387,12 @@ export const grammar = [
   },
   {
     id: 'conditional', title: 'Conditionnel & Bedingungssätze', icon: 'fa-code-branch', beforeLesson: 91,
+    drills: [
+      {"q": "Je ____ un café. (Ich hätte gern einen Kaffee.)", "options": ["voudrais", "veux", "voudrai", "voulais"], "answer": 0, "why": "Conditionnel für die höfliche Bitte."},
+      {"q": "Si j’avais le temps, je ____.", "options": ["viendrais", "viendrai", "viens", "serais venu"], "answer": 0, "why": "si + Imparfait → Conditionnel."},
+      {"q": "Si j’ai le temps, je ____.", "options": ["viendrai", "viendrais", "venais", "serais venu"], "answer": 0, "why": "si + Präsens → Futur."},
+      {"q": "Was steht NIE nach si?", "options": ["Futur oder Conditionnel", "Imparfait", "Präsens", "Plus-que-parfait"], "answer": 0, "why": "„si je serais“ ist ein hörbarer Fehler."},
+    ],
     pages: [
       { heading: 'Höflichkeit und Möglichkeit', html: `
         <p>Futur-Stamm + Imparfait-Endungen — mehr ist es nicht:</p>
@@ -308,6 +410,12 @@ export const grammar = [
   },
   {
     id: 'relative', title: 'Relativpronomen', icon: 'fa-link', beforeLesson: 101,
+    drills: [
+      {"q": "L’homme ____ parle …", "options": ["qui", "que", "dont", "où"], "answer": 0, "why": "Folgt direkt ein Verb, steht qui."},
+      {"q": "Le livre ____ je lis …", "options": ["que", "qui", "dont", "où"], "answer": 0, "why": "Folgt ein Subjekt, steht que."},
+      {"q": "Le film ____ je parle …", "options": ["dont", "que", "qui", "où"], "answer": 0, "why": "dont ersetzt de + Sache."},
+      {"q": "La ville ____ j’habite …", "options": ["où", "que", "qui", "dont"], "answer": 0, "why": "où steht für Ort und Zeit."},
+    ],
     pages: [
       { heading: 'qui, que, dont, où', html: `
         <table class="grammar-table">
@@ -322,6 +430,12 @@ export const grammar = [
   },
   {
     id: 'negation', title: 'Verneinen über ne … pas hinaus', icon: 'fa-ban', beforeLesson: 108,
+    drills: [
+      {"q": "Je n’ai ____ faim. (Ich habe keinen Hunger mehr.)", "options": ["plus", "pas", "jamais", "rien"], "answer": 0, "why": "ne … plus = nicht mehr."},
+      {"q": "Il ne boit ____ de l’eau. (Er trinkt nur Wasser.)", "options": ["que", "pas", "rien", "jamais"], "answer": 0, "why": "ne … que ist keine echte Verneinung, sondern „nur“."},
+      {"q": "Je ne vois ____. (Ich sehe niemanden.)", "options": ["personne", "rien", "jamais", "plus"], "answer": 0, "why": "personne = niemand, rien = nichts."},
+      {"q": "Was passiert im gesprochenen Französisch mit „ne“?", "options": ["es fällt meist weg", "es wird betont", "es wandert ans Ende", "es wird verdoppelt"], "answer": 0, "why": "J’sais pas — beim Schreiben gehört es aber dazu."},
+    ],
     pages: [
       { heading: 'Die Klammer und ihre Varianten', html: `
         <p>Die Verneinung umschließt das gebeugte Verb:</p>

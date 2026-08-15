@@ -3,6 +3,12 @@
 export const grammar = [
   {
     id: 'intro', title: 'So funktioniert Japanisch', icon: 'fa-compass', beforeLesson: 1,
+    drills: [
+      {"q": "Welche Schrift wird für Fremdwörter benutzt?", "options": ["Katakana", "Hiragana", "Kanji", "Romaji"], "answer": 0, "why": "コーヒー (kōhī) für Kaffee."},
+      {"q": "Wie viele Vokale hat das Japanische?", "options": ["fünf", "sieben", "drei", "acht"], "answer": 0, "why": "a, i, u, e, o — jeder gleich lang und gleich betont."},
+      {"q": "Wie klingt „desu“ meistens?", "options": ["dess", "de-su", "des-u", "dez"], "answer": 0, "why": "Das u ist oft fast stumm."},
+      {"q": "Wofür stehen Kanji?", "options": ["Wortstämme", "Grammatik", "Fremdwörter", "Zahlen"], "answer": 0, "why": "水 = Wasser; Hiragana übernimmt die Grammatik."},
+    ],
     pages: [
       { heading: 'Drei Schriften, eine einfache Aussprache', html: `
         <p>Japanisch mischt drei Schriftsysteme:</p>
@@ -28,6 +34,12 @@ export const grammar = [
   },
   {
     id: 'syntax', title: 'Satzbau & Partikeln', icon: 'fa-arrows-left-right', beforeLesson: 2,
+    drills: [
+      {"q": "Wo steht das Verb im japanischen Satz?", "options": ["am Ende", "am Anfang", "an zweiter Stelle", "in der Mitte"], "answer": 0, "why": "Immer ganz hinten."},
+      {"q": "Welche Partikel markiert das Thema?", "options": ["は", "を", "が", "に"], "answer": 0, "why": "は (gesprochen wa) hebt das Thema hervor."},
+      {"q": "Welche Partikel markiert das direkte Objekt?", "options": ["を", "は", "に", "で"], "answer": 0, "why": "を (gesprochen o)."},
+      {"q": "Wie wird „は“ als Partikel ausgesprochen?", "options": ["wa", "ha", "pa", "ba"], "answer": 0, "why": "Als Partikel wa, sonst ha."},
+    ],
     pages: [
       { heading: 'Das Verb steht IMMER am Ende', html: `
         <p>Japanisch ist eine <b>SOV-Sprache</b>: Subjekt – Objekt – <b>Verb</b>. Das Verb bildet immer den Schluss:</p>
@@ -50,6 +62,12 @@ export const grammar = [
   },
   {
     id: 'verbs', title: 'Verben: die masu-Form', icon: 'fa-bolt', beforeLesson: 4,
+    drills: [
+      {"q": "たべ____ (ich esse — höflich)", "options": ["ます", "ません", "ました", "る"], "answer": 0, "why": "Die masu-Form ist die höfliche Gegenwart."},
+      {"q": "Wie verneint man die masu-Form?", "options": ["ません", "ました", "ないです only", "ます"], "answer": 0, "why": "tabemasen — ich esse nicht."},
+      {"q": "Ändert sich das Verb nach der Person?", "options": ["nein", "ja", "nur im Plural", "nur höflich"], "answer": 0, "why": "tabemasu heißt ich, du, er, wir esse(n)."},
+      {"q": "Wozu dient „desu“?", "options": ["höflicher Abschluss", "Verneinung", "Frage", "Vergangenheit"], "answer": 0, "why": "Es beendet den Satz höflich."},
+    ],
     pages: [
       { heading: 'Vier Endungen für alles', html: `
         <p>Die höfliche <b>masu-Form</b> ist deine Standardform. Sie ändert sich nie nach der Person — nur nach Zeit und Verneinung:</p>
@@ -74,6 +92,12 @@ export const grammar = [
   },
   {
     id: 'adjectives', title: 'Adjektive: i und na', icon: 'fa-palette', beforeLesson: 7,
+    drills: [
+      {"q": "Welche Adjektivfamilie endet auf -i?", "options": ["i-Adjektive", "na-Adjektive", "beide", "keine"], "answer": 0, "why": "たかい (teuer), おいしい (lecker)."},
+      {"q": "Wie verbindet man ein na-Adjektiv mit dem Substantiv?", "options": ["mit な", "mit の", "mit を", "direkt"], "answer": 0, "why": "きれいな はな — eine schöne Blume."},
+      {"q": "Wie verneint man „takai“?", "options": ["takakunai", "takai ja nai", "takanai", "takamasen"], "answer": 0, "why": "i-Adjektive tauschen -i gegen -kunai."},
+      {"q": "„しずかな“ ist ____", "options": ["ein na-Adjektiv", "ein i-Adjektiv", "ein Verb", "ein Substantiv"], "answer": 0, "why": "Es braucht な vor dem Substantiv."},
+    ],
     pages: [
       { heading: 'Zwei Familien', html: `
         <p>Japanische Adjektive gibt es in zwei Sorten:</p>
@@ -88,6 +112,12 @@ export const grammar = [
   },
   {
     id: 'questions', title: 'Fragen & Antworten', icon: 'fa-circle-question', beforeLesson: 11,
+    drills: [
+      {"q": "Wie macht man aus einer Aussage eine Frage?", "options": ["か anhängen", "は anhängen", "を anhängen", "umstellen"], "answer": 0, "why": "たべますか — isst du?"},
+      {"q": "____ ですか。(Was ist das?)", "options": ["なん", "だれ", "どこ", "いつ"], "answer": 0, "why": "なん/なに = was."},
+      {"q": "____ ですか。(Wo ist es?)", "options": ["どこ", "なん", "だれ", "いつ"], "answer": 0, "why": "どこ = wo."},
+      {"q": "Braucht eine Frage mit „ka“ ein Fragezeichen?", "options": ["nein", "ja", "nur schriftlich", "nur höflich"], "answer": 0, "why": "Das か macht die Frage — traditionell steht danach 。"},
+    ],
     pages: [
       { heading: 'Das kleine Wort ka', html: `
         <p>Jede Frage entsteht durch das Anhängen von <b>ka</b> (か) am Satzende — keine Umstellung, kein Fragezeichen nötig:</p>
@@ -109,6 +139,12 @@ export const grammar = [
   },
   {
     id: 'polite', title: 'Höflichkeit & gute Sitten', icon: 'fa-hands', beforeLesson: 16,
+    drills: [
+      {"q": "Was ist höflicher?", "options": ["おはようございます", "おはよう", "beides gleich", "keins"], "answer": 0, "why": "Die lange Form ist die höfliche."},
+      {"q": "Wie bittet man höflich?", "options": ["おねがいします", "ください nur", "です", "ます"], "answer": 0, "why": "onegai shimasu macht jede Bitte höflich."},
+      {"q": "Wozu dient „さん“?", "options": ["höfliche Anrede", "Verneinung", "Frage", "Mehrzahl"], "answer": 0, "why": "田中さん — Herr/Frau Tanaka; nie für sich selbst."},
+      {"q": "Sagt man „わたしさん“?", "options": ["nein, nie", "ja", "nur förmlich", "nur schriftlich"], "answer": 0, "why": "さん gilt nur für andere."},
+    ],
     pages: [
       { heading: 'Sprache mit eingebautem Respekt', html: `
         <p>Japanisch kennt <b>Höflichkeitsstufen</b>. Mit der masu/desu-Form, die du hier lernst, bist du überall richtig — sie ist die neutrale Höflichkeitsform für Fremde, Kollegen und Geschäfte.</p>
@@ -122,6 +158,12 @@ export const grammar = [
   },
   {
     id: 'past', title: 'Vergangenheit & Verneinung', icon: 'fa-clock-rotate-left', beforeLesson: 20,
+    drills: [
+      {"q": "たべ____ (ich habe gegessen)", "options": ["ました", "ます", "ません", "ませんでした"], "answer": 0, "why": "Die höfliche Vergangenheit."},
+      {"q": "たべ____ (ich habe nicht gegessen)", "options": ["ませんでした", "ました", "ません", "ます"], "answer": 0, "why": "Verneinte Vergangenheit."},
+      {"q": "Wie lautet die Vergangenheit von „desu“?", "options": ["でした", "です", "じゃない", "ます"], "answer": 0, "why": "でした — war."},
+      {"q": "Verrät die Verbform, wer gehandelt hat?", "options": ["nein", "ja", "nur höflich", "nur im Plural"], "answer": 0, "why": "Der Zusammenhang nennt die Person."},
+    ],
     pages: [
       { heading: 'Vier Endungen decken alles ab', html: `
         <p>Aus der höflichen <b>masu</b>-Form entstehen alle vier Grundaussagen — ohne jede Ausnahme:</p>
@@ -136,6 +178,12 @@ export const grammar = [
   },
   {
     id: 'particles2', title: 'Die weiteren Partikeln', icon: 'fa-tags', beforeLesson: 25,
+    drills: [
+      {"q": "七時____ おきます。(Ich stehe um sieben auf.)", "options": ["に", "で", "を", "から"], "answer": 0, "why": "に markiert den Zeitpunkt."},
+      {"q": "うち____ たべます。(Ich esse zu Hause.)", "options": ["で", "に", "へ", "を"], "answer": 0, "why": "で markiert den Ort der Handlung."},
+      {"q": "いえ____ います。(Ich bin zu Hause.)", "options": ["に", "で", "を", "も"], "answer": 0, "why": "に markiert den Ort des Seins."},
+      {"q": "九時____ 五時____ (von neun bis fünf)", "options": ["から / まで", "まで / から", "に / で", "と / も"], "answer": 0, "why": "から = ab, まで = bis."},
+    ],
     pages: [
       { heading: 'Jede Partikel hat genau eine Aufgabe', html: `
         <p>Sie stehen <b>hinter</b> dem Wort, auf das sie sich beziehen — wie kleine Wegweiser:</p>
@@ -154,6 +202,12 @@ export const grammar = [
   },
   {
     id: 'counters', title: 'Zählwörter', icon: 'fa-list-ol', beforeLesson: 29,
+    drills: [
+      {"q": "Welches Zählwort passt für Menschen?", "options": ["人", "本", "枚", "つ"], "answer": 0, "why": "ひとり, ふたり, さんにん."},
+      {"q": "Welches Zählwort passt für Flaschen?", "options": ["本", "枚", "人", "匹"], "answer": 0, "why": "本 gilt für alles Lange."},
+      {"q": "りんごを ____ ください。(Drei Äpfel bitte.)", "options": ["みっつ", "さんにん", "さんぼん", "みつ"], "answer": 0, "why": "つ ist das Allzweck-Zählwort bis neun."},
+      {"q": "Welche Menschenzähler sind unregelmäßig?", "options": ["ひとり und ふたり", "さんにん", "よにん", "keine"], "answer": 0, "why": "Eins und zwei fallen aus der Reihe."},
+    ],
     pages: [
       { heading: 'Was man zählt, entscheidet wie man zählt', html: `
         <p>Zwischen Zahl und Ding gehört ein Zählwort — welches, hängt von der Form des Dings ab:</p>
