@@ -12,6 +12,8 @@ import { checkNewCosmetics } from './cosmetics.js';
 import { pendingQuestClaims } from './quests.js';
 import { saveErrors, clearErrors } from './errorLog.js';
 import { themePack } from './weakness.js';
+import { isSpaceless, splitSentence, joinSentence,
+         sentenceIsKnown, findGapSentence } from '../utils/sentence.js';
 import { playCorrect, playWrong } from '../utils/feedback.js';
 import { speak, latinPron } from '../utils/speech.js';
 import { syncSoon } from './sync.js';
@@ -1386,47 +1388,6 @@ function sentenceVariant(session, card) {
   return v;
 }
 
-// Wortabgleich mit Toleranz für Beugung: exakt / solider Teilstring /
-// gemeinsames Präfix ≥5. Kurze Funktionswörter matchen dadurch nicht.
-// Chinesisch und Japanisch schreiben OHNE Leerzeichen. Alle Satz-Übungen
-// (Lücke, Satzbau, Freischalten) trennten bisher an Leerzeichen und
-// behandelten deshalb einen ganzen Satz als ein einziges Wort — die
-// Lücke verschluckte den kompletten Satz. Für diese Sprachen wird
-// zeichenweise gearbeitet.
-function isSpaceless(lang) { return lang === 'zh' || lang === 'ja'; }
-function splitSentence(text, lang) {
-  return isSpaceless(lang) ? [...String(text || '').trim()] : String(text || '').trim().split(/\s+/);
-}
-function joinSentence(parts, lang) { return parts.join(isSpaceless(lang) ? '' : ' '); }
-
-function backMatchScore(word, back) {
-  if (word === back) return 100;
-  const short = Math.min(word.length, back.length);
-  if (short >= 4 && (word.includes(back) || back.includes(word))) return 80;
-  let p = 0;
-  while (p < word.length && p < back.length && word[p] === back[p]) p++;
-  if (p >= 5) return 60;
-  return 0;
-}
-
-// Ist der Beispielsatz vollständig aus bekannten Wörtern gebildet?
-// Tokens, die zu keinem Deck-Wort passen, gelten als Funktionswörter.
-function sentenceIsKnown(example, knownBackSet, knownBackList, deckBackList, lang) {
-  // Ohne Leerzeichen: prüfen, ob im Satz ein Deck-Wort steckt, das noch
-  // nicht gelernt ist. Zeichen, die zu keinem Deck-Wort gehören, sind
-  // Funktionswörter (的, は …) und stören nicht.
-  if (isSpaceless(lang)) {
-    return !deckBackList.some(b => b && example.includes(b) && !knownBackSet.has(b));
-  }
-  const tokens = example.toLowerCase().split(/[\s.,!?;:„“"»«()¿¡'’-]+/).filter(Boolean);
-  for (const t of tokens) {
-    if (knownBackSet.has(t)) continue;                    // exakt bekannt
-    if (knownBackList.some(b => backMatchScore(t, b) >= 60)) continue; // bekannt (gebeugt)
-    if (deckBackList.some(b => backMatchScore(t, b) >= 60)) return false; // Deck-Wort, aber noch nicht gelernt
-    // sonst: Funktionswort → ignorieren
-  }
-  return true;
-}
 
 // Sammelt bis zu 6 freischaltbare Lückensätze (neueste Wörter zuerst),
 // die noch nicht geübt wurden.
@@ -2449,44 +2410,6 @@ function courseFeedbackHtml(isCorrect, card, extra = '', answer = card.back) {
   return `${isCorrect
     ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
     : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(answer)}</b>. Kommt gleich nochmal.</p></div>`}${extra}`;
-}
-
-// Sucht im Beispielsatz das Wort, das zum Zielwort gehört (auch gebeugte
-// Formen wie hus→huset oder mit Artikel verklebt wie l'école).
-function findGapSentence(example, back, lang) {
-  // Ohne Leerzeichen (zh/ja): das Zielwort direkt im Satz ausblenden.
-  if (isSpaceless(lang)) {
-    const at = example.indexOf(back);
-    return at < 0 ? null : example.slice(0, at) + '____' + example.slice(at + back.length);
-  }
-  const norm = s => s.toLowerCase();
-  const target = norm(back);
-  const tokens = example.split(/(\s+)/);
-  let bestIdx = -1;
-  let bestScore = 0;
-
-  tokens.forEach((tok, idx) => {
-    if (/^\s+$/.test(tok) || !tok) return;
-    const word = norm(tok.replace(/[.,!?;:„“"»«()¿¡]/g, ''));
-    if (!word) return;
-    let score = 0;
-    if (word === target) score = 100;
-    else if (word.includes(target) || target.includes(word)) score = 80;
-    else {
-      let p = 0;
-      while (p < word.length && p < target.length && word[p] === target[p]) p++;
-      if (p >= Math.min(4, target.length)) score = p;
-    }
-    if (score > bestScore) { bestScore = score; bestIdx = idx; }
-  });
-
-  if (bestIdx === -1) return null;
-  const blanked = tokens.map((t, i) => {
-    if (i !== bestIdx) return t;
-    // Satzzeichen am ausgeblendeten Wort erhalten
-    return t.replace(/[^.,!?;:„“"»«()¿¡]+/, '____');
-  }).join('');
-  return blanked;
 }
 
 // Phase 3: Sätze üben (Lückentext-Multiple-Choice).
