@@ -224,4 +224,136 @@ export const grammar = [
         <div class="grammar-tip">💡 Im Zweifel <b>つ</b> nehmen — bis neun deckt es fast alles ab, und man wird verstanden. Die ersten beiden Menschenzähler <i>ひとり</i> und <i>ふたり</i> sind allerdings unregelmäßig und lohnen sich sofort.</div>` },
     ],
   },
+  {
+    id: 'teform', title: 'Die te-Form: verbinden & bitten', icon: 'fa-link', beforeLesson: 41,
+    drills: [
+      {"q": "あさ おきて、____ をあらいます。(aufstehen und Gesicht waschen)", "options": ["かお", "て", "は", "め"], "answer": 0, "why": "かお (Gesicht) — かおをあらう ist die feste Wendung."},
+      {"q": "まって ____ 。(Bitte warte.)", "options": ["ください", "です", "ます", "でした"], "answer": 0, "why": "te-Form + ください ist die Standard-Bitte."},
+      {"q": "Welche te-Form gehört zu のむ (trinken)?", "options": ["のんで", "のみて", "のって", "のいて"], "answer": 0, "why": "む-Verben werden zu -んで."},
+      {"q": "Was drückt てform + います aus?", "options": ["gerade dabei / Zustand", "Vergangenheit", "Verneinung", "Wunsch"], "answer": 0, "why": "たべています — ich esse gerade / ich esse (gewöhnlich)."},
+    ],
+    pages: [
+      { heading: 'Eine Form, viele Jobs', html: `
+        <p>Die <b>te-Form</b> ist die Klammer der japanischen Grammatik: Sie verbindet Sätze, bittet höflich und beschreibt laufende Handlungen — alles mit derselben Endung.</p>
+        <table class="grammar-table">
+          <tr><th>Wörterbuchform</th><th>te-Form</th><th>Regel</th></tr>
+          <tr><td>のむ (trinken)</td><td>のんで</td><td>む/ぬ/ぶ → んで</td></tr>
+          <tr><td>かく (schreiben)</td><td>かいて</td><td>く → いて</td></tr>
+          <tr><td>はなす (sprechen)</td><td>はなして</td><td>す → して</td></tr>
+          <tr><td>たべる (essen)</td><td>たべて</td><td>る-Verben: る → て</td></tr>
+          <tr><td>する (tun)</td><td>して</td><td>unregelmäßig</td></tr>
+        </table>
+        <p><b>Sätze verbinden:</b> あさ おきて、かおを あらいます。 — Ich stehe auf und wasche mir das Gesicht.<br>
+           <b>Bitten:</b> まって ください。 — Bitte warte.<br>
+           <b>Gerade dabei:</b> テレビを みています。 — Ich schaue gerade fern.</p>
+        <div class="grammar-tip">💡 Wer die te-Form von zehn Alltagsverben auswendig kann, kann fast jeden einfachen Satz verbinden.</div>` },
+    ],
+  },
+  {
+    id: 'potential', title: 'Können: die Potentialform', icon: 'fa-check-double', beforeLesson: 53,
+    drills: [
+      {"q": "にほんごが ____ 。(Ich kann Japanisch [sprechen].)", "options": ["はなせます", "はなします", "はなさない", "はなした"], "answer": 0, "why": "はなす → はなせる (Potentialform), höflich はなせます."},
+      {"q": "Welches Partikel steht oft beim Objekt der Potentialform?", "options": ["が", "を", "に", "で"], "answer": 0, "why": "にほんごが はなせます — das Objekt bekommt が statt を."},
+      {"q": "たべる (essen) → Potentialform?", "options": ["たべられる", "たべる", "たべて", "たべない"], "answer": 0, "why": "る-Verben: る → られる."},
+      {"q": "Was bedeutet およげません?", "options": ["ich kann nicht schwimmen", "ich schwimme nicht gern", "ich schwimme gerade", "ich habe geschwommen"], "answer": 0, "why": "およぐ → およげる → verneint およげません."},
+    ],
+    pages: [
+      { heading: '„Können" ohne Hilfsverb', html: `
+        <p>Japanisch braucht kein eigenes Wort für „können" — das Verb selbst wird umgeformt.</p>
+        <table class="grammar-table">
+          <tr><th>Verbtyp</th><th>Bildung</th><th>Beispiel</th></tr>
+          <tr><td>u-Verben</td><td>letzte Silbe u→e, + る</td><td>はなす → はなせる</td></tr>
+          <tr><td>ru-Verben</td><td>る → られる</td><td>たべる → たべられる</td></tr>
+          <tr><td>する</td><td>できる</td><td>べんきょうする → べんきょうできる</td></tr>
+          <tr><td>くる</td><td>こられる</td><td>くる → こられる</td></tr>
+        </table>
+        <p>Wichtig: Das Objekt bekommt meist <b>が</b> statt <b>を</b>: にほんごが はなせます。 — Ich kann Japanisch sprechen.</p>
+        <div class="grammar-tip">💡 Verneint klingt es genauso regelmäßig: はなせません — ich kann nicht sprechen.</div>` },
+    ],
+  },
+  {
+    id: 'conditional', title: 'Wenn-Sätze: ば, たら, と', icon: 'fa-code-branch', beforeLesson: 65,
+    drills: [
+      {"q": "あめが ____ 、うちに います。(Wenn es regnet, bleibe ich zu Hause.)", "options": ["ふったら", "ふって", "ふる", "ふり"], "answer": 0, "why": "たら bildet die allgemeine Wenn-dann-Bedingung."},
+      {"q": "Welche Form passt zu einer Naturgesetz-Regel (immer wahr)?", "options": ["と", "ば", "たら", "egal welche"], "answer": 0, "why": "はるに なると、さくらが さきます — と für Automatismen."},
+      {"q": "やすければ、かいます。 — was bedeutet やすければ?", "options": ["wenn es billig ist", "weil es billig ist", "obwohl es billig ist", "es war billig"], "answer": 0, "why": "い-Adjektiv + ければ ist die ば-Bedingung."},
+      {"q": "Welche Form eignet sich am besten für einen konkreten Rat/Vorschlag?", "options": ["たら", "と", "し", "けど"], "answer": 0, "why": "つかれたら、やすんでください — たら passt gut zu Ratschlägen."},
+    ],
+    pages: [
+      { heading: 'Drei Wege zu „wenn"', html: `
+        <p>Japanisch unterscheidet, WELCHE Art „wenn" gemeint ist:</p>
+        <table class="grammar-table">
+          <tr><th>Form</th><th>Bildung</th><th>Typischer Einsatz</th></tr>
+          <tr><td><b>たら</b></td><td>Vergangenheitsform + ら</td><td>konkrete Einzelsituation, Ratschlag</td></tr>
+          <tr><td><b>と</b></td><td>Wörterbuchform + と</td><td>Automatismus, Naturgesetz</td></tr>
+          <tr><td><b>ば</b></td><td>letzte Silbe e + ば (i-Adj.: い→ければ)</td><td>allgemeine/hypothetische Bedingung</td></tr>
+        </table>
+        <p>あめが ふったら、うちに います。 — Wenn/Falls es regnet, bleibe ich zu Hause.<br>
+           はるに なると、さくらが さきます。 — Wenn Frühling wird, blühen die Kirschblüten (immer).</p>
+        <div class="grammar-tip">💡 Im Zweifel <b>たら</b> nehmen — es passt in fast jedem Alltagssatz, auch wenn ば oder と eleganter wäre.</div>` },
+    ],
+  },
+  {
+    id: 'compare', title: 'Vergleichen: より und ほど', icon: 'fa-scale-balanced', beforeLesson: 77,
+    drills: [
+      {"q": "ふじさんは たかいやまより ____ です。(Der Fuji ist höher als [andere] hohe Berge.)", "options": ["たかい", "たかく", "たかいだ", "たかいの"], "answer": 0, "why": "A は B より + Adjektiv — B ist der Vergleichspunkt."},
+      {"q": "Welches Partikel markiert „im Vergleich zu“?", "options": ["より", "ほど", "でも", "しか"], "answer": 0, "why": "より steht direkt hinter dem Vergleichsobjekt."},
+      {"q": "わたしほど にほんごが じょうずじゃない。 — Sinn?", "options": ["nicht so gut wie ich", "besser als ich", "genauso gut wie ich", "schlechter als niemand"], "answer": 0, "why": "ほど + Verneinung heißt „nicht so ... wie“."},
+      {"q": "Wie fragt man „Was ist größer, A oder B“?", "options": ["AとBと どちらが おおきいですか", "AがBよりおおきいですか", "AはBですか", "Aとおおきいですか"], "answer": 0, "why": "どちらが …か ist die Standardfrage beim Vergleich zweier Dinge."},
+    ],
+    pages: [
+      { heading: 'Ohne Steigerungsendung vergleichen', html: `
+        <p>Japanische Adjektive haben keine „größer/am größten"-Formen — der Vergleich steckt in den Partikeln.</p>
+        <table class="grammar-table">
+          <tr><th>Muster</th><th>Bedeutung</th><th>Beispiel</th></tr>
+          <tr><td>A は B より Adj.</td><td>A ist Adj.-er als B</td><td>ふじさんは たかいやまより たかいです。</td></tr>
+          <tr><td>A は B ほど Adj.じゃない</td><td>A ist nicht so Adj. wie B</td><td>わたしほど じょうずじゃない。</td></tr>
+          <tr><td>A と B と どちらが Adj.ですか</td><td>Was ist Adj.-er, A oder B?</td><td>いぬとねこと どちらが すきですか。</td></tr>
+        </table>
+        <div class="grammar-tip">💡 より markiert immer das, WOMIT verglichen wird — es steht direkt dahinter, nie beim Adjektiv.</div>` },
+    ],
+  },
+  {
+    id: 'giving', title: 'Geben & bekommen: あげる, もらう, くれる', icon: 'fa-gift', beforeLesson: 89,
+    drills: [
+      {"q": "わたしは ともだちに はなを ____ 。(Ich gebe einem Freund Blumen.)", "options": ["あげます", "もらいます", "くれます", "います"], "answer": 0, "why": "あげる: ICH gebe jemand anderem."},
+      {"q": "ともだちは わたしに ほんを ____ 。(Ein Freund gibt MIR ein Buch.)", "options": ["くれました", "あげました", "もらいました", "いました"], "answer": 0, "why": "くれる: jemand gibt MIR etwas."},
+      {"q": "わたしは せんせいに プレゼントを ____ 。(Ich bekomme ein Geschenk vom Lehrer.)", "options": ["もらいました", "あげました", "くれました", "しました"], "answer": 0, "why": "もらう: ICH bekomme etwas (von jemandem)."},
+      {"q": "Welches Verb passt NIE, wenn ICH der Empfänger bin?", "options": ["あげる", "もらう", "くれる", "keins"], "answer": 0, "why": "あげる braucht immer einen Empfänger AUSSER mir selbst."},
+    ],
+    pages: [
+      { heading: 'Wer gibt, wer bekommt — die Blickrichtung zählt', html: `
+        <p>Drei Verben für „geben/bekommen", je nachdem wer im Mittelpunkt steht:</p>
+        <table class="grammar-table">
+          <tr><th>Verb</th><th>Blickrichtung</th><th>Beispiel</th></tr>
+          <tr><td><b>あげる</b></td><td>ich/jemand → ein anderer</td><td>ともだちに はなを あげます。</td></tr>
+          <tr><td><b>もらう</b></td><td>ich bekomme von jemandem</td><td>せんせいに プレゼントを もらいました。</td></tr>
+          <tr><td><b>くれる</b></td><td>jemand gibt MIR</td><td>ともだちが わたしに ほんを くれました。</td></tr>
+        </table>
+        <p>もらう und くれる klingen ähnlich, unterscheiden sich aber im Blickwinkel: もらう betont, DASS ich bekomme; くれる betont, DASS jemand mir gibt.</p>
+        <div class="grammar-tip">💡 Ist „ich" der Empfänger, ist くれる oder もらう richtig — niemals あげる.</div>` },
+    ],
+  },
+  {
+    id: 'passive', title: 'Passiv & Verursachung', icon: 'fa-repeat', beforeLesson: 101,
+    drills: [
+      {"q": "せんせいに ____ 。(Ich wurde vom Lehrer gerufen.)", "options": ["よばれました", "よびました", "よばせました", "よべました"], "answer": 0, "why": "Passiv: u-Verben → letzte Silbe a + れる."},
+      {"q": "Welches Partikel markiert den Handelnden im Passivsatz?", "options": ["に", "を", "が", "で"], "answer": 0, "why": "せんせいに よばれる — に markiert, WER die Handlung ausführt."},
+      {"q": "こどもに やさいを ____ 。(Ich lasse das Kind Gemüse essen.)", "options": ["たべさせます", "たべられます", "たべます", "たべさせられます"], "answer": 0, "why": "Kausativ: る-Verben → る → させる."},
+      {"q": "Was drückt たべさせられる aus?", "options": ["gezwungen werden zu essen", "essen lassen", "können essen", "gerade essen"], "answer": 0, "why": "Kausativ-Passiv: jemand zwingt MICH zu essen."},
+    ],
+    pages: [
+      { heading: 'Etwas wird mir angetan — oder ich veranlasse es', html: `
+        <p>Zwei Formen für „von außen betroffen sein" bzw. „jemanden etwas tun lassen":</p>
+        <table class="grammar-table">
+          <tr><th>Form</th><th>Bildung</th><th>Beispiel</th></tr>
+          <tr><td><b>Passiv</b></td><td>u-Verben: a+れる · る-Verben: る→られる</td><td>よぶ → よばれる (gerufen werden)</td></tr>
+          <tr><td><b>Kausativ</b></td><td>u-Verben: a+せる · る-Verben: る→させる</td><td>たべる → たべさせる (essen lassen)</td></tr>
+          <tr><td><b>Kausativ-Passiv</b></td><td>Kausativ + られる</td><td>たべさせられる (zum Essen gezwungen werden)</td></tr>
+        </table>
+        <p>せんせいに よばれました。 — Ich wurde vom Lehrer gerufen.<br>
+           はは が こどもに やさいを たべさせます。 — Die Mutter lässt das Kind Gemüse essen.</p>
+        <div class="grammar-tip">💡 Die Kausativ-Passiv-Form klingt lang, aber ist nur die Kausativform + られる — Schritt für Schritt aufbauen statt auswendig lernen.</div>` },
+    ],
+  },
 ];
