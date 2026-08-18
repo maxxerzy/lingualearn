@@ -42,6 +42,12 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
   Eigenes. Daraus entstehen Themen-Trefferquoten, die Statistik-Liste
   „Deine schwächsten Themen" (ein Tippen startet die Runde) und die
   „Für dich"-Empfehlung.
+- Einstufung (`core/placement.js`): optionaler letzter Onboarding-Schritt.
+  Intervallhalbierung über die Deck-Reihenfolge, zwei Fragen je Schritt
+  (~20 insgesamt). Das Ergebnis rastet auf eine LEKTIONSGRENZE ein
+  (`lessonBoundaryAtOrBefore`) und legt über `seedCardStates` Kartenlevel
+  mit gestreuten Fälligkeiten an — bestehende Karten werden dabei nie
+  überschrieben. Abbruch mittendrin ändert nichts.
 - Nur ZWEI Modi: geführter **Lernkurs** (Grammatik-Kapitel → 2er-Häppchen
   kennenlernen → Hören → Üben (MC/Vergleich) → Paare verbinden →
   Sprechen → Schreiben (NUR Bausteine — nie ein Tastatur-Eingabefeld,

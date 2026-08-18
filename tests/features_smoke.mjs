@@ -18,13 +18,24 @@ await page.fill('#loginUsername', 'smoke1'); await page.fill('#loginPassword', '
 await page.click('#loginBtn');
 await page.waitForSelector('#app:not([hidden])');
 
-// ── Onboarding beim ersten Login: Sprache → Ziel → Motivation → Lektion 1 ──
+// ── Onboarding beim ersten Login: Sprache → Ziel → Motivation → Vorkenntnisse ──
 check('Onboarding erscheint beim ersten Login', await page.evaluate(() => !document.getElementById('onboarding').hidden));
 await page.evaluate(() => document.querySelector('.ob-chip[data-deck="basic-es"]')?.click());
 await page.evaluate(() => document.getElementById('obNext').click()); await page.waitForTimeout(150);
 await page.evaluate(() => document.querySelector('.ob-chip[data-goal="30"]')?.click());
 await page.evaluate(() => document.getElementById('obNext').click()); await page.waitForTimeout(150);
 await page.evaluate(() => document.querySelector('.ob-chip[data-why="reise"]')?.click());
+await page.evaluate(() => document.getElementById('obNext').click()); await page.waitForTimeout(150);
+// Vorkenntnisse-Schritt: „Ganz neu" ist vorausgewählt, ein Tippen genügt.
+const obStep4 = await page.evaluate(() => ({
+  visible: !document.querySelector('.ob-step[data-ob="4"]').hidden,
+  chips: document.querySelectorAll('.ob-step[data-ob="4"] .ob-chip').length,
+  preset: document.querySelector('.ob-step[data-ob="4"] .ob-chip--active')?.dataset.start,
+  label: document.getElementById('obNext').textContent.trim(),
+}));
+check('Onboarding fragt nach Vorkenntnissen, „Ganz neu" ist voreingestellt',
+  obStep4.visible && obStep4.chips === 2 && obStep4.preset === 'null' && /Lektion 1 starten/.test(obStep4.label),
+  JSON.stringify(obStep4));
 await page.evaluate(() => document.getElementById('obNext').click()); await page.waitForTimeout(800);
 const ob = await page.evaluate(async () => ({
   closed: document.getElementById('onboarding').hidden,
@@ -35,6 +46,98 @@ const ob = await page.evaluate(async () => ({
 }));
 check('Onboarding: startet Lektion 1 mit gewähltem Deck & Ziel',
   ob.closed && ob.session && /Spanisch — Lektion 1/.test(ob.title) && ob.goal === 30 && ob.deck === 'basic-es', JSON.stringify(ob));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// ── Einstufungstest: setzt Kursstand UND Kartenlevel ──
+async function playPlacement(allCorrect) {
+  for (let i = 0; i < 60; i++) {
+    const st = await page.evaluate(async () => {
+      const s = (await import('/core/placement.js')).getPlacementState();
+      if (!s?.current) return null;
+      return { back: s.current.back, options: s.options.map(o => o.back) };
+    });
+    if (!st) break;
+    if (allCorrect) {
+      const idx = st.options.indexOf(st.back);
+      await page.evaluate(k => document.querySelector(`.mc-option[data-idx="${k}"]`)?.click(), idx);
+    } else {
+      await page.evaluate(() => document.getElementById('placementUnknown').click());
+    }
+    await page.waitForTimeout(50);
+  }
+}
+
+const placeStart = await page.evaluate(async () => {
+  window.__placeDone = false;
+  const ok = await (await import('/core/placement.js')).startPlacement('basic-fr', () => { window.__placeDone = true; });
+  return {
+    ok,
+    focus: document.getElementById('view-learn').classList.contains('session-active'),
+    title: document.getElementById('session-title').textContent,
+    question: !!document.querySelector('.placement-card .mc-question'),
+    options: document.querySelectorAll('.placement-card .mc-option').length,
+    unknown: !!document.getElementById('placementUnknown'),
+  };
+});
+check('Einstufung startet im Fokus mit 4 Optionen und „Kenne ich nicht"',
+  placeStart.ok && placeStart.focus && /Französisch — Einstufung/.test(placeStart.title)
+  && placeStart.question && placeStart.options === 4 && placeStart.unknown, JSON.stringify(placeStart));
+
+await playPlacement(true);
+const placedHigh = await page.evaluate(async () => {
+  const course = await import('/core/course.js');
+  const cp = await import('/core/cardProgress.js');
+  const deck = (await import('/core/state.js')).getDecks()['basic-fr'];
+  const states = cp.getCardStates('basic-fr');
+  const first = deck.cards[0].front;
+  return {
+    introduced: course.getCourseState('basic-fr').introduced,
+    lesson: course.lessonNumber('basic-fr'),
+    seeded: Object.keys(states).length,
+    firstLevel: states[first]?.level,
+    firstDue: states[first]?.due,
+    result: !!document.querySelector('.placement-result'),
+    startBtn: document.getElementById('courseNext')?.textContent.trim(),
+    total: deck.cards.length,
+  };
+});
+check('Einstufung: alles richtig → Kursstand springt weit nach vorn',
+  placedHigh.introduced > 400 && placedHigh.lesson > 40, JSON.stringify({ i: placedHigh.introduced, l: placedHigh.lesson }));
+check('Einstufung: Kartenlevel werden gesetzt (SRS läuft weiter)',
+  placedHigh.seeded === placedHigh.introduced && placedHigh.firstLevel >= 1,
+  JSON.stringify({ seeded: placedHigh.seeded, level: placedHigh.firstLevel }));
+check('Einstufung: Fälligkeiten liegen in der Zukunft (kein Stapel am Tag 1)',
+  placedHigh.firstDue > new Date().toISOString().slice(0, 10), String(placedHigh.firstDue));
+check('Einstufung: Ergebnis-Karte mit Startknopf',
+  placedHigh.result && /Lektion \d+ starten/.test(placedHigh.startBtn || ''), JSON.stringify(placedHigh.startBtn));
+
+await page.evaluate(() => document.getElementById('courseNext').click());
+await page.waitForTimeout(500);
+check('Einstufung: Startknopf führt in die Lektion',
+  await page.evaluate(() => window.__placeDone === true));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// Gegenprobe: nichts gewusst → Kurs bleibt bei Lektion 1, nichts gesetzt.
+const placedLow = await page.evaluate(async () => {
+  await (await import('/core/placement.js')).startPlacement('basic-ru', () => {});
+  return true;
+});
+await playPlacement(false);
+const lowResult = await page.evaluate(async () => {
+  const course = await import('/core/course.js');
+  const cp = await import('/core/cardProgress.js');
+  return {
+    introduced: course.getCourseState('basic-ru').introduced,
+    lesson: course.lessonNumber('basic-ru'),
+    seeded: Object.keys(cp.getCardStates('basic-ru')).length,
+    text: document.querySelector('.placement-result__lead')?.textContent.trim(),
+  };
+});
+check('Einstufung: nichts gewusst → Start bei Lektion 1, nichts vorbelegt',
+  placedLow && lowResult.introduced === 0 && lowResult.lesson === 1 && lowResult.seeded === 0,
+  JSON.stringify(lowResult));
+check('Einstufung: ehrlicher Text statt Schönfärberei',
+  /ganz vorne/.test(lowResult.text || ''), lowResult.text);
 await click('#sessionBackBtn'); await page.waitForTimeout(250);
 
 // ── „Für dich"-Empfehlung: frisches Deck → Kursstart empfohlen ──

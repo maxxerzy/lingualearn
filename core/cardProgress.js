@@ -68,6 +68,31 @@ export function cardAccuracy(st) {
   return ((st.correct || 0) + recentRight) / total;
 }
 
+// Karten-Zustände in einem Rutsch anlegen (Einstufungstest). Bereits
+// vorhandene Karten bleiben unangetastet — eine Einstufung darf nie
+// echten Lernfortschritt überschreiben. Die Fälligkeiten werden über
+// mehrere Tage verteilt, sonst läge nach der Einstufung der halbe
+// Grundwortschatz an einem einzigen Tag auf dem Stapel.
+export function seedCardStates(deckId, entries) {
+  const map = load();
+  let added = 0;
+  for (const { front, level, dueInDays } of entries) {
+    const k = `${deckId}:${front}`;
+    if (map[k]) continue;
+    const lvl = Math.min(MAX_STAGE, Math.max(0, Number(level) || 0));
+    map[k] = {
+      level: lvl,
+      correct: lvl > 0 ? 1 : 0,
+      wrong: 0,
+      hist: lvl > 0 ? '1' : '0',
+      due: dateStr(dueInDays === undefined ? INTERVALS_DAYS[lvl] : dueInDays),
+    };
+    added++;
+  }
+  if (added) store.save(map);
+  return added;
+}
+
 export function levelName(level) {
   if (level >= MAX_LEVEL) return 'Gemeistert';
   if (level >= 3) return 'Wiederholen';

@@ -75,6 +75,31 @@ export function resetCourse(deckId) {
   if (map[deckId]) { delete map[deckId]; store.save(map); }
 }
 
+// Größte Lektionsgrenze, die nicht über `n` hinausgeht. Der
+// Einstufungstest rastet darauf ein, damit der Kurs nie mitten in einer
+// Lektion beginnt.
+export function lessonBoundaryAtOrBefore(deckId, n) {
+  const sizes = lessonPlans[deckId];
+  if (!sizes) return Math.max(0, Math.floor(n / LESSON_SIZE) * LESSON_SIZE);
+  let acc = 0;
+  for (const size of sizes) {
+    if (acc + size > n) return acc;
+    acc += size;
+  }
+  return acc;
+}
+
+// Kursstand direkt setzen (Einstufungstest). Zurück geht es dabei nie —
+// ein bereits weiter fortgeschrittener Stand bleibt stehen.
+export function setIntroduced(deckId, n) {
+  const map = load();
+  const st = map[deckId] || { introduced: 0 };
+  st.introduced = Math.max(st.introduced || 0, Math.max(0, n));
+  map[deckId] = st;
+  store.save(map);
+  return st;
+}
+
 export function advanceCourse(deckId, n) {
   const map = load();
   const st = map[deckId] || { introduced: 0 };
