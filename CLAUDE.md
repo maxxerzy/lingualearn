@@ -31,6 +31,9 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
   `MIT_UEBUNGEN` in `tests/features_smoke.mjs`.
 - Statische PWA ohne Build-Schritt, ES-Module: `core/` (Logik, Stores),
   `ui/` (Ansichten), `js/data/` (Decks, Themen, Grammatik), `utils/`.
+- Reine Rechenlogik gehört in DOM-freie Module (`utils/sentence.js`,
+  `core/weakness.js`, `core/cardProgress.js`) — nur die lassen sich in
+  `tests/unit.mjs` ohne Browser prüfen.
 - Nutzerdaten liegen im localStorage pro Konto (`core/userStore.js`-Präfixe)
   und werden über `core/sync.js` + `worker.js` (Cloudflare KV) zwischen
   Geräten abgeglichen. Der Abgleich FÜHRT ZUSAMMEN (höheres Level, mehr
@@ -80,6 +83,7 @@ scrollen lassen — niemals die Seite.
 
 ## Tests (vor jedem Push ausführen)
 ```
+node tests/unit.mjs                      # Kernlogik, reines Node (<1 s)
 (python3 -m http.server 4173 &)          # aus der Repo-Wurzel
 node tests/features_smoke.mjs            # Funktions-Regression
 node tests/worker_sync.mjs               # Sync-Server (ohne Browser/Cloudflare)
@@ -89,6 +93,10 @@ node tests/compat_audit.mjs <gerät>      # je: se iph14 iph14pm ipadmini
                                          #     ipad11 ipad11l ipad13l mac13
                                          #     mac16 mac21 mac27
 ```
+`tests/unit.mjs` läuft ohne Browser (localStorage-Ersatz) und deckt
+SRS (`core/cardProgress.js`), die Sync-Zusammenführung (`mergeSnapshots`),
+die Satzlogik (`utils/sentence.js`) und das Schwächen-Profil ab — erst
+danach lohnt der teure Browser-Durchlauf.
 Alle Smoke-Checks und 11/11 Geräte müssen PASS sein. Neue Features immer
 mit Checks in `tests/features_smoke.mjs` absichern; Zähler-Erwartungen
 (Kataloge, Erfolge) beim Erweitern mitziehen.
