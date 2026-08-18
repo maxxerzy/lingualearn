@@ -67,6 +67,7 @@ const PRECACHE = [
   './ui/onboarding.js',
   './core/errorLog.js',
   './core/weakness.js',
+  './core/offline.js',
   './utils/feedback.js',
   './utils/speech.js',
   './core/sync.js',
@@ -88,6 +89,15 @@ self.addEventListener('install', event => {
   );
 });
 
+// Die Seite fragt den Cache-Namen ab, um Deck-Dateien für den
+// Offline-Betrieb vorab hineinzulegen (siehe `core/offline.js`).
+// Der Name wandert mit jedem Release mit — deshalb wird er erfragt
+// statt in der App gespiegelt.
+self.addEventListener('message', event => {
+  if (event.data?.type !== 'CACHE_NAME') return;
+  event.ports?.[0]?.postMessage({ cacheName: CACHE_NAME, version: CACHE_VERSION });
+});
+
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
@@ -101,6 +111,12 @@ self.addEventListener('activate', event => {
 
 // Cache-first mit Netzwerk-Fallback; erfolgreiche Same-Origin-GETs
 // werden nachgecacht (z. B. neue Dateien nach einem Update).
+//
+// Nachgeschlagen und abgelegt wird immer unter der URL OHNE Suchteil:
+// Ein fehlgeschlagener Deck-Import wird von `core/state.js` mit einem
+// Wiederhol-Parameter erneut angefragt (Browser merken sich gescheiterte
+// Module sonst dauerhaft). Ohne diese Vereinheitlichung läge dieselbe
+// Datei mehrfach im Cache — und der spätere saubere Import fände sie nicht.
 self.addEventListener('fetch', event => {
   const { request } = event;
   if (request.method !== 'GET') return;
@@ -108,13 +124,15 @@ self.addEventListener('fetch', event => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
+  const key = url.search ? (url.origin + url.pathname) : request;
+
   event.respondWith(
-    caches.match(request).then(cached => {
+    caches.match(key).then(cached => {
       if (cached) return cached;
       return fetch(request).then(response => {
         if (response.ok) {
           const copy = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+          caches.open(CACHE_NAME).then(cache => cache.put(key, copy));
         }
         return response;
       });
