@@ -16,6 +16,8 @@ import { getCurrentUser } from '../core/auth.js';
 import { getSpeechRate, setSpeechRate, rateLabel, speak } from '../utils/speech.js';
 import { getReminder, setReminder, notificationsSupported,
          requestNotificationPermission } from '../core/reminder.js';
+import { offlineDecks, offlineSupported, savedDeckIds, saveDeckOffline,
+         removeDeckOffline, formatBytes } from '../core/offline.js';
 
 // Freitext (Deck- und Kontonamen) darf nie ungeprüft in innerHTML landen —
 // importierte Decks bringen einen frei wählbaren Namen mit.
@@ -71,6 +73,53 @@ export function renderMergeAccounts() {
   group.hidden = false;
   select.innerHTML = others.map(u =>
     `<option value="${esc(u)}">${esc(u)}</option>`).join('');
+}
+
+// ── Offline verfügbar: je Deck ein Schalter mit Größenangabe ─────
+// Die App-Hülle liegt komplett im Precache; nur die Wortlisten kommen
+// erst beim Öffnen dazu. Wer sie vorab sichert, kann eine Sprache auch
+// starten, die er auf diesem Gerät noch nie geöffnet hat.
+export async function renderOfflineDecks() {
+  const list = document.getElementById('offlineList');
+  const group = document.getElementById('offlineGroup');
+  if (!list || !group) return;
+  if (!offlineSupported()) { group.hidden = true; return; }
+  group.hidden = false;
+
+  const decks = offlineDecks();
+  const saved = new Set(await savedDeckIds());
+  const savedBytes = decks.filter(d => saved.has(d.id)).reduce((n, d) => n + d.bytes, 0);
+
+  list.innerHTML = decks.map(d => `
+    <label class="offline-row">
+      <input type="checkbox" data-offline-deck="${esc(d.id)}"${saved.has(d.id) ? ' checked' : ''}>
+      <span class="offline-row__main">
+        <b>${esc(d.name)}</b>
+        <span>${d.count} Karten · ${formatBytes(d.bytes)}</span>
+      </span>
+      <span class="offline-row__state">${saved.has(d.id) ? '<i class="fas fa-check"></i> gesichert' : 'nicht gesichert'}</span>
+    </label>`).join('');
+
+  const total = document.getElementById('offlineTotal');
+  if (total) {
+    total.textContent = saved.size
+      ? `${saved.size} von ${decks.length} Sprachen gesichert · ${formatBytes(savedBytes)}`
+      : 'Noch keine Sprache gesichert';
+  }
+
+  list.querySelectorAll('[data-offline-deck]').forEach(box =>
+    box.addEventListener('change', async () => {
+      const deckId = box.dataset.offlineDeck;
+      box.disabled = true;
+      const ok = box.checked ? await saveDeckOffline(deckId) : await removeDeckOffline(deckId);
+      box.disabled = false;
+      if (box.checked && !ok) {
+        // Ohne Netz lässt sich nichts nachladen — Schalter ehrlich zurückdrehen.
+        box.checked = false;
+        showToast('<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>Sicherung nicht möglich</b><span>Dafür braucht es einmal eine Verbindung.</span></div>', { variant: 'warn' });
+      }
+      renderOfflineDecks();
+    }));
 }
 
 // Konto-Schlüssel anzeigen (standardmäßig verdeckt — er ist das

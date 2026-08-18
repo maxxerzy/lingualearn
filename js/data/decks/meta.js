@@ -1,10 +1,10 @@
 export const deckMeta = [
-  { id: 'basic-da', name: 'Dänisch', language: 'da', count: 754 },
-  { id: 'basic-el', name: 'Griechisch', language: 'el', count: 753 },
-  { id: 'basic-la', name: 'Latein', language: 'la', count: 750 },
-  { id: 'basic-fr', name: 'Französisch', language: 'fr', count: 750 },
-  { id: 'basic-es', name: 'Spanisch', language: 'es', count: 750 },
-  { id: 'basic-ru', name: 'Russisch', language: 'ru', count: 728 },
-  { id: 'basic-ja', name: 'Japanisch', language: 'ja', count: 224 },
-  { id: 'basic-zh', name: 'Chinesisch (Mandarin)', language: 'zh', count: 336 }
+  { id: 'basic-da', name: 'Dänisch', language: 'da', count: 754, bytes: 116780 },
+  { id: 'basic-el', name: 'Griechisch', language: 'el', count: 753, bytes: 153245 },
+  { id: 'basic-la', name: 'Latein', language: 'la', count: 750, bytes: 124066 },
+  { id: 'basic-fr', name: 'Französisch', language: 'fr', count: 750, bytes: 124690 },
+  { id: 'basic-es', name: 'Spanisch', language: 'es', count: 750, bytes: 126612 },
+  { id: 'basic-ru', name: 'Russisch', language: 'ru', count: 728, bytes: 162651 },
+  { id: 'basic-ja', name: 'Japanisch', language: 'ja', count: 224, bytes: 35665 },
+  { id: 'basic-zh', name: 'Chinesisch (Mandarin)', language: 'zh', count: 336, bytes: 45536 }
 ];
