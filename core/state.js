@@ -63,6 +63,8 @@ export function addImportedDeck(deckId, deckData) {
 
 // In-flight load promises — prevents double-fetching the same deck.
 const loadingPromises = {};
+// Zähler gescheiterter Ladeversuche je Deck (für die Wiederhol-URL).
+const deckRetries = {};
 
 export async function loadDeck(deckId) {
   const entry = liveDecks[deckId];
@@ -70,9 +72,16 @@ export async function loadDeck(deckId) {
   if (entry.cards !== null) return entry;
   if (loadingPromises[deckId]) return loadingPromises[deckId];
 
+  // Scheitert der Import (offline und Deck nicht gesichert), darf das
+  // Versprechen NICHT liegen bleiben — sonst bleibt das Deck auch dann
+  // unlesbar, wenn das Netz später wieder da ist. Zusätzlich braucht der
+  // zweite Versuch eine andere URL: Browser merken sich gescheiterte
+  // Module dauerhaft unter ihrem Pfad. Der Service Worker ignoriert den
+  // Suchteil, der Cache-Treffer bleibt also derselbe.
   loadingPromises[deckId] = (async () => {
     const { language } = entry;
-    const mod = await import(`../js/data/decks/${language}.js`);
+    const retry = deckRetries[deckId] ? `?v=${deckRetries[deckId]}` : '';
+    const mod = await import(`../js/data/decks/${language}.js${retry}`);
     // Alle Übersetzungen (exampleDE) stehen fest in den Deck-Dateien —
     // kein Laufzeit-API-Aufruf mehr nötig.
     entry.cards = JSON.parse(JSON.stringify(mod.cards));
@@ -81,7 +90,11 @@ export async function loadDeck(deckId) {
     entry.lessonSizes = mod.lessonSizes || null;
     setLessonPlan(deckId, mod.lessonSizes);
     return entry;
-  })();
+  })().catch(err => {
+    delete loadingPromises[deckId];
+    deckRetries[deckId] = (deckRetries[deckId] || 0) + 1;
+    throw err;
+  });
 
   return loadingPromises[deckId];
 }
