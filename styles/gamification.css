@@ -927,6 +927,52 @@
 .btn-danger-outline:hover { background: color-mix(in srgb, #e05260 12%, var(--surface, #fff)); }
 .settings-hint { color: var(--gray, #6c757d); font-size: .78rem; margin-top: 6px; text-transform: none; letter-spacing: 0; }
 
+/* ── Offline verfügbar: ein Schalter je Sprache ────────────────── */
+.offline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 232px;
+  overflow-y: auto;
+}
+
+.offline-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1.5px solid var(--light-gray, #e9ecef);
+  border-radius: 10px;
+  background: var(--surface, #fff);
+  color: var(--dark, #212529);
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.offline-row input { width: 18px; height: 18px; flex: none; accent-color: var(--primary, #4361ee); }
+.offline-row__main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.offline-row__main b { font-size: 0.9rem; font-weight: 650; }
+.offline-row__main span { font-size: 0.76rem; color: var(--gray, #6c757d); }
+
+.offline-row__state {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--gray, #6c757d);
+  white-space: nowrap;
+}
+
+.offline-row input:checked ~ .offline-row__state { color: #2e9e5b; }
+
+.offline-total {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary, #4361ee);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 /* ── Konversations-Bausteine im Lernkurs ──────────────────────── */
 .talk-card { max-width: 520px; margin: 0 auto; }
 .talk-bubble {

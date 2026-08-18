@@ -12,6 +12,7 @@ import { checkNewCosmetics } from './cosmetics.js';
 import { pendingQuestClaims } from './quests.js';
 import { saveErrors, clearErrors } from './errorLog.js';
 import { themePack } from './weakness.js';
+import { autoSaveDeck } from './offline.js';
 import { playCorrect, playWrong } from '../utils/feedback.js';
 import { speak, latinPron } from '../utils/speech.js';
 import { syncSoon } from './sync.js';
@@ -744,6 +745,11 @@ function endSession() {
   renderGamiHeader();
   renderLearnWidgets();
   const freshAchievements = checkAchievements();
+
+  // Das gelernte Deck fürs Offline-Lernen sichern — nach der ersten
+  // abgeschlossenen Lektion liegt es dauerhaft im Cache, auch ohne dass
+  // jemand an den Schalter in den Einstellungen gedacht hat.
+  if (session?.deckId) autoSaveDeck(session.deckId);
 
   // Fehler für „Für dich"/Fehler-Training über Neustarts hinweg merken.
   if (session?.deckId) {

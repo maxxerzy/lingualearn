@@ -444,6 +444,15 @@
                 Uhrzeit öffnest — eine Push-Nachricht bei geschlossener App braucht einen
                 Push-Server und ist noch nicht eingerichtet.</p>
             </div>
+            <div class="form-group" id="offlineGroup">
+              <label>Offline verfügbar</label>
+              <div class="offline-list" id="offlineList"></div>
+              <p class="offline-total" id="offlineTotal"></p>
+              <p class="settings-hint" id="offlineHint">Die App selbst funktioniert immer ohne Netz.
+                Die Wortlisten sind einzeln so groß, dass sie erst beim ersten Öffnen geladen werden —
+                sichere hier vorab die Sprachen, die du unterwegs brauchst. Das aktive Deck sichert
+                sich nach der ersten abgeschlossenen Lektion von selbst.</p>
+            </div>
             <div class="form-group">
               <label class="fx-toggle" for="fxToggle">
                 <input type="checkbox" id="fxToggle" checked>
@@ -651,7 +660,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v40';
+    var APP_VERSION = 'v41';
     var loginMode = 'login';
 
     function hp(pw) {
