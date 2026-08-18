@@ -643,6 +643,15 @@
           <button type="button" class="ob-chip" data-why="spass">🎉<br><b>Spaß</b></button>
         </div>
       </div>
+      <div class="ob-step" data-ob="4" hidden>
+        <h3>Kannst du die Sprache schon ein bisschen?</h3>
+        <div class="ob-grid ob-grid--goals">
+          <button type="button" class="ob-chip ob-chip--active" data-start="null">🌱<br><b>Ganz neu</b></button>
+          <button type="button" class="ob-chip" data-start="test">🎯<br><b>Einstufen</b></button>
+        </div>
+        <p class="ob-hint">Die Einstufung fragt rund 20 Wörter quer durch das Deck
+          und setzt den Kurs dorthin, wo es für dich neu wird. Dauert etwa zwei Minuten.</p>
+      </div>
       <div class="ob-footer">
         <button type="button" class="btn" id="obSkip">Später</button>
         <button type="button" class="btn btn-primary" id="obNext">Weiter</button>
@@ -660,7 +669,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v42';
+    var APP_VERSION = 'v43';
     var loginMode = 'login';
 
     function hp(pw) {

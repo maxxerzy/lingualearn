@@ -402,6 +402,45 @@ await page.waitForTimeout(250);
 await page.selectOption('#deckSelect', 'basic-da');
 await page.waitForTimeout(300);
 
+// ── 7c) Einstufungstest: Frage-Karte und Ergebnis ohne Scrollen ──
+{
+  const started = await page.evaluate(async () =>
+    (await import('/core/placement.js')).startPlacement('basic-da', () => {}));
+  const badP = [];
+  let steps = 0;
+  for (let i = 0; i < 30; i++) {
+    const has = await page.evaluate(() => !!document.querySelector('.placement-card'));
+    if (!has) break;
+    steps++;
+    const m = await measureStep();
+    if (m.v > V_TOL_SESSION || m.h > 1 || m.barOverlap || m.clipped || m.offscreen) {
+      badP.push(`frage ${steps}: v=${m.v} h=${m.h}${m.clipped ? ' clipped' : ''}${m.offscreen ? ' btn-offscreen' : ''}`);
+    }
+    // Abwechselnd richtig und „kenne ich nicht" — so werden beide Zweige
+    // der Suche und beide Kartenhöhen gemessen.
+    if (i % 2 === 0) {
+      await page.evaluate(async () => {
+        const st = (await import('/core/placement.js')).getPlacementState();
+        const idx = st.options.findIndex(o => o.back === st.current.back);
+        document.querySelector(`.mc-option[data-idx="${idx}"]`)?.click();
+      });
+    } else {
+      await page.evaluate(() => document.getElementById('placementUnknown')?.click());
+    }
+    await page.waitForTimeout(90);
+  }
+  const res = await measureStep();
+  const resultOk = await page.evaluate(() =>
+    !!document.querySelector('.placement-result') && !!document.getElementById('courseNext'));
+  check('Einstufung: jede Frage ohne Scrollen/Überlappung',
+    started && steps >= 4 && badP.length === 0, `${steps} Fragen ${badP.slice(0, 3).join(' | ')}`);
+  check('Einstufung: Ergebnis-Karte passt und der Startknopf ist erreichbar',
+    resultOk && res.v <= V_TOL_SESSION && res.h <= 1 && !res.offscreen,
+    JSON.stringify({ resultOk, v: res.v, h: res.h, off: res.offscreen }));
+  await page.evaluate(() => document.getElementById('sessionBackBtn')?.click());
+  await page.waitForTimeout(250);
+}
+
 // ── 8) Dark Mode: gleiche Layout-Garantien, nichts überlappt ──
 await page.emulateMedia({ colorScheme: 'dark' });
 await page.waitForTimeout(300);

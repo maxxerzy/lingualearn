@@ -132,7 +132,7 @@ export function getSelectedMode() {
 
 // Fokus-Modus: blendet (mobil) die Konfiguration aus und zeigt nur den
 // Lernbereich mit Zurück-/Modus-Leiste. Die Lernkarte gibt's im Kurs.
-function enterFocus(mode) {
+export function enterFocus(mode) {
   setTimeout(fitLearnArea, 0);   // nach dem Umschalten des Layouts messen
   document.getElementById('view-learn')?.classList.add('session-active');
   const mapBtn = document.getElementById('sessionMapBtn');
