@@ -32,6 +32,7 @@ const cp = await import('../core/cardProgress.js');
 const sync = await import('../core/sync.js');
 const sen = await import('../utils/sentence.js');
 const weak = await import('../core/weakness.js');
+const pron = await import('../utils/pronounce.js');
 
 const day = off => {
   const d = new Date();
@@ -237,6 +238,48 @@ console.log('\n── Satzlogik (utils/sentence.js) ──');
     sen.backMatchScore('huset', 'hus'), 0);
   eq('Wortabgleich: kurze Wörter matchen nicht als Teilstring',
     sen.backMatchScore('er', 'e'), 0);
+}
+
+// ── 4) Aussprache-Vergleich ──────────────────────────────────────
+console.log('\n── Aussprache (utils/pronounce.js) ──');
+{
+  const cmp = (t, h, lang = 'da') => pron.comparePronunciation(t, h, lang);
+
+  eq('exakt gesprochen → getroffen',
+    (r => [r.ok, Math.round(r.score * 100)])(cmp('hus', 'hus')), [true, 100]);
+  eq('Groß/Klein und Satzzeichen sind egal', cmp('hus', 'Hus.').ok, true);
+  eq('Akzente und Sonderzeichen werden vereinheitlicht',
+    cmp('æble', 'aeble').ok, true);
+
+  const zuViel = cmp('hus', 'huset');
+  eq('Zielwort steckt im Gehörten → gilt als getroffen', zuViel.ok, true);
+
+  const zuWenig = cmp('huset', 'hus');
+  eq('fehlende Endung wird als Abweichung markiert',
+    zuWenig.target.map(p => (p.ok ? p.text : '[' + p.text + ']')).join(''), 'hus[e][t]');
+  eq('Hinweis nennt die abweichende Stelle', pron.mismatchHint(zuWenig), 'Achte auf „et“.');
+  eq('Buchstaben-Vergleich bei einem einzelnen Wort', zuWenig.charLevel, true);
+
+  const satz = cmp('god morgen', 'gut morgen');
+  eq('mehrere Wörter werden wortweise verglichen', satz.charLevel, false);
+  eq('nur das falsche Wort ist markiert',
+    satz.target.map(p => p.ok), [false, true]);
+  eq('Hinweis nennt das falsche Wort', pron.mismatchHint(satz), 'Achte auf „god“.');
+
+  eq('nichts verstanden → nicht getroffen, nichts markiert grün',
+    (r => [r.ok, r.score, r.heard.length])(cmp('hus', '')), [false, 0, 0]);
+  eq('völlig daneben → deutlicher Hinweis statt Detailkritik',
+    pron.mismatchHint(cmp('bil', 'zug')), 'Das war noch etwas anderes — hör es dir nochmal an.');
+
+  const zh = cmp('我有书', '我有猫', 'zh');
+  eq('Chinesisch wird zeichenweise verglichen', zh.charLevel, true);
+  eq('Chinesisch: nur das falsche Zeichen ist markiert',
+    zh.target.map(p => p.ok), [true, true, false]);
+  eq('Chinesisch: Hinweis ohne Leerzeichen', pron.mismatchHint(zh), 'Achte auf „书“.');
+
+  eq('Ausrichtung findet die längste gemeinsame Folge',
+    pron.matchPairs(['a', 'b', 'c'], ['a', 'x', 'c']), [[0, 0], [2, 2]]);
+  eq('Schwelle liegt bei 80 %', pron.PASS_SCORE, 0.8);
 }
 
 // ── 4) Schwächen-Profil (reine Auswertung) ───────────────────────

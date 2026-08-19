@@ -2,7 +2,7 @@
 // vollständig offline nutzbar.
 // WICHTIG: CACHE_VERSION bei jedem Release erhöhen, damit Clients
 // die neuen Dateien bekommen.
-const CACHE_VERSION = 'v43';
+const CACHE_VERSION = 'v44';
 const CACHE_NAME = `lingualearn-${CACHE_VERSION}`;
 
 // Komplette App-Shell — alles relative Pfade, funktioniert daher auf
@@ -80,6 +80,7 @@ const PRECACHE = [
   './ui/toast.js',
   './utils/helpers.js',
   './utils/sentence.js',
+  './utils/pronounce.js',
 ];
 
 self.addEventListener('install', event => {

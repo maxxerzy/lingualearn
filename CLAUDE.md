@@ -58,6 +58,12 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
   (`lessonBoundaryAtOrBefore`) und legt über `seedCardStates` Kartenlevel
   mit gestreuten Fälligkeiten an — bestehende Karten werden dabei nie
   überschrieben. Abbruch mittendrin ändert nichts.
+- Sprechen hat drei Ausbaustufen (`renderCourseSpeak` + `utils/pronounce.js`):
+  mit Spracherkennung Wort-für-Wort-Abgleich mit markierter Abweichung
+  („listen"), ohne Erkennung aber mit Mikrofon der Vergleich der eigenen
+  Aufnahme mit der Referenzstimme („compare", iOS Safari), sonst
+  Selbsteinschätzung („self"). Fällt die Erkennung zur Laufzeit aus,
+  schaltet der Schritt selbst auf „compare" um.
 - Nur ZWEI Modi: geführter **Lernkurs** (Grammatik-Kapitel → 2er-Häppchen
   kennenlernen → Hören → Üben (MC/Vergleich) → Paare verbinden →
   Sprechen → Schreiben (NUR Bausteine — nie ein Tastatur-Eingabefeld,

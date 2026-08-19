@@ -1587,6 +1587,33 @@ label {
 .placement-result__lead { margin-bottom: 8px; }
 .placement-result__hint { font-size: .85rem; color: var(--gray); margin-bottom: 16px; line-height: 1.5; }
 
+/* ── Aussprache-Vergleich (Sprechen-Schritt) ───────────────────── */
+.pron-compare {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--light, #f1f3f5);
+  text-align: left;
+}
+.pron-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+.pron-label {
+  flex: none;
+  width: 52px;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--gray);
+}
+.pron-text { font-size: 1.02rem; font-weight: 600; word-break: break-word; }
+.pron-part--bad {
+  color: #d9480f;
+  text-decoration: underline wavy #d9480f;
+  text-underline-offset: 3px;
+}
+.pron-hint { margin-top: 6px; font-size: .82rem; color: var(--gray); }
+.pron-play { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+
 /* ── Grammatik im Lernkurs ─────────────────────────────────────── */
 /* Karte mit intern scrollendem Text — der Bildschirm scrollt nie.  */
 .grammar-card {

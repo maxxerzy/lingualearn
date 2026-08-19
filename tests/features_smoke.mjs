@@ -1,4 +1,5 @@
 import { chromium, devices } from '/opt/node22/lib/node_modules/playwright/index.mjs';
+import { courseStepFn } from './course_driver.mjs';
 
 // Kompakte Funktions-Regression: Kernfeatures quer durch die App (iPhone 14).
 const BASE = 'http://127.0.0.1:4173';
@@ -392,6 +393,127 @@ check('Fehlerliste wird ergänzt statt überschrieben',
 check('Gelöste Fehler fallen wieder aus der Liste',
   errLog.pruned.length === 2 && !errLog.pruned.includes('A') && errLog.pruned.includes('C'),
   JSON.stringify(errLog.pruned));
+
+// ── Aussprache: drei Ausbaustufen je nach Gerät ──
+// Bis zur Sprechen-Phase eines Kurses vorspulen.
+async function toSpeakPhase() {
+  await page.evaluate(() => document.getElementById('sessionBackBtn')?.click());
+  await page.waitForTimeout(200);
+  await page.evaluate(() => document.querySelector('.mode-btn[data-mode="course"]')?.click());
+  await page.waitForTimeout(150);
+  await page.evaluate(() => document.getElementById('startBtn').click());
+  await page.waitForTimeout(700);
+  for (let i = 0; i < 200; i++) {
+    const phase = await page.evaluate(async () => {
+      if (document.getElementById('gramNext')) return 'grammar';
+      return (await import('/core/state.js')).getCurrentSession()?.phase || 'end';
+    });
+    if (phase === 'speak') return true;
+    if (phase === 'end') return false;
+    await page.evaluate(courseStepFn);
+    await page.waitForTimeout(70);
+  }
+  return false;
+}
+
+// Erkennung vortäuschen: liefert, was in window.__heard steht.
+await page.evaluate(() => {
+  window.__heard = '';
+  window.__srError = null;
+  class FakeSR {
+    start() {
+      setTimeout(() => {
+        if (window.__srError) { this.onerror?.({ error: window.__srError }); return; }
+        this.onresult?.({ results: [[{ transcript: window.__heard }]] });
+      }, 30);
+    }
+    abort() {}
+  }
+  window.SpeechRecognition = FakeSR;
+  window.webkitSpeechRecognition = FakeSR;
+});
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(400);
+check('Sprechen-Phase erreicht', await toSpeakPhase());
+
+// 1) Erkennung da, Aussprache daneben → Wort-für-Wort-Abgleich
+const wrongSpoken = await page.evaluate(async () => {
+  const card = (await import('/core/state.js')).getCurrentSession().queue[0];
+  window.__heard = card.back.slice(0, Math.max(1, card.back.length - 2)) + 'zx';
+  document.querySelector('.speak-card')?.getAttribute('data-speak-mode');
+  document.getElementById('courseSpeakRec').click();
+  await new Promise(r => setTimeout(r, 300));
+  return {
+    mode: document.querySelector('.speak-card')?.dataset.speakMode,
+    compare: !!document.querySelector('.pron-compare'),
+    marked: document.querySelectorAll('.pron-part--bad').length,
+    hint: document.querySelector('.pron-hint')?.textContent.trim() || '',
+    rows: document.querySelectorAll('.pron-row').length,
+    target: card.back,
+  };
+});
+check('Erkennung da: Modus „zuhören"', wrongSpoken.mode === 'listen', wrongSpoken.mode);
+check('Falsch gesprochen → Ziel und Gehörtes nebeneinander, Abweichung markiert',
+  wrongSpoken.compare && wrongSpoken.rows === 2 && wrongSpoken.marked > 0,
+  JSON.stringify(wrongSpoken));
+check('Rückmeldung nennt die abweichende Stelle',
+  /Achte auf|hör es dir nochmal an|deutlicher/.test(wrongSpoken.hint), wrongSpoken.hint);
+await page.waitForTimeout(2700);
+
+// 2) Richtig gesprochen → als getroffen gewertet
+check('Sprechen-Phase läuft weiter', await page.evaluate(async () =>
+  (await import('/core/state.js')).getCurrentSession()?.phase === 'speak'));
+const rightSpoken = await page.evaluate(async () => {
+  const card = (await import('/core/state.js')).getCurrentSession().queue[0];
+  window.__heard = card.back;
+  document.getElementById('courseSpeakRec').click();
+  await new Promise(r => setTimeout(r, 300));
+  return {
+    ok: !!document.querySelector('#mc-fb .correct'),
+    marked: document.querySelectorAll('.pron-part--bad').length,
+    compare: !!document.querySelector('.pron-compare'),
+    head: document.querySelector('#mc-fb p')?.textContent.trim(),
+  };
+});
+check('Richtig gesprochen → grün, kein Vergleichsblock nötig',
+  rightSpoken.ok && rightSpoken.marked === 0 && !rightSpoken.compare, JSON.stringify(rightSpoken));
+await page.waitForTimeout(1000);
+
+// 3) Erkennung verweigert → Vergleichs-Modus statt Sackgasse
+const fallback = await page.evaluate(async () => {
+  window.__srError = 'not-allowed';
+  document.getElementById('courseSpeakRec')?.click();
+  await new Promise(r => setTimeout(r, 300));
+  return {
+    mode: document.querySelector('.speak-card')?.dataset.speakMode,
+    playRow: !!document.getElementById('pronPlay'),
+    okLabel: document.getElementById('courseSpeakOk')?.textContent.trim(),
+    note: document.querySelector('#mc-fb .incorrect')?.textContent.trim() || '',
+  };
+});
+check('Erkennung verweigert → Umschalten auf Vergleich statt Sackgasse',
+  fallback.mode === 'compare' && fallback.playRow && /Klang gleich/.test(fallback.okLabel || ''),
+  JSON.stringify(fallback));
+check('Umschalten wird begründet', /Erkennung/.test(fallback.note), fallback.note);
+
+// 4) Ganz ohne Erkennung (iOS Safari) → direkt Vergleichs-Modus
+await page.evaluate(() => {
+  delete window.SpeechRecognition;
+  delete window.webkitSpeechRecognition;
+});
+await page.evaluate(() => document.getElementById('courseSpeakRetry').click());
+await page.waitForTimeout(400);
+const iosMode = await page.evaluate(() => ({
+  phase: document.querySelector('.speak-card')?.dataset.speakMode,
+  rec: !!document.getElementById('courseSpeakRec'),
+  playHidden: document.getElementById('pronPlay')?.hidden,
+  okLabel: document.getElementById('courseSpeakOk')?.textContent.trim(),
+  prompt: document.querySelector('.speak-card .prompt')?.textContent.trim(),
+}));
+check('Ohne Erkennung: Vergleichs-Modus statt nur „Hat geklappt"',
+  iosMode.phase === 'compare' && iosMode.rec && iosMode.playHidden === true
+  && /Klang gleich/.test(iosMode.okLabel || '') && /vergleiche/.test(iosMode.prompt || ''),
+  JSON.stringify(iosMode));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
 
 // ── Doppelt-oder-nichts: Kauf + Gewinn-Auswertung ──
 const wager = await page.evaluate(async () => {
