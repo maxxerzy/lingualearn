@@ -1322,10 +1322,13 @@ await click('#sessionBackBtn'); await page.waitForTimeout(250);
 const spaceless = await page.evaluate(async () => {
   const zh = await (await import('/core/state.js')).loadDeck('basic-zh');
   const withEx = zh.cards.find(c => c.example.includes(c.back));
-  return { deck: zh.cards.length, name: zh.name, lang: zh.language, hasEx: !!withEx };
+  return { deck: zh.cards.length, name: zh.name, lang: zh.language, hasEx: !!withEx,
+           sum: zh.lessonSizes.reduce((a, b) => a + b, 0), lessons: zh.lessonSizes.length,
+           titles: zh.lessonTitles.length };
 });
-check('Chinesisch-Deck geladen (336 Karten, Lektionsplan stimmt)',
-  spaceless.deck === 336 && spaceless.lang === 'zh' && spaceless.hasEx, JSON.stringify(spaceless));
+check('Chinesisch-Deck auf ~750 Karten ausgebaut, Lektionsplan stimmt',
+  spaceless.deck >= 700 && spaceless.lang === 'zh' && spaceless.hasEx
+  && spaceless.sum === spaceless.deck && spaceless.titles === spaceless.lessons, JSON.stringify(spaceless));
 
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
 
@@ -1845,8 +1848,8 @@ const jaDeck = await page.evaluate(async () => {
     complete,
   };
 });
-check('Japanisch: Deck erweitert, Lektionsplan stimmt',
-  jaDeck.cards >= 220 && jaDeck.unique === jaDeck.cards && jaDeck.sum === jaDeck.cards
+check('Japanisch: Deck auf ~750 Karten ausgebaut, Lektionsplan stimmt',
+  jaDeck.cards >= 700 && jaDeck.unique === jaDeck.cards && jaDeck.sum === jaDeck.cards
   && jaDeck.titles === jaDeck.lessons && jaDeck.complete, JSON.stringify(jaDeck));
 
 // ── Funktions-Tiefentests: Shop, Wort des Tages, Quests ──

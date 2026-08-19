@@ -173,4 +173,110 @@ export const grammar = [
         <p>Wörtlich stünde da „sehr lecker" — gemeint ist aber schlicht „ist lecker". Erst betontes 很 heißt wirklich „sehr".</p>` },
     ],
   },
+  {
+    id: 'le', title: '了: abgeschlossen oder neu', icon: 'fa-clock-rotate-left', beforeLesson: 30,
+    drills: [
+      {"q": "我 吃 ____ 饭。(Ich habe gegessen.)", "options": ["了", "的", "吗", "很"], "answer": 0, "why": "了 nach dem Verb zeigt: die Handlung ist abgeschlossen."},
+      {"q": "我 没 吃 ____ 饭。(Ich habe nicht gegessen.)", "options": ["—", "了", "吗", "的"], "answer": 0, "why": "Verneint mit 没 fällt 了 weg."},
+      {"q": "他 是 老师 ____ 。(Er ist jetzt Lehrer [geworden].)", "options": ["了", "吗", "的", "很"], "answer": 0, "why": "了 am Satzende zeigt eine neue Situation an."},
+      {"q": "Welche zwei Jobs hat 了?", "options": ["abgeschlossene Handlung / neue Situation", "Frage / Verneinung", "Zukunft / Vergangenheit", "Besitz / Ort"], "answer": 0, "why": "了 nach dem Verb = fertig; 了 am Satzende = neu/verändert."},
+    ],
+    pages: [
+      { heading: 'Zwei Positionen, zwei Bedeutungen', html: `
+        <p>Chinesisch hat keine Zeitformen wie „aß/gegessen" — <b>了 (le)</b> übernimmt einen Teil dieser Arbeit, je nachdem WO es steht.</p>
+        <p class="grammar-example">我 吃 <b>了</b> 饭。<br><span>wǒ chī le fàn — ich habe gegessen (Handlung fertig)</span></p>
+        <p class="grammar-example">他 是 老师 <b>了</b>。<br><span>tā shì lǎoshī le — er ist [jetzt] Lehrer (neue Situation)</span></p>
+        <p>Verneint mit <b>没 (méi)</b> verschwindet 了 wieder: 我 没 吃 饭。 — Ich habe nicht gegessen.</p>
+        <div class="grammar-tip">💡 了 heißt nicht „Vergangenheit" — 明天 我 就 有 时间 了 (morgen habe ich dann Zeit) ist Zukunft und braucht trotzdem 了, weil sich etwas ändert.</div>` },
+    ],
+  },
+  {
+    id: 'zai', title: 'Gerade dabei: 在 und 正在', icon: 'fa-hourglass-half', beforeLesson: 42,
+    drills: [
+      {"q": "我 ____ 吃饭。(Ich esse gerade.)", "options": ["在", "了", "吗", "的"], "answer": 0, "why": "在 vor dem Verb zeigt eine laufende Handlung."},
+      {"q": "他 ____ 看电视 呢。(Er sieht gerade fern.)", "options": ["正在", "了", "过", "很"], "answer": 0, "why": "正在 + Verb + 呢 betont besonders stark „gerade jetzt“."},
+      {"q": "Wo steht 在 in diesem Gebrauch?", "options": ["vor dem Verb", "nach dem Verb", "am Satzende", "vor dem Subjekt"], "answer": 0, "why": "在吃饭, nicht 吃饭在."},
+      {"q": "Welches Wort passt oft ans Satzende, wenn man 在 benutzt?", "options": ["呢", "了", "吗", "的"], "answer": 0, "why": "呢 unterstreicht: genau jetzt, gerade dabei."},
+    ],
+    pages: [
+      { heading: 'Eine Handlung mittendrin', html: `
+        <p><b>在 (zài)</b> vor dem Verb zeigt: die Handlung läuft gerade — genau wie das deutsche „gerade".</p>
+        <p class="grammar-example">我 <b>在</b> 吃饭。<br><span>wǒ zài chīfàn — ich esse gerade</span></p>
+        <p class="grammar-example">他 <b>正在</b> 看电视 呢。<br><span>tā zhèngzài kàn diànshì ne — er sieht gerade fern</span></p>
+        <p>正在 (zhèngzài) ist die betonte Variante, oft zusammen mit 呢 (ne) am Satzende — beides zusammen ist optional, aber typisch für gesprochene Sprache.</p>
+        <div class="grammar-tip">💡 Verwechsle dieses 在 nicht mit dem 在 für Orte (我在家 — ich bin zu Hause) — dasselbe Zeichen, zwei verschiedene Jobs.</div>` },
+    ],
+  },
+  {
+    id: 'bi', title: 'Vergleichen mit 比', icon: 'fa-scale-balanced', beforeLesson: 54,
+    drills: [
+      {"q": "北京 ____ 上海 冷。(Peking ist kälter als Shanghai.)", "options": ["比", "很", "是", "了"], "answer": 0, "why": "A 比 B + Adjektiv — B ist der Vergleichspunkt."},
+      {"q": "这个 ____ 那个 贵 一点。(Dieses ist etwas teurer als jenes.)", "options": ["比", "在", "的", "了"], "answer": 0, "why": "比-Sätze dürfen mit 一点/很多 den Unterschied genauer angeben."},
+      {"q": "Wie verneint man einen 比-Satz meist?", "options": ["A 没有 B + Adjektiv", "A 不比 B", "A 不是 B", "A 没 B 了"], "answer": 0, "why": "没有 heißt „nicht so ... wie“ und ist die übliche Verneinung."},
+      {"q": "北京 ____ 上海 大。(Peking ist nicht so groß wie Shanghai.)", "options": ["没有", "不", "比", "很"], "answer": 0, "why": "没有 vergleicht ohne 比: A 没有 B + Adjektiv."},
+    ],
+    pages: [
+      { heading: 'A 比 B — kein eigenes Wort für „...er"', html: `
+        <p>Chinesische Adjektive haben keine Steigerungsform — <b>比 (bǐ)</b> übernimmt den Vergleich.</p>
+        <p class="grammar-example">北京 <b>比</b> 上海 冷。<br><span>Běijīng bǐ Shànghǎi lěng — Peking ist kälter als Shanghai</span></p>
+        <p class="grammar-example">这个 <b>比</b> 那个 贵 一点。<br><span>zhège bǐ nàge guì yìdiǎn — dieses ist etwas teurer als jenes</span></p>
+        <p>Verneint man nicht mit 不比, sondern meist mit <b>没有</b>: 北京 没有 上海 大。 — Peking ist nicht so groß wie Shanghai.</p>
+        <div class="grammar-tip">💡 一点 (etwas) oder 很多 (viel) nach dem Adjektiv sagen genau, WIE GROSS der Unterschied ist.</div>` },
+    ],
+  },
+  {
+    id: 'de-complement', title: 'Wie gut? Das 得-Komplement', icon: 'fa-gauge-high', beforeLesson: 66,
+    drills: [
+      {"q": "他 说 ____ 很快。(Er spricht sehr schnell.)", "options": ["得", "的", "地", "了"], "answer": 0, "why": "Verb + 得 + Adverb beschreibt WIE eine Handlung abläuft."},
+      {"q": "Welches der drei de (的/地/得) beschreibt die ART UND WEISE einer Handlung, NACH dem Verb?", "options": ["得", "的", "地", "keins"], "answer": 0, "why": "得 steht direkt nach dem Verb, gefolgt vom Adverb."},
+      {"q": "她 跑 ____ 很快。(Sie läuft sehr schnell.)", "options": ["得", "的", "了", "在"], "answer": 0, "why": "跑得快 — laufen + 得 + Adjektiv als Ergebnis-Beschreibung."},
+      {"q": "写 ____ 好 heißt?", "options": ["gut geschrieben (schön schreiben)", "gerade schreiben", "geschrieben haben", "schreiben wollen"], "answer": 0, "why": "写得好 beschreibt die Qualität des Schreibens."},
+    ],
+    pages: [
+      { heading: 'Verb + 得 + wie', html: `
+        <p><b>得 (de, hier anders ausgesprochen als 的)</b> hängt ans Verb ein Adjektiv oder Adverb, das beschreibt, WIE die Handlung abläuft.</p>
+        <p class="grammar-example">他 说 <b>得</b> 很快。<br><span>tā shuō de hěn kuài — er spricht sehr schnell</span></p>
+        <p class="grammar-example">她 写 <b>得</b> 很好。<br><span>tā xiě de hěn hǎo — sie schreibt sehr gut</span></p>
+        <p>Muster: <b>Verb + 得 + (很) + Adjektiv</b>. Ohne 得 wäre der Satz unvollständig — 得 ist hier Pflicht, kein Zierwort.</p>
+        <div class="grammar-tip">💡 Drei Wörter klingen wie „de": 的 (Besitz/Beschreibung vor Nomen), 地 (vor Verben, Adverb-Marker), 得 (nach Verben, „wie"). Die Aussprache verrät nicht, welches gemeint ist — nur die Position im Satz.</div>` },
+    ],
+  },
+  {
+    id: 'ba', title: 'Die 把-Konstruktion', icon: 'fa-hand', beforeLesson: 78,
+    drills: [
+      {"q": "我 ____ 门 关 了。(Ich habe die Tür geschlossen.)", "options": ["把", "的", "在", "了"], "answer": 0, "why": "把 nimmt das Objekt vor das Verb, wenn genau beschrieben wird, was damit passiert."},
+      {"q": "Welche Satzstellung erlaubt 把?", "options": ["Subjekt + 把 + Objekt + Verb", "Subjekt + Verb + 把 + Objekt", "把 + Subjekt + Verb", "Objekt + 把 + Subjekt"], "answer": 0, "why": "把 holt das Objekt VOR das Verb."},
+      {"q": "请 ____ 书 放在 桌子上。(Bitte leg das Buch auf den Tisch.)", "options": ["把", "在", "的", "了"], "answer": 0, "why": "把 typisch bei Anweisungen, wohin/wie etwas kommt."},
+      {"q": "Wann passt 把 NICHT?", "options": ["wenn das Objekt unbestimmt/allgemein ist", "wenn das Objekt bekannt ist", "bei Anweisungen", "bei abgeschlossenen Handlungen"], "answer": 0, "why": "把 braucht ein konkretes, bestimmtes Objekt — kein „irgendein Buch“."},
+    ],
+    pages: [
+      { heading: 'Das Objekt zuerst — wenn es konkret ist', html: `
+        <p>Normalerweise steht das Objekt NACH dem Verb: 我 关 门 (ich schließe die Tür). Mit <b>把 (bǎ)</b> wandert es davor — meist wenn genau beschrieben wird, WAS mit dem (bestimmten!) Objekt passiert.</p>
+        <p class="grammar-example">我 <b>把</b> 门 关 了。<br><span>wǒ bǎ mén guān le — ich habe die Tür geschlossen</span></p>
+        <p class="grammar-example">请 <b>把</b> 书 放在 桌子上。<br><span>qǐng bǎ shū fàngzài zhuōzi shang — bitte leg das Buch auf den Tisch</span></p>
+        <p>Muster: <b>Subjekt + 把 + Objekt + Verb + Ergebnis</b>. Das Verb allein reicht bei 把-Sätzen nie — es braucht immer eine Ergänzung (了, ein Ortsangabe, ein Ergebnis).</p>
+        <div class="grammar-tip">💡 把 passt nur zu einem BESTIMMTEN Objekt („die Tür", „das Buch") — für „irgendeine Tür" bleibt die normale Wortstellung.</div>` },
+    ],
+  },
+  {
+    id: 'connectors', title: 'Sätze verbinden: 虽然…但是, 如果…就', icon: 'fa-link', beforeLesson: 90,
+    drills: [
+      {"q": "____ 下雨，我们 还是 去。(Obwohl es regnet, gehen wir trotzdem.)", "options": ["虽然", "如果", "因为", "所以"], "answer": 0, "why": "虽然…但是/还是 — obwohl … trotzdem."},
+      {"q": "____ 明天 天气 好，我们 就 去 公园。(Wenn morgen das Wetter gut ist, gehen wir in den Park.)", "options": ["如果", "虽然", "因为", "但是"], "answer": 0, "why": "如果…就 — wenn … dann."},
+      {"q": "____ 下雨 ____ 我 没去。(Weil es regnete, bin ich nicht gegangen.)", "options": ["因为 / 所以", "虽然 / 但是", "如果 / 就", "不 / 也"], "answer": 0, "why": "因为…所以 — weil … deshalb."},
+      {"q": "Welches Wortpaar drückt einen Widerspruch aus?", "options": ["虽然…但是", "如果…就", "因为…所以", "一边…一边"], "answer": 0, "why": "虽然…但是 verbindet zwei gegensätzliche Aussagen."},
+    ],
+    pages: [
+      { heading: 'Satzpaare statt Konjunktionen allein', html: `
+        <p>Chinesisch verbindet Sätze meist mit ZWEI zusammengehörigen Wörtern, eins in jeder Hälfte:</p>
+        <table class="grammar-table">
+          <tr><th>Paar</th><th>Bedeutung</th><th>Beispiel</th></tr>
+          <tr><td>虽然…但是/还是</td><td>obwohl … trotzdem</td><td>虽然下雨，我们还是去。</td></tr>
+          <tr><td>如果…就</td><td>wenn … dann</td><td>如果天气好，我们就去公园。</td></tr>
+          <tr><td>因为…所以</td><td>weil … deshalb</td><td>因为下雨，所以我没去。</td></tr>
+        </table>
+        <p>Im lockeren Gespräch fällt oft die erste Hälfte weg (因为 bleibt öfter weg als 所以) — beide zusammen zu benutzen ist aber nie falsch und am einfachsten zu lernen.</p>
+        <div class="grammar-tip">💡 Diese Paare ersetzen im Chinesischen komplett, was im Deutschen Nebensatz-Konjunktionen und Wortstellung gemeinsam leisten.</div>` },
+    ],
+  },
 ];
