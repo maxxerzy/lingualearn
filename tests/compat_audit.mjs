@@ -380,11 +380,25 @@ await page.evaluate(async () => {
   const { grammar } = await import('/js/data/grammar/zh.js');
   grammar.forEach(ch => g.markChapterRead('basic-zh', ch.id));
 });
+// Ohne Spracherkennung (iOS Safari) zeigt der Sprechen-Schritt den
+// Vergleichs-Modus mit einer zusätzlichen Knopfzeile — die höchste
+// Variante dieser Karte. Der chinesische Durchlauf misst genau die.
+await page.evaluate(() => {
+  delete window.SpeechRecognition;
+  delete window.webkitSpeechRecognition;
+});
 await click('#startBtn'); await page.waitForTimeout(800);
 {
   const badZh = [];
+  let sawCompare = false;
   let st = null;
   for (let i = 0; i < 220 && st !== 'done' && st !== 'gone'; i++) {
+    // Abspiel-Zeile aufklappen, damit die volle Höhe gemessen wird.
+    sawCompare = await page.evaluate(() => {
+      const row = document.getElementById('pronPlay');
+      if (row) row.hidden = false;
+      return document.querySelector('.speak-card')?.dataset.speakMode === 'compare';
+    }) || sawCompare;
     const m = await measureStep();
     if (m.v > V_TOL_SESSION || m.h > 1 || m.barOverlap || m.clipped || m.offscreen) {
       const ph = await page.evaluate(async () =>
@@ -396,6 +410,7 @@ await click('#startBtn'); await page.waitForTimeout(800);
   }
   check('Chinesisch: jeder Kursschritt ohne Scrollen/Überlappung',
     st === 'done' && badZh.length === 0, `state=${st} ${badZh.slice(0, 3).join(' | ')}`);
+  check('Aussprache ohne Erkennung: Vergleichs-Karte wurde mitgemessen', sawCompare);
 }
 await page.evaluate(() => document.getElementById('sessionBackBtn')?.click());
 await page.waitForTimeout(250);

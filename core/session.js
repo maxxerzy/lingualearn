@@ -14,6 +14,7 @@ import { saveErrors, clearErrors } from './errorLog.js';
 import { themePack } from './weakness.js';
 import { isSpaceless, splitSentence, joinSentence,
          sentenceIsKnown, findGapSentence } from '../utils/sentence.js';
+import { comparePronunciation, mismatchHint } from '../utils/pronounce.js';
 import { autoSaveDeck } from './offline.js';
 import { playCorrect, playWrong } from '../utils/feedback.js';
 import { speak, latinPron } from '../utils/speech.js';
@@ -1519,18 +1520,60 @@ function renderCourseListen(session) {
 // Phase 4: SPRECHEN — jedes neue Wort einmal laut aussprechen. Mit
 // Web-Speech-Erkennung, wo verfügbar; sonst Referenz-Audio + ehrliche
 // Selbsteinschätzung (z. B. auf iOS).
+function canRecordAudio() {
+  return typeof MediaRecorder !== 'undefined' && !!navigator.mediaDevices?.getUserMedia;
+}
+
+// Baustein-Anzeige des Vergleichs: abweichende Stellen sind markiert.
+function pronPartsHtml(parts, charLevel) {
+  return parts.map(p =>
+    `<span class="pron-part${p.ok ? '' : ' pron-part--bad'}">${escHtml(p.text)}</span>`)
+    .join(charLevel ? '' : ' ');
+}
+
+function pronCompareHtml(result) {
+  return `
+    <div class="pron-compare">
+      <div class="pron-row">
+        <span class="pron-label">Ziel</span>
+        <span class="pron-text">${pronPartsHtml(result.target, result.charLevel)}</span>
+      </div>
+      <div class="pron-row">
+        <span class="pron-label">Gehört</span>
+        <span class="pron-text">${result.heard.length
+          ? pronPartsHtml(result.heard, result.charLevel)
+          : '<i>nichts verstanden</i>'}</span>
+      </div>
+      ${mismatchHint(result) ? `<p class="pron-hint">${escHtml(mismatchHint(result))}</p>` : ''}
+    </div>`;
+}
+
+// Sprechen-Schritt.
+//
+// Drei Ausbaustufen, je nachdem was das Gerät kann:
+//   'listen'  — Spracherkennung da: Wort-für-Wort-Abgleich, die
+//               abweichende Stelle wird markiert.
+//   'compare' — keine Erkennung (iOS Safari), aber Mikrofon: eigene
+//               Aufnahme gegen die Referenzstimme, komplett auf dem
+//               Gerät, nichts verlässt das Telefon.
+//   'self'    — weder noch: Referenz hören und selbst einschätzen.
 function renderCourseSpeak(session) {
   const card = session.queue[0];
   const lang = session.deck.language;
   const SR = speechRecognitionCtor();
+  const mode = SR ? 'listen' : (canRecordAudio() ? 'compare' : 'self');
+  const spoken = lang === 'la' ? latinPron(card.back) : card.back;
   const pron = [];
   if (card.roman) pron.push(escHtml(card.roman));
   if (card.ipa) pron.push('/' + escHtml(card.ipa) + '/');
-  if (lang === 'la') pron.push(`gesprochen: „${escHtml(latinPron(card.back))}"`);
+  if (lang === 'la') pron.push(`gesprochen: „${escHtml(latinPron(card.back))}“`);
   const learnArea = document.getElementById('learnArea');
 
+  const intro = mode === 'listen' ? ' — ich höre zu und zeige dir, wo es abwich'
+    : mode === 'compare' ? ' — nimm dich auf und vergleiche' : ':';
+
   learnArea.innerHTML = `
-    <div class="mc-card speak-card">
+    <div class="mc-card speak-card" data-speak-mode="${mode}">
       ${courseBadge(`<i class="fas fa-microphone"></i> Sprechen — noch ${session.queue.length}`)}
       <div class="fc-word fc-word-target">
         ${escHtml(card.back)}
@@ -1538,12 +1581,19 @@ function renderCourseSpeak(session) {
       </div>
       <p class="fc-example-de" style="margin:2px 0 6px">${escHtml(card.front)}</p>
       ${pron.length ? `<p class="course-pron">${pron.join(' · ')}</p>` : ''}
-      <p class="prompt">Hör zu und sprich das Wort laut nach${SR ? ' — ich höre zu' : ''}:</p>
-      ${SR ? `<div class="actions">
+      <p class="prompt">Hör zu und sprich das Wort laut nach${intro}</p>
+      ${mode === 'listen' ? `<div class="actions">
         <button type="button" class="btn btn-primary" id="courseSpeakRec"><i class="fas fa-microphone"></i> Aufnehmen</button>
       </div>` : ''}
+      ${mode === 'compare' ? `<div class="actions">
+        <button type="button" class="btn btn-primary" id="courseSpeakRec"><i class="fas fa-microphone"></i> Aufnehmen</button>
+      </div>
+      <div class="pron-play" id="pronPlay" hidden>
+        <button type="button" class="btn" id="pronPlayMine"><i class="fas fa-user"></i> Meine Aufnahme</button>
+        <button type="button" class="btn" id="pronPlayRef"><i class="fas fa-volume-up"></i> Original</button>
+      </div>` : ''}
       <div class="actions" style="margin-top:8px">
-        <button type="button" class="btn ${SR ? '' : 'btn-good'}" id="courseSpeakOk"><i class="fas fa-check"></i> Hat geklappt</button>
+        <button type="button" class="btn ${mode === 'listen' ? '' : 'btn-good'}" id="courseSpeakOk"><i class="fas fa-check"></i> ${mode === 'compare' ? 'Klang gleich' : 'Hat geklappt'}</button>
         <button type="button" class="btn" id="courseSpeakRetry"><i class="fas fa-rotate-left"></i> Nochmal üben</button>
       </div>
       <div id="mc-fb"></div>
@@ -1558,11 +1608,21 @@ function renderCourseSpeak(session) {
   // dieselbe Karte doppelt werten und die nächste ungeübt überspringen.
   let settled = false;
   let activeRec = null;
+  let mediaRec = null;
+  let mineUrl = null;
+  let micStream = null;
+  const releaseMic = () => {
+    try { micStream?.getTracks().forEach(t => t.stop()); } catch { /* schon zu */ }
+    micStream = null;
+  };
   const finish = ok => {
     if (settled) return;
     settled = true;
     if (quizTimeout) { clearTimeout(quizTimeout); quizTimeout = null; }
     try { activeRec?.abort(); } catch { /* Erkennung lief nicht mehr */ }
+    try { mediaRec?.state === 'recording' && mediaRec.stop(); } catch { /* Aufnahme lief nicht */ }
+    releaseMic();
+    if (mineUrl) { URL.revokeObjectURL(mineUrl); mineUrl = null; }
     const st = getCurrentSession();
     if (!st || st.mode !== 'course' || st.phase !== 'speak') return;
     courseGrade(session, card, ok);
@@ -1571,7 +1631,85 @@ function renderCourseSpeak(session) {
   document.getElementById('courseSpeakOk').addEventListener('click', () => finish(true));
   document.getElementById('courseSpeakRetry').addEventListener('click', () => finish(false));
 
-  if (SR) {
+  // ── Vergleichs-Modus: eigene Aufnahme gegen die Referenzstimme ──
+  function wireCompare() {
+    const btn = document.getElementById('courseSpeakRec');
+    const row = document.getElementById('pronPlay');
+    if (!btn || !row) return;
+    btn.addEventListener('click', async () => {
+      if (settled) return;
+      if (mediaRec?.state === 'recording') { mediaRec.stop(); return; }
+      let stream;
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      } catch {
+        const fb = document.getElementById('mc-fb');
+        if (fb) fb.innerHTML = '<div class="incorrect" style="margin-top:10px"><p>🎤 Kein Zugriff aufs Mikrofon — hör dir das Original an und schätze selbst ein.</p></div>';
+        btn.disabled = true;
+        return;
+      }
+      micStream = stream;
+      const chunks = [];
+      mediaRec = new MediaRecorder(stream);
+      mediaRec.ondataavailable = e => { if (e.data?.size) chunks.push(e.data); };
+      mediaRec.onstop = () => {
+        releaseMic();
+        btn.innerHTML = '<i class="fas fa-microphone"></i> Nochmal aufnehmen';
+        if (!chunks.length) return;
+        if (mineUrl) URL.revokeObjectURL(mineUrl);
+        mineUrl = URL.createObjectURL(new Blob(chunks, { type: mediaRec.mimeType || 'audio/webm' }));
+        row.hidden = false;
+        const fb = document.getElementById('mc-fb');
+        if (fb) fb.innerHTML = '<div class="pron-compare"><p class="pron-hint">Hör beides nacheinander an: klingt deins wie das Original?</p></div>';
+      };
+      btn.innerHTML = '<i class="fas fa-stop"></i> Aufnahme stoppen';
+      mediaRec.start();
+      // Kurz und schmerzlos — ein Wort braucht keine Minute.
+      quizTimeout = setTimeout(() => {
+        quizTimeout = null;
+        try { mediaRec?.state === 'recording' && mediaRec.stop(); } catch { /* schon gestoppt */ }
+      }, 4000);
+    });
+    document.getElementById('pronPlayMine')?.addEventListener('click', () => {
+      if (!mineUrl) return;
+      const a = new Audio(mineUrl);
+      a.play().catch(() => { /* Autoplay-Sperre */ });
+    });
+    document.getElementById('pronPlayRef')?.addEventListener('click', () => speakWord(card.back, lang));
+  }
+
+  // Erkennung fällt aus (iOS, kein Netz, keine Erlaubnis) → auf den
+  // Vergleichs-Modus umschalten statt den Nutzer ohne Rückmeldung zu lassen.
+  function fallbackToCompare(reason) {
+    if (settled || !canRecordAudio()) return false;
+    const card_ = document.querySelector('.speak-card');
+    const rec = document.getElementById('courseSpeakRec');
+    if (!card_ || !rec) return false;
+    card_.dataset.speakMode = 'compare';
+    rec.disabled = false;
+    rec.innerHTML = '<i class="fas fa-microphone"></i> Aufnehmen';
+    if (!document.getElementById('pronPlay')) {
+      rec.parentElement.insertAdjacentHTML('afterend', `
+        <div class="pron-play" id="pronPlay" hidden>
+          <button type="button" class="btn" id="pronPlayMine"><i class="fas fa-user"></i> Meine Aufnahme</button>
+          <button type="button" class="btn" id="pronPlayRef"><i class="fas fa-volume-up"></i> Original</button>
+        </div>`);
+    }
+    const ok = document.getElementById('courseSpeakOk');
+    if (ok) ok.innerHTML = '<i class="fas fa-check"></i> Klang gleich';
+    const fb = document.getElementById('mc-fb');
+    if (fb) fb.innerHTML = `<div class="incorrect" style="margin-top:10px"><p>🎤 ${escHtml(reason)} — nimm dich stattdessen auf und vergleiche mit dem Original.</p></div>`;
+    // Die Erkennungs-Klicks am alten Knopf sind mit ihm verschwunden,
+    // deshalb neu verdrahten.
+    const fresh = rec.cloneNode(true);
+    rec.replaceWith(fresh);
+    wireCompare();
+    return true;
+  }
+
+  if (mode === 'compare') wireCompare();
+
+  if (mode === 'listen') {
     document.getElementById('courseSpeakRec').addEventListener('click', () => {
       if (settled) return;
       const btn = document.getElementById('courseSpeakRec');
@@ -1583,27 +1721,49 @@ function renderCourseSpeak(session) {
       rec.lang = lang === 'la' ? 'de-DE' : getLangCode(lang);
       rec.interimResults = false;
       rec.maxAlternatives = 3;
-      const finishRec = (ok, heard) => {
+      const finishRec = (result) => {
         if (done || settled) return;
         done = true;
         const fb = document.getElementById('mc-fb');
-        if (fb) fb.innerHTML = ok
-          ? `<div class="correct" style="margin-top:10px"><p>✅ Klang gut${heard ? ` — gehört: „${escHtml(heard)}"` : ''}!</p></div>`
-          : `<div class="incorrect" style="margin-top:10px"><p>🎤 ${heard ? `Gehört: „${escHtml(heard)}" — ` : ''}probier es gleich nochmal.</p></div>`;
-        quizTimeout = setTimeout(() => { quizTimeout = null; finish(ok); }, ok ? 700 : 1200);
+        const perfect = result.target.every(p => p.ok);
+        if (fb) {
+          // Knapp bestanden ist nicht dasselbe wie sauber getroffen —
+          // sonst stünde „Klang gut" über einer rot markierten Stelle.
+          const head = result.ok
+            ? (perfect ? '✅ Klang gut!' : '✅ Reicht — eine Stelle war aber daneben:')
+            : '🎤 Fast — schau, wo es abwich:';
+          fb.innerHTML = `
+            <div class="${result.ok ? 'correct' : 'incorrect'}" style="margin-top:10px">
+              <p>${head}</p>
+            </div>
+            ${perfect && result.ok ? '' : pronCompareHtml(result)}`;
+        }
+        const pause = result.ok ? (perfect ? 900 : 2000) : 2600;
+        quizTimeout = setTimeout(() => { quizTimeout = null; finish(result.ok); }, pause);
       };
       rec.onresult = e => {
         const alts = [...(e.results[0] || [])].map(a => a.transcript || '');
-        const target = normAnswer(lang === 'la' ? latinPron(card.back) : card.back);
-        const ok = alts.some(t => {
-          const h = normAnswer(t);
-          return h === target || h.includes(target) || (target.includes(h) && h.length >= 3);
-        });
-        finishRec(ok, alts[0] || '');
+        // Beste Alternative gewinnt — die Erkennung liefert oft mehrere.
+        let best = comparePronunciation(spoken, alts[0] || '', lang);
+        for (const alt of alts.slice(1)) {
+          const cand = comparePronunciation(spoken, alt, lang);
+          if (cand.score > best.score) best = cand;
+        }
+        finishRec(best);
       };
-      rec.onerror = () => { if (!done) { done = true; btn.disabled = false; btn.innerHTML = '<i class="fas fa-microphone"></i> Aufnehmen'; } };
+      rec.onerror = e => {
+        if (done) return;
+        done = true;
+        const why = e?.error === 'not-allowed' || e?.error === 'service-not-allowed'
+          ? 'Die Erkennung darf nicht zuhören'
+          : 'Die Erkennung ist hier nicht verfügbar';
+        if (!fallbackToCompare(why)) {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-microphone"></i> Aufnehmen';
+        }
+      };
       rec.onend = () => { if (!done) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-microphone"></i> Aufnehmen'; } };
-      try { rec.start(); } catch { if (!done) { done = true; btn.disabled = false; } }
+      try { rec.start(); } catch { if (!done) { done = true; if (!fallbackToCompare('Die Erkennung ließ sich nicht starten')) btn.disabled = false; } }
     });
   }
 }
