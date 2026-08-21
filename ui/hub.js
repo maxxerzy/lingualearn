@@ -1,5 +1,8 @@
 import { getDailyQuests, claimQuest } from '../core/quests.js';
 import { getLeague, clearLastResult } from '../core/league.js';
+import { getFriendGroup, friendLeaderboard, createFriendGroup, joinFriendGroup,
+         leaveFriendGroup, pullFriendGroup, isValidFriendCode } from '../core/friends.js';
+import { getCurrentUser } from '../core/auth.js';
 import { SHOP, buy } from '../core/shop.js';
 import { getGems, getInventory, getWager, startWager, getGame } from '../core/gamification.js';
 import { showToast } from './toast.js';
@@ -48,6 +51,60 @@ function questsHtml() {
     <ul class="quest-list">${items}</ul>`;
 }
 
+// ── Freundesliga: echte Freunde statt simulierter Gegner ─────────
+// Eine Gruppe ist ein selbstgewählter Code, den man teilt. Ohne Gruppe
+// bleibt die simulierte Wochenliga weiter der Fallback — sinnvoll für
+// alle, die (noch) niemanden zum Mitlernen haben.
+function friendsHtml() {
+  const group = getFriendGroup();
+  if (!group) {
+    return `
+      <div class="friends-panel">
+        <h3 class="friends-panel__title"><i class="fas fa-user-group"></i> Echte Freunde</h3>
+        <p class="arena__hint">Erstellt eine Gruppe oder tretet mit einem Code bei — eure Wochen-XP zählen gegeneinander, ganz ohne simulierte Gegner.</p>
+        <div class="friends-join">
+          <input type="text" id="friendNameInput" class="input" placeholder="Dein Anzeigename"
+            maxlength="24" value="${esc(getCurrentUser() || '')}">
+          <div class="friends-join__row">
+            <input type="text" id="friendCodeInput" class="input friends-join__code" placeholder="Code eingeben"
+              maxlength="10" autocapitalize="characters" autocomplete="off">
+            <button type="button" class="btn" data-friend-join><i class="fas fa-right-to-bracket"></i> Beitreten</button>
+          </div>
+          <button type="button" class="btn btn-primary friends-join__create" data-friend-create>
+            <i class="fas fa-plus"></i> Neue Gruppe erstellen
+          </button>
+        </div>
+      </div>`;
+  }
+
+  const board = friendLeaderboard();
+  const rows = (board?.rows || []).map(r => `
+    <li class="lg-row ${r.you ? 'lg-row--you' : ''}">
+      <span class="lg-rank">${r.rank}</span>
+      <span class="lg-name">${esc(r.name)}${r.you ? ' <b>(du)</b>' : ''}</span>
+      <span class="lg-xp">${r.xp} XP</span>
+    </li>`).join('');
+
+  return `
+    <div class="friends-panel">
+      <div class="friends-panel__head">
+        <h3 class="friends-panel__title"><i class="fas fa-user-group"></i> ${esc(group.name)}s Gruppe</h3>
+        <button type="button" class="friends-code" data-friend-copy title="Code kopieren">
+          <i class="fas fa-copy"></i> ${esc(group.code)}
+        </button>
+      </div>
+      ${board?.memberCount === 1
+        ? '<p class="arena__hint">Teile den Code oben mit Freunden, damit sie beitreten können.</p>'
+        : board?.stale
+          ? '<p class="friends-stale"><i class="fas fa-rotate"></i> Stand nicht ganz frisch — <button type="button" class="friends-stale__btn" data-friend-refresh>aktualisieren</button></p>'
+          : ''}
+      <ol class="lg-list">${rows}</ol>
+      <button type="button" class="btn btn-danger-outline friends-leave" data-friend-leave>
+        <i class="fas fa-arrow-right-from-bracket"></i> Gruppe verlassen
+      </button>
+    </div>`;
+}
+
 // ── Liga ─────────────────────────────────────────────────────────
 function leagueHtml() {
   const L = getLeague();
@@ -70,7 +127,11 @@ function leagueHtml() {
       </li>`;
   }).join('');
 
-  return `${banner}
+  const hasGroup = !!getFriendGroup();
+  return `${friendsHtml()}
+    <hr class="friends-divider">
+    ${hasGroup ? '<p class="arena__hint friends-sim-hint"><i class="fas fa-robot"></i> Simulierte Liga — deine Gruppe zählt hier nicht mit.</p>' : ''}
+    ${banner}
     <div class="league-head" style="--lg:${L.division.color}">
       <span class="league-badge"><i class="fas ${L.division.icon}"></i></span>
       <div>
@@ -145,6 +206,69 @@ export function renderArena(tab = activeTab) {
 
 let navigateFn = null;
 
+// ── Freundesliga: Aktionen ────────────────────────────────────────
+function friendErrorText(reason) {
+  return {
+    'no-token': 'Dafür braucht es einen Konto-Schlüssel — bitte einmal einloggen.',
+    'not-configured': 'Der Server ist für diese Funktion (noch) nicht eingerichtet.',
+    'network': 'Keine Verbindung — bitte später erneut versuchen.',
+    'offline': 'Ohne Internet geht das gerade nicht.',
+    'bad-code': 'Der Code sieht nicht gültig aus (4–10 Zeichen, Buchstaben/Zahlen).',
+    'bad-name': 'Bitte einen Anzeigenamen eintragen.',
+    'group-full': 'Diese Gruppe ist bereits voll (20 Mitglieder).',
+  }[reason] || 'Das hat gerade nicht geklappt.';
+}
+
+async function handleFriendJoin(joinBtn) {
+  const nameInput = document.getElementById('friendNameInput');
+  const codeInput = document.getElementById('friendCodeInput');
+  const name = nameInput?.value || '';
+  const isJoin = !!joinBtn;
+  if (isJoin && !isValidFriendCode(codeInput?.value || '')) {
+    showToast('<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>Ungültiger Code</b><span>4–10 Zeichen, Buchstaben oder Zahlen.</span></div>', { variant: 'warn' });
+    return;
+  }
+  const btn = joinBtn || document.querySelector('[data-friend-create]');
+  if (btn) { btn.disabled = true; }
+  const res = isJoin ? await joinFriendGroup(codeInput.value, name) : await createFriendGroup(name);
+  if (btn) { btn.disabled = false; }
+  if (res.ok) {
+    showToast('<i class="fas fa-user-group toast__icon"></i><div class="toast__body"><b>Gruppe bereit!</b><span>Teile den Code mit deinen Freunden.</span></div>');
+    renderArena('league');
+  } else {
+    showToast(`<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>${friendErrorText(res.reason)}</b></div>`, { variant: 'warn' });
+  }
+}
+
+async function copyFriendCode(btn) {
+  const code = getFriendGroup()?.code;
+  if (!code) return;
+  try {
+    await navigator.clipboard.writeText(code);
+    showToast('<i class="fas fa-copy toast__icon"></i><div class="toast__body"><b>Code kopiert</b><span>Jetzt an Freunde weitergeben.</span></div>');
+  } catch {
+    showToast(`<i class="fas fa-circle-info toast__icon"></i><div class="toast__body"><b>Code: ${esc(code)}</b><span>Kopieren nicht möglich — bitte abschreiben.</span></div>`, { variant: 'warn' });
+  }
+}
+
+async function handleFriendRefresh(btn) {
+  btn.disabled = true;
+  const res = await pullFriendGroup();
+  if (!res.ok) {
+    showToast(`<i class="fas fa-circle-exclamation toast__icon"></i><div class="toast__body"><b>${friendErrorText(res.reason)}</b></div>`, { variant: 'warn' });
+    btn.disabled = false;
+    return;
+  }
+  renderArena('league');
+}
+
+async function handleFriendLeave(btn) {
+  if (!confirm('Gruppe wirklich verlassen? Der Code bleibt gültig — du kannst später mit demselben Code wieder beitreten.')) return;
+  btn.disabled = true;
+  await leaveFriendGroup();
+  renderArena('league');
+}
+
 export function initArena(activateView) {
   navigateFn = activateView;
   document.getElementById('arenaBackBtn')?.addEventListener('click', () => navigateFn?.('learn'));
@@ -156,7 +280,20 @@ export function initArena(activateView) {
     const claim = e.target.closest('[data-claim]');
     const buyBtn = e.target.closest('[data-buy]');
     const dismiss = e.target.closest('[data-league-dismiss]');
-    if (claim) {
+    const friendCreate = e.target.closest('[data-friend-create]');
+    const friendJoin = e.target.closest('[data-friend-join]');
+    const friendCopy = e.target.closest('[data-friend-copy]');
+    const friendRefresh = e.target.closest('[data-friend-refresh]');
+    const friendLeave = e.target.closest('[data-friend-leave]');
+    if (friendCreate || friendJoin) {
+      handleFriendJoin(friendCreate ? null : friendJoin);
+    } else if (friendCopy) {
+      copyFriendCode(friendCopy);
+    } else if (friendRefresh) {
+      handleFriendRefresh(friendRefresh);
+    } else if (friendLeave) {
+      handleFriendLeave(friendLeave);
+    } else if (claim) {
       const q = claimQuest(claim.dataset.claim);
       if (q) {
         showToast(`<i class="fas fa-gem toast__icon"></i><div class="toast__body"><b>Quest erledigt!</b><span>+${q.gem} Diamanten${q.xp ? ` · +${q.xp} XP` : ''}</span></div>`);

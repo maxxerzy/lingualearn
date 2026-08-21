@@ -2,6 +2,7 @@ import { getUserStats } from './state.js';
 import { countMasteredAll } from './cardProgress.js';
 import { createUserStore } from './userStore.js';
 import { addLeagueXp, getLeaguePromotions } from './league.js';
+import { friendXpSoon } from './friends.js';
 
 const DEFAULTS = {
   xp: 0,
@@ -162,6 +163,7 @@ export function recordGameAnswer(correct, { bonus = 0, boost = false } = {}) {
   }
   persist();
   addLeagueXp(gained);
+  friendXpSoon();
   return { game: g, gained };
 }
 
@@ -172,6 +174,7 @@ export function addBonusXp(n) {
   g.daily.date === todayStr() ? (g.daily.xp += n) : (g.daily = EMPTY_DAY(), g.daily.xp = n);
   persist();
   addLeagueXp(n);
+  friendXpSoon();
   return g;
 }
 
@@ -195,6 +198,7 @@ export function recordSessionEnd({ language, correct, total, boost = false }) {
   if (language && !g.langsPlayed.includes(language)) g.langsPlayed.push(language);
   persist();
   addLeagueXp(xpEarned);
+  friendXpSoon();
   return { xpEarned, perfect, gemsEarned, game: g };
 }
 

@@ -240,6 +240,103 @@ const gemsB = await page.evaluate(() => Number(document.getElementById('gemCount
 check('Quest abholen erhöht Diamanten', gemsB > gemsA, `${gemsA}→${gemsB}`);
 await click('.arena-tab[data-tab="league"]'); await page.waitForTimeout(200);
 check('Liga: 10 Zeilen inkl. „Du"', await page.evaluate(() => document.querySelectorAll('.lg-row').length === 10 && !!document.querySelector('.lg-row--you')));
+
+// ── Freundesliga: echte Rangliste statt simulierter Gegner ──
+check('Ohne Gruppe: Beitreten/Erstellen-Formular statt Rangliste',
+  await page.evaluate(() => !!document.querySelector('[data-friend-create]') && !!document.getElementById('friendCodeInput')));
+
+const friendFlow = await page.evaluate(async () => {
+  const f = await import('/core/friends.js');
+  const l = await import('/core/league.js');
+  // Server-Attrappe: ein einziges Gruppen-Dokument, wie es worker.js unter
+  // `league:<code>` führt. Simuliert außerdem, dass ein FREMDES Gerät
+  // (ein zweites Konto) demselben Code bereits beigetreten ist.
+  const doc = { members: {} };
+  const realFetch = window.fetch;
+  window.fetch = async (url, opts) => {
+    const body = JSON.parse(opts.body);
+    if (String(url).endsWith('/api/league/push')) {
+      doc.members[body.user] = { name: body.name, xp: body.xp, weekId: body.weekId, division: body.division, updatedAt: Date.now() };
+      return new Response(JSON.stringify({ ok: true, members: doc.members }), { status: 200 });
+    }
+    if (String(url).endsWith('/api/league/pull')) {
+      return new Response(JSON.stringify({ ok: true, members: doc.members }), { status: 200 });
+    }
+    if (String(url).endsWith('/api/league/leave')) {
+      delete doc.members[body.user];
+      return new Response(JSON.stringify({ ok: true, left: true }), { status: 200 });
+    }
+    return new Response('{}', { status: 404 });
+  };
+
+  const badCode = await f.joinFriendGroup('!!', 'Test');
+  const created = await f.createFriendGroup('Testerin');
+  const group = f.getFriendGroup();
+  const weekId = l.getCurrentWeekId();
+
+  // Ein „fremdes Gerät" tritt über denselben Code bei — direkt im
+  // Server-Dokument nachgestellt, wie es worker_sync.mjs bereits mit
+  // zwei echten Konten end-to-end prüft.
+  doc.members['buddy77'] = { name: 'Buddy', xp: 777, weekId, division: 0, updatedAt: Date.now() };
+  const pulled = await f.pullFriendGroup();
+  const board = f.friendLeaderboard();
+
+  await f.leaveFriendGroup();
+  const afterLeave = f.getFriendGroup();
+  window.fetch = realFetch;
+
+  return {
+    badCode: badCode.ok === false && badCode.reason === 'bad-code',
+    created: created.ok, codeLooksRight: /^[A-Z0-9]{4,10}$/.test(group?.code || ''),
+    pulled: pulled.ok,
+    rows: board?.rows.map(r => ({ user: r.user, name: r.name, xp: r.xp, rank: r.rank, you: r.you })),
+    memberCount: board?.memberCount,
+    afterLeave,
+  };
+});
+check('Ungültiger Code wird lokal schon abgewiesen', friendFlow.badCode, JSON.stringify(friendFlow.badCode));
+check('Gruppe erstellen legt einen gültigen Code an', friendFlow.created && friendFlow.codeLooksRight, JSON.stringify(friendFlow));
+check('Zwei Konten sehen sich gegenseitig in der Rangliste',
+  friendFlow.memberCount === 2 && friendFlow.rows.some(r => r.user === 'buddy77' && r.name === 'Buddy' && r.xp === 777),
+  JSON.stringify(friendFlow.rows));
+check('Rangliste ist nach Wochen-XP sortiert (Buddy vor dir)',
+  friendFlow.rows[0]?.user === 'buddy77' && friendFlow.rows[0]?.rank === 1 && friendFlow.rows[1]?.you === true,
+  JSON.stringify(friendFlow.rows));
+check('Gruppe verlassen räumt den lokalen Zustand auf', friendFlow.afterLeave === null);
+
+// UI: Panel zeigt Code, Mitglieder und den Verlassen-Knopf.
+const friendUi = await page.evaluate(async () => {
+  const f = await import('/core/friends.js');
+  const realFetch = window.fetch;
+  const doc = { members: {} };
+  window.fetch = async (url, opts) => {
+    const body = JSON.parse(opts.body);
+    if (String(url).endsWith('/push')) { doc.members[body.user] = { name: body.name, xp: body.xp, weekId: body.weekId, division: body.division, updatedAt: Date.now() }; return new Response(JSON.stringify({ ok: true, members: doc.members }), { status: 200 }); }
+    return new Response(JSON.stringify({ ok: true, members: doc.members }), { status: 200 });
+  };
+  await f.createFriendGroup('UI-Test');
+  window.fetch = realFetch;
+  const code = f.getFriendGroup()?.code;
+  return { code };
+});
+await page.evaluate(() => document.querySelector('.arena-tab[data-tab="league"]')?.click());
+await page.waitForTimeout(250);
+const friendPanel = await page.evaluate(() => ({
+  code: document.querySelector('[data-friend-copy]')?.textContent.trim(),
+  rows: document.querySelectorAll('.friends-panel .lg-row').length,
+  leaveBtn: !!document.querySelector('[data-friend-leave]'),
+  simHint: !!document.querySelector('.friends-sim-hint'),
+}));
+check('Freundes-Panel zeigt Code, eigene Zeile und Verlassen-Knopf',
+  friendPanel.code?.includes(friendUi.code) && friendPanel.rows === 1 && friendPanel.leaveBtn && friendPanel.simHint,
+  JSON.stringify({ ...friendPanel, expected: friendUi.code }));
+
+await page.evaluate(async () => { await (await import('/core/friends.js')).leaveFriendGroup(); });
+await click('.arena-tab[data-tab="quests"]'); await page.waitForTimeout(150);
+await click('.arena-tab[data-tab="league"]'); await page.waitForTimeout(200);
+check('Nach dem Verlassen wieder das Beitreten-Formular, Bot-Liga unverändert',
+  await page.evaluate(() => !!document.querySelector('[data-friend-create]') && document.querySelectorAll('.lg-row').length === 10));
+
 await click('.arena-tab[data-tab="shop"]'); await page.waitForTimeout(200);
 await page.evaluate(() => document.querySelector('[data-buy="streakFreeze"]')?.click()); await page.waitForTimeout(250);
 check('Shop-Kauf zieht Diamanten ab', await page.evaluate(async () => (await import('/core/gamification.js')).getInventory().streakFreeze === 1));

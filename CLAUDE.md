@@ -39,6 +39,13 @@ niemals weitere Commits auf einen bereits offenen PR stapeln.
   Geräten abgeglichen. Der Abgleich FÜHRT ZUSAMMEN (höheres Level, mehr
   gemeisterte Karten, vereinigte Erfolge) — kein „letztes Gerät gewinnt".
   Ohne KV-Binding läuft die App unverändert lokal weiter.
+- Freundesliga (`core/friends.js`, `/api/league/*` in `worker.js`): echte
+  Rangliste statt der simulierten Wochenliga (`core/league.js`) — ein
+  Freundescode, den man teilt, teilt die eigenen Wochen-XP über denselben
+  Worker/KV-Speicher wie der Geräte-Abgleich, sogar mit demselben
+  Konto-Schlüssel (`getSyncKey`). Trust-on-first-use pro (Code, Konto)
+  verhindert, dass ein Mitglied den Stand eines anderen überschreibt.
+  Ohne eigene Gruppe bleibt die simulierte Liga der Fallback.
 - Offline: Die App-Hülle liegt komplett in der PRECACHE-Liste von `sw.js`,
   die Deck-Dateien (~900 KB) bewusst NICHT. `core/offline.js` legt sie
   über den Schalter „Für offline sichern" (Einstellungen) in denselben
