@@ -902,13 +902,13 @@ await click('#settingsBackBtn'); await page.waitForTimeout(200);
 // ── Grammatik im Lernkurs ──
 const gramData = await page.evaluate(async () => {
   const out = {};
-  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh']) {
+  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt']) {
     const { grammar } = await import(`/js/data/grammar/${l}.js`);
     out[l] = grammar.length && grammar.every(ch => ch.pages.length > 0 && ch.beforeLesson >= 1 && ch.title) ? grammar.length : 0;
   }
   return out;
 });
-check('Grammatik-Daten für alle 8 Sprachen (≥5 Kapitel)', Object.values(gramData).every(n => n >= 5), JSON.stringify(gramData));
+check('Grammatik-Daten für alle 9 Sprachen (≥5 Kapitel)', Object.values(gramData).every(n => n >= 5), JSON.stringify(gramData));
 
 // ── Grammatik-Abdeckung über den GANZEN Kurs ──
 // Ein Deck hat über 100 Lektionen; erklärt die Grammatik nur die ersten
@@ -917,11 +917,11 @@ check('Grammatik-Daten für alle 8 Sprachen (≥5 Kapitel)', Object.values(gramD
 // AUSGEBAUT wächst mit jeder Sprache, die das volle Raster bekommt —
 // die übrigen werden nur berichtet, damit der Rückstand sichtbar ist.
 const MAX_GAP = 12;
-const AUSGEBAUT = ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh'];   // alle acht
+const AUSGEBAUT = ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt'];   // alle neun
 const coverage = await page.evaluate(async (max) => {
   const out = {};
   const decks = { da: 'basic-da', el: 'basic-el', fr: 'basic-fr', es: 'basic-es',
-                  la: 'basic-la', ru: 'basic-ru', ja: 'basic-ja', zh: 'basic-zh' };
+                  la: 'basic-la', ru: 'basic-ru', ja: 'basic-ja', zh: 'basic-zh', pt: 'basic-pt' };
   const { loadDeck } = await import('/core/state.js');
   for (const [l, id] of Object.entries(decks)) {
     const deck = await loadDeck(id);
@@ -947,7 +947,7 @@ check(`Grammatik deckt den ganzen Kurs ab (Lücke ≤ ${MAX_GAP} Lektionen)`,
 // ── Grammatik ÜBEN: jedes Kapitel bringt Aufgaben mit ──
 // Gelesen ist nicht gekonnt. MIT_UEBUNGEN wächst wie AUSGEBAUT mit
 // jeder Sprache, die ihre Aufgaben bekommen hat.
-const MIT_UEBUNGEN = ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh'];   // alle acht
+const MIT_UEBUNGEN = ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt'];   // alle neun
 const drillData = await page.evaluate(async (langs) => {
   const out = {};
   for (const l of langs) {
@@ -1481,13 +1481,13 @@ await click('#settingsBackBtn'); await page.waitForTimeout(200);
 // ── Konversations-Bausteine für alle Sprachen ──
 const talkData = await page.evaluate(async () => {
   const out = {};
-  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh']) {
+  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt']) {
     const { phrases } = await import(`/js/data/phrases/${l}.js`);
     out[l] = phrases.length && phrases.every(p => p.de && p.target && p.reply) ? phrases.length : 0;
   }
   return out;
 });
-check('Konversations-Bausteine für alle 8 Sprachen (≥24, mit Dialog-Antworten)',
+check('Konversations-Bausteine für alle 9 Sprachen (≥24, mit Dialog-Antworten)',
   Object.values(talkData).every(n => n >= 24), JSON.stringify(talkData));
 
 // ── Geräte-Sync: Zusammenführen zweier Stände (Handy ↔ Mac) ──

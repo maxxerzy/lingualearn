@@ -313,7 +313,7 @@ const offlineUi = await page.evaluate(() => {
   };
 });
 check('Einstellungen: Offline-Schalter ohne Überlauf, Liste scrollt selbst',
-  offlineUi.rows === 8 && !offlineUi.clipped && !offlineUi.outside
+  offlineUi.rows === 9 && !offlineUi.clipped && !offlineUi.outside
   && offlineUi.ownScroll && offlineUi.hOverflow <= 1, JSON.stringify(offlineUi));
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
 
