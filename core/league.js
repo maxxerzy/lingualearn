@@ -114,6 +114,10 @@ export function getLeague() {
   };
 }
 
+// Für die Freundesliga (`core/friends.js`): dieselbe Wochen-ID wie die
+// simulierte Liga, damit „diese Woche" für beide identisch definiert ist.
+export function getCurrentWeekId() { return currentWeek().id; }
+
 export function reinitLeague() { store.reinit(); }
 export function getLeaguePromotions() { return store.get().promotions || 0; }
 export function clearLastResult() {

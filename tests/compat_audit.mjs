@@ -230,6 +230,68 @@ check('Statistik: Schwächen-Themen ohne Überlauf/Überlappung',
 await click('#statsBackBtn'); await page.waitForTimeout(200);
 
 await menuView('arena', 'arenaBackBtn');
+// ── 5a2) Freundesliga: Beitreten-Formular UND gefüllte Rangliste ──
+await click('#userChipBtn'); await page.waitForTimeout(150);
+await click('.user-dropdown__item[data-action="arena"]'); await page.waitForTimeout(300);
+await click('.arena-tab[data-tab="league"]'); await page.waitForTimeout(200);
+const friendsJoinUi = await page.evaluate(() => {
+  const panel = document.querySelector('.friends-panel');
+  const r = panel?.getBoundingClientRect();
+  return {
+    present: !!panel,
+    clipped: panel ? panel.scrollWidth > panel.clientWidth + 1 : true,
+    outside: r ? (r.left < -1 || r.right > window.innerWidth + 1) : true,
+    hOverflow: document.documentElement.scrollWidth - window.innerWidth,
+  };
+});
+check('Freundesliga: Beitreten-Formular ohne Überlauf',
+  friendsJoinUi.present && !friendsJoinUi.clipped && !friendsJoinUi.outside && friendsJoinUi.hOverflow <= 1,
+  JSON.stringify(friendsJoinUi));
+
+await page.evaluate(async () => {
+  const f = await import('/core/friends.js');
+  const doc = { members: {} };
+  const realFetch = window.fetch;
+  window.fetch = async (url, opts) => {
+    const body = JSON.parse(opts.body);
+    if (String(url).endsWith('/push')) {
+      doc.members[body.user] = { name: body.name, xp: body.xp, weekId: body.weekId, division: body.division, updatedAt: Date.now() };
+      return new Response(JSON.stringify({ ok: true, members: doc.members }), { status: 200 });
+    }
+    return new Response(JSON.stringify({ ok: true, members: doc.members }), { status: 200 });
+  };
+  await f.createFriendGroup('Kompakttest');
+  doc.members['langername-mitgliedxyz'] = { name: 'Ein Name Mit Ordentlich Länge', xp: 12345, weekId: (await import('/core/league.js')).getCurrentWeekId(), division: 3, updatedAt: Date.now() };
+  await f.pullFriendGroup();
+  window.fetch = realFetch;
+});
+await click('.arena-tab[data-tab="quests"]'); await page.waitForTimeout(120);
+await click('.arena-tab[data-tab="league"]'); await page.waitForTimeout(200);
+const friendsGroupUi = await page.evaluate(() => {
+  const panel = document.querySelector('.friends-panel');
+  const rows = [...document.querySelectorAll('.friends-panel .lg-row')];
+  const code = document.querySelector('[data-friend-copy]');
+  const codeRect = code?.getBoundingClientRect();
+  const titleRect = document.querySelector('.friends-panel__title')?.getBoundingClientRect();
+  const headOverlap = codeRect && titleRect
+    ? (titleRect.right > codeRect.left && titleRect.left < codeRect.right && titleRect.bottom > codeRect.top && titleRect.top < codeRect.bottom)
+    : false;
+  return {
+    rows: rows.length,
+    clipped: rows.some(r => r.scrollWidth > r.clientWidth + 1),
+    outside: rows.some(r => { const b = r.getBoundingClientRect(); return b.left < -1 || b.right > window.innerWidth + 1; }),
+    headOverlap,
+    hOverflow: document.documentElement.scrollWidth - window.innerWidth,
+    leaveVisible: !!document.querySelector('[data-friend-leave]'),
+  };
+});
+check('Freundesliga: gefüllte Rangliste (langer Name) ohne Überlauf/Überlappung',
+  friendsGroupUi.rows === 2 && !friendsGroupUi.clipped && !friendsGroupUi.outside
+  && !friendsGroupUi.headOverlap && friendsGroupUi.hOverflow <= 1 && friendsGroupUi.leaveVisible,
+  JSON.stringify(friendsGroupUi));
+await page.evaluate(async () => { await (await import('/core/friends.js')).leaveFriendGroup(); });
+await click('#arenaBackBtn'); await page.waitForTimeout(200);
+
 await menuView('rewards', 'rewardsBackBtn');
 // ── 5b) Einstellungen: Offline-Schalter je Sprache ──
 await click('#userChipBtn'); await page.waitForTimeout(150);

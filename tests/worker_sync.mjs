@@ -146,5 +146,100 @@ const env = makeEnv();
     after.status === 200 && (await after.json()).snapshot === null);
 }
 
+// ── Freundesliga: echte Rangliste statt simulierter Gegner ──
+{
+  const env = makeEnv();
+  const WEEK = '2026-W20';
+
+  // Erster Push legt die Gruppe an UND registriert das Mitglied.
+  const p1 = await call(env, '/api/league/push', {
+    user: 'anna', token: TOKEN_A, code: 'freunde1', name: 'Anna', xp: 120, weekId: WEEK, division: 2,
+  });
+  const p1b = await p1.json();
+  check('Erster Push legt die Gruppe an', p1.status === 200 && p1b.ok && p1b.members.anna?.xp === 120,
+    JSON.stringify(p1b));
+
+  // Zweites Konto tritt über denselben Code bei.
+  const p2 = await call(env, '/api/league/push', {
+    user: 'bela', token: TOKEN_B, code: 'FREUNDE1', name: 'Béla', xp: 340, weekId: WEEK, division: 1,
+  });
+  const p2b = await p2.json();
+  check('Zweites Konto tritt über den Code bei (Groß/klein egal)',
+    p2.status === 200 && p2b.ok && p2b.members.anna && p2b.members.bela?.xp === 340, JSON.stringify(p2b));
+
+  // Beide Mitglieder sehen sich gegenseitig in der Rangliste.
+  const pull = await call(env, '/api/league/pull', { user: 'anna', token: TOKEN_A, code: 'freunde1' });
+  const pullBody = await pull.json();
+  check('Zwei Konten sehen sich gegenseitig in der Rangliste',
+    pull.status === 200 && pullBody.ok
+    && pullBody.members.anna?.name === 'Anna' && pullBody.members.bela?.name === 'Béla',
+    JSON.stringify(pullBody.members));
+
+  // Ein fremder Token darf nicht unter Annas Namen pushen.
+  const spoof = await call(env, '/api/league/push', {
+    user: 'anna', token: TOKEN_B, code: 'freunde1', name: 'Falsch', xp: 99999, weekId: WEEK, division: 0,
+  });
+  check('Fremder Token kann Annas Stand nicht überschreiben', spoof.status === 403);
+  const afterSpoof = await call(env, '/api/league/pull', { user: 'anna', token: TOKEN_A, code: 'freunde1' });
+  check('Annas Stand blieb dabei unverändert',
+    (await afterSpoof.json()).members.anna?.xp === 120);
+
+  // Anna aktualisiert ihren eigenen Stand erneut — das bleibt erlaubt.
+  const update = await call(env, '/api/league/push', {
+    user: 'anna', token: TOKEN_A, code: 'freunde1', name: 'Anna', xp: 250, weekId: WEEK, division: 2,
+  });
+  check('Anna kann ihren eigenen Stand weiter aktualisieren',
+    update.status === 200 && (await update.json()).members.anna?.xp === 250);
+
+  // Ungültiger Code / Name / Woche werden abgewiesen.
+  const badCode = await call(env, '/api/league/push', {
+    user: 'anna', token: TOKEN_A, code: '!!', name: 'Anna', xp: 1, weekId: WEEK, division: 0,
+  });
+  check('Ungültiger Code wird abgewiesen', badCode.status === 400);
+  const badWeek = await call(env, '/api/league/push', {
+    user: 'anna', token: TOKEN_A, code: 'freunde1', name: 'Anna', xp: 1, weekId: 'letzte-woche', division: 0,
+  });
+  check('Ungültige Wochen-ID wird abgewiesen', badWeek.status === 400);
+
+  // Gruppe verlassen entfernt die Zeile — der Code bleibt für andere gültig.
+  const leave = await call(env, '/api/league/leave', { user: 'bela', token: TOKEN_B, code: 'freunde1' });
+  check('Gruppe verlassen entfernt die eigene Zeile',
+    leave.status === 200 && (await leave.json()).left === true);
+  const afterLeave = await call(env, '/api/league/pull', { user: 'anna', token: TOKEN_A, code: 'freunde1' });
+  const afterLeaveBody = await afterLeave.json();
+  check('Nach dem Verlassen: der andere Name bleibt bestehen, Béla ist weg',
+    !!afterLeaveBody.members.anna && !afterLeaveBody.members.bela, JSON.stringify(afterLeaveBody.members));
+
+  // Béla kann demselben Code danach wieder beitreten.
+  const rejoin = await call(env, '/api/league/push', {
+    user: 'bela', token: TOKEN_B, code: 'freunde1', name: 'Béla', xp: 10, weekId: WEEK, division: 0,
+  });
+  check('Erneutes Beitreten mit demselben Code funktioniert', rejoin.status === 200);
+
+  // Gruppengröße ist gedeckelt — bestehende Mitglieder dürfen aber weiter aktualisieren.
+  const envFull = makeEnv();
+  for (let i = 0; i < 20; i++) {
+    await call(envFull, '/api/league/push', {
+      user: `user${i}`, token: TOKEN_A, code: 'vollgrp', name: `U${i}`, xp: i, weekId: WEEK, division: 0,
+    });
+  }
+  const full = await call(envFull, '/api/league/push', {
+    user: 'user20', token: TOKEN_A, code: 'vollgrp', name: 'U20', xp: 1, weekId: WEEK, division: 0,
+  });
+  check('Die 21. Person kommt nicht mehr in eine volle Gruppe', full.status === 403);
+  const stillUpdatable = await call(envFull, '/api/league/push', {
+    user: 'user0', token: TOKEN_A, code: 'vollgrp', name: 'U0', xp: 999, weekId: WEEK, division: 0,
+  });
+  check('Bestehende Mitglieder können in der vollen Gruppe weiter aktualisieren',
+    stillUpdatable.status === 200 && (await stillUpdatable.json()).members.user0?.xp === 999);
+
+  // Fremde Gruppen sind über den Sync-Token nicht ohne Weiteres erreichbar —
+  // derselbe Token gilt pro (Code, Konto) unabhängig, nicht global.
+  const p3 = await call(env, '/api/league/push', {
+    user: 'anna', token: TOKEN_A, code: 'anderecode', name: 'Anna', xp: 5, weekId: WEEK, division: 0,
+  });
+  check('Derselbe Konto-Token funktioniert unabhängig auch in einer zweiten Gruppe', p3.status === 200);
+}
+
 console.log(`\n${failures === 0 ? '🎉 WORKER-SYNC OK' : `❌ ${failures} Fehler`}`);
 process.exit(failures === 0 ? 0 : 1);
