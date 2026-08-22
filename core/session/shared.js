@@ -86,8 +86,8 @@ export function celebrateSessionEnd() {
   }
 }
 
-const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU', ja: 'ja-JP', zh: 'zh-CN' };
-const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch', fr: 'Französisch', es: 'Spanisch', la: 'Latein', ru: 'Russisch', ja: 'Japanisch', zh: 'Chinesisch' };
+const LANG_CODES = { da: 'da-DK', el: 'el-GR', fr: 'fr-FR', es: 'es-ES', la: 'la', ru: 'ru-RU', ja: 'ja-JP', zh: 'zh-CN', pt: 'pt-PT' };
+const LANG_NAMES  = { da: 'Dänisch', el: 'Griechisch', fr: 'Französisch', es: 'Spanisch', la: 'Latein', ru: 'Russisch', ja: 'Japanisch', zh: 'Chinesisch', pt: 'Portugiesisch' };
 
 export function getLangCode(lang) {
   return LANG_CODES[lang] || lang;

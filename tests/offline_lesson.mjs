@@ -102,14 +102,14 @@ const rows = await page.evaluate(() => ({
   hasSize: /KB|MB/.test(document.getElementById('offlineList').textContent),
   total: document.getElementById('offlineTotal').textContent,
 }));
-check('Einstellungen listen alle 8 Sprachen mit Größenangabe',
-  rows.count === 8 && rows.hasSize, JSON.stringify(rows));
+check('Einstellungen listen alle 9 Sprachen mit Größenangabe',
+  rows.count === 9 && rows.hasSize, JSON.stringify(rows));
 // Das beim Start geöffnete Deck landet über die Fetch-Regel des Service
 // Workers von selbst im Cache — die Gesamtangabe zählt also je nach
 // Zeitpunkt schon eine Sprache mit. Geprüft wird die Form, nicht die Zahl.
 check('Gesamtangabe nennt den Stand',
-  /Noch keine Sprache gesichert|[0-9] von 8 Sprachen gesichert/.test(rows.total), rows.total);
-const savedBefore = Number((rows.total.match(/^(\d+) von 8/) || [0, 0])[1]);
+  /Noch keine Sprache gesichert|[0-9] von 9 Sprachen gesichert/.test(rows.total), rows.total);
+const savedBefore = Number((rows.total.match(/^(\d+) von 9/) || [0, 0])[1]);
 
 await page.evaluate(() => document.querySelector('[data-offline-deck="basic-el"]').click());
 await page.waitForTimeout(1200);
@@ -119,7 +119,7 @@ const after = await page.evaluate(async () => ({
   total: document.getElementById('offlineTotal').textContent,
 }));
 check('Schalter sichert das Deck und meldet es zurück',
-  after.saved && after.state && new RegExp(`${savedBefore + 1} von 8 Sprachen gesichert`).test(after.total),
+  after.saved && after.state && new RegExp(`${savedBefore + 1} von 9 Sprachen gesichert`).test(after.total),
   JSON.stringify({ ...after, savedBefore }));
 
 await page.evaluate(() => document.getElementById('settingsBackBtn').click());
