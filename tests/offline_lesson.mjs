@@ -43,13 +43,18 @@ const check = (n, c, d = '') => { console.log(`${c ? '✅' : '❌'} ${n}${d ? ' 
   dirs.forEach(walk);
 
   // Die Deck-Dateien liegen absichtlich draußen (zusammen ~900 KB) —
-  // sie kommen über den Schalter „Für offline sichern" dazu.
-  const expected = files.filter(f => !f.startsWith('js/data/decks/') || f.endsWith('meta.js'));
+  // sie kommen über den Schalter „Für offline sichern" dazu. Die
+  // Strichfolge-Daten (js/data/strokes/) sind aus demselben Grund
+  // draußen: sie werden mit dem jeweiligen Deck mitgesichert.
+  const expected = files.filter(f =>
+    (!f.startsWith('js/data/decks/') || f.endsWith('meta.js')) && !f.startsWith('js/data/strokes/'));
   const missing = expected.filter(f => !cached.has(f));
   check('PRECACHE enthält jede App-Datei (außer den Deck-Listen)',
     missing.length === 0, missing.join(', '));
   const decksIn = [...cached].filter(f => f.startsWith('js/data/decks/') && !f.endsWith('meta.js'));
   check('Deck-Listen bleiben bewusst außerhalb des Precache', decksIn.length === 0, decksIn.join(', '));
+  const strokesIn = [...cached].filter(f => f.startsWith('js/data/strokes/'));
+  check('Strichfolge-Daten bleiben bewusst außerhalb des Precache', strokesIn.length === 0, strokesIn.join(', '));
 
   // Größenangaben im Deck-Verzeichnis müssen zu den echten Dateien passen.
   const meta = readFileSync('js/data/decks/meta.js', 'utf8');

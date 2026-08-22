@@ -8,6 +8,7 @@ import {
   promptAudioBtn, wirePromptAudio, exampleLine, wireExampleAudio, cognateChip,
   recordAnswerEffects, endSession, escHtml
 } from './shared.js';
+import { hasStrokeLang, openStrokeOrder } from '../../ui/strokeOrder.js';
 
 export function showFlashcard() {
   const session = getCurrentSession();
@@ -72,6 +73,11 @@ function showFlashcardBack(card) {
         ${escHtml(answerText(session, card))}${isReverse(session.deck) ? '' : audioBtnHtml}
       </div>
       ${cognateChip(card)}
+      ${hasStrokeLang(lang) ? `
+        <button type="button" class="btn btn-secondary stroke-order-btn" id="strokeOrderBtn">
+          <i class="fas fa-pen-fancy"></i> Strichfolge
+        </button>
+      ` : ''}
       ${card.example ? `
         <div class="fc-example-block">
           <p class="fc-example${pron ? ' has-ipa' : ''}"${pron ? ' tabindex="0"' : ''}>
@@ -104,6 +110,9 @@ function showFlashcardBack(card) {
 
   document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
   wireExampleAudio(lang);
+  if (hasStrokeLang(lang)) {
+    document.getElementById('strokeOrderBtn').addEventListener('click', () => openStrokeOrder(lang, card.back));
+  }
 
   // Touch devices have no hover — let a tap toggle the pronunciation tooltip.
   const exampleEl = learnArea.querySelector('.fc-example.has-ipa');

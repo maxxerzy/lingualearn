@@ -21,6 +21,7 @@ import {
   buildMCOptions, mcOptionsMarkup, markMcAnswer, recordAnswerEffects, dailyRecapHtml,
   escHtml, courseBadge, timers
 } from './shared.js';
+import { hasStrokeLang, openStrokeOrder } from '../../ui/strokeOrder.js';
 
 const TYPO_MAP = { 'æ': 'ae', 'ø': 'o', 'å': 'a', 'ß': 'ss', 'œ': 'oe', 'ð': 'd', 'þ': 'th' };
 function normAnswer(s) {
@@ -475,6 +476,11 @@ function renderCourseTeach(session) {
       </div>
       ${ipaParts.length ? `<div class="course-pron">${ipaParts.join(' · ')}</div>` : ''}
       ${cognateChip(card)}
+      ${hasStrokeLang(lang) ? `
+        <button type="button" class="btn btn-secondary stroke-order-btn" id="strokeOrderBtn">
+          <i class="fas fa-pen-fancy"></i> Strichfolge
+        </button>
+      ` : ''}
       ${card.example ? `
         <div class="fc-example-block">
           <p class="fc-example">${exampleLine(card.example)}</p>
@@ -492,6 +498,9 @@ function renderCourseTeach(session) {
   speakWord(card.back, lang);
   document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
   wireExampleAudio(lang);
+  if (hasStrokeLang(lang)) {
+    document.getElementById('strokeOrderBtn').addEventListener('click', () => openStrokeOrder(lang, card.back));
+  }
   document.getElementById('courseNext').addEventListener('click', () => {
     session.teachPos++;
     session.currentIndex++;

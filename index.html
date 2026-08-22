@@ -615,6 +615,18 @@
       </div>
     </div>
 
+    <!-- Strichfolge (Modal) — animierte Referenz für Kanji/Hanzi -->
+    <div class="modal" id="strokeModal" hidden>
+      <div class="modal__backdrop"></div>
+      <div class="modal__box" role="dialog" aria-label="Strichfolge">
+        <div class="modal__head">
+          <h3><i class="fas fa-pen-fancy"></i> Strichfolge</h3>
+          <button type="button" class="modal__close" aria-label="Schließen"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal__body"><div id="strokeModalBody"></div></div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Onboarding beim allerersten Login: Sprache → Ziel → Motivation -->
@@ -669,7 +681,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v49';
+    var APP_VERSION = 'v50';
     var loginMode = 'login';
 
     function hp(pw) {

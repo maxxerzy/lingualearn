@@ -11,6 +11,7 @@ import { reinitCosmetics } from '../core/cosmetics.js';
 import { renderGamiHeader, renderLearnWidgets, renderStatsExtras, initGamiNav } from '../ui/gami.js';
 import { applyCosmetics, initRewards, renderRewards } from '../ui/cosmetics.js';
 import { reinitWotd, initWotdModal } from '../ui/wotd.js';
+import { initStrokeOrderModal } from '../ui/strokeOrder.js';
 import { initPath, showPath } from '../ui/coursemap.js';
 import { initArena, renderArena } from '../ui/hub.js';
 import { reinitLeague } from '../core/league.js';
@@ -78,6 +79,7 @@ function showApp() {
     initGrammar(activateView);
     document.getElementById('coursemapBtn')?.addEventListener('click', showPath);
     initWotdModal();
+    initStrokeOrderModal();
     initArena(activateView);
     initDictionary(activateView);
     initOnboarding();
