@@ -16,7 +16,9 @@
   padding: 6px 11px;
   border-radius: 999px;
   border: 1px solid transparent;
-  background: color-mix(in srgb, var(--primary, #4361ee) 8%, var(--surface, #fff));
+  background: color-mix(in srgb, var(--primary, #4361ee) 8%, var(--glass-light, transparent));
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--dark, #212529);
@@ -26,16 +28,16 @@
 
 /* Diamanten: türkise Pille */
 .gami-chip--gems {
-  background: color-mix(in srgb, var(--gem, #16b8c9) 13%, var(--surface, #fff));
+  background: color-mix(in srgb, var(--gem, #16b8c9) 13%, transparent);
   border-color: color-mix(in srgb, var(--gem, #16b8c9) 30%, transparent);
   color: #0d7f8d;
 }
 
 /* Streak: grau solange 0, orange Flamme sobald aktiv */
-.gami-chip--streak { background: var(--light, #f8f9fa); color: var(--gray, #6c757d); }
+.gami-chip--streak { background: color-mix(in srgb, var(--light, #f8f9fa) 65%, transparent); color: var(--gray, #6c757d); }
 .gami-chip--streak i { color: #adb5bd; }
 .gami-chip--streak.gami-chip--active {
-  background: color-mix(in srgb, #fd7e14 14%, var(--surface, #fff));
+  background: color-mix(in srgb, #fd7e14 14%, transparent);
   border-color: color-mix(in srgb, #fd7e14 32%, transparent);
   color: color-mix(in srgb, #fd7e14 65%, var(--dark, #212529));
 }
@@ -346,7 +348,9 @@
   max-width: 520px;
   margin: 8px auto 4px;
   padding: 14px 18px;
-  background: var(--light, #f8f9fa);
+  background: var(--glass-light, transparent);
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
   border-radius: 12px;
 }
 
@@ -359,6 +363,8 @@
   padding: 4px 12px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--success) 22%, transparent);
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
   color: #0a6c86;
   font-size: 0.8rem;
   font-weight: 600;
@@ -371,7 +377,9 @@
   padding: 14px;
   border-radius: 12px;
   border: 1.5px dashed color-mix(in srgb, var(--primary) 40%, transparent);
-  background: color-mix(in srgb, var(--primary) 6%, var(--surface));
+  background: color-mix(in srgb, var(--primary) 6%, var(--glass-light, transparent));
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
 }
 /* Im Overlay ohne eigenen Rahmen — die Modal-Box liefert den Container. */
 .modal .wotd { margin: 0; padding: 0; border: none; background: none; }
@@ -433,14 +441,16 @@
   min-height: 44px;
   border: 1.5px solid color-mix(in srgb, var(--primary) 45%, transparent);
   border-radius: 12px;
-  background: color-mix(in srgb, var(--primary) 7%, var(--surface));
+  background: color-mix(in srgb, var(--primary) 7%, var(--glass-light, transparent));
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
   color: var(--primary);
   font-weight: 600;
   font-size: 0.86rem;
   cursor: pointer;
   transition: var(--transition);
 }
-.map-trigger:hover { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, var(--surface)); }
+.map-trigger:hover { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, var(--glass-light, transparent)); }
 
 .modal {
   position: fixed;
@@ -451,12 +461,20 @@
   justify-content: center;
   padding: 16px;
 }
-.modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.45); }
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
 .modal__box {
   position: relative;
-  background: var(--surface);
+  background: var(--glass-card);
+  backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
   border-radius: 16px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--glass-sheen), var(--shadow-lg);
   width: 100%;
   max-width: 460px;
   max-height: 85vh;
@@ -738,15 +756,17 @@
 }
 .build-pool { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; max-width: 480px; margin: 6px auto 0; }
 .build-tile {
-  border: 1.5px solid var(--light-gray); border-radius: 10px;
-  background: var(--surface); color: var(--dark);
+  border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent); border-radius: 10px;
+  background: var(--glass-light); color: var(--dark);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
   padding: 8px 12px; min-height: 40px; font-size: .95rem; font-weight: 600;
   cursor: pointer; transition: var(--transition);
   -webkit-tap-highlight-color: transparent;
 }
 .build-tile:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
 .build-tile--used { opacity: .25; }
-.build-tile--placed { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, var(--surface)); }
+.build-tile--placed { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, var(--glass-light)); }
 
 /* Buchstaben-Kacheln („Wort bauen"): kompakter als Satz-Kacheln,
    damit auch 10-Buchstaben-Wörter auf ein iPhone SE passen. */
@@ -1048,14 +1068,18 @@
   line-height: 1.4;
 }
 .talk-bubble--you {
-  background: color-mix(in srgb, var(--primary, #4361ee) 12%, var(--surface, #fff));
+  background: color-mix(in srgb, var(--primary, #4361ee) 12%, var(--glass-light, transparent));
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
   border: 1px solid color-mix(in srgb, var(--primary, #4361ee) 28%, transparent);
   border-bottom-left-radius: 4px;
   color: var(--dark, #212529);
 }
 .talk-bubble--other {
-  background: var(--light, #f1f3f5);
-  border: 1px solid var(--light-gray, #e9ecef);
+  background: var(--glass-light, transparent);
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  border: 1px solid color-mix(in srgb, var(--light-gray, #e9ecef) 70%, transparent);
   border-bottom-right-radius: 4px;
   margin-left: 22px;
   font-size: 0.95rem;

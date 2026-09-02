@@ -19,18 +19,69 @@
   --shadow-lg:    0 8px 32px rgba(0,0,0,.15);
   --transition:   all 0.25s ease;
   --mobile-nav-h: 68px;
+
+  /* ── Liquid Glass — Materialsystem ──────────────────────────────
+     Übersetzte WWDC18-„Materials & Depth"-Prinzipien: Flächen werden
+     als durchscheinende backdrop-filter-Schichten gebaut statt als
+     flache Farbfläche. Gewichtsstufen (chrome > card > light) codieren
+     Hierarchie — schwerer/dunkler für strukturelle Flächen (Kopfzeile,
+     Panels, Modals), leichter für interaktive Elemente (Buttons, Chips).
+     Alles über color-mix auf --surface, damit es sich automatisch mit
+     jedem der 13 Cosmetic-Themes und Dark Mode verträgt — keine Farbe
+     wird hier festgelegt. */
+  --glass-blur-chrome: 26px;
+  --glass-blur-card:   20px;
+  --glass-blur-light:  14px;
+  --glass-saturate:    170%;
+  --glass-chrome: color-mix(in srgb, var(--surface) 68%, transparent);
+  --glass-card:   color-mix(in srgb, var(--surface) 76%, transparent);
+  --glass-light:  color-mix(in srgb, var(--surface) 58%, transparent);
+  --glass-sheen:  inset 0 1px 0 rgba(255,255,255,.4);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 [hidden] { display: none !important; }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, 'Segoe UI', Roboto, sans-serif;
   background: var(--app-bg);
   color: var(--dark);
   line-height: 1.6;
   min-height: 100vh;
   padding: 20px;
+}
+
+/* Frostigere, blur-freie Ausweichdarstellung, wenn das System weniger
+   Transparenz wünscht — Fläche bleibt fast blickdicht, Kontur bleibt
+   erkennbar (Apple-Guidance: „raise opacity, drop blur", nicht "kein
+   Material mehr"). */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass-blur-chrome: 0px;
+    --glass-blur-card:   0px;
+    --glass-blur-light:  0px;
+    --glass-saturate:    100%;
+    --glass-chrome: color-mix(in srgb, var(--surface) 97%, transparent);
+    --glass-card:   color-mix(in srgb, var(--surface) 97%, transparent);
+    --glass-light:  color-mix(in srgb, var(--surface) 94%, transparent);
+  }
+}
+
+/* Mehr Kontrast gewünscht: nahezu blickdichte Fläche mit klarer Kontur
+   statt Transparenz-Spiel. */
+@media (prefers-contrast: more) {
+  :root {
+    --glass-blur-chrome: 0px;
+    --glass-blur-card:   0px;
+    --glass-blur-light:  0px;
+    --glass-saturate:    100%;
+    --glass-chrome: var(--surface);
+    --glass-card:   var(--surface);
+    --glass-light:  var(--surface);
+  }
+  header, .panel, .modal__box, .session-mode-menu {
+    border-width: 2px;
+  }
 }
 
 /* ── Login Screen ───────────────────────────────────────────────── */
@@ -132,13 +183,15 @@ body {
 
 /* ── Header ─────────────────────────────────────────────────────── */
 header {
-  background: var(--surface);
+  background: var(--glass-chrome);
+  backdrop-filter: blur(var(--glass-blur-chrome)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-chrome)) saturate(var(--glass-saturate));
   padding: 14px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
-  box-shadow: 0 2px 10px rgba(20, 30, 70, .05);
+  border-bottom: 1px solid color-mix(in srgb, var(--light-gray) 55%, transparent);
+  box-shadow: var(--glass-sheen), 0 2px 10px rgba(20, 30, 70, .05);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -161,8 +214,10 @@ header {
   display: flex;
   align-items: center;
   gap: 7px;
-  background: var(--light);
-  border: 1.5px solid var(--light-gray);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
   border-radius: 999px;
   padding: 6px 12px;
   font-weight: 600;
@@ -343,9 +398,11 @@ main { display: block; }
   position: relative;
   width: 40px;
   height: 40px;
-  border: 1.5px solid var(--light-gray);
+  border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
   border-radius: 10px;
-  background: var(--surface);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
   color: var(--primary);
   font-size: 0.95rem;
   cursor: pointer;
@@ -401,11 +458,13 @@ main { display: block; }
 
 /* ── Panels ─────────────────────────────────────────────────────── */
 .panel {
-  background: var(--surface);
+  background: var(--glass-card);
+  backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
   border-radius: 16px;
-  border: 1px solid color-mix(in srgb, var(--light-gray) 55%, transparent);
+  border: 1px solid color-mix(in srgb, var(--light-gray) 45%, transparent);
   padding: 24px;
-  box-shadow: 0 6px 22px rgba(20, 30, 70, .07);
+  box-shadow: var(--glass-sheen), 0 6px 22px rgba(20, 30, 70, .07);
   margin-bottom: 24px;
 }
 
@@ -431,7 +490,9 @@ label {
   border-radius: var(--radius);
   font-size: 1rem;
   transition: var(--transition);
-  background: var(--surface);
+  background: var(--glass-card);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
 }
 
 .input:focus, select:focus {
@@ -452,7 +513,9 @@ label {
   padding: 10px 14px;
   border: 2px solid var(--light-gray);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
   color: var(--gray);
   cursor: pointer;
   font-size: 0.9rem;
@@ -501,8 +564,13 @@ label {
   box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 30%, transparent);
 }
 .btn-primary:hover { filter: brightness(1.06); }
-.btn-secondary { background: var(--light); color: var(--dark); }
-.btn-secondary:hover { background: var(--light-gray); }
+.btn-secondary {
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  color: var(--dark);
+}
+.btn-secondary:hover { background: color-mix(in srgb, var(--light-gray) 70%, transparent); }
 .btn:disabled  { opacity: .6; cursor: not-allowed; }
 
 /* Rating buttons — Farben über color-mix mit Surface/Textfarbe, damit
@@ -548,9 +616,11 @@ label {
 
 .session-icon-btn {
   width: 42px; height: 42px;
-  border: 1.5px solid var(--light-gray);
+  border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
   border-radius: 12px;
-  background: var(--surface);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
   color: var(--primary);
   font-size: 1rem;
   cursor: pointer;
@@ -569,17 +639,19 @@ label {
   padding: 0 11px;
   gap: 7px;
   font-size: 1.05rem;
-  background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
   border-color: color-mix(in srgb, var(--primary) 35%, transparent);
 }
-.session-mode-btn:hover { background: color-mix(in srgb, var(--primary) 14%, var(--surface)); }
+.session-mode-btn:hover { background: color-mix(in srgb, var(--primary) 14%, transparent); }
 .session-mode-caret { font-size: 0.68rem; opacity: 0.75; }
 
 .session-back {
   width: 42px; height: 42px;
-  border: 1.5px solid var(--light-gray);
+  border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
   border-radius: 12px;
-  background: var(--surface);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
   color: var(--dark);
   font-size: 1rem;
   cursor: pointer;
@@ -595,10 +667,12 @@ label {
   right: 0;
   top: calc(100% + 6px);
   min-width: 190px;
-  background: var(--surface);
-  border: 1px solid var(--light-gray);
+  background: var(--glass-card);
+  backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
+  border: 1px solid color-mix(in srgb, var(--light-gray) 55%, transparent);
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.14);
+  box-shadow: var(--glass-sheen), 0 8px 24px rgba(0,0,0,.14);
   z-index: 80;
   overflow: hidden;
 }
@@ -690,8 +764,11 @@ label {
   color: var(--dark);
   padding: 16px 32px;
   border-radius: var(--radius);
-  border: 2px solid var(--light-gray);
-  background: var(--light);
+  border: 2px solid color-mix(in srgb, var(--light-gray) 75%, transparent);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  box-shadow: var(--glass-sheen);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -836,8 +913,10 @@ label {
 .comparison-card .word {
   padding: 10px 20px;
   border-radius: var(--radius);
-  border: 2px solid var(--light-gray);
-  background: var(--surface);
+  border: 2px solid color-mix(in srgb, var(--light-gray) 75%, transparent);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
 }
 
 .comparison-card .word-source { color: var(--secondary); }
@@ -880,9 +959,11 @@ label {
   gap: 12px;
   text-align: left;
   padding: 12px 16px;
-  border: 2px solid var(--light-gray);
+  border: 2px solid color-mix(in srgb, var(--light-gray) 75%, transparent);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
   color: var(--dark);
   font-size: 1rem;
   cursor: pointer;
@@ -940,13 +1021,15 @@ label {
 }
 
 .stat-card {
-  background: var(--light);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
   border-radius: var(--radius);
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  border: 1px solid var(--light-gray);
+  border: 1px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
   transition: var(--transition);
 }
 
