@@ -2,7 +2,7 @@
 // vollständig offline nutzbar.
 // WICHTIG: CACHE_VERSION bei jedem Release erhöhen, damit Clients
 // die neuen Dateien bekommen.
-const CACHE_VERSION = 'v49';
+const CACHE_VERSION = 'v50';
 const CACHE_NAME = `lingualearn-${CACHE_VERSION}`;
 
 // Komplette App-Shell — alles relative Pfade, funktioniert daher auf
@@ -65,7 +65,12 @@ const PRECACHE = [
   './core/session/shared.js',
   './core/session/flashcard.js',
   './core/session/multipleChoice.js',
-  './core/session/courseMode.js',
+  './core/session/course/lesson.js',
+  './core/session/course/shared.js',
+  './core/session/course/teach.js',
+  './core/session/course/speech.js',
+  './core/session/course/practice.js',
+  './core/session/course/sentences.js',
   './core/session/grammarPhase.js',
   './core/session/practice.js',
   './core/session/blitz.js',
