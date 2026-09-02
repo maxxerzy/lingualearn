@@ -52,6 +52,7 @@ const PRECACHE = [
   './core/cosmetics.js',
   './ui/cosmetics.js',
   './ui/wotd.js',
+  './ui/strokeOrder.js',
   './ui/coursemap.js',
   './utils/cognate.js',
   './styles/cosmetics.css',

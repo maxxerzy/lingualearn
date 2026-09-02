@@ -7,6 +7,7 @@ import {
 } from '../shared.js';
 import { courseGrade, courseFeedbackHtml } from './shared.js';
 import { showCourseStep } from './lesson.js';
+import { hasStrokeLang, openStrokeOrder } from '../../../ui/strokeOrder.js';
 
 export function renderCourseTeach(session) {
   const chunk = session.chunks[session.chunkIdx];
@@ -39,6 +40,11 @@ export function renderCourseTeach(session) {
       </div>
       ${ipaParts.length ? `<div class="course-pron">${ipaParts.join(' · ')}</div>` : ''}
       ${cognateChip(card)}
+      ${hasStrokeLang(lang) ? `
+        <button type="button" class="btn btn-secondary stroke-order-btn" id="strokeOrderBtn">
+          <i class="fas fa-pen-fancy"></i> Strichfolge
+        </button>
+      ` : ''}
       ${card.example ? `
         <div class="fc-example-block">
           <p class="fc-example">${exampleLine(card.example)}</p>
@@ -56,6 +62,9 @@ export function renderCourseTeach(session) {
   speakWord(card.back, lang);
   document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
   wireExampleAudio(lang);
+  if (hasStrokeLang(lang)) {
+    document.getElementById('strokeOrderBtn').addEventListener('click', () => openStrokeOrder(lang, card.back));
+  }
   document.getElementById('courseNext').addEventListener('click', () => {
     session.teachPos++;
     session.currentIndex++;

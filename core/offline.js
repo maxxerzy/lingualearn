@@ -21,6 +21,13 @@ export function deckAssetUrl(language) {
   return new URL(`js/data/decks/${language}.js`, document.baseURI).href;
 }
 
+// Sprachen mit Strichfolge-Daten (js/data/strokes/) — dieselbe Datei-URL,
+// die `ui/strokeOrder.js` beim dynamischen Import anfragt.
+const STROKE_LANGS = ['zh', 'ja'];
+export function strokeAssetUrl(language) {
+  return new URL(`js/data/strokes/${language}.js`, document.baseURI).href;
+}
+
 export function offlineDecks() {
   return deckMeta.map(m => ({ ...m, url: deckAssetUrl(m.language) }));
 }
@@ -106,9 +113,14 @@ export async function saveDeckOffline(deckId) {
   const meta = deckMeta.find(m => m.id === deckId);
   if (!cache || !meta) return false;
   const url = deckAssetUrl(meta.language);
-  if (await cache.match(url)) return true;
+  const alreadySaved = await cache.match(url);
   try {
-    await cache.add(url);
+    if (!alreadySaved) await cache.add(url);
+    // Strichfolge gehört zur Sprache, nicht zum Deck — mitsichern, wenn
+    // vorhanden, aber ein Fehlschlag hier soll das Deck selbst nicht kosten.
+    if (STROKE_LANGS.includes(meta.language)) {
+      await cache.add(strokeAssetUrl(meta.language)).catch(() => {});
+    }
     return true;
   } catch {
     return false;                        // offline oder Speicher voll
@@ -119,6 +131,9 @@ export async function removeDeckOffline(deckId) {
   const cache = await appCache();
   const meta = deckMeta.find(m => m.id === deckId);
   if (!cache || !meta) return false;
+  if (STROKE_LANGS.includes(meta.language)) {
+    await cache.delete(strokeAssetUrl(meta.language)).catch(() => {});
+  }
   return cache.delete(deckAssetUrl(meta.language));
 }
 
