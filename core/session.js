@@ -10,7 +10,7 @@ import {
 } from './session/shared.js';
 import { showFlashcard } from './session/flashcard.js';
 import { showMultipleChoice } from './session/multipleChoice.js';
-import { startCourseLesson } from './session/courseMode.js';
+import { startCourseLesson } from './session/course/lesson.js';
 import { maybeStartGrammar } from './session/grammarPhase.js';
 import { startLessonReview, startErrorReviewByFronts, startWeakThemePractice } from './session/practice.js';
 import { startBlitz } from './session/blitz.js';
