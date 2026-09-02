@@ -7,7 +7,7 @@ import { showToast } from '../../ui/toast.js';
 import { playCorrect, playWrong } from '../../utils/feedback.js';
 import { lessonNumber } from '../course.js';
 import { enterFocus, escHtml, courseBadge } from './shared.js';
-import { startCourseLesson } from './courseMode.js';
+import { startCourseLesson } from './course/lesson.js';
 
 // ── GRAMMATIK IM LERNKURS ────────────────────────────────────────
 // Vor bestimmten Lektionen wird ein Grammatik-Kapitel eingeschoben
