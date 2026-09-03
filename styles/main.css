@@ -29,14 +29,21 @@
      Alles über color-mix auf --surface, damit es sich automatisch mit
      jedem der 13 Cosmetic-Themes und Dark Mode verträgt — keine Farbe
      wird hier festgelegt. */
-  --glass-blur-chrome: 26px;
-  --glass-blur-card:   20px;
-  --glass-blur-light:  14px;
-  --glass-saturate:    170%;
-  --glass-chrome: color-mix(in srgb, var(--surface) 68%, transparent);
-  --glass-card:   color-mix(in srgb, var(--surface) 76%, transparent);
-  --glass-light:  color-mix(in srgb, var(--surface) 58%, transparent);
+  --glass-blur-chrome: 34px;
+  --glass-blur-card:   26px;
+  --glass-blur-light:  18px;
+  --glass-saturate:    195%;
+  --glass-chrome: color-mix(in srgb, var(--surface) 58%, transparent);
+  --glass-card:   color-mix(in srgb, var(--surface) 66%, transparent);
+  --glass-light:  color-mix(in srgb, var(--surface) 48%, transparent);
   --glass-sheen:  inset 0 1px 0 rgba(255,255,255,.4);
+  /* Diagonaler Lichtschimmer — macht Flächen als Glas erkennbar, auch
+     wenn dahinter (z. B. Dark-Mode-Hintergrund) wenig zum Verwischen
+     liegt. Reine Lichtoptik über Weiß/Transparent, keine Farbe. */
+  --glass-sheen-layer: linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,0) 45%);
+  /* Feines Korn — echtes Glas ist nie perfekt glatt. Nur auf großen,
+     strukturellen Flächen (Kopfzeile/Panels/Modals), s. u. */
+  --glass-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,6 +71,8 @@ body {
     --glass-chrome: color-mix(in srgb, var(--surface) 97%, transparent);
     --glass-card:   color-mix(in srgb, var(--surface) 97%, transparent);
     --glass-light:  color-mix(in srgb, var(--surface) 94%, transparent);
+    --glass-sheen-layer: none;
+    --glass-grain: none;
   }
 }
 
@@ -78,6 +87,8 @@ body {
     --glass-chrome: var(--surface);
     --glass-card:   var(--surface);
     --glass-light:  var(--surface);
+    --glass-sheen-layer: none;
+    --glass-grain: none;
   }
   header, .panel, .modal__box, .session-mode-menu {
     border-width: 2px;
@@ -191,10 +202,34 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid color-mix(in srgb, var(--light-gray) 55%, transparent);
-  box-shadow: var(--glass-sheen), 0 2px 10px rgba(20, 30, 70, .05);
+  /* KEIN inset-Highlight hier: die Kopfzeile klebt am Bildschirmrand
+     (position: sticky; top: 0) — dort gibt es keine „Glaskante", an der
+     sich Licht fangen könnte. Ein Top-Highlight sah dort nur wie ein
+     Rendering-Fehler aus (dünner heller Balken am oberen Bildschirmrand). */
+  box-shadow: 0 2px 10px rgba(20, 30, 70, .05);
   position: sticky;
   top: 0;
   z-index: 50;
+}
+/* Speculareffekt + feines Korn: macht die Kopfzeile auch dann als Glas
+   erkennbar, wenn dahinter wenig zum Verwischen liegt (flacher
+   Dark-Mode-Hintergrund). z-index:-1 hält beides hinter Logo/Chips. */
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--glass-sheen-layer);
+  pointer-events: none;
+}
+header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--glass-grain);
+  background-size: 100px 100px;
+  pointer-events: none;
 }
 
 .logo { display: flex; align-items: center; gap: 10px; }
@@ -211,6 +246,7 @@ header {
 .user-menu { position: relative; }
 
 .user-chip {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -458,6 +494,7 @@ main { display: block; }
 
 /* ── Panels ─────────────────────────────────────────────────────── */
 .panel {
+  position: relative;
   background: var(--glass-card);
   backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
   -webkit-backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
@@ -466,6 +503,42 @@ main { display: block; }
   padding: 24px;
   box-shadow: var(--glass-sheen), 0 6px 22px rgba(20, 30, 70, .07);
   margin-bottom: 24px;
+}
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--glass-sheen-layer);
+  pointer-events: none;
+}
+.panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-image: var(--glass-grain);
+  background-size: 100px 100px;
+  pointer-events: none;
+}
+
+/* Speculareffekt für die leichte Glasstufe (Buttons, Chips, Kurskarten-
+   Elemente) — nur der Lichtschimmer, ohne Korn (bei kleinen Flächen
+   wirkt Korn eher unruhig als hochwertig; das bleibt den großen,
+   strukturellen Flächen oben vorbehalten). */
+.user-chip::before, .gami-chip::before, .config-icon-btn::before,
+.session-icon-btn::before, .session-back::before, .btn-secondary::before,
+.mode-btn::before, .mc-option::before, .fc-word::before,
+.comparison-card .word::before, .stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--glass-sheen-layer);
+  pointer-events: none;
 }
 
 .panel h2 { margin-bottom: 20px; color: var(--primary); }
@@ -508,6 +581,7 @@ label {
 }
 
 .mode-btn {
+  position: relative;
   width: 100%;
   min-height: 44px;
   padding: 10px 14px;
@@ -565,6 +639,7 @@ label {
 }
 .btn-primary:hover { filter: brightness(1.06); }
 .btn-secondary {
+  position: relative;
   background: var(--glass-light);
   backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
   -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
@@ -615,6 +690,7 @@ label {
 .session-header__actions { align-items: center; gap: 6px; }
 
 .session-icon-btn {
+  position: relative;
   width: 42px; height: 42px;
   border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
   border-radius: 12px;
@@ -646,6 +722,7 @@ label {
 .session-mode-caret { font-size: 0.68rem; opacity: 0.75; }
 
 .session-back {
+  position: relative;
   width: 42px; height: 42px;
   border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
   border-radius: 12px;
@@ -675,6 +752,23 @@ label {
   box-shadow: var(--glass-sheen), 0 8px 24px rgba(0,0,0,.14);
   z-index: 80;
   overflow: hidden;
+}
+.session-mode-menu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--glass-sheen-layer);
+  pointer-events: none;
+}
+.session-mode-menu::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--glass-grain);
+  background-size: 100px 100px;
+  pointer-events: none;
 }
 .session-mode-item {
   display: flex;
@@ -759,6 +853,7 @@ label {
 }
 
 .fc-word {
+  position: relative;
   font-size: 2.4rem;
   font-weight: 700;
   color: var(--dark);
@@ -911,6 +1006,7 @@ label {
 }
 
 .comparison-card .word {
+  position: relative;
   padding: 10px 20px;
   border-radius: var(--radius);
   border: 2px solid color-mix(in srgb, var(--light-gray) 75%, transparent);
@@ -954,6 +1050,7 @@ label {
 }
 
 .mc-option {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1021,6 +1118,7 @@ label {
 }
 
 .stat-card {
+  position: relative;
   background: var(--glass-light);
   backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
   -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
