@@ -4,6 +4,7 @@ import { createUserStore } from '../core/userStore.js';
 import { renderGamiHeader } from './gami.js';
 import { showToast } from './toast.js';
 import { speak } from '../utils/speech.js';
+import { openModal, closeModal } from './modal.js';
 
 // „Wort des Tages": deterministisch aus dem gewählten Deck (Seed = Datum),
 // einmal pro Tag mit einem kleinen XP-Bonus abschließbar.
@@ -17,11 +18,10 @@ export function openWotd() {
   const modal = document.getElementById('wotdModal');
   if (!modal) return;
   renderWotd();
-  modal.hidden = false;
+  openModal(modal);
 }
 export function closeWotd() {
-  const modal = document.getElementById('wotdModal');
-  if (modal) modal.hidden = true;
+  closeModal(document.getElementById('wotdModal'));
 }
 export function initWotdModal() {
   document.getElementById('wotdBtn')?.addEventListener('click', openWotd);

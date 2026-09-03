@@ -1,0 +1,521 @@
+/* ════════════════════════════════════════════════════════════════
+   LinguaLearn — Session-Ansicht: Karteikarte, Flashcard, Multiple
+   Choice, Statistik (Teil der Liquid-Glass-Aufteilung von styles/main.css)
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Views ──────────────────────────────────────────────────────── */
+.view { display: none; }
+.view.active { display: block; }
+
+/* ── Session Header ─────────────────────────────────────────────── */
+.session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.session-progress { display: flex; align-items: center; gap: 12px; }
+
+/* Fokus-Modus-Bedienelemente (Zurück / Modus-Wechsel / Lernkarte) —
+   standardmäßig versteckt, erscheinen nur in der mobilen Session-Ansicht. */
+.session-back,
+.session-header__actions { display: none; }
+.session-header__actions { align-items: center; gap: 6px; }
+
+.session-icon-btn {
+  position: relative;
+  width: 42px; height: 42px;
+  border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
+  border-radius: 12px;
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  color: var(--primary);
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.session-icon-btn:hover { border-color: var(--primary); }
+
+/* Modus-Wechsel: zeigt das Icon des aktuellen Modus + kleinen Pfeil,
+   damit klar ist „hier den Modus umschalten" (statt anonymem Symbol). */
+.session-mode-btn {
+  width: auto;
+  min-width: 42px;
+  padding: 0 11px;
+  gap: 7px;
+  font-size: 1.05rem;
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  border-color: color-mix(in srgb, var(--primary) 35%, transparent);
+}
+.session-mode-btn:hover { background: color-mix(in srgb, var(--primary) 14%, transparent); }
+.session-mode-caret { font-size: 0.68rem; opacity: 0.75; }
+
+.session-back {
+  position: relative;
+  width: 42px; height: 42px;
+  border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
+  border-radius: 12px;
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  color: var(--dark);
+  font-size: 1rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.session-back:hover { border-color: var(--primary); color: var(--primary); }
+
+.session-mode-switch { position: relative; }
+.session-mode-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 190px;
+  background: var(--glass-card);
+  backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
+  border: 1px solid color-mix(in srgb, var(--light-gray) 55%, transparent);
+  border-radius: 12px;
+  box-shadow: var(--glass-sheen), 0 8px 24px rgba(0,0,0,.14);
+  z-index: 80;
+  overflow: hidden;
+  /* Materialize: schwebt vom Auslöser (oben rechts) heran statt hart
+     aufzupoppen — transform-origin zeigt auf den Modus-Knopf, der es
+     öffnet (Apples „anchor interactions to their source"). */
+  transform-origin: top right;
+  opacity: 0;
+  transform: scale(.92) translateY(-4px);
+  transition: opacity .16s ease, transform .18s cubic-bezier(.2,.85,.3,1.05);
+}
+.session-mode-menu--visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .session-mode-menu { transition: opacity .12s ease; transform: none !important; }
+}
+.session-mode-menu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--glass-sheen-layer);
+  pointer-events: none;
+}
+.session-mode-menu::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--glass-grain);
+  background-size: 100px 100px;
+  pointer-events: none;
+}
+.session-mode-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--dark);
+  cursor: pointer;
+}
+.session-mode-item:hover { background: var(--light); }
+.session-mode-item i { color: var(--primary); width: 18px; text-align: center; }
+.session-mode-item--active { color: var(--primary); font-weight: 700; }
+
+.progress-text {
+  font-weight: 500;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.progress {
+  width: 120px; height: 8px;
+  background: var(--light-gray);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+/* ── Card (learn area) ──────────────────────────────────────────── */
+.card {
+  flex: 1;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card .actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* ── Flashcard ──────────────────────────────────────────────────── */
+.flashcard-front,
+.flashcard-back {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.fc-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray);
+}
+
+.fc-word {
+  position: relative;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--dark);
+  padding: 16px 32px;
+  border-radius: var(--radius);
+  border: 2px solid color-mix(in srgb, var(--light-gray) 75%, transparent);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  box-shadow: var(--glass-sheen);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.fc-word-source { color: var(--secondary); }
+.fc-word-target { color: var(--primary); }
+
+.fc-arrow { font-size: 1.4rem; color: var(--light-gray); margin: 4px 0; }
+
+.fc-example {
+  position: relative;
+  font-style: italic;
+  color: var(--gray);
+  font-size: 0.93rem;
+  max-width: 480px;
+  margin: 8px 0 2px;
+  line-height: 1.5;
+}
+
+/* Hoverable example: subtle dotted underline hints that a tooltip exists. */
+.fc-example.has-ipa strong {
+  border-bottom: 1px dotted var(--light-gray);
+  cursor: help;
+}
+
+/* Pronunciation tooltip (IPA of the target word, + romanization for non-Latin
+   scripts). Hidden by default; revealed on hover, keyboard focus, or tap. */
+.fc-ipa-tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  z-index: 20;
+  white-space: nowrap;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #fff;
+  background: #2b3440;
+  padding: 7px 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.22);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+.fc-ipa-tip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #2b3440;
+}
+
+.fc-example.has-ipa:hover .fc-ipa-tip,
+.fc-example.has-ipa:focus .fc-ipa-tip,
+.fc-example.has-ipa:focus-within .fc-ipa-tip,
+.fc-example.has-ipa.show-ipa .fc-ipa-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.fc-ipa-tip__word { color: #cfe3ff; font-weight: 600; margin-right: 8px; }
+.fc-ipa-tip__ipa  { letter-spacing: .3px; }
+.fc-ipa-tip__roman { color: #b9c6d3; margin-left: 8px; }
+
+.fc-example-de {
+  font-size: 0.83rem;
+  color: #7b8a99;
+  max-width: 480px;
+  margin: 4px 0 12px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(0,0,0,.05);
+}
+
+.fc-rating {
+  margin-top: 28px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.fc-rating-label { font-size: 0.83rem; color: var(--gray); font-weight: 500; }
+.fc-rating .actions { margin-top: 0; }
+.fc-queue-info { margin-top: 12px; min-height: 24px; }
+
+.review-badge {
+  background: color-mix(in srgb, #f27007 12%, var(--surface, #fff));
+  color: color-mix(in srgb, #f27007 68%, var(--dark, #212529));
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, #f27007 35%, var(--surface, #fff));
+}
+
+/* ── Audio Button ───────────────────────────────────────────────── */
+.audio-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary);
+  font-size: 1.2rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: var(--transition);
+  opacity: 0.7;
+  line-height: 1;
+  min-height: 36px;
+  min-width: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.audio-btn:hover { opacity: 1; background: rgba(67,97,238,.1); }
+
+/* ── Comparison Mode ────────────────────────────────────────────── */
+.q { font-size: 2rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.prompt { color: var(--gray); margin-bottom: 16px; }
+
+.comparison-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 16px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.comparison-card .word {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  border: 2px solid color-mix(in srgb, var(--light-gray) 75%, transparent);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+}
+
+.comparison-card .word-source { color: var(--secondary); }
+.comparison-card .word-target { color: var(--primary); display: flex; align-items: center; gap: 10px; }
+.comparison-card i.fa-arrow-right { color: var(--light-gray); font-size: 1.2rem; }
+
+/* ── Feedback ───────────────────────────────────────────────────── */
+#fb { margin-top: 20px; padding: 16px; border-radius: var(--radius); text-align: center; width: 100%; }
+
+.correct {
+  background: rgba(76,201,240,.15);
+  color: #0a9396;
+  border: 1px solid rgba(76,201,240,.4);
+  padding: 12px;
+  border-radius: var(--radius);
+}
+
+.incorrect {
+  background: rgba(247,37,133,.08);
+  color: #ae2012;
+  border: 1px solid rgba(247,37,133,.25);
+  padding: 12px;
+  border-radius: var(--radius);
+}
+
+/* ── Multiple Choice ────────────────────────────────────────────── */
+.mc-card { width: 100%; }
+.mc-question { margin-bottom: 20px; }
+
+.mc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.mc-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 12px 16px;
+  border: 2px solid color-mix(in srgb, var(--light-gray) 75%, transparent);
+  border-radius: var(--radius);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  color: var(--dark);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mc-option:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: rgba(67,97,238,.04);
+}
+
+.mc-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--light-gray);
+  color: var(--gray);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.mc-text { display: flex; align-items: center; gap: 8px; flex: 1; }
+
+.mc-audio {
+  background: none;
+  border: none;
+  color: var(--gray);
+  cursor: pointer;
+  padding: 2px 4px;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  transition: var(--transition);
+}
+
+.mc-audio:hover { opacity: 1; color: var(--primary); }
+
+.mc-option.mc-correct { border-color: #4cc9f0; background: rgba(76,201,240,.12); }
+.mc-option.mc-correct .mc-key { background: #4cc9f0; color: white; }
+.mc-option.mc-wrong   { border-color: #f72585; background: rgba(247,37,133,.07); }
+.mc-option.mc-wrong .mc-key   { background: #f72585; color: white; }
+
+/* ── Statistics View ────────────────────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.stat-card {
+  position: relative;
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
+  transition: var(--transition);
+}
+
+.stat-card:hover { box-shadow: var(--shadow); }
+
+.stat-card--primary {
+  background: linear-gradient(135deg, rgba(67,97,238,.08), rgba(58,12,163,.05));
+  border-color: rgba(67,97,238,.2);
+  grid-column: span 2;
+}
+
+.stat-card__icon  { font-size: 1.4rem; color: var(--primary); opacity: 0.7; }
+.stat-card__value { font-size: 2rem; font-weight: 700; color: var(--primary); line-height: 1; }
+.stat-card__label { font-size: 0.82rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.4px; font-weight: 500; }
+
+.stat-accuracy-bar-wrap {
+  height: 6px;
+  background: rgba(67,97,238,.15);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.stat-accuracy-bar {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* ── Settings code block ────────────────────────────────────────── */
+.code {
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: 16px;
+  font-size: 0.83rem;
+  color: var(--dark);
+  border: 1px solid var(--light-gray);
+  white-space: pre;
+  overflow-x: auto;
+}
+

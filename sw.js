@@ -2,7 +2,7 @@
 // vollständig offline nutzbar.
 // WICHTIG: CACHE_VERSION bei jedem Release erhöhen, damit Clients
 // die neuen Dateien bekommen.
-const CACHE_VERSION = 'v52';
+const CACHE_VERSION = 'v53';
 const CACHE_NAME = `lingualearn-${CACHE_VERSION}`;
 
 // Komplette App-Shell — alles relative Pfade, funktioniert daher auf
@@ -11,9 +11,15 @@ const PRECACHE = [
   './',
   './index.html',
   './manifest.webmanifest',
-  './styles/main.css',
+  './styles/base.css',
+  './styles/layout.css',
+  './styles/session.css',
+  './styles/responsive.css',
+  './styles/extras.css',
   './styles/button-animations.css',
-  './styles/gamification.css',
+  './styles/gami-progress.css',
+  './styles/gami-course.css',
+  './styles/gami-exercises.css',
   './assets/fontawesome/css/all.min.css',
   './assets/fontawesome/webfonts/fa-solid-900.woff2',
   './assets/fontawesome/webfonts/fa-solid-900.ttf',
@@ -53,6 +59,7 @@ const PRECACHE = [
   './ui/cosmetics.js',
   './ui/wotd.js',
   './ui/strokeOrder.js',
+  './ui/modal.js',
   './ui/coursemap.js',
   './utils/cognate.js',
   './styles/cosmetics.css',
