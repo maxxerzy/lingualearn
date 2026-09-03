@@ -186,7 +186,10 @@ await page.evaluate(async () => {
 // ── WOTD-Overlay ──
 await click('#wotdBtn'); await page.waitForTimeout(300);
 const wotd = await page.evaluate(() => !document.getElementById('wotdModal').hidden && !!document.querySelector('#wotdModal .wotd__word'));
-await click('#wotdModal .modal__close'); await page.waitForTimeout(150);
+// 300ms statt vormals 150ms: das Modal materialisiert sich jetzt (Skalierung
+// + Blur-Radius, siehe ui/modal.js closeModal) und blendet erst nach der
+// Übergangsdauer (240ms) tatsächlich per [hidden] aus.
+await click('#wotdModal .modal__close'); await page.waitForTimeout(300);
 check('Wort des Tages öffnet/schließt', wotd && await page.evaluate(() => document.getElementById('wotdModal').hidden));
 
 // ── Thematische Kurszeile ──

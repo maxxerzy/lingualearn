@@ -1,0 +1,520 @@
+/* ════════════════════════════════════════════════════════════════
+   LinguaLearn — App-Rahmen, Kopfzeile, Lern-Layout, Panels, Formulare,
+   Buttons (Teil der Liquid-Glass-Aufteilung von styles/main.css)
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── App Container ──────────────────────────────────────────────── */
+.app-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  /* KEIN overflow:hidden hier: das kappt position:sticky für den Header,
+     sobald ein Vorfahre einen eigenen Scroll-Container bildet — die
+     Kopfzeile blieb dadurch in Ansichten wie Einstellungen/Statistik NIE
+     wirklich am Bildschirmrand kleben, sie scrollte einfach mit weg (auf
+     Mobile war das schon per eigenem Override behoben, s. u. — hier jetzt
+     grundsätzlich). Die passende Rundung übernimmt der Header selbst
+     (border-top-*-radius), damit trotzdem nichts eckig übersteht. */
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+header {
+  background: var(--glass-chrome);
+  backdrop-filter: blur(var(--glass-blur-chrome)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-chrome)) saturate(var(--glass-saturate));
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Übernimmt die obere Rundung von .app-container selbst (dessen eigenes
+     overflow:hidden musste weichen, s. o.) — border-radius auf einem
+     Hintergrund wird immer respektiert, ganz ohne Clipping des Elternteils
+     (das sonst auch die Modus-/Profil-Popover abschneiden würde). */
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  border-bottom: 1px solid color-mix(in srgb, var(--light-gray) 55%, transparent);
+  /* KEIN inset-Highlight hier: die Kopfzeile klebt am Bildschirmrand
+     (position: sticky; top: 0) — dort gibt es keine „Glaskante", an der
+     sich Licht fangen könnte. Ein Top-Highlight sah dort nur wie ein
+     Rendering-Fehler aus (dünner heller Balken am oberen Bildschirmrand). */
+  box-shadow: 0 2px 10px rgba(20, 30, 70, .05);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+/* Speculareffekt + feines Korn: macht die Kopfzeile auch dann als Glas
+   erkennbar, wenn dahinter wenig zum Verwischen liegt (flacher
+   Dark-Mode-Hintergrund). z-index:-1 hält beides hinter Logo/Chips. */
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--glass-sheen-layer);
+  pointer-events: none;
+}
+header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-image: var(--glass-grain);
+  background-size: 100px 100px;
+  pointer-events: none;
+}
+
+/* Scroll-Edge statt harter Kante: in langen, scrollbaren Ansichten
+   (Einstellungen, Wörterbuch, Statistik) verschwindet Inhalt so weich
+   unter dem Glas-Header, statt hart abgeschnitten zu wirken. Liegt IM
+   Header (top: 100%), klebt dadurch automatisch mit — keine eigene
+   Sticky-Logik oder feste Höhenannahme nötig. */
+.scroll-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 18px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(20,30,70,.07), transparent);
+}
+
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo h1   { font-size: 1.5rem; color: var(--primary); }
+.logo-icon { font-size: 1.7rem; color: var(--primary); }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* User chip (dropdown trigger) */
+.user-menu { position: relative; }
+
+.user-chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--dark);
+  max-width: 220px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition);
+}
+/* Hover & offener Zustand: dezent hervorheben – der Rang „Neuling" bleibt
+   dabei lesbar (früher wurde alles blau, Text verschwand). */
+.user-chip:hover,
+.user-chip.open {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, var(--surface));
+  color: var(--dark);
+}
+.user-chip__avatar { font-size: 1.15rem; }
+.user-chip i { color: var(--primary); flex-shrink: 0; }
+.user-title { color: var(--primary); font-weight: 700; flex-shrink: 0; }
+.user-chip__name {
+  color: var(--gray);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.user-chip__name:not(:empty)::before { content: '· '; color: var(--light-gray); }
+.user-chip__caret { font-size: 0.72rem; opacity: 0.8; margin-left: 1px; transition: transform 0.15s ease; }
+.user-chip.open .user-chip__caret { transform: rotate(180deg); }
+
+/* Kopf des Menüs: zeigt den angemeldeten Nutzernamen. */
+.user-dropdown__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  font-size: 0.86rem;
+  color: var(--gray);
+}
+.user-dropdown__head b { color: var(--dark); }
+.user-dropdown__head i { color: var(--primary); }
+
+/* Dropdown */
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;          /* Menü linksbündig — das Profil sitzt jetzt links */
+  right: auto;
+  background: var(--surface);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  min-width: 180px;
+  z-index: 200;
+  overflow: hidden;
+}
+
+.user-dropdown__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--dark);
+  transition: background 0.15s;
+}
+.user-dropdown__item:hover { background: var(--light); }
+.user-dropdown__item i { color: var(--primary); width: 16px; flex-shrink: 0; }
+
+.user-dropdown__divider { height: 1px; background: var(--light-gray); margin: 4px 0; }
+
+.user-dropdown__item--danger { color: #e53e3e; }
+.user-dropdown__item--danger i { color: #e53e3e; }
+.user-dropdown__item--danger:hover { background: color-mix(in srgb, #e53e3e 10%, var(--surface, #fff)); }
+
+.nav { display: flex; gap: 8px; }
+
+.nav-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--light);
+  color: var(--dark);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+}
+
+.nav-btn:hover  { background: var(--primary); color: white; }
+.nav-btn.active { background: var(--primary); color: white; }
+
+/* Back button inside Stats / Settings views */
+.view-topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.view-topbar h2 { margin: 0; }
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  min-height: 40px;
+  border: 1.5px solid var(--light-gray);
+  border-radius: var(--radius);
+  background: var(--light);
+  color: var(--dark);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.btn-back:hover,
+.btn-back:focus-visible { background: var(--primary); color: white; border-color: var(--primary); outline: none; }
+
+/* ── Main & Content ─────────────────────────────────────────────── */
+main { display: block; }
+.content { padding: 24px; }
+
+/* ── Learn Layout (2-column) ────────────────────────────────────── */
+.learn-layout {
+  display: grid;
+  /* minmax(0, 1fr) statt 1fr: verhindert Grid-Blowout — breiter Inhalt
+     im Lernbereich darf die Spalten NIE über- oder untereinander
+     schieben (sichtbar als „Panel frisst die Überschrift"). */
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  /* Header (~76px) + Content-Padding (2×24px) + Puffer — so füllt das
+     Layout den Bildschirm, ohne ihn je zu überlaufen. */
+  min-height: calc(100vh - 160px);
+}
+.learn-layout > * { min-width: 0; }
+
+.config-panel {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+}
+
+/* Kopfzeile der Konfiguration: Titel links, Aktions-Icons rechts
+   (Lernkarte, Wort des Tages, Fällig-Filter) — so wandern diese
+   Funktionen nach oben und der Screen bleibt kurz. */
+.config-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Wird es eng (schmale Desktop-Spalte), rutschen die Icons in eine
+     eigene Zeile — sie dürfen NIEMALS aus dem Panel in den Lernbereich
+     ragen (genau das sah auf dem Mac wie ein kaputtes Overlay aus). */
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.config-head h2 { margin: 0; }
+.config-actions { display: flex; gap: 6px; margin-left: auto; }
+.config-icon-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid color-mix(in srgb, var(--light-gray) 70%, transparent);
+  border-radius: 10px;
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  color: var(--primary);
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Ring (box-shadow) NICHT animieren → beim Ausschalten sofort weg. */
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+/* Hover nur auf echten Zeigegeräten — sonst „klebt" der Hover-Rahmen auf
+   dem Handy nach dem Antippen fest und sieht aus wie „noch an". */
+@media (hover: hover) {
+  .config-icon-btn:hover { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 8%, var(--surface)); }
+}
+.config-icon-btn:focus:not(:focus-visible) { outline: none; }
+/* „Nur fällige Karten" ist standardmäßig AUS. Einmal antippen → AN:
+   der Rahmen bleibt sichtbar (kräftiger Ring), bis man wieder AUS tippt. */
+.config-due-btn.active {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 16%, var(--surface));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 35%, transparent);
+}
+.config-due-btn.active i { color: var(--primary); }
+.config-due-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 2px var(--surface);
+}
+
+.learn-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.learn-panel .panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+/* ── Panels ─────────────────────────────────────────────────────── */
+.panel {
+  position: relative;
+  background: var(--glass-card);
+  backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-card)) saturate(var(--glass-saturate));
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--light-gray) 45%, transparent);
+  padding: 24px;
+  box-shadow: var(--glass-sheen), 0 6px 22px rgba(20, 30, 70, .07);
+  margin-bottom: 24px;
+}
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--glass-sheen-layer);
+  pointer-events: none;
+}
+.panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-image: var(--glass-grain);
+  background-size: 100px 100px;
+  pointer-events: none;
+}
+
+/* Speculareffekt für die leichte Glasstufe (Buttons, Chips, Kurskarten-
+   Elemente) — nur der Lichtschimmer, ohne Korn (bei kleinen Flächen
+   wirkt Korn eher unruhig als hochwertig; das bleibt den großen,
+   strukturellen Flächen oben vorbehalten). */
+.user-chip::before, .gami-chip::before, .config-icon-btn::before,
+.session-icon-btn::before, .session-back::before, .btn-secondary::before,
+.mode-btn::before, .mc-option::before, .fc-word::before,
+.comparison-card .word::before, .stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--glass-sheen-layer);
+  pointer-events: none;
+}
+
+.panel h2 { margin-bottom: 20px; color: var(--primary); }
+
+/* ── Forms ──────────────────────────────────────────────────────── */
+.form-group { margin-bottom: 18px; }
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.87rem;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background: var(--glass-card);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+}
+
+.input:focus, select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* ── Mode Tabs (vertical list in sidebar) ───────────────────────── */
+.mode-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mode-btn {
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  color: var(--gray);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  min-height: 44px;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mode-btn i { color: var(--primary); }
+.mode-btn:hover  { border-color: var(--primary); color: var(--primary); }
+.mode-btn.active {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 62%, #1b2a6b));
+  color: white;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--primary) 38%, transparent);
+}
+.mode-btn.active i { color: #fff; }
+
+/* ── Buttons ────────────────────────────────────────────────────── */
+.btn {
+  padding: 11px 18px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-full { width: 100%; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 62%, #1b2a6b));
+  color: white;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 30%, transparent);
+}
+.btn-primary:hover { filter: brightness(1.06); }
+.btn-secondary {
+  position: relative;
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  color: var(--dark);
+}
+.btn-secondary:hover { background: color-mix(in srgb, var(--light-gray) 70%, transparent); }
+.btn:disabled  { opacity: .6; cursor: not-allowed; }
+
+/* Rating buttons — Farben über color-mix mit Surface/Textfarbe, damit
+   sie im hellen wie im dunklen Theme guten Kontrast behalten. */
+.btn-again { background: color-mix(in srgb, #e0356b 10%, var(--surface, #fff)); color: color-mix(in srgb, #e0356b 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #e0356b 35%, var(--surface, #fff)); }
+.btn-again:hover  { background: #c9184a; color: white; border-color: #c9184a; }
+.btn-hard  { background: color-mix(in srgb, #f27007 10%, var(--surface, #fff)); color: color-mix(in srgb, #f27007 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #f27007 35%, var(--surface, #fff)); }
+.btn-hard:hover   { background: #e65100; color: white; border-color: #e65100; }
+.btn-good  { background: color-mix(in srgb, #37984c 10%, var(--surface, #fff)); color: color-mix(in srgb, #37984c 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #37984c 35%, var(--surface, #fff)); }
+.btn-good:hover   { background: #2e7d32; color: white; border-color: #2e7d32; }
+.btn-easy  { background: color-mix(in srgb, #2683e0 10%, var(--surface, #fff)); color: color-mix(in srgb, #2683e0 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #2683e0 35%, var(--surface, #fff)); }
+.btn-easy:hover   { background: #1565c0; color: white; border-color: #1565c0; }
+
+/* ── Row helper ─────────────────────────────────────────────────── */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+

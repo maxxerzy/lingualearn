@@ -4,6 +4,8 @@
 // Original-Reihenfolge — angetrieben durch stroke-dasharray/-dashoffset,
 // damit jeder Strich sichtbar „gezeichnet" wird.
 
+import { openModal, closeModal } from './modal.js';
+
 function esc(str) {
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
@@ -34,7 +36,7 @@ export async function openStrokeOrder(lang, word) {
   const body = document.getElementById('strokeModalBody');
   if (!modal || !body) return;
   body.innerHTML = '<p class="stroke-status"><i class="fas fa-spinner fa-spin"></i> Lädt …</p>';
-  modal.hidden = false;
+  openModal(modal);
 
   const mod = await loadStrokeModule(lang);
   if (!mod) {
@@ -116,7 +118,7 @@ function renderChars(body, lang, viewBox, chars, strokesMap) {
 export function initStrokeOrderModal() {
   const modal = document.getElementById('strokeModal');
   if (!modal) return;
-  const close = () => { modal.hidden = true; };
+  const close = () => closeModal(modal);
   modal.querySelector('.modal__close')?.addEventListener('click', close);
   modal.querySelector('.modal__backdrop')?.addEventListener('click', close);
   document.addEventListener('keydown', e => {

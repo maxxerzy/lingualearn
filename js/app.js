@@ -12,6 +12,7 @@ import { renderGamiHeader, renderLearnWidgets, renderStatsExtras, initGamiNav } 
 import { applyCosmetics, initRewards, renderRewards } from '../ui/cosmetics.js';
 import { reinitWotd, initWotdModal } from '../ui/wotd.js';
 import { initStrokeOrderModal } from '../ui/strokeOrder.js';
+import { openMenu, closeMenu } from '../ui/modal.js';
 import { initPath, showPath } from '../ui/coursemap.js';
 import { initArena, renderArena } from '../ui/hub.js';
 import { reinitLeague } from '../core/league.js';
@@ -282,16 +283,16 @@ function setupFocusControls() {
     const active = document.querySelector('.mode-btn.active')?.dataset.mode;
     menu.querySelectorAll('.session-mode-item').forEach(it =>
       it.classList.toggle('session-mode-item--active', it.dataset.mode === active));
-    menu.hidden = !menu.hidden;
+    if (menu.hidden) openMenu(menu); else closeMenu(menu);
   });
 
   menu.querySelectorAll('.session-mode-item').forEach(item => {
     item.addEventListener('click', () => {
       modeTabs.forEach(b => b.classList.toggle('active', b.dataset.mode === item.dataset.mode));
-      menu.hidden = true;
+      closeMenu(menu);
       startSession();   // startet direkt im gewählten Modus (bleibt im Fokus)
     });
   });
 
-  document.addEventListener('click', () => { menu.hidden = true; });
+  document.addEventListener('click', () => closeMenu(menu));
 }

@@ -1,0 +1,189 @@
+/* ════════════════════════════════════════════════════════════════
+   LinguaLearn — Design-Tokens, Reset, Login-Screen
+   (Teil der Liquid-Glass-Aufteilung von styles/main.css)
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Design tokens ──────────────────────────────────────────────── */
+:root {
+  --primary:      #4361ee;
+  --secondary:    #3a0ca3;
+  --accent:       #f72585;
+  --success:      #4cc9f0;
+  --warning:      #f9c74f;
+  --light:        #f8f9fa;
+  --dark:         #212529;
+  --gray:         #6c757d;
+  --light-gray:   #e9ecef;
+  /* Flächen/Hintergrund — von Cosmetic-Themes überschrieben (styles/cosmetics.css) */
+  --app-bg:       linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --surface:      #ffffff;
+  --bg:           #f5f7fa;
+  --border-radius: 12px;
+  --radius:        12px;
+  --shadow:       0 4px 12px rgba(0,0,0,.10);
+  --shadow-lg:    0 8px 32px rgba(0,0,0,.15);
+  --transition:   all 0.25s ease;
+  --mobile-nav-h: 68px;
+
+  /* ── Liquid Glass — Materialsystem ──────────────────────────────
+     Übersetzte WWDC18-„Materials & Depth"-Prinzipien: Flächen werden
+     als durchscheinende backdrop-filter-Schichten gebaut statt als
+     flache Farbfläche. Gewichtsstufen (chrome > card > light) codieren
+     Hierarchie — schwerer/dunkler für strukturelle Flächen (Kopfzeile,
+     Panels, Modals), leichter für interaktive Elemente (Buttons, Chips).
+     Alles über color-mix auf --surface, damit es sich automatisch mit
+     jedem der 13 Cosmetic-Themes und Dark Mode verträgt — keine Farbe
+     wird hier festgelegt. */
+  --glass-blur-chrome: 34px;
+  --glass-blur-card:   26px;
+  --glass-blur-light:  18px;
+  --glass-saturate:    195%;
+  --glass-chrome: color-mix(in srgb, var(--surface) 58%, transparent);
+  --glass-card:   color-mix(in srgb, var(--surface) 66%, transparent);
+  --glass-light:  color-mix(in srgb, var(--surface) 48%, transparent);
+  --glass-sheen:  inset 0 1px 0 rgba(255,255,255,.4);
+  /* Diagonaler Lichtschimmer — macht Flächen als Glas erkennbar, auch
+     wenn dahinter (z. B. Dark-Mode-Hintergrund) wenig zum Verwischen
+     liegt. Reine Lichtoptik über Weiß/Transparent, keine Farbe. */
+  --glass-sheen-layer: linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,0) 45%);
+  /* Feines Korn — echtes Glas ist nie perfekt glatt. Nur auf großen,
+     strukturellen Flächen (Kopfzeile/Panels/Modals), s. u. */
+  --glass-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: var(--app-bg);
+  color: var(--dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Frostigere, blur-freie Ausweichdarstellung, wenn das System weniger
+   Transparenz wünscht — Fläche bleibt fast blickdicht, Kontur bleibt
+   erkennbar (Apple-Guidance: „raise opacity, drop blur", nicht "kein
+   Material mehr"). */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass-blur-chrome: 0px;
+    --glass-blur-card:   0px;
+    --glass-blur-light:  0px;
+    --glass-saturate:    100%;
+    --glass-chrome: color-mix(in srgb, var(--surface) 97%, transparent);
+    --glass-card:   color-mix(in srgb, var(--surface) 97%, transparent);
+    --glass-light:  color-mix(in srgb, var(--surface) 94%, transparent);
+    --glass-sheen-layer: none;
+    --glass-grain: none;
+  }
+}
+
+/* Mehr Kontrast gewünscht: nahezu blickdichte Fläche mit klarer Kontur
+   statt Transparenz-Spiel. */
+@media (prefers-contrast: more) {
+  :root {
+    --glass-blur-chrome: 0px;
+    --glass-blur-card:   0px;
+    --glass-blur-light:  0px;
+    --glass-saturate:    100%;
+    --glass-chrome: var(--surface);
+    --glass-card:   var(--surface);
+    --glass-light:  var(--surface);
+    --glass-sheen-layer: none;
+    --glass-grain: none;
+  }
+  header, .panel, .modal__box, .session-mode-menu {
+    border-width: 2px;
+  }
+}
+
+/* ── Login Screen ───────────────────────────────────────────────── */
+.login-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--bg, #f5f7fa);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.login-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  color: var(--primary);
+}
+
+.login-logo i    { font-size: 2.2rem; }
+.login-logo span { font-size: 1.7rem; font-weight: 700; }
+
+.login-title { text-align: center; font-size: 1.4rem; margin-bottom: 20px; }
+
+.login-tabs {
+  display: flex;
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.login-tab {
+  flex: 1;
+  padding: 9px 0;
+  border: none;
+  border-radius: calc(var(--radius) - 2px);
+  background: none;
+  color: var(--gray);
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.login-tab.active {
+  background: var(--surface);
+  color: var(--primary);
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+}
+.login-tab:not(.active):hover { color: var(--dark); }
+
+.login-form { display: flex; flex-direction: column; gap: 0; }
+
+.login-error {
+  background: rgba(247,37,133,.08);
+  color: #ae2012;
+  border: 1px solid rgba(247,37,133,.28);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.login-note {
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.8rem;
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+

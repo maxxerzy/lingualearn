@@ -9,9 +9,18 @@
   <link rel="icon" href="icons/icon-192.png" type="image/png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="styles/main.css">
+  <!-- Aufgeteilt aus dem früheren main.css/gamification.css (Liquid-Glass-
+       Welle) — Reihenfolge entspricht exakt der alten Kaskade, damit sich
+       am Zusammenspiel gleich-spezifischer Regeln nichts ändert. -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/session.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+  <link rel="stylesheet" href="styles/extras.css">
   <link rel="stylesheet" href="styles/button-animations.css">
-  <link rel="stylesheet" href="styles/gamification.css">
+  <link rel="stylesheet" href="styles/gami-progress.css">
+  <link rel="stylesheet" href="styles/gami-course.css">
+  <link rel="stylesheet" href="styles/gami-exercises.css">
   <link rel="stylesheet" href="styles/cosmetics.css">
 </head>
 <body>
@@ -118,6 +127,11 @@
           </span>
         </div>
       </div>
+      <!-- Weicher Übergang statt harter Kante: Inhalt verschwindet in
+           scrollbaren Ansichten (Einstellungen, Wörterbuch, Statistik)
+           nicht hart unter dem Glas-Header, sondern blendet sich sanft
+           aus. Liegt im Header, damit es automatisch mitklebt. -->
+      <div class="scroll-edge" aria-hidden="true"></div>
     </header>
 
     <main>
@@ -681,7 +695,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v52';
+    var APP_VERSION = 'v53';
     var loginMode = 'login';
 
     function hp(pw) {

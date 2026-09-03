@@ -1,0 +1,439 @@
+/* ════════════════════════════════════════════════════════════════
+   LinguaLearn — Gamification: Header-Chips, Fortschritt, Tagesziel,
+   Statistik-Übersicht, Schwächen-Profil, Heatmap, Erfolge, Lernkurs-
+   Grundlagen, Kognat-Marker, Wort des Tages, Aussprache-Duell
+   (Teil der Liquid-Glass-Aufteilung von styles/gamification.css)
+   ════════════════════════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════════
+   LinguaLearn — Gamification (Level, Streak, Tagesziel, Erfolge)
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Header-Chips ──────────────────────────────────────────────── */
+.gami-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gami-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: color-mix(in srgb, var(--primary, #4361ee) 8%, var(--glass-light, transparent));
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dark, #212529);
+  cursor: default;
+  white-space: nowrap;
+}
+
+/* Diamanten: türkise Pille */
+.gami-chip--gems {
+  background: color-mix(in srgb, var(--gem, #16b8c9) 13%, transparent);
+  border-color: color-mix(in srgb, var(--gem, #16b8c9) 30%, transparent);
+  color: #0d7f8d;
+}
+
+/* Streak: grau solange 0, orange Flamme sobald aktiv */
+.gami-chip--streak { background: color-mix(in srgb, var(--light, #f8f9fa) 65%, transparent); color: var(--gray, #6c757d); }
+.gami-chip--streak i { color: #adb5bd; }
+.gami-chip--streak.gami-chip--active {
+  background: color-mix(in srgb, #fd7e14 14%, transparent);
+  border-color: color-mix(in srgb, #fd7e14 32%, transparent);
+  color: color-mix(in srgb, #fd7e14 65%, var(--dark, #212529));
+}
+.gami-chip--streak.gami-chip--active i { color: #fd7e14; }
+
+.gami-chip--level {
+  border-color: color-mix(in srgb, var(--primary, #4361ee) 25%, transparent);
+}
+
+.gami-chip--level { gap: 8px; }
+.gami-level-label b { color: var(--primary, #4361ee); }
+
+.gami-xp-bar {
+  width: 54px;
+  height: 6px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--primary, #4361ee) 18%, var(--surface, #fff));
+  overflow: hidden;
+}
+
+.gami-xp-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  background: var(--primary, #4361ee);
+  transition: width 0.4s ease;
+}
+
+/* ── Deck-Fortschritt unter dem Selector ───────────────────────── */
+.deck-progress { margin-top: 8px; }
+
+.deck-progress__bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--light, #e9ecef);
+  overflow: hidden;
+}
+
+.dp-seg { display: block; height: 100%; transition: width 0.4s ease; }
+.dp-seg--mastered { background: #2e7d32; }
+.dp-seg--learning { background: #4361ee; }
+
+.deck-progress__text {
+  margin-top: 5px;
+  font-size: 0.78rem;
+  color: var(--gray, #6c757d);
+}
+
+/* ── Fällig-Modus-Schalter ─────────────────────────────────────── */
+.due-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  font-size: 0.88rem;
+  color: var(--dark, #212529);
+  cursor: pointer;
+  user-select: none;
+}
+
+.due-toggle input { accent-color: var(--primary, #4361ee); }
+
+/* ── Tagesziel ─────────────────────────────────────────────────── */
+.daily-goal { margin-top: 16px; }
+
+.daily-goal__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray, #6c757d);
+  margin-bottom: 6px;
+}
+
+.daily-goal__head i { color: var(--primary, #4361ee); margin-right: 4px; }
+
+.daily-goal__bar { height: 8px; }
+
+.daily-goal--done .daily-goal__head { color: #2e7d32; }
+.daily-goal--done .daily-goal__head i { color: #2e7d32; }
+.daily-goal--done .progress-bar { background: #2e7d32; }
+
+/* Grünes Häkchen, wenn das Tagesziel erreicht/übererfüllt ist. */
+.daily-goal__check { color: #2e7d32; margin-right: 0 !important; margin-left: 3px; font-size: 1em; }
+
+/* ── Session-Zusammenfassung: Belohnungs-Pillen ────────────────── */
+.session-rewards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.reward-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.reward-pill--xp      { background: rgba(67, 97, 238, 0.12);  color: color-mix(in srgb, var(--primary, #4361ee) 75%, var(--dark, #212529)); }
+.reward-pill--perfect { background: rgba(255, 193, 7, 0.18);  color: color-mix(in srgb, #d9a400 65%, var(--dark, #212529)); }
+.reward-pill--streak  { background: rgba(253, 126, 20, 0.13); color: color-mix(in srgb, #fd7e14 68%, var(--dark, #212529)); }
+
+/* ── Statistik: Zwischenüberschriften ──────────────────────────── */
+.stats-subhead {
+  margin: 26px 0 12px;
+  font-size: 1.05rem;
+  color: var(--dark, #212529);
+}
+
+.stats-subhead i { color: var(--primary, #4361ee); margin-right: 6px; }
+
+/* ── Schwächen-Profil: die drei schwächsten Themen ─────────────── */
+.weak-themes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weak-theme {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 6px 12px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--light-gray, #e9ecef);
+  border-radius: 12px;
+  background: var(--surface, #fff);
+  color: var(--dark, #212529);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition, all .25s ease);
+}
+
+.weak-theme:hover { border-color: var(--primary, #4361ee); }
+.weak-theme__main { grid-column: 1; grid-row: 1; min-width: 0; display: flex; flex-direction: column; }
+.weak-theme__main b { font-size: 0.95rem; }
+.weak-theme__main span { font-size: 0.78rem; color: var(--gray, #6c757d); }
+
+.weak-theme__rate {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #2e9e5b;
+  font-variant-numeric: tabular-nums;
+}
+
+.weak-theme--bad .weak-theme__rate { color: #d9480f; }
+
+.weak-theme__go {
+  grid-column: 3;
+  grid-row: 1;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary, #4361ee);
+  white-space: nowrap;
+}
+
+/* Balken über die volle Breite unter Titel und Quote. */
+.weak-theme__bar {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--light-gray, #e9ecef);
+  overflow: hidden;
+}
+
+.weak-theme__bar i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: #2e9e5b;
+}
+
+.weak-theme--bad .weak-theme__bar i { background: #d9480f; }
+
+/* ── Aktivitäts-Heatmap ────────────────────────────────────────── */
+.heatmap-wrap { overflow-x: auto; }
+
+.heatmap {
+  display: flex;
+  gap: 3px;
+}
+
+.heatmap__col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.heatmap__cell {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  background: var(--light, #e9ecef);
+}
+
+.heatmap__cell--future { background: transparent; }
+.heatmap__cell--i0 { background: var(--light, #e9ecef); }
+.heatmap__cell--i1 { background: #c5d3f7; }
+.heatmap__cell--i2 { background: #8aa6ef; }
+.heatmap__cell--i3 { background: #4361ee; }
+.heatmap__cell--i4 { background: #1f2d8a; }
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: var(--gray, #6c757d);
+}
+
+/* ── Erfolge ───────────────────────────────────────────────────── */
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+}
+
+.achievement {
+  padding: 14px 12px;
+  border-radius: 12px;
+  background: var(--light, #f1f3f5);
+  text-align: center;
+  opacity: 0.55;
+  filter: grayscale(1);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.achievement--unlocked {
+  opacity: 1;
+  filter: none;
+  background: linear-gradient(145deg, #eef1ff, #e2e9ff);
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.12);
+}
+
+.achievement__icon {
+  font-size: 1.5rem;
+  color: var(--primary, #4361ee);
+  margin-bottom: 8px;
+}
+
+.achievement--unlocked .achievement__icon { color: #f59f00; }
+
+.achievement__name { font-weight: 700; font-size: 0.88rem; }
+
+.achievement__desc {
+  font-size: 0.76rem;
+  color: var(--gray, #6c757d);
+  margin-top: 3px;
+}
+
+/* ── Lernkurs-Modus ────────────────────────────────────────────── */
+.course-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 4px;
+  font-size: 0.82rem;
+  color: var(--gray, #6c757d);
+}
+
+.course-progress i { color: var(--primary, #4361ee); }
+
+.course-phase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: rgba(67, 97, 238, 0.1);
+  color: var(--primary, #4361ee);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.course-teach {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-pron {
+  margin: 6px 0 2px;
+  font-size: 0.95rem;
+  color: var(--gray, #6c757d);
+}
+
+.course-ipa { letter-spacing: .3px; }
+.course-roman { font-style: italic; }
+
+.gap-sentence {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 8px auto 4px;
+  padding: 14px 18px;
+  background: var(--glass-light, transparent);
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  border-radius: 12px;
+}
+
+/* ── Kognat-Marker ─────────────────────────────────────────────── */
+.cognate-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 2px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--success) 22%, transparent);
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  color: #0a6c86;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+:root[data-theme="dark"] .cognate-chip { color: #7fd8f0; }
+
+/* ── Wort des Tages ────────────────────────────────────────────── */
+.wotd {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1.5px dashed color-mix(in srgb, var(--primary) 40%, transparent);
+  background: color-mix(in srgb, var(--primary) 6%, var(--glass-light, transparent));
+  backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light, 14px)) saturate(var(--glass-saturate, 170%));
+}
+/* Im Overlay ohne eigenen Rahmen — die Modal-Box liefert den Container. */
+.modal .wotd { margin: 0; padding: 0; border: none; background: none; }
+.wotd__deck {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray, #6c757d);
+  margin-bottom: 10px;
+}
+.wotd__head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 8px;
+}
+.wotd__word { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.wotd__de { font-weight: 700; }
+.wotd__arrow { color: var(--gray); }
+.wotd__target { font-weight: 700; color: var(--primary); }
+.wotd__pron { font-size: 0.8rem; color: var(--gray); margin-top: 3px; }
+.wotd__ex { font-size: 0.82rem; color: var(--gray); font-style: italic; margin: 8px 0; }
+.wotd__exde { font-style: normal; }
+.wotd__claim { margin-top: 6px; }
+.wotd__claim[disabled] { opacity: 0.6; }
+
+/* ── Aussprache-Duell ──────────────────────────────────────────── */
+.listen-card { display: flex; flex-direction: column; align-items: center; }
+.listen-play {
+  width: 92px;
+  height: 92px;
+  margin: 8px 0 4px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--primary) 40%, transparent);
+  transition: transform 0.15s ease;
+}
+.listen-play:hover { transform: scale(1.06); }
+.listen-play:active { transform: scale(0.96); }
+.listen-reveal { margin-top: 10px; font-size: 0.95rem; color: var(--gray); }
+
