@@ -10,6 +10,7 @@
 }
 
 .gami-chip {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -481,6 +482,23 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+.modal__box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--glass-sheen-layer);
+  pointer-events: none;
+}
+.modal__box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--glass-grain);
+  background-size: 100px 100px;
+  pointer-events: none;
 }
 .modal__head {
   display: flex;

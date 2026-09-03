@@ -24,7 +24,11 @@
    Text/Rahmen bewusst hell genug für guten Kontrast (WCAG-orientiert). */
 :root[data-theme="dark"] {
   --primary: #7d9dff; --secondary: #5273f0; --accent: #ff5ca8;
-  --app-bg: #10151c;
+  /* Dezenter Tonwert-Verlauf statt Volltonfarbe — reine Helligkeits-
+     struktur, kein neuer Farbton, aber der Blur der Glasflächen hat
+     dadurch etwas zum Verwischen (auf einer Volltonfläche bleibt jeder
+     backdrop-filter praktisch unsichtbar). */
+  --app-bg: radial-gradient(ellipse at top, #161d28 0%, #10151c 55%, #0b0f15 100%);
   --surface: #1d2531;
   --bg: #10151c;
   --light: #293342;
