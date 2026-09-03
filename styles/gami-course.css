@@ -264,7 +264,7 @@
 
 .gami-chip--gems, .gami-chip--gems i { color: var(--gem); }
 .reward-pill--gems { background: color-mix(in srgb, var(--gem) 15%, var(--surface)); color: var(--gem); }
-.reward-pill--boost { background: color-mix(in srgb, #e8820c 14%, var(--surface, #fff)); color: color-mix(in srgb, #e8820c 70%, var(--dark, #212529)); }
+.reward-pill--boost { background: color-mix(in srgb, #e8820c 14%, var(--surface, #fff)); color: color-mix(in srgb, #e8820c 70%, var(--dark, #1c1c1e)); }
 
 /* Combo-Anzeige während der Session */
 .combo-float {
@@ -318,8 +318,8 @@
 .lg-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lg-xp { color: var(--gray); font-variant-numeric: tabular-nums; }
 .league-banner { padding: 10px 12px; border-radius: 10px; margin-bottom: 12px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.league-banner--aufgestiegen { background: color-mix(in srgb, #2e9e5b 13%, var(--surface, #fff)); color: color-mix(in srgb, #2e9e5b 65%, var(--dark, #212529)); }
-.league-banner--abgestiegen { background: color-mix(in srgb, #e05260 13%, var(--surface, #fff)); color: color-mix(in srgb, #e05260 65%, var(--dark, #212529)); }
+.league-banner--aufgestiegen { background: color-mix(in srgb, #2e9e5b 13%, var(--surface, #fff)); color: color-mix(in srgb, #2e9e5b 65%, var(--dark, #1c1c1e)); }
+.league-banner--abgestiegen { background: color-mix(in srgb, #e05260 13%, var(--surface, #fff)); color: color-mix(in srgb, #e05260 65%, var(--dark, #1c1c1e)); }
 .league-banner--gehalten { background: var(--light); color: var(--dark); }
 .league-banner__x { border: none; background: rgba(0,0,0,.08); border-radius: 8px; padding: 4px 10px; cursor: pointer; font-weight: 700; }
 

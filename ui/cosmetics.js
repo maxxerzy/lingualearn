@@ -5,20 +5,20 @@ import {
 import { ACHIEVEMENTS, getGame } from '../core/gamification.js';
 
 const THEME_SWATCH = {
-  standard: 'linear-gradient(135deg,#4361ee,#3a0ca3)',
-  ocean:    'linear-gradient(135deg,#0077b6,#00b4d8)',
-  sunset:   'linear-gradient(135deg,#e5556e,#f4a261)',
-  forest:   'linear-gradient(135deg,#2d6a4f,#74c69d)',
-  dark:     'linear-gradient(135deg,#12161c,#2c3440)',
-  royal:    'linear-gradient(135deg,#7b2cbf,#ffbe0b)',
-  sakura:   'linear-gradient(135deg,#ffc9de,#d6336c)',
-  retro:    'linear-gradient(135deg,#f4ecd8,#8b5e34)',
-  lava:     'linear-gradient(135deg,#241412,#ff5c33)',
-  neon:     'linear-gradient(135deg,#0b0f1a,#22d3ee)',
-  galaxy:   'linear-gradient(135deg,#141026,#a78bfa)',
-  sommer:   'linear-gradient(135deg,#ffe58a,#ff9e4a)',
-  spuk:     'linear-gradient(135deg,#1a1026,#ff7b1c)',
-  winter:   'linear-gradient(135deg,#e6f5fc,#4aa8d8)',
+  standard: 'linear-gradient(135deg,#007aff,#5856d6)',
+  ocean:    'linear-gradient(135deg,#007aff,#32ade6)',
+  sunset:   'linear-gradient(135deg,#ff9500,#ff2d55)',
+  forest:   'linear-gradient(135deg,#34c759,#00c7be)',
+  dark:     'linear-gradient(135deg,#000000,#0a84ff)',
+  royal:    'linear-gradient(135deg,#5856d6,#af52de)',
+  sakura:   'linear-gradient(135deg,#ffc2d6,#ff2d55)',
+  retro:    'linear-gradient(135deg,#f4ecd8,#a2845e)',
+  lava:     'linear-gradient(135deg,#241412,#ff453a)',
+  neon:     'linear-gradient(135deg,#0b0f1a,#64d2ff)',
+  galaxy:   'linear-gradient(135deg,#141026,#bf5af2)',
+  sommer:   'linear-gradient(135deg,#ffcc00,#ff9500)',
+  spuk:     'linear-gradient(135deg,#1f1530,#ff9f0a)',
+  winter:   'linear-gradient(135deg,#e6f5fc,#007aff)',
 };
 const RARITY_LABEL = { bronze: 'Bronze', silber: 'Silber', gold: 'Gold', legendaer: 'Legendär' };
 
@@ -58,7 +58,7 @@ function cosmeticCard(type, item) {
   const equipped = eq[type] === item.id;
 
   let swatch;
-  if (type === 'theme') swatch = `<div class="cosmetic__swatch" style="background:${THEME_SWATCH[item.id] || '#4361ee'}"></div>`;
+  if (type === 'theme') swatch = `<div class="cosmetic__swatch" style="background:${THEME_SWATCH[item.id] || '#007aff'}"></div>`;
   else if (type === 'avatar') swatch = `<div class="cosmetic__swatch" style="background:linear-gradient(135deg,var(--primary),var(--secondary))"><i class="fas ${item.icon}"></i></div>`;
   else if (type === 'cardDesign') swatch = `<div class="cosmetic__swatch card--${item.id}" style="background:var(--surface);border:1px solid var(--light-gray)"></div>`;
   else swatch = `<div class="cosmetic__swatch" style="background:linear-gradient(135deg,var(--primary),var(--secondary));font-size:0.9rem;font-weight:700">${item.name}</div>`;

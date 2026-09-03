@@ -689,7 +689,7 @@ await click('#pathBackBtn'); await page.waitForTimeout(200);
 // ── Dark Mode (System) + FX-Schalter + Karten-Animation ──
 await page.emulateMedia({ colorScheme: 'dark' }); await page.waitForTimeout(200);
 const surface = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--surface').trim());
-check('System-Dark-Mode greift ohne Cosmetic-Theme', surface === '#1d2531', surface);
+check('System-Dark-Mode greift ohne Cosmetic-Theme', surface === '#1c1c1e', surface);
 await page.emulateMedia({ colorScheme: 'light' });
 await click('#userChipBtn'); await page.waitForTimeout(150);
 await click('.user-dropdown__item[data-action="settings"]'); await page.waitForTimeout(200);
@@ -818,7 +818,7 @@ const sakuraOn = await page.evaluate(() => ({
   attr: document.documentElement.getAttribute('data-theme'),
   primary: getComputedStyle(document.documentElement).getPropertyValue('--primary').trim(),
 }));
-check('Theme „Sakura" ausgerüstet & aktiv', sakuraOn.attr === 'sakura' && sakuraOn.primary === '#d6336c', JSON.stringify(sakuraOn));
+check('Theme „Sakura" ausgerüstet & aktiv', sakuraOn.attr === 'sakura' && sakuraOn.primary === '#e5002c', JSON.stringify(sakuraOn));
 await page.evaluate(async () => { (await import('/core/cosmetics.js')).equip('theme', 'standard'); (await import('/ui/cosmetics.js')).applyCosmetics(); });
 
 // ── Wochen-Bilanz in der Statistik ──

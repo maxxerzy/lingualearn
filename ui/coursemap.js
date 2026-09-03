@@ -3,7 +3,7 @@ import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
 import { startLessonReview, getGoldLessons, getThemeBadges, startThemeQuiz } from '../core/session.js';
 
 // Farbpalette für die Themen-Banner entlang des Pfads.
-const BANNER_COLORS = ['#4361ee', '#12a5b8', '#e8820c', '#8a5cf6', '#2e9e5b', '#e05260'];
+const BANNER_COLORS = ['#007aff', '#30b0c7', '#ff9500', '#af52de', '#34c759', '#ff3b30'];
 
 // Lernpfad: vollwertige Ansicht mit dem Lektionsweg des gewählten Decks
 // (erledigt / aktuell / gesperrt). Die aktuelle Lektion lässt sich direkt

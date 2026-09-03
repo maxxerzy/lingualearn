@@ -37,7 +37,7 @@
 
 /* Primär-Button: getönter Schatten passend zur Markenfarbe */
 .btn-primary:hover:not(:disabled) {
-  box-shadow: 0 6px 18px rgba(67, 97, 238, 0.35);
+  box-shadow: 0 6px 18px rgba(0, 122, 255, 0.35);
 }
 
 /* Press: kurzes Eindrücken — gibt sofortiges taktiles Feedback */
@@ -60,7 +60,7 @@
 .btn-back:focus-visible,
 .login-tab:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.35);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.35);
 }
 
 /* ── Icons: Mikro-Bewegung beim Hover ─────────────────────────── */

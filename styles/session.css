@@ -308,13 +308,13 @@
 .fc-queue-info { margin-top: 12px; min-height: 24px; }
 
 .review-badge {
-  background: color-mix(in srgb, #f27007 12%, var(--surface, #fff));
-  color: color-mix(in srgb, #f27007 68%, var(--dark, #212529));
+  background: color-mix(in srgb, #ff9500 12%, var(--surface, #fff));
+  color: color-mix(in srgb, #ff9500 68%, var(--dark, #1c1c1e));
   font-size: 0.78rem;
   font-weight: 600;
   padding: 4px 12px;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, #f27007 35%, var(--surface, #fff));
+  border: 1px solid color-mix(in srgb, #ff9500 35%, var(--surface, #fff));
 }
 
 /* ── Audio Button ───────────────────────────────────────────────── */
@@ -337,7 +337,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.audio-btn:hover { opacity: 1; background: rgba(67,97,238,.1); }
+.audio-btn:hover { opacity: 1; background: rgba(0,122,255,.1); }
 
 /* ── Comparison Mode ────────────────────────────────────────────── */
 .q { font-size: 2rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
@@ -372,17 +372,17 @@
 #fb { margin-top: 20px; padding: 16px; border-radius: var(--radius); text-align: center; width: 100%; }
 
 .correct {
-  background: rgba(76,201,240,.15);
-  color: #0a9396;
-  border: 1px solid rgba(76,201,240,.4);
+  background: rgba(35,134,60,.12);
+  color: #23863c;
+  border: 1px solid rgba(35,134,60,.35);
   padding: 12px;
   border-radius: var(--radius);
 }
 
 .incorrect {
-  background: rgba(247,37,133,.08);
-  color: #ae2012;
-  border: 1px solid rgba(247,37,133,.25);
+  background: rgba(215,0,21,.08);
+  color: #d70015;
+  border: 1px solid rgba(215,0,21,.25);
   padding: 12px;
   border-radius: var(--radius);
 }
@@ -421,7 +421,7 @@
 
 .mc-option:hover:not(:disabled) {
   border-color: var(--primary);
-  background: rgba(67,97,238,.04);
+  background: rgba(0,122,255,.04);
 }
 
 .mc-key {
@@ -453,10 +453,14 @@
 
 .mc-audio:hover { opacity: 1; color: var(--primary); }
 
-.mc-option.mc-correct { border-color: #4cc9f0; background: rgba(76,201,240,.12); }
-.mc-option.mc-correct .mc-key { background: #4cc9f0; color: white; }
-.mc-option.mc-wrong   { border-color: #f72585; background: rgba(247,37,133,.07); }
-.mc-option.mc-wrong .mc-key   { background: #f72585; color: white; }
+/* Fest verdrahtetes Grün/Rot (nicht --success, das im Dark Mode heller
+   wird und dann mit weißer Beschriftung im .mc-key-Kreis nicht mehr
+   genug Kontrast hätte) — richtig/falsch bleibt so unter jedem Theme
+   gleich lesbar. */
+.mc-option.mc-correct { border-color: #23863c; background: rgba(35,134,60,.12); }
+.mc-option.mc-correct .mc-key { background: #23863c; color: white; }
+.mc-option.mc-wrong   { border-color: #d70015; background: rgba(215,0,21,.07); }
+.mc-option.mc-wrong .mc-key   { background: #d70015; color: white; }
 
 /* ── Statistics View ────────────────────────────────────────────── */
 .stats-grid {
@@ -483,8 +487,8 @@
 .stat-card:hover { box-shadow: var(--shadow); }
 
 .stat-card--primary {
-  background: linear-gradient(135deg, rgba(67,97,238,.08), rgba(58,12,163,.05));
-  border-color: rgba(67,97,238,.2);
+  background: linear-gradient(135deg, rgba(0,122,255,.08), rgba(88,86,214,.05));
+  border-color: rgba(0,122,255,.2);
   grid-column: span 2;
 }
 
@@ -494,7 +498,7 @@
 
 .stat-accuracy-bar-wrap {
   height: 6px;
-  background: rgba(67,97,238,.15);
+  background: rgba(0,122,255,.15);
   border-radius: 3px;
   overflow: hidden;
   margin-top: 8px;
