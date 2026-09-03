@@ -185,9 +185,9 @@ header::after {
 
 .user-dropdown__divider { height: 1px; background: var(--light-gray); margin: 4px 0; }
 
-.user-dropdown__item--danger { color: #e53e3e; }
-.user-dropdown__item--danger i { color: #e53e3e; }
-.user-dropdown__item--danger:hover { background: color-mix(in srgb, #e53e3e 10%, var(--surface, #fff)); }
+.user-dropdown__item--danger { color: #d70015; }
+.user-dropdown__item--danger i { color: #d70015; }
+.user-dropdown__item--danger:hover { background: color-mix(in srgb, #d70015 10%, var(--surface, #fff)); }
 
 .nav { display: flex; gap: 8px; }
 
@@ -500,14 +500,14 @@ label {
 
 /* Rating buttons — Farben über color-mix mit Surface/Textfarbe, damit
    sie im hellen wie im dunklen Theme guten Kontrast behalten. */
-.btn-again { background: color-mix(in srgb, #e0356b 10%, var(--surface, #fff)); color: color-mix(in srgb, #e0356b 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #e0356b 35%, var(--surface, #fff)); }
-.btn-again:hover  { background: #c9184a; color: white; border-color: #c9184a; }
-.btn-hard  { background: color-mix(in srgb, #f27007 10%, var(--surface, #fff)); color: color-mix(in srgb, #f27007 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #f27007 35%, var(--surface, #fff)); }
-.btn-hard:hover   { background: #e65100; color: white; border-color: #e65100; }
-.btn-good  { background: color-mix(in srgb, #37984c 10%, var(--surface, #fff)); color: color-mix(in srgb, #37984c 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #37984c 35%, var(--surface, #fff)); }
-.btn-good:hover   { background: #2e7d32; color: white; border-color: #2e7d32; }
-.btn-easy  { background: color-mix(in srgb, #2683e0 10%, var(--surface, #fff)); color: color-mix(in srgb, #2683e0 70%, var(--dark, #212529)); border: 2px solid color-mix(in srgb, #2683e0 35%, var(--surface, #fff)); }
-.btn-easy:hover   { background: #1565c0; color: white; border-color: #1565c0; }
+.btn-again { background: color-mix(in srgb, #ff3b30 10%, var(--surface, #fff)); color: color-mix(in srgb, #ff3b30 70%, var(--dark, #1c1c1e)); border: 2px solid color-mix(in srgb, #ff3b30 35%, var(--surface, #fff)); }
+.btn-again:hover  { background: #d70015; color: white; border-color: #d70015; }
+.btn-hard  { background: color-mix(in srgb, #ff9500 10%, var(--surface, #fff)); color: color-mix(in srgb, #ff9500 70%, var(--dark, #1c1c1e)); border: 2px solid color-mix(in srgb, #ff9500 35%, var(--surface, #fff)); }
+.btn-hard:hover   { background: #c2410c; color: white; border-color: #c2410c; }
+.btn-good  { background: color-mix(in srgb, #34c759 10%, var(--surface, #fff)); color: color-mix(in srgb, #34c759 70%, var(--dark, #1c1c1e)); border: 2px solid color-mix(in srgb, #34c759 35%, var(--surface, #fff)); }
+.btn-good:hover   { background: #23863c; color: white; border-color: #23863c; }
+.btn-easy  { background: color-mix(in srgb, #007aff 10%, var(--surface, #fff)); color: color-mix(in srgb, #007aff 70%, var(--dark, #1c1c1e)); border: 2px solid color-mix(in srgb, #007aff 35%, var(--surface, #fff)); }
+.btn-easy:hover   { background: #0056b3; color: white; border-color: #0056b3; }
 
 /* ── Row helper ─────────────────────────────────────────────────── */
 .row {

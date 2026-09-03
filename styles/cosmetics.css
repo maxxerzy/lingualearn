@@ -4,54 +4,70 @@
    main.css; alle Komponenten folgen automatisch via var().
    ════════════════════════════════════════════════════════════════ */
 
+/* Alle Themes unten sind Kombinationen aus Apples systemweiten iOS/macOS-
+   Akzentfarben (systemBlue/Indigo/Pink/Red/Orange/Green/Purple/Teal/
+   Cyan/Yellow/Brown/Mint) — --primary/--secondary jeweils so weit
+   abgedunkelt, dass sie als Fließtext ≥4.5:1 Kontrast auf ihrer eigenen
+   Fläche halten (siehe base.css); --accent bleibt im vollen Originalton,
+   da er nie als Text vorkommt. */
 :root[data-theme="ocean"] {
-  --primary: #0077b6; --secondary: #023e8a; --accent: #00b4d8;
-  --app-bg: linear-gradient(135deg, #caf0f8 0%, #90e0ef 100%);
+  --primary: #1479a8; --secondary: #0070eb; --accent: #30b0c7;
+  --app-bg: linear-gradient(135deg, #d6f3fc 0%, #a9dff5 100%);
+  --bg: #eaf8fc;
 }
 :root[data-theme="sunset"] {
-  --primary: #e5556e; --secondary: #6d597a; --accent: #f4a261;
-  --app-bg: linear-gradient(135deg, #ffd6a5 0%, #ffb5a7 100%);
+  --primary: #ad6500; --secondary: #a741db; --accent: #ff2d55;
+  --app-bg: linear-gradient(135deg, #ffd9b3 0%, #ffb3c1 100%);
+  --bg: #fff3ea;
 }
 :root[data-theme="forest"] {
-  --primary: #2d6a4f; --secondary: #1b4332; --accent: #74c69d;
-  --app-bg: linear-gradient(135deg, #d8f3dc 0%, #b7e4c7 100%);
+  --primary: #23863c; --secondary: #1b6b2e; --accent: #00c7be;
+  --app-bg: linear-gradient(135deg, #d9f5df 0%, #b0e8bf 100%);
+  --bg: #eefaf1;
 }
 :root[data-theme="royal"] {
-  --primary: #7b2cbf; --secondary: #3c096c; --accent: #ffbe0b;
-  --app-bg: linear-gradient(135deg, #e0c3fc 0%, #b298dc 100%);
+  --primary: #5856d6; --secondary: #38348f; --accent: #ffd60a;
+  --app-bg: linear-gradient(135deg, #e3e1fb 0%, #c7c3f5 100%);
+  --bg: #f1effe;
 }
 /* Mitternacht — echtes Dunkeldesign: Flächen und Textfarben tauschen.
-   Text/Rahmen bewusst hell genug für guten Kontrast (WCAG-orientiert). */
+   Basiert auf Apples eigenem Dark-Mode-Farbraum (systemBlue/Indigo Dark,
+   Fläche/Text/Rahmen an labelColor/systemBackground Dark angelehnt). */
 :root[data-theme="dark"] {
-  --primary: #7d9dff; --secondary: #5273f0; --accent: #ff5ca8;
+  --primary: #0a84ff; --secondary: #7877ea; --accent: #ff375f;
+  --success: #30d158; --warning: #ff9f0a;
   /* Dezenter Tonwert-Verlauf statt Volltonfarbe — reine Helligkeits-
-     struktur, kein neuer Farbton, aber der Blur der Glasflächen hat
-     dadurch etwas zum Verwischen (auf einer Volltonfläche bleibt jeder
-     backdrop-filter praktisch unsichtbar). */
-  --app-bg: radial-gradient(ellipse at top, #161d28 0%, #10151c 55%, #0b0f15 100%);
-  --surface: #1d2531;
-  --bg: #10151c;
-  --light: #293342;
-  --light-gray: #3a4658;
-  --dark: #f2f5fa;
-  --gray: #aab6c6;
+     struktur, aber der Blur der Glasflächen hat dadurch etwas zum
+     Verwischen (auf einer Volltonfläche bleibt jeder backdrop-filter
+     praktisch unsichtbar). */
+  --app-bg: radial-gradient(ellipse at top, #1c1c1e 0%, #000000 60%, #000000 100%);
+  --surface: #1c1c1e;
+  --bg: #000000;
+  --light: #2c2c2e;
+  --light-gray: #3a3a3c;
+  --dark: #f2f2f7;
+  --gray: #98989d;
   --shadow: 0 4px 12px rgba(0,0,0,.4);
   --shadow-lg: 0 8px 32px rgba(0,0,0,.55);
 }
 
 :root[data-theme="sakura"] {
-  --primary: #d6336c; --secondary: #a61e4d; --accent: #f783ac;
-  --app-bg: linear-gradient(135deg, #ffe3ec 0%, #ffc9de 100%);
+  --primary: #e5002c; --secondary: #a8001f; --accent: #ff9eb5;
+  --app-bg: linear-gradient(135deg, #ffe3ec 0%, #ffc2d6 100%);
   --bg: #fff0f5;
 }
 :root[data-theme="retro"] {
-  --primary: #8b5e34; --secondary: #6f4518; --accent: #d4a373;
+  --primary: #886f4f; --secondary: #6b5640; --accent: #d4a373;
   --app-bg: linear-gradient(135deg, #f4ecd8 0%, #e6ccb2 100%);
   --bg: #f7f0e0; --light: #f4ecd8; --light-gray: #e3d5bf;
 }
-/* Lava — dunkles Glut-Design */
+/* Lava — dunkles Glut-Design (systemRed → systemOrange → systemYellow Dark).
+   --success/--warning hier wie in jedem dunklen Theme auf die Dark-Mode-
+   Werte gesetzt — sonst wäre das (für Weiß gedachte, dunkle) Grün/Orange
+   aus base.css auf dieser dunklen Fläche kaum noch zu lesen. */
 :root[data-theme="lava"] {
-  --primary: #ff5c33; --secondary: #d63b1f; --accent: #ffb020;
+  --primary: #ff453a; --secondary: #ff9f0a; --accent: #ffd60a;
+  --success: #30d158; --warning: #ff9f0a;
   --app-bg: #180d0b;
   --surface: #241412;
   --bg: #180d0b;
@@ -62,9 +78,10 @@
   --shadow: 0 4px 12px rgba(0,0,0,.5);
   --shadow-lg: 0 8px 32px rgba(0,0,0,.6);
 }
-/* Neon-Nacht — fast schwarz mit Cyan/Pink */
+/* Neon-Nacht — fast schwarz mit systemCyan/Blue/Purple Dark */
 :root[data-theme="neon"] {
-  --primary: #22d3ee; --secondary: #0891b2; --accent: #f0abfc;
+  --primary: #64d2ff; --secondary: #0a84ff; --accent: #bf5af2;
+  --success: #30d158; --warning: #ff9f0a;
   --app-bg: #0b0f1a;
   --surface: #131a2a;
   --bg: #0b0f1a;
@@ -75,9 +92,10 @@
   --shadow: 0 4px 12px rgba(0,0,0,.5);
   --shadow-lg: 0 8px 32px rgba(0,0,0,.6);
 }
-/* Galaxie — tiefes Violett */
+/* Galaxie — tiefes Violett (systemPurple/Indigo Dark) */
 :root[data-theme="galaxy"] {
-  --primary: #a78bfa; --secondary: #7c3aed; --accent: #f472b6;
+  --primary: #bf5af2; --secondary: #7877ea; --accent: #ff375f;
+  --success: #30d158; --warning: #ff9f0a;
   --app-bg: radial-gradient(circle at 20% 10%, #241a4d 0%, #141026 60%);
   --surface: #1d1636;
   --bg: #141026;
@@ -89,15 +107,16 @@
   --shadow-lg: 0 8px 32px rgba(0,0,0,.6);
 }
 
-/* Sommerbrise — warmes Gelb/Orange (saisonal: Juni–August) */
+/* Sommerbrise — warmes systemOrange/Yellow (saisonal: Juni–August) */
 :root[data-theme="sommer"] {
-  --primary: #e07b12; --secondary: #c05e00; --accent: #38b6a5;
+  --primary: #ad6500; --secondary: #8f7200; --accent: #30b0c7;
   --app-bg: linear-gradient(135deg, #fff3c4 0%, #ffd98a 100%);
   --bg: #fffaf0;
 }
-/* Spuknacht — dunkles Orange/Violett (saisonal: Oktober) */
+/* Spuknacht — dunkles systemOrange/Purple (saisonal: Oktober) */
 :root[data-theme="spuk"] {
-  --primary: #ff7b1c; --secondary: #d95f00; --accent: #a855f7;
+  --primary: #ff9f0a; --secondary: #bf5af2; --accent: #ff375f;
+  --success: #30d158; --warning: #ff9f0a;
   --app-bg: #140d20;
   --surface: #1f1530;
   --bg: #140d20;
@@ -108,9 +127,9 @@
   --shadow: 0 4px 12px rgba(0,0,0,.5);
   --shadow-lg: 0 8px 32px rgba(0,0,0,.6);
 }
-/* Winterzauber — Eisblau (saisonal: Dezember) */
+/* Winterzauber — Eisblau (systemBlue/Cyan, saisonal: Dezember) */
 :root[data-theme="winter"] {
-  --primary: #1f7fb5; --secondary: #145d88; --accent: #7cc7e8;
+  --primary: #0070eb; --secondary: #1479a8; --accent: #64d2ff;
   --app-bg: linear-gradient(135deg, #e6f5fc 0%, #c4e5f5 100%);
   --bg: #f2faff;
 }
@@ -145,21 +164,21 @@
 }
 .card--sakura {
   background:
-    radial-gradient(circle at 12% 12%, color-mix(in srgb, #ff8fab 20%, transparent) 0 12px, transparent 13px),
-    radial-gradient(circle at 88% 82%, color-mix(in srgb, #ffb3c6 22%, transparent) 0 16px, transparent 17px),
+    radial-gradient(circle at 12% 12%, color-mix(in srgb, #ff9eb5 20%, transparent) 0 12px, transparent 13px),
+    radial-gradient(circle at 88% 82%, color-mix(in srgb, #ff2d55 18%, transparent) 0 16px, transparent 17px),
     var(--surface);
 }
 .card--ocean {
   background:
-    radial-gradient(ellipse 120% 40% at 50% 118%, color-mix(in srgb, #00b4d8 28%, transparent) 0 60%, transparent 61%),
-    radial-gradient(ellipse 120% 40% at 50% 132%, color-mix(in srgb, #0077b6 22%, transparent) 0 60%, transparent 61%),
+    radial-gradient(ellipse 120% 40% at 50% 118%, color-mix(in srgb, #32ade6 28%, transparent) 0 60%, transparent 61%),
+    radial-gradient(ellipse 120% 40% at 50% 132%, color-mix(in srgb, #007aff 22%, transparent) 0 60%, transparent 61%),
     var(--surface);
-  border: 2px solid color-mix(in srgb, #00b4d8 40%, transparent);
+  border: 2px solid color-mix(in srgb, #32ade6 40%, transparent);
 }
 .card--holz {
   background:
-    repeating-linear-gradient(92deg, color-mix(in srgb, #8b5e34 12%, var(--surface)) 0 14px, color-mix(in srgb, #6f4518 10%, var(--surface)) 14px 30px);
-  border: 2px solid #8b5e34;
+    repeating-linear-gradient(92deg, color-mix(in srgb, #a2845e 12%, var(--surface)) 0 14px, color-mix(in srgb, #886f4f 10%, var(--surface)) 14px 30px);
+  border: 2px solid #a2845e;
 }
 .card--galaxy {
   background:
@@ -167,8 +186,8 @@
     radial-gradient(circle at 70% 12%, rgba(255,255,255,.4) 0 1px, transparent 1.6px),
     radial-gradient(circle at 40% 75%, rgba(255,255,255,.45) 0 1.4px, transparent 2px),
     radial-gradient(circle at 88% 60%, rgba(255,255,255,.35) 0 1px, transparent 1.6px),
-    linear-gradient(135deg, color-mix(in srgb, #7c3aed 22%, var(--surface)), var(--surface));
-  border: 2px solid color-mix(in srgb, #a78bfa 45%, transparent);
+    linear-gradient(135deg, color-mix(in srgb, #bf5af2 22%, var(--surface)), var(--surface));
+  border: 2px solid color-mix(in srgb, #bf5af2 45%, transparent);
 }
 
 /* ── Belohnungen-Ansicht ───────────────────────────────────────── */
@@ -282,14 +301,15 @@
    solange kein eigenes Cosmetic-Theme gewählt wurde. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --primary: #7d9dff; --secondary: #5273f0; --accent: #ff5ca8;
-    --app-bg: #10151c;
-    --surface: #1d2531;
-    --bg: #10151c;
-    --light: #293342;
-    --light-gray: #3a4658;
-    --dark: #f2f5fa;
-    --gray: #aab6c6;
+    --primary: #0a84ff; --secondary: #7877ea; --accent: #ff375f;
+    --success: #30d158; --warning: #ff9f0a;
+    --app-bg: radial-gradient(ellipse at top, #1c1c1e 0%, #000000 60%, #000000 100%);
+    --surface: #1c1c1e;
+    --bg: #000000;
+    --light: #2c2c2e;
+    --light-gray: #3a3a3c;
+    --dark: #f2f2f7;
+    --gray: #98989d;
     --shadow: 0 4px 12px rgba(0,0,0,.4);
     --shadow-lg: 0 8px 32px rgba(0,0,0,.55);
   }

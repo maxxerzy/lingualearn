@@ -36,7 +36,7 @@ export function toastAchievements(list) {
 }
 
 // Kurzer Konfetti-Regen (Level-Up, Streak-Truhe).
-const CONFETTI_COLORS = ['#4361ee', '#f72585', '#ffd60a', '#2ec4b6', '#ff8a1e', '#9b5de5'];
+const CONFETTI_COLORS = ['#007aff', '#ff2d55', '#ffd60a', '#34c759', '#ff9500', '#af52de'];
 export function confettiBurst(count = 26) {
   const wrap = document.createElement('div');
   wrap.className = 'confetti';
