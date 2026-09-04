@@ -113,17 +113,14 @@
             </button>
           </div>
         </div>
-        <!-- rechts: Diamanten, Level, Streak ganz rechts -->
+        <!-- Nur noch der Level bleibt im Header — der ist überall relevant,
+             egal in welcher Ansicht man gerade ist. Diamanten (nur im Shop
+             ausgebbar) und Streak (Bezug zur Lernsession) sitzen dort, wo
+             man tatsächlich etwas damit tut, s. #view-learn/#view-rewards. -->
         <div class="gami-chips">
-          <span class="gami-chip gami-chip--gems" id="gemChip" title="Diamanten">
-            <i class="fas fa-gem"></i> <span id="gemCount">0</span>
-          </span>
           <span class="gami-chip gami-chip--level" id="levelChip">
             <span class="gami-level-label">Lvl. <b id="levelNum">1</b></span>
             <span class="gami-xp-bar"><span class="gami-xp-fill" id="xpFill"></span></span>
-          </span>
-          <span class="gami-chip gami-chip--streak" id="streakChip">
-            <i class="fas fa-fire"></i> <span id="streakCount">0</span>
           </span>
         </div>
       </div>
@@ -145,6 +142,9 @@
               <div class="config-head">
                 <h2>Lernsession</h2>
                 <div class="config-actions">
+                  <span class="gami-chip gami-chip--streak" id="streakChip">
+                    <i class="fas fa-fire"></i> <span id="streakCount">0</span>
+                  </span>
                   <button type="button" class="config-icon-btn" id="shopBtn" title="Shop" aria-label="Shop">
                     <i class="fas fa-store"></i>
                   </button>
@@ -173,7 +173,13 @@
 
               <div class="form-group">
                 <label for="deckSelect">Deck</label>
-                <select id="deckSelect" class="input"></select>
+                <!-- Bleibt die einzige Datenquelle (jede Ansicht liest
+                     deckSelect.value) und damit per Tastatur/Screenreader
+                     erreichbar — sichtbar ist stattdessen die Sprach-Chip-
+                     Reihe darunter, ein Chip-Klick setzt einfach den Wert
+                     hier und feuert „change". -->
+                <select id="deckSelect" class="input visually-hidden"></select>
+                <div class="lang-chips" id="langChips"></div>
                 <div class="deck-progress" id="deckProgress" hidden>
                   <div class="deck-progress__bar">
                     <span class="dp-seg dp-seg--mastered" id="dpMastered"></span>
@@ -695,7 +701,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v54';
+    var APP_VERSION = 'v55';
     var loginMode = 'login';
 
     function hp(pw) {

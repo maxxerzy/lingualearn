@@ -67,7 +67,9 @@ check('Konfig ohne horizontalen Overflow', h <= 1, `${h}px`);
 
 // ── 2) Header: Name im Chip, keine Überlappungen, alles im Viewport ──
 const header = await page.evaluate(() => {
-  const ids = ['userChipBtn', 'gemChip', 'levelChip', 'streakChip'];
+  // gemChip/streakChip sitzen nicht mehr im Header (Diamanten im Shop,
+  // Streak neben „Lernsession") — nur noch Profil + Level bleiben dort.
+  const ids = ['userChipBtn', 'levelChip'];
   const rects = {};
   for (const id of ids) { const e = document.getElementById(id); rects[id] = e ? e.getBoundingClientRect().toJSON() : null; }
   // Logo mitprüfen — der Profil-Chip darf es nie überlappen.
@@ -135,21 +137,25 @@ if (!isNarrow) {
 // Handy-Layout (≤768): Profil auf der Logo-Zeile (rechtsbündig), Chips in Zeile 2
 if (vw <= 768) {
   const rows = await page.evaluate(() => {
-    const r = id => document.getElementById(id)?.getBoundingClientRect() ||
-                    document.querySelector(id)?.getBoundingClientRect();
     const logo = document.querySelector('.logo').getBoundingClientRect();
     const chip = document.getElementById('userChipBtn').getBoundingClientRect();
     const chips = document.querySelector('.gami-chips').getBoundingClientRect();
-    const streak = document.getElementById('streakChip').getBoundingClientRect();
     return {
       sameRow: Math.abs((logo.top + logo.height / 2) - (chip.top + chip.height / 2)) < logo.height,
       chipRight: chip.right >= window.innerWidth - 40,
       chipsBelow: chips.top >= chip.bottom - 4,
-      streakRight: streak.right >= window.innerWidth - 40,
     };
   });
   check('Handy: Profil rechtsbündig auf Logo-Zeile', rows.sameRow && rows.chipRight, JSON.stringify(rows));
-  check('Handy: Chips-Zeile darunter, Streak ganz rechts', rows.chipsBelow && rows.streakRight, JSON.stringify(rows));
+  check('Handy: Level-Chip-Zeile darunter', rows.chipsBelow, JSON.stringify(rows));
+  // Streak sitzt jetzt neben „Lernsession" (config-actions), nicht mehr im
+  // Header — dort separat prüfen (Panel-Überlaufgrenzen gelten längst).
+  const streakInPanel = await page.evaluate(() => {
+    const panel = document.querySelector('.config-panel')?.getBoundingClientRect();
+    const streak = document.getElementById('streakChip')?.getBoundingClientRect();
+    return panel && streak ? streak.right <= panel.right + 1 && streak.left >= panel.left - 1 : false;
+  });
+  check('Handy: Streak-Chip bleibt innerhalb der Lernsession-Karte', streakInPanel, JSON.stringify(streakInPanel));
   const lvl = await page.evaluate(() => document.querySelector('.gami-level-label').textContent.trim());
   check('Level-Chip heißt „Lvl."', lvl.startsWith('Lvl.'), lvl);
 }

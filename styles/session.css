@@ -430,8 +430,13 @@
   justify-content: center;
   width: 28px; height: 28px;
   border-radius: 50%;
-  background: var(--light-gray);
-  color: var(--gray);
+  /* War fest var(--light-gray)/var(--gray) — auf hellen Themes nur ~2.6:1
+     Kontrast (Buchstabe kaum lesbar, s. Einstufungstest). Jetzt an
+     --primary gekoppelt: passt sich jedem Theme an und hält überall
+     deutlich mehr Kontrast (~4.1–4.8:1, geprüft über mehrere Themes). */
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+  color: var(--primary);
   font-weight: 700;
   font-size: 0.85rem;
   flex-shrink: 0;

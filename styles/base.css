@@ -62,6 +62,21 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 [hidden] { display: none !important; }
 
+/* Für Tastatur/Screenreader erreichbar, optisch aber unsichtbar — NICHT
+   display:none (sonst aus dem Fokus-/Bedienbaum raus) und keine Nullgröße
+   (sonst gilt das Element manchen Werkzeugen als „nicht sichtbar" und ist
+   nicht mehr bedienbar, z. B. #deckSelect als Datenquelle hinter den
+   Sprach-Chips, s. .lang-chips). */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, 'Segoe UI', Roboto, sans-serif;
   background: var(--app-bg);
