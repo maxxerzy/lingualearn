@@ -237,9 +237,12 @@ await page.evaluate(async () => {
 await click('#userChipBtn'); await page.waitForTimeout(150);
 await click('.user-dropdown__item[data-action="arena"]'); await page.waitForTimeout(300);
 check('Arena: 3 Quests erfüllt → Abholen-Buttons', await page.evaluate(() => document.querySelectorAll('#arenaBody [data-claim]').length) === 3);
-const gemsA = await page.evaluate(() => Number(document.getElementById('gemCount').textContent));
+// gemCount lebt jetzt im Shop-Tab (nicht mehr im Header) — Diamanten
+// direkt über core/gamification.js lesen statt über ein DOM-Element,
+// das gerade gar nicht gerendert ist (aktiver Tab ist „Tagesquests").
+const gemsA = await page.evaluate(async () => (await import('/core/gamification.js')).getGems());
 await page.evaluate(() => document.querySelector('#arenaBody [data-claim]')?.click()); await page.waitForTimeout(250);
-const gemsB = await page.evaluate(() => Number(document.getElementById('gemCount').textContent));
+const gemsB = await page.evaluate(async () => (await import('/core/gamification.js')).getGems());
 check('Quest abholen erhöht Diamanten', gemsB > gemsA, `${gemsA}→${gemsB}`);
 await click('.arena-tab[data-tab="league"]'); await page.waitForTimeout(200);
 check('Liga: 10 Zeilen inkl. „Du"', await page.evaluate(() => document.querySelectorAll('.lg-row').length === 10 && !!document.querySelector('.lg-row--you')));

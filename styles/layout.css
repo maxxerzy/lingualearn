@@ -418,6 +418,54 @@ label {
   -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
 }
 
+/* ── Sprach-Chips (sichtbarer Ersatz für #deckSelect) ─────────────── */
+.lang-chips {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  margin-top: 6px;
+  /* Scrollleiste dezent statt Standard-Balken, aber nicht komplett
+     verstecken — Wischen muss auf jedem Gerät erkennbar bleiben. */
+  scrollbar-width: thin;
+}
+.lang-chip {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 13px;
+  min-height: 40px;
+  border-radius: 999px;
+  border: 1.5px solid color-mix(in srgb, var(--light-gray) 75%, transparent);
+  background: var(--glass-light);
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  color: var(--gray);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+.lang-chip:hover { border-color: var(--primary); color: var(--primary); }
+.lang-chip--active {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 62%, #1b2a6b));
+  color: #fff;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--primary) 38%, transparent);
+}
+.lang-chip__flag { font-size: 1.1rem; line-height: 1; }
+.lang-chip__dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+}
+.lang-chip--active .lang-chip__dot { background: #fff; }
+
 .input:focus, select:focus {
   border-color: var(--primary);
   outline: none;

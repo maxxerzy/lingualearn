@@ -4,7 +4,7 @@ import { startSession, exitSession } from '../core/session.js';
 import { updateStats } from '../core/stats.js';
 import { getDecks, reinitUserStats, setCurrentSession } from '../core/state.js';
 import { isLoggedIn, logout, getCurrentUser } from '../core/auth.js';
-import { reinitCardProgress } from '../core/cardProgress.js';
+import { reinitCardProgress, getDeckProgress } from '../core/cardProgress.js';
 import { reinitGame } from '../core/gamification.js';
 import { reinitCourse } from '../core/course.js';
 import { reinitCosmetics } from '../core/cosmetics.js';
@@ -134,6 +134,7 @@ function showApp() {
     // Deck-Wechsel aktualisiert Fortschritt & Fällig-Zähler.
     // (Wort des Tages wird beim Öffnen des Overlays frisch gerendert.)
     document.getElementById('deckSelect').addEventListener('change', () => {
+      syncLangChipsActive();
       renderLearnWidgets();
     });
 
@@ -224,6 +225,13 @@ function doLogout() {
   window.LinguaAuth.showLoginScreen();
 }
 
+// Flaggen-Symbol je Sprache — rein dekorativ für die Sprach-Chips, das
+// <select> bleibt die Datenquelle. Latein hat kein Land, daher eine Schriftrolle.
+const LANG_FLAG = {
+  da: '🇩🇰', el: '🇬🇷', fr: '🇫🇷', es: '🇪🇸', la: '📜',
+  ru: '🇷🇺', ja: '🇯🇵', zh: '🇨🇳', pt: '🇵🇹',
+};
+
 function populateDeckSelect() {
   const deckSelect = document.getElementById('deckSelect');
   if (!deckSelect) return;
@@ -244,6 +252,51 @@ function populateDeckSelect() {
 
   deckSelect.replaceChildren(frag);
   deckSelect.value = (prev && decks[prev]) ? prev : (sorted[0]?.[0] ?? '');
+
+  buildLangChips(sorted);
+}
+
+// Sprach-Chips — sichtbarer Ersatz für das native <select> (das bleibt als
+// Datenquelle/Tastatur-Fallback bestehen, nur optisch versteckt). Ein Klick
+// setzt einfach dessen value + feuert „change" — jeder bestehende Listener
+// auf #deckSelect (Fortschritt, Kurszeile, Wörterbuch, Sync, …) funktioniert
+// dadurch unverändert weiter, ganz ohne eigene Zustandsverwaltung hier.
+function buildLangChips(sorted) {
+  const wrap = document.getElementById('langChips');
+  if (!wrap) return;
+  const deckSelect = document.getElementById('deckSelect');
+
+  wrap.innerHTML = sorted.map(([id, deck]) => {
+    const count = deck.cards?.length ?? deck.count;
+    const due = getDeckProgress(id, count).due > 0;
+    return `
+      <button type="button" class="lang-chip" data-deck="${id}" title="${deck.name} (${count} Karten)">
+        <span class="lang-chip__flag" aria-hidden="true">${LANG_FLAG[deck.language] || '🏳️'}</span>
+        <span class="lang-chip__name">${deck.name}</span>
+        ${due ? '<span class="lang-chip__dot" title="Heute fällig"></span>' : ''}
+      </button>`;
+  }).join('');
+
+  wrap.querySelectorAll('.lang-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      if (deckSelect.value === chip.dataset.deck) return;
+      deckSelect.value = chip.dataset.deck;
+      deckSelect.dispatchEvent(new Event('change'));
+    });
+  });
+
+  syncLangChipsActive();
+}
+
+function syncLangChipsActive() {
+  const wrap = document.getElementById('langChips');
+  const deckSelect = document.getElementById('deckSelect');
+  if (!wrap || !deckSelect) return;
+  wrap.querySelectorAll('.lang-chip').forEach(chip => {
+    const active = chip.dataset.deck === deckSelect.value;
+    chip.classList.toggle('lang-chip--active', active);
+    chip.setAttribute('aria-pressed', String(active));
+  });
 }
 
 function setupModeTabs() {

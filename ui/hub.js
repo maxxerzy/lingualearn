@@ -190,7 +190,15 @@ function shopHtml() {
         </button>
       </li>`;
   }).join('');
-  return `<p class="arena__hint"><i class="fas fa-gem"></i> Du hast <b>${getGems()}</b> Diamanten. Verdiene mehr über Quests, Sessions & Erfolge.</p>
+  return `
+    <div class="shop-balance" id="gemChip">
+      <i class="fas fa-gem"></i>
+      <div>
+        <div class="shop-balance__num" id="gemCount">${getGems()}</div>
+        <div class="shop-balance__label">Diamanten</div>
+      </div>
+      <span class="shop-balance__hint">Verdiene mehr über Quests, Sessions &amp; Erfolge</span>
+    </div>
     <ul class="shop-list">${wagerHtml()}${items}</ul>`;
 }
 

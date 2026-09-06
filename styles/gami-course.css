@@ -287,6 +287,26 @@
 .arena__hint { color: var(--gray); font-size: .9rem; margin-bottom: 14px; }
 .quest-list, .shop-list, .lg-list, .lg-legend { list-style: none; margin: 0; padding: 0; }
 
+/* Diamanten-Kontostand — steht jetzt am Ausgabeort (Shop), nicht mehr nur
+   informativ im Header. */
+.shop-balance {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  background: color-mix(in srgb, var(--gem) 15%, var(--glass-light));
+  backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light)) saturate(var(--glass-saturate));
+  border: 1.5px solid color-mix(in srgb, var(--gem) 35%, transparent);
+}
+.shop-balance i { color: var(--gem); font-size: 1.3rem; flex-shrink: 0; }
+.shop-balance__num { font-size: 1.25rem; font-weight: 800; color: #0d7f8d; line-height: 1.1; }
+.shop-balance__label { font-size: 0.72rem; font-weight: 600; color: var(--gray); }
+.shop-balance__hint { margin-left: auto; font-size: 0.78rem; color: var(--gray); text-align: right; max-width: 42%; }
+@media (max-width: 480px) { .shop-balance__hint { display: none; } }
+
 .quest { display: flex; gap: 12px; align-items: center; padding: 12px; border: 1px solid var(--light-gray); border-radius: 14px; margin-bottom: 10px; }
 .quest--done { border-color: color-mix(in srgb, var(--primary) 45%, transparent); background: color-mix(in srgb, var(--primary) 5%, var(--surface)); }
 .quest--claimed { opacity: .55; }
