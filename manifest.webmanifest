@@ -1,7 +1,7 @@
 {
   "name": "LinguaLearn – Sprachen lernen",
   "short_name": "LinguaLearn",
-  "description": "Vokabeltrainer für Dänisch, Griechisch, Französisch, Spanisch, Latein und Russisch — mit Karteikarten, Level-System und Erfolgen.",
+  "description": "Vokabeltrainer für Dänisch, Griechisch, Französisch, Spanisch, Latein, Russisch, Japanisch, Chinesisch, Portugiesisch und Arabisch — mit Karteikarten, Level-System und Erfolgen.",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
