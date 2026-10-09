@@ -908,13 +908,13 @@ await click('#settingsBackBtn'); await page.waitForTimeout(200);
 // ── Grammatik im Lernkurs ──
 const gramData = await page.evaluate(async () => {
   const out = {};
-  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt']) {
+  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt', 'ar']) {
     const { grammar } = await import(`/js/data/grammar/${l}.js`);
     out[l] = grammar.length && grammar.every(ch => ch.pages.length > 0 && ch.beforeLesson >= 1 && ch.title) ? grammar.length : 0;
   }
   return out;
 });
-check('Grammatik-Daten für alle 9 Sprachen (≥5 Kapitel)', Object.values(gramData).every(n => n >= 5), JSON.stringify(gramData));
+check('Grammatik-Daten für alle 10 Sprachen (≥5 Kapitel)', Object.values(gramData).every(n => n >= 5), JSON.stringify(gramData));
 
 // ── Grammatik-Abdeckung über den GANZEN Kurs ──
 // Ein Deck hat über 100 Lektionen; erklärt die Grammatik nur die ersten
@@ -923,11 +923,12 @@ check('Grammatik-Daten für alle 9 Sprachen (≥5 Kapitel)', Object.values(gramD
 // AUSGEBAUT wächst mit jeder Sprache, die das volle Raster bekommt —
 // die übrigen werden nur berichtet, damit der Rückstand sichtbar ist.
 const MAX_GAP = 12;
-const AUSGEBAUT = ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt'];   // alle neun
+const AUSGEBAUT = ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt', 'ar'];   // alle zehn
 const coverage = await page.evaluate(async (max) => {
   const out = {};
   const decks = { da: 'basic-da', el: 'basic-el', fr: 'basic-fr', es: 'basic-es',
-                  la: 'basic-la', ru: 'basic-ru', ja: 'basic-ja', zh: 'basic-zh', pt: 'basic-pt' };
+                  la: 'basic-la', ru: 'basic-ru', ja: 'basic-ja', zh: 'basic-zh', pt: 'basic-pt',
+                  ar: 'basic-ar' };
   const { loadDeck } = await import('/core/state.js');
   for (const [l, id] of Object.entries(decks)) {
     const deck = await loadDeck(id);
@@ -953,7 +954,7 @@ check(`Grammatik deckt den ganzen Kurs ab (Lücke ≤ ${MAX_GAP} Lektionen)`,
 // ── Grammatik ÜBEN: jedes Kapitel bringt Aufgaben mit ──
 // Gelesen ist nicht gekonnt. MIT_UEBUNGEN wächst wie AUSGEBAUT mit
 // jeder Sprache, die ihre Aufgaben bekommen hat.
-const MIT_UEBUNGEN = ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt'];   // alle neun
+const MIT_UEBUNGEN = ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt', 'ar'];   // alle zehn
 const drillData = await page.evaluate(async (langs) => {
   const out = {};
   for (const l of langs) {
@@ -1435,6 +1436,90 @@ check('Chinesisch-Deck auf ~750 Karten ausgebaut, Lektionsplan stimmt',
 
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
 
+// ── Arabisch: kompletter Kursdurchlauf von rechts nach links ──
+// Voll vokalisierte Schrift und RTL: Buchstaben-Kacheln behalten ihre
+// Vokalzeichen und beginnen rechts, die Lücke trifft trotz anderer
+// Vokalisierung im Satz genau ein Wort.
+await page.selectOption('#deckSelect', 'basic-ar'); await page.waitForTimeout(400);
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const deck = await (await import('/core/state.js')).loadDeck('basic-ar');
+  const intro = deck.lessonSizes.slice(0, 3).reduce((a, b) => a + b, 0);
+  localStorage.setItem('lingualearn_course_' + u, JSON.stringify({ 'basic-ar': { introduced: intro } }));
+  (await import('/core/course.js')).reinitCourse();
+  const g = await import('/core/grammar.js');
+  const { grammar } = await import('/js/data/grammar/ar.js');
+  grammar.forEach(ch => g.markChapterRead('basic-ar', ch.id));
+  window.__phases = [];
+  window.__arCap = { rootLang: document.documentElement.dataset.targetLang };
+});
+await click('.mode-btn[data-mode="course"]'); await page.waitForTimeout(300);
+await click('#startBtn'); await page.waitForTimeout(700);
+let arEnd = null;
+for (let i = 0; i < 500 && !arEnd; i++) {
+  await page.evaluate(async () => {
+    const st = (await import('/core/state.js')).getCurrentSession();
+    if (!st || st.mode !== 'course') return;
+    const cap = window.__arCap;
+    const card = st.queue?.[0];
+    if (!cap.teach && st.phase === 'teach') {
+      const w = document.querySelector('.fc-word-target')?.textContent.trim() || '';
+      const pron = document.querySelector('.course-pron')?.textContent.trim() || '';
+      cap.teach = { arabic: /[ء-ي]/.test(w), harakat: /[ً-ْ]/.test(w), roman: pron.length > 0 };
+    }
+    const pool = document.getElementById('tilePool');
+    if (!cap.tiles && pool && card && pool.querySelector('.letter-tile')) {
+      const tiles = [...pool.querySelectorAll('.build-tile')].map(t => t.textContent);
+      cap.tiles = { rtl: pool.dir === 'rtl', noBareMark: tiles.every(t => !/^\p{M}/u.test(t)),
+                    complete: tiles.join('').length === card.back.length };
+    }
+    const bpool = document.getElementById('courseBuildPool');
+    if (!cap.build && bpool) cap.build = { rtl: bpool.dir === 'rtl' };
+    const gap = document.querySelector('.gap-sentence')?.textContent.trim();
+    if (gap && !cap.gap) {
+      cap.gap = { text: gap, one: (gap.match(/____/g) || []).length === 1,
+                  rest: gap.replace(/[_\s.؟،]/g, '').length > 0 };
+    }
+  });
+  arEnd = await driveStep('ar');
+  await page.waitForTimeout(120);
+}
+const arCourse = await page.evaluate(() => ({ cap: window.__arCap, phases: window.__phases }));
+check('Arabisch: Lektion komplett, vokalisierte Schrift vorn, Umschrift als Hilfe',
+  arEnd === 'done' && arCourse.cap.rootLang === 'ar' && arCourse.cap.teach?.arabic
+    && arCourse.cap.teach?.harakat && arCourse.cap.teach?.roman,
+  JSON.stringify({ arEnd, ...arCourse.cap }));
+check('Arabisch: Buchstaben-Kacheln von rechts, Vokalzeichen bleiben am Buchstaben',
+  arCourse.cap.tiles?.rtl && arCourse.cap.tiles?.noBareMark && arCourse.cap.tiles?.complete
+    && (!arCourse.cap.build || arCourse.cap.build.rtl),
+  JSON.stringify({ tiles: arCourse.cap.tiles, build: arCourse.cap.build }));
+check('Arabisch: Lückensatz blendet genau ein Wort aus',
+  !arCourse.cap.gap || (arCourse.cap.gap.one && arCourse.cap.gap.rest),
+  JSON.stringify(arCourse.cap.gap || 'keine Lücke in dieser Lektion'));
+await click('#sessionBackBtn'); await page.waitForTimeout(250);
+
+// Deck-Qualität: jede Karte voll vokalisiert, mit Umschrift, und ihr
+// Beispielsatz liefert eine Lücke (sonst fiele die Karte aus der Phase).
+const arDeck = await page.evaluate(async () => {
+  const deck = await (await import('/core/state.js')).loadDeck('basic-ar');
+  const { findGapSentence } = await import('/utils/sentence.js');
+  const harakat = /[ً-ْ]/;
+  return {
+    n: deck.cards.length, lang: deck.language,
+    sum: deck.lessonSizes.reduce((a, b) => a + b, 0), lessons: deck.lessonSizes.length,
+    titles: deck.lessonTitles.length,
+    unvoc: deck.cards.filter(c => !harakat.test(c.back) || !harakat.test(c.example)).map(c => c.front).slice(0, 5),
+    noRoman: deck.cards.filter(c => !/^[a-zāīūḥṣḍṭẓʾʿ' \-…,?.]+$/.test(c.roman || '')).map(c => c.front).slice(0, 5),
+    noGap: deck.cards.filter(c => !findGapSentence(c.example, c.back, 'ar')).map(c => c.front).slice(0, 5),
+  };
+});
+check('Arabisch-Deck: 750 Karten, voll vokalisiert, Umschrift und Lücke je Karte',
+  arDeck.n >= 700 && arDeck.lang === 'ar' && arDeck.sum === arDeck.n && arDeck.titles === arDeck.lessons
+    && !arDeck.unvoc.length && !arDeck.noRoman.length && !arDeck.noGap.length,
+  JSON.stringify(arDeck));
+
+await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
+
 // ── Beispielsätze mit Aussprache-Knopf ──
 await page.selectOption('#deckSelect', 'basic-da'); await page.waitForTimeout(200);
 await click('.mode-btn[data-mode="flashcard"]'); await click('#startBtn'); await page.waitForTimeout(500);
@@ -1487,13 +1572,13 @@ await click('#settingsBackBtn'); await page.waitForTimeout(200);
 // ── Konversations-Bausteine für alle Sprachen ──
 const talkData = await page.evaluate(async () => {
   const out = {};
-  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt']) {
+  for (const l of ['da', 'el', 'fr', 'es', 'la', 'ru', 'ja', 'zh', 'pt', 'ar']) {
     const { phrases } = await import(`/js/data/phrases/${l}.js`);
     out[l] = phrases.length && phrases.every(p => p.de && p.target && p.reply) ? phrases.length : 0;
   }
   return out;
 });
-check('Konversations-Bausteine für alle 9 Sprachen (≥24, mit Dialog-Antworten)',
+check('Konversations-Bausteine für alle 10 Sprachen (≥24, mit Dialog-Antworten)',
   Object.values(talkData).every(n => n >= 24), JSON.stringify(talkData));
 
 // ── Geräte-Sync: Zusammenführen zweier Stände (Handy ↔ Mac) ──

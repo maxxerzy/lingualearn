@@ -8,6 +8,7 @@ import {
 } from '../shared.js';
 import { courseGrade, courseFeedbackHtml } from './shared.js';
 import { showCourseStep } from './lesson.js';
+import { isRtl, splitGraphemes } from '../../../utils/sentence.js';
 
 export function renderCourseWordMC(session) {
   const card = session.queue[0];
@@ -160,8 +161,11 @@ function renderCourseWordTiles(session) {
   const lang = session.deck.language;
   const expected = answerText(session, card);
   const multi = /\s/.test(expected.trim());
-  const letters = multi ? expected.trim().split(/\s+/) : expected.split('');
+  // Graphem-weise: ein arabisches „كِ" bleibt eine Kachel, statt dass das
+  // Vokalzeichen allein auf einer eigenen Kachel landet.
+  const letters = multi ? expected.trim().split(/\s+/) : splitGraphemes(expected);
   const order = shuffleArray(letters.map((_, i) => i));
+  const dir = !isReverse(session.deck) && isRtl(lang) ? 'rtl' : 'ltr';
   const learnArea = document.getElementById('learnArea');
 
   learnArea.innerHTML = `
@@ -170,8 +174,8 @@ function renderCourseWordTiles(session) {
       <p class="fc-label">${promptLabel(session)}</p>
       <div class="fc-word">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
       <p class="prompt">Baue die Übersetzung aus den ${multi ? 'Wörtern' : 'Buchstaben'} (${answerLabel(session)}):</p>
-      <div class="build-answer tile-answer" id="tileAnswer" aria-label="Deine Antwort"></div>
-      <div class="build-pool" id="tilePool">
+      <div class="build-answer tile-answer" id="tileAnswer" dir="${dir}" aria-label="Deine Antwort"></div>
+      <div class="build-pool" id="tilePool" dir="${dir}">
         ${order.map(i => `<button type="button" class="build-tile${multi ? '' : ' letter-tile'}" data-i="${i}">${escHtml(letters[i])}</button>`).join('')}
       </div>
       <div id="mc-fb"></div>

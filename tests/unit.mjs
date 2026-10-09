@@ -238,6 +238,26 @@ console.log('\n── Satzlogik (utils/sentence.js) ──');
     sen.backMatchScore('huset', 'hus'), 0);
   eq('Wortabgleich: kurze Wörter matchen nicht als Teilstring',
     sen.backMatchScore('er', 'e'), 0);
+
+  // Arabisch: Deck-Wort und Satz sind unterschiedlich vokalisiert, Hamza-
+  // Sitze und Tāʾ marbūṭa variieren — der Vergleichsschlüssel ebnet das ein.
+  eq('Arabisch: Vokalzeichen fallen im Schlüssel weg',
+    sen.arabicBase('كِتَابٌ'), 'كتاب');
+  eq('Arabisch: Hamza-Sitze, Alif maqṣūra und Tāʾ marbūṭa vereinheitlicht',
+    [sen.arabicBase('أَنَا'), sen.arabicBase('إِلَى'), sen.arabicBase('مَدْرَسَة')], ['انا', 'الي', 'مدرسه']);
+  eq('Arabisch: Vokalzeichen bleiben am Buchstaben (Kacheln)',
+    sen.splitGraphemes('بَيْت'), ['بَ', 'يْ', 'ت']);
+  check('Arabisch läuft von rechts nach links', sen.isRtl('ar') && !sen.isRtl('da'));
+  eq('Arabisch: Lücke trifft das Wort mit Artikel trotz anderer Vokalisierung',
+    sen.findGapSentence('قَرَأْتُ الْكِتَابَ أَمْسِ.', 'كِتَاب', 'ar'), 'قَرَأْتُ ____ أَمْسِ.');
+  eq('Arabisch: Satzzeichen ؟ bleibt an der Lücke stehen',
+    sen.findGapSentence('أَيْنَ الْبَيْتُ؟', 'بَيْت', 'ar'), 'أَيْنَ ____؟');
+  eq('Arabisch: kurze Präposition „في" wird nicht zum Teil des Ziels',
+    sen.findGapSentence('فِي الْبَيْتِ فِيلٌ.', 'فِيل', 'ar'), 'فِي الْبَيْتِ ____.');
+  check('Arabisch: Satz mit bekanntem Wort (Artikel + Endung) ist frei',
+    sen.sentenceIsKnown('هَذَا بَيْتِي.', new Set(['بَيْت']), ['بَيْت'], ['بَيْت', 'كِتَاب'], 'ar'));
+  check('Arabisch: ungelerntes Deck-Wort sperrt den Satz',
+    !sen.sentenceIsKnown('هَذَا الْكِتَابُ.', new Set(['بَيْت']), ['بَيْت'], ['بَيْت', 'كِتَاب'], 'ar'));
 }
 
 // ── 4) Aussprache-Vergleich ──────────────────────────────────────
@@ -276,6 +296,17 @@ console.log('\n── Aussprache (utils/pronounce.js) ──');
   eq('Chinesisch: nur das falsche Zeichen ist markiert',
     zh.target.map(p => p.ok), [true, true, false]);
   eq('Chinesisch: Hinweis ohne Leerzeichen', pron.mismatchHint(zh), 'Achte auf „书“.');
+
+  // Die Erkennung liefert Arabisch ohne Vokalzeichen — das voll
+  // vokalisierte Ziel darf daran nicht scheitern.
+  eq('Arabisch: unvokalisiert Gehörtes trifft das vokalisierte Ziel',
+    (r => [r.ok, Math.round(r.score * 100)])(cmp('كِتَاب', 'كتاب', 'ar')), [true, 100]);
+  eq('Arabisch: Sätze trotz Hamza-/Vokal-Unterschieden getroffen',
+    cmp('أَيْنَ الْمَحَطَّةُ؟', 'اين المحطة', 'ar').ok, true);
+  eq('Arabisch: falsches Wort bleibt markiert',
+    cmp('أَيْنَ الْمَحَطَّةُ؟', 'اين البيت', 'ar').target.map(p => p.ok), [true, false]);
+  eq('Arabisch: Satzzeichen ؟ und ، werden ignoriert',
+    pron.normalizeSpoken('نَعَمْ، شُكْرًا؟'), 'نعم شكرا');
 
   eq('Ausrichtung findet die längste gemeinsame Folge',
     pron.matchPairs(['a', 'b', 'c'], ['a', 'x', 'c']), [[0, 0], [2, 2]]);

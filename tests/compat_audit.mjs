@@ -319,7 +319,7 @@ const offlineUi = await page.evaluate(() => {
   };
 });
 check('Einstellungen: Offline-Schalter ohne Überlauf, Liste scrollt selbst',
-  offlineUi.rows === 9 && !offlineUi.clipped && !offlineUi.outside
+  offlineUi.rows === 10 && !offlineUi.clipped && !offlineUi.outside
   && offlineUi.ownScroll && offlineUi.hOverflow <= 1, JSON.stringify(offlineUi));
 await click('#settingsBackBtn'); await page.waitForTimeout(200);
 
@@ -479,6 +479,45 @@ await click('#startBtn'); await page.waitForTimeout(800);
   check('Chinesisch: jeder Kursschritt ohne Scrollen/Überlappung',
     st === 'done' && badZh.length === 0, `state=${st} ${badZh.slice(0, 3).join(' | ')}`);
   check('Aussprache ohne Erkennung: Vergleichs-Karte wurde mitgemessen', sawCompare);
+}
+await page.evaluate(() => document.getElementById('sessionBackBtn')?.click());
+await page.waitForTimeout(250);
+
+// ── 7b′) Arabisch: voll vokalisierte Schrift braucht mehr Zeilenhöhe
+// (Ḥarakāt über und unter der Zeile) und läuft von rechts nach links —
+// auch damit muss jeder Kursschritt ohne Seiten-Scrollen auskommen.
+await page.selectOption('#deckSelect', 'basic-ar');
+await page.waitForTimeout(500);
+await page.evaluate(async () => {
+  const u = localStorage.getItem('lingualearn_current_user');
+  const deck = await (await import('/core/state.js')).loadDeck('basic-ar');
+  const intro = deck.lessonSizes.slice(0, 3).reduce((a, b) => a + b, 0);
+  localStorage.setItem('lingualearn_course_' + u, JSON.stringify({ 'basic-ar': { introduced: intro } }));
+  (await import('/core/course.js')).reinitCourse();
+  const g = await import('/core/grammar.js');
+  const { grammar } = await import('/js/data/grammar/ar.js');
+  grammar.forEach(ch => g.markChapterRead('basic-ar', ch.id));
+});
+await click('#startBtn'); await page.waitForTimeout(800);
+{
+  const badAr = [];
+  let st = null;
+  for (let i = 0; i < 220 && st !== 'done' && st !== 'gone'; i++) {
+    await page.evaluate(() => {
+      const row = document.getElementById('pronPlay');
+      if (row) row.hidden = false;
+    });
+    const m = await measureStep();
+    if (m.v > V_TOL_SESSION || m.h > 1 || m.barOverlap || m.clipped || m.offscreen) {
+      const ph = await page.evaluate(async () =>
+        (await import('/core/state.js')).getCurrentSession()?.phase || 'end');
+      badAr.push(`${ph}: v=${m.v} h=${m.h}${m.clipped ? ' clipped' : ''}${m.offscreen ? ' btn-offscreen' : ''}`);
+    }
+    st = await courseStep();
+    await page.waitForTimeout(140);
+  }
+  check('Arabisch: jeder Kursschritt ohne Scrollen/Überlappung',
+    st === 'done' && badAr.length === 0, `state=${st} ${badAr.slice(0, 3).join(' | ')}`);
 }
 await page.evaluate(() => document.getElementById('sessionBackBtn')?.click());
 await page.waitForTimeout(250);
