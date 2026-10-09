@@ -252,6 +252,10 @@ console.log('\n── Satzlogik (utils/sentence.js) ──');
     sen.findGapSentence('قَرَأْتُ الْكِتَابَ أَمْسِ.', 'كِتَاب', 'ar'), 'قَرَأْتُ ____ أَمْسِ.');
   eq('Arabisch: Satzzeichen ؟ bleibt an der Lücke stehen',
     sen.findGapSentence('أَيْنَ الْبَيْتُ؟', 'بَيْت', 'ar'), 'أَيْنَ ____؟');
+  eq('Arabisch: mehrteiliges Ziel blendet das Inhaltswort aus, nicht die Präposition',
+    sen.findGapSentence('اِمْشِ إِلَى الْأَمَامِ.', 'إِلَى الْأَمَام', 'ar'), 'اِمْشِ إِلَى ____.');
+  eq('ganzes Ziel im Satzwort schlägt ein bloßes Stück davon',
+    sen.findGapSentence('أَطْفَأَ الْإِطْفَائِيُّ النَّارَ.', 'إِطْفَائِيّ', 'ar'), 'أَطْفَأَ ____ النَّارَ.');
   eq('Arabisch: kurze Präposition „في" wird nicht zum Teil des Ziels',
     sen.findGapSentence('فِي الْبَيْتِ فِيلٌ.', 'فِيل', 'ar'), 'فِي الْبَيْتِ ____.');
   check('Arabisch: Satz mit bekanntem Wort (Artikel + Endung) ist frei',

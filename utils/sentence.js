@@ -121,10 +121,12 @@ export function findGapSentence(example, back, lang) {
     const partOfTarget = target.includes(word) && (!isRtl(lang) || word.length >= 3);
     // Enthält das Satzwort das ganze Ziel, ist das stärker als ein Satzwort,
     // das nur ein Stück des Ziels ist („أَطْفَأَ" ⊂ „إِطْفَائِيّ") — sonst
-    // gewänne bei Gleichstand einfach das erste Wort im Satz.
+    // gewänne bei Gleichstand einfach das erste Wort im Satz. Unter den
+    // Stücken eines mehrteiligen Ziels gewinnt das längste: bei
+    // „إِلَى الْأَمَام" das Inhaltswort, nicht die Präposition davor.
     if (word === target) score = 100;
-    else if (word.includes(target)) score = 85;
-    else if (partOfTarget) score = 80;
+    else if (word.includes(target)) score = 90;
+    else if (partOfTarget) score = 70 + Math.min(word.length, 19);
     else {
       let p = 0;
       while (p < word.length && p < target.length && word[p] === target[p]) p++;
