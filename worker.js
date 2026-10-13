@@ -8,9 +8,18 @@
 // lokal. Dadurch kann der Worker gefahrlos vor dem KV-Setup live gehen.
 
 const MAX_BODY = 2_000_000;        // 2 MB Snapshot-Limit (reicht weit)
+const CORS_HEADERS = {
+  'access-control-allow-origin': '*',
+  'access-control-allow-methods': 'POST, OPTIONS',
+  'access-control-allow-headers': 'content-type',
+};
 const json = (obj, status = 200) => new Response(JSON.stringify(obj), {
   status,
-  headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
+  headers: {
+    'content-type': 'application/json; charset=utf-8',
+    'cache-control': 'no-store',
+    ...CORS_HEADERS,
+  },
 });
 
 // Token wird nie im Klartext gespeichert — nur sein SHA-256-Abdruck.
@@ -73,6 +82,12 @@ async function readBody(request) {
 }
 
 export async function handleApi(request, env, url) {
+  if (request.method === 'OPTIONS') {
+    return new Response(null, {
+      status: 204,
+      headers: { ...CORS_HEADERS, 'access-control-max-age': '86400' },
+    });
+  }
   if (request.method !== 'POST') return json({ ok: false, error: 'method' }, 405);
   if (!env || !env.SYNC) {
     return json({ ok: false, error: 'sync-not-configured' }, 503);
@@ -150,7 +165,7 @@ export async function handleApi(request, env, url) {
   const LEAGUE_MAX_MEMBERS = 20;
 
   if (path === '/api/league/push') {
-    const { code, name, xp, weekId, division } = body;
+    const { code, name, xp, weekId, division, baseRev } = body;
     if (!validCode(code)) return json({ ok: false, error: 'bad-code' }, 400);
     if (!validName(name)) return json({ ok: false, error: 'bad-name' }, 400);
     if (!validWeekId(weekId)) return json({ ok: false, error: 'bad-week' }, 400);
@@ -159,7 +174,11 @@ export async function handleApi(request, env, url) {
     if (!auth.ok) return json({ ok: false, error: 'forbidden' }, 403);
 
     const raw = await env.SYNC.get(`league:${codeKey}`);
-    const doc = raw ? JSON.parse(raw) : { members: {} };
+    const doc = raw ? JSON.parse(raw) : { members: {}, rev: 0 };
+    const currentRev = Number(doc.rev) || 0;
+    if (baseRev !== undefined && Number(baseRev) !== currentRev) {
+      return json({ ok: false, error: 'conflict', rev: currentRev, members: doc.members }, 409);
+    }
     if (!doc.members[user] && Object.keys(doc.members).length >= LEAGUE_MAX_MEMBERS) {
       return json({ ok: false, error: 'group-full' }, 403);
     }
@@ -170,18 +189,19 @@ export async function handleApi(request, env, url) {
       division: Math.max(0, Math.min(20, Math.round(Number(division)) || 0)),
       updatedAt: Date.now(),
     };
+    doc.rev = currentRev + 1;
     const payload = JSON.stringify(doc);
     if (payload.length > MAX_BODY) return json({ ok: false, error: 'too-large' }, 413);
     await env.SYNC.put(`league:${codeKey}`, payload);
-    return json({ ok: true, members: doc.members });
+    return json({ ok: true, members: doc.members, rev: doc.rev });
   }
 
   if (path === '/api/league/pull') {
     const { code } = body;
     if (!validCode(code)) return json({ ok: false, error: 'bad-code' }, 400);
     const raw = await env.SYNC.get(`league:${code.toUpperCase()}`);
-    const doc = raw ? JSON.parse(raw) : { members: {} };
-    return json({ ok: true, members: doc.members });
+    const doc = raw ? JSON.parse(raw) : { members: {}, rev: 0 };
+    return json({ ok: true, members: doc.members, rev: Number(doc.rev) || 0 });
   }
 
   if (path === '/api/league/leave') {

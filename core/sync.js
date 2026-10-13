@@ -9,12 +9,13 @@ import { getCurrentUser } from './auth.js';
 // Karten, vereinigte Erfolge …). Dadurch geht nichts verloren, wenn auf
 // zwei Geräten parallel gelernt wurde.
 
-const PREFIXES = [
+export const PREFIXES = [
   'lingualearn_game_', 'lingualearn_cards_', 'lingualearn_course_',
   'lingualearn_cosmetics_', 'lingualearn_league_', 'lingualearn_quests_',
   'lingualearn_errors_', 'lingualearn_gold_', 'lingualearn_themequiz_',
   'lingualearn_grammar_', 'lingualearn_wotd_', 'lingualearn_stats_',
   'lingualearn_fx_', 'lingualearn_onboard_', 'lingualearn_why_',
+  'lingualearn_reminder_', 'lingualearn_speechrate_', 'lingualearn_friendgroup_',
 ];
 
 const USERS_KEY = 'lingualearn_users';
@@ -441,7 +442,7 @@ export async function deleteAccount(user = getCurrentUser()) {
   for (const p of PREFIXES) {
     try { localStorage.removeItem(p + user); } catch { /* egal */ }
   }
-  for (const k of [KEY_STORE, LAST_SYNC_KEY, SIG_KEY]) {
+  for (const k of [KEY_STORE, LAST_SYNC_KEY, SIG_KEY, 'lingualearn_friendroster_']) {
     try { localStorage.removeItem(k + user); } catch { /* egal */ }
   }
   try {

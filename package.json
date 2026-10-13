@@ -1,14 +1,16 @@
 {
-  "name": "lingualite-pro",
+  "name": "lingualearn",
   "version": "1.0.0",
-  "description": "Lingualite Sprachlernoberfläche zum Lernen von Vokabeln",
+  "description": "LinguaLearn Sprachlernoberfläche zum Lernen von Vokabeln und Grammatik",
   "main": "index.html",
   "scripts": {
     "serve": "python3 -m http.server 4173",
-    "test": "echo \"No automated tests configured\""
+    "test": "node tests/unit.mjs && node tests/worker_sync.mjs",
+    "test:unit": "node tests/unit.mjs",
+    "test:sync": "node tests/worker_sync.mjs"
   },
   "keywords": [
-    "lingualite",
+    "lingualearn",
     "language-learning"
   ],
   "author": "",

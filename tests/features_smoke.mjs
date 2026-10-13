@@ -1,4 +1,9 @@
-import { chromium, devices } from '/opt/node22/lib/node_modules/playwright/index.mjs';
+import { existsSync } from 'node:fs';
+const { chromium, devices } = await import(
+  existsSync('/opt/node22/lib/node_modules/playwright/index.mjs')
+    ? '/opt/node22/lib/node_modules/playwright/index.mjs'
+    : 'playwright'
+);
 import { courseStepFn } from './course_driver.mjs';
 
 // Kompakte Funktions-Regression: Kernfeatures quer durch die App (iPhone 14).
@@ -6,7 +11,11 @@ const BASE = 'http://127.0.0.1:4173';
 const SHOT = '/tmp';
 let failures = 0;
 const check = (n, c, d = '') => { console.log(`${c ? '✅' : '❌'} ${n}${d ? ' — ' + d : ''}`); if (!c) failures++; };
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const browser = await chromium.launch(
+  existsSync('/opt/pw-browsers/chromium-1194/chrome-linux/chrome')
+    ? { executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' }
+    : {}
+);
 const ctx = await browser.newContext({ ...devices['iPhone 14'] });
 const page = await ctx.newPage();
 const errs = []; page.on('pageerror', e => errs.push(e.message));

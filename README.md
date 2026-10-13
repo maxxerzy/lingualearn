@@ -1,6 +1,6 @@
 # LinguaLearn
 
-Vokabeltrainer für **Dänisch, Griechisch, Französisch, Spanisch, Latein und Russisch** — als reine statische Web-App ohne Server, Build-Schritt oder externe Dienste.
+Vokabeltrainer für **Dänisch, Griechisch, Latein, Französisch, Spanisch, Russisch, Japanisch, Chinesisch und Portugiesisch** — als reine statische Web-App ohne Server, Build-Schritt oder externe Dienste.
 
 **Features:** Geführter Lernkurs (Basic 101) · Karteikarten mit IPA-Aussprache-Tooltips und deutschen Beispielsatz-Übersetzungen · Multiple Choice · Vergleichsmodus · Spaced-Repetition-Levelsystem (fällige Karten) · XP, Level & Tages-Streaks · Erfolge & Aktivitäts-Heatmap · Deck-Import/-Export · mehrere lokale Nutzerkonten · **offline nutzbar (PWA)**.
 

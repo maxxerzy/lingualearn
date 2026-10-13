@@ -239,7 +239,18 @@ const env = makeEnv();
     user: 'anna', token: TOKEN_A, code: 'anderecode', name: 'Anna', xp: 5, weekId: WEEK, division: 0,
   });
   check('Derselbe Konto-Token funktioniert unabhängig auch in einer zweiten Gruppe', p3.status === 200);
+
+  // CORS-Preflight liefert 204 und passende Header
+  const preflight = await call(env, '/api/sync/pull', null, 'OPTIONS');
+  check('CORS OPTIONS liefert 204 No Content', preflight.status === 204 && preflight.headers.get('access-control-allow-origin') === '*');
+
+  // Freundesliga: Optimistisches Sperren bei abweichender baseRev
+  const pConflict = await call(env, '/api/league/push', {
+    user: 'anna', token: TOKEN_A, code: 'anderecode', name: 'Anna', xp: 10, weekId: WEEK, division: 0, baseRev: 999,
+  });
+  check('Veralteter Liga-Push wird mit 409 abgelehnt', pConflict.status === 409 && (await pConflict.json()).error === 'conflict');
 }
 
 console.log(`\n${failures === 0 ? '🎉 WORKER-SYNC OK' : `❌ ${failures} Fehler`}`);
 process.exit(failures === 0 ? 0 : 1);
+

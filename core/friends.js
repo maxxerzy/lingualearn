@@ -37,10 +37,14 @@ function setFriendGroup(group, user = getCurrentUser()) {
   } catch { /* Speicher voll — Gruppe bleibt für diese Sitzung im Speicher */ }
 }
 
-function cacheRoster(members, user = getCurrentUser()) {
+function cacheRoster(members, user = getCurrentUser(), rev = null) {
   const key = rosterKey(user);
   if (!key) return;
-  try { localStorage.setItem(key, JSON.stringify({ members: members || {}, cachedAt: Date.now() })); }
+  try {
+    const prev = getCachedRoster(user);
+    const revToSave = rev !== null ? rev : (prev?.rev || 0);
+    localStorage.setItem(key, JSON.stringify({ members: members || {}, rev: revToSave, cachedAt: Date.now() }));
+  }
   catch { /* egal — die Liste bleibt beim nächsten Pull aktuell */ }
 }
 
@@ -118,18 +122,29 @@ export async function pushFriendXp() {
   const token = await getSyncKey(user);
   if (!token) return { ok: false, reason: 'no-token' };
   const L = getLeague();
-  try {
-    const res = await api('/api/league/push', {
-      user, token, code: group.code, name: group.name,
-      xp: L.you.xp, weekId: getCurrentWeekId(), division: L.divisionIndex,
-    });
-    if (res.status === 503) return { ok: false, reason: 'not-configured' };
-    if (res.status !== 200 || !res.body?.ok) return { ok: false, reason: res.body?.error || 'server' };
-    cacheRoster(res.body.members, user);
-    return { ok: true, members: res.body.members };
-  } catch {
-    return { ok: false, reason: 'network' };
+
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const cached = getCachedRoster(user);
+    const baseRev = cached?.rev;
+    try {
+      const res = await api('/api/league/push', {
+        user, token, code: group.code, name: group.name,
+        xp: L.you.xp, weekId: getCurrentWeekId(), division: L.divisionIndex,
+        baseRev,
+      });
+      if (res.status === 409 && attempt === 0) {
+        if (res.body?.members) cacheRoster(res.body.members, user, res.body.rev);
+        continue;
+      }
+      if (res.status === 503) return { ok: false, reason: 'not-configured' };
+      if (res.status !== 200 || !res.body?.ok) return { ok: false, reason: res.body?.error || 'server' };
+      cacheRoster(res.body.members, user, res.body.rev);
+      return { ok: true, members: res.body.members };
+    } catch {
+      return { ok: false, reason: 'network' };
+    }
   }
+  return { ok: false, reason: 'conflict' };
 }
 
 export async function pullFriendGroup() {
@@ -143,7 +158,7 @@ export async function pullFriendGroup() {
     const res = await api('/api/league/pull', { user, token, code: group.code });
     if (res.status === 503) return { ok: false, reason: 'not-configured' };
     if (res.status !== 200 || !res.body?.ok) return { ok: false, reason: 'server' };
-    cacheRoster(res.body.members, user);
+    cacheRoster(res.body.members, user, res.body.rev);
     return { ok: true, members: res.body.members };
   } catch {
     return { ok: false, reason: 'network' };
