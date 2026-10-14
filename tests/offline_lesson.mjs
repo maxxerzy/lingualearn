@@ -1,5 +1,9 @@
-import { chromium, devices } from '/opt/node22/lib/node_modules/playwright/index.mjs';
-import { readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
+const { chromium, devices } = await import(
+  existsSync('/opt/node22/lib/node_modules/playwright/index.mjs')
+    ? '/opt/node22/lib/node_modules/playwright/index.mjs'
+    : 'playwright'
+);
 import { spawn } from 'node:child_process';
 import { courseStepFn } from './course_driver.mjs';
 
@@ -67,7 +71,11 @@ const check = (n, c, d = '') => { console.log(`${c ? '✅' : '❌'} ${n}${d ? ' 
 }
 
 // ── 2) Im Browser: sichern, Netz aus, Lektion aus dem Cache ───────
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const browser = await chromium.launch(
+  existsSync('/opt/pw-browsers/chromium-1194/chrome-linux/chrome')
+    ? { executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' }
+    : {}
+);
 const ctx = await browser.newContext({ ...devices['iPhone 14'] });
 const page = await ctx.newPage();
 const errs = []; page.on('pageerror', e => errs.push(e.message));

@@ -184,6 +184,31 @@ console.log('\n── Geräte-Abgleich (core/sync.js) ──');
   const swapped = sync.mergeSnapshots(remote, local).data;
   eq('Reihenfolge ändert nichts an XP und Kartenstufen',
     [swapped['lingualearn_game_'].xp, swapped['lingualearn_cards_']['d:Haus'].level], [900, 4]);
+
+  // Einstellungen und Freundesgruppe werden synchronisiert (jüngeres Gerät gewinnt)
+  const setLocal = {
+    updatedAt: 2000,
+    data: {
+      'lingualearn_reminder_': { enabled: true, hour: 19 },
+      'lingualearn_speechrate_': '0.9',
+      'lingualearn_friendgroup_': { code: 'NEU123', name: 'Max' },
+    },
+  };
+  const setRemote = {
+    updatedAt: 1000,
+    data: {
+      'lingualearn_reminder_': { enabled: false, hour: 18 },
+      'lingualearn_speechrate_': '0.7',
+      'lingualearn_friendgroup_': { code: 'ALT456', name: 'Max' },
+    },
+  };
+  const mSettings = sync.mergeSnapshots(setLocal, setRemote).data;
+  eq('Erinnerung: jüngeres Gerät gewinnt', mSettings['lingualearn_reminder_'].hour, 19);
+  eq('Sprechtempo: jüngeres Gerät gewinnt', mSettings['lingualearn_speechrate_'], '0.9');
+  eq('Freundesgruppe: jüngeres Gerät gewinnt', mSettings['lingualearn_friendgroup_'].code, 'NEU123');
+  check('PREFIXES enthält reminder, speechrate und friendgroup',
+    ['lingualearn_reminder_', 'lingualearn_speechrate_', 'lingualearn_friendgroup_']
+      .every(p => sync.PREFIXES.includes(p)));
 }
 
 // ── 3) Satzlogik ─────────────────────────────────────────────────

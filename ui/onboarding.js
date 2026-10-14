@@ -8,7 +8,7 @@ import { startPlacement } from '../core/placement.js';
 // Sprache wählen → Tagesziel → Motivation → Vorkenntnisse.
 // Ohne Vorkenntnisse geht es direkt in Lektion 1; wer schon etwas kann,
 // bekommt vorher den Einstufungstest (`core/placement.js`).
-const FLAGS = { da: '🇩🇰', el: '🇬🇷', la: '🏛️', fr: '🇫🇷', es: '🇪🇸', ru: '🇷🇺', ja: '🇯🇵', zh: '🇨🇳' };
+const FLAGS = { da: '🇩🇰', el: '🇬🇷', fr: '🇫🇷', es: '🇪🇸', la: '📜', ru: '🇷🇺', ja: '🇯🇵', zh: '🇨🇳', pt: '🇵🇹' };
 
 function key() {
   const u = getCurrentUser();
