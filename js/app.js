@@ -230,6 +230,9 @@ function doLogout() {
 const LANG_FLAG = {
   da: '🇩🇰', el: '🇬🇷', fr: '🇫🇷', es: '🇪🇸', la: '📜',
   ru: '🇷🇺', ja: '🇯🇵', zh: '🇨🇳', pt: '🇵🇹',
+  // Hocharabisch gehört keinem einzelnen Land — „ع“ (ʿAyn) ist der
+  // Anfangsbuchstabe von „عَرَبِيّ“ (arabisch).
+  ar: 'ع',
 };
 
 function populateDeckSelect() {
@@ -270,7 +273,7 @@ function buildLangChips(sorted) {
     const count = deck.cards?.length ?? deck.count;
     const due = getDeckProgress(id, count).due > 0;
     return `
-      <button type="button" class="lang-chip" data-deck="${id}" title="${deck.name} (${count} Karten)">
+      <button type="button" class="lang-chip" data-deck="${id}" data-lang="${deck.language}" title="${deck.name} (${count} Karten)">
         <span class="lang-chip__flag" aria-hidden="true">${LANG_FLAG[deck.language] || '🏳️'}</span>
         <span class="lang-chip__name">${deck.name}</span>
         ${due ? '<span class="lang-chip__dot" title="Heute fällig"></span>' : ''}
@@ -292,11 +295,17 @@ function syncLangChipsActive() {
   const wrap = document.getElementById('langChips');
   const deckSelect = document.getElementById('deckSelect');
   if (!wrap || !deckSelect) return;
+  let lang = '';
   wrap.querySelectorAll('.lang-chip').forEach(chip => {
     const active = chip.dataset.deck === deckSelect.value;
     chip.classList.toggle('lang-chip--active', active);
     chip.setAttribute('aria-pressed', String(active));
+    if (active) lang = chip.dataset.lang;
   });
+  // Zielsprache als Attribut an <html>: Darüber passt das CSS Schrift-
+  // details an (Arabisch: keine Kursive, mehr Zeilenhöhe für Vokalzeichen).
+  if (lang) document.documentElement.dataset.targetLang = lang;
+  else delete document.documentElement.dataset.targetLang;
 }
 
 function setupModeTabs() {

@@ -4,7 +4,7 @@ import { shuffleArray } from '../../../utils/helpers.js';
 import { recordGameAnswer } from '../../gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../../../ui/gami.js';
 import { playCorrect, playWrong } from '../../../utils/feedback.js';
-import { comparePronunciation, mismatchHint } from '../../../utils/pronounce.js';
+import { comparePronunciation, mismatchHint, normalizeSpoken } from '../../../utils/pronounce.js';
 import { findGapSentence } from '../../../utils/sentence.js';
 import { latinPron, speak } from '../../../utils/speech.js';
 import {
@@ -13,17 +13,6 @@ import {
 } from '../shared.js';
 import { courseGrade, courseFeedbackHtml } from './shared.js';
 import { showCourseStep } from './lesson.js';
-
-const TYPO_MAP = { 'æ': 'ae', 'ø': 'o', 'å': 'a', 'ß': 'ss', 'œ': 'oe', 'ð': 'd', 'þ': 'th' };
-function normAnswer(s) {
-  return String(s || '')
-    .toLowerCase()
-    .replace(/[.,!?;:„“”"'’«»()¿¡]/g, '')
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[æøåßœðþ]/g, ch => TYPO_MAP[ch] || ch)
-    .replace(/\s+/g, ' ')
-    .trim();
-}
 
 // Spracherkennung (Sprechen-Schritt im Kurs). Wo sie fehlt (z. B. iOS),
 // weicht der Kurs auf Referenz-Audio + Selbsteinschätzung aus.
@@ -370,15 +359,21 @@ export function renderCourseTalk(session) {
       };
       rec.onresult = e => {
         const alts = [...(e.results[0] || [])].map(a => a.transcript || '');
-        const target = normAnswer(lang === 'la' ? latinPron(phrase.target) : (phrase.roman || phrase.target));
+        // Ziel in Originalschrift UND Umschrift: Die Erkennung liefert je nach
+        // Sprache Schriftzeichen (zh/ja/ar) — früher wurde dort fälschlich
+        // nur gegen die Umschrift verglichen und nie ein Treffer gefunden.
+        const targets = [lang === 'la' ? latinPron(phrase.target) : phrase.target, phrase.roman]
+          .filter(Boolean).map(normalizeSpoken).filter(Boolean);
         const ok = alts.some(t => {
-          const h = normAnswer(t);
+          const h = normalizeSpoken(t);
           if (!h) return false;
-          if (h === target || target.includes(h) || h.includes(target)) return true;
-          // Teiltreffer: die Hälfte der Wörter genügt für ein „gut gemacht".
-          const words = target.split(' ').filter(w => w.length > 2);
-          const hit = words.filter(w => h.includes(w)).length;
-          return words.length > 0 && hit >= Math.ceil(words.length / 2);
+          return targets.some(target => {
+            if (h === target || target.includes(h) || h.includes(target)) return true;
+            // Teiltreffer: die Hälfte der Wörter genügt für ein „gut gemacht".
+            const words = target.split(' ').filter(w => w.length > 2);
+            const hit = words.filter(w => h.includes(w)).length;
+            return words.length > 0 && hit >= Math.ceil(words.length / 2);
+          });
         });
         settle(ok, alts[0] || '');
       };
