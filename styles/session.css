@@ -528,3 +528,39 @@
   overflow-x: auto;
 }
 
+
+/* ── Rechts-nach-links-Schrift (Arabisch) ──────────────────────────
+   Ein arabischer Satz in einem sonst deutschen (LTR) Absatz zeigt
+   Satzzeichen am Ende auf der FALSCHEN Seite („مرحبا." → Punkt rechts,
+   wo ein arabischer Leser beginnt). plaintext bestimmt die Leserichtung
+   je Absatz aus dem ersten starken Zeichen — deutscher Text bleibt
+   dadurch exakt wie bisher, arabischer läuft korrekt von rechts. */
+.fc-example, .gap-sentence, .talk-bubble__text, .hear-reveal, .listen-reveal,
+.story-sent, .mc-text, .match-btn, .build-tile, .pron-text, .drill-question,
+.wotd__target, .wotd__ex, .dict-words > * {
+  unicode-bidi: plaintext;
+}
+
+/* Grammatik-Seiten: arabische Einsprengsel als eigene, isolierte RTL-
+   Inseln — angrenzende deutsche Satzzeichen bleiben, wo sie hingehören. */
+[lang="ar"] {
+  unicode-bidi: isolate;
+  font-style: normal;
+  font-size: 1.12em;
+}
+
+/* Gewähltes Deck ist arabisch (gesetzt in js/app.js): Vokalzeichen
+   brauchen mehr Zeilenhöhe, und Kursiv gibt es in arabischer Schrift
+   nicht — der Browser würde die Buchstaben nur schräg verzerren. */
+:root[data-target-lang="ar"] .fc-example,
+:root[data-target-lang="ar"] .wotd__ex {
+  font-style: normal;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+:root[data-target-lang="ar"] .gap-sentence,
+:root[data-target-lang="ar"] .talk-bubble__text,
+:root[data-target-lang="ar"] .hear-reveal {
+  line-height: 1.9;
+}
+:root[data-target-lang="ar"] .build-tile { font-size: 1.1rem; }

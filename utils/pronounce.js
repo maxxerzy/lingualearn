@@ -7,16 +7,21 @@
 //
 // DOM-frei und ohne Zustand, damit `tests/unit.mjs` es ohne Browser prüft.
 
+import { arabicBase, splitGraphemes } from './sentence.js';
+
 const TYPO_MAP = { 'æ': 'ae', 'ø': 'o', 'å': 'a', 'ß': 'ss', 'œ': 'oe', 'ð': 'd', 'þ': 'th' };
 
 // Vergleichsform: Groß/Klein, Satzzeichen und Akzente sind für die
 // Aussprache-Bewertung egal — die Erkennung setzt sie ohnehin beliebig.
+// Arabisch: Die Erkennung liefert unvokalisierten Text, das Ziel ist voll
+// vokalisiert — arabicBase gleicht beides an (wirkt nur auf arabische
+// Zeichen, alle anderen Schriften bleiben unberührt).
 export function normalizeSpoken(s) {
-  return String(s || '')
+  return arabicBase(String(s || '')
     .toLowerCase()
-    .replace(/[.,!?;:„“”"'’«»()¿¡]/g, '')
+    .replace(/[.,!?;:„“”"'’«»()¿¡،؛؟]/g, '')
     .normalize('NFD').replace(/[̀-ͯ]/g, '')
-    .replace(/[æøåßœðþ]/g, ch => TYPO_MAP[ch] || ch)
+    .replace(/[æøåßœðþ]/g, ch => TYPO_MAP[ch] || ch))
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -29,9 +34,11 @@ const SPACELESS = new Set(['zh', 'ja']);
 export function tokenizeSpoken(text, lang) {
   const raw = String(text || '').trim();
   if (!raw) return [];
-  if (SPACELESS.has(lang)) return [...raw];
+  // Graphem-weise statt Codepunkt-weise: arabische Vokalzeichen bleiben
+  // an ihrem Buchstaben, statt als leerer Baustein den Abgleich zu stören.
+  if (SPACELESS.has(lang)) return splitGraphemes(raw);
   const words = raw.split(/\s+/);
-  return words.length > 1 ? words : [...raw];
+  return words.length > 1 ? words : splitGraphemes(raw);
 }
 
 // Wurde buchstabenweise zerlegt? Dann werden die Bausteine ohne

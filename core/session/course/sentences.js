@@ -4,7 +4,7 @@ import { shuffleArray } from '../../../utils/helpers.js';
 import { recordGameAnswer } from '../../gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../../../ui/gami.js';
 import { playCorrect, playWrong } from '../../../utils/feedback.js';
-import { findGapSentence, joinSentence, splitSentence } from '../../../utils/sentence.js';
+import { findGapSentence, isRtl, joinSentence, splitSentence } from '../../../utils/sentence.js';
 import {
   announceUnlocks, buildMCOptions, courseBadge, escHtml, exampleLine, getLangName, isReverse,
   markMcAnswer, mcOptionsMarkup, speakWord, wireExampleAudio
@@ -103,6 +103,9 @@ export function renderCourseBuild(session) {
   const splitLang = rev ? 'de' : lang;
   const tokens = splitSentence(rev ? card.exampleDE : card.example, splitLang);
   const order = shuffleArray(tokens.map((_, i) => i));
+  // Arabisch: Kachel-Reihen beginnen rechts — das erste Wort des Satzes
+  // muss dort landen, wo ein arabischer Leser zu lesen anfängt.
+  const dir = isRtl(splitLang) ? 'rtl' : 'ltr';
   const learnArea = document.getElementById('learnArea');
 
   learnArea.innerHTML = `
@@ -110,8 +113,8 @@ export function renderCourseBuild(session) {
       ${courseBadge(`<i class="fas fa-comment-dots"></i> Sätze üben — noch ${session.queue.length}`)}
       <p class="build-src">„${escHtml(rev ? card.example : card.exampleDE)}"</p>
       <p class="prompt">${rev ? 'Setze die deutsche Übersetzung zusammen:' : 'Setze den Satz zusammen:'}</p>
-      <div class="build-answer" id="courseBuildAnswer" aria-label="Deine Antwort"></div>
-      <div class="build-pool" id="courseBuildPool">
+      <div class="build-answer" id="courseBuildAnswer" dir="${dir}" aria-label="Deine Antwort"></div>
+      <div class="build-pool" id="courseBuildPool" dir="${dir}">
         ${order.map(i => `<button type="button" class="build-tile" data-i="${i}">${escHtml(tokens[i])}</button>`).join('')}
       </div>
       <div class="actions">
