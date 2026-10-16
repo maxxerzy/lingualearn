@@ -431,6 +431,30 @@ console.log('\n── Umschrift-Hilfe (utils/romanize.js) ──');
     ['anā', 'fī', 'albayti']);
 }
 
+// ── 7) Speicher-Adapter (core/storage.js) ─────────────────────────
+console.log('\n── Speicher-Adapter (core/storage.js) ──');
+{
+  const { storage } = await import('../core/storage.js');
+  storage.setItem('test_k1', 'val_1');
+  eq('storage.setItem & storage.getItem Basis', storage.getItem('test_k1'), 'val_1');
+  storage.removeItem('test_k1');
+  eq('storage.removeItem entfernt Schlüssel', storage.getItem('test_k1'), null);
+
+  // QuotaExceeded-Simulation
+  const origSetItem = globalThis.localStorage.setItem;
+  globalThis.localStorage.setItem = (k) => {
+    if (k === 'overflow_key') throw new Error('QuotaExceededError');
+    origSetItem(k);
+  };
+  storage.setItem('overflow_key', 'idb_only_data');
+  eq('storage fängt QuotaExceeded ab und liest Overflow-Daten', storage.getItem('overflow_key'), 'idb_only_data');
+  storage.removeItem('overflow_key');
+  globalThis.localStorage.setItem = origSetItem;
+
+  const est = await storage.estimate();
+  check('storage.estimate liefert Backend und Zahlen', typeof est.backend === 'string' && est.usageBytes >= 0 && est.quotaBytes > 0);
+}
+
 const ms = Date.now() - t0;
 console.log(`\n${count} Prüfungen in ${ms} ms`);
 check('Laufzeit unter zwei Sekunden', ms < 2000, `${ms} ms`);

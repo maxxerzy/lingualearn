@@ -1,6 +1,7 @@
 import { getCurrentUser } from './auth.js';
 import { getSyncKey } from './sync.js';
 import { getLeague, getCurrentWeekId } from './league.js';
+import { storage } from './storage.js';
 
 // Freundesliga: eine ECHTE Rangliste statt simulierter Gegner. Eine
 // Gruppe ist ein selbstgewählter Code (kein eigenes Konto) — wer ihn
@@ -25,15 +26,15 @@ function rosterKey(user) { return user ? ROSTER_KEY + user : null; }
 export function getFriendGroup(user = getCurrentUser()) {
   const key = groupKey(user);
   if (!key) return null;
-  try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch { return null; }
+  try { return JSON.parse(storage.getItem(key) || 'null'); } catch { return null; }
 }
 
 function setFriendGroup(group, user = getCurrentUser()) {
   const key = groupKey(user);
   if (!key) return;
   try {
-    if (group) localStorage.setItem(key, JSON.stringify(group));
-    else localStorage.removeItem(key);
+    if (group) storage.setItem(key, JSON.stringify(group));
+    else storage.removeItem(key);
   } catch { /* Speicher voll — Gruppe bleibt für diese Sitzung im Speicher */ }
 }
 
@@ -43,7 +44,7 @@ function cacheRoster(members, user = getCurrentUser(), rev = null) {
   try {
     const prev = getCachedRoster(user);
     const revToSave = rev !== null ? rev : (prev?.rev || 0);
-    localStorage.setItem(key, JSON.stringify({ members: members || {}, rev: revToSave, cachedAt: Date.now() }));
+    storage.setItem(key, JSON.stringify({ members: members || {}, rev: revToSave, cachedAt: Date.now() }));
   }
   catch { /* egal — die Liste bleibt beim nächsten Pull aktuell */ }
 }
@@ -51,7 +52,7 @@ function cacheRoster(members, user = getCurrentUser(), rev = null) {
 export function getCachedRoster(user = getCurrentUser()) {
   const key = rosterKey(user);
   if (!key) return null;
-  try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch { return null; }
+  try { return JSON.parse(storage.getItem(key) || 'null'); } catch { return null; }
 }
 
 export function generateFriendCode(len = 6) {

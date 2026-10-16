@@ -1,4 +1,5 @@
 import { getCurrentUser } from './auth.js';
+import { storage } from './storage.js';
 
 // Geräte-Synchronisation: Der komplette Lernstand eines Kontos wird als
 // Schnappschuss mit dem Server abgeglichen, sodass Handy, iPad und Mac
@@ -23,7 +24,7 @@ const LAST_SYNC_KEY = 'lingualearn_lastsync_';
 
 function readJson(key) {
   try {
-    const raw = localStorage.getItem(key);
+    const raw = storage.getItem(key);
     if (raw === null) return undefined;
     try { return JSON.parse(raw); } catch { return raw; }   // Rohwerte (z. B. „off")
   } catch { return undefined; }
@@ -31,7 +32,7 @@ function readJson(key) {
 
 function writeJson(key, value) {
   try {
-    localStorage.setItem(key, typeof value === 'string' ? value : JSON.stringify(value));
+    storage.setItem(key, typeof value === 'string' ? value : JSON.stringify(value));
   } catch { /* Speicher voll — lokal weiterarbeiten */ }
 }
 
@@ -50,7 +51,7 @@ function writeJson(key, value) {
 const KEY_STORE = 'lingualearn_synckey_';
 
 export function readSyncKey(user = getCurrentUser()) {
-  try { return localStorage.getItem(KEY_STORE + user) || null; } catch { return null; }
+  try { return storage.getItem(KEY_STORE + user) || null; } catch { return null; }
 }
 
 export function isValidSyncKey(key) {
@@ -59,7 +60,7 @@ export function isValidSyncKey(key) {
 
 export function setSyncKey(key, user = getCurrentUser()) {
   if (!user || !isValidSyncKey(key)) return false;
-  try { localStorage.setItem(KEY_STORE + user, key.trim().toLowerCase()); } catch { return false; }
+  try { storage.setItem(KEY_STORE + user, key.trim().toLowerCase()); } catch { return false; }
   return true;
 }
 
@@ -78,7 +79,7 @@ export async function getSyncKey(user = getCurrentUser()) {
 // Das Passwort selbst verlässt das Gerät nie.
 export async function deriveToken(user) {
   try {
-    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '{}');
+    const users = JSON.parse(storage.getItem(USERS_KEY) || '{}');
     const hash = users?.[user]?.passwordHash;
     if (!hash || !globalThis.crypto?.subtle) return null;
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${user}:${hash}`));
@@ -258,7 +259,7 @@ export function mergeSnapshots(local, remote) {
 // Das Quellkonto bleibt dabei unverändert erhalten.
 export function listLocalAccounts(exceptUser = getCurrentUser()) {
   try {
-    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '{}');
+    const users = JSON.parse(storage.getItem(USERS_KEY) || '{}');
     return Object.keys(users).filter(u => u !== exceptUser);
   } catch { return []; }
 }
@@ -276,7 +277,7 @@ export function accountHasData(user) {
 export function mergeLocalAccount(fromUser, toUser = getCurrentUser()) {
   if (!fromUser || !toUser || fromUser === toUser) return { ok: false, reason: 'bad-args' };
   const users = (() => {
-    try { return JSON.parse(localStorage.getItem(USERS_KEY) || '{}'); } catch { return {}; }
+    try { return JSON.parse(storage.getItem(USERS_KEY) || '{}'); } catch { return {}; }
   })();
   if (!users[fromUser]) return { ok: false, reason: 'unknown-account' };
 
@@ -304,13 +305,13 @@ async function api(path, payload) {
 }
 
 export function getLastSync(user) {
-  try { return Number(localStorage.getItem(LAST_SYNC_KEY + user)) || 0; } catch { return 0; }
+  try { return Number(storage.getItem(LAST_SYNC_KEY + user)) || 0; } catch { return 0; }
 }
 function setLastSync(user, data, serialized) {
   try {
-    localStorage.setItem(LAST_SYNC_KEY + user, String(Date.now()));
-    if (serialized !== undefined) localStorage.setItem(SIG_KEY + user, signatureFromStr(serialized));
-    else if (data !== undefined) localStorage.setItem(SIG_KEY + user, signature(data));
+    storage.setItem(LAST_SYNC_KEY + user, String(Date.now()));
+    if (serialized !== undefined) storage.setItem(SIG_KEY + user, signatureFromStr(serialized));
+    else if (data !== undefined) storage.setItem(SIG_KEY + user, signature(data));
   } catch { /* egal */ }
 }
 
@@ -341,7 +342,7 @@ export async function syncNow({ user = getCurrentUser(), force = false } = {}) {
   // anderer Geräte ankommt.
   if (!force && Date.now() - getLastSync(user) < QUIET_MS) {
     let lastSig = null;
-    try { lastSig = localStorage.getItem(SIG_KEY + user); } catch { /* egal */ }
+    try { lastSig = storage.getItem(SIG_KEY + user); } catch { /* egal */ }
     if (lastSig && lastSig === signature(collectSnapshot(user).data)) {
       return { ok: true, changed: false, uploaded: false, skipped: true };
     }
@@ -445,15 +446,15 @@ export async function deleteAccount(user = getCurrentUser()) {
   }
 
   for (const p of PREFIXES) {
-    try { localStorage.removeItem(p + user); } catch { /* egal */ }
+    try { storage.removeItem(p + user); } catch { /* egal */ }
   }
   for (const k of [KEY_STORE, LAST_SYNC_KEY, SIG_KEY, 'lingualearn_friendroster_']) {
-    try { localStorage.removeItem(k + user); } catch { /* egal */ }
+    try { storage.removeItem(k + user); } catch { /* egal */ }
   }
   try {
-    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '{}');
+    const users = JSON.parse(storage.getItem(USERS_KEY) || '{}');
     delete users[user];
-    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    storage.setItem(USERS_KEY, JSON.stringify(users));
   } catch { /* egal */ }
 
   return { ok: true, server };

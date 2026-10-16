@@ -1,6 +1,7 @@
 import { deckMeta } from '../js/data/decks/meta.js';
 import { createUserStore } from './userStore.js';
 import { setLessonPlan } from './course.js';
+import { storage } from './storage.js';
 
 const defaultStats = {
   successRate: 0,
@@ -25,12 +26,12 @@ for (const m of deckMeta) {
   liveDecks[m.id] = { name: m.name, language: m.language, count: m.count, cards: null };
 }
 
-// Vom Nutzer importierte Decks überleben den Reload via localStorage.
+// Vom Nutzer importierte Decks überleben den Reload via storage (IndexedDB/localStorage).
 const IMPORTED_KEY = 'lingualearn_imported_decks';
 
 function loadImportedDecks() {
   try {
-    return JSON.parse(localStorage.getItem(IMPORTED_KEY) || '{}');
+    return JSON.parse(storage.getItem(IMPORTED_KEY) || '{}');
   } catch {
     return {};
   }
@@ -64,7 +65,7 @@ export function addImportedDeck(deckId, deckData) {
   const all = loadImportedDecks();
   all[deckId] = deckData;
   try {
-    localStorage.setItem(IMPORTED_KEY, JSON.stringify(all));
+    storage.setItem(IMPORTED_KEY, JSON.stringify(all));
   } catch { /* storage voll — Deck bleibt für diese Sitzung nutzbar */ }
 }
 
