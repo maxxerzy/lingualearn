@@ -36,13 +36,20 @@ function loadImportedDecks() {
   }
 }
 
+// Flaggen-Symbol je Sprache — rein dekorativ für die Sprach-Chips und das
+// Onboarding. Latein hat kein Land (Schriftrolle), Hocharabisch „ع" (ʿAyn).
+export const LANG_FLAG = {
+  da: '🇩🇰', el: '🇬🇷', fr: '🇫🇷', es: '🇪🇸', la: '📜',
+  ru: '🇷🇺', ja: '🇯🇵', zh: '🇨🇳', pt: '🇵🇹', ar: 'ع',
+};
+
 for (const [id, d] of Object.entries(loadImportedDecks())) {
   if (d?.name && Array.isArray(d.cards)) {
     liveDecks[id] = {
       name: d.name,
       language: d.language,
       count: d.cards.length,
-      cards: JSON.parse(JSON.stringify(d.cards)),
+      cards: d.cards.slice(),
     };
   }
 }
@@ -83,8 +90,9 @@ export async function loadDeck(deckId) {
     const retry = deckRetries[deckId] ? `?v=${deckRetries[deckId]}` : '';
     const mod = await import(`../js/data/decks/${language}.js${retry}`);
     // Alle Übersetzungen (exampleDE) stehen fest in den Deck-Dateien —
-    // kein Laufzeit-API-Aufruf mehr nötig.
-    entry.cards = JSON.parse(JSON.stringify(mod.cards));
+    // kein Laufzeit-API-Aufruf mehr nötig. Flache Kopie reicht, da
+    // Karten-Objekte im State nie mutiert werden.
+    entry.cards = mod.cards.slice();
     // Thematische Lektionen (Karten sind bereits thematisch sortiert).
     entry.lessonTitles = mod.lessonTitles || null;
     entry.lessonSizes = mod.lessonSizes || null;

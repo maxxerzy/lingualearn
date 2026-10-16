@@ -1,7 +1,7 @@
 import { getCurrentSession, setCurrentSession, getUserStats, setUserStats } from '../../state.js';
 import { updateProgress } from '../../progress.js';
 import { updateStats } from '../../stats.js';
-import { shuffleArray } from '../../../utils/helpers.js';
+import { shuffleArray, todayStr } from '../../../utils/helpers.js';
 import { getDueFronts, getCardState } from '../../cardProgress.js';
 import { checkAchievements, consumeXpBoost, recordSessionEnd } from '../../gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../../../ui/gami.js';
@@ -431,7 +431,7 @@ function endCourseLesson(session) {
 
   const userStats = getUserStats();
   userStats.totalSessions = (userStats.totalSessions || 0) + 1;
-  const today = new Date().toISOString().slice(0, 10);
+  const today = todayStr();
   if (userStats.lastSessionDate !== today) {
     userStats.activeDays = (userStats.activeDays || 0) + 1;
     userStats.lastSessionDate = today;

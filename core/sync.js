@@ -306,10 +306,11 @@ async function api(path, payload) {
 export function getLastSync(user) {
   try { return Number(localStorage.getItem(LAST_SYNC_KEY + user)) || 0; } catch { return 0; }
 }
-function setLastSync(user, data) {
+function setLastSync(user, data, serialized) {
   try {
     localStorage.setItem(LAST_SYNC_KEY + user, String(Date.now()));
-    if (data !== undefined) localStorage.setItem(SIG_KEY + user, signature(data));
+    if (serialized !== undefined) localStorage.setItem(SIG_KEY + user, signatureFromStr(serialized));
+    else if (data !== undefined) localStorage.setItem(SIG_KEY + user, signature(data));
   } catch { /* egal */ }
 }
 
@@ -317,11 +318,13 @@ function setLastSync(user, data) {
 // seit dem letzten Mal überhaupt etwas geändert hat — sonst wird bei
 // jedem App-Wechsel unnötig gefunkt.
 const SIG_KEY = 'lingualearn_syncsig_';
-function signature(data) {
-  const s = JSON.stringify(data);
+function signatureFromStr(s) {
   let h = 0;
   for (let i = 0; i < s.length; i++) h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
   return `${s.length}:${h}`;
+}
+function signature(data) {
+  return signatureFromStr(JSON.stringify(data));
 }
 const QUIET_MS = 5 * 60 * 1000;   // so lange gilt ein unveränderter Stand als frisch
 
@@ -336,11 +339,12 @@ export async function syncNow({ user = getCurrentUser(), force = false } = {}) {
   // Nichts gelernt und gerade eben erst abgeglichen? Dann gar nicht erst
   // funken. Beim App-Start (force) wird immer geholt, damit der Stand
   // anderer Geräte ankommt.
-  const sigNow = signature(collectSnapshot(user).data);
   if (!force && Date.now() - getLastSync(user) < QUIET_MS) {
     let lastSig = null;
     try { lastSig = localStorage.getItem(SIG_KEY + user); } catch { /* egal */ }
-    if (lastSig === sigNow) return { ok: true, changed: false, uploaded: false, skipped: true };
+    if (lastSig && lastSig === signature(collectSnapshot(user).data)) {
+      return { ok: true, changed: false, uploaded: false, skipped: true };
+    }
   }
 
   let pulled;
@@ -356,14 +360,15 @@ export async function syncNow({ user = getCurrentUser(), force = false } = {}) {
   const local = collectSnapshot(user);
   let remote = pulled.body?.snapshot || null;
   let merged = mergeSnapshots(local, remote);
-  const changed = remote ? JSON.stringify(merged.data) !== JSON.stringify(local.data) : false;
+  const mergedJson = JSON.stringify(merged.data);
+  const changed = remote ? mergedJson !== JSON.stringify(local.data) : false;
   if (changed) applySnapshot(user, merged);
 
   // Hat der Server bereits genau diesen Stand, wird nicht hochgeladen.
   // Sonst würde jeder App-Wechsel einen überflüssigen Schreibvorgang
   // auslösen (Datenvolumen, KV-Kontingent).
-  if (remote && JSON.stringify(merged.data) === JSON.stringify(remote.data)) {
-    setLastSync(user, merged.data);
+  if (remote && mergedJson === JSON.stringify(remote.data)) {
+    setLastSync(user, merged.data, mergedJson);
     return { ok: true, changed, hadRemote: true, uploaded: false };
   }
 

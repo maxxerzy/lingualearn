@@ -2,7 +2,8 @@ import { initNavigation } from '../ui/navigation.js';
 import { initSettings, handleImport, handleExport } from '../ui/settings.js';
 import { startSession, exitSession } from '../core/session.js';
 import { updateStats } from '../core/stats.js';
-import { getDecks, reinitUserStats, setCurrentSession } from '../core/state.js';
+import { getDecks, reinitUserStats, setCurrentSession, LANG_FLAG } from '../core/state.js';
+import { yesterdayStr } from '../utils/helpers.js';
 import { isLoggedIn, logout, getCurrentUser } from '../core/auth.js';
 import { reinitCardProgress, getDeckProgress } from '../core/cardProgress.js';
 import { reinitGame } from '../core/gamification.js';
@@ -174,8 +175,7 @@ function showApp() {
 
   // Lokale Serien-Erinnerung: gestern gelernt, heute noch nicht → Hinweis.
   const g = getGame();
-  const yest = (() => { const d = new Date(); d.setDate(d.getDate() - 1); return d.toISOString().slice(0, 10); })();
-  if (g.streak.current > 0 && g.streak.lastDate === yest) {
+  if (g.streak.current > 0 && g.streak.lastDate === yesterdayStr()) {
     showToast(`<i class="fas fa-fire toast__icon"></i><div class="toast__body"><b>Deine Serie: ${g.streak.current} ${g.streak.current === 1 ? 'Tag' : 'Tage'} 🔥</b><span>Lern heute eine Runde, um sie zu halten!</span></div>`, { duration: 5000 });
   }
 }
@@ -224,16 +224,6 @@ function doLogout() {
   document.getElementById('userDropdown').hidden = true;
   window.LinguaAuth.showLoginScreen();
 }
-
-// Flaggen-Symbol je Sprache — rein dekorativ für die Sprach-Chips, das
-// <select> bleibt die Datenquelle. Latein hat kein Land, daher eine Schriftrolle.
-const LANG_FLAG = {
-  da: '🇩🇰', el: '🇬🇷', fr: '🇫🇷', es: '🇪🇸', la: '📜',
-  ru: '🇷🇺', ja: '🇯🇵', zh: '🇨🇳', pt: '🇵🇹',
-  // Hocharabisch gehört keinem einzelnen Land — „ع“ (ʿAyn) ist der
-  // Anfangsbuchstabe von „عَرَبِيّ“ (arabisch).
-  ar: 'ع',
-};
 
 function populateDeckSelect() {
   const deckSelect = document.getElementById('deckSelect');

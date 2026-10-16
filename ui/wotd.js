@@ -5,6 +5,9 @@ import { renderGamiHeader } from './gami.js';
 import { showToast } from './toast.js';
 import { speak } from '../utils/speech.js';
 import { openModal, closeModal } from './modal.js';
+import { escHtml as esc, todayStr } from '../utils/helpers.js';
+
+export { esc };
 
 // „Wort des Tages": deterministisch aus dem gewählten Deck (Seed = Datum),
 // einmal pro Tag mit einem kleinen XP-Bonus abschließbar.
@@ -34,12 +37,7 @@ export function initWotdModal() {
   });
 }
 
-function todayStr() { return new Date().toISOString().slice(0, 10); }
 function dateSeed(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; }
-
-export function esc(str) {
-  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
 
 export async function renderWotd() {
   const panel = document.getElementById('wotd');

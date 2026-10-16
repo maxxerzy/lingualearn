@@ -1,11 +1,12 @@
-import { getGame, levelInfo, ACHIEVEMENTS, getGems } from '../core/gamification.js';
+import { getGame, levelInfo, ACHIEVEMENTS } from '../core/gamification.js';
 import { getDeckProgress, getDueFronts } from '../core/cardProgress.js';
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
 import { getErrors } from '../core/errorLog.js';
 import { startErrorReviewByFronts, startWeakThemePractice } from '../core/session.js';
 import { themeOf } from '../js/data/themes.js';
-import { themeProfile, weakThemes, weakestForRecommendation, ratePercent, WEAK_RATE, SHOW_RATE, MIN_THEME_ANSWERS } from '../core/weakness.js';
+import { themeProfile, weakestForRecommendation, ratePercent, WEAK_RATE, SHOW_RATE, MIN_THEME_ANSWERS } from '../core/weakness.js';
+import { escHtml, todayStr } from '../utils/helpers.js';
 
 // Fallback-Titel, falls ein Deck (noch) keine thematischen Lektions-Titel
 // mitbringt: häufigstes Thema der 8 Wörter, sonst das markanteste Wort.
@@ -53,19 +54,24 @@ export function renderGamiHeader() {
 }
 
 // ── Lern-Ansicht: Deck-Fortschritt, Fällig-Zähler, Tagesziel ─────
-export function renderLearnWidgets() {
+// duringSession=true spart während einer laufenden Session die teure
+// Neuauswertung der Konfigurations-Widgets (#smartBar, #courseProgress,
+// #startBtn); diese werden beim Beenden/Verlassen der Session aufgefrischt.
+export function renderLearnWidgets({ duringSession = false } = {}) {
   const deckSelect = document.getElementById('deckSelect');
   const deckId = deckSelect?.value;
   const decks = getDecks();
 
-  renderSmartBar(deckId);
+  if (!duringSession) {
+    renderSmartBar(deckId);
 
-  // Lernpfad- und Grammatik-Knopf gehören zum Lernkurs — sonst ausblenden.
-  const modeNow = document.querySelector('.mode-btn.active')?.dataset.mode;
-  const mapCfgBtn = document.getElementById('coursemapBtn');
-  if (mapCfgBtn) mapCfgBtn.style.display = modeNow === 'course' ? '' : 'none';
-  const gramCfgBtn = document.getElementById('grammarBtn');
-  if (gramCfgBtn) gramCfgBtn.style.display = modeNow === 'course' ? '' : 'none';
+    // Lernpfad- und Grammatik-Knopf gehören zum Lernkurs — sonst ausblenden.
+    const modeNow = document.querySelector('.mode-btn.active')?.dataset.mode;
+    const mapCfgBtn = document.getElementById('coursemapBtn');
+    if (mapCfgBtn) mapCfgBtn.style.display = modeNow === 'course' ? '' : 'none';
+    const gramCfgBtn = document.getElementById('grammarBtn');
+    if (gramCfgBtn) gramCfgBtn.style.display = modeNow === 'course' ? '' : 'none';
+  }
 
   if (deckId && decks[deckId]) {
     const total = decks[deckId].cards?.length ?? decks[deckId].count ?? 0;
@@ -84,44 +90,46 @@ export function renderLearnWidgets() {
         `${p.mastered} gemeistert · ${p.seen - p.mastered} in Arbeit · ${p.fresh} neu`);
     }
 
-    // Lernkurs-Zeile + Start-Button. Der genaue Lektions-Zuschnitt (Titel,
-    // Nummer) steht erst nach dem Laden des Decks fest (thematischer Plan).
-    const { introduced } = getCourseState(deckId);
-    const done = introduced >= total && total > 0;
-    const activeMode = document.querySelector('.mode-btn.active')?.dataset.mode;
+    if (!duringSession) {
+      // Lernkurs-Zeile + Start-Button. Der genaue Lektions-Zuschnitt (Titel,
+      // Nummer) steht erst nach dem Laden des Decks fest (thematischer Plan).
+      const { introduced } = getCourseState(deckId);
+      const done = introduced >= total && total > 0;
+      const activeMode = document.querySelector('.mode-btn.active')?.dataset.mode;
 
-    // Die „Lektion N"-Zeile ist nur im Lernkurs relevant.
-    const courseWrap = document.getElementById('courseProgress');
-    if (courseWrap) courseWrap.style.display = activeMode === 'course' ? '' : 'none';
+      // Die „Lektion N"-Zeile ist nur im Lernkurs relevant.
+      const courseWrap = document.getElementById('courseProgress');
+      if (courseWrap) courseWrap.style.display = activeMode === 'course' ? '' : 'none';
 
-    setText('courseProgressText', done
-      ? `Alle ${total} Wörter gelernt — Endlos-Runden halten sie frisch`
-      : `Lektion ${lessonNumber(deckId)} · ${introduced}/${total} Wörter`);
-    const startBtn = document.getElementById('startBtn');
-    if (startBtn && activeMode !== 'course') {
-      startBtn.innerHTML = '<i class="fas fa-play"></i> Session starten';
-    } else if (startBtn && done) {
-      startBtn.innerHTML = '<i class="fas fa-rotate"></i> Endlos-Runde starten';
-    }
+      setText('courseProgressText', done
+        ? `Alle ${total} Wörter gelernt — Endlos-Runden halten sie frisch`
+        : `Lektion ${lessonNumber(deckId)} · ${introduced}/${total} Wörter`);
+      const startBtn = document.getElementById('startBtn');
+      if (startBtn && activeMode !== 'course') {
+        startBtn.innerHTML = '<i class="fas fa-play"></i> Session starten';
+      } else if (startBtn && done) {
+        startBtn.innerHTML = '<i class="fas fa-rotate"></i> Endlos-Runde starten';
+      }
 
-    if (!done) {
-      loadDeck(deckId).then(() => {
-        if (document.getElementById('deckSelect')?.value !== deckId) return;
-        const deck = getDecks()[deckId];
-        const L = lessonNumber(deckId);   // jetzt mit thematischem Plan
-        const title = deck?.lessonTitles?.[L - 1] || fallbackLessonTitle(deck, L);
-        setText('courseProgressText',
-          `Lektion ${L}${title ? ' · ' + title : ''} · ${introduced}/${total} Wörter`);
-        const sb = document.getElementById('startBtn');
-        if (sb && document.querySelector('.mode-btn.active')?.dataset.mode === 'course') {
-          sb.innerHTML = `<i class="fas fa-graduation-cap"></i> Lektion ${L} starten`;
-        }
-      }).catch(() => {});
+      if (!done) {
+        loadDeck(deckId).then(() => {
+          if (document.getElementById('deckSelect')?.value !== deckId) return;
+          const deck = getDecks()[deckId];
+          const L = lessonNumber(deckId);   // jetzt mit thematischem Plan
+          const title = deck?.lessonTitles?.[L - 1] || fallbackLessonTitle(deck, L);
+          setText('courseProgressText',
+            `Lektion ${L}${title ? ' · ' + title : ''} · ${introduced}/${total} Wörter`);
+          const sb = document.getElementById('startBtn');
+          if (sb && document.querySelector('.mode-btn.active')?.dataset.mode === 'course') {
+            sb.innerHTML = `<i class="fas fa-graduation-cap"></i> Lektion ${L} starten`;
+          }
+        }).catch(() => {});
+      }
     }
   }
 
   const g = getGame();
-  const today = new Date().toISOString().slice(0, 10);
+  const today = todayStr();
   const count = g.daily.date === today ? g.daily.count : 0;
   const goalHit = count >= g.dailyGoal;
   // Erreicht → Zahl in Klammern + grünes Häkchen; Balken bei 100 % gekappt.
@@ -148,8 +156,7 @@ export function renderStatsExtras() {
   // Wochen-Bilanz: Summe + aktive Tage der letzten 7 Tage.
   let weekCards = 0, weekDays = 0;
   for (let i = 0; i < 7; i++) {
-    const d = new Date(); d.setDate(d.getDate() - i);
-    const n = g.activity[d.toISOString().slice(0, 10)] || 0;
+    const n = g.activity[todayStr(-i)] || 0;
     weekCards += n;
     if (n > 0) weekDays++;
   }
@@ -170,13 +177,14 @@ function renderWeakThemes() {
   if (!root) return;
   const deckId = document.getElementById('deckSelect')?.value;
   const deckName = getDecks()[deckId]?.name || '';
-  const themes = deckId ? weakThemes(deckId, 3) : [];
+  const profile = deckId ? themeProfile(deckId) : [];
+  const themes = profile.filter(t => t.rate < SHOW_RATE).slice(0, 3);
 
   if (!themes.length) {
     root.innerHTML = '';
     if (!hint) return;
     if (!deckId) hint.textContent = 'Kein Deck gewählt.';
-    else if (themeProfile(deckId).length) hint.textContent = `${deckName}: Gerade hakt kein Thema — alles über ${Math.round(SHOW_RATE * 100)} %.`;
+    else if (profile.length) hint.textContent = `${deckName}: Gerade hakt kein Thema — alles über ${Math.round(SHOW_RATE * 100)} %.`;
     else hint.textContent = `${deckName}: noch zu wenige Antworten — ab ${MIN_THEME_ANSWERS} Antworten je Thema erscheint hier dein Profil.`;
     return;
   }
@@ -184,7 +192,7 @@ function renderWeakThemes() {
   if (hint) hint.textContent = `${deckName}: Tippe ein Thema an, um genau diese Wörter zu üben.`;
   root.innerHTML = themes.map(t => `
     <button type="button" class="weak-theme${t.rate < WEAK_RATE ? ' weak-theme--bad' : ''}"
-            data-weak-theme="${escAttr(t.theme)}">
+            data-weak-theme="${escHtml(t.theme)}">
       <span class="weak-theme__main">
         <b>${escHtml(t.theme)}</b>
         <span>${t.words} Wörter · ${t.answers} Antworten</span>
@@ -200,13 +208,6 @@ function renderWeakThemes() {
       navigate?.('learn');
       startWeakThemePractice(deckId, btn.dataset.weakTheme);
     }));
-}
-
-function escHtml(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-function escAttr(s) {
-  return escHtml(s).replace(/"/g, '&quot;');
 }
 
 // GitHub-Style-Aktivitätskalender der letzten 12 Wochen.

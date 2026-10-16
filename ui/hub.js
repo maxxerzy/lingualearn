@@ -8,8 +8,7 @@ import { getGems, getInventory, getWager, startWager, getGame } from '../core/ga
 import { showToast } from './toast.js';
 import { startBlitz } from '../core/session.js';
 import { renderGamiHeader } from './gami.js';
-
-function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+import { escHtml as esc } from '../utils/helpers.js';
 
 let activeTab = 'quests';
 

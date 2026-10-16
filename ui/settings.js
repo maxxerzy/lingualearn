@@ -18,13 +18,7 @@ import { getReminder, setReminder, notificationsSupported,
          requestNotificationPermission } from '../core/reminder.js';
 import { offlineDecks, offlineSupported, savedDeckIds, saveDeckOffline,
          removeDeckOffline, formatBytes } from '../core/offline.js';
-
-// Freitext (Deck- und Kontonamen) darf nie ungeprüft in innerHTML landen —
-// importierte Decks bringen einen frei wählbaren Namen mit.
-function esc(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
+import { escHtml as esc, todayStr } from '../utils/helpers.js';
 
 // Hörprobe im aktuell gewählten Deck — so hört man das Tempo dort,
 // wo man es später braucht.
@@ -320,7 +314,7 @@ export function initSettings() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `lingualearn-fortschritt-${user}-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `lingualearn-fortschritt-${user}-${todayStr()}.json`;
     a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     showToast('<i class="fas fa-download toast__icon"></i><div class="toast__body"><b>Sicherung erstellt</b><span>Datei liegt in deinen Downloads.</span></div>');

@@ -1,6 +1,6 @@
 import { getCurrentSession, setCurrentSession } from '../../state.js';
 import { updateProgress } from '../../progress.js';
-import { shuffleArray } from '../../../utils/helpers.js';
+import { shuffleArray, pickRandom } from '../../../utils/helpers.js';
 import { recordGameAnswer } from '../../gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../../../ui/gami.js';
 import { playCorrect, playWrong } from '../../../utils/feedback.js';
@@ -397,7 +397,7 @@ export function renderCourseHearing(session) {
   const badge = `<i class="fas fa-headphones"></i> Satz hören — noch ${session.queue.length}`;
 
   // Für die Bedeutungs-Variante braucht es zwei echte Alternativsätze.
-  const alts = shuffleArray(session.knownCards.filter(c => c.exampleDE && c.exampleDE !== card.exampleDE)).slice(0, 2);
+  const alts = pickRandom(session.knownCards, 2, c => c.exampleDE && c.exampleDE !== card.exampleDE);
   const gapped = findGapSentence(card.example, card.back, lang);
   let variant = session.hearVariants?.[card.front] || 'meaning';
   if (variant === 'meaning' && alts.length < 2) variant = 'gap';

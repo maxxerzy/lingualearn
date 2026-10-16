@@ -1,6 +1,7 @@
 import { getCurrentUser } from '../core/auth.js';
 import { setDailyGoal } from '../core/gamification.js';
 import { deckMeta } from '../js/data/decks/meta.js';
+import { LANG_FLAG as FLAGS } from '../core/state.js';
 import { renderLearnWidgets } from './gami.js';
 import { startPlacement } from '../core/placement.js';
 
@@ -8,7 +9,6 @@ import { startPlacement } from '../core/placement.js';
 // Sprache wählen → Tagesziel → Motivation → Vorkenntnisse.
 // Ohne Vorkenntnisse geht es direkt in Lektion 1; wer schon etwas kann,
 // bekommt vorher den Einstufungstest (`core/placement.js`).
-const FLAGS = { da: '🇩🇰', el: '🇬🇷', fr: '🇫🇷', es: '🇪🇸', la: '📜', ru: '🇷🇺', ja: '🇯🇵', zh: '🇨🇳', pt: '🇵🇹', ar: 'ع' };
 
 function key() {
   const u = getCurrentUser();

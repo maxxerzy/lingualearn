@@ -50,6 +50,31 @@ export function splitGraphemes(word) {
 
 const PUNCT = '.,!?;:„“"»«()¿¡،؛؟';
 const PUNCT_RE = new RegExp(`[${PUNCT}]`, 'g');
+const TOKEN_SPLIT_RE = new RegExp(`[\\s${PUNCT}'’-]+`);
+const NON_PUNCT_RE = new RegExp(`[^${PUNCT}]+`);
+
+// Vorberechnete arabische Vergleichsschlüssel für dieselbe Wortliste
+// wiederverwenden (spart in collectUnlockedSentences >4.500 NFD-Läufe).
+const rtlSetCache = new WeakMap();
+const rtlListCache = new WeakMap();
+
+function getRtlSet(set, keyFn) {
+  let cached = rtlSetCache.get(set);
+  if (!cached) {
+    cached = new Set([...set].map(keyFn));
+    rtlSetCache.set(set, cached);
+  }
+  return cached;
+}
+
+function getRtlList(list, keyFn) {
+  let cached = rtlListCache.get(list);
+  if (!cached) {
+    cached = list.map(keyFn);
+    rtlListCache.set(list, cached);
+  }
+  return cached;
+}
 
 // Wortabgleich mit Toleranz für Beugung: exakt / solider Teilstring /
 // gemeinsames Präfix ≥5. Kurze Funktionswörter matchen dadurch nicht.
@@ -82,12 +107,12 @@ export function sentenceIsKnown(example, knownBackSet, knownBackList, deckBackLi
     return !deckBackList.some(b => b && example.includes(b) && !knownBackSet.has(b));
   }
   const key = s => matchKey(s, lang);
-  const tokens = example.split(new RegExp(`[\\s${PUNCT}'’-]+`)).map(key).filter(Boolean);
+  const tokens = example.split(TOKEN_SPLIT_RE).map(key).filter(Boolean);
   // Arabisch: Vokalisierung von Satz und Deck-Wort weicht ab → alles auf
   // denselben Schlüssel bringen, sonst wäre nichts „exakt bekannt".
-  const knownKeys = isRtl(lang) ? new Set([...knownBackSet].map(key)) : knownBackSet;
-  const knownList = isRtl(lang) ? knownBackList.map(key) : knownBackList;
-  const deckList = isRtl(lang) ? deckBackList.map(key) : deckBackList;
+  const knownKeys = isRtl(lang) ? getRtlSet(knownBackSet, key) : knownBackSet;
+  const knownList = isRtl(lang) ? getRtlList(knownBackList, key) : knownBackList;
+  const deckList = isRtl(lang) ? getRtlList(deckBackList, key) : deckBackList;
   for (const t of tokens) {
     if (knownKeys.has(t)) continue;                    // exakt bekannt
     if (knownList.some(b => backMatchScore(t, b, lang) >= 60)) continue; // bekannt (gebeugt)
@@ -139,7 +164,7 @@ export function findGapSentence(example, back, lang) {
   const blanked = tokens.map((t, i) => {
     if (i !== bestIdx) return t;
     // Satzzeichen am ausgeblendeten Wort erhalten
-    return t.replace(new RegExp(`[^${PUNCT}]+`), '____');
+    return t.replace(NON_PUNCT_RE, '____');
   }).join('');
   return blanked;
 }

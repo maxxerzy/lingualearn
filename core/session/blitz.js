@@ -6,7 +6,7 @@ import { confettiBurst, toastAchievements, toastCosmetics } from '../../ui/toast
 import { checkNewCosmetics } from '../cosmetics.js';
 import {
   showCombo, celebrateSessionEnd, promptText, answerText, enterFocus,
-  clearBlitzTimer, recordAnswerEffects, dailyRecapHtml, escHtml, timers
+  clearBlitzTimer, recordAnswerEffects, dailyRecapHtml, escHtml, timers, buildMCOptions
 } from './shared.js';
 
 // ── BLITZRUNDE ───────────────────────────────────────────────────
@@ -67,8 +67,7 @@ function showBlitz() {
 
   const card = session.cards[session.currentIndex % session.cards.length];
   session.currentIndex++;
-  const pool = session.cards.filter(c => c.back !== card.back && c.front !== card.front);
-  const options = shuffleArray([card, ...shuffleArray(pool).slice(0, 3)]);
+  const options = buildMCOptions(card, session.cards);
   session.currentPrompt = { card, options };
   setCurrentSession(session);
 
