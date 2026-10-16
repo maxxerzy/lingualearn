@@ -1,11 +1,10 @@
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCardStates, MAX_LEVEL } from '../core/cardProgress.js';
 import { speak } from '../utils/speech.js';
+import { escHtml as esc } from '../utils/helpers.js';
 
 // Wörterbuch: alle bereits gesehenen Wörter des gewählten Decks,
 // durchsuchbar, mit SRS-Stärke (Punkte) und Aussprache.
-
-function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
 function strengthDots(level) {
   let dots = '';
@@ -41,6 +40,7 @@ export async function renderDictionary(filter = '') {
 
   // Bei Latein steht das lateinische Wort vorn (Lernrichtung La→De).
   const rev = deck.language === 'la';
+  body.dataset.lang = deck.language;
   body.innerHTML = `
     <p class="dict-count">${seen.length} Wörter gelernt · ${esc(deck.name)}</p>
     <ul class="dict-list">
@@ -55,12 +55,16 @@ export async function renderDictionary(filter = '') {
         </li>`).join('')}
     </ul>
     ${seen.length > 200 && !q ? '<p class="dict-count">… nutze die Suche für mehr.</p>' : ''}`;
-
-  body.querySelectorAll('.dict-audio').forEach(btn =>
-    btn.addEventListener('click', () => speak(btn.dataset.say, deck.language)));
 }
 
 export function initDictionary(activateView) {
   document.getElementById('dictBackBtn')?.addEventListener('click', () => activateView?.('learn'));
   document.getElementById('dictSearch')?.addEventListener('input', e => renderDictionary(e.target.value));
+  const body = document.getElementById('dictBody');
+  body?.addEventListener('click', e => {
+    const btn = e.target.closest('.dict-audio');
+    if (!btn) return;
+    const lang = body.dataset.lang || getDecks()[document.getElementById('deckSelect')?.value]?.language;
+    speak(btn.dataset.say, lang);
+  });
 }

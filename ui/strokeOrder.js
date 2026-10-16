@@ -5,10 +5,7 @@
 // damit jeder Strich sichtbar „gezeichnet" wird.
 
 import { openModal, closeModal } from './modal.js';
-
-function esc(str) {
-  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
+import { escHtml as esc } from '../utils/helpers.js';
 
 export function hasStrokeLang(lang) { return lang === 'zh' || lang === 'ja'; }
 

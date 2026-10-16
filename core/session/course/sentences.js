@@ -1,6 +1,6 @@
 import { setCurrentSession } from '../../state.js';
 import { updateProgress } from '../../progress.js';
-import { shuffleArray } from '../../../utils/helpers.js';
+import { shuffleArray, pickRandom } from '../../../utils/helpers.js';
 import { recordGameAnswer } from '../../gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../../../ui/gami.js';
 import { playCorrect, playWrong } from '../../../utils/feedback.js';
@@ -16,8 +16,7 @@ export function renderCourseDialog(session) {
   const phrase = session.queue[0];
   const lang = session.deck.language;
   // Distraktoren: Antworten ANDERER Wendungen derselben Sprache.
-  const others = shuffleArray((session.phrasePool || [])
-    .filter(p => p.reply && p.reply !== phrase.reply)).slice(0, 2);
+  const others = pickRandom(session.phrasePool || [], 2, p => p.reply && p.reply !== phrase.reply);
   const options = shuffleArray([phrase, ...others]);
   const correctIdx = options.indexOf(phrase);
   const learnArea = document.getElementById('learnArea');
@@ -180,7 +179,7 @@ export function renderCourseBuild(session) {
 export function renderCourseMeaning(session) {
   const card = session.queue[0];
   const lang = session.deck.language;
-  const alts = shuffleArray(session.knownCards.filter(c => c.exampleDE && c.exampleDE !== card.exampleDE)).slice(0, 3);
+  const alts = pickRandom(session.knownCards, 3, c => c.exampleDE && c.exampleDE !== card.exampleDE);
   const options = shuffleArray([
     { text: card.exampleDE, correct: true },
     ...alts.map(c => ({ text: c.exampleDE, correct: false })),

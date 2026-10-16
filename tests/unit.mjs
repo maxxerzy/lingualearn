@@ -368,8 +368,30 @@ console.log('\n── Schwächen-Profil (core/weakness.js) ──');
   eq('ohne Daten keine Empfehlung', weak.weakestForRecommendation('leer'), null);
 }
 
+// ── 5) Helfer & Performance-Pfade (utils/helpers.js) ─────────────
+console.log('\n── Helfer (utils/helpers.js) ──');
+{
+  const hlp = await import('../utils/helpers.js');
+  const big = Array.from({ length: 750 }, (_, i) => ({ id: i }));
+  const picked = hlp.pickRandom(big, 3, x => x.id !== 42);
+  check('pickRandom zieht exakt 3 eindeutige Elemente aus großem Deck',
+    picked.length === 3 && new Set(picked.map(x => x.id)).size === 3 && picked.every(x => x.id !== 42));
+
+  const small = [{ id: 1 }, { id: 2 }, { id: 3 }];
+  const pickedSmall = hlp.pickRandom(small, 5, x => x.id !== 2);
+  eq('pickRandom bei kleinem Pool gibt alle Treffer zurück',
+    pickedSmall.map(x => x.id).sort(), [1, 3]);
+  eq('pickRandom bei leerem Array', hlp.pickRandom([], 3), []);
+
+  eq('escHtml maskiert &, <, >, "',
+    hlp.escHtml('a & b < c > "d"'), 'a &amp; b &lt; c &gt; &quot;d&quot;');
+  eq('todayStr/yesterdayStr liefern ISO-Datum',
+    [hlp.todayStr(), hlp.yesterdayStr(), hlp.todayStr(5)], [day(0), day(-1), day(5)]);
+}
+
 const ms = Date.now() - t0;
 console.log(`\n${count} Prüfungen in ${ms} ms`);
 check('Laufzeit unter zwei Sekunden', ms < 2000, `${ms} ms`);
 console.log(`\n${failures === 0 ? '🎉 UNIT-TESTS OK' : `❌ ${failures} Fehler`}`);
 process.exit(failures === 0 ? 0 : 1);
+

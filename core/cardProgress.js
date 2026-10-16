@@ -1,4 +1,5 @@
 import { createUserStore } from './userStore.js';
+import { todayStr as dateStr } from '../utils/helpers.js';
 
 // Leitner-style spaced repetition: each card has a level 0-8.
 // Correct answers move it up, wrong answers move it down.
@@ -17,12 +18,6 @@ const load = () => store.get();
 
 // Nach Login neu laden, damit der Zustand des richtigen Nutzers gilt.
 export function reinitCardProgress() { store.reinit(); }
-
-function dateStr(offsetDays = 0) {
-  const d = new Date();
-  d.setDate(d.getDate() + offsetDays);
-  return d.toISOString().slice(0, 10);
-}
 
 export function getCardState(deckId, front) {
   return load()[`${deckId}:${front}`] || null;

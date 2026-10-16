@@ -1,8 +1,9 @@
 import { loadDeck } from './state.js';
-import { shuffleArray } from '../utils/helpers.js';
+import { pickRandom, escHtml } from '../utils/helpers.js';
 import { seedCardStates } from './cardProgress.js';
 import { setIntroduced, lessonBoundaryAtOrBefore, lessonNumber } from './course.js';
 import { enterFocus } from './session.js';
+import { isReverse, buildMCOptions } from './session/shared.js';
 import { renderLearnWidgets } from '../ui/gami.js';
 
 // Einstufungstest — „nicht jeder fängt bei Hallo an".
@@ -26,7 +27,6 @@ const PER_ROUND = 2;
 const MIN_WINDOW = 6;                        // feiner lohnt die Suche nicht
 
 // Latein wird in Prüfungsrichtung gelernt (Latein → Deutsch).
-const isReverse = deck => deck.language === 'la';
 const promptOf = (deck, card) => (isReverse(deck) ? card.back : card.front);
 const answerOf = (deck, card) => (isReverse(deck) ? card.front : card.back);
 
@@ -37,27 +37,10 @@ export function getPlacementState() { return state; }
 // Auswahl der Frage-Karten einer Runde: aus einem Fenster um `mid`,
 // ohne Wiederholungen.
 function pickAround(cards, mid, used, n) {
-  const out = [];
   const span = Math.max(6, Math.floor(cards.length * 0.02));
   const from = Math.max(0, mid - span);
   const to = Math.min(cards.length, mid + span + 1);
-  const pool = shuffleArray(cards.slice(from, to).filter(c => !used.has(c.front)));
-  for (const c of pool) {
-    out.push(c);
-    if (out.length >= n) break;
-  }
-  return out;
-}
-
-function buildOptions(deck, card) {
-  const answer = answerOf(deck, card);
-  const pool = shuffleArray(deck.cards.filter(c => answerOf(deck, c) !== answer)).slice(0, 3);
-  return shuffleArray([card, ...pool]);
-}
-
-function esc(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  return pickRandom(cards.slice(from, to), n, c => !used.has(c.front));
 }
 
 // ── Ablauf ───────────────────────────────────────────────────────
@@ -108,7 +91,7 @@ function renderQuestion() {
   if (!area || !state) return;
   const card = state.queue[0];
   const { deck } = state;
-  const options = buildOptions(deck, card);
+  const options = buildMCOptions(card, deck.cards);
   state.options = options;
   state.current = card;
 
@@ -116,13 +99,13 @@ function renderQuestion() {
   area.innerHTML = `
     <div class="mc-card placement-card">
       <p class="fc-label">Einstufung · Frage ${state.asked + 1} von ${total}</p>
-      <div class="fc-word mc-question">${esc(promptOf(deck, card))}</div>
+      <div class="fc-word mc-question">${escHtml(promptOf(deck, card))}</div>
       <p class="prompt">Was heißt das? Weißt du es nicht, wähle „Kenne ich nicht“.</p>
       <div class="mc-options" role="group" aria-label="Antwortmöglichkeiten">
         ${options.map((o, i) => `
           <button type="button" class="btn mc-option" data-idx="${i}">
             <span class="mc-key" aria-hidden="true">${'ABCD'[i]}</span>
-            <span class="mc-text">${esc(answerOf(deck, o))}</span>
+            <span class="mc-text">${escHtml(answerOf(deck, o))}</span>
           </button>`).join('')}
       </div>
       <button type="button" class="btn placement-unknown" id="placementUnknown">

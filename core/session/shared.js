@@ -1,7 +1,7 @@
 import { getCurrentSession, setCurrentSession, getUserStats, setUserStats } from '../state.js';
 import { updateProgress } from '../progress.js';
 import { updateStats } from '../stats.js';
-import { shuffleArray } from '../../utils/helpers.js';
+import { shuffleArray, pickRandom, escHtml, todayStr } from '../../utils/helpers.js';
 import { isCognate } from '../../utils/cognate.js';
 import { recordCardAnswer } from '../cardProgress.js';
 import { recordGameAnswer, recordSessionEnd, checkAchievements, consumeCelebrations, noteCombo, getGame } from '../gamification.js';
@@ -17,6 +17,8 @@ import { syncSoon } from '../sync.js';
 import { createUserStore } from '../userStore.js';
 import { startSession } from '../session.js';
 import { showFlashcard } from './flashcard.js';
+
+export { escHtml };
 
 const goldStore = createUserStore('lingualearn_gold_');
 export function reinitGold() { goldStore.reinit(); }
@@ -44,7 +46,7 @@ export function resetThemeBadges(deckId) {
 export function awardThemeBadge(deckId, theme) {
   const map = quizStore.get();
   const badges = map[deckId] || {};
-  badges[theme] = new Date().toISOString().slice(0, 10);
+  badges[theme] = todayStr();
   map[deckId] = badges;
   quizStore.save(map);
 }
@@ -197,24 +199,30 @@ if (typeof MutationObserver !== 'undefined') {
   document.addEventListener('DOMContentLoaded', () => {
     const area = document.getElementById('learnArea');
     if (!area) return;
-    window.addEventListener('resize', fitLearnArea);
-    window.addEventListener('orientationchange', fitLearnArea);
+    let fitRaf = 0;
+    const scheduleFit = () => {
+      if (fitRaf) return;
+      fitRaf = requestAnimationFrame(() => {
+        fitRaf = 0;
+        fitLearnArea();
+        // Ist der Weiter-Knopf unter den sichtbaren Rand gerutscht, die
+        // Karte (nicht die Seite!) so weit scrollen, dass er erscheint.
+        // #gramNext gehört dazu: In der Grammatik-Übung steht der
+        // Weiter-Knopf unter Frage, Antworten, Rückmeldung und Begründung
+        // — auf einem iPhone SE landet er sonst unter dem Rand.
+        const btn = area.querySelector('#courseNext, #mcNext, #gramNext');
+        if (!btn) return;
+        const areaBox = area.getBoundingClientRect();
+        if (btn.getBoundingClientRect().bottom > areaBox.bottom - 4) {
+          btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      });
+    };
+    window.addEventListener('resize', scheduleFit);
+    window.addEventListener('orientationchange', scheduleFit);
     // Style-Änderungen lösen den Beobachter nicht aus (nur childList),
     // deshalb kann fitLearnArea hier gefahrlos die Höhe setzen.
-    new MutationObserver(() => {
-      fitLearnArea();
-      // Ist der Weiter-Knopf unter den sichtbaren Rand gerutscht, die
-      // Karte (nicht die Seite!) so weit scrollen, dass er erscheint.
-      // #gramNext gehört dazu: In der Grammatik-Übung steht der
-      // Weiter-Knopf unter Frage, Antworten, Rückmeldung und Begründung
-      // — auf einem iPhone SE landet er sonst unter dem Rand.
-      const btn = area.querySelector('#courseNext, #mcNext, #gramNext');
-      if (!btn) return;
-      const areaBox = area.getBoundingClientRect();
-      if (btn.getBoundingClientRect().bottom > areaBox.bottom - 4) {
-        btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-      }
-    }).observe(area, { childList: true, subtree: true });
+    new MutationObserver(scheduleFit).observe(area, { childList: true, subtree: true });
   });
 }
 
@@ -282,7 +290,7 @@ export function cognateChip(card) {
 export function buildMCOptions(card, cards) {
   // Distraktoren müssen sich auf BEIDEN Seiten unterscheiden — sonst
   // gäbe es bei umgekehrter Richtung doppelte Antworttexte.
-  const wrongs = shuffleArray(cards.filter(c => c.back !== card.back && c.front !== card.front)).slice(0, 3);
+  const wrongs = pickRandom(cards, 3, c => c.back !== card.back && c.front !== card.front);
   return shuffleArray([card, ...wrongs]);
 }
 
@@ -338,7 +346,7 @@ export function recordAnswerEffects(session, card, isCorrect, ratingOrBool) {
     (session.rightFronts = session.rightFronts || new Set()).add(card.front);
   }
   renderGamiHeader();
-  renderLearnWidgets();
+  renderLearnWidgets({ duringSession: true });
   announceUnlocks();
   announceCelebrations();
   showCombo(session.combo, comboBonus);
@@ -365,7 +373,7 @@ function announceCelebrations() {
 // Tages-Rückblick: kleine Bilanz des heutigen Lernens für die Endkarte.
 export function dailyRecapHtml() {
   const g = getGame();
-  const d = g.daily.date === new Date().toISOString().slice(0, 10) ? g.daily : {};
+  const d = g.daily.date === todayStr() ? g.daily : {};
   return `
     <div class="day-recap">
       <span class="day-recap__title"><i class="fas fa-sun"></i> Heute</span>
@@ -384,7 +392,7 @@ export function endSession() {
 
   // Count completed session and track active days
   userStats.totalSessions = (userStats.totalSessions || 0) + 1;
-  const today = new Date().toISOString().slice(0, 10);
+  const today = todayStr();
   if (userStats.lastSessionDate !== today) {
     userStats.activeDays = (userStats.activeDays || 0) + 1;
     userStats.lastSessionDate = today;
@@ -493,14 +501,4 @@ export function startErrorReview(deck, deckId, cards) {
 
 export function courseBadge(text) {
   return `<div class="course-phase-badge">${text}</div>`;
-}
-
-// ── Helpers ──────────────────────────────────────────────────────
-
-export function escHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
 }

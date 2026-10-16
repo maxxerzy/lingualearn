@@ -1,6 +1,7 @@
 import { getDecks, loadDeck } from '../core/state.js';
 import { getCourseState, lessonNumber, LESSON_SIZE } from '../core/course.js';
 import { startLessonReview, getGoldLessons, getThemeBadges, startThemeQuiz } from '../core/session.js';
+import { escHtml as esc } from '../utils/helpers.js';
 
 // Farbpalette für die Themen-Banner entlang des Pfads.
 const BANNER_COLORS = ['#007aff', '#30b0c7', '#ff9500', '#af52de', '#34c759', '#ff3b30'];
@@ -11,10 +12,6 @@ const BANNER_COLORS = ['#007aff', '#30b0c7', '#ff9500', '#af52de', '#34c759', '#
 
 let navigate = null;      // activateView aus der Navigation
 let startCourse = null;   // startet die Session (setzt vorher Kurs-Modus)
-
-function esc(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
 
 export function renderPath(deckId) {
   const body = document.getElementById('pathBody');

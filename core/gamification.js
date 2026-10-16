@@ -3,6 +3,7 @@ import { countMasteredAll } from './cardProgress.js';
 import { createUserStore } from './userStore.js';
 import { addLeagueXp, getLeaguePromotions } from './league.js';
 import { friendXpSoon } from './friends.js';
+import { todayStr, yesterdayStr } from '../utils/helpers.js';
 
 const DEFAULTS = {
   xp: 0,
@@ -50,12 +51,6 @@ const persist = () => store.save(load());
 export function reinitGame() { store.reinit(); }
 export function getGame() { return load(); }
 
-function todayStr() { return new Date().toISOString().slice(0, 10); }
-function yesterdayStr() {
-  const d = new Date();
-  d.setDate(d.getDate() - 1);
-  return d.toISOString().slice(0, 10);
-}
 function daysBetween(a, b) {
   return Math.round((Date.parse(b) - Date.parse(a)) / 86400000);
 }
@@ -308,7 +303,7 @@ export const ACHIEVEMENTS = [
   { id: 'serie-7',       icon: 'fa-fire-alt',       name: 'Eine ganze Woche', desc: '7 Tage in Serie gelernt',                test: c => c.streak >= 7 },
   { id: 'serie-30',      icon: 'fa-meteor',         name: 'Unaufhaltsam',    desc: '30 Tage in Serie gelernt',                test: c => c.streak >= 30 },
   { id: 'perfekt',       icon: 'fa-star',           name: 'Perfekt!',        desc: 'Session ohne Fehler (mind. 5 Karten)',    test: c => c.perfectSessions >= 1 },
-  { id: 'polyglott',     icon: 'fa-globe',          name: 'Polyglott',       desc: 'In allen 6 Sprachen eine Session beendet', test: c => c.langCount >= 6 },
+  { id: 'polyglott',     icon: 'fa-globe',          name: 'Polyglott',       desc: 'In 6 verschiedenen Sprachen eine Session beendet', test: c => c.langCount >= 6 },
   { id: 'tagesziel',     icon: 'fa-bullseye',       name: 'Ziel erreicht',   desc: 'Tagesziel zum ersten Mal geschafft',      test: c => c.goalHitEver },
   { id: 'level-5',       icon: 'fa-trophy',         name: 'Aufsteiger',      desc: 'Level 5 erreicht',                        test: c => c.level >= 5 },
   { id: 'quests-10',     icon: 'fa-list-check',     name: 'Questjäger',      desc: '10 Tagesquests abgeschlossen',            test: c => c.questsDone >= 10 },

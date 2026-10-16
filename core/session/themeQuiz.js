@@ -6,7 +6,7 @@ import { showToast, confettiBurst, toastAchievements, toastCosmetics } from '../
 import { checkNewCosmetics } from '../cosmetics.js';
 import {
   getThemeBadges, awardThemeBadge, showCombo, celebrateSessionEnd, promptText, answerText,
-  enterFocus, clearBlitzTimer, markMcAnswer, recordAnswerEffects, dailyRecapHtml, escHtml, timers
+  enterFocus, clearBlitzTimer, markMcAnswer, recordAnswerEffects, dailyRecapHtml, escHtml, timers, buildMCOptions
 } from './shared.js';
 
 // ── THEMEN-QUIZ ──────────────────────────────────────────────────
@@ -63,8 +63,7 @@ function showThemeQuiz() {
 
   const card = session.cards[session.currentIndex];
   // Ablenker aus dem ganzen Deck, damit auch kleine Themen 4 Optionen haben.
-  const pool = session.deck.cards.filter(c => c.back !== card.back && c.front !== card.front);
-  const options = shuffleArray([card, ...shuffleArray(pool).slice(0, 3)]);
+  const options = buildMCOptions(card, session.deck.cards);
   session.currentPrompt = { card, options };
   setCurrentSession(session);
 
