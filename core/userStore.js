@@ -1,4 +1,5 @@
 import { getCurrentUser } from './auth.js';
+import { storage } from './storage.js';
 
 // Meldet der Oberfläche, wenn Schreibzugriffe scheitern (voller Speicher,
 // privater Modus). Ohne diese Rückmeldung bliebe Datenverlust unbemerkt.
@@ -43,7 +44,7 @@ export function createUserStore(keyPrefix, options = {}) {
     if (cache && cacheKey === key) return cache;
     let raw;
     try {
-      raw = JSON.parse(localStorage.getItem(key) || 'null');
+      raw = JSON.parse(storage.getItem(key) || 'null');
     } catch {
       raw = null;
     }
@@ -58,7 +59,7 @@ export function createUserStore(keyPrefix, options = {}) {
     cache = value;
     cacheKey = key;
     try {
-      localStorage.setItem(key, JSON.stringify(value));
+      storage.setItem(key, JSON.stringify(value));
       if (writeFailed) { writeFailed = false; notifyStorage(true); }
     } catch {
       // Speicher voll o. Ä.: NICHT verschlucken — sonst lernt man weiter,

@@ -18,6 +18,7 @@ import { getReminder, setReminder, notificationsSupported,
          requestNotificationPermission } from '../core/reminder.js';
 import { offlineDecks, offlineSupported, savedDeckIds, saveDeckOffline,
          removeDeckOffline, formatBytes } from '../core/offline.js';
+import { storage } from '../core/storage.js';
 import { escHtml as esc, todayStr } from '../utils/helpers.js';
 
 // Hörprobe im aktuell gewählten Deck — so hört man das Tempo dort,
@@ -116,6 +117,31 @@ export async function renderOfflineDecks() {
     }));
 }
 
+// ── Lokaler Speicher & IndexedDB Quota-Anzeige ───────────────────
+export async function renderStorageState() {
+  const stateEl = document.getElementById('storageBackendState');
+  const quotaEl = document.getElementById('storageQuotaText');
+  const hintEl = document.getElementById('storageHintText');
+  if (!stateEl || !quotaEl) return;
+
+  try {
+    const est = await storage.estimate();
+    const isIdb = est.backend === 'IndexedDB';
+    stateEl.className = isIdb
+      ? 'sync-box__state sync-box__state--ok'
+      : 'sync-box__state';
+    stateEl.innerHTML = `<i class="fas fa-database"></i> ${isIdb ? 'IndexedDB (unbegrenzt)' : 'localStorage'}`;
+    quotaEl.textContent = `${est.usageFormatted} belegt${est.quotaFormatted && est.quotaFormatted !== '0 MB' ? ` · Quota: ${est.quotaFormatted}` : ''}`;
+    if (hintEl) {
+      hintEl.textContent = isIdb
+        ? `Lernfortschritte, SRS-Historien und Custom-Decks werden dauerhaft und ohne 5-MB-Limit in der lokalen IndexedDB gesichert.`
+        : 'Rückfall auf localStorage aktiv — IndexedDB in dieser Browser-Umgebung nicht verfügbar.';
+    }
+  } catch {
+    /* ignore */
+  }
+}
+
 // Konto-Schlüssel anzeigen (standardmäßig verdeckt — er ist das
 // Zugangsgeheimnis zum Cloud-Stand).
 let keyVisible = false;
@@ -188,8 +214,9 @@ export function initSettings() {
     showToast('<i class="fas fa-key toast__icon"></i><div class="toast__body"><b>Passwort geändert</b><span>Deine Geräte bleiben verbunden.</span></div>');
   });
 
-  // Fortschritt eines anderen lokalen Kontos übernehmen.
+  // Fortschritt eines anderen lokalen Kontos übernehmen & Speicher-Status zeigen.
   renderMergeAccounts();
+  renderStorageState();
   document.getElementById('mergeBtn')?.addEventListener('click', async () => {
     const from = document.getElementById('mergeAccount')?.value;
     const to = getCurrentUser();

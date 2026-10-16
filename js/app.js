@@ -28,17 +28,20 @@ import { reinitReminder, maybeRemind } from '../core/reminder.js';
 import { initGrammar } from '../ui/grammar.js';
 import { showToast } from '../ui/toast.js';
 import { syncNow, syncSoon } from '../core/sync.js';
-import { renderSyncState, renderMergeAccounts, renderSyncKey, renderOfflineDecks } from '../ui/settings.js';
+import { renderSyncState, renderMergeAccounts, renderSyncKey, renderOfflineDecks, renderStorageState } from '../ui/settings.js';
+import { storage } from '../core/storage.js';
 
 let appInitialized = false;
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  await storage.init();
   if (isLoggedIn()) {
     reinitUser();
     showApp();
   }
 
-  document.addEventListener('linguaauth:login', () => {
+  document.addEventListener('linguaauth:login', async () => {
+    await storage.init();
     reinitUser();
     showApp();
   });
@@ -110,7 +113,7 @@ function showApp() {
         if (item.dataset.action === 'rewards') renderRewards();
         if (item.dataset.action === 'arena') renderArena();
         // Konten-Auswahl frisch aufbauen (kann sich nach Kontowechsel ändern).
-        if (item.dataset.action === 'settings') { renderMergeAccounts(); renderSyncKey(); renderOfflineDecks(); }
+        if (item.dataset.action === 'settings') { renderMergeAccounts(); renderSyncKey(); renderOfflineDecks(); renderStorageState(); }
         if (item.dataset.action === 'dict') {
           const q = document.getElementById('dictSearch');
           if (q) q.value = '';

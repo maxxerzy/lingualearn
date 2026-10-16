@@ -473,6 +473,20 @@
                 sichere hier vorab die Sprachen, die du unterwegs brauchst. Das aktive Deck sichert
                 sich nach der ersten abgeschlossenen Lektion von selbst.</p>
             </div>
+            <div class="form-group" id="storageGroup">
+              <label>Lokaler Speicher &amp; Datenbank</label>
+              <div class="sync-box">
+                <div class="sync-box__head">
+                  <span class="sync-box__state sync-box__state--ok" id="storageBackendState">
+                    <i class="fas fa-database"></i> IndexedDB aktiv
+                  </span>
+                  <span id="storageQuotaText" class="settings-hint" style="margin:0;font-weight:600;">Lade …</span>
+                </div>
+                <p class="sync-box__hint" id="storageHintText">
+                  Lernfortschritte, SRS-Historien und Custom-Decks werden dauerhaft und ohne 5-MB-Limit in der lokalen IndexedDB gesichert.
+                </p>
+              </div>
+            </div>
             <div class="form-group">
               <label class="fx-toggle" for="fxToggle">
                 <input type="checkbox" id="fxToggle" checked>
@@ -701,7 +715,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v60';
+    var APP_VERSION = 'v61';
     var loginMode = 'login';
 
     function hp(pw) {
