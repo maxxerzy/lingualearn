@@ -4,7 +4,7 @@ import { updateStats } from '../stats.js';
 import {
   speakWord, isReverse, promptText, answerText, promptLabel, answerLabel,
   promptAudioBtn, wirePromptAudio, buildMCOptions, mcOptionsMarkup, markMcAnswer,
-  recordAnswerEffects, endSession, escHtml
+  recordAnswerEffects, endSession, escHtml, wireMcAudio
 } from './shared.js';
 
 // ── MULTIPLE CHOICE MODE ─────────────────────────────────────────
@@ -35,21 +35,8 @@ export function showMultipleChoice() {
   setCurrentSession(session);
   updateProgress();
   wirePromptAudio(session, card);
+  wireMcAudio(learnArea, lang);
   if (isReverse(session.deck)) speakWord(card.back, lang);
-
-  learnArea.querySelectorAll('.mc-audio').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      speakWord(btn.dataset.text, lang);
-    });
-    btn.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        e.stopPropagation();
-        speakWord(btn.dataset.text, lang);
-      }
-    });
-  });
 
   learnArea.querySelectorAll('.mc-option').forEach(btn => {
     btn.addEventListener('click', () => checkMCAnswer(Number(btn.dataset.idx)));
@@ -80,10 +67,13 @@ function checkMCAnswer(selectedIdx) {
   recordAnswerEffects(session, card, isCorrect, isCorrect);
 
   const fb = document.getElementById('mc-fb');
+  const romanHint = !isCorrect && !isReverse(session.deck) && card.roman
+    ? ` <span class="course-roman">(${escHtml(card.roman)})</span>`
+    : '';
   fb.innerHTML = isCorrect
     ? `<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>`
     : `<div class="incorrect" style="margin-top:14px">
-         <p>❌ Falsch — richtig: <b>${escHtml(answerText(session, card))}</b></p>
+         <p>❌ Falsch — richtig: <b>${escHtml(answerText(session, card))}</b>${romanHint}</p>
        </div>`;
 
   fb.innerHTML += `

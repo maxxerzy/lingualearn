@@ -178,21 +178,47 @@ export function exitSession() {
 // sichtbar ist. Nötig auf kleinen Geräten, wenn Aufgabe + Rückmeldung
 // zusammen höher werden als der Bildschirm (z. B. langer Lückensatz mit
 // Schriftzeichen). Ein einziger Beobachter deckt alle Kurs-Phasen ab.
-// No-Scroll-Garantie, exakt gemessen statt geschätzt: Passt der Inhalt
-// nicht in den Bildschirm, bekommt NUR der Lernbereich einen Deckel und
-// scrollt intern — die Seite selbst nie. Ohne Überlauf bleibt alles
-// ungedeckelt (kein Deckel „auf Verdacht", der Knöpfe verstecken würde).
+// No-Scroll-Garantie + großzügiges Kartenfenster: Misst den tatsächlichen
+// freien Platz unterhalb der Karten-Oberkante im sichtbaren Viewport
+// (visualViewport auf iOS Safari statt 100vh/scrollHeight, das auf iPhones
+// durch die Adressleiste ~110px zu groß ist und die Karte fälschlich
+// abgeschnitten hat). Auf Handys/Tablets wächst #learnArea auf eine
+// komfortable Mindesthöhe, sodass alle 4 Antworten + Umschrift Platz haben;
+// bei Überlauf scrollt nur #learnArea intern, die Seite selbst nie.
 function fitLearnArea() {
   const area = document.getElementById('learnArea');
   if (!area) return;
   area.style.maxHeight = '';
+  area.style.minHeight = '';
   area.style.overflowY = '';
+  area.style.justifyContent = '';
   if (!document.getElementById('view-learn')?.classList.contains('session-active')) return;
-  const over = document.documentElement.scrollHeight - window.innerHeight;
-  if (over <= 2) return;
-  const h = area.getBoundingClientRect().height;
-  area.style.maxHeight = `${Math.max(180, Math.floor(h - over - 4))}px`;
-  area.style.overflowY = 'auto';
+  const vh = window.visualViewport?.height || window.innerHeight;
+  const rect = area.getBoundingClientRect();
+  const cs = el => (el ? getComputedStyle(el) : null);
+  const px = v => parseFloat(v) || 0;
+  const panelSt = cs(area.closest('.learn-panel'));
+  const contentSt = cs(area.closest('.content'));
+  const bodySt = cs(document.body);
+  const bottomChrome = Math.ceil(
+    (panelSt ? px(panelSt.paddingBottom) + px(panelSt.borderBottomWidth) : 14) +
+    (contentSt ? px(contentSt.paddingBottom) : 14) +
+    (bodySt ? px(bodySt.paddingBottom) : 0)
+  );
+  const avail = Math.floor(vh - rect.top - bottomChrome - 2);
+  if (avail <= 160) return;
+  if (window.innerWidth <= 1200) {
+    const targetMin = Math.min(avail, window.innerWidth <= 768 ? 560 : 620);
+    if (rect.height < targetMin) {
+      area.style.minHeight = `${targetMin}px`;
+    }
+  }
+  if (area.scrollHeight > avail + 2) {
+    area.style.minHeight = '';
+    area.style.maxHeight = `${Math.max(180, avail)}px`;
+    area.style.overflowY = 'auto';
+    area.style.justifyContent = 'flex-start';
+  }
 }
 
 if (typeof MutationObserver !== 'undefined') {
@@ -214,12 +240,13 @@ if (typeof MutationObserver !== 'undefined') {
         if (!btn) return;
         const areaBox = area.getBoundingClientRect();
         if (btn.getBoundingClientRect().bottom > areaBox.bottom - 4) {
-          btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          btn.scrollIntoView({ block: 'nearest', behavior: 'instant' });
         }
       });
     };
     window.addEventListener('resize', scheduleFit);
     window.addEventListener('orientationchange', scheduleFit);
+    window.visualViewport?.addEventListener('resize', scheduleFit);
     // Style-Änderungen lösen den Beobachter nicht aus (nur childList),
     // deshalb kann fitLearnArea hier gefahrlos die Höhe setzen.
     new MutationObserver(scheduleFit).observe(area, { childList: true, subtree: true });
@@ -295,23 +322,48 @@ export function buildMCOptions(card, cards) {
 }
 
 // Gemeinsames Markup der Antwort-Optionen (A–D) + Feedback-Container.
-// withAudio blendet je Option einen Aussprache-Knopf ein (nur MC-Modus).
-// textOf bestimmt die angezeigte Seite (Standard: Fremdsprache/back).
-export function mcOptionsMarkup(options, { withAudio = false, textOf = o => o.back } = {}) {
+// withAudio blendet je Option einen Aussprache-Knopf ein.
+// showRoman blendet bei fremden Schriften (ar/ru/el/ja/zh) die Umschrift
+// rechts neben dem Wort ein, damit Lernende, die das Alphabet noch nicht
+// flüssig lesen können, jede Option entziffern und zuordnen können.
+// WICHTIG: .mc-text enthält ausschließlich den reinen Antworttext!
+export function mcOptionsMarkup(options, { withAudio = false, textOf = o => o.back, showRoman = true } = {}) {
   return `
       <div class="mc-options" role="group" aria-label="Antwortmöglichkeiten">
-        ${options.map((opt, i) => `
+        ${options.map((opt, i) => {
+          const txt = textOf(opt);
+          const roman = showRoman && opt?.roman && txt === opt.back ? opt.roman : '';
+          return `
           <button type="button" class="btn mc-option" data-idx="${i}"
             aria-keyshortcuts="${i + 1} ${'abcd'[i]}">
             <span class="mc-key" aria-hidden="true">${'ABCD'[i]}</span>
-            <span class="mc-text">${escHtml(textOf(opt))}${withAudio ? `
-              <span class="audio-btn mc-audio" role="button" tabindex="0" data-text="${escHtml(textOf(opt))}" title="Aussprache">
-                <i class="fas fa-volume-up"></i>
-              </span>` : ''}</span>
-          </button>
-        `).join('')}
+            <span class="mc-text">${escHtml(txt)}</span>${roman ? `<span class="mc-roman">${escHtml(roman)}</span>` : ''}${withAudio ? `
+            <span class="audio-btn mc-audio" role="button" tabindex="0" data-text="${escHtml(txt)}" title="Aussprache">
+              <i class="fas fa-volume-up"></i>
+            </span>` : ''}
+          </button>`;
+        }).join('')}
       </div>
       <div id="mc-fb"></div>`;
+}
+
+// Verdrahtet die Aussprache-Knöpfe (.mc-audio) innerhalb der MC-Optionen,
+// ohne beim Klick die Antwort-Option selbst auszulösen.
+export function wireMcAudio(root, lang) {
+  if (!root) return;
+  root.querySelectorAll('.mc-audio').forEach(a => {
+    a.addEventListener('click', e => {
+      e.stopPropagation();
+      speakWord(a.dataset.text, lang);
+    });
+    a.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        e.stopPropagation();
+        speakWord(a.dataset.text, lang);
+      }
+    });
+  });
 }
 
 // Deaktiviert die Optionen und markiert richtig/falsch. Gibt Auswertung zurück.

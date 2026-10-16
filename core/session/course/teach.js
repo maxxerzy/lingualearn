@@ -100,8 +100,9 @@ export function renderCourseListen(session) {
     btn.addEventListener('click', () => {
       const { isCorrect } = markMcAnswer(options, Number(btn.dataset.idx), card);
       courseGrade(session, card, isCorrect);
+      const romanReveal = card.roman ? ` <span class="course-roman">(${escHtml(card.roman)})</span>` : '';
       document.getElementById('mc-fb').innerHTML = `
-        ${courseFeedbackHtml(isCorrect, card, `<p class="listen-reveal">${escHtml(card.back)} — <b>${escHtml(card.front)}</b></p>`, card.front)}
+        ${courseFeedbackHtml(isCorrect, card, `<p class="listen-reveal">${escHtml(card.back)}${romanReveal} — <b>${escHtml(card.front)}</b></p>`, card.front)}
         <div class="actions" style="margin-top:14px">
           <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
         </div>

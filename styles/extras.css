@@ -156,6 +156,7 @@
 .grammar-body {
   overflow-y: auto;
   max-height: calc(100vh - 340px);
+  max-height: calc(100dvh - 340px);
   min-height: 120px;
   padding-right: 6px;
   font-size: 0.92rem;
@@ -194,11 +195,19 @@
 /* Handys/Tablets (Fokus-Modus): Textfenster knapper bemessen, damit die
    Seite selbst garantiert nicht scrollt. */
 @media (max-width: 1200px) {
-  #view-learn.session-active .grammar-body { max-height: calc(100vh - 390px); min-height: 90px; }
+  #view-learn.session-active .grammar-body {
+    max-height: calc(100vh - 390px);
+    max-height: calc(100dvh - 390px);
+    min-height: 90px;
+  }
 }
 /* Sehr kurze Screens: noch etwas kleiner */
 @media (max-height: 700px) {
-  .grammar-body { max-height: calc(100vh - 390px); min-height: 80px; }
+  .grammar-body {
+    max-height: calc(100vh - 390px);
+    max-height: calc(100dvh - 390px);
+    min-height: 80px;
+  }
 }
 
 /* ── Grammatik-Übersicht (Nachlesen) ───────────────────────────── */

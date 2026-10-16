@@ -31,7 +31,10 @@ export function courseGrade(session, card, isCorrect) {
 
 // Phase 2: Wörter üben (Multiple Choice Deutsch → Zielsprache).
 export function courseFeedbackHtml(isCorrect, card, extra = '', answer = card.back) {
+  const romanHint = !isCorrect && card?.roman && answer === card.back
+    ? ` <span class="course-roman">(${escHtml(card.roman)})</span>`
+    : '';
   return `${isCorrect
     ? '<div class="correct" style="margin-top:14px"><p>✅ Richtig!</p></div>'
-    : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(answer)}</b>. Kommt gleich nochmal.</p></div>`}${extra}`;
+    : `<div class="incorrect" style="margin-top:14px"><p>❌ Falsch — richtig: <b>${escHtml(answer)}</b>${romanHint}. Kommt gleich nochmal.</p></div>`}${extra}`;
 }

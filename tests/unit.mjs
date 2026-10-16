@@ -389,9 +389,52 @@ console.log('\n── Helfer (utils/helpers.js) ──');
     [hlp.todayStr(), hlp.yesterdayStr(), hlp.todayStr(5)], [day(0), day(-1), day(5)]);
 }
 
+// ── 6) Umschrift-Gerüst für fremde Schriften (utils/romanize.js) ──
+console.log('\n── Umschrift-Hilfe (utils/romanize.js) ──');
+{
+  const rom = await import('../utils/romanize.js');
+  eq('hasForeignScript erkennt ar/ru/el/ja/zh vs. lateinische Sprachen',
+    [rom.hasForeignScript('ar'), rom.hasForeignScript('zh'), rom.hasForeignScript('fr')],
+    [true, true, false]);
+
+  const arLetters = sen.splitGraphemes('رَحَّبَ');
+  eq('Arabisch: Buchstaben-Kacheln mit Harakat & Schadda einzeln umschrieben',
+    rom.romanizeTiles(arLetters, { back: 'رَحَّبَ', roman: 'raḥḥaba' }, 'ar'),
+    ['ra', 'ḥḥa', 'ba']);
+
+  const ruLetters = sen.splitGraphemes('привет');
+  eq('Russisch: Kyrillische Buchstaben-Kacheln einzeln umschrieben',
+    rom.romanizeTiles(ruLetters, { back: 'привет', roman: 'priwet' }, 'ru'),
+    ['p', 'r', 'i', 'v', 'e', 't']);
+
+  const elLetters = sen.splitGraphemes('νερό');
+  eq('Griechisch: Buchstaben-Kacheln einzeln umschrieben',
+    rom.romanizeTiles(elLetters, { back: 'νερό', roman: 'neró' }, 'el'),
+    ['n', 'e', 'r', 'o']);
+
+  const zhChars = sen.splitGraphemes('你好');
+  eq('Chinesisch: Pinyin wird silbenweise auf Schriftzeichen verteilt',
+    rom.romanizeTiles(zhChars, { back: '你好', roman: 'nǐhǎo' }, 'zh'),
+    ['nǐ', 'hǎo']);
+
+  const jaChars = sen.splitGraphemes('食べる');
+  eq('Japanisch: Kanji-Stamm + Okurigana-Kacheln zugeordnet',
+    rom.romanizeTiles(jaChars, { back: '食べる', roman: 'taberu' }, 'ja'),
+    ['ta', 'be', 'ru']);
+
+  eq('Satz-Token-Umschrift nutzt Deck-Wörterbuch und Fallback-Transliteration',
+    rom.romanizeSentenceTokens(['أَنَا', 'فِي', 'الْبَيْتِ'], 'ar', [
+      { back: 'أَنَا', roman: 'anā' },
+      { back: 'فِي', roman: 'fī' },
+      { back: 'بَيْت', roman: 'bait' },
+    ]),
+    ['anā', 'fī', 'albayti']);
+}
+
 const ms = Date.now() - t0;
 console.log(`\n${count} Prüfungen in ${ms} ms`);
 check('Laufzeit unter zwei Sekunden', ms < 2000, `${ms} ms`);
 console.log(`\n${failures === 0 ? '🎉 UNIT-TESTS OK' : `❌ ${failures} Fehler`}`);
 process.exit(failures === 0 ? 0 : 1);
+
 
