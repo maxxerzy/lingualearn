@@ -166,7 +166,7 @@
   /* Inhalt verdichten, damit alle Modi ohne Scrollen passen */
   #view-learn.session-active .card {
     min-height: 0;
-    padding: 6px 8px 10px;
+    padding: 12px 14px;
     justify-content: flex-start;
     animation: none;
   }
@@ -225,10 +225,11 @@
     /* Kopfzeile (~76px) + Content-Padding (2×24px) + Panel-Innenabstand
        + Sicherheitsmarge — lieber intern scrollen als die Seite. */
     max-height: calc(100vh - 195px);
+    max-height: calc(100dvh - 195px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
-  #view-learn.session-active .card { min-height: 0; padding: 8px 10px 12px; }
+  #view-learn.session-active .card { min-height: 0; padding: 14px 16px; }
   #view-learn.session-active .card .actions { margin-top: 12px; }
   #view-learn.session-active .mc-options { gap: 8px; margin-top: 10px; }
   #view-learn.session-active .mc-option { padding: 9px 12px; }
@@ -241,7 +242,10 @@
   #view-learn.session-active .fc-example-de { margin: 4px 0 6px; }
   #view-learn.session-active .fc-rating { margin-top: 12px; gap: 8px; }
   #view-learn.session-active .speak-card .course-pron { margin: 2px 0; }
-  #view-learn.session-active .grammar-body { max-height: calc(100vh - 460px); }
+  #view-learn.session-active .grammar-body {
+    max-height: calc(100vh - 460px);
+    max-height: calc(100dvh - 460px);
+  }
 }
 
 /* ── Desktop-Ansicht (Mac, große Fenster) ───────────────────────
@@ -411,6 +415,21 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+  }
+  /* Während einer Session auf Handys die zweite Header-Zeile (Diamanten/
+     Level/Streak) ausblenden, damit die goldene Lernkarte deutlich mehr
+     Höhe bekommt und alle 4 Antworten + Umschrift bequem Platz haben. */
+  body:has(#view-learn.session-active) header {
+    row-gap: 0;
+    padding-top: calc(6px + env(safe-area-inset-top, 0px));
+    padding-bottom: 6px;
+  }
+  body:has(#view-learn.session-active) header .gami-chips {
+    display: none;
+  }
+  body:has(#view-learn.session-active) .content {
+    padding-top: 8px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
   }
   /* Menü hängt jetzt rechts — rechtsbündig aufklappen */
   .user-dropdown { left: auto; right: 0; }

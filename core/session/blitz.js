@@ -80,11 +80,15 @@ function showBlitz() {
       </div>
       <p class="mc-question">${escHtml(promptText(session, card))}</p>
       <div class="mc-options">
-        ${options.map((o, i) => `
+        ${options.map((o, i) => {
+          const txt = answerText(session, o);
+          const roman = o.roman && txt === o.back ? `<span class="mc-roman">${escHtml(o.roman)}</span>` : '';
+          return `
           <button type="button" class="mc-option" data-idx="${i}">
             <span class="mc-key">${String.fromCharCode(65 + i)}</span>
-            <span class="mc-text">${escHtml(answerText(session, o))}</span>
-          </button>`).join('')}
+            <span class="mc-text">${escHtml(txt)}</span>${roman}
+          </button>`;
+        }).join('')}
       </div>
     </div>
   `;

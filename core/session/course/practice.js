@@ -4,11 +4,12 @@ import { shuffleArray } from '../../../utils/helpers.js';
 import { playWrong } from '../../../utils/feedback.js';
 import {
   answerLabel, answerText, buildMCOptions, courseBadge, escHtml, isReverse, markMcAnswer,
-  mcOptionsMarkup, promptAudioBtn, promptLabel, promptText, recordAnswerEffects, speakWord, wirePromptAudio
+  mcOptionsMarkup, promptAudioBtn, promptLabel, promptText, recordAnswerEffects, speakWord, wireMcAudio, wirePromptAudio
 } from '../shared.js';
 import { courseGrade, courseFeedbackHtml } from './shared.js';
 import { showCourseStep } from './lesson.js';
 import { isRtl, splitGraphemes } from '../../../utils/sentence.js';
+import { romanizeTiles } from '../../../utils/romanize.js';
 
 export function renderCourseWordMC(session) {
   const card = session.queue[0];
@@ -16,6 +17,7 @@ export function renderCourseWordMC(session) {
   // Distraktoren nur aus bereits gelernten Wörtern.
   const options = buildMCOptions(card, session.knownCards);
   const learnArea = document.getElementById('learnArea');
+  const rev = isReverse(session.deck);
 
   learnArea.innerHTML = `
     <div class="mc-card">
@@ -23,12 +25,13 @@ export function renderCourseWordMC(session) {
       <p class="fc-label">${promptLabel(session)}</p>
       <div class="fc-word mc-question">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
       <p class="prompt">${answerLabel(session)} — welche Übersetzung stimmt?</p>
-      ${mcOptionsMarkup(options, { textOf: o => answerText(session, o) })}
+      ${mcOptionsMarkup(options, { textOf: o => answerText(session, o), withAudio: !rev })}
     </div>
   `;
 
   wirePromptAudio(session, card);
-  if (isReverse(session.deck)) speakWord(card.back, lang);
+  wireMcAudio(learnArea, lang);
+  if (rev) speakWord(card.back, lang);
   learnArea.querySelectorAll('.mc-option').forEach(btn => {
     btn.addEventListener('click', () => {
       const { isCorrect } = markMcAnswer(options, Number(btn.dataset.idx), card);
@@ -52,6 +55,7 @@ export function renderCourseWordMC(session) {
 // Ein Paar ohne Fehlversuch zählt als richtige Antwort für dieses Wort.
 export function renderCourseMatch(session) {
   const lang = session.deck.language;
+  const rev = isReverse(session.deck);
   const pairs = shuffleArray([...session.lessonCards]).slice(0, 4);
   const left = shuffleArray(pairs.map((c, i) => ({ c, i })));
   const right = shuffleArray(pairs.map((c, i) => ({ c, i })));
@@ -66,7 +70,7 @@ export function renderCourseMatch(session) {
           ${left.map(({ c, i }) => `<button type="button" class="btn match-btn" data-side="l" data-i="${i}">${escHtml(promptText(session, c))}</button>`).join('')}
         </div>
         <div class="match-col">
-          ${right.map(({ c, i }) => `<button type="button" class="btn match-btn" data-side="r" data-i="${i}">${escHtml(answerText(session, c))}</button>`).join('')}
+          ${right.map(({ c, i }) => `<button type="button" class="btn match-btn" data-side="r" data-i="${i}"><span>${escHtml(answerText(session, c))}</span>${!rev && c.roman ? `<span class="match-roman">${escHtml(c.roman)}</span>` : ''}</button>`).join('')}
         </div>
       </div>
       <div id="mc-fb"></div>
@@ -85,9 +89,13 @@ export function renderCourseMatch(session) {
     const btn = e.target.closest('.match-btn');
     if (!btn || btn.disabled) return;
 
+    const tappedCard = pairs[Number(btn.dataset.i)];
+    const isForeignSide = (!rev && btn.dataset.side === 'r') || (rev && btn.dataset.side === 'l');
+
     if (!selected) {
       selected = btn;
       btn.classList.add('match-btn--selected');
+      if (isForeignSide && tappedCard) speakWord(tappedCard.back, lang);
       return;
     }
     if (btn === selected) {           // Abwahl
@@ -99,6 +107,7 @@ export function renderCourseMatch(session) {
       selected.classList.remove('match-btn--selected');
       selected = btn;
       btn.classList.add('match-btn--selected');
+      if (isForeignSide && tappedCard) speakWord(tappedCard.back, lang);
       return;
     }
 
@@ -159,13 +168,15 @@ export function renderCourseMatch(session) {
 function renderCourseWordTiles(session) {
   const card = session.queue[0];
   const lang = session.deck.language;
+  const rev = isReverse(session.deck);
   const expected = answerText(session, card);
   const multi = /\s/.test(expected.trim());
   // Graphem-weise: ein arabisches „كِ" bleibt eine Kachel, statt dass das
   // Vokalzeichen allein auf einer eigenen Kachel landet.
   const letters = multi ? expected.trim().split(/\s+/) : splitGraphemes(expected);
+  const tileRomans = !rev ? romanizeTiles(letters, card, lang) : letters.map(() => '');
   const order = shuffleArray(letters.map((_, i) => i));
-  const dir = !isReverse(session.deck) && isRtl(lang) ? 'rtl' : 'ltr';
+  const dir = !rev && isRtl(lang) ? 'rtl' : 'ltr';
   const learnArea = document.getElementById('learnArea');
 
   learnArea.innerHTML = `
@@ -173,10 +184,15 @@ function renderCourseWordTiles(session) {
       ${courseBadge(`<i class="fas fa-shapes"></i> Schreiben — noch ${session.queue.length}`)}
       <p class="fc-label">${promptLabel(session)}</p>
       <div class="fc-word">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
+      ${!rev ? `
+        <div class="tile-pron">
+          ${card.roman ? `<span class="course-roman" title="Lautschrift-Hilfe">${escHtml(card.roman)}</span>` : ''}
+          <button type="button" class="audio-btn" id="tileListenBtn" title="Zielwort anhören"><i class="fas fa-volume-up"></i></button>
+        </div>` : ''}
       <p class="prompt">Baue die Übersetzung aus den ${multi ? 'Wörtern' : 'Buchstaben'} (${answerLabel(session)}):</p>
       <div class="build-answer tile-answer" id="tileAnswer" dir="${dir}" aria-label="Deine Antwort"></div>
       <div class="build-pool" id="tilePool" dir="${dir}">
-        ${order.map(i => `<button type="button" class="build-tile${multi ? '' : ' letter-tile'}" data-i="${i}">${escHtml(letters[i])}</button>`).join('')}
+        ${order.map(i => `<button type="button" class="build-tile${multi ? '' : ' letter-tile'}" data-i="${i}"${tileRomans[i] ? ` data-roman="${escHtml(tileRomans[i])}"` : ''}>${escHtml(letters[i])}</button>`).join('')}
       </div>
       <div id="mc-fb"></div>
     </div>
@@ -185,6 +201,7 @@ function renderCourseWordTiles(session) {
   session.currentPrompt = { card };
   setCurrentSession(session);
   wirePromptAudio(session, card);
+  document.getElementById('tileListenBtn')?.addEventListener('click', () => speakWord(card.back, lang));
 
   const placed = [];
   const pool = document.getElementById('tilePool');
@@ -215,6 +232,7 @@ function renderCourseWordTiles(session) {
     chip.type = 'button';
     chip.className = tile.className.replace('build-tile--used', '').trim() + ' build-tile--placed';
     chip.dataset.i = tile.dataset.i;
+    if (tile.dataset.roman) chip.dataset.roman = tile.dataset.roman;
     chip.textContent = letters[Number(tile.dataset.i)];
     answerEl.appendChild(chip);
     // Voll? Dann sofort prüfen — ein extra Knopf wäre nur ein Klick mehr.
@@ -238,6 +256,7 @@ function renderCourseWordTiles(session) {
 export function renderCourseReview(session) {
   const card = session.queue[0];
   const lang = session.deck.language;
+  const rev = isReverse(session.deck);
   const options = buildMCOptions(card, session.knownCards);
   const learnArea = document.getElementById('learnArea');
 
@@ -247,12 +266,13 @@ export function renderCourseReview(session) {
       <p class="fc-label">${promptLabel(session)}</p>
       <div class="fc-word mc-question">${escHtml(promptText(session, card))} ${promptAudioBtn(session)}</div>
       <p class="prompt">Kennst du das noch?</p>
-      ${mcOptionsMarkup(options, { textOf: o => answerText(session, o) })}
+      ${mcOptionsMarkup(options, { textOf: o => answerText(session, o), withAudio: !rev })}
     </div>
   `;
 
   wirePromptAudio(session, card);
-  if (isReverse(session.deck)) speakWord(card.back, lang);
+  wireMcAudio(learnArea, lang);
+  if (rev) speakWord(card.back, lang);
   learnArea.querySelectorAll('.mc-option').forEach(btn => {
     btn.addEventListener('click', () => {
       const { isCorrect } = markMcAnswer(options, Number(btn.dataset.idx), card);
@@ -273,10 +293,12 @@ export function renderCourseReview(session) {
 export function renderCourseCompare(session) {
   const card = session.queue[0];
   const lang = session.deck.language;
+  const rev = isReverse(session.deck);
   const alts = session.knownCards.filter(c => c.back !== card.back && c.front !== card.front);
   const isMatch = alts.length === 0 || Math.random() < 0.5;
   const other = isMatch ? card : alts[Math.floor(Math.random() * alts.length)];
   const learnArea = document.getElementById('learnArea');
+  const otherRoman = !rev && other.roman ? `<span class="word-roman">${escHtml(other.roman)}</span>` : '';
 
   learnArea.innerHTML = `
     <div class="mc-card">
@@ -286,7 +308,10 @@ export function renderCourseCompare(session) {
         <span class="word word-source">${escHtml(promptText(session, card))}</span>
         <i class="fas fa-arrow-right"></i>
         <span class="word word-target">
-          ${escHtml(answerText(session, other))}
+          <span class="word-target__main">
+            <span>${escHtml(answerText(session, other))}</span>
+            ${otherRoman}
+          </span>
           <button type="button" class="audio-btn" id="audioBtn" title="Aussprache anhören"><i class="fas fa-volume-up"></i></button>
         </span>
       </div>
@@ -300,7 +325,7 @@ export function renderCourseCompare(session) {
 
   session.currentPrompt = { card, isMatch };
   setCurrentSession(session);
-  document.getElementById('audioBtn').addEventListener('click', () => speakWord(card.back, lang));
+  document.getElementById('audioBtn').addEventListener('click', () => speakWord(other.back, lang));
 
   const answer = says => {
     const isCorrect = says === isMatch;
@@ -309,8 +334,9 @@ export function renderCourseCompare(session) {
     session.currentPrompt = null;
     courseGrade(session, card, isCorrect);
     if (isCorrect) speakWord(card.back, lang);
+    const romanReveal = !rev && card.roman ? ` <span class="course-roman">(${escHtml(card.roman)})</span>` : '';
     document.getElementById('mc-fb').innerHTML = `
-      ${courseFeedbackHtml(isCorrect, card, `<p class="listen-reveal">${escHtml(promptText(session, card))} → <b>${escHtml(answerText(session, card))}</b></p>`, answerText(session, card))}
+      ${courseFeedbackHtml(isCorrect, card, `<p class="listen-reveal">${escHtml(promptText(session, card))} → <b>${escHtml(answerText(session, card))}</b>${romanReveal}</p>`, answerText(session, card))}
       <div class="actions" style="margin-top:14px">
         <button type="button" class="btn btn-primary" id="courseNext">Weiter</button>
       </div>

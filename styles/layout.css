@@ -255,6 +255,7 @@ main { display: block; }
   /* Header (~76px) + Content-Padding (2×24px) + Puffer — so füllt das
      Layout den Bildschirm, ohne ihn je zu überlaufen. */
   min-height: calc(100vh - 160px);
+  min-height: calc(100dvh - 160px);
 }
 .learn-layout > * { min-width: 0; }
 

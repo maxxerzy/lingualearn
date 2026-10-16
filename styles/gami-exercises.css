@@ -69,6 +69,32 @@
    damit auch 10-Buchstaben-Wörter auf ein iPhone SE passen. */
 .letter-tile { padding: 8px 0; min-width: 38px; text-align: center; font-size: 1.05rem; }
 .tile-answer { min-height: 48px; letter-spacing: 1px; }
+.build-tile[data-roman] {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 1.15;
+}
+.letter-tile[data-roman] { padding-left: 6px; padding-right: 6px; min-width: 42px; }
+.build-tile[data-roman]::after {
+  content: attr(data-roman);
+  font-size: 0.68rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--gray);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+.tile-pron {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 4px;
+}
 
 /* ── Paare verbinden (Kurs) ───────────────────────────────────── */
 .match-grid {
@@ -94,6 +120,18 @@
   white-space: normal;
   overflow-wrap: anywhere;
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+.match-roman {
+  font-size: 0.76rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--gray);
+  line-height: 1.15;
 }
 .match-btn--selected { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, var(--surface)); color: var(--primary); }
 .match-btn--matched {
@@ -383,7 +421,8 @@
   font-weight: 500;
   color: var(--gray, #8e8e93);
 }
-.talk-bubble__text { flex: 1; min-width: 0; }
+.talk-bubble__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.talk-bubble__roman { font-size: 0.8rem; font-style: italic; font-weight: 400; color: var(--gray, #8e8e93); }
 .talk-bubble .audio-btn { flex-shrink: 0; color: var(--primary, #0070eb); }
 .talk-reply-de {
   margin: 0 0 6px 22px;

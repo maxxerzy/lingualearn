@@ -102,11 +102,15 @@ function renderQuestion() {
       <div class="fc-word mc-question">${escHtml(promptOf(deck, card))}</div>
       <p class="prompt">Was heißt das? Weißt du es nicht, wähle „Kenne ich nicht“.</p>
       <div class="mc-options" role="group" aria-label="Antwortmöglichkeiten">
-        ${options.map((o, i) => `
+        ${options.map((o, i) => {
+          const txt = answerOf(deck, o);
+          const roman = o.roman && txt === o.back ? `<span class="mc-roman">${escHtml(o.roman)}</span>` : '';
+          return `
           <button type="button" class="btn mc-option" data-idx="${i}">
             <span class="mc-key" aria-hidden="true">${'ABCD'[i]}</span>
-            <span class="mc-text">${escHtml(answerOf(deck, o))}</span>
-          </button>`).join('')}
+            <span class="mc-text">${escHtml(txt)}</span>${roman}
+          </button>`;
+        }).join('')}
       </div>
       <button type="button" class="btn placement-unknown" id="placementUnknown">
         <i class="fas fa-question"></i> Kenne ich nicht

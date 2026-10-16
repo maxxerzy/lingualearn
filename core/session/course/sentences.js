@@ -5,9 +5,10 @@ import { recordGameAnswer } from '../../gamification.js';
 import { renderGamiHeader, renderLearnWidgets } from '../../../ui/gami.js';
 import { playCorrect, playWrong } from '../../../utils/feedback.js';
 import { findGapSentence, isRtl, joinSentence, splitSentence } from '../../../utils/sentence.js';
+import { romanizeSentenceTokens } from '../../../utils/romanize.js';
 import {
   announceUnlocks, buildMCOptions, courseBadge, escHtml, exampleLine, getLangName, isReverse,
-  markMcAnswer, mcOptionsMarkup, speakWord, wireExampleAudio
+  markMcAnswer, mcOptionsMarkup, speakWord, wireExampleAudio, wireMcAudio
 } from '../shared.js';
 import { courseGrade, courseFeedbackHtml } from './shared.js';
 import { showCourseStep } from './lesson.js';
@@ -25,7 +26,7 @@ export function renderCourseDialog(session) {
     <div class="mc-card talk-card">
       ${courseBadge(`<i class="fas fa-comments"></i> Dialog — noch ${session.queue.length}`)}
       <div class="talk-bubble talk-bubble--other">
-        <span class="talk-bubble__text">${escHtml(phrase.target)}</span>
+        <span class="talk-bubble__text">${escHtml(phrase.target)}${phrase.roman ? `<span class="talk-bubble__roman">${escHtml(phrase.roman)}</span>` : ''}</span>
         <button type="button" class="audio-btn" id="dialogSay" title="Anhören"><i class="fas fa-volume-up"></i></button>
       </div>
       <p class="talk-reply-de">${escHtml(phrase.de)}</p>
@@ -101,6 +102,9 @@ export function renderCourseBuild(session) {
   // Chinesisch/Japanisch werden zeichenweise sortiert (keine Leerzeichen).
   const splitLang = rev ? 'de' : lang;
   const tokens = splitSentence(rev ? card.exampleDE : card.example, splitLang);
+  const tokenRomans = !rev
+    ? romanizeSentenceTokens(tokens, splitLang, session.deck?.cards || session.knownCards, card)
+    : tokens.map(() => '');
   const order = shuffleArray(tokens.map((_, i) => i));
   // Arabisch: Kachel-Reihen beginnen rechts — das erste Wort des Satzes
   // muss dort landen, wo ein arabischer Leser zu lesen anfängt.
@@ -110,11 +114,14 @@ export function renderCourseBuild(session) {
   learnArea.innerHTML = `
     <div class="mc-card build-card">
       ${courseBadge(`<i class="fas fa-comment-dots"></i> Sätze üben — noch ${session.queue.length}`)}
-      <p class="build-src">„${escHtml(rev ? card.example : card.exampleDE)}"</p>
+      <p class="build-src">
+        „${escHtml(rev ? card.example : card.exampleDE)}"
+        <button type="button" class="audio-btn" id="buildAudioBtn" title="Ziel-Satz anhören"><i class="fas fa-volume-up"></i></button>
+      </p>
       <p class="prompt">${rev ? 'Setze die deutsche Übersetzung zusammen:' : 'Setze den Satz zusammen:'}</p>
       <div class="build-answer" id="courseBuildAnswer" dir="${dir}" aria-label="Deine Antwort"></div>
       <div class="build-pool" id="courseBuildPool" dir="${dir}">
-        ${order.map(i => `<button type="button" class="build-tile" data-i="${i}">${escHtml(tokens[i])}</button>`).join('')}
+        ${order.map(i => `<button type="button" class="build-tile" data-i="${i}"${tokenRomans[i] ? ` data-roman="${escHtml(tokenRomans[i])}"` : ''}>${escHtml(tokens[i])}</button>`).join('')}
       </div>
       <div class="actions">
         <button type="button" class="btn btn-primary" id="courseBuildCheck" disabled>Prüfen</button>
@@ -126,6 +133,9 @@ export function renderCourseBuild(session) {
   const placed = [];
   session.currentPrompt = { card, tokens };
   setCurrentSession(session);
+  document.getElementById('buildAudioBtn')?.addEventListener('click', () => speakWord(card.example, lang));
+  if (!rev && card.roman) speakWord(card.example, lang);
+
   const pool = document.getElementById('courseBuildPool');
   const answerEl = document.getElementById('courseBuildAnswer');
   const checkBtn = document.getElementById('courseBuildCheck');
@@ -140,6 +150,7 @@ export function renderCourseBuild(session) {
     chip.type = 'button';
     chip.className = 'build-tile build-tile--placed';
     chip.dataset.i = tile.dataset.i;
+    if (tile.dataset.roman) chip.dataset.roman = tile.dataset.roman;
     chip.textContent = tokens[Number(tile.dataset.i)];
     answerEl.appendChild(chip);
     checkBtn.disabled = placed.length !== tokens.length;
@@ -185,6 +196,9 @@ export function renderCourseMeaning(session) {
     ...alts.map(c => ({ text: c.exampleDE, correct: false })),
   ]);
   const learnArea = document.getElementById('learnArea');
+  const sentRomans = card.roman
+    ? romanizeSentenceTokens(splitSentence(card.example, lang), lang, session.deck?.cards || session.knownCards, card).filter(Boolean).join(' ')
+    : '';
 
   learnArea.innerHTML = `
     <div class="mc-card story-card">
@@ -193,6 +207,7 @@ export function renderCourseMeaning(session) {
         ${escHtml(card.example)}
         <button type="button" class="audio-btn" id="storyAudio" title="Anhören"><i class="fas fa-volume-up"></i></button>
       </p>
+      ${sentRomans ? `<p class="course-pron" style="margin:-4px 0 8px"><span class="course-roman">${escHtml(sentRomans)}</span></p>` : ''}
       <p class="prompt">Was bedeutet dieser Satz?</p>
       <div class="mc-options">
         ${options.map((o, i) => `
@@ -238,6 +253,7 @@ export function renderCourseMeaning(session) {
 export function renderCourseGapFill(session) {
   const card = session.queue[0];
   const lang = session.deck.language;
+  const rev = isReverse(session.deck);
   // Distraktoren nur aus bereits gelernten Wörtern.
   const options = buildMCOptions(card, session.knownCards);
   const learnArea = document.getElementById('learnArea');
@@ -248,16 +264,18 @@ export function renderCourseGapFill(session) {
   const question =
     `<p class="fc-label">${getLangName(lang)}</p>
        <div class="gap-sentence">${escHtml(gapped)}</div>
+       ${card.exampleDE ? `<p class="fc-example-de" style="margin:2px auto 8px">${escHtml(card.exampleDE)}</p>` : ''}
        <p class="prompt">Welches Wort gehört in die Lücke?</p>`;
 
   learnArea.innerHTML = `
     <div class="mc-card">
       ${courseBadge(`<i class="fas fa-comment-dots"></i> Sätze üben — noch ${session.queue.length}`)}
       ${question}
-      ${mcOptionsMarkup(options)}
+      ${mcOptionsMarkup(options, { withAudio: !rev })}
     </div>
   `;
 
+  wireMcAudio(learnArea, lang);
   learnArea.querySelectorAll('.mc-option').forEach(btn => {
     btn.addEventListener('click', () => {
       const { isCorrect } = markMcAnswer(options, Number(btn.dataset.idx), card);
