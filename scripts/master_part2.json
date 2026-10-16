@@ -1,0 +1,1007 @@
+{
+  "part": 2,
+  "start": 200,
+  "count": 200,
+  "items": [
+    {
+      "front": "die Ferse",
+      "exampleDE": "Die neuen Schuhe drücken hinten an der Ferse.",
+      "theme": "Körperteile & Gelenke"
+    },
+    {
+      "front": "die Wirbelsäule",
+      "exampleDE": "Gezielte Gymnastik stärkt die Muskeln entlang der Wirbelsäule.",
+      "theme": "Körperteile & Gelenke"
+    },
+    {
+      "front": "das Schulterblatt",
+      "exampleDE": "Er spürt eine leichte Verspannung unter dem rechten Schulterblatt.",
+      "theme": "Körperteile & Gelenke"
+    },
+    {
+      "front": "die Hüfte",
+      "exampleDE": "Sie stützt die Hände beim Stehen locker in die Hüfte.",
+      "theme": "Körperteile & Gelenke"
+    },
+    {
+      "front": "das Herz",
+      "exampleDE": "Das menschliche Herz schlägt rund siebzig Mal pro Minute.",
+      "theme": "Innere Organe & Kreislauf"
+    },
+    {
+      "front": "die Lunge",
+      "exampleDE": "Tiefes Einatmen frischer Waldluft tut der Lunge gut.",
+      "theme": "Innere Organe & Kreislauf"
+    },
+    {
+      "front": "der Magen",
+      "exampleDE": "Nach dem üppigen Festessen rebelliert der volle Magen.",
+      "theme": "Innere Organe & Kreislauf"
+    },
+    {
+      "front": "die Leber",
+      "exampleDE": "Die Leber ist das wichtigste Entgiftungsorgan des Körpers.",
+      "theme": "Innere Organe & Kreislauf"
+    },
+    {
+      "front": "die Nieren",
+      "exampleDE": "Ausreichend Wasser zu trinken unterstützt die Nieren.",
+      "theme": "Innere Organe & Kreislauf"
+    },
+    {
+      "front": "das Gehirn",
+      "exampleDE": "Das Gehirn benötigt viel Sauerstoff für konzentriertes Arbeiten.",
+      "theme": "Innere Organe & Kreislauf"
+    },
+    {
+      "front": "die Blutgefäße",
+      "exampleDE": "Regelmäßige Bewegung hält die Blutgefäße elastisch.",
+      "theme": "Innere Organe & Kreislauf"
+    },
+    {
+      "front": "die Ausdauer",
+      "exampleDE": "Regelmäßiges Radfahren steigert die persönliche Ausdauer spürbar.",
+      "theme": "Fitness & Erholung"
+    },
+    {
+      "front": "der Muskelkater",
+      "exampleDE": "Nach dem ersten Training hatte er zwei Tage Muskelkater.",
+      "theme": "Fitness & Erholung"
+    },
+    {
+      "front": "das Dehnen",
+      "exampleDE": "Sanftes Dehnen nach dem Laufen beugt Muskelverkürzungen vor.",
+      "theme": "Fitness & Erholung"
+    },
+    {
+      "front": "das Aufwärmen",
+      "exampleDE": "Vor jedem Sport gehört ein fünfminütiges Aufwärmen dazu.",
+      "theme": "Fitness & Erholung"
+    },
+    {
+      "front": "die Entspannung",
+      "exampleDE": "Ein warmes Bad am Abend fördert die tiefe Entspannung.",
+      "theme": "Fitness & Erholung"
+    },
+    {
+      "front": "der Tiefschlaf",
+      "exampleDE": "Ungestörter Tiefschlaf ist unverzichtbar für die Regeneration.",
+      "theme": "Fitness & Erholung"
+    },
+    {
+      "front": "das Wohlbefinden",
+      "exampleDE": "Gesunde Ernährung trägt entscheidend zum Wohlbefinden bei.",
+      "theme": "Fitness & Erholung"
+    },
+    {
+      "front": "die frische Luft",
+      "exampleDE": "Ein zügiger Spaziergang an der frischen Luft belebt den Geist.",
+      "theme": "Fitness & Erholung"
+    },
+    {
+      "front": "die Ballaststoffe",
+      "exampleDE": "Vollkornprodukte und Hülsenfrüchte enthalten wertvolle Ballaststoffe.",
+      "theme": "Ernährung & Wohlbefinden"
+    },
+    {
+      "front": "die Vitamine",
+      "exampleDE": "Frisches Obst versorgt den Körper mit lebenswichtigen Vitaminen.",
+      "theme": "Ernährung & Wohlbefinden"
+    },
+    {
+      "front": "das Eiweiß",
+      "exampleDE": "Quark, Fisch und Eier liefern hochwertiges tierisches Eiweiß.",
+      "theme": "Ernährung & Wohlbefinden"
+    },
+    {
+      "front": "die Kalorien",
+      "exampleDE": "Beim Schwimmen verbrennt man überraschend viele Kalorien.",
+      "theme": "Ernährung & Wohlbefinden"
+    },
+    {
+      "front": "der Blutzucker",
+      "exampleDE": "Vollkornbrot lässt den Blutzucker nur langsam ansteigen.",
+      "theme": "Ernährung & Wohlbefinden"
+    },
+    {
+      "front": "das Übergewicht",
+      "exampleDE": "Regelmäßige Bewegung hilft wirksam gegen Übergewicht.",
+      "theme": "Ernährung & Wohlbefinden"
+    },
+    {
+      "front": "die Flüssigkeitszufuhr",
+      "exampleDE": "An heißen Sommertagen ist ausreichende Flüssigkeitszufuhr wichtig.",
+      "theme": "Ernährung & Wohlbefinden"
+    },
+    {
+      "front": "die Schwiegereltern",
+      "exampleDE": "Am Sonntag sind wir bei meinen Schwiegereltern zum Kaffee eingeladen.",
+      "theme": "Familie & Verwandtschaft"
+    },
+    {
+      "front": "der Schwiegersohn",
+      "exampleDE": "Ihr Schwiegersohn versteht sich prächtig mit der ganzen Familie.",
+      "theme": "Familie & Verwandtschaft"
+    },
+    {
+      "front": "die Schwiegertochter",
+      "exampleDE": "Die Schwiegertochter brachte einen selbstgebackenen Apfelkuchen mit.",
+      "theme": "Familie & Verwandtschaft"
+    },
+    {
+      "front": "die Urgroßmutter",
+      "exampleDE": "Meine Urgroßmutter feierte dieses Jahr ihren neunzigsten Geburtstag.",
+      "theme": "Familie & Verwandtschaft"
+    },
+    {
+      "front": "der Urgroßvater",
+      "exampleDE": "Der Urgroßvater erzählt den Kindern gerne alte Geschichten.",
+      "theme": "Familie & Verwandtschaft"
+    },
+    {
+      "front": "die Patentante",
+      "exampleDE": "Meine Patentante schenkte mir zum Schulabschluss ein gutes Buch.",
+      "theme": "Familie & Verwandtschaft"
+    },
+    {
+      "front": "der Patenonkel",
+      "exampleDE": "Sein Patenonkel unterstützt ihn während des gesamten Studiums.",
+      "theme": "Familie & Verwandtschaft"
+    },
+    {
+      "front": "die Großfamilie",
+      "exampleDE": "Zu Weihnachten versammelt sich die ganze Großfamilie im Wohnzimmer.",
+      "theme": "Familie & Verwandtschaft"
+    },
+    {
+      "front": "die Kindheit",
+      "exampleDE": "Ich denke gerne an die unbeschwerte Kindheit auf dem Land zurück.",
+      "theme": "Lebensabschnitte & Alter"
+    },
+    {
+      "front": "die Jugend",
+      "exampleDE": "In der Jugend probiert man viele neue Hobbys und Interessen aus.",
+      "theme": "Lebensabschnitte & Alter"
+    },
+    {
+      "front": "das Erwachsenenalter",
+      "exampleDE": "Im Erwachsenenalter übernimmt man Verantwortung für sein eigenes Leben.",
+      "theme": "Lebensabschnitte & Alter"
+    },
+    {
+      "front": "der Ruhestand",
+      "exampleDE": "Im wohlverdienten Ruhestand reist das Ehepaar viel durch Europa.",
+      "theme": "Lebensabschnitte & Alter"
+    },
+    {
+      "front": "der Geburtstag",
+      "exampleDE": "Wir feiern seinen dreißigsten Geburtstag mit einer großen Party.",
+      "theme": "Lebensabschnitte & Alter"
+    },
+    {
+      "front": "die Generation",
+      "exampleDE": "Jede Generation hat ihre eigenen Werte und Vorstellungen.",
+      "theme": "Lebensabschnitte & Alter"
+    },
+    {
+      "front": "die Lebenserfahrung",
+      "exampleDE": "Mit den Jahren sammelt man wertvolle Lebenserfahrung.",
+      "theme": "Lebensabschnitte & Alter"
+    },
+    {
+      "front": "die Freundschaft",
+      "exampleDE": "Eine echte Freundschaft hält auch über weite Entfernungen.",
+      "theme": "Freundschaft & Vertrauen"
+    },
+    {
+      "front": "das Vertrauen",
+      "exampleDE": "Gegenseitiges Vertrauen ist das Fundament jeder guten Beziehung.",
+      "theme": "Freundschaft & Vertrauen"
+    },
+    {
+      "front": "sich verlassen auf",
+      "exampleDE": "Auf meine beste Freundin kann ich mich immer voll verlassen.",
+      "theme": "Freundschaft & Vertrauen"
+    },
+    {
+      "front": "die Ehrlichkeit",
+      "exampleDE": "Ehrlichkeit währt am längsten, besonders unter Freunden.",
+      "theme": "Freundschaft & Vertrauen"
+    },
+    {
+      "front": "die Hilfsbereitschaft",
+      "exampleDE": "Ihre herzliche Hilfsbereitschaft schätzen alle Nachbarn sehr.",
+      "theme": "Freundschaft & Vertrauen"
+    },
+    {
+      "front": "das Geheimnis",
+      "exampleDE": "Er würde ein ihm anvertrautes Geheimnis niemals verraten.",
+      "theme": "Freundschaft & Vertrauen"
+    },
+    {
+      "front": "zusammenhalten",
+      "exampleDE": "In schwierigen Momenten müssen Freunde fest zusammenhalten.",
+      "theme": "Freundschaft & Vertrauen"
+    },
+    {
+      "front": "kennenlernen",
+      "exampleDE": "Wir haben uns vor fünf Jahren an der Universität kennengelernt.",
+      "theme": "Freundschaft & Vertrauen"
+    },
+    {
+      "front": "die Verliebtheit",
+      "exampleDE": "Am Anfang einer Beziehung ist die Verliebtheit besonders intensiv.",
+      "theme": "Liebe & Partnerschaft"
+    },
+    {
+      "front": "die Zuneigung",
+      "exampleDE": "Er zeigte seine Zuneigung durch kleine, aufmerksame Gesten.",
+      "theme": "Liebe & Partnerschaft"
+    },
+    {
+      "front": "die Verlobung",
+      "exampleDE": "Bei einem romantischen Abendessen gaben sie ihre Verlobung bekannt.",
+      "theme": "Liebe & Partnerschaft"
+    },
+    {
+      "front": "die Hochzeit",
+      "exampleDE": "Die Hochzeit fand im historischen Rathaus der Altstadt statt.",
+      "theme": "Liebe & Partnerschaft"
+    },
+    {
+      "front": "der Ehepartner",
+      "exampleDE": "Sie respektiert die Meinung ihres Ehepartners in allen Belangen.",
+      "theme": "Liebe & Partnerschaft"
+    },
+    {
+      "front": "der Hochzeitstag",
+      "exampleDE": "Zum zehnten Hochzeitstag machten sie eine gemeinsame Kurzreise.",
+      "theme": "Liebe & Partnerschaft"
+    },
+    {
+      "front": "die Trennung",
+      "exampleDE": "Nach langer Überlegung entschieden sich beide für eine faire Trennung.",
+      "theme": "Liebe & Partnerschaft"
+    },
+    {
+      "front": "die Dankbarkeit",
+      "exampleDE": "Ich empfinde tiefe Dankbarkeit für deine großartige Hilfe.",
+      "theme": "Positive Gefühle"
+    },
+    {
+      "front": "die Erleichterung",
+      "exampleDE": "Nach der bestandenen Prüfung spürte sie riesige Erleichterung.",
+      "theme": "Positive Gefühle"
+    },
+    {
+      "front": "die Vorfreude",
+      "exampleDE": "Die Vorfreude auf den Sommerurlaub verkürzt die Arbeitswoche.",
+      "theme": "Positive Gefühle"
+    },
+    {
+      "front": "die Begeisterung",
+      "exampleDE": "Das begeisterte Publikum klatschte nach der Vorstellung minutenlang.",
+      "theme": "Positive Gefühle"
+    },
+    {
+      "front": "die Zufriedenheit",
+      "exampleDE": "Ein ruhiger Abend mit einem guten Buch schenkt Zufriedenheit.",
+      "theme": "Positive Gefühle"
+    },
+    {
+      "front": "die Hoffnung",
+      "exampleDE": "Wir geben die Hoffnung auf ein gutes Ende niemals auf.",
+      "theme": "Positive Gefühle"
+    },
+    {
+      "front": "der Optimismus",
+      "exampleDE": "Mit gesundem Optimismus meistert man viele schwierige Situationen.",
+      "theme": "Positive Gefühle"
+    },
+    {
+      "front": "das Selbstvertrauen",
+      "exampleDE": "Erfolge stärken das persönliche Selbstvertrauen nachhaltig.",
+      "theme": "Positive Gefühle"
+    },
+    {
+      "front": "die Enttäuschung",
+      "exampleDE": "Die Niederlage im Finale war eine herbe Enttäuschung für das Team.",
+      "theme": "Herausfordernde Gefühle"
+    },
+    {
+      "front": "die Eifersucht",
+      "exampleDE": "Unbegründete Eifersucht kann eine Partnerschaft schwer belasten.",
+      "theme": "Herausfordernde Gefühle"
+    },
+    {
+      "front": "der Neid",
+      "exampleDE": "Neid auf den Erfolg anderer bringt einen selbst nicht weiter.",
+      "theme": "Herausfordernde Gefühle"
+    },
+    {
+      "front": "die Scham",
+      "exampleDE": "Vor Scham über das Missgeschick wurde er im Gesicht rot.",
+      "theme": "Herausfordernde Gefühle"
+    },
+    {
+      "front": "die Reue",
+      "exampleDE": "Er zeigte aufrichtige Reue und entschuldigte sich sofort.",
+      "theme": "Herausfordernde Gefühle"
+    },
+    {
+      "front": "die Verzweiflung",
+      "exampleDE": "In ihrer Verzweiflung bat sie eine Beratungsstelle um Hilfe.",
+      "theme": "Herausfordernde Gefühle"
+    },
+    {
+      "front": "die Ungeduld",
+      "exampleDE": "Vor lauter Ungeduld lief er im Zimmer unruhig auf und ab.",
+      "theme": "Herausfordernde Gefühle"
+    },
+    {
+      "front": "zuverlässig",
+      "exampleDE": "Sie ist eine äußerst zuverlässige Kollegin im Büro.",
+      "theme": "Charakter & Persönlichkeit"
+    },
+    {
+      "front": "pünktlich",
+      "exampleDE": "Er erscheint zu jeder Besprechung auf die Minute pünktlich.",
+      "theme": "Charakter & Persönlichkeit"
+    },
+    {
+      "front": "ehrgeizig",
+      "exampleDE": "Als ehrgeizige Sportlerin trainiert sie diszipliniert jeden Tag.",
+      "theme": "Charakter & Persönlichkeit"
+    },
+    {
+      "front": "großzügig",
+      "exampleDE": "Mein Großonkel war schon immer ein sehr großzügiger Mensch.",
+      "theme": "Charakter & Persönlichkeit"
+    },
+    {
+      "front": "bescheiden",
+      "exampleDE": "Trotz seiner großen Erfolge ist er stets bescheiden geblieben.",
+      "theme": "Charakter & Persönlichkeit"
+    },
+    {
+      "front": "nachdenklich",
+      "exampleDE": "Sie blickte nachdenklich aus dem Fenster in den Regen.",
+      "theme": "Charakter & Persönlichkeit"
+    },
+    {
+      "front": "geduldig",
+      "exampleDE": "Der Lehrer erklärt die schwierige Aufgabe mit geduldiger Stimme.",
+      "theme": "Charakter & Persönlichkeit"
+    },
+    {
+      "front": "humorvoll",
+      "exampleDE": "Mit seiner humorvollen Art bringt er die ganze Runde zum Lachen.",
+      "theme": "Charakter & Persönlichkeit"
+    },
+    {
+      "front": "das Missverständnis",
+      "exampleDE": "Durch ein kurzes Telefongespräch klärte sich das Missverständnis auf.",
+      "theme": "Kommunikation & Konflikte"
+    },
+    {
+      "front": "der Streit",
+      "exampleDE": "Nach dem hitzigen Streit sprachen beide in Ruhe miteinander.",
+      "theme": "Kommunikation & Konflikte"
+    },
+    {
+      "front": "die Versöhnung",
+      "exampleDE": "Eine ehrliche Entschuldigung ebnete den Weg zur Versöhnung.",
+      "theme": "Kommunikation & Konflikte"
+    },
+    {
+      "front": "der Kompromiss",
+      "exampleDE": "Beide Verhandlungsparteien einigten sich auf einen fairen Kompromiss.",
+      "theme": "Kommunikation & Konflikte"
+    },
+    {
+      "front": "zuhören",
+      "exampleDE": "Gutes Zuhören ist oft wichtiger als selbst viel zu reden.",
+      "theme": "Kommunikation & Konflikte"
+    },
+    {
+      "front": "unterbrechen",
+      "exampleDE": "Bitte lass mich meinen Satz beenden und unterbrich mich nicht.",
+      "theme": "Kommunikation & Konflikte"
+    },
+    {
+      "front": "kritisieren",
+      "exampleDE": "Man sollte Kritik stets sachlich und konstruktiv formulieren.",
+      "theme": "Kommunikation & Konflikte"
+    },
+    {
+      "front": "die Meinung",
+      "exampleDE": "Meiner Meinung nach sollten wir die Pläne noch einmal überdenken.",
+      "theme": "Meinung & Diskussion"
+    },
+    {
+      "front": "der Standpunkt",
+      "exampleDE": "Sie vertrat ihren Standpunkt mit klaren und überzeugenden Argumenten.",
+      "theme": "Meinung & Diskussion"
+    },
+    {
+      "front": "das Argument",
+      "exampleDE": "Ein starkes Argument überzeugte auch die skeptischen Zuhörer.",
+      "theme": "Meinung & Diskussion"
+    },
+    {
+      "front": "beipflichten",
+      "exampleDE": "In dieser Einschätzung muss ich Ihnen vollkommen beipflichten.",
+      "theme": "Meinung & Diskussion"
+    },
+    {
+      "front": "Einwand erheben",
+      "exampleDE": "Er erhob einen sachlichen Einwand gegen den neuen Vorschlag.",
+      "theme": "Meinung & Diskussion"
+    },
+    {
+      "front": "die Überzeugungskraft",
+      "exampleDE": "Mit großer Überzeugungskraft gewann sie die Zuhörer für sich.",
+      "theme": "Meinung & Diskussion"
+    },
+    {
+      "front": "die Diskussion",
+      "exampleDE": "Die lebhafte Diskussion dauerte bis spät in den Abend.",
+      "theme": "Meinung & Diskussion"
+    },
+    {
+      "front": "das Fazit",
+      "exampleDE": "Als Fazit lässt sich festhalten, dass das Projekt gelungen ist.",
+      "theme": "Meinung & Diskussion"
+    },
+    {
+      "front": "die Höflichkeit",
+      "exampleDE": "Höflichkeit öffnet viele Türen im privaten und beruflichen Leben.",
+      "theme": "Höflichkeit & Umgangsformen"
+    },
+    {
+      "front": "der Respekt",
+      "exampleDE": "Gegenseitiger Respekt ist die Grundlage für ein friedliches Miteinander.",
+      "theme": "Höflichkeit & Umgangsformen"
+    },
+    {
+      "front": "die Entschuldigung",
+      "exampleDE": "Er nahm die aufrichtige Entschuldigung ohne Zögern an.",
+      "theme": "Höflichkeit & Umgangsformen"
+    },
+    {
+      "front": "die Einladung",
+      "exampleDE": "Vielen herzlichen Dank für die freundliche Einladung zum Abendessen.",
+      "theme": "Höflichkeit & Umgangsformen"
+    },
+    {
+      "front": "der Dank",
+      "exampleDE": "Ich möchte Ihnen meinen herzlichen Dank für die Unterstützung aussprechen.",
+      "theme": "Höflichkeit & Umgangsformen"
+    },
+    {
+      "front": "die Gastfreundschaft",
+      "exampleDE": "Die herzliche Gastfreundschaft der Familie hat uns tief beeindruckt.",
+      "theme": "Höflichkeit & Umgangsformen"
+    },
+    {
+      "front": "das Kompliment",
+      "exampleDE": "Sie freute sich sehr über das nette Kompliment zu ihrem Vortrag.",
+      "theme": "Höflichkeit & Umgangsformen"
+    },
+    {
+      "front": "die Fußgängerzone",
+      "exampleDE": "In der belebten Fußgängerzone reiht sich ein Geschäft an das andere.",
+      "theme": "Stadt & Fußgängerzone"
+    },
+    {
+      "front": "der Zebrastreifen",
+      "exampleDE": "Am Zebrastreifen halten die Autos an, um Fußgänger queren zu lassen.",
+      "theme": "Stadt & Fußgängerzone"
+    },
+    {
+      "front": "der Bürgersteig",
+      "exampleDE": "Die Kinder fahren mit ihren Rollern sicher auf dem breiten Bürgersteig.",
+      "theme": "Stadt & Fußgängerzone"
+    },
+    {
+      "front": "die Ampel",
+      "exampleDE": "Wenn die Ampel auf Rot schaltet, müssen alle Fahrzeuge anhalten.",
+      "theme": "Stadt & Fußgängerzone"
+    },
+    {
+      "front": "die Kreuzung",
+      "exampleDE": "An der nächsten großen Kreuzung biegen Sie bitte rechts ab.",
+      "theme": "Stadt & Fußgängerzone"
+    },
+    {
+      "front": "die Einbahnstraße",
+      "exampleDE": "Achten Sie auf das Schild, diese schmale Gasse ist eine Einbahnstraße.",
+      "theme": "Stadt & Fußgängerzone"
+    },
+    {
+      "front": "der Marktplatz",
+      "exampleDE": "Mittwochs und samstags findet auf dem Marktplatz der Wochenmarkt statt.",
+      "theme": "Stadt & Fußgängerzone"
+    },
+    {
+      "front": "das Rathaus",
+      "exampleDE": "Das historische Rathaus mit seinem markanten Turm steht im Zentrum.",
+      "theme": "Stadt & Fußgängerzone"
+    },
+    {
+      "front": "der Fahrplan",
+      "exampleDE": "Auf dem Fahrplan an der Haltestelle stehen alle Abfahrtszeiten.",
+      "theme": "Öffentlicher Nahverkehr"
+    },
+    {
+      "front": "die Haltestelle",
+      "exampleDE": "Die Straßenbahn hält direkt an der Haltestelle vor dem Museum.",
+      "theme": "Öffentlicher Nahverkehr"
+    },
+    {
+      "front": "die Fahrkarte",
+      "exampleDE": "Kaufen Sie die Fahrkarte bitte vor dem Einsteigen am Automaten.",
+      "theme": "Öffentlicher Nahverkehr"
+    },
+    {
+      "front": "der Entwerter",
+      "exampleDE": "Stecken Sie das Ticket in den Entwerter, um es gültig zu machen.",
+      "theme": "Öffentlicher Nahverkehr"
+    },
+    {
+      "front": "umsteigen",
+      "exampleDE": "Am Hauptbahnhof müssen wir in die U-Bahn-Linie 2 umsteigen.",
+      "theme": "Öffentlicher Nahverkehr"
+    },
+    {
+      "front": "die Verspätung",
+      "exampleDE": "Wegen einer Weichenstörung hat der Bus zehn Minuten Verspätung.",
+      "theme": "Öffentlicher Nahverkehr"
+    },
+    {
+      "front": "die Monatskarte",
+      "exampleDE": "Für Berufspendler lohnt sich eine persönliche Monatskarte.",
+      "theme": "Öffentlicher Nahverkehr"
+    },
+    {
+      "front": "der Führerschein",
+      "exampleDE": "Mit achtzehn Jahren bestand sie die Prüfung für den Führerschein.",
+      "theme": "Auto & Straßenverkehr"
+    },
+    {
+      "front": "der Sicherheitsgurt",
+      "exampleDE": "Bitte schnallen Sie sich an und legen Sie den Sicherheitsgurt an.",
+      "theme": "Auto & Straßenverkehr"
+    },
+    {
+      "front": "die Tankstelle",
+      "exampleDE": "An der nächsten Tankstelle müssen wir Benzin und Wischwasser nachfüllen.",
+      "theme": "Auto & Straßenverkehr"
+    },
+    {
+      "front": "der Kofferraum",
+      "exampleDE": "Im geräumigen Kofferraum ist genug Platz für drei große Koffer.",
+      "theme": "Auto & Straßenverkehr"
+    },
+    {
+      "front": "der Rückspiegel",
+      "exampleDE": "Vor dem Spurwechsel schaut der Fahrer aufmerksam in den Rückspiegel.",
+      "theme": "Auto & Straßenverkehr"
+    },
+    {
+      "front": "der Blinker",
+      "exampleDE": "Vergessen Sie beim Abbiegen nicht, rechtzeitig den Blinker zu setzen.",
+      "theme": "Auto & Straßenverkehr"
+    },
+    {
+      "front": "der Scheibenwischer",
+      "exampleDE": "Bei starkem Regen laufen die Scheibenwischer auf höchster Stufe.",
+      "theme": "Auto & Straßenverkehr"
+    },
+    {
+      "front": "der Stau",
+      "exampleDE": "Wegen einer Baustelle stehen die Autos auf der Autobahn im Stau.",
+      "theme": "Auto & Straßenverkehr"
+    },
+    {
+      "front": "der Fahrradhelm",
+      "exampleDE": "Ein gut sitzender Fahrradhelm schützt den Kopf bei einem Sturz.",
+      "theme": "Fahrrad & Mikromobilität"
+    },
+    {
+      "front": "der Fahrradweg",
+      "exampleDE": "Entlang des Flusses verläuft ein breiter und asphaltierter Fahrradweg.",
+      "theme": "Fahrrad & Mikromobilität"
+    },
+    {
+      "front": "das Fahrradschloss",
+      "exampleDE": "Schließen Sie Ihr Rad immer mit einem stabilen Fahrradschloss an.",
+      "theme": "Fahrrad & Mikromobilität"
+    },
+    {
+      "front": "die Klingel",
+      "exampleDE": "Mit einer kurzen Betätigung der Klingel warnt sie Fußgänger vor.",
+      "theme": "Fahrrad & Mikromobilität"
+    },
+    {
+      "front": "die Luftpumpe",
+      "exampleDE": "Mit der Handluftpumpe bringt er den Reifendruck auf das Optimum.",
+      "theme": "Fahrrad & Mikromobilität"
+    },
+    {
+      "front": "der E-Scooter",
+      "exampleDE": "In der Innenstadt leihen sich viele Pendler einen E-Scooter.",
+      "theme": "Fahrrad & Mikromobilität"
+    },
+    {
+      "front": "die Pedale",
+      "exampleDE": "Er tritt kräftig in die Pedale, um den steilen Hügel hinaufzufahren.",
+      "theme": "Fahrrad & Mikromobilität"
+    },
+    {
+      "front": "der Hauptbahnhof",
+      "exampleDE": "Vom Hauptbahnhof aus fahren Züge in alle europäischen Metropolen.",
+      "theme": "Bahnreise & Bahnhof"
+    },
+    {
+      "front": "der Bahnsteig",
+      "exampleDE": "Die Fahrgäste warten auf Bahnsteig vier auf den einfahrenden Zug.",
+      "theme": "Bahnreise & Bahnhof"
+    },
+    {
+      "front": "das Gleis",
+      "exampleDE": "Der Schnellzug nach Berlin fährt heute abweichend von Gleis neun.",
+      "theme": "Bahnreise & Bahnhof"
+    },
+    {
+      "front": "die Sitzplatzreservierung",
+      "exampleDE": "Eine Sitzplatzreservierung erspart langes Suchen im vollen Zug.",
+      "theme": "Bahnreise & Bahnhof"
+    },
+    {
+      "front": "der Schaffner",
+      "exampleDE": "Der freundliche Schaffner kontrolliert die Tickets der Fahrgäste.",
+      "theme": "Bahnreise & Bahnhof"
+    },
+    {
+      "front": "der Speisewagen",
+      "exampleDE": "Im Speisewagen kann man während der Fahrt Kaffee und Snacks genießen.",
+      "theme": "Bahnreise & Bahnhof"
+    },
+    {
+      "front": "der Anschlusszug",
+      "exampleDE": "Trotz kurzer Verspätung erreichten alle Reisenden ihren Anschlusszug.",
+      "theme": "Bahnreise & Bahnhof"
+    },
+    {
+      "front": "das Gepäckfach",
+      "exampleDE": "Schwere Reisetaschen verstaut man sicher im oberen Gepäckfach.",
+      "theme": "Bahnreise & Bahnhof"
+    },
+    {
+      "front": "der Flughafen",
+      "exampleDE": "Wir fahren zwei Stunden vor dem Abflug mit dem Zug zum Flughafen.",
+      "theme": "Flughafen & Flugreise"
+    },
+    {
+      "front": "die Bordkarte",
+      "exampleDE": "Zeigen Sie beim Einsteigen bitte Ihre Bordkarte und den Ausweis vor.",
+      "theme": "Flughafen & Flugreise"
+    },
+    {
+      "front": "die Sicherheitskontrolle",
+      "exampleDE": "An der Sicherheitskontrolle müssen Laptops separat vorgezeigt werden.",
+      "theme": "Flughafen & Flugreise"
+    },
+    {
+      "front": "das Abfluggos",
+      "exampleDE": "Das Flugzeug nach Rom startet pünktlich an Abfluggate B zwölf.",
+      "theme": "Flughafen & Flugreise"
+    },
+    {
+      "front": "das Handgepäck",
+      "exampleDE": "Flüssigkeiten im Handgepäck dürfen maximal hundert Milliliter fassen.",
+      "theme": "Flughafen & Flugreise"
+    },
+    {
+      "front": "die Gepäckausgabe",
+      "exampleDE": "Nach der Landung holt man die Koffer an der Gepäckausgabe ab.",
+      "theme": "Flughafen & Flugreise"
+    },
+    {
+      "front": "der Reisepass",
+      "exampleDE": "Für Reisen außerhalb der Europäischen Union benötigt man einen Reisepass.",
+      "theme": "Flughafen & Flugreise"
+    },
+    {
+      "front": "die Rezeption",
+      "exampleDE": "Die Rezeption des Hotels ist rund um die Uhr mit Personal besetzt.",
+      "theme": "Hotel & Unterkunft"
+    },
+    {
+      "front": "die Schlüsselkarte",
+      "exampleDE": "Mit der elektronischen Schlüsselkarte öffnet sich die Zimmertür.",
+      "theme": "Hotel & Unterkunft"
+    },
+    {
+      "front": "das Einzelzimmer",
+      "exampleDE": "Für die Geschäftsreise bucht er ein ruhiges Einzelzimmer.",
+      "theme": "Hotel & Unterkunft"
+    },
+    {
+      "front": "das Doppelzimmer",
+      "exampleDE": "Das Doppelzimmer bietet einen herrlichen Ausblick auf das Meer.",
+      "theme": "Hotel & Unterkunft"
+    },
+    {
+      "front": "das Frühstücksbuffet",
+      "exampleDE": "Das reichhaltige Frühstücksbuffet lässt keine kulinarischen Wünsche offen.",
+      "theme": "Hotel & Unterkunft"
+    },
+    {
+      "front": "der Zimmerservice",
+      "exampleDE": "Man kann sich das Abendessen bequem über den Zimmerservice bestellen.",
+      "theme": "Hotel & Unterkunft"
+    },
+    {
+      "front": "auschecken",
+      "exampleDE": "Die Hotelgäste müssen bis spätestens elf Uhr vormittags auschecken.",
+      "theme": "Hotel & Unterkunft"
+    },
+    {
+      "front": "die Jugendherberge",
+      "exampleDE": "Für Rucksackreisende ist die Jugendherberge eine günstige Übernachtungsmöglichkeit.",
+      "theme": "Hotel & Unterkunft"
+    },
+    {
+      "front": "die Ferienwohnung",
+      "exampleDE": "Für den Familienurlaub mieten wir eine gemütliche Ferienwohnung.",
+      "theme": "Urlaub & Tourismus"
+    },
+    {
+      "front": "das Reiseziel",
+      "exampleDE": "Italien ist seit vielen Jahren ihr liebstes Reiseziel im Sommer.",
+      "theme": "Urlaub & Tourismus"
+    },
+    {
+      "front": "die Sehenswürdigkeit",
+      "exampleDE": "Die historische Kathedrale ist die bekannteste Sehenswürdigkeit der Stadt.",
+      "theme": "Urlaub & Tourismus"
+    },
+    {
+      "front": "der Reiseleiter",
+      "exampleDE": "Der kundige Reiseleiter erklärt die spannende Geschichte des Bauwerks.",
+      "theme": "Urlaub & Tourismus"
+    },
+    {
+      "front": "das Souvenir",
+      "exampleDE": "Als schönes Souvenir kaufte sie eine handbemalte Keramikschale.",
+      "theme": "Urlaub & Tourismus"
+    },
+    {
+      "front": "die Ansichtskarte",
+      "exampleDE": "Er schreibt eine Ansichtskarte mit Grüßen an seine Großeltern.",
+      "theme": "Urlaub & Tourismus"
+    },
+    {
+      "front": "der Sonnenbrand",
+      "exampleDE": "Ohne schützende Sonnencreme riskiert man am Strand einen Sonnenbrand.",
+      "theme": "Urlaub & Tourismus"
+    },
+    {
+      "front": "der Campingplatz",
+      "exampleDE": "Der Campingplatz liegt idyllisch direkt an einem klaren Badesee.",
+      "theme": "Camping & Naturabenteuer"
+    },
+    {
+      "front": "das Zelt",
+      "exampleDE": "Gemeinsam bauten sie das Zelt auf einer ebenen Wiese auf.",
+      "theme": "Camping & Naturabenteuer"
+    },
+    {
+      "front": "der Schlafsack",
+      "exampleDE": "Ein warmer Schlafsack schützt zuverlässig vor der nächtlichen Kälte.",
+      "theme": "Camping & Naturabenteuer"
+    },
+    {
+      "front": "die Isomatte",
+      "exampleDE": "Die weiche Isomatte isoliert gegen die Feuchtigkeit des Bodens.",
+      "theme": "Camping & Naturabenteuer"
+    },
+    {
+      "front": "die Taschenlampe",
+      "exampleDE": "Im Dunkeln leuchtet er sich den Weg mit der Taschenlampe.",
+      "theme": "Camping & Naturabenteuer"
+    },
+    {
+      "front": "der Gaskocher",
+      "exampleDE": "Auf dem kleinen Gaskocher kochen sie morgens frischen Kaffee.",
+      "theme": "Camping & Naturabenteuer"
+    },
+    {
+      "front": "das Lagerfeuer",
+      "exampleDE": "Am Abend saßen alle gemütlich um das knisternde Lagerfeuer.",
+      "theme": "Camping & Naturabenteuer"
+    },
+    {
+      "front": "das Mückenspray",
+      "exampleDE": "In Gewässernähe empfiehlt sich ein wirksames Mückenspray.",
+      "theme": "Camping & Naturabenteuer"
+    },
+    {
+      "front": "der Berggipfel",
+      "exampleDE": "Vom schneebedeckten Berggipfel hat man eine fantastische Fernsicht.",
+      "theme": "Landschaften & Geografie"
+    },
+    {
+      "front": "der Gebirgsbach",
+      "exampleDE": "Klares, eiskaltes Wasser plätschert durch den Gebirgsbach.",
+      "theme": "Landschaften & Geografie"
+    },
+    {
+      "front": "die Klippe",
+      "exampleDE": "Wellen brechen mit lautem Tosen an der steilen Felsklippe.",
+      "theme": "Landschaften & Geografie"
+    },
+    {
+      "front": "die Sanddüne",
+      "exampleDE": "Der stetige Wind formt die feinen Sanddünen an der Küste.",
+      "theme": "Landschaften & Geografie"
+    },
+    {
+      "front": "der Wasserfall",
+      "exampleDE": "Das Wasser stürzt tosend über den zwanzig Meter hohen Wasserfall.",
+      "theme": "Landschaften & Geografie"
+    },
+    {
+      "front": "die Halbinsel",
+      "exampleDE": "Die malerische Halbinsel ragt weit in das azurblaue Meer hinein.",
+      "theme": "Landschaften & Geografie"
+    },
+    {
+      "front": "das Flussufer",
+      "exampleDE": "Auf der grünen Wiese am Flussufer kann man wunderbar picknicken.",
+      "theme": "Landschaften & Geografie"
+    },
+    {
+      "front": "der Laubwald",
+      "exampleDE": "Im Herbst leuchtet das bunte Blätterkleid im Laubwald.",
+      "theme": "Wälder & Pflanzenwelt"
+    },
+    {
+      "front": "der Nadelwald",
+      "exampleDE": "Im Nadelwald duftet die frische Luft nach Harz und Moos.",
+      "theme": "Wälder & Pflanzenwelt"
+    },
+    {
+      "front": "die Eiche",
+      "exampleDE": "Die uralte Eiche spendet an heißen Sommertagen kühlen Schatten.",
+      "theme": "Wälder & Pflanzenwelt"
+    },
+    {
+      "front": "die Tanne",
+      "exampleDE": "Im Winter schmückt man die grüne Tanne als Weihnachtsbaum.",
+      "theme": "Wälder & Pflanzenwelt"
+    },
+    {
+      "front": "die Baumkrone",
+      "exampleDE": "Vögel zwitschern versteckt in der dichten Baumkrone.",
+      "theme": "Wälder & Pflanzenwelt"
+    },
+    {
+      "front": "der Baumstamm",
+      "exampleDE": "Der mächtige Baumstamm hat einen Umfang von über zwei Metern.",
+      "theme": "Wälder & Pflanzenwelt"
+    },
+    {
+      "front": "der Zapfen",
+      "exampleDE": "Die Kinder sammeln braune Kiefernzapfen zum Basteln.",
+      "theme": "Wälder & Pflanzenwelt"
+    },
+    {
+      "front": "das Moos",
+      "exampleDE": "Auf den schattigen Steinen wächst ein dicker Teppich aus grünem Moos.",
+      "theme": "Wälder & Pflanzenwelt"
+    },
+    {
+      "front": "die Sonnenblume",
+      "exampleDE": "Die leuchtend gelbe Sonnenblume wendet sich stets dem Licht zu.",
+      "theme": "Wiesen- & Gartenblumen"
+    },
+    {
+      "front": "der Löwenzahn",
+      "exampleDE": "Im Frühling verwandelt der Löwenzahn die Wiese in ein gelbes Meer.",
+      "theme": "Wiesen- & Gartenblumen"
+    },
+    {
+      "front": "das Gänseblümchen",
+      "exampleDE": "Kleine weiße Gänseblümchen wachsen überall im kurz gemähten Rasen.",
+      "theme": "Wiesen- & Gartenblumen"
+    },
+    {
+      "front": "die Lilie",
+      "exampleDE": "Weiße Lilien verströmen einen intensiven, edlen Duft.",
+      "theme": "Wiesen- & Gartenblumen"
+    },
+    {
+      "front": "die Orchidee",
+      "exampleDE": "Auf der sonnigen Fensterbank blüht eine prächtige Orchidee.",
+      "theme": "Wiesen- & Gartenblumen"
+    },
+    {
+      "front": "das Blütenblatt",
+      "exampleDE": "Ein sanfter Windstoß weht zarte Blütenblätter durch den Garten.",
+      "theme": "Wiesen- & Gartenblumen"
+    },
+    {
+      "front": "verblühen",
+      "exampleDE": "Nach einigen sonnigen Wochen beginnen die Frühlingsblumen zu verblühen.",
+      "theme": "Wiesen- & Gartenblumen"
+    },
+    {
+      "front": "das Wildschwein",
+      "exampleDE": "Eine Rotte Wildschweine durchstreift nachts den dichten Wald.",
+      "theme": "Heimische Säugetiere"
+    },
+    {
+      "front": "das Reh",
+      "exampleDE": "In der Morgendämmerung äst ein scheues Reh am Waldrand.",
+      "theme": "Heimische Säugetiere"
+    },
+    {
+      "front": "das Eichhörnchen",
+      "exampleDE": "Das flinke Eichhörnchen versteckt Nüsse für die Wintermonate.",
+      "theme": "Heimische Säugetiere"
+    },
+    {
+      "front": "der Igel",
+      "exampleDE": "Bei Gefahr rollt sich der Igel zu einer stacheligen Kugel zusammen.",
+      "theme": "Heimische Säugetiere"
+    },
+    {
+      "front": "der Dachs",
+      "exampleDE": "Der scheue Dachs bewohnt einen verzweigten Erdbau unter alten Bäumen.",
+      "theme": "Heimische Säugetiere"
+    },
+    {
+      "front": "der Biber",
+      "exampleDE": "Mit scharfen Zähnen fällt der Biber junge Weiden am Bachlauf.",
+      "theme": "Heimische Säugetiere"
+    },
+    {
+      "front": "die Fledermaus",
+      "exampleDE": "In der Abenddämmerung jagt die lautlose Fledermaus nach Nachtfaltern.",
+      "theme": "Heimische Säugetiere"
+    },
+    {
+      "front": "der Feldhase",
+      "exampleDE": "Mit weiten Sprüngen flieht der wachsame Feldhase über den Acker.",
+      "theme": "Heimische Säugetiere"
+    },
+    {
+      "front": "der Spatz",
+      "exampleDE": "Ein kleiner Spatz hüpft neugierig auf der Suche nach Krümeln heran.",
+      "theme": "Vögel & Flugtiere"
+    }
+  ]
+}

@@ -1,0 +1,1052 @@
+[
+  {
+    "front": "der Wanderweg",
+    "back": "sendero",
+    "ipa": "senˈdeɾo",
+    "example": "El sendero señalizado conduce a través de bosques umbríos hacia la montaña.",
+    "exampleDE": "Der markierte Wanderweg führt durch schattige Wälder auf den Berg."
+  },
+  {
+    "front": "das Bürgeramt",
+    "back": "oficina de atención ciudadana",
+    "ipa": "ofiˈθina ðe atenˈθjon θjwðaˈðana",
+    "example": "Un nuevo documento de identidad se solicita personalmente en la oficina de atención ciudadana.",
+    "exampleDE": "Einen neuen Ausweis beantragt man persönlich im Bürgeramt."
+  },
+  {
+    "front": "der Personalausweis",
+    "back": "documento de identidad",
+    "ipa": "dokuˈmento ðe iðentiˈðað",
+    "example": "El documento de identidad tiene una validez de diez años en territorio nacional.",
+    "exampleDE": "Der Personalausweis ist zehn Jahre lang im Inland gültig."
+  },
+  {
+    "front": "die Geburtsurkunde",
+    "back": "certificado de nacimiento",
+    "ipa": "θeɾtifiˈkaðo ðe naθiˈmjento",
+    "example": "Para muchos trámites administrativos se necesita un certificado oficial de nacimiento.",
+    "exampleDE": "Für viele behördliche Anträge benötigt man eine offizielle Geburtsurkunde."
+  },
+  {
+    "front": "die Meldebestätigung",
+    "back": "certificado de empadronamiento",
+    "ipa": "θeɾtifiˈkaðo ðe empadɾonaˈmjento",
+    "example": "Tras la mudanza se obtiene el certificado de empadronamiento en la oficina de registro civil.",
+    "exampleDE": "Nach dem Umzug erhält man beim Einwohnermeldeamt die Meldebestätigung."
+  },
+  {
+    "front": "das Formular",
+    "back": "formulario",
+    "ipa": "foɾmuˈlaɾjo",
+    "example": "Rellene el formulario oficial con letras mayúsculas de imprenta, por favor.",
+    "exampleDE": "Füllen Sie das behördliche Formular bitte in Druckbuchstaben aus."
+  },
+  {
+    "front": "die Unterschrift",
+    "back": "firma",
+    "ipa": "ˈfiɾma",
+    "example": "Ponga su firma manuscrita abajo sobre la línea.",
+    "exampleDE": "Setzen Sie Ihre eigenhändige Unterschrift unten auf die Linie."
+  },
+  {
+    "front": "der Stempel",
+    "back": "sello oficial",
+    "ipa": "ˈseʎo ofiˈθjal",
+    "example": "Un sello oficial confirma la autenticidad del escrito.",
+    "exampleDE": "Ein offizieller Stempel bestätigt die Echtheit des Schreibens."
+  },
+  {
+    "front": "die Beglaubigung",
+    "back": "compulsa",
+    "ipa": "komˈpulsa",
+    "example": "Los certificados para la universidad suelen requerir una compulsa oficial.",
+    "exampleDE": "Zeugnisse für die Universität erfordern oft eine amtliche Beglaubigung."
+  },
+  {
+    "front": "die Vorschrift",
+    "back": "normativa",
+    "ipa": "noɾmaˈtiβa",
+    "example": "Todos los empleados deben cumplir estrictamente la normativa de seguridad vigente.",
+    "exampleDE": "Alle Mitarbeiter müssen die geltenden Sicherheitsvorschriften strikt befolgen."
+  },
+  {
+    "front": "die Erlaubnis",
+    "back": "permiso",
+    "ipa": "peɾˈmiso",
+    "example": "Sin un permiso por escrito de las autoridades no se puede construir aquí.",
+    "exampleDE": "Ohne schriftliche Erlaubnis der Behörde darf hier nicht gebaut werden."
+  },
+  {
+    "front": "das Verbot",
+    "back": "prohibición",
+    "ipa": "pɾoibiˈθjon",
+    "example": "En todo el edificio rige una prohibición absoluta de fumar.",
+    "exampleDE": "Im gesamten Gebäude gilt ein ausnahmsloses Rauchverbot."
+  },
+  {
+    "front": "die Strafe",
+    "back": "multa",
+    "ipa": "ˈmulta",
+    "example": "Quienes aparcan mal se arriesgan a pagar una multa considerable.",
+    "exampleDE": "Falschparker müssen mit einer empfindlichen Geldstrafe rechnen."
+  },
+  {
+    "front": "das Fundbüro",
+    "back": "oficina de objetos perdidos",
+    "ipa": "ofiˈθina ðe oβˈxetos peɾˈðiðos",
+    "example": "Las llaves extraviadas suelen ser entregadas en la oficina de objetos perdidos por personas honradas.",
+    "exampleDE": "Verlorene Schlüssel werden oft von ehrlichen Findern im Fundbüro abgegeben."
+  },
+  {
+    "front": "die Polizeiwache",
+    "back": "comisaría de policía",
+    "ipa": "komisaˈɾia ðe poliˈθia",
+    "example": "Puso una denuncia contra desconocidos en la comisaría de policía local.",
+    "exampleDE": "Er erstattete auf der örtlichen Polizeiwache Anzeige gegen Unbekannt."
+  },
+  {
+    "front": "der Zeuge",
+    "back": "testigo",
+    "ipa": "tesˈtiɣo",
+    "example": "La policía interrogó a varios testigos sobre el desarrollo del accidente.",
+    "exampleDE": "Die Polizei befragte mehrere Zeugen zum Hergang des Unfalls."
+  },
+  {
+    "front": "die Wahl",
+    "back": "elecciones",
+    "ipa": "eleɡˈθjones",
+    "example": "Cada cuatro años se celebran las elecciones democráticas al parlamento.",
+    "exampleDE": "Alle vier Jahre findet die demokratische Wahl zum Parlament statt."
+  },
+  {
+    "front": "der Stimmzettel",
+    "back": "papeleta de voto",
+    "ipa": "papeˈleta ðe ˈβoto",
+    "example": "Marque su cruz en secreto en la papeleta de voto, por favor.",
+    "exampleDE": "Setzen Sie Ihr Kreuz bitte verdeckt auf dem Stimmzettel."
+  },
+  {
+    "front": "die Wahlurne",
+    "back": "urna electoral",
+    "ipa": "ˈuɾna elektoˈɾal",
+    "example": "La papeleta de voto doblada se deposita en la urna electoral precintada.",
+    "exampleDE": "Der gefaltete Stimmzettel wird in die versiegelte Wahlurne geworfen."
+  },
+  {
+    "front": "das Grundgesetz",
+    "back": "ley fundamental",
+    "ipa": "ˈlei fundamentˈtal",
+    "example": "La ley fundamental garantiza los derechos humanos inviolables de todos los ciudadanos.",
+    "exampleDE": "Das Grundgesetz garantiert die unverletzlichen Menschenrechte aller Bürger."
+  },
+  {
+    "front": "die Meinungsfreiheit",
+    "back": "libertad de expresión",
+    "ipa": "liβeɾˈtað ðe ekspɾeˈsjon",
+    "example": "La libre manifestación de opiniones es un pilar fundamental de la democracia.",
+    "exampleDE": "Die freie Meinungsäußerung ist ein tragender Pfeiler der Demokratie."
+  },
+  {
+    "front": "die Bürgerbeteiligung",
+    "back": "participación ciudadana",
+    "ipa": "paɾtiθipaˈθjon θjwðaˈðana",
+    "example": "Mediante la participación ciudadana los habitantes pueden contribuir activamente a diseñar su ciudad.",
+    "exampleDE": "Durch Bürgerbeteiligung können Einwohner ihre Stadt aktiv mitgestalten."
+  },
+  {
+    "front": "die Gleichberechtigung",
+    "back": "igualdad de derechos",
+    "ipa": "iɣwalˈdað ðe deˈɾetʃos",
+    "example": "La igualdad de derechos de todos los géneros está firmemente anclada en la ley.",
+    "exampleDE": "Gleichberechtigung aller Geschlechter ist gesetzlich fest verankert."
+  },
+  {
+    "front": "das Ehrenamt",
+    "back": "voluntariado",
+    "ipa": "boluntaɾjaˈðo",
+    "example": "Muchas personas participan en su tiempo libre en labores de voluntariado.",
+    "exampleDE": "Viele Menschen engagieren sich in ihrer Freizeit in einem Ehrenamt."
+  },
+  {
+    "front": "das Silvester",
+    "back": "Nochevieja",
+    "ipa": "notʃeˈβjexa",
+    "example": "En Nochevieja brindamos a medianoche por el año nuevo.",
+    "exampleDE": "An Silvester stoßen wir um Mitternacht auf das neue Jahr an."
+  },
+  {
+    "front": "das Feuerwerk",
+    "back": "fuegos artificiales",
+    "ipa": "ˈfweɣos aɾtifiˈθjales",
+    "example": "Unos coloridos fuegos artificiales iluminan el cielo nocturno.",
+    "exampleDE": "Ein farbenfrohes Feuerwerk erhellt den nächtlichen Himmel."
+  },
+  {
+    "front": "das Neujahr",
+    "back": "Año Nuevo",
+    "ipa": "ˈaɲo ˈnweβo",
+    "example": "El día de Año Nuevo los vecinos y amigos se desean mucha suerte.",
+    "exampleDE": "Am Neujahrstag wünschen sich Nachbarn und Freunde viel Glück."
+  },
+  {
+    "front": "die Weihnachtstage",
+    "back": "fiestas navideñas",
+    "ipa": "ˈfjestas naβiˈðeɲas",
+    "example": "Tradicionalmente la familia pasa las fiestas navideñas junta en casa.",
+    "exampleDE": "Die Weihnachtstage verbringt die Familie traditionell gemeinsam zu Hause."
+  },
+  {
+    "front": "der Heiligabend",
+    "back": "Nochebuena",
+    "ipa": "notʃeˈβwena",
+    "example": "En Nochebuena se desenvuelven los regalos debajo del árbol adornado.",
+    "exampleDE": "An Heiligabend werden unter dem geschmückten Baum Geschenke ausgepackt."
+  },
+  {
+    "front": "das Geschenkpapier",
+    "back": "papel de regalo",
+    "ipa": "paˈpel de reˈɣalo",
+    "example": "Papel de regalo de colores y lazos decoran los paquetes.",
+    "exampleDE": "Buntes Geschenkpapier und Schleifen zieren die Päckchen."
+  },
+  {
+    "front": "die Glückwunschkarte",
+    "back": "tarjeta de felicitación",
+    "ipa": "taɾˈxeta ðe felisiθaˈθjon",
+    "example": "Escribió unas líneas personales en la tarjeta de felicitación.",
+    "exampleDE": "Auf die Glückwunschkarte schrieb sie ein paar persönliche Zeilen."
+  },
+  {
+    "front": "die Geburtstagstorte",
+    "back": "tarta de cumpleaños",
+    "ipa": "ˈtaɾta ðe kumpleˈaɲos",
+    "example": "En la tarta de cumpleaños arden velas de colores listas para soplar.",
+    "exampleDE": "Auf der Geburtstagstorte brennen bunte Kerzen zum Auspusten."
+  },
+  {
+    "front": "die Überraschungsparty",
+    "back": "fiesta sorpresa",
+    "ipa": "ˈfjesta soɾˈpɾesa",
+    "example": "Sus amigos organizaron en secreto una gran fiesta sorpresa para él.",
+    "exampleDE": "Freunde organisierten heimlich eine tolle Überraschungsparty für ihn."
+  },
+  {
+    "front": "der Luftballon",
+    "back": "globo",
+    "ipa": "ˈɡloβo",
+    "example": "Globos de colores adornan el salón de fiesta para el cumpleaños infantil.",
+    "exampleDE": "Bunte Luftballons schmücken den Festsaal für die Kinderparty."
+  },
+  {
+    "front": "die Einladungskarte",
+    "back": "tarjeta de invitación",
+    "ipa": "taɾˈxeta ðe imbitaˈθjon",
+    "example": "Dos semanas antes de la fiesta envió las tarjetas de invitación.",
+    "exampleDE": "Zwei Wochen vor dem Fest verschickte er die Einladungskarten."
+  },
+  {
+    "front": "anstoßen",
+    "back": "brindar",
+    "ipa": "bɾinˈdaɾ",
+    "example": "Brindamos con una bebida fría por la salud del cumpleañero.",
+    "exampleDE": "Wir stoßen mit einem kühlen Getränk auf das Wohl des Geburtstagskindes an."
+  },
+  {
+    "front": "der Ehrengast",
+    "back": "invitado de honor",
+    "ipa": "imbiˈtaðo ðe oˈnoɾ",
+    "example": "El alcalde fue recibido calurosamente como invitado de honor.",
+    "exampleDE": "Der Bürgermeister wurde als Ehrengast herzlich begrüßt."
+  },
+  {
+    "front": "die Festrede",
+    "back": "discurso conmemorativo",
+    "ipa": "disˈkuɾso komemoɾaˈtiβo",
+    "example": "En su discurso conmemorativo el presidente del club repasó los éxitos logrados.",
+    "exampleDE": "In seiner Festrede blickte der Vereinsvorsitzende auf Erfolge zurück."
+  },
+  {
+    "front": "gratulieren",
+    "back": "felicitar",
+    "ipa": "felisiˈtaɾ",
+    "example": "Todos los compañeros lo felicitan cordialmente por su aniversario.",
+    "exampleDE": "Alle Kollegen gratulieren ihm herzlich zum runden Jubiläum."
+  },
+  {
+    "front": "die Gegenwart",
+    "back": "presente",
+    "ipa": "pɾeˈsente",
+    "example": "Concéntrate en las tareas del presente.",
+    "exampleDE": "Konzentriere dich auf die Aufgaben in der Gegenwart."
+  },
+  {
+    "front": "die Vergangenheit",
+    "back": "pasado",
+    "ipa": "paˈsaðo",
+    "example": "De los errores del pasado se puede aprender mucho para el futuro.",
+    "exampleDE": "Aus den Fehlern der Vergangenheit kann man viel für die Zukunft lernen."
+  },
+  {
+    "front": "die Zukunft",
+    "back": "futuro",
+    "ipa": "fuˈtuɾo",
+    "example": "Con ilusión y esfuerzo la joven familia mira hacia el futuro.",
+    "exampleDE": "Mit Zuversicht und Fleiß blickt die junge Familie in die Zukunft."
+  },
+  {
+    "front": "die Zeitspanne",
+    "back": "lapso de tiempo",
+    "ipa": "ˈlapso ðe ˈtjempo",
+    "example": "En el breve lapso de tiempo de pocos días todo cambió.",
+    "exampleDE": "In der kurzen Zeitspanne von wenigen Tagen änderte sich alles."
+  },
+  {
+    "front": "der Zeitraum",
+    "back": "período de tiempo",
+    "ipa": "peˈɾjoðo ðe ˈtjempo",
+    "example": "A lo largo de un período de tiempo prolongado se apreció una clara mejoría.",
+    "exampleDE": "Über einen längeren Zeitraum hinweg zeigte sich eine deutliche Besserung."
+  },
+  {
+    "front": "der Augenblick",
+    "back": "instante",
+    "ipa": "insˈtante",
+    "example": "Por un breve instante todos en la sala contuvieron la respiración.",
+    "exampleDE": "Für einen kurzen Augenblick hielten alle im Raum den Atem an."
+  },
+  {
+    "front": "die Ewigkeit",
+    "back": "eternidad",
+    "ipa": "eteɾniˈðað",
+    "example": "La espera en el andén por el tren retrasado le pareció una eternidad.",
+    "exampleDE": "Das Warten am verspäteten Bahnsteig kam ihm wie eine Ewigkeit vor."
+  },
+  {
+    "front": "gelegentlich",
+    "back": "de vez en cuando",
+    "ipa": "de ˈβeθ en ˈkwando",
+    "example": "De vez en cuando se da el gusto de tomar un trozo de chocolate negro tras la comida.",
+    "exampleDE": "Gelegentlich gönnt er sich nach dem Essen ein Stück dunkle Schokolade."
+  },
+  {
+    "front": "regelmäßig",
+    "back": "con regularidad",
+    "ipa": "kon reɣulaɾiˈðað",
+    "example": "Quien repasa el vocabulario con regularidad logra rápidos progresos.",
+    "exampleDE": "Wer regelmäßig Vokabeln wiederholt, erzielt schnelle Lernerfolge."
+  },
+  {
+    "front": "stetig",
+    "back": "de forma constante",
+    "ipa": "de ˈfoɾma konsˈtante",
+    "example": "Su comprensión oral mejoró de forma constante durante los últimos meses.",
+    "exampleDE": "Ihr Sprachverständnis verbesserte sich in den letzten Monaten stetig."
+  },
+  {
+    "front": "ununterbrochen",
+    "back": "sin interrupción",
+    "ipa": "sin inteɾupˈsjon",
+    "example": "Desde primera hora de la mañana llueve fuera sin interrupción.",
+    "exampleDE": "Seit dem frühen Morgen regnet es draußen ununterbrochen."
+  },
+  {
+    "front": "inzwischen",
+    "back": "entretanto",
+    "ipa": "entɾeˈtanto",
+    "example": "Entretanto habla con fluidez y sin pararse a dudar.",
+    "exampleDE": "Inzwischen spricht sie fließend und ohne langes Nachdenken."
+  },
+  {
+    "front": "demnächst",
+    "back": "próximamente",
+    "ipa": "pɾoksimaˈmente",
+    "example": "La nueva versión de la aplicación de aprendizaje saldrá próximamente en la tienda.",
+    "exampleDE": "Die neue Version der Lern-App erscheint demnächst im Store."
+  },
+  {
+    "front": "seinerzeit",
+    "back": "en su momento",
+    "ipa": "en su moˈmento",
+    "example": "En su momento los obreros construyeron el ayuntamiento sin maquinaria moderna.",
+    "exampleDE": "Seinerzeit bauten die Handwerker das Rathaus ohne moderne Maschinen."
+  },
+  {
+    "front": "bisher",
+    "back": "hasta ahora",
+    "ipa": "ˈasta aˈoɾa",
+    "example": "Hasta ahora todas las pruebas y exámenes han salido sin ningún fallo.",
+    "exampleDE": "Bisher sind alle Tests und Prüfungen absolut fehlerfrei verlaufen."
+  },
+  {
+    "front": "die Umgebung",
+    "back": "alrededores",
+    "ipa": "alreðeˈðoɾes",
+    "example": "En los alrededores cercanos del hotel hay preciosos senderos para caminar.",
+    "exampleDE": "In der näheren Umgebung des Hotels gibt es herrliche Wanderwege."
+  },
+  {
+    "front": "die Entfernung",
+    "back": "distancia",
+    "ipa": "disˈtanθja",
+    "example": "La distancia entre las dos ciudades es de unos cincuenta kilómetros.",
+    "exampleDE": "Die Entfernung zwischen den beiden Städten beträgt rund fünfzig Kilometer."
+  },
+  {
+    "front": "die Zwischenzeit",
+    "back": "mientras tanto",
+    "ipa": "ˈmjentɾas ˈtanto",
+    "example": "Mientras tanto ya podemos ir poniendo la mesa para la comida.",
+    "exampleDE": "In der Zwischenzeit können wir schon den Tisch für das Essen decken."
+  },
+  {
+    "front": "gegenüber",
+    "back": "enfrente",
+    "ipa": "emˈfɾente",
+    "example": "La farmacia está situada justo enfrente de la entrada principal de la estación.",
+    "exampleDE": "Die Apotheke liegt direkt gegenüber dem Haupteingang des Bahnhofs."
+  },
+  {
+    "front": "nebenan",
+    "back": "al lado",
+    "ipa": "al ˈlaðo",
+    "example": "En la vivienda de al lado vive una familia muy amable.",
+    "exampleDE": "In der Wohnung nebenan wohnt eine sehr freundliche Familie."
+  },
+  {
+    "front": "mittendrin",
+    "back": "en pleno centro",
+    "ipa": "em ˈpleno ˈθentɾo",
+    "example": "En pleno centro del casco antiguo se alza la fuente más antigua del pueblo.",
+    "exampleDE": "Mitten in der Altstadt steht der älteste Brunnen des Ortes."
+  },
+  {
+    "front": "außerhalb",
+    "back": "a las afueras",
+    "ipa": "a las aˈfweɾas",
+    "example": "El polígono industrial se encuentra un poco a las afueras del pueblo.",
+    "exampleDE": "Das Gewerbegebiet liegt etwas außerhalb der geschlossenen Ortschaft."
+  },
+  {
+    "front": "einerseits",
+    "back": "por un lado",
+    "ipa": "poɾ un ˈlaðo",
+    "example": "Por un lado le gustaría viajar, pero por otro está ahorrando para un coche.",
+    "exampleDE": "Einerseits möchte er verreisen, andererseits spart er auf ein Auto."
+  },
+  {
+    "front": "andererseits",
+    "back": "por otro lado",
+    "ipa": "poɾ ˈotɾo ˈlaðo",
+    "example": "Por otro lado, el nuevo empleo ofrece muchas mejores oportunidades de ascenso.",
+    "exampleDE": "Andererseits bietet die neue Stelle wesentlich bessere Aufstiegschancen."
+  },
+  {
+    "front": "infolgedessen",
+    "back": "por consiguiente",
+    "ipa": "poɾ konsiˈɣjente",
+    "example": "Las calles estaban heladas, por consiguiente se produjeron atascos.",
+    "exampleDE": "Die Straßen waren vereist, infolgedessen kam es zu Staus."
+  },
+  {
+    "front": "dennoch",
+    "back": "sin embargo",
+    "ipa": "sin emˈbaɾɣo",
+    "example": "Llovía a cántaros, sin embargo dimos un largo paseo por el bosque.",
+    "exampleDE": "Es regnete in Strömen, dennoch machten wir einen langen Waldspaziergang."
+  },
+  {
+    "front": "nichtsdestotrotz",
+    "back": "no obstante",
+    "ipa": "no oβsˈtante",
+    "example": "Estaba muy cansado, no obstante terminó el capítulo con esmero.",
+    "exampleDE": "Er war sehr müde, nichtsdestotrotz beendete er das Kapitel sorgfältig."
+  },
+  {
+    "front": "außerdem",
+    "back": "además",
+    "ipa": "aðeˈmas",
+    "example": "La comida estuvo riquísima y la atención fue además muy agradable.",
+    "exampleDE": "Das Essen schmeckte hervorragend und die Bedienung war außerdem sehr nett."
+  },
+  {
+    "front": "aus diesem Grund",
+    "back": "por esta razón",
+    "ipa": "poɾ ˈesta raˈθon",
+    "example": "Ella había estudiado con esmero y por esta razón aprobó el examen fácilmente.",
+    "exampleDE": "Sie hatte fleißig gelernt und bestand aus diesem Grund die Prüfung spielend."
+  },
+  {
+    "front": "nämlich",
+    "back": "y es que",
+    "ipa": "i es ke",
+    "example": "Hoy me quedo en casa, y es que tengo un fuerte dolor de cabeza.",
+    "exampleDE": "Ich bleibe heute daheim, ich habe nämlich starke Kopfschmerzen."
+  },
+  {
+    "front": "stattdessen",
+    "back": "en su lugar",
+    "ipa": "en su luˈɣaɾ",
+    "example": "No fuimos en coche, sino que en su lugar fuimos caminando a pie.",
+    "exampleDE": "Wir fuhren nicht mit dem Auto, sondern gingen stattdessen zu Fuß."
+  },
+  {
+    "front": "vorausgesetzt",
+    "back": "siempre que",
+    "ipa": "ˈsjempɾe ke",
+    "example": "Iremos de excursión mañana, siempre que el tiempo se mantenga seco.",
+    "exampleDE": "Wir wandern morgen, vorausgesetzt das Wetter bleibt trocken."
+  },
+  {
+    "front": "währenddessen",
+    "back": "mientras tanto",
+    "ipa": "ˈmjentɾas ˈtanto",
+    "example": "Él salteaba las verduras, mientras tanto ella ponía la mesa con cariño.",
+    "exampleDE": "Er briet das Gemüse, währenddessen deckte sie liebevoll den Tisch."
+  },
+  {
+    "front": "sowohl ... als auch",
+    "back": "tanto ... como",
+    "ipa": "ˈtanto ˈkomo",
+    "example": "Habla con soltura tanto español como un inglés totalmente profesional.",
+    "exampleDE": "Sie spricht sowohl fließend Spanisch als auch verhandlungssicheres Englisch."
+  },
+  {
+    "front": "weder ... noch",
+    "back": "ni ... ni",
+    "ipa": "ni ni",
+    "example": "No toma ni café ni té negro por la mañana.",
+    "exampleDE": "Er trinkt weder Kaffee noch schwarzen Tee am Morgen."
+  },
+  {
+    "front": "je ... desto",
+    "back": "cuanto más ... más",
+    "ipa": "ˈkwanto mas mas",
+    "example": "Cuanto más se practica, más fácil resulta hablar con fluidez.",
+    "exampleDE": "Je mehr man übt, desto leichter fällt das freie Sprechen."
+  },
+  {
+    "front": "obgleich",
+    "back": "a pesar de que",
+    "ipa": "a peˈsaɾ de ke",
+    "example": "A pesar de que había temporal, los pescadores salieron a faenar con sus barcas.",
+    "exampleDE": "Obgleich es stürmisch war, liefen die Fischer mit ihren Booten aus."
+  },
+  {
+    "front": "anpacken",
+    "back": "arrimar el hombro",
+    "ipa": "ariˈmaɾ el ˈombɾo",
+    "example": "Si todos arriman el hombro, el duro trabajo queda terminado en un instante.",
+    "exampleDE": "Wenn alle mit anpacken, ist die schwere Arbeit im Nu erledigt."
+  },
+  {
+    "front": "erledigen",
+    "back": "hacer",
+    "ipa": "aˈθeɾ",
+    "example": "Esta mañana tengo que hacer todavía compras importantes.",
+    "exampleDE": "Ich muss heute Vormittag noch wichtige Einkäufe erledigen."
+  },
+  {
+    "front": "vorbereiten",
+    "back": "preparar",
+    "ipa": "pɾepaˈɾaɾ",
+    "example": "Prepara con esmero la presentación para la reunión de mañana.",
+    "exampleDE": "Sie bereitet die Präsentation für das morgige Meeting gründlich vor."
+  },
+  {
+    "front": "aufräumen",
+    "back": "ordenar",
+    "ipa": "oɾdeˈnaɾ",
+    "example": "Los sábados los niños recogen y ordenan juntos sus habitaciones.",
+    "exampleDE": "Samstags räumen die Kinder gemeinsam ihre Zimmer auf."
+  },
+  {
+    "front": "wegwerfen",
+    "back": "tirar a la basura",
+    "ipa": "tiˈraɾ a la baˈsuɾa",
+    "example": "Las pilas usadas no deben tirarse a la basura doméstica común.",
+    "exampleDE": "Alte Batterien darf man nicht einfach in den Hausmüll wegwerfen."
+  },
+  {
+    "front": "behalten",
+    "back": "conservar",
+    "ipa": "konseɾˈβaɾ",
+    "example": "Quiero conservar este bonito recuerdo durante toda mi vida.",
+    "exampleDE": "Dieses schöne Erinnerungsstück möchte ich mein Leben lang behalten."
+  },
+  {
+    "front": "verschenken",
+    "back": "regalar",
+    "ipa": "reɣaˈlaɾ",
+    "example": "Los libros que ya ha leído suele regalarlos gustosa a sus amigos.",
+    "exampleDE": "Bücher, die sie schon gelesen hat, verschenkt sie gerne an Freunde."
+  },
+  {
+    "front": "organisieren",
+    "back": "organizar",
+    "ipa": "oɾɣaniˈθaɾ",
+    "example": "Él organiza la fiesta veraniega anual de nuestro club deportivo.",
+    "exampleDE": "Er organisiert das alljährliche Sommerfest unseres Sportvereins."
+  },
+  {
+    "front": "bemerken",
+    "back": "darse cuenta",
+    "ipa": "ˈdaɾse ˈkwenta",
+    "example": "Solo tarde se dio cuenta de que se había dejado la llave de su casa olvidada.",
+    "exampleDE": "Erst spät bemerkte er, dass er seinen Hausschlüssel vergessen hatte."
+  },
+  {
+    "front": "begreifen",
+    "back": "comprender",
+    "ipa": "kompɾenˈdeɾ",
+    "example": "Tras la clara explicación pudo comprender la relación existente.",
+    "exampleDE": "Nach der anschaulichen Erklärung konnte er den Zusammenhang begreifen."
+  },
+  {
+    "front": "nachdenken",
+    "back": "reflexionar",
+    "ipa": "refleksjoˈnaɾ",
+    "example": "Sobre esta oferta importante tengo que reflexionar primero con calma.",
+    "exampleDE": "Über dieses wichtige Angebot muss ich erst in Ruhe nachdenken."
+  },
+  {
+    "front": "feststellen",
+    "back": "comprobar",
+    "ipa": "kompɾoˈβaɾ",
+    "example": "Los evaluadores comprobaron que se cumplen todos los criterios de seguridad.",
+    "exampleDE": "Die Prüfer stellten fest, dass alle Sicherheitskriterien erfüllt sind."
+  },
+  {
+    "front": "vermuten",
+    "back": "suponer",
+    "ipa": "supoˈneɾ",
+    "example": "Los especialistas suponen que los precios no tardarán en volver a bajar.",
+    "exampleDE": "Die Experten vermuten, dass die Preise bald wieder sinken werden."
+  },
+  {
+    "front": "bezweifeln",
+    "back": "dudar",
+    "ipa": "duˈðaɾ",
+    "example": "Dudo mucho que este plan antiguo siga funcionando hoy en día.",
+    "exampleDE": "Ich bezweifle stark, dass dieser alte Plan heute noch funktioniert."
+  },
+  {
+    "front": "beurteilen",
+    "back": "juzgar",
+    "ipa": "xuzˈɣaɾ",
+    "example": "Desde la lejanía resulta muy complicado juzgar la difícil situación.",
+    "exampleDE": "Aus der Ferne lässt sich die schwierige Lage nur schwer beurteilen."
+  },
+  {
+    "front": "begründen",
+    "back": "justificar",
+    "ipa": "xustifiˈkaɾ",
+    "example": "¿Puede justificar su postura con ejemplos concretos, por favor?",
+    "exampleDE": "Können Sie Ihren Standpunkt bitte mit konkreten Beispielen begründen?"
+  },
+  {
+    "front": "bestätigen",
+    "back": "confirmar",
+    "ipa": "komfiɾˈmaɾ",
+    "example": "La aerolínea confirmó la reserva a través de un mensaje automático.",
+    "exampleDE": "Die Fluggesellschaft bestätigte die Buchung per automatischer Nachricht."
+  },
+  {
+    "front": "vereinbaren",
+    "back": "acordar",
+    "ipa": "akoɾˈdaɾ",
+    "example": "Acordamos una nueva fecha para la próxima semana.",
+    "exampleDE": "Wir vereinbarten einen neuen Termin für die kommende Woche."
+  },
+  {
+    "front": "anregen",
+    "back": "proponer",
+    "ipa": "pɾopoˈneɾ",
+    "example": "Propuso posponer la reunión durante media hora.",
+    "exampleDE": "Er regte an, die Besprechung um eine halbe Stunde zu verschieben."
+  },
+  {
+    "front": "zur Sprache bringen",
+    "back": "sacar a relucir",
+    "ipa": "saˈkaɾ a reluˈθiɾ",
+    "example": "Sacó a relucir el importante asunto en la sesión con mucha valentía.",
+    "exampleDE": "Sie brachte das wichtige Thema in der Sitzung mutig zur Sprache."
+  },
+  {
+    "front": "zusammenfassen",
+    "back": "resumir",
+    "ipa": "resuˈmiɾ",
+    "example": "El orador resumió brevemente las principales ideas clave.",
+    "exampleDE": "Der Sprecher fasste die wichtigsten Kernaussagen kurz zusammen."
+  },
+  {
+    "front": "berichten",
+    "back": "informar",
+    "ipa": "infoɾˈmaɾ",
+    "example": "La corresponsal informa en directo sobre los acontecimientos actuales.",
+    "exampleDE": "Die Korrespondentin berichtet live von den aktuellen Ereignissen."
+  },
+  {
+    "front": "mitteilen",
+    "back": "comunicar",
+    "ipa": "komuniˈkaɾ",
+    "example": "Comuníquenos su nueva dirección a la mayor brevedad, por favor.",
+    "exampleDE": "Bitte teilen Sie uns Ihre neue Anschrift zeitnah mit."
+  },
+  {
+    "front": "verbessern",
+    "back": "mejorar",
+    "ipa": "mexoˈɾaɾ",
+    "example": "Con el entrenamiento diario logró mejorar su marca personal de carrera.",
+    "exampleDE": "Mit täglichem Training konnte er seine persönliche Laufzeit verbessern."
+  },
+  {
+    "front": "verschlechtern",
+    "back": "empeorar",
+    "ipa": "empeoˈɾaɾ",
+    "example": "Si empieza a llover de golpe, las condiciones de visibilidad empeoran rápidamente.",
+    "exampleDE": "Bei plötzlichem Regen verschlechtern sich die Sichtverhältnisse rasch."
+  },
+  {
+    "front": "zunehmen",
+    "back": "aumentar",
+    "ipa": "awmenˈtaɾ",
+    "example": "En los últimos años el interés por la comida saludable ha aumentado.",
+    "exampleDE": "In den letzten Jahren hat das Interesse an gesunder Ernährung zugenommen."
+  },
+  {
+    "front": "abnehmen",
+    "back": "adelgazar",
+    "ipa": "aðelɣaˈθaɾ",
+    "example": "Haciendo más ejercicio y comiendo menos azúcar logró adelgazar de forma sana.",
+    "exampleDE": "Durch mehr Bewegung und weniger Zucker konnte er gesund abnehmen."
+  },
+  {
+    "front": "entwickeln",
+    "back": "desarrollar",
+    "ipa": "desaɾoˈʎaɾ",
+    "example": "El equipo de ingeniería desarrolla un sistema de propulsión innovador y eficiente.",
+    "exampleDE": "Das Ingenieurteam entwickelt ein neuartiges, sparsames Antriebssystem."
+  },
+  {
+    "front": "entstehen",
+    "back": "construirse",
+    "ipa": "konstɾwiɾse",
+    "example": "En el prado despejado se está construyendo una guardería moderna.",
+    "exampleDE": "Auf der freien Wiese entsteht ein moderner Kindergarten."
+  },
+  {
+    "front": "verschwinden",
+    "back": "desaparecer",
+    "ipa": "desapaɾeˈθeɾ",
+    "example": "Los espesos bancos de niebla desaparecen en cuanto brilla el sol.",
+    "exampleDE": "Die dichten Nebelschwaden verschwinden, sobald die Sonne scheint."
+  },
+  {
+    "front": "überqueren",
+    "back": "cruzar",
+    "ipa": "kɾuˈθaɾ",
+    "example": "Los transeúntes solo deberían cruzar la calle por los pasos señalizados.",
+    "exampleDE": "Fußgänger sollten die Straße nur an gesicherten Überwegen überqueren."
+  },
+  {
+    "front": "eintreffen",
+    "back": "llegar",
+    "ipa": "ʎeˈɣaɾ",
+    "example": "El tren puntual llegará según lo previsto a las catorce horas.",
+    "exampleDE": "Der pünktliche Zug wird planmäßig um vierzehn Uhr eintreffen."
+  },
+  {
+    "front": "abbiegen",
+    "back": "girar",
+    "ipa": "xiˈɾaɾ",
+    "example": "En el cruce con semáforos debe girar a la izquierda hacia la zona peatonal.",
+    "exampleDE": "An der Ampelkreuzung müssen Sie links in die Fußgängerzone abbiegen."
+  },
+  {
+    "front": "beschleunigen",
+    "back": "acelerar",
+    "ipa": "aθeleˈɾaɾ",
+    "example": "En el carril de incorporación el coche acelera ágilmente a velocidad de autopista.",
+    "exampleDE": "Auf der Auffahrt beschleunigt der Wagen zügig auf Autobahntempo."
+  },
+  {
+    "front": "bremsen",
+    "back": "frenar",
+    "ipa": "fɾeˈnaɾ",
+    "example": "Antes de tomar la curva pronunciada el conductor frena a tiempo.",
+    "exampleDE": "Vor der scharfen Kurve bremst der Fahrer rechtzeitig ab."
+  },
+  {
+    "front": "anhalten",
+    "back": "parar",
+    "ipa": "paˈɾaɾ",
+    "example": "Ante la señal de stop todo vehículo debe parar tres segundos.",
+    "exampleDE": "Am Stoppschild muss jedes Fahrzeug für drei Sekunden anhalten."
+  },
+  {
+    "front": "vorbeifahren",
+    "back": "pasar de largo",
+    "ipa": "paˈsaɾ de ˈlaɾɣo",
+    "example": "El tren directo pasa de largo sin parar en la pequeña estación de pueblo.",
+    "exampleDE": "Der Expresszug fährt ohne Halt am kleinen Provinzbahnhof vorbei."
+  },
+  {
+    "front": "umkehren",
+    "back": "dar media vuelta",
+    "ipa": "ˈdaɾ ˈmeðja ˈβwelta",
+    "example": "A causa de la repentina ventisca los alpinistas tuvieron que dar media vuelta.",
+    "exampleDE": "Wegen des plötzlichen Schneesturms mussten die Bergsteiger umkehren."
+  },
+  {
+    "front": "beruhigen",
+    "back": "tranquilizar",
+    "ipa": "tɾaŋkiliˈθaɾ",
+    "example": "La madre pudo tranquilizar enseguida al niño que lloraba con voz suave.",
+    "exampleDE": "Die Mutter konnte das weinende Kind mit sanfter Stimme rasch beruhigen."
+  },
+  {
+    "front": "beunruhigen",
+    "back": "inquietar",
+    "ipa": "iŋkjeˈtaɾ",
+    "example": "Los oscuros nubarrones de tormenta inquietaban a los senderistas.",
+    "exampleDE": "Die dunklen Gewitterwolken am Himmel beunruhigten die Wanderer."
+  },
+  {
+    "front": "überraschen",
+    "back": "sorprender",
+    "ipa": "soɾpɾenˈdeɾ",
+    "example": "Sus amigos lo sorprendieron con una tarta horneada por ellos.",
+    "exampleDE": "Seine Freunde überraschten ihn mit einem selbstgebackenen Kuchen."
+  },
+  {
+    "front": "trösten",
+    "back": "consolar",
+    "ipa": "konsoˈlaɾ",
+    "example": "Intentó consolar a su apenada amiga dedicándole palabras amables.",
+    "exampleDE": "Sie versuchte ihre traurige Freundin mit lieben Worten zu trösten."
+  },
+  {
+    "front": "bewundern",
+    "back": "admirar",
+    "ipa": "aðmiˈɾaɾ",
+    "example": "Turistas de todas partes del mundo admiran la primorosa arquitectura.",
+    "exampleDE": "Touristen aus aller Welt bewundern die meisterhafte Architektur."
+  },
+  {
+    "front": "respektieren",
+    "back": "respetar",
+    "ipa": "respeˈtaɾ",
+    "example": "Deberíamos respetar en todo momento las opiniones diversas de los demás.",
+    "exampleDE": "Wir sollten die unterschiedlichen Meinungen anderer stets respektieren."
+  },
+  {
+    "front": "schätzen",
+    "back": "apreciar",
+    "ipa": "apɾeˈθjaɾ",
+    "example": "Aprecio mucho tu manera de ser tan franca y directa.",
+    "exampleDE": "Ich schätze deine ehrliche und direkte Art sehr."
+  },
+  {
+    "front": "hervorragend",
+    "back": "excelente",
+    "ipa": "ekseˈlente",
+    "example": "La actriz ofreció una actuación completamente excelente.",
+    "exampleDE": "Die Schauspielerin lieferte eine rundum hervorragende Leistung ab."
+  },
+  {
+    "front": "bemerkenswert",
+    "back": "admirable",
+    "ipa": "aðmiˈɾaβle",
+    "example": "Su rápida capacidad de asimilación es verdaderamente admirable.",
+    "exampleDE": "Ihre schnelle Auffassungsgabe ist wirklich bemerkenswert."
+  },
+  {
+    "front": "angemessen",
+    "back": "razonable",
+    "ipa": "rasoˈnaβle",
+    "example": "El precio por la calidad ofrecida resulta absolutamente razonable.",
+    "exampleDE": "Der Preis für die gebotene Qualität ist absolut angemessen."
+  },
+  {
+    "front": "überflüssig",
+    "back": "innecesario",
+    "ipa": "inneθeˈsaɾjo",
+    "example": "Hacer largas colas en ventanilla resulta innecesario gracias a las reservas en línea.",
+    "exampleDE": "Langes Warten am Schalter wird durch Online-Buchungen überflüssig."
+  },
+  {
+    "front": "wesentlich",
+    "back": "fundamentalmente",
+    "ipa": "fundamentˈtalmente",
+    "example": "Una preparación adecuada contribuye fundamentalmente al éxito de un plan.",
+    "exampleDE": "Gute Vorbereitung trägt wesentlich zum Erfolg eines Vorhabens bei."
+  },
+  {
+    "front": "ausreichend",
+    "back": "suficiente",
+    "ipa": "sufiˈθjente",
+    "example": "En la nevera quedan todavía suficientes provisiones para pasar el fin de semana.",
+    "exampleDE": "Im Kühlschrank sind noch ausreichend Vorräte für das Wochenende."
+  },
+  {
+    "front": "wertvoll",
+    "back": "valioso",
+    "ipa": "baˈljoso",
+    "example": "Sus consejos prácticos resultaron enormemente valiosos para todos nosotros.",
+    "exampleDE": "Ihre praktischen Ratschläge waren für uns alle sehr wertvoll."
+  },
+  {
+    "front": "wirkungsvoll",
+    "back": "eficaz",
+    "ipa": "efiˈkaθ",
+    "example": "Ventilar de forma habitual es una medida muy eficaz contra el moho.",
+    "exampleDE": "Regelmäßiges Lüften ist eine wirkungsvolle Maßnahme gegen Schimmel."
+  },
+  {
+    "front": "gepflegt",
+    "back": "cuidado",
+    "ipa": "kwiˈðaðo",
+    "example": "El antiguo jardín delantero produce una impresión sumamente cuidada.",
+    "exampleDE": "Der alte Vorgarten macht einen überaus gepflegten Eindruck."
+  },
+  {
+    "front": "unordentlich",
+    "back": "desordenado",
+    "ipa": "desoɾdeˈnaðo",
+    "example": "Tras la tarde de manualidades la habitación de los niños se veía bastante desordenada.",
+    "exampleDE": "Nach dem Bastelnachmittag sah das Kinderzimmer recht unordentlich aus."
+  },
+  {
+    "front": "gemütlich",
+    "back": "acogedor",
+    "ipa": "akoxeˈðoɾ",
+    "example": "Pasamos una velada muy acogedora junto a la lumbre de la chimenea.",
+    "exampleDE": "Wir verbrachten einen gemütlichen Abend am warmen Kaminfeuer."
+  },
+  {
+    "front": "anstrengend",
+    "back": "agotador",
+    "ipa": "aɣotaˈðoɾ",
+    "example": "La larga caminata por sendas empinadas de piedra suelta fue muy agotadora.",
+    "exampleDE": "Die lange Wanderung über steile Geröllpfade war sehr anstrengend."
+  },
+  {
+    "front": "erträglich",
+    "back": "soportable",
+    "ipa": "sopoɾˈtaβle",
+    "example": "Gracias a la brisa marina las altas temperaturas resultaron tolerables y soportables.",
+    "exampleDE": "Dank des leichten Seewinds waren die hohen Temperaturen erträglich."
+  },
+  {
+    "front": "tadellos",
+    "back": "impecable",
+    "ipa": "impeˈkaβle",
+    "example": "El cuarto de baño recién reformado funciona de manera impecable.",
+    "exampleDE": "Das frisch renovierte Badezimmer funktioniert tadellos."
+  },
+  {
+    "front": "makellos",
+    "back": "sin tacha",
+    "ipa": "sin ˈtatʃa",
+    "example": "La superficie recién pulida resplandece sin tacha bajo la luz solar.",
+    "exampleDE": "Die frisch polierte Oberfläche glänzt makellos im Sonnenlicht."
+  },
+  {
+    "front": "aufrichtig",
+    "back": "sincero",
+    "ipa": "sinˈθeɾo",
+    "example": "Dio las gracias con palabras sinceras por la ayuda tan generosa.",
+    "exampleDE": "Sie bedankte sich mit aufrichtigen Worten für die großzügige Hilfe."
+  },
+  {
+    "front": "rücksichtsvoll",
+    "back": "considerado",
+    "ipa": "konsiðeˈɾaðo",
+    "example": "En el autobús abarrotado se muestra considerado con las personas ancianas.",
+    "exampleDE": "Im vollen Bus verhält er sich rücksichtsvoll gegenüber älteren Menschen."
+  },
+  {
+    "front": "aufmerksam",
+    "back": "atento",
+    "ipa": "aˈtento",
+    "example": "El atento camarero vio de inmediato que la copa estaba vacía.",
+    "exampleDE": "Der aufmerksame Kellner bemerkte sofort, dass das Glas leer war."
+  },
+  {
+    "front": "willensstark",
+    "back": "tenaz",
+    "ipa": "teˈnaθ",
+    "example": "Con una entrega tenaz la deportista logró su objetivo atlético.",
+    "exampleDE": "Mit willensstarkem Einsatz erreichte die Athletin ihr sportliches Ziel."
+  },
+  {
+    "front": "selbstständig",
+    "back": "autónomamente",
+    "ipa": "awˈtonomamente",
+    "example": "La alumna resolvió la exigente tarea de forma plenamente autónoma.",
+    "exampleDE": "Die Schülerin löste die anspruchsvolle Aufgabe völlig selbstständig."
+  },
+  {
+    "front": "verantwortungsbewusst",
+    "back": "responsable",
+    "ipa": "responˈsaβle",
+    "example": "Un conductor responsable respeta en todo momento el límite de velocidad.",
+    "exampleDE": "Ein verantwortungsbewusster Fahrer achtet stets auf das Tempolimit."
+  },
+  {
+    "front": "friedlich",
+    "back": "pacífico",
+    "ipa": "paˈθifiko",
+    "example": "La concentración discurrió de principio a fin de forma totalmente pacífica.",
+    "exampleDE": "Die Kundgebung verlief von Anfang bis Ende vollkommen friedlich."
+  },
+  {
+    "front": "hilfsbereit",
+    "back": "servicial",
+    "ipa": "seɾβiˈθjal",
+    "example": "El nuevo vecino ofreció servicial su ayuda para la mudanza.",
+    "exampleDE": "Der neue Nachbar bot hilfsbereit seine Unterstützung beim Umzug an."
+  },
+  {
+    "front": "keine Ursache",
+    "back": "no hay de qué",
+    "ipa": "no ˈai de ˈke",
+    "example": "«¡Muchas gracias por tu ayuda!» – «¡No hay de qué, de nada!»",
+    "exampleDE": "„Vielen Dank für deine Hilfe!“ – „Keine Ursache, gern geschehen!“"
+  },
+  {
+    "front": "mach dir keine Sorgen",
+    "back": "no te preocupes",
+    "ipa": "no te pɾeoˈkupes",
+    "example": "No te preocupes, todo se arreglará para bien.",
+    "exampleDE": "Mach dir keine Sorgen, alles wird sich zum Guten wenden."
+  },
+  {
+    "front": "bis zum nächsten Mal",
+    "back": "hasta la próxima",
+    "ipa": "ˈasta la ˈpɾoksima",
+    "example": "Fue una velada magnífica; ¡adiós y hasta la próxima!",
+    "exampleDE": "Es war ein schöner Abend, auf Wiedersehen und bis zum nächsten Mal!"
+  },
+  {
+    "front": "im Großen und Ganzen",
+    "back": "en líneas generales",
+    "ipa": "en ˈlineas xeneˈɾales",
+    "example": "En líneas generales estamos muy satisfechos con el resultado.",
+    "exampleDE": "Im Großen und Ganzen sind wir mit dem Ergebnis sehr zufrieden."
+  },
+  {
+    "front": "Schritt für Schritt",
+    "back": "paso a paso",
+    "ipa": "ˈpaso a ˈpaso",
+    "example": "Una lengua extranjera se aprende mejor con paciencia y paso a paso.",
+    "exampleDE": "Man lernt eine fremde Sprache am besten geduldig Schritt für Schritt."
+  },
+  {
+    "front": "auf jeden Fall",
+    "back": "en todo caso",
+    "ipa": "en ˈtoðo ˈkaso",
+    "example": "Deberíamos visitar el bonito casco antiguo de la ciudad en todo caso.",
+    "exampleDE": "Wir sollten die sehenswerte Altstadt auf jeden Fall besichtigen."
+  }
+]

@@ -1,0 +1,1402 @@
+[
+  {
+    "front": "die Bettdecke",
+    "back": "edredón",
+    "ipa": "eðɾeˈðon",
+    "example": "El edredón suave abriga muy bien en invierno.",
+    "exampleDE": "Die weiche Bettdecke hält im Winter schön warm."
+  },
+  {
+    "front": "der Wecker",
+    "back": "despertador",
+    "ipa": "despeɾtaˈðoɾ",
+    "example": "El despertador suena puntualmente a las siete en punto.",
+    "exampleDE": "Der Wecker klingelt pünktlich um sieben Uhr."
+  },
+  {
+    "front": "das Schlummern",
+    "back": "dormitar",
+    "ipa": "doɾmiˈtaɾ",
+    "example": "Tras sonar el despertador por primera vez, pulsa el botón para dormitar un poco más.",
+    "exampleDE": "Nach dem ersten Weckerklingeln drückt er auf die Schlummertaste."
+  },
+  {
+    "front": "das Zähneputzen",
+    "back": "cepillado de dientes",
+    "ipa": "θepiˈʎaðo ðe ˈdjentes",
+    "example": "Un cepillado de dientes a fondo es esencial para una dentadura sana.",
+    "exampleDE": "Gründliches Zähneputzen ist wichtig für gesunde Zähne."
+  },
+  {
+    "front": "sich anziehen",
+    "back": "vestirse",
+    "ipa": "besˈtiɾse",
+    "example": "Vístete rápido, que tenemos que irnos.",
+    "exampleDE": "Zieh dich schnell an, wir müssen los."
+  },
+  {
+    "front": "die Haarbürste",
+    "back": "cepillo para el pelo",
+    "ipa": "θeˈpiʎo ˈpaɾa el ˈpelo",
+    "example": "Ella peina su pelo largo con un cepillo para el pelo.",
+    "exampleDE": "Sie kämmt ihre langen Haare mit einer Haarbürste."
+  },
+  {
+    "front": "der Spiegel",
+    "back": "espejo",
+    "ipa": "esˈpexo",
+    "example": "Él se mira brevemente en el espejo del pasillo.",
+    "exampleDE": "Er schaut kurz in den Spiegel im Flur."
+  },
+  {
+    "front": "die Routine",
+    "back": "rutina",
+    "ipa": "ruˈtina",
+    "example": "Una rutina matutina fija ahorra mucho tiempo.",
+    "exampleDE": "Eine feste Morgenroutine spart viel Zeit."
+  },
+  {
+    "front": "der Mietvertrag",
+    "back": "contrato de alquiler",
+    "ipa": "konˈtɾato ðe alkiˈleɾ",
+    "example": "Ayer firmamos el nuevo contrato de alquiler.",
+    "exampleDE": "Wir haben gestern den neuen Mietvertrag unterschrieben."
+  },
+  {
+    "front": "die Kaution",
+    "back": "fianza",
+    "ipa": "ˈfjanθa",
+    "example": "La fianza equivale a tres meses de alquiler.",
+    "exampleDE": "Die Kaution beträgt drei Monatsmieten."
+  },
+  {
+    "front": "die Nebenkosten",
+    "back": "gastos adicionales",
+    "ipa": "ˈɡastos aðiθjoˈnales",
+    "example": "La calefacción y el agua están incluidas en los gastos adicionales.",
+    "exampleDE": "Heizung und Wasser sind in den Nebenkosten enthalten."
+  },
+  {
+    "front": "der Vermieter",
+    "back": "arrendador",
+    "ipa": "arendaˈðoɾ",
+    "example": "El arrendador repara la calefacción averiada.",
+    "exampleDE": "Der Vermieter repariert die defekte Heizung."
+  },
+  {
+    "front": "der Mieter",
+    "back": "inquilino",
+    "ipa": "iŋkiˈlino",
+    "example": "El inquilino paga el alquiler a principios de mes.",
+    "exampleDE": "Der Mieter bezahlt die Miete am Anfang des Monats."
+  },
+  {
+    "front": "die Kündigung",
+    "back": "rescisión de contrato",
+    "ipa": "resθiˈsjon de konˈtɾato",
+    "example": "La rescisión del contrato de la vivienda anterior debe hacerse por escrito.",
+    "exampleDE": "Die Kündigung der alten Wohnung muss schriftlich erfolgen."
+  },
+  {
+    "front": "die Wohnfläche",
+    "back": "superficie habitable",
+    "ipa": "supeɾˈfiθje aβiˈtaβle",
+    "example": "La vivienda tiene una superficie habitable de ochenta metros cuadrados.",
+    "exampleDE": "Die Wohnung hat eine Wohnfläche von achtzig Quadratmetern."
+  },
+  {
+    "front": "der Umzug",
+    "back": "mudanza",
+    "ipa": "muˈðanθa",
+    "example": "La mudanza a la nueva ciudad se desarrolló sin ningún problema.",
+    "exampleDE": "Der Umzug in die neue Stadt verlief reibungslos."
+  },
+  {
+    "front": "das Bücherregal",
+    "back": "estantería de libros",
+    "ipa": "estanteˈɾia ðe ˈliβɾos",
+    "example": "La estantería de libros está junto a la pared en el despacho.",
+    "exampleDE": "Das Bücherregal steht an der Wand im Arbeitszimmer."
+  },
+  {
+    "front": "der Kleiderschrank",
+    "back": "armario",
+    "ipa": "aɾˈmaɾjo",
+    "example": "Cuelga sus camisas ordenadamente en el armario.",
+    "exampleDE": "Er hängt seine Hemden ordentlich in den Kleiderschrank."
+  },
+  {
+    "front": "der Schreibtischstuhl",
+    "back": "silla de escritorio",
+    "ipa": "ˈsiʎa ðe eskɾiˈtoɾjo",
+    "example": "Una silla de escritorio cómoda cuida la espalda.",
+    "exampleDE": "Ein bequemer Schreibtischstuhl schont den Rücken."
+  },
+  {
+    "front": "die Stehlampe",
+    "back": "lámpara de pie",
+    "ipa": "ˈlampaɾa ðe ˈpje",
+    "example": "La lámpara de pie proporciona una luz cálida por la noche.",
+    "exampleDE": "Die Stehlampe spendet warmes Licht am Abend."
+  },
+  {
+    "front": "der Esstisch",
+    "back": "mesa de comedor",
+    "ipa": "ˈmesa ðe komeˈðoɾ",
+    "example": "Toda la familia se sienta por la noche alrededor de la gran mesa de comedor.",
+    "exampleDE": "Die ganze Familie sitzt abends am großen Esstisch."
+  },
+  {
+    "front": "das Sofa",
+    "back": "sofá",
+    "ipa": "soˈfa",
+    "example": "En el cómodo sofá uno puede relajarse maravillosamente.",
+    "exampleDE": "Auf dem bequemen Sofa kann man herrlich entspannen."
+  },
+  {
+    "front": "der Vorhang",
+    "back": "cortina",
+    "ipa": "koɾˈtina",
+    "example": "Ella corre la cortina cuando empieza a oscurecer.",
+    "exampleDE": "Sie zieht den Vorhang zu, wenn es dunkel wird."
+  },
+  {
+    "front": "der Staubsauger",
+    "back": "aspiradora",
+    "ipa": "aspiɾaˈðoɾa",
+    "example": "Limpia la alfombra con la nueva aspiradora.",
+    "exampleDE": "Er saugt den Teppich mit dem neuen Staubsauger."
+  },
+  {
+    "front": "das Bügelbrett",
+    "back": "tabla de planchar",
+    "ipa": "ˈtaβla ðe planˈtʃaɾ",
+    "example": "La tabla de planchar está plegada dentro del armario.",
+    "exampleDE": "Das Bügelbrett steht zusammengeklappt im Schrank."
+  },
+  {
+    "front": "das Bügeleisen",
+    "back": "plancha",
+    "ipa": "ˈplantʃa",
+    "example": "La plancha se calienta muchísimo.",
+    "exampleDE": "Das Bügeleisen wird sehr heiß."
+  },
+  {
+    "front": "der Wischmop",
+    "back": "fregona",
+    "ipa": "fɾeˈɣona",
+    "example": "Ella friega el suelo de la cocina con la fregona.",
+    "exampleDE": "Sie wischt den Küchenboden mit dem Wischmop."
+  },
+  {
+    "front": "das Spülmittel",
+    "back": "lavavajillas",
+    "ipa": "laβaβaˈxiʎas",
+    "example": "Unas gotas de lavavajillas son suficientes para fregar la vajilla.",
+    "exampleDE": "Ein paar Tropfen Spülmittel genügen für das Geschirr."
+  },
+  {
+    "front": "die Mülltonne",
+    "back": "cubo de basura",
+    "ipa": "ˈkuβo ðe baˈsuɾa",
+    "example": "Lleva el cubo de basura a la calle, por favor.",
+    "exampleDE": "Bring bitte die Mülltonne an die Straße."
+  },
+  {
+    "front": "der Wäscheständer",
+    "back": "tendedero",
+    "ipa": "tendeˈðeɾo",
+    "example": "La ropa húmeda se seca en el tendedero.",
+    "exampleDE": "Die nasse Wäsche trocknet auf dem Wäscheständer."
+  },
+  {
+    "front": "die Glühbirne",
+    "back": "bombilla",
+    "ipa": "bomˈbiʎa",
+    "example": "Tenemos que cambiar la bombilla rota del pasillo.",
+    "exampleDE": "Wir müssen die kaputte Glühbirne im Flur auswechseln."
+  },
+  {
+    "front": "der Schraubenzieher",
+    "back": "destornillador",
+    "ipa": "destoɾniʎaˈðoɾ",
+    "example": "Con el destornillador aprieta el tornillo suelto.",
+    "exampleDE": "Mit dem Schraubenzieher zieht er die lose Schraube fest."
+  },
+  {
+    "front": "die Zange",
+    "back": "alicates",
+    "ipa": "aliˈkates",
+    "example": "Sujeta el alambre con unos alicates.",
+    "exampleDE": "Er hält den Draht mit einer Zange fest."
+  },
+  {
+    "front": "die Bohrmaschine",
+    "back": "taladro",
+    "ipa": "taˈlaðɾo",
+    "example": "El taladro perfora un agujero en la pared.",
+    "exampleDE": "Die Bohrmaschine bohrt ein Loch in die Wand."
+  },
+  {
+    "front": "der Handwerker",
+    "back": "artesano",
+    "ipa": "aɾteˈsano",
+    "example": "El artesano vendrá mañana a las ocho de la mañana.",
+    "exampleDE": "Der Handwerker kommt morgen früh um acht."
+  },
+  {
+    "front": "der Pinsel",
+    "back": "brocha",
+    "ipa": "ˈbɾotʃa",
+    "example": "Pinta el banco de madera con una brocha ancha.",
+    "exampleDE": "Sie streicht die Holzbank mit einem breiten Pinsel."
+  },
+  {
+    "front": "reparieren",
+    "back": "reparar",
+    "ipa": "repaˈɾaɾ",
+    "example": "¿Puedes reparar la bicicleta rota, por favor?",
+    "exampleDE": "Kannst du das kaputte Fahrrad bitte reparieren?"
+  },
+  {
+    "front": "der Werkzeugkasten",
+    "back": "caja de herramientas",
+    "ipa": "ˈkaxa ðe eraˈmjentas",
+    "example": "Todas las herramientas están a mano en la caja de herramientas.",
+    "exampleDE": "Alle Werkzeuge liegen griffbereit im Werkzeugkasten."
+  },
+  {
+    "front": "das Schneidebrett",
+    "back": "tabla de cortar",
+    "ipa": "ˈtaβla ðe koɾˈtaɾ",
+    "example": "Corta la cebolla sobre la tabla de cortar, por favor.",
+    "exampleDE": "Schneide die Zwiebel bitte auf dem Schneidebrett."
+  },
+  {
+    "front": "der Kochtopf",
+    "back": "olla",
+    "ipa": "ˈoʎa",
+    "example": "La sopa hierve en la olla grande sobre el fogón.",
+    "exampleDE": "Die Suppe kocht im großen Kochtopf auf dem Herd."
+  },
+  {
+    "front": "die Bratpfanne",
+    "back": "sartén",
+    "ipa": "saɾˈten",
+    "example": "La verdura se fríe en la sartén caliente.",
+    "exampleDE": "In der heißen Bratpfanne brät das Gemüse."
+  },
+  {
+    "front": "der Wasserkocher",
+    "back": "hervidor de agua",
+    "ipa": "eɾβiˈðoɾ ðe ˈaɣwa",
+    "example": "El hervidor de agua hierve el agua para el té en dos minutos.",
+    "exampleDE": "Der Wasserkocher kocht das Teewasser in zwei Minuten."
+  },
+  {
+    "front": "der Backofen",
+    "back": "horno",
+    "ipa": "ˈoɾno",
+    "example": "El pastel se hornea durante media hora en el horno.",
+    "exampleDE": "Der Kuchen backt eine halbe Stunde im Backofen."
+  },
+  {
+    "front": "das Rezept",
+    "back": "receta",
+    "ipa": "reˈθeta",
+    "example": "Esta receta la inventó mi abuela.",
+    "exampleDE": "Dieses Rezept hat meine Großmutter erfunden."
+  },
+  {
+    "front": "die Zutat",
+    "back": "ingrediente",
+    "ipa": "iŋɡɾeˈðjente",
+    "example": "Las hierbas frescas son el ingrediente más importante para la salsa.",
+    "exampleDE": "Frische Kräuter sind die wichtigste Zutat für die Soße."
+  },
+  {
+    "front": "fein hacken",
+    "back": "picar fino",
+    "ipa": "piˈkaɾ ˈfino",
+    "example": "Ella pica finamente las cebollas y el perejil con un cuchillo afilado.",
+    "exampleDE": "Sie hackt die Zwiebeln und Petersilie mit einem scharfen Messer fein."
+  },
+  {
+    "front": "das Meersalz",
+    "back": "sal marina",
+    "ipa": "ˈsal maˈɾina",
+    "example": "Una pizca de sal marina realza el sabor de la sopa.",
+    "exampleDE": "Eine Prise Meersalz hebt den Geschmack der Suppe."
+  },
+  {
+    "front": "der schwarze Pfeffer",
+    "back": "pimienta negra",
+    "ipa": "piˈmjenta ˈneɣɾa",
+    "example": "La pimienta negra recién molida desprende un aroma delicioso.",
+    "exampleDE": "Frisch gemahlener schwarzer Pfeffer duftet herrlich."
+  },
+  {
+    "front": "das Olivenöl",
+    "back": "aceite de oliva",
+    "ipa": "aˈθeite ðe oˈliβa",
+    "example": "El aceite de oliva prensado en frío combina perfectamente con la ensalada.",
+    "exampleDE": "Kaltgepresstes Olivenöl passt hervorragend zum Salat."
+  },
+  {
+    "front": "der Knoblauch",
+    "back": "ajo",
+    "ipa": "ˈaxo",
+    "example": "Dos dientes de ajo le dan un gran aroma al plato.",
+    "exampleDE": "Zwei Zehen Knoblauch verleihen dem Gericht Aroma."
+  },
+  {
+    "front": "die Petersilie",
+    "back": "perejil",
+    "ipa": "peɾeˈxil",
+    "example": "El perejil recién picado se añade justo antes de servir.",
+    "exampleDE": "Frisch gehackte Petersilie kommt vor dem Servieren darauf."
+  },
+  {
+    "front": "das Basilikum",
+    "back": "albahaca",
+    "ipa": "albaˈaka",
+    "example": "La albahaca fresca combina a la perfección con los tomates.",
+    "exampleDE": "Frisches Basilikum passt perfekt zu Tomaten."
+  },
+  {
+    "front": "der Zimt",
+    "back": "canela",
+    "ipa": "kaˈnela",
+    "example": "En invierno nos gusta tomar té con una pizca de canela.",
+    "exampleDE": "Im Winter trinken wir gerne Tee mit einer Prise Zimt."
+  },
+  {
+    "front": "das Vollkornbrot",
+    "back": "pan integral",
+    "ipa": "ˈpan inteˈɣɾal",
+    "example": "El pan integral fresco tiene un sabor intenso y sacia por mucho tiempo.",
+    "exampleDE": "Frisches Vollkornbrot schmeckt kräftig und hält lange satt."
+  },
+  {
+    "front": "das Brötchen",
+    "back": "panecillo",
+    "ipa": "paneˈθiʎo",
+    "example": "Los domingos compramos panecillos calientes en la panadería.",
+    "exampleDE": "Sonntags holen wir warme Brötchen beim Bäcker."
+  },
+  {
+    "front": "die Butter",
+    "back": "mantequilla",
+    "ipa": "manteˈkiʎa",
+    "example": "Unta un poco de mantequilla en la rebanada de pan, por favor.",
+    "exampleDE": "Streich bitte etwas Butter auf die Scheibe Brot."
+  },
+  {
+    "front": "die Marmelade",
+    "back": "mermelada",
+    "ipa": "meɾmeˈlaða",
+    "example": "La mermelada de fresa es lo que más me gusta untar en el pan.",
+    "exampleDE": "Erdbeermarmelade ist mein liebster Brotaufstrich."
+  },
+  {
+    "front": "das Müsli",
+    "back": "muesli",
+    "ipa": "ˈmwesli",
+    "example": "Por la mañana me gusta comer muesli con fruta fresca.",
+    "exampleDE": "Morgens esse ich gerne Müsli mit frischem Obst."
+  },
+  {
+    "front": "der Joghurt",
+    "back": "yogur",
+    "ipa": "ʝoˈɣuɾ",
+    "example": "El yogur natural sabe especialmente rico con un poco de miel.",
+    "exampleDE": "Naturjoghurt schmeckt besonders gut mit etwas Honig."
+  },
+  {
+    "front": "das gekochte Ei",
+    "back": "huevo cocido",
+    "ipa": "ˈweβo koˈθiðo",
+    "example": "Un huevo pasado por agua no puede faltar en el desayuno de los domingos.",
+    "exampleDE": "Ein weich gekochtes Ei gehört zum Sonntagsfrühstück."
+  },
+  {
+    "front": "der Orangensaft",
+    "back": "zumo de naranja",
+    "ipa": "ˈθumo ðe naˈɾaŋxa",
+    "example": "El zumo de naranja recién exprimido contiene muchas vitaminas.",
+    "exampleDE": "Frisch gepresster Orangensaft enthält viele Vitamine."
+  },
+  {
+    "front": "die Reservierung",
+    "back": "reserva",
+    "ipa": "reˈseɾβa",
+    "example": "Tengo una reserva a nombre de Müller.",
+    "exampleDE": "Ich habe eine Reservierung auf den Namen Müller."
+  },
+  {
+    "front": "die Speisekarte",
+    "back": "carta",
+    "ipa": "ˈkaɾta",
+    "example": "¿Podemos ver la carta, por favor?",
+    "exampleDE": "Dürfen wir bitte die Speisekarte sehen?"
+  },
+  {
+    "front": "die Vorspeise",
+    "back": "entrante",
+    "ipa": "enˈtɾante",
+    "example": "De entrante pedimos una pequeña ensalada.",
+    "exampleDE": "Als Vorspeise bestellen wir einen kleinen Salat."
+  },
+  {
+    "front": "das Hauptgericht",
+    "back": "plato principal",
+    "ipa": "ˈplato pɾinθiˈpal",
+    "example": "El plato principal se sirve bien caliente en un plato grande.",
+    "exampleDE": "Das Hauptgericht wird heiß auf einem großen Teller serviert."
+  },
+  {
+    "front": "die Nachspeise",
+    "back": "postre",
+    "ipa": "ˈpostɾe",
+    "example": "¿Desean tomar algún postre después de la comida?",
+    "exampleDE": "Möchten Sie nach dem Essen noch eine Nachspeise?"
+  },
+  {
+    "front": "die Rechnung",
+    "back": "cuenta",
+    "ipa": "ˈkwenta",
+    "example": "Quisiéramos pagar, por favor, tráiganos la cuenta.",
+    "exampleDE": "Wir möchten bitte zahlen, bringen Sie uns die Rechnung."
+  },
+  {
+    "front": "das Trinkgeld",
+    "back": "propina",
+    "ipa": "pɾoˈpina",
+    "example": "El amable camarero se ha ganado una buena propina.",
+    "exampleDE": "Der freundliche Kellner hat ein gutes Trinkgeld verdient."
+  },
+  {
+    "front": "die Spezialität des Hauses",
+    "back": "especialidad de la casa",
+    "ipa": "espeθjaliˈðað ðe la ˈkasa",
+    "example": "El camarero recomienda la pasta casera como especialidad de la casa.",
+    "exampleDE": "Der Kellner empfiehlt die hausgemachte Pasta als Spezialität des Hauses."
+  },
+  {
+    "front": "der Kaffee",
+    "back": "café",
+    "ipa": "kaˈfe",
+    "example": "Una taza de café caliente despeja el cansancio.",
+    "exampleDE": "Eine Tasse heißer Kaffee vertreibt die Müdigkeit."
+  },
+  {
+    "front": "der Cappuccino",
+    "back": "capuchino",
+    "ipa": "kapuˈtʃino",
+    "example": "El capuchino tiene una espuma maravillosamente cremosa.",
+    "exampleDE": "Der Cappuccino hat einen wunderbar cremigen Schaum."
+  },
+  {
+    "front": "der Kräutertee",
+    "back": "infusión de hierbas",
+    "ipa": "infuˈsjon de ˈjeɾβas",
+    "example": "Por la noche me gusta tomar una taza caliente de infusión de hierbas.",
+    "exampleDE": "Abends trinke ich gerne eine Tasse warmen Kräutertee."
+  },
+  {
+    "front": "das Mineralwasser",
+    "back": "agua mineral",
+    "ipa": "ˈaɣwa mineˈɾal",
+    "example": "Un vaso de agua mineral con gas fría resulta muy refrescante.",
+    "exampleDE": "Ein Glas kühles Mineralwasser mit Kohlensäure erfrischt."
+  },
+  {
+    "front": "das Stück Kuchen",
+    "back": "trozo de pastel",
+    "ipa": "ˈtɾoθo ðe pasˈtel",
+    "example": "Por la tarde nos damos el capricho de un trozo de pastel.",
+    "exampleDE": "Am Nachmittag gönnen wir uns ein Stück Kuchen."
+  },
+  {
+    "front": "die Barista",
+    "back": "barista",
+    "ipa": "baˈɾista",
+    "example": "La barista prepara el café expreso con destreza artística.",
+    "exampleDE": "Die Barista bereitet den Espresso kunstvoll zu."
+  },
+  {
+    "front": "die Stammkundin",
+    "back": "clienta habitual",
+    "ipa": "ˈkljenta aβituˈal",
+    "example": "Ella es clienta habitual en esta acogedora cafetería de la esquina.",
+    "exampleDE": "Sie ist Stammkundin in diesem gemütlichen Café an der Ecke."
+  },
+  {
+    "front": "der Einkaufswagen",
+    "back": "carrito de la compra",
+    "ipa": "kaˈriʎo ðe la ˈkompɾa",
+    "example": "Coge una moneda para el carrito de la compra, por favor.",
+    "exampleDE": "Nimm bitte eine Münze für den Einkaufswagen mit."
+  },
+  {
+    "front": "der Einkaufszettel",
+    "back": "lista de la compra",
+    "ipa": "ˈlista ðe la ˈkompɾa",
+    "example": "He apuntado todas las cosas importantes en la lista de la compra.",
+    "exampleDE": "Ich habe alle wichtigen Dinge auf dem Einkaufszettel notiert."
+  },
+  {
+    "front": "das Sonderangebot",
+    "back": "oferta especial",
+    "ipa": "oˈfeɾta espeˈθjal",
+    "example": "Las fresas frescas están hoy en oferta especial.",
+    "exampleDE": "Frische Erdbeeren sind heute im Sonderangebot."
+  },
+  {
+    "front": "die Kasse",
+    "back": "caja",
+    "ipa": "ˈkaxa",
+    "example": "En la caja hay una larga fila de clientes.",
+    "exampleDE": "An der Kasse steht eine lange Schlange von Kunden."
+  },
+  {
+    "front": "der Kassenbon",
+    "back": "tique de compra",
+    "ipa": "ˈtike ðe ˈkompɾa",
+    "example": "Conserve bien el tique de compra como justificante.",
+    "exampleDE": "Bewahren Sie den Kassenbon als Beleg gut auf."
+  },
+  {
+    "front": "die Stofftasche",
+    "back": "bolsa de tela",
+    "ipa": "ˈbolsa ðe ˈtela",
+    "example": "Llevamos nuestras compras en una bolsa de tela.",
+    "exampleDE": "Wir transportieren unsere Einkäufe in einer Stofftasche."
+  },
+  {
+    "front": "das Haltbarkeitsdatum",
+    "back": "fecha de caducidad",
+    "ipa": "ˈfetʃa ðe kaðuθiˈðað",
+    "example": "Compruebe siempre la fecha de caducidad en el envase.",
+    "exampleDE": "Prüfen Sie immer das Haltbarkeitsdatum auf der Verpackung."
+  },
+  {
+    "front": "die Frischetheke",
+    "back": "mostrador de frescos",
+    "ipa": "mostɾaˈðoɾ ðe ˈfɾeskos",
+    "example": "En el mostrador de frescos se ofrece queso regional.",
+    "exampleDE": "An der Frischetheke gibt es regionalen Käse."
+  },
+  {
+    "front": "anprobieren",
+    "back": "probarse",
+    "ipa": "pɾoˈβaɾse",
+    "example": "Me gustaría probarme esta chaqueta azul marino.",
+    "exampleDE": "Ich möchte diese dunkelblaue Jacke gerne anprobieren."
+  },
+  {
+    "front": "die Umkleidekabine",
+    "back": "probador",
+    "ipa": "pɾoβaˈðoɾ",
+    "example": "Allí a la izquierda hay un probador desocupado.",
+    "exampleDE": "Dort drüben links ist eine freie Umkleidekabine."
+  },
+  {
+    "front": "die Konfektionsgröße",
+    "back": "talla",
+    "ipa": "ˈtaʎa",
+    "example": "¿Qué talla suele usar habitualmente?",
+    "exampleDE": "Welche Konfektionsgröße tragen Sie normalerweise?"
+  },
+  {
+    "front": "passen",
+    "back": "quedar bien",
+    "ipa": "keˈðaɾ ˈbjen",
+    "example": "Los pantalones me quedan como un guante.",
+    "exampleDE": "Die Hose passt mir wie angegossen."
+  },
+  {
+    "front": "zu eng",
+    "back": "demasiado estrecho",
+    "ipa": "demaˈsjaðo esˈtɾetʃo",
+    "example": "Por desgracia, este jersey me queda demasiado estrecho en los hombros.",
+    "exampleDE": "Dieser Pullover ist mir an den Schultern leider zu eng."
+  },
+  {
+    "front": "zu weit",
+    "back": "demasiado ancho",
+    "ipa": "demaˈsjaðo ˈantʃo",
+    "example": "La falda queda un poco ancha de más y se cae al caminar.",
+    "exampleDE": "Der Rock ist etwas zu weit und rutscht beim Gehen."
+  },
+  {
+    "front": "der Schnitt",
+    "back": "corte",
+    "ipa": "ˈkoɾte",
+    "example": "El corte moderno me gusta especialmente.",
+    "exampleDE": "Der moderne Schnitt gefällt mir besonders gut."
+  },
+  {
+    "front": "die Baumwolle",
+    "back": "algodón",
+    "ipa": "alɣoˈðon",
+    "example": "Esta camiseta está hecha de algodón puro y suave.",
+    "exampleDE": "Dieses T-Shirt besteht aus reiner, weicher Baumwolle."
+  },
+  {
+    "front": "die Schurwolle",
+    "back": "lana virgen",
+    "ipa": "ˈlana ˈbiɾxen",
+    "example": "El grueso jersey de lana virgen mantiene el calor en invierno.",
+    "exampleDE": "Der dicke Pullover aus Schurwolle hält im Winter warm."
+  },
+  {
+    "front": "die Seide",
+    "back": "seda",
+    "ipa": "ˈseða",
+    "example": "El pañuelo de seda tiene un tacto maravillosamente suave.",
+    "exampleDE": "Das Halstuch aus Seide fühlt sich herrlich weich an."
+  },
+  {
+    "front": "das Leder",
+    "back": "cuero",
+    "ipa": "ˈkweɾo",
+    "example": "La resistente cazadora está hecha de cuero auténtico.",
+    "exampleDE": "Die robuste Jacke ist aus echtem Leder gefertigt."
+  },
+  {
+    "front": "gestreift",
+    "back": "a rayas",
+    "ipa": "a ˈraʝas",
+    "example": "Hoy lleva puesta una camisa a rayas azules y blancas.",
+    "exampleDE": "Er trägt heute ein blau-weiß gestreiftes Hemd."
+  },
+  {
+    "front": "kariert",
+    "back": "a cuadros",
+    "ipa": "a ˈkwaðɾos",
+    "example": "El estampado a cuadros va fenomenal con la camisa de leñador.",
+    "exampleDE": "Das karierte Muster passt hervorragend zum Holzfällerhemd."
+  },
+  {
+    "front": "einfarbig",
+    "back": "liso",
+    "ipa": "ˈliso",
+    "example": "Un vestido sencillo de un solo color resulta siempre elegante.",
+    "exampleDE": "Ein schlichtes, einfarbiges Kleid wirkt immer elegant."
+  },
+  {
+    "front": "der Reißverschluss",
+    "back": "cremallera",
+    "ipa": "kɾemaˈʎeɾa",
+    "example": "La cremallera de mi cazadora a veces se atasca.",
+    "exampleDE": "Der Reißverschluss an meiner Jacke klemmt manchmal."
+  },
+  {
+    "front": "die Schnürsenkel",
+    "back": "cordones",
+    "ipa": "koɾˈdones",
+    "example": "Átate los cordones para no tropezar.",
+    "exampleDE": "Binde dir die Schnürsenkel zu, damit du nicht stolperst."
+  },
+  {
+    "front": "die Lederschuhe",
+    "back": "zapatos de cuero",
+    "ipa": "θaˈpatos ðe ˈkweɾo",
+    "example": "Para los eventos festivos calza zapatos de cuero lustrados.",
+    "exampleDE": "Zu festlichen Anlässen trägt er polierte Lederschuhe."
+  },
+  {
+    "front": "die Turnschuhe",
+    "back": "zapatillas de deporte",
+    "ipa": "θapaˈtiʎas ðe ðeˈpoɾte",
+    "example": "Para correr por el parque necesito zapatillas de deporte cómodas.",
+    "exampleDE": "Zum Laufen im Park brauche ich bequeme Turnschuhe."
+  },
+  {
+    "front": "die Handtasche",
+    "back": "bolso de mano",
+    "ipa": "ˈbolso ðe ˈmano",
+    "example": "Busca su llave en el gran bolso de mano.",
+    "exampleDE": "Sie sucht ihren Schlüssel in der großen Handtasche."
+  },
+  {
+    "front": "der Ledergürtel",
+    "back": "cinturón de cuero",
+    "ipa": "θintuˈɾon de ˈkweɾo",
+    "example": "Un cinturón de cuero negro sujeta firmemente los pantalones.",
+    "exampleDE": "Ein schwarzer Ledergürtel hält die Hose fest."
+  },
+  {
+    "front": "der Regenschirm",
+    "back": "paraguas",
+    "ipa": "paˈɾaɣwas",
+    "example": "Llévate un paraguas, el cielo se está cubriendo.",
+    "exampleDE": "Nimm einen Regenschirm mit, der Himmel zieht sich zu."
+  },
+  {
+    "front": "die Sonnenbrille",
+    "back": "gafas de sol",
+    "ipa": "ˈɡafas de ˈsol",
+    "example": "En verano unas buenas gafas de sol protegen los ojos.",
+    "exampleDE": "Im Sommer schützt eine gute Sonnenbrille die Augen."
+  },
+  {
+    "front": "das Girokonto",
+    "back": "cuenta corriente",
+    "ipa": "ˈkwenta koˈrjente",
+    "example": "Mi nómina se transfiere mensualmente a mi cuenta corriente.",
+    "exampleDE": "Mein Gehalt wird monatlich auf mein Girokonto überwiesen."
+  },
+  {
+    "front": "die Überweisung",
+    "back": "transferencia bancaria",
+    "ipa": "tɾansfeˈɾenθja baŋˈkaɾja",
+    "example": "Hago la transferencia con comodidad a través de la banca por internet.",
+    "exampleDE": "Ich mache die Überweisung bequem per Online-Banking."
+  },
+  {
+    "front": "der Dauerauftrag",
+    "back": "orden permanente",
+    "ipa": "ˈoɾden peɾmaˈnente",
+    "example": "Pago el alquiler todos los meses por orden permanente.",
+    "exampleDE": "Die Miete bezahle ich jeden Monat per Dauerauftrag."
+  },
+  {
+    "front": "der Geldautomat",
+    "back": "cajero automático",
+    "ipa": "kaˈxeɾo awtoˈmatiko",
+    "example": "En este cajero automático se puede sacar dinero sin pagar comisión.",
+    "exampleDE": "An diesem Geldautomaten kann man gebührenfrei abheben."
+  },
+  {
+    "front": "die Geheimzahl",
+    "back": "número secreto",
+    "ipa": "ˈnumeɾo seˈkɾeto",
+    "example": "No des nunca tu número secreto de cuatro cifras a desconocidos.",
+    "exampleDE": "Gib deine vierstellige Geheimzahl niemals an Fremde weiter."
+  },
+  {
+    "front": "der Kontoauszug",
+    "back": "extracto de cuenta",
+    "ipa": "eksˈtɾakto ðe ˈkwenta",
+    "example": "En el extracto de cuenta figuran todos los ingresos y gastos.",
+    "exampleDE": "Auf dem Kontoauszug stehen alle Einnahmen und Ausgaben."
+  },
+  {
+    "front": "das Sparguthaben",
+    "back": "ahorros bancarios",
+    "ipa": "aˈoɾos baŋˈkaɾjos",
+    "example": "Ella ingresa cada mes una cantidad fija como ahorros en el banco.",
+    "exampleDE": "Sie legt jeden Monat einen festen Betrag als Sparguthaben an."
+  },
+  {
+    "front": "die Zinsen",
+    "back": "intereses",
+    "ipa": "inteˈɾeses",
+    "example": "El banco paga hoy en día intereses moderados sobre los depósitos a plazo fijo.",
+    "exampleDE": "Die Bank zahlt derzeit moderate Zinsen auf das Festgeld."
+  },
+  {
+    "front": "das Bargeld",
+    "back": "dinero en efectivo",
+    "ipa": "diˈneɾo en efekˈtiβo",
+    "example": "¿Lleva algo de dinero en efectivo o va a pagar con tarjeta?",
+    "exampleDE": "Haben Sie etwas Bargeld dabei oder zahlen Sie mit Karte?"
+  },
+  {
+    "front": "die Kreditkarte",
+    "back": "tarjeta de crédito",
+    "ipa": "taɾˈxeta ðe ˈkɾeðito",
+    "example": "Al viajar suelo pagar las compras con la tarjeta de crédito.",
+    "exampleDE": "Auf Reisen bezahle ich Einkäufe meist mit Kreditkarte."
+  },
+  {
+    "front": "kontaktlos",
+    "back": "sin contacto",
+    "ipa": "sin konˈtakto",
+    "example": "Los importes menores a cincuenta euros pueden abonarse sin contacto.",
+    "exampleDE": "Beträge unter fünfzig Euro kann man kontaktlos bezahlen."
+  },
+  {
+    "front": "die Münze",
+    "back": "moneda",
+    "ipa": "moˈneða",
+    "example": "Él echa una moneda de dos euros en el parquímetro.",
+    "exampleDE": "Er wirft eine Zwei-Euro-Münze in den Parkscheinautomaten."
+  },
+  {
+    "front": "der Geldschein",
+    "back": "billete",
+    "ipa": "biˈʎete",
+    "example": "Ella dobla con mucho cuidado el billete de diez euros.",
+    "exampleDE": "Sie faltet den Zehn-Euro-Geldschein sorgfältig zusammen."
+  },
+  {
+    "front": "das Wechselgeld",
+    "back": "cambio",
+    "ipa": "ˈkambjo",
+    "example": "No olvide recoger su cambio en la caja, por favor.",
+    "exampleDE": "Vergessen Sie bitte nicht Ihr Wechselgeld an der Kasse."
+  },
+  {
+    "front": "der Wechselkurs",
+    "back": "tipo de cambio",
+    "ipa": "ˈtipo ðe ˈkambjo",
+    "example": "Antes de salir de viaje al extranjero comprobamos el tipo de cambio actual.",
+    "exampleDE": "Vor der Auslandsreise prüfen wir den aktuellen Wechselkurs."
+  },
+  {
+    "front": "das Paket",
+    "back": "paquete",
+    "ipa": "paˈkete",
+    "example": "El mensajero entrega el pesado paquete en la puerta de la casa.",
+    "exampleDE": "Der Bote liefert das schwere Paket an die Haustür."
+  },
+  {
+    "front": "der Briefumschlag",
+    "back": "sobre",
+    "ipa": "ˈsoβɾe",
+    "example": "Ella mete la carta en un sobre blanco.",
+    "exampleDE": "Sie steckt den Brief in einen weißen Briefumschlag."
+  },
+  {
+    "front": "die Briefmarke",
+    "back": "sello",
+    "ipa": "ˈseʎo",
+    "example": "Pega un sello arriba a la derecha en la carta, por favor.",
+    "exampleDE": "Kleb bitte eine Briefmarke oben rechts auf den Brief."
+  },
+  {
+    "front": "der Absender",
+    "back": "remitente",
+    "ipa": "remiˈtente",
+    "example": "Arriba a la izquierda en el sobre figura la dirección del remitente.",
+    "exampleDE": "Oben links auf dem Kuvert steht die Adresse des Absenders."
+  },
+  {
+    "front": "der Empfänger",
+    "back": "destinatario",
+    "ipa": "destinaˈtaɾjo",
+    "example": "El paquete pequeño va dirigido al destinatario indicado.",
+    "exampleDE": "Das Päckchen ist für den angegebenen Empfänger bestimmt."
+  },
+  {
+    "front": "die Packstation",
+    "back": "taquilla de paquetería",
+    "ipa": "taˈkiʎa ðe paketeˈɾia",
+    "example": "Recojo mi envío al salir del trabajo en la taquilla de paquetería.",
+    "exampleDE": "Ich hole meine Sendung nach Feierabend an der Packstation ab."
+  },
+  {
+    "front": "das Einschreiben",
+    "back": "carta certificada",
+    "ipa": "ˈkaɾta θeɾtifiˈkaða",
+    "example": "Los documentos importantes se mandan con mayor seguridad por carta certificada.",
+    "exampleDE": "Wichtige Dokumente versendet man am sichersten per Einschreiben."
+  },
+  {
+    "front": "die Postleitzahl",
+    "back": "código postal",
+    "ipa": "ˈkoðiɣo posˈtal",
+    "example": "Indique su código postal de cinco cifras, por favor.",
+    "exampleDE": "Geben Sie bitte Ihre fünfstellige Postleitzahl an."
+  },
+  {
+    "front": "die Zahnpasta",
+    "back": "pasta de dientes",
+    "ipa": "ˈpasta ðe ˈdjentes",
+    "example": "Esta pasta de dientes protege eficazmente contra las caries.",
+    "exampleDE": "Diese Zahnpasta schützt wirksam vor Karies."
+  },
+  {
+    "front": "das Duschgel",
+    "back": "gel de ducha",
+    "ipa": "ˈxel de ˈðutʃa",
+    "example": "El gel de ducha huele muy bien a limones frescos.",
+    "exampleDE": "Das Duschgel duftet angenehm nach frischen Zitronen."
+  },
+  {
+    "front": "das Shampoo",
+    "back": "champú",
+    "ipa": "tʃamˈpu",
+    "example": "Un champú suave cuida el cuero cabelludo y el pelo.",
+    "exampleDE": "Ein mildes Shampoo pflegt die Kopfhaut und das Haar."
+  },
+  {
+    "front": "die Seife",
+    "back": "jabón",
+    "ipa": "xaˈβon",
+    "example": "Lávate bien las manos con agua templada y jabón.",
+    "exampleDE": "Wasch dir die Hände gründlich mit warmem Wasser und Seife."
+  },
+  {
+    "front": "die Feuchtigkeitscreme",
+    "back": "crema hidratante",
+    "ipa": "ˈkɾema iðɾaˈtante",
+    "example": "Después de la ducha ella se aplica una crema hidratante.",
+    "exampleDE": "Nach dem Duschen trägt sie eine feuchtigkeitsspendende Creme auf."
+  },
+  {
+    "front": "das Deodorant",
+    "back": "desodorante",
+    "ipa": "desoðoˈɾante",
+    "example": "Un buen desodorante garantiza frescor durante toda la jornada.",
+    "exampleDE": "Ein gutes Deodorant sorgt den ganzen Tag für Frische."
+  },
+  {
+    "front": "das Taschentuch",
+    "back": "pañuelo",
+    "ipa": "paˈɲwelo",
+    "example": "¿Tienes un pañuelo de papel para mí?",
+    "exampleDE": "Hast du ein Papiertaschentuch für mich?"
+  },
+  {
+    "front": "der Rasierer",
+    "back": "maquinilla de afeitar",
+    "ipa": "makiˈniʎa ðe afeiˈtaɾ",
+    "example": "Él cambia con regularidad las hojas de su maquinilla de afeitar.",
+    "exampleDE": "Er wechselt regelmäßig die Klingen an seinem Rasierer."
+  },
+  {
+    "front": "der Rasierschaum",
+    "back": "espuma de afeitar",
+    "ipa": "esˈpuma ðe afeiˈtaɾ",
+    "example": "Extiende la espuma de afeitar suavemente por las mejillas.",
+    "exampleDE": "Verteile den Rasierschaum sanft auf den Wangen."
+  },
+  {
+    "front": "die Nagelschere",
+    "back": "tijeras para uñas",
+    "ipa": "tiˈxeɾas ˈpaɾa ˈuɲas",
+    "example": "Con unas tijeras pequeñas para uñas se cortan las uñas con gran precisión.",
+    "exampleDE": "Mit einer kleinen Nagelschere schneidet man Fingernägel präzise."
+  },
+  {
+    "front": "die Nagelfeile",
+    "back": "lima de uñas",
+    "ipa": "ˈlima ðe ˈuɲas",
+    "example": "Ella se alisa las uñas cuidadosamente con una lima de uñas.",
+    "exampleDE": "Sie glättet ihre Nägel vorsichtig mit einer Nagelfeile."
+  },
+  {
+    "front": "die Sonnencreme",
+    "back": "crema solar",
+    "ipa": "ˈkɾema soˈlaɾ",
+    "example": "En vacaciones nos aplicamos crema solar periódicamente.",
+    "exampleDE": "Im Urlaub cremen wir uns regelmäßig mit Sonnencreme ein."
+  },
+  {
+    "front": "der Lippenbalsam",
+    "back": "bálsamo labial",
+    "ipa": "ˈbalsamo laˈβjal",
+    "example": "En invierno el bálsamo labial protege frente a los labios cortados.",
+    "exampleDE": "Im Winter schützt Lippenbalsam vor spröden Lippen."
+  },
+  {
+    "front": "das Wattepad",
+    "back": "disco de algodón",
+    "ipa": "ˈdisko ðe alɣoˈðon",
+    "example": "Para desmaquillarse ella utiliza un suave disco de algodón.",
+    "exampleDE": "Zum Abschminken verwendet sie ein weiches Wattepad."
+  },
+  {
+    "front": "das Wattestäbchen",
+    "back": "bastoncillo de algodón",
+    "ipa": "bastonˈsiʎo ðe alɣoˈðon",
+    "example": "Los bastoncillos de algodón se guardan en el armario del cuarto de baño.",
+    "exampleDE": "Wattestäbchen gehören in den Badezimmerschrank."
+  },
+  {
+    "front": "der Umtausch",
+    "back": "cambio",
+    "ipa": "ˈkambjo",
+    "example": "Un cambio es posible dentro de un plazo de catorce días.",
+    "exampleDE": "Ein Umtausch ist innerhalb von vierzehn Tagen möglich."
+  },
+  {
+    "front": "die Reklamation",
+    "back": "reclamación",
+    "ipa": "reklamaˈθjon",
+    "example": "A causa de un defecto, el cliente presentó una reclamación.",
+    "exampleDE": "Wegen eines Mangels reichte der Kunde eine Reklamation ein."
+  },
+  {
+    "front": "die Garantie",
+    "back": "garantía",
+    "ipa": "ɡaɾanˈtia",
+    "example": "Este electrodoméstico dispone de dos años de garantía del fabricante.",
+    "exampleDE": "Auf dieses Elektrogerät gibt es zwei Jahre Herstellergarantie."
+  },
+  {
+    "front": "die Rückerstattung",
+    "back": "reembolso",
+    "ipa": "reemˈbolso",
+    "example": "El importe le será abonado como reembolso.",
+    "exampleDE": "Der Betrag wird Ihnen als Rückerstattung gutgeschrieben."
+  },
+  {
+    "front": "der Rabatt",
+    "back": "descuento",
+    "ipa": "desˈkwento",
+    "example": "Con esta tarjeta de cliente disfrutará de un diez por ciento de descuento.",
+    "exampleDE": "Mit dieser Kundenkarte erhalten Sie zehn Prozent Rabatt."
+  },
+  {
+    "front": "das Schnäppchen",
+    "back": "ganga",
+    "ipa": "ˈɡaŋɡa",
+    "example": "Este abrigo de gran calidad fue una auténtica ganga.",
+    "exampleDE": "Dieser hochwertige Mantel war ein echtes Schnäppchen."
+  },
+  {
+    "front": "die Beschwerde",
+    "back": "queja",
+    "ipa": "ˈkexa",
+    "example": "La queja fue examinada con detenimiento por la dirección.",
+    "exampleDE": "Die Beschwerde wurde von der Geschäftsleitung geprüft."
+  },
+  {
+    "front": "die Kopfschmerzen",
+    "back": "dolor de cabeza",
+    "ipa": "doˈloɾ ðe kaˈβeθa",
+    "example": "Tras el largo día de trabajo tengo un ligero dolor de cabeza.",
+    "exampleDE": "Nach dem langen Arbeitstag habe ich leichte Kopfschmerzen."
+  },
+  {
+    "front": "die Halsschmerzen",
+    "back": "dolor de garganta",
+    "ipa": "doˈloɾ ðe ɡaɾˈɣanta",
+    "example": "Una infusión caliente de manzanilla con miel calma el dolor de garganta.",
+    "exampleDE": "Warmer Kamillentee mit Honig lindert die Halsschmerzen."
+  },
+  {
+    "front": "die Magenschmerzen",
+    "back": "dolor de estómago",
+    "ipa": "doˈloɾ ðe esˈtomaɣo",
+    "example": "La comida con mucha grasa le suele producir dolor de estómago.",
+    "exampleDE": "Fettes Essen verursacht bei ihm oft Magenschmerzen."
+  },
+  {
+    "front": "der Schwindel",
+    "back": "mareo",
+    "ipa": "maˈɾeo",
+    "example": "Al ponerse de pie rápidamente sintió un breve mareo.",
+    "exampleDE": "Beim schnellen Aufstehen überkam sie ein kurzer Schwindel."
+  },
+  {
+    "front": "die Übelkeit",
+    "back": "náuseas",
+    "ipa": "ˈnawseas",
+    "example": "El aire fresco suele sentar muy bien contra las náuseas repentinas.",
+    "exampleDE": "Frische Luft hilft meist gut gegen plötzliche Übelkeit."
+  },
+  {
+    "front": "der Husten",
+    "back": "tos",
+    "ipa": "tos",
+    "example": "Lleva tres días con una tos seca y persistente.",
+    "exampleDE": "Er hat seit drei Tagen einen trockenen, hartnäckigen Husten."
+  },
+  {
+    "front": "der Schnupfen",
+    "back": "catarro",
+    "ipa": "kaˈtaro",
+    "example": "Con un catarro fuerte resulta difícil respirar por la nariz.",
+    "exampleDE": "Bei starkem Schnupfen fällt das Atmen durch die Nase schwer."
+  },
+  {
+    "front": "die Heiserkeit",
+    "back": "ronquera",
+    "ipa": "roŋˈkeɾa",
+    "example": "Después del concierto tan ruidoso el cantante padeció ronquera.",
+    "exampleDE": "Nach dem lauten Konzert litt der Sänger unter Heiserkeit."
+  },
+  {
+    "front": "das Fieberthermometer",
+    "back": "termómetro digital",
+    "ipa": "teɾˈmometɾo dixiˈtal",
+    "example": "El termómetro digital mide la temperatura en cuestión de segundos.",
+    "exampleDE": "Das digitale Fieberthermometer misst die Temperatur sekundenschnell."
+  },
+  {
+    "front": "die erhöhte Temperatur",
+    "back": "febrícula",
+    "ipa": "feˈβɾikula",
+    "example": "El niño tiene un poco de febrícula esta tarde.",
+    "exampleDE": "Das Kind hat heute Abend leicht erhöhte Temperatur."
+  },
+  {
+    "front": "der Schüttelfrost",
+    "back": "escalofríos",
+    "ipa": "eskaloˈfɾios",
+    "example": "Los escalofríos repentinos son con frecuencia el primer síntoma de una gripe.",
+    "exampleDE": "Plötzlicher Schüttelfrost ist oft ein erstes Anzeichen einer Grippe."
+  },
+  {
+    "front": "die Entzündung",
+    "back": "inflamación",
+    "ipa": "inflamaˈθjon",
+    "example": "El médico trata la inflamación con una pomada curativa.",
+    "exampleDE": "Der Arzt behandelt die Entzündung mit einer Heilsalbe."
+  },
+  {
+    "front": "die Infektion",
+    "back": "infección",
+    "ipa": "infekˈθjon",
+    "example": "Lavarse las manos con regularidad previene eficazmente de contraer una infección.",
+    "exampleDE": "Regelmäßiges Händewaschen schützt zuverlässig vor einer Infektion."
+  },
+  {
+    "front": "ansteckend",
+    "back": "contagioso",
+    "ipa": "kontaˈxjoso",
+    "example": "Mientras tenga fiebre resulta contagioso para los demás.",
+    "exampleDE": "Solange Sie Fieber haben, sind Sie für andere ansteckend."
+  },
+  {
+    "front": "sich schonen",
+    "back": "guardar reposo",
+    "ipa": "ɡwaɾˈdaɾ reˈposo",
+    "example": "Si uno está resfriado conviene quedarse en la cama y guardar reposo.",
+    "exampleDE": "Bei einer Erkältung sollte man im Bett bleiben und sich schonen."
+  },
+  {
+    "front": "die Arztpraxis",
+    "back": "consulta médica",
+    "ipa": "konˈsulta ˈmeðika",
+    "example": "La consulta médica abre los lunes a partir de las siete de la mañana.",
+    "exampleDE": "Die Arztpraxis öffnet montags bereits um sieben Uhr morgens."
+  },
+  {
+    "front": "das Wartezimmer",
+    "back": "sala de espera",
+    "ipa": "ˈsala ðe esˈpeɾa",
+    "example": "Los pacientes aguardan con paciencia en la luminosa sala de espera.",
+    "exampleDE": "Die Patienten sitzen geduldig im hellen Wartezimmer."
+  },
+  {
+    "front": "die Versichertenkarte",
+    "back": "tarjeta sanitaria",
+    "ipa": "taɾˈxeta saniˈtaɾja",
+    "example": "Por favor, muestre su tarjeta sanitaria electrónica.",
+    "exampleDE": "Legen Sie bitte Ihre elektronische Versichertenkarte vor."
+  },
+  {
+    "front": "der Termin",
+    "back": "cita previa",
+    "ipa": "ˈθita ˈpɾeβja",
+    "example": "He concertado una cita previa para el próximo martes.",
+    "exampleDE": "Ich habe für kommenden Dienstag einen festen Termin vereinbart."
+  },
+  {
+    "front": "die Untersuchung",
+    "back": "reconocimiento médico",
+    "ipa": "rekonoθiˈmjento ˈmeðiko",
+    "example": "El reconocimiento médico exhaustivo no detectó anomalías.",
+    "exampleDE": "Die gründliche Untersuchung ergab keine Auffälligkeiten."
+  },
+  {
+    "front": "der Blutdruck",
+    "back": "presión arterial",
+    "ipa": "pɾeˈsjon aɾteˈɾjal",
+    "example": "La enfermera toma la presión arterial en el brazo izquierdo.",
+    "exampleDE": "Die Schwester misst den Blutdruck am linken Oberarm."
+  },
+  {
+    "front": "der Puls",
+    "back": "pulso",
+    "ipa": "ˈpulso",
+    "example": "Tras una breve pausa de descanso el pulso vuelve a latir normalmente.",
+    "exampleDE": "Nach der kurzen Ruhepause schlägt der Puls wieder normal."
+  },
+  {
+    "front": "das Stethoskop",
+    "back": "estetoscopio",
+    "ipa": "estetosˈkopjo",
+    "example": "La médica ausculta los pulmones mediante el estetoscopio.",
+    "exampleDE": "Die Ärztin hört die Lunge mit dem Stethoskop ab."
+  },
+  {
+    "front": "das Rezept",
+    "back": "receta médica",
+    "ipa": "reˈθeta ˈmeðika",
+    "example": "El médico le emite una receta médica para las pastillas.",
+    "exampleDE": "Der Arzt stellt Ihnen ein Rezept für die Tabletten aus."
+  },
+  {
+    "front": "die Apotheke",
+    "back": "farmacia",
+    "ipa": "faɾˈmaθja",
+    "example": "La farmacia de la plaza del mercado está hoy de guardia.",
+    "exampleDE": "Die Apotheke am Markt hat heute Notdienst."
+  },
+  {
+    "front": "die Packungsbeilage",
+    "back": "prospecto",
+    "ipa": "pɾosˈpekto",
+    "example": "Lea detenidamente el prospecto antes de tomar el medicamento.",
+    "exampleDE": "Lesen Sie vor der Einnahme sorgfältig die Packungsbeilage."
+  },
+  {
+    "front": "die Nebenwirkung",
+    "back": "efecto secundario",
+    "ipa": "eˈfekto sekunˈdaɾjo",
+    "example": "Este fármaco tan bien tolerado casi no posee efectos secundarios conocidos.",
+    "exampleDE": "Dieses gut verträgliche Medikament hat kaum bekannte Nebenwirkungen."
+  },
+  {
+    "front": "die Dosierung",
+    "back": "dosificación",
+    "ipa": "dosifikaˈθjon",
+    "example": "Respete con total exactitud la dosificación indicada por el médico.",
+    "exampleDE": "Beachten Sie genau die vom Arzt verordnete Dosierung."
+  },
+  {
+    "front": "das Schmerzmittel",
+    "back": "analgésico",
+    "ipa": "analˈxesiko",
+    "example": "El analgésico suele hacer efecto en un lapso de media hora.",
+    "exampleDE": "Das Schmerzmittel wirkt meistens innerhalb einer halben Stunde."
+  },
+  {
+    "front": "der Hustensaft",
+    "back": "jarabe para la tos",
+    "ipa": "xaˈɾaβe ˈpaɾa la ˈtos",
+    "example": "Tome una cucharada de jarabe para la tos por la noche antes de dormir.",
+    "exampleDE": "Nehmen Sie abends vor dem Schlafen einen Löffel Hustensaft."
+  },
+  {
+    "front": "das Heftpflaster",
+    "back": "tirita",
+    "ipa": "tiˈɾita",
+    "example": "Pega una tirita sobre el pequeño corte, por favor.",
+    "exampleDE": "Kleb bitte ein Heftpflaster auf die kleine Schnittwunde."
+  },
+  {
+    "front": "der Verband",
+    "back": "vendaje",
+    "ipa": "benˈdaxe",
+    "example": "La enfermera coloca un vendaje limpio alrededor del tobillo.",
+    "exampleDE": "Die Krankenschwester legt einen sauberen Verband um den Knöchel."
+  },
+  {
+    "front": "die Wundsalbe",
+    "back": "pomada para heridas",
+    "ipa": "poˈmaða ˈpaɾa eˈɾiðas",
+    "example": "La pomada curativa acelera la cicatrización de la herida en la piel.",
+    "exampleDE": "Die Heilsalbe beschleunigt das Schließen der Hautwunde."
+  },
+  {
+    "front": "die Desinfektion",
+    "back": "desinfección",
+    "ipa": "desinfekˈθjon",
+    "example": "Antes de vendar es imprescindible una adecuada desinfección.",
+    "exampleDE": "Vor dem Verbinden ist eine gründliche Desinfektion wichtig."
+  },
+  {
+    "front": "der Verbandskasten",
+    "back": "botiquín de primeros auxilios",
+    "ipa": "botiˈkin de pɾiˈmeɾos awkˈsiljos",
+    "example": "En el automóvil siempre debe haber un botiquín completo de primeros auxilios.",
+    "exampleDE": "Im Auto muss stets ein vollständiger Verbandskasten liegen."
+  },
+  {
+    "front": "der Notruf",
+    "back": "llamada de emergencia",
+    "ipa": "ʝaˈmaða ðe emeɾˈxenθja",
+    "example": "En casos de emergencia urgente se marca el 112 en toda Europa.",
+    "exampleDE": "In dringenden Notfällen wählt man europaweit den Notruf 112."
+  },
+  {
+    "front": "die Erste Hilfe",
+    "back": "primeros auxilios",
+    "ipa": "pɾiˈmeɾos awkˈsiljos",
+    "example": "Cualquier persona con carné de conducir debería saber aplicar primeros auxilios.",
+    "exampleDE": "Jeder Führerscheininhaber sollte Erste Hilfe leisten können."
+  },
+  {
+    "front": "bluten",
+    "back": "sangrar",
+    "ipa": "saŋˈɡɾaɾ",
+    "example": "Por fortuna el raspón en la rodilla ha dejado de sangrar.",
+    "exampleDE": "Die Schürfwunde am Knie hat zum Glück aufgehört zu bluten."
+  },
+  {
+    "front": "die Zahnarztpraxis",
+    "back": "clínica dental",
+    "ipa": "ˈklinika denˈtal",
+    "example": "Dos veces al año acudo a la clínica dental para hacerme una revisión.",
+    "exampleDE": "Zweimal im Jahr gehe ich zur Kontrolle in die Zahnarztpraxis."
+  },
+  {
+    "front": "die Zahnseide",
+    "back": "hilo dental",
+    "ipa": "ˈilo denˈtal",
+    "example": "El hilo dental limpia los espacios estrechos que quedan entre los dientes.",
+    "exampleDE": "Zahnseide reinigt die engen Zwischenräume zwischen den Zähnen."
+  },
+  {
+    "front": "das Zahnfleisch",
+    "back": "encía",
+    "ipa": "enˈθia",
+    "example": "La higiene regular fortalece las encías de manera duradera.",
+    "exampleDE": "Regelmäßige Pflege stärkt das Zahnfleisch dauerhaft."
+  },
+  {
+    "front": "die Zahnfüllung",
+    "back": "empaste",
+    "ipa": "emˈpaste",
+    "example": "El dentista colocó un pequeño empaste blanco.",
+    "exampleDE": "Der Zahnarzt setzte eine kleine weiße Zahnfüllung ein."
+  },
+  {
+    "front": "der Backenzahn",
+    "back": "muela",
+    "ipa": "ˈmwela",
+    "example": "Una muela del maxilar superior reacciona con mucha sensibilidad al frío.",
+    "exampleDE": "Ein Backenzahn im Oberkiefer reagiert empfindlich auf Kälte."
+  },
+  {
+    "front": "die Mundspülung",
+    "back": "enjuague bucal",
+    "ipa": "enˈxwaɣwe βuˈkal",
+    "example": "Un enjuague bucal antibacteriano asegura un aliento siempre fresco.",
+    "exampleDE": "Eine antibakterielle Mundspülung sorgt für frischen Atem."
+  },
+  {
+    "front": "die Zahnschmerzen",
+    "back": "dolor de muelas",
+    "ipa": "doˈloɾ ðe ˈmwelas",
+    "example": "Si aparece dolor de muelas de improviso, conviene acudir pronto al dentista.",
+    "exampleDE": "Gegen plötzliche Zahnschmerzen sollte man rasch zum Zahnarzt."
+  },
+  {
+    "front": "das Handgelenk",
+    "back": "muñeca",
+    "ipa": "muˈɲeka",
+    "example": "Ella lleva un elegante reloj de pulsera en la muñeca izquierda.",
+    "exampleDE": "Sie trägt eine elegante Armbanduhr am linken Handgelenk."
+  },
+  {
+    "front": "der Ellbogen",
+    "back": "codo",
+    "ipa": "ˈkoðo",
+    "example": "Se ha golpeado dolorosamente el codo con la esquina de la mesa.",
+    "exampleDE": "Er hat sich den Ellbogen schmerzhaft an der Tischkante gestoßen."
+  },
+  {
+    "front": "das Kniegelenk",
+    "back": "articulación de la rodilla",
+    "ipa": "aɾtikulaˈθjon de la roˈðiʎa",
+    "example": "Al trotar la articulación de la rodilla soporta una gran carga.",
+    "exampleDE": "Beim Joggen wird das Kniegelenk stark beansprucht."
+  },
+  {
+    "front": "der Knöchel",
+    "back": "tobillo",
+    "ipa": "toˈbiʎo",
+    "example": "Haciendo senderismo por un camino pedregoso se torció el tobillo.",
+    "exampleDE": "Beim Wandern auf unebenem Pfad ist er mit dem Knöchel umgeknickt."
+  }
+]

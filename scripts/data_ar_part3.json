@@ -1,0 +1,1402 @@
+[
+  {
+    "front": "die Amsel",
+    "back": "شُحْرُور",
+    "roman": "shuḥrūr",
+    "example": "فِي الصَّبَاحِ الْبَاكِرِ يُغَنِّي الشُّحْرُورُ أُغْنِيَتَهُ الرَّخِيمَةَ مِنْ فَوْقِ سَطْحِ الْمَنْزِلِ.",
+    "exampleDE": "Früh am Morgen singt die Amsel ihr melodisches Lied vom Hausdach."
+  },
+  {
+    "front": "die Schwalbe",
+    "back": "سُنُونُو",
+    "roman": "sunūnū",
+    "example": "تَبْنِي طُيُورُ السُّنُونُو أَعْشَاشَهَا الْبَدِيعَةَ مِنَ الطِّينِ تَحْتَ إِفْرِيزِ السَّطْحِ.",
+    "exampleDE": "Schwalben bauen ihre kunstvollen Nester aus Lehm unter den Dachvorsprung."
+  },
+  {
+    "front": "der Storch",
+    "back": "لَقْلَق",
+    "roman": "laqlaq",
+    "example": "عَلَى مَدْخَنَةِ الْحَظِيرَةِ الْقَدِيمَةِ يُعَشِّشُ زَوْجٌ مِنَ اللَّقَالِقِ.",
+    "exampleDE": "Auf dem Schornstein der alten Scheune nistet ein Storchenpaar."
+  },
+  {
+    "front": "die Elster",
+    "back": "عَقْعَق",
+    "roman": "ʿaqʿaq",
+    "example": "يُعْتَبَرُ الْعَقْعَقُ الْأَسْوَدُ وَالْأَبْيَضُ فِي التُّرَاثِ الشَّعْبِيِّ طَائِرًا سَارِقًا.",
+    "exampleDE": "Die schwarz-weiße Elster gilt im Volksmund als diebischer Vogel."
+  },
+  {
+    "front": "der Specht",
+    "back": "نَقَّارُ الْخَشَب",
+    "roman": "naqqār al-khashab",
+    "example": "مِنَ الْغَابَةِ يُسْمَعُ النَّقْرُ الرَّتِيبُ لِنَقَّارِ الْخَشَبِ.",
+    "exampleDE": "Aus dem Wald hört man das rhythmische Hämmern eines Spechts."
+  },
+  {
+    "front": "der Zugvogel",
+    "back": "طَائِرٌ مُهَاجِر",
+    "roman": "ṭāʾir muhājir",
+    "example": "فِي الْخَرِيفِ تَطِيرُ الطُّيُورُ الْمُهَاجِرَةُ عَلَى شَكْلِ حَرْفِ V نَحْوَ الْجَنُوبِ.",
+    "exampleDE": "Im Herbst fliegen Zugvögel in V-Formation Richtung Süden."
+  },
+  {
+    "front": "die Forelle",
+    "back": "سَمَكُ السَّلْمُونِ الْمُرَقَّط",
+    "roman": "samak as-salmūn al-muraqqaṭ",
+    "example": "فِي الْجَدْوَلِ الْجَبَلِيِّ الْبَارِدِ تَسْبَحُ سَمَكَةُ سَلْمُونٍ مُرَقَّطَةٌ فِضِّيَّةٌ.",
+    "exampleDE": "Im kühlen Gebirgsbach schwimmt eine silbrige Bachforelle."
+  },
+  {
+    "front": "der Lachs",
+    "back": "سَمَكُ السَّلْمُون",
+    "roman": "samak as-salmūn",
+    "example": "فِي مَوْسِمِ وَضْعِ الْبَيْضِ يُهَاجِرُ السَّلْمُونُ كِيلُومِتْرَاتٍ عَدِيدَةً عَكْسَ مَجْرَى النَّهْرِ.",
+    "exampleDE": "Zur Laichzeit wandert der Lachs viele Kilometer flussaufwärts."
+  },
+  {
+    "front": "der Karpfen",
+    "back": "شَبُّوط",
+    "roman": "shabbūṭ",
+    "example": "فِي قَاعِ بِرْكَةِ الْقَرْيَةِ الْهَادِئَةِ يَبْحَثُ شَبُّوطٌ كَبِيرٌ عَنِ الطَّعَامِ.",
+    "exampleDE": "Am Grund des ruhigen Dorfteichs gründelt ein großer Karpfen."
+  },
+  {
+    "front": "die Kröte",
+    "back": "عُلْجُوم",
+    "roman": "ʿuljūm",
+    "example": "فِي الرَّبِيعِ تُهَاجِرُ الْكَثِيرُ مِنَ الْعَلَاجِيمِ إِلَى مِيَاهِ وَضْعِ الْبَيْضِ.",
+    "exampleDE": "Im Frühjahr wandern viele Kröten zu ihren Laichgewässern."
+  },
+  {
+    "front": "der Salamander",
+    "back": "سَمَنْدَل",
+    "roman": "samandal",
+    "example": "سَمَنْدَلُ النَّارِ الْأَسْوَدُ وَالْأَصْفَرُ يُحِبُّ الْغَابَاتِ النَّفْضِيَّةَ الرَّطْبَةَ.",
+    "exampleDE": "Der schwarz-gelbe Feuersalamander liebt feuchte Laubwälder."
+  },
+  {
+    "front": "die Kaulquappe",
+    "back": "شُرْغُوف",
+    "roman": "shurghūf",
+    "example": "مِنَ الشَّرَاغِيفِ الصَّغِيرَةِ تَتَطَوَّرُ تَدْرِيجِيًّا ضَفَادِعُ صَغِيرَةٌ.",
+    "exampleDE": "Aus den winzigen Kaulquappen entwickeln sich nach und nach junge Frösche."
+  },
+  {
+    "front": "der Krebs",
+    "back": "سَرَطَانُ النَّهْر",
+    "roman": "saraṭān an-nahr",
+    "example": "تَحْتَ حَجَرٍ مُسَطَّحٍ فِي الْجَدْوَلِ يَخْتَبِئُ سَرَطَانُ النَّهْرِ.",
+    "exampleDE": "Unter einem flachen Stein im Bach verbirgt sich ein Flusskrebs."
+  },
+  {
+    "front": "die Muschel",
+    "back": "صَدَفَة",
+    "roman": "ṣadafa",
+    "example": "عَلَى الشَّاطِئِ الرَّمْلِيِّ جَمَعَ الْأَطْفَالُ أَصْدَافًا فَارِغَةً.",
+    "exampleDE": "Am Sandstrand sammelten die Kinder leere Muschelschalen."
+  },
+  {
+    "front": "der Marienkäfer",
+    "back": "دُعْسُوقَة",
+    "roman": "duʿsūqa",
+    "example": "دُعْسُوقَةٌ حَمْرَاءُ بِسَبْعِ نِقَاطٍ سَوْدَاءَ تَزْحَفُ عَلَى السَّاقِ.",
+    "exampleDE": "Ein roter Marienkäfer mit sieben schwarzen Punkten krabbelt am Halm."
+  },
+  {
+    "front": "die Libelle",
+    "back": "يَعْسُوب",
+    "roman": "yaʿsūb",
+    "example": "يَعْسُوبٌ بَرَّاقٌ يَطِيرُ بِسُرْعَةِ الْبَرْقِ فَوْقَ سَطْحِ الْمَاءِ.",
+    "exampleDE": "Eine schillernde Libelle schwirrt blitzschnell über die Wasseroberfläche."
+  },
+  {
+    "front": "die Hummel",
+    "back": "طَنَّان",
+    "roman": "ṭannān",
+    "example": "طَنَّانٌ بَدِينٌ مُكْتَسٍ بِالْفَرْوِ يَطِنُّ بِنَشَاطٍ مِنْ زَهْرَةٍ إِلَى زَهْرَةٍ.",
+    "exampleDE": "Eine dicke, pelzige Hummel summt emsig von Blüte zu Blüte."
+  },
+  {
+    "front": "die Wespe",
+    "back": "دَبُّور",
+    "roman": "dabbūr",
+    "example": "الْأَطْعِمَةُ الْحُلْوَةُ فِي الْهَوَاءِ الطَّلْقِ تَجْذِبُ الدَّبَابِيرَ الْمُزْعِجَةَ فِي أَوَاخِرِ الصَّيْفِ.",
+    "exampleDE": "Süße Speisen im Freien locken im Spätsommer lästige Wespen an."
+  },
+  {
+    "front": "die Heuschrecke",
+    "back": "جَرَادَة",
+    "roman": "jarāda",
+    "example": "بِأَرْجُلِهَا الْخَلْفِيَّةِ الطَّوِيلَةِ تَقْفِزُ الْجَرَادَةُ الْخَضْرَاءُ بَعِيدًا.",
+    "exampleDE": "Mit ihren langen Hinterbeinen springt die grüne Heuschrecke weit."
+  },
+  {
+    "front": "die Eidechse",
+    "back": "سِحْلِيَّة",
+    "roman": "siḥliyya",
+    "example": "عَلَى الْجِدَارِ الْحَجَرِيِّ الدَّافِئِ بِالشَّمْسِ تَتَدَفَّأُ سِحْلِيَّةٌ صَغِيرَةٌ.",
+    "exampleDE": "Auf der sonnenwarmen Steinmauer wärmt sich eine kleine Eidechse."
+  },
+  {
+    "front": "die Schnecke",
+    "back": "حَلَزُون",
+    "roman": "ḥalazūn",
+    "example": "بَعْدَ الْمَطَرِ الدَّافِئِ يَزْحَفُ حَلَزُونٌ عَبْرَ الطَّرِيقِ.",
+    "exampleDE": "Nach dem warmen Regen kriecht eine Weinbergschnecke über den Weg."
+  },
+  {
+    "front": "die Wettervorhersage",
+    "back": "نَشْرَةٌ جَوِّيَّة",
+    "roman": "nashra jawwiyya",
+    "example": "حَسَبَ النَّشْرَةِ الْجَوِّيَّةِ سَيَكُونُ الطَّقْسُ مُشْمِسًا وَمُعْتَدِلًا فِي عُطْلَةِ نِهَايَةِ الْأُسْبُوعِ.",
+    "exampleDE": "Laut Wettervorhersage soll es am Wochenende sonnig und mild werden."
+  },
+  {
+    "front": "der Regenschauer",
+    "back": "زَخَّةُ مَطَر",
+    "roman": "zakhkhat maṭar",
+    "example": "زَخَّةُ مَطَرٍ قَصِيرَةٌ فَاجَأَتِ الْمُتَنَزِّهِينَ فِي حَدِيقَةِ الْمَدِينَةِ.",
+    "exampleDE": "Ein kurzer Regenschauer überraschte die Spaziergänger im Stadtpark."
+  },
+  {
+    "front": "der Nieselregen",
+    "back": "رَذَاذ",
+    "roman": "radhādh",
+    "example": "رَذَاذٌ كَثِيفٌ وَدَقِيقٌ يَحْجُبُ الرُّؤْيَةَ فِي الصَّبَاحِ.",
+    "exampleDE": "Dichter, feiner Nieselregen trübt die Sicht am Vormittag."
+  },
+  {
+    "front": "das Gewitter",
+    "back": "عَاصِفَةٌ رَعْدِيَّة",
+    "roman": "ʿāṣifa raʿdiyya",
+    "example": "فِي الْأُفُقِ تَتَصَاعَدُ سُحُبٌ دَاكِنَةٌ تُنْذِرُ بِعَاصِفَةٍ رَعْدِيَّةٍ.",
+    "exampleDE": "Am Horizont ziehen dunkle Wolken auf, die ein Gewitter ankündigen."
+  },
+  {
+    "front": "der Donnerschlag",
+    "back": "قَصْفُ رَعْد",
+    "roman": "qaṣf raʿd",
+    "example": "قَصْفُ رَعْدٍ مُدَوٍّ جَعَلَ زُجَاجَ نَوَافِذِ الْمَنْزِلِ يَهْتَزُّ.",
+    "exampleDE": "Ein lauter Donnerschlag ließ die Fensterscheiben im Haus erzittern."
+  },
+  {
+    "front": "der Blitzschlag",
+    "back": "صَاعِقَة",
+    "roman": "ṣāʿiqa",
+    "example": "أَصَابَتْ صَاعِقَةٌ الشَّجَرَةَ الْقَدِيمَةَ عَلَى حَافَّةِ الْحَقْلِ.",
+    "exampleDE": "Ein Blitzschlag traf den alten Baum am Feldrand."
+  },
+  {
+    "front": "die Windböe",
+    "back": "هَبَّةُ رِيح",
+    "roman": "habbat rīḥ",
+    "example": "هَبَّةُ رِيحٍ عَنِيفَةٌ طَيَّرَتْ أَوْرَاقَ الْخَرِيفِ الْجَافَّةَ فِي الْهَوَاءِ.",
+    "exampleDE": "Eine heftige Windböe wirbelte trockenes Herbstlaub durch die Luft."
+  },
+  {
+    "front": "der Nebel",
+    "back": "ضَبَاب",
+    "roman": "ḍabāb",
+    "example": "ضَبَابُ الصَّبَاحِ الْكَثِيفُ يَرْبِضُ كَغِطَاءٍ فَوْقَ وَادِي النَّهْرِ.",
+    "exampleDE": "Dichter Frühnebel liegt wie eine Decke über dem Flusstal."
+  },
+  {
+    "front": "der Frost",
+    "back": "صَقِيع",
+    "roman": "ṣaqīʿ",
+    "example": "فِي اللَّيْلِ كَانَ هُنَاكَ صَقِيعٌ أَرْضِيٌّ لَوَّنَ الْمَرْجَ بِالْفِضِّيِّ.",
+    "exampleDE": "In der Nacht gab es Bodenfrost, der die Wiese silbern färbte."
+  },
+  {
+    "front": "das Glatteis",
+    "back": "جَلِيد",
+    "roman": "jalīd",
+    "example": "حَذَارِ فِي الطُّرُقَاتِ، فَمَعَ الْجَلِيدِ تَطُولُ مَسَافَةُ الْفَرْمَلَةِ.",
+    "exampleDE": "Vorsicht auf den Straßen, bei Glatteis verlängert sich der Bremsweg."
+  },
+  {
+    "front": "die Schneeflocke",
+    "back": "نَدَفَةُ ثَلْج",
+    "roman": "nadafat thalj",
+    "example": "بِصَمْتٍ تَتَهَادَى نَدَفَاتُ ثَلْجٍ بَيْضَاءُ سَمِيكَةٌ مِنَ السَّمَاءِ.",
+    "exampleDE": "Lautlos schweben dicke weiße Schneeflocken vom Himmel herab."
+  },
+  {
+    "front": "die Hitzewelle",
+    "back": "مَوْجَةُ حَرّ",
+    "roman": "mawjat ḥarr",
+    "example": "خِلَالَ مَوْجَةِ الْحَرِّ الصَّيْفِيَّةِ لَا يَبْرُدُ الْجَوُّ تَقْرِيبًا حَتَّى فِي اللَّيْلِ.",
+    "exampleDE": "Während der sommerlichen Hitzewelle kühlt es auch nachts kaum ab."
+  },
+  {
+    "front": "der Sonnenschein",
+    "back": "ضَوْءُ الشَّمْس",
+    "roman": "ḍawʾ ash-shams",
+    "example": "ضَوْءُ الشَّمْسِ الدَّافِئُ يَجْذِبُ الْكَثِيرَ مِنَ النَّاسِ إِلَى الْمَسْبَحِ الْمَكْشُوفِ.",
+    "exampleDE": "Warmer Sonnenschein lockt viele Menschen ins Freibad."
+  },
+  {
+    "front": "das Abendrot",
+    "back": "شَفَقٌ مَسَائِيّ",
+    "roman": "shafaq masāʾiyy",
+    "example": "شَفَقٌ مَسَائِيٌّ وَهَّاجٌ يُبَشِّرُ بِطَقْسٍ جَمِيلٍ لِلْيَوْمِ التَّالِي.",
+    "exampleDE": "Ein feuriges Abendrot kündigt schönes Wetter für den nächsten Tag an."
+  },
+  {
+    "front": "die Dämmerung",
+    "back": "غَسَق",
+    "roman": "ghasaq",
+    "example": "عِنْدَ الْغَسَقِ تَبْدَأُ أَعْمِدَةُ إِنَارَةِ الشَّوَارِعِ بِالْإِضَاءَةِ.",
+    "exampleDE": "In der Abenddämmerung beginnen die Straßenlaternen zu leuchten."
+  },
+  {
+    "front": "die Mülltrennung",
+    "back": "فَرْزُ الْقُمَامَة",
+    "roman": "farz al-qumāma",
+    "example": "فَرْزُ الْقُمَامَةِ بِعِنَايَةٍ يُسَهِّلُ إِعَادَةَ تَدْوِيرِ الْمَوَادِّ الْخَامِ الْقَيِّمَةِ.",
+    "exampleDE": "Sorgfältige Mülltrennung erleichtert die Wiederverwertung wertvoller Rohstoffe."
+  },
+  {
+    "front": "der Plastikmüll",
+    "back": "نِفَايَاتٌ بِلَاسْتِيكِيَّة",
+    "roman": "nifāyāt bilāstīkiyya",
+    "example": "مِنْ خِلَالِ الْعُبُوَّاتِ مُتَعَدِّدَةِ الِاسْتِخْدَامِ يُمْكِنُ تَجَنُّبُ النِّفَايَاتِ الْبِلَاسْتِيكِيَّةِ غَيْرِ الضَّرُورِيَّةِ.",
+    "exampleDE": "Durch Mehrwegverpackungen lässt sich unnötiger Plastikmüll vermeiden."
+  },
+  {
+    "front": "das Recycling",
+    "back": "إِعَادَةُ تَدْوِير",
+    "roman": "iʿādat tadwīr",
+    "example": "الْمُنْشَآتُ الْحَدِيثَةُ تُوَجِّهُ الزُّجَاجَ الْمُسْتَعْمَلَ وَالْوَرَقَ إِلَى إِعَادَةِ التَّدْوِيرِ.",
+    "exampleDE": "Moderne Anlagen führen Altglas und Papier dem Recycling zu."
+  },
+  {
+    "front": "der Umweltschutz",
+    "back": "حِمَايَةُ الْبِيئَة",
+    "roman": "ḥimāyat al-bīʾa",
+    "example": "حِمَايَةُ الْمَوَاطِنِ الطَّبِيعِيَّةِ الْمُهَدَّدَةِ هِيَ وَاجِبٌ عَلَى كُلِّ النَّاسِ.",
+    "exampleDE": "Der Schutz bedrohter Lebensräume ist eine Aufgabe für alle Menschen."
+  },
+  {
+    "front": "die Nachhaltigkeit",
+    "back": "اسْتِدَامَة",
+    "roman": "istidāma",
+    "example": "الِاسْتِدَامَةُ تَعْنِي الْحِفَاظَ عَلَى الْمَوَارِدِ لِلْأَجْيَالِ الْقَادِمَةِ.",
+    "exampleDE": "Nachhaltigkeit bedeutet, Ressourcen für künftige Generationen zu bewahren."
+  },
+  {
+    "front": "die Mehrwegflasche",
+    "back": "قِنِّينَةٌ مُتَعَدِّدَةُ الِاسْتِعْمَال",
+    "roman": "qinnīna mutaʿaddidat al-istiʿmāl",
+    "example": "لِلْمَاءِ الْمَعْدِنِيِّ نُفَضِّلُ اسْتِخْدَامَ قَنَانٍ مُتَعَدِّدَةِ الِاسْتِعْمَالِ قَابِلَةٍ لِإِعَادَةِ التَّعْبِئَةِ.",
+    "exampleDE": "Für Mineralwasser nutzen wir bevorzugt wiederbefüllbare Mehrwegflaschen."
+  },
+  {
+    "front": "der Energiesparer",
+    "back": "مُوَفِّرُ طَاقَة",
+    "roman": "muwaffir ṭāqa",
+    "example": "مَصَابِيحُ اللِّيد الْحَدِيثَةُ هِيَ مُوَفِّرَاتُ طَاقَةٍ حَقِيقِيَّةٌ فِي الْمَنْزِلِ.",
+    "exampleDE": "Moderne LED-Lampen sind wahre Energiesparer im Haushalt."
+  },
+  {
+    "front": "schonen",
+    "back": "حَافَظَ عَلَى",
+    "roman": "ḥāfaẓa ʿalā",
+    "example": "يَجِبُ عَلَيْنَا أَنْ نُحَافِظَ عَلَى مَوَارِدِنَا الطَّبِيعِيَّةِ وَمُسَطَّحَاتِنَا الْمَائِيَّةِ.",
+    "exampleDE": "Wir sollten unsere natürlichen Ressourcen und Gewässer schonen."
+  },
+  {
+    "front": "die Solarenergie",
+    "back": "طَاقَةٌ شَمْسِيَّة",
+    "roman": "ṭāqa shamsiyya",
+    "example": "الْمَنْظُومَةُ الشَّمْسِيَّةُ عَلَى السَّطْحِ تُوَلِّدُ كَهْرَبَاءَ صَدِيقَةً لِلْبِيئَةِ.",
+    "exampleDE": "Die Solaranlage auf dem Dach erzeugt umweltfreundlichen Strom."
+  },
+  {
+    "front": "die Windkraft",
+    "back": "طَاقَةُ الرِّيَاح",
+    "roman": "ṭāqat ar-riyāḥ",
+    "example": "عَنَفَاتُ الرِّيَاحِ تَسْتَخْدِمُ قُوَّةَ الرِّيَاحِ لِتَوْلِيدِ الْكَهْرَبَاءِ.",
+    "exampleDE": "Windkrafträder nutzen die Kraft des Windes zur Stromerzeugung."
+  },
+  {
+    "front": "das Wasserkraftwerk",
+    "back": "مَحَطَّةٌ كَهْرُومَائِيَّة",
+    "roman": "maḥaṭṭa kahromāʾiyya",
+    "example": "الْمَحَطَّةُ الْكَهْرُومَائِيَّةُ عَلَى النَّهْرِ تُنْتِجُ طَاقَةً نَظِيفَةً بِمَوْثُوقِيَّةٍ.",
+    "exampleDE": "Das Wasserkraftwerk am Fluss produziert zuverlässig saubere Energie."
+  },
+  {
+    "front": "der Stromverbrauch",
+    "back": "اسْتِهْلَاكُ الْكَهْرَبَاء",
+    "roman": "istihlāk al-kahrabāʾ",
+    "example": "الْأَجْهِزَةُ فِي وَضْعِ الِاسْتِعْدَادِ تَرْفَعُ اسْتِهْلَاكَ الْكَهْرَبَاءِ بِلَا دَاعٍ.",
+    "exampleDE": "Geräte im Standby-Modus erhöhen unnötig den Stromverbrauch."
+  },
+  {
+    "front": "die Wärmepumpe",
+    "back": "مِضَخَّةٌ حَرَارِيَّة",
+    "roman": "miḍakhkha ḥarāriyya",
+    "example": "الْمِضَخَّةُ الْحَرَارِيَّةُ الْحَدِيثَةُ تُدَفِّئُ الْمَنْزِلَ بِكِفَاءَةٍ عَالِيَةٍ.",
+    "exampleDE": "Eine moderne Wärmepumpe heizt das Wohnhaus sehr effizient."
+  },
+  {
+    "front": "der CO2-Ausstoß",
+    "back": "انْبِعَاثَاتُ ثَانِي أُكْسِيدِ الْكَرْبُون",
+    "roman": "inbiʿāthāt thānī uksīd al-karbūn",
+    "example": "السَّيَّارَاتُ الْكَهْرَبَائِيَّةُ تُسَاهِمُ فِي خَفْضِ انْبِعَاثَاتِ ثَانِي أُكْسِيدِ الْكَرْبُونِ الْمَحَلِّيَّةِ.",
+    "exampleDE": "Elektrofahrzeuge tragen zur Senkung des lokalen CO2-Ausstoßes bei."
+  },
+  {
+    "front": "die Ressource",
+    "back": "مَوْرِد",
+    "roman": "mawrid",
+    "example": "مِيَاهُ الشُّرْبِ النَّظِيفَةُ هِيَ أَثْمَنُ مَوْرِدٍ طَبِيعِيٍّ.",
+    "exampleDE": "Sauberes Trinkwasser ist die kostbarste natürliche Ressource."
+  },
+  {
+    "front": "der Stundenplan",
+    "back": "جَدْوَلُ حِصَص",
+    "roman": "jadwal ḥiṣaṣ",
+    "example": "حَسَبَ جَدْوَلِ الْحِصَصِ، لَدَيْنَا حِصَّتَانِ مِنَ الرِّيَاضِيَّاتِ أَيَّامَ الِاثْنَيْنِ.",
+    "exampleDE": "Laut Stundenplan haben wir montags zwei Stunden Mathematik."
+  },
+  {
+    "front": "das Klassenzimmer",
+    "back": "حُجْرَةُ دِرَاسَة",
+    "roman": "ḥujrat dirāsa",
+    "example": "زَيَّنَ التَّلَامِيذُ حُجْرَةَ دِرَاسَتِهِمْ بِصُوَرٍ مُلَوَّنَةٍ.",
+    "exampleDE": "Die Schüler schmückten ihr Klassenzimmer mit bunten Bildern."
+  },
+  {
+    "front": "die Schultasche",
+    "back": "حَقِيبَةٌ مَدْرَسِيَّة",
+    "roman": "ḥaqība madrasiyya",
+    "example": "يَضَعُ دَفَاتِرَهُ وَكُتُبَهُ بِعِنَايَةٍ فِي الْحَقِيبَةِ الْمَدْرَسِيَّةِ.",
+    "exampleDE": "Er packt seine Hefte und Bücher sorgfältig in die Schultasche."
+  },
+  {
+    "front": "das Federmäppchen",
+    "back": "مِقْلَمَة",
+    "roman": "miqlama",
+    "example": "فِي الْمِقْلَمَةِ تُوجَدُ أَقْلَامُ تَلْوِينٍ وَقَلَمُ حِبْرٍ وَمِمْحَاةٌ.",
+    "exampleDE": "Im Federmäppchen liegen Buntstifte, Füller und ein Radiergummi."
+  },
+  {
+    "front": "die Klassenarbeit",
+    "back": "اخْتِبَارٌ مَدْرَسِيّ",
+    "roman": "ikhtibār madrasiyy",
+    "example": "لِلِاخْتِبَارِ الْمَدْرَسِيِّ الصَّعْبِ فِي مَادَّةِ الْأَحْيَاءِ ذَاكَرَتْ كَثِيرًا.",
+    "exampleDE": "Für die schwere Klassenarbeit in Biologie hat sie viel gelernt."
+  },
+  {
+    "front": "das Schulzeugnis",
+    "back": "شَهَادَةٌ مَدْرَسِيَّة",
+    "roman": "shahāda madrasiyya",
+    "example": "فِي آخِرِ يَوْمٍ دِرَاسِيٍّ قَبْلَ الْعُطْلَةِ يَسْتَلِمُ الْجَمِيعُ شَهَادَاتِهِمُ الْمَدْرَسِيَّةَ.",
+    "exampleDE": "Am letzten Schultag vor den Ferien erhalten alle ihr Zeugnis."
+  },
+  {
+    "front": "die Schulferien",
+    "back": "عُطْلَةٌ مَدْرَسِيَّة",
+    "roman": "ʿuṭla madrasiyya",
+    "example": "يَفْرَحُ الْأَطْفَالُ كَثِيرًا بِالْعُطْلَةِ الصَّيْفِيَّةِ الْمُمْتَدَّةِ لِسِتَّةِ أَسَابِيعَ.",
+    "exampleDE": "Die Kinder freuen sich riesig auf die sechswöchigen Sommerferien."
+  },
+  {
+    "front": "der Pausenhof",
+    "back": "بَاحَةُ اسْتِرَاحَة",
+    "roman": "bāḥat istirāḥa",
+    "example": "فِي الِاسْتِرَاحَةِ الْكَبِيرَةِ يَلْعَبُ التَّلَامِيذُ فِي الْخَارِجِ فِي بَاحَةِ الِاسْتِرَاحَةِ.",
+    "exampleDE": "In der großen Pause spielen die Schüler draußen auf dem Pausenhof."
+  },
+  {
+    "front": "die Geometrie",
+    "back": "هَنْدَسَة",
+    "roman": "handasa",
+    "example": "فِي دَرْسِ الْهَنْدَسَةِ نَرْسُمُ مُثَلَّثَاتٍ بِمُثَلَّثِ الرَّسْمِ.",
+    "exampleDE": "Im Geometrieunterricht zeichnen wir Dreiecke mit dem Geodreieck."
+  },
+  {
+    "front": "die Grammatik",
+    "back": "قَوَاعِدُ لُغَة",
+    "roman": "qawāʿid lugha",
+    "example": "التَّدْرِيبُ الْمُنْتَظَمُ يُسَاعِدُ عَلَى اسْتِيعَابِ قَوَاعِدِ اللُّغَةِ.",
+    "exampleDE": "Regelmäßiges Üben hilft, die Regeln der Grammatik zu verinnerlichen."
+  },
+  {
+    "front": "der Fremdsprachenunterricht",
+    "back": "دَرْسُ لُغَةٍ أَجْنَبِيَّة",
+    "roman": "dars lugha ajnabiyya",
+    "example": "فِي دَرْسِ اللُّغَةِ الْأَجْنَبِيَّةِ نَتَدَرَّبُ عَلَى التَّحَدُّثِ الطَّلِيقِ فِي حِوَارَاتٍ.",
+    "exampleDE": "Im Fremdsprachenunterricht üben wir das freie Sprechen in Dialogen."
+  },
+  {
+    "front": "das Experiment",
+    "back": "تَجْرِبَة",
+    "roman": "tajriba",
+    "example": "فِي مُخْتَبَرِ الْكِيمْيَاءِ يُجْرِي الصَّفُّ تَجْرِبَةً مُثِيرَةً.",
+    "exampleDE": "Im Chemielabor führt die Klasse ein spannendes Experiment durch."
+  },
+  {
+    "front": "das Referat",
+    "back": "عَرْضٌ تَقْدِيمِيّ",
+    "roman": "ʿarḍ taqdīmiyy",
+    "example": "يُلْقِي عَرْضًا تَقْدِيمِيًّا طَلِيقًا عَنْ حِمَايَةِ الْحِيتَانِ الْمُهَدَّدَةِ.",
+    "exampleDE": "Er hält ein freies Referat über den Schutz bedrohter Wale."
+  },
+  {
+    "front": "die Hausaufgabe",
+    "back": "وَاجِبٌ مَنْزِلِيّ",
+    "roman": "wājib manziliyy",
+    "example": "بَعْدَ الْغَدَاءِ تَقُومُ بِإِنْجَازِ وَاجِبَاتِهَا الْمَنْزِلِيَّةِ بِتَرْكِيزٍ.",
+    "exampleDE": "Nach dem Mittagessen erledigt sie konzentriert ihre Hausaufgaben."
+  },
+  {
+    "front": "die Nachhilfe",
+    "back": "دُرُوسُ تَقْوِيَة",
+    "roman": "durūs taqwiya",
+    "example": "يَأْخُذُ دُرُوسَ تَقْوِيَةٍ مَرَّتَيْنِ أُسْبُوعِيًّا لِتَحْسِينِ دَرَجَاتِهِ.",
+    "exampleDE": "Zweimal wöchentlich nimmt er Nachhilfe, um seine Noten zu verbessern."
+  },
+  {
+    "front": "der Hörsaal",
+    "back": "قَاعَةُ مُحَاضَرَات",
+    "roman": "qāʿat muḥāḍarāt",
+    "example": "قَاعَةُ الْمُحَاضَرَاتِ الْكَبِيرَةُ مُمْتَلِئَةٌ عَنْ آخِرِهَا.",
+    "exampleDE": "Der große Hörsaal ist bis auf den letzten Platz besetzt."
+  },
+  {
+    "front": "die Vorlesung",
+    "back": "مُحَاضَرَة",
+    "roman": "muḥāḍara",
+    "example": "تُلْقِي الْأُسْتَاذَةُ مُحَاضَرَةً شَيِّقَةً عَنِ الْفِيزْيَاءِ الْحَدِيثَةِ.",
+    "exampleDE": "Die Professorin hält eine fesselnde Vorlesung über moderne Physik."
+  },
+  {
+    "front": "das Seminar",
+    "back": "حَلْقَةٌ دِرَاسِيَّة",
+    "roman": "ḥalqa dirāsiyya",
+    "example": "فِي الْحَلْقَةِ الدِّرَاسِيَّةِ يُنَاقِشُ الطُّلَّابُ نُصُوصًا عِلْمِيَّةً حَدِيثَةً.",
+    "exampleDE": "Im Seminar diskutieren die Studierenden aktuelle wissenschaftliche Texte."
+  },
+  {
+    "front": "die Universitätsbibliothek",
+    "back": "مَكْتَبَةٌ جَامِعِيَّة",
+    "roman": "maktaba jāmiʿiyya",
+    "example": "فِي الْمَكْتَبَةِ الْجَامِعِيَّةِ يَسُودُ هُدُوءٌ مُرَكَّزٌ لِلدِّرَاسَةِ.",
+    "exampleDE": "In der Universitätsbibliothek herrscht konzentrierte Stille zum Lernen."
+  },
+  {
+    "front": "das Semester",
+    "back": "فَصْلٌ دِرَاسِيّ",
+    "roman": "faṣl dirāsiyy",
+    "example": "يَبْدَأُ الْفَصْلُ الدِّرَاسِيُّ الشَّتَوِيُّ فِي مُعْظَمِ الْجَامِعَاتِ فِي شَهْرِ أُكْتُوبَرَ.",
+    "exampleDE": "Das Wintersemester beginnt an den meisten Hochschulen im Oktober."
+  },
+  {
+    "front": "die Bachelorarbeit",
+    "back": "أُطْرُوحَةُ بَكَالُورْيُوس",
+    "roman": "uṭrūḥat bakalūryūs",
+    "example": "تَعْكِفُ حَالِيًّا بِكَثَافَةٍ عَلَى كِتَابَةِ أُطْرُوحَةِ الْبَكَالُورْيُوسِ الْخَاصَّةِ بِهَا.",
+    "exampleDE": "Sie schreibt zurzeit intensiv an ihrer Abschlussarbeit im Bachelor."
+  },
+  {
+    "front": "das Stipendium",
+    "back": "مِنْحَةٌ دِرَاسِيَّة",
+    "roman": "minḥa dirāsiyya",
+    "example": "بِفَضْلِ مِنْحَةٍ دِرَاسِيَّةٍ لِلْمَوْهُوبِينَ يُمْكِنُهُ التَّرْكِيزُ كُلِّيًّا عَلَى الدِّرَاسَةِ.",
+    "exampleDE": "Dank eines Begabtenstipendiums kann er sich voll auf das Studium konzentrieren."
+  },
+  {
+    "front": "der Campus",
+    "back": "حَرَمٌ جَامِعِيّ",
+    "roman": "ḥaram jāmiʿiyy",
+    "example": "فِي الْحَرَمِ الْجَامِعِيِّ الْأَخْضَرِ يَلْتَقِي الطُّلَّابُ بَيْنَ الْمُحَاضَرَاتِ.",
+    "exampleDE": "Auf dem grünen Campus treffen sich Studierende zwischen den Kursen."
+  },
+  {
+    "front": "die Stellenausschreibung",
+    "back": "إِعْلَانُ وَظِيفَة",
+    "roman": "iʿlān waẓīfa",
+    "example": "فِي الْجَرِيدَةِ وَجَدَ إِعْلَانَ وَظِيفَةٍ مُثِيرًا لِلِاهْتِمَامِ.",
+    "exampleDE": "In der Zeitung fand er eine interessante Stellenausschreibung."
+  },
+  {
+    "front": "das Anschreiben",
+    "back": "خِطَابُ تَقْدِيم",
+    "roman": "khiṭāb taqdīm",
+    "example": "خِطَابُ التَّقْدِيمِ الْمُعَبِّرُ يُثِيرُ اهْتِمَامَ صَاحِبِ الْعَمَلِ.",
+    "exampleDE": "Ein aussagekräftiges Anschreiben weckt das Interesse des Arbeitgebers."
+  },
+  {
+    "front": "der Lebenslauf",
+    "back": "سِيرَةٌ ذَاتِيَّة",
+    "roman": "sīra dhātiyya",
+    "example": "السِّيرَةُ الذَّاتِيَّةُ فِي شَكْلِ جَدْوَلٍ تَسْرُدُ جَمِيعَ الْمَحَطَّاتِ الْمِهْنِيَّةِ السَّابِقَةِ.",
+    "exampleDE": "Der tabellarische Lebenslauf listet alle bisherigen Berufsstationen auf."
+  },
+  {
+    "front": "das Vorstellungsgespräch",
+    "back": "مُقَابَلَةُ عَمَل",
+    "roman": "muqābalat ʿamal",
+    "example": "لِمُقَابَلَةِ الْعَمَلِ يَرْتَدِي مَلَابِسَ مِهْنِيَّةً وَمُرَتَّبَةً.",
+    "exampleDE": "Zum Vorstellungsgespräch kleidet er sich professionell und ordentlich."
+  },
+  {
+    "front": "die Berufserfahrung",
+    "back": "خِبْرَةٌ مِهْنِيَّة",
+    "roman": "khibra mihniyya",
+    "example": "لِهَذَا الْمَنْصِبِ الْمَسْؤُولِ تُعَدُّ الْخِبْرَةُ الْمِهْنِيَّةُ لِعِدَّةِ سَنَوَاتٍ ضَرُورِيَّةً.",
+    "exampleDE": "Für diese verantwortungsvolle Position ist mehrjährige Berufserfahrung erforderlich."
+  },
+  {
+    "front": "die Qualifikation",
+    "back": "مُؤَهِّل",
+    "roman": "muʾahhil",
+    "example": "مُؤَهِّلَاتُهَا الْمِهْنِيَّةُ تُنَاسِبُ تَمَامًا الْمَلَفَّ الْمَطْلُوبَ.",
+    "exampleDE": "Ihre fachliche Qualifikation passt genau zum geforderten Profil."
+  },
+  {
+    "front": "das Arbeitszeugnis",
+    "back": "شَهَادَةُ خِبْرَة",
+    "roman": "shahādat khibra",
+    "example": "شَهَادَةُ الْخِبْرَةِ الْإِيجَابِيَّةُ تُسَهِّلُ الِانْتِقَالَ الْمِهْنِيَّ.",
+    "exampleDE": "Ein positives Arbeitszeugnis erleichtert den beruflichen Wechsel."
+  },
+  {
+    "front": "der Arbeitsvertrag",
+    "back": "عَقْدُ عَمَل",
+    "roman": "ʿaqd ʿamal",
+    "example": "بَعْدَ مُفَاوَضَاتٍ نَاجِحَةٍ وَقَّعَتْ عَلَى عَقْدِ الْعَمَلِ.",
+    "exampleDE": "Nach erfolgreichen Verhandlungen unterschrieb sie den Arbeitsvertrag."
+  },
+  {
+    "front": "die Probezeit",
+    "back": "فَتْرَةُ تَجْرِبَة",
+    "roman": "fatrat tajriba",
+    "example": "خِلَالَ فَتْرَةِ التَّجْرِبَةِ الْمُمْتَدَّةِ لِسِتَّةِ أَشْهُرٍ يَتَعَرَّفُ الطَّرَفَانِ عَلَى بَعْضِهِمَا.",
+    "exampleDE": "Während der sechsmonatigen Probezeit lernen sich beide Seiten kennen."
+  },
+  {
+    "front": "das Gehalt",
+    "back": "رَاتِب",
+    "roman": "rātib",
+    "example": "يُحَوَّلُ الرَّاتِبُ الْعَادِلُ فِي نِهَايَةِ كُلِّ شَهْرٍ فِي الْمَوْعِدِ الْمُحَدَّدِ.",
+    "exampleDE": "Ein faires Gehalt wird jeweils zum Monatsende pünktlich überwiesen."
+  },
+  {
+    "front": "die Gleitzeit",
+    "back": "دَوَامٌ مَرِن",
+    "roman": "dawām marin",
+    "example": "بِفَضْلِ الدَّوَامِ الْمَرِنِ يُمْكِنُهُ تَنْظِيمُ أَوْقَاتِ عَمَلِهِ بِشَكْلٍ جَيِّدٍ.",
+    "exampleDE": "Dank flexibler Gleitzeit kann er seine Arbeitszeiten gut einteilen."
+  },
+  {
+    "front": "der Feierabend",
+    "back": "نِهَايَةُ يَوْمِ الْعَمَل",
+    "roman": "nihāyat yawm al-ʿamal",
+    "example": "بَعْدَ ثَمَانِي سَاعَاتٍ مِنَ الْعَمَلِ الْمُرَكَّزِ يَسْتَمْتِعُ بِنِهَايَةِ يَوْمِ الْعَمَلِ.",
+    "exampleDE": "Nach acht Stunden konzentrierter Arbeit genießt er den Feierabend."
+  },
+  {
+    "front": "der Urlaubstag",
+    "back": "يَوْمُ إِجَازَة",
+    "roman": "yawm ijāza",
+    "example": "الْمُوَظَّفُونَ بِدَوَامٍ كَامِلٍ لَهُمُ الْحَقُّ فِي ثَلَاثِينَ يَوْمَ إِجَازَةٍ مَدْفُوعَةِ الْأَجْرِ.",
+    "exampleDE": "Vollzeitbeschäftigte haben Anspruch auf dreißig bezahlte Urlaubstage."
+  },
+  {
+    "front": "die Überstunden",
+    "back": "سَاعَاتٌ إِضَافِيَّة",
+    "roman": "sāʿāt iḍāfiyya",
+    "example": "السَّاعَاتُ الْإِضَافِيَّةُ الْمُنْجَزَةُ يُمْكِنُ تَعْوِيضُهَا بِأَوْقَاتِ فَرَاغٍ.",
+    "exampleDE": "Geleistete Überstunden können durch Freizeit ausgeglichen werden."
+  },
+  {
+    "front": "die Kaffeepause",
+    "back": "اسْتِرَاحَةُ قَهْوَة",
+    "roman": "istirāḥat qahwa",
+    "example": "فِي اسْتِرَاحَةِ الْقَهْوَةِ يَتَبَادَلُ الزُّمَلَاءُ الْحَدِيثَ عَنْ عُطْلَةِ نِهَايَةِ الْأُسْبُوعِ.",
+    "exampleDE": "In der Kaffeepause tauschen sich die Kollegen über das Wochenende aus."
+  },
+  {
+    "front": "die Besprechung",
+    "back": "اجْتِمَاع",
+    "roman": "ijtimāʿ",
+    "example": "فِي السَّاعَةِ الْعَاشِرَةِ يُعْقَدُ الِاجْتِمَاعُ الْأُسْبُوعِيُّ فِي قَاعَةِ الْمُؤْتَمَرَاتِ.",
+    "exampleDE": "Um zehn Uhr findet die wöchentliche Besprechung im Konferenzraum statt."
+  },
+  {
+    "front": "die Tagesordnung",
+    "back": "جَدْوَلُ أَعْمَال",
+    "roman": "jadwal aʿmāl",
+    "example": "بُعِثَتْ بُنُودُ جَدْوَلِ الْأَعْمَالِ مُسْبَقًا عَبْرَ الْبَرِيدِ الْإِلِكْتُرُونِيِّ.",
+    "exampleDE": "Die Punkte der Tagesordnung wurden vorab per E-Mail verschickt."
+  },
+  {
+    "front": "das Protokoll",
+    "back": "مَحْضَرُ اجْتِمَاع",
+    "roman": "maḥḍar ijtimāʿ",
+    "example": "يَكْتُبُ مَحْضَرَ الِاجْتِمَاعِ وَيُدَوِّنُ جَمِيعَ الْقَرَارَاتِ الْمُتَّخَذَةِ.",
+    "exampleDE": "Er schreibt das Protokoll und hält alle getroffenen Beschlüsse fest."
+  },
+  {
+    "front": "die Präsentation",
+    "back": "عَرْضٌ تَوْضِيحِيّ",
+    "roman": "ʿarḍ tawḍīḥiyy",
+    "example": "يُوَضِّحُ الْعَرْضُ التَّوْضِيحِيُّ النَّتَائِجَ بِرُسُومٍ بَيَانِيَّةٍ مُنَظَّمَةٍ.",
+    "exampleDE": "Die Präsentation veranschaulicht die Ergebnisse mit übersichtlichen Grafiken."
+  },
+  {
+    "front": "die Frist",
+    "back": "مُهْلَة",
+    "roman": "muhla",
+    "example": "يَجِبُ عَلَيْنَا حَتْمًا الِالْتِزَامُ بِالْمُهْلَةِ الْمُتَّفَقِ عَلَيْهَا حَتَّى نِهَايَةِ الشَّهْرِ.",
+    "exampleDE": "Wir müssen die vereinbarte Frist bis Ende des Monats unbedingt einhalten."
+  },
+  {
+    "front": "die Teamarbeit",
+    "back": "عَمَلٌ جَمَاعِيّ",
+    "roman": "ʿamal jamāʿiyy",
+    "example": "الْعَمَلُ الْجَمَاعِيُّ النَّاجِحُ يَتَطَلَّبُ تَبَادُلًا صَرِيحًا وَدَعْمًا مُتَبَادَلًا.",
+    "exampleDE": "Erfolgreiche Teamarbeit erfordert offenen Austausch und gegenseitige Unterstützung."
+  },
+  {
+    "front": "die Zusammenarbeit",
+    "back": "تَعَاوُن",
+    "roman": "taʿāwun",
+    "example": "التَّعَاوُنُ بَيْنَ الْأَقْسَامِ يَسِيرُ بِسَلَاسَةٍ.",
+    "exampleDE": "Die Zusammenarbeit zwischen den Abteilungen klappt reibungslos."
+  },
+  {
+    "front": "der Aktenordner",
+    "back": "مِلَفُّ حِفْظِ أَوْرَاق",
+    "roman": "milaff ḥifẓ awrāq",
+    "example": "تُحْفَظُ الْعُقُودُ الْمُهِمَّةُ زَمَنِيًّا فِي مِلَفِّ حِفْظِ الْأَوْرَاقِ.",
+    "exampleDE": "Wichtige Verträge werden chronologisch im Aktenordner abgeheftet."
+  },
+  {
+    "front": "der Locher",
+    "back": "خَرَّامَةُ وَرَق",
+    "roman": "kharrāmat waraq",
+    "example": "بِخَرَّامَةِ الْوَرَقِ يَثْقُبُ ثَقْبَيْنِ نَظِيفَيْنِ فِي الْوَثِيقَةِ.",
+    "exampleDE": "Mit dem Locher stanzt er zwei saubere Löcher in das Dokument."
+  },
+  {
+    "front": "das Heftgerät",
+    "back": "دَبَّاسَة",
+    "roman": "dabbāsa",
+    "example": "بِالدَّبَّاسَةِ تُدَبِّسُ الصَّفَحَاتِ الْمُتَرَابِطَةَ مَعًا.",
+    "exampleDE": "Mit dem Heftgerät heftet sie die zusammengehörigen Seiten fest."
+  },
+  {
+    "front": "die Büroklammer",
+    "back": "مِشْبَكُ وَرَق",
+    "roman": "mishbak waraq",
+    "example": "مِشْبَكُ وَرَقٍ مُلَوَّنٌ يَمْسِكُ الْإِيصَالَاتِ مَعًا بِشَكْلٍ غَيْرِ مُحْكَمٍ.",
+    "exampleDE": "Eine bunte Büroklammer hält die Quittungen lose zusammen."
+  },
+  {
+    "front": "der Textmarker",
+    "back": "قَلَمُ تَمْيِيز",
+    "roman": "qalam tamyīz",
+    "example": "يُبْرِزُ النُّصُوصَ الْمُهِمَّةَ بِقَلَمِ تَمْيِيزٍ أَصْفَرَ.",
+    "exampleDE": "Wichtige Textstellen hebt er mit einem gelben Textmarker hervor."
+  },
+  {
+    "front": "der Notizblock",
+    "back": "دَفْتَرُ مُلَاحَظَات",
+    "roman": "daftar mulāḥaẓāt",
+    "example": "بِجَانِبِ الْهَاتِفِ يُوجَدُ دَائِمًا دَفْتَرُ مُلَاحَظَاتٍ صَغِيرٌ لِتَدْوِينِ الْمُلَاحَظَاتِ.",
+    "exampleDE": "Neben dem Telefon liegt immer ein kleiner Notizblock für Notizen."
+  },
+  {
+    "front": "der Reißwolf",
+    "back": "فَرَّامَةُ وَرَق",
+    "roman": "farrāmat waraq",
+    "example": "تُفْرَمُ الْأَوْرَاقُ السِّرِّيَّةُ فِي فَرَّامَةِ الْوَرَقِ قَبْلَ التَّخَلُّصِ مِنْهَا.",
+    "exampleDE": "Vertrauliche Papiere werden vor dem Entsorgen im Reißwolf zerkleinert."
+  },
+  {
+    "front": "der Drehstuhl",
+    "back": "كُرْسِيٌّ دَوَّار",
+    "roman": "kursiyy dawwār",
+    "example": "كُرْسِيٌّ دَوَّارٌ مُرِيحٌ يُسَاعِدُ عَلَى جُلُوسٍ صِحِّيٍّ فِي مَكَانِ الْعَمَلِ.",
+    "exampleDE": "Ein ergonomischer Drehstuhl unterstützt gesundes Sitzen am Arbeitsplatz."
+  },
+  {
+    "front": "der Bildschirm",
+    "back": "شَاشَة",
+    "roman": "shāsha",
+    "example": "تُعْرَضُ النُّصُوصُ بِوُضُوحٍ تَامٍّ عَلَى الشَّاشَةِ عَالِيَةِ الدِّقَّةِ.",
+    "exampleDE": "Der hochauflösende Bildschirm zeigt Schriften gestochen scharf an."
+  },
+  {
+    "front": "die Tastatur",
+    "back": "لَوْحَةُ مَفَاتِيح",
+    "roman": "lawḥat mafātīḥ",
+    "example": "يَكْتُبُ بِسَلَاسَةٍ وَدُونَ أَخْطَاءٍ بِعَشَرَةِ أَصَابِعَ عَلَى لَوْحَةِ الْمَفَاتِيحِ.",
+    "exampleDE": "Er tippt flüssig und fehlerfrei mit zehn Fingern auf der Tastatur."
+  },
+  {
+    "front": "die Computermaus",
+    "back": "فَأْرَةُ حَاسُوب",
+    "roman": "faʾrat ḥāsūb",
+    "example": "بِنَقْرَةٍ عَلَى فَأْرَةِ الْحَاسُوبِ يَخْتَارُ عُنْصُرَ الْقَائِمَةِ.",
+    "exampleDE": "Mit einem Klick auf die Computermaus wählt er den Menüpunkt aus."
+  },
+  {
+    "front": "der Drucker",
+    "back": "طَابِعَة",
+    "roman": "ṭābiʿa",
+    "example": "تَطْبَعُ طَابِعَةُ الشَّبَكَةِ عَلَى الْوَجْهَيْنِ بِسُرْعَةٍ عَالِيَةٍ.",
+    "exampleDE": "Der Netzwerkdrucker druckt doppelseitig in hoher Geschwindigkeit."
+  },
+  {
+    "front": "das Ladekabel",
+    "back": "كَابِلُ شَحْن",
+    "roman": "kābil shaḥn",
+    "example": "لَا تَنْسَ حَزْمَ كَابِلِ الشَّحْنِ لِلْحَاسُوبِ الْمَحْمُولِ.",
+    "exampleDE": "Vergiss nicht, das Ladekabel für das Notebook einzupacken."
+  },
+  {
+    "front": "der USB-Stick",
+    "back": "ذَاكِرَةُ فِلَاش",
+    "roman": "dhākirat filāsh",
+    "example": "تَحْفَظُ النُّسْخَةَ الِاحْتِيَاطِيَّةَ فِي ذَاكِرَةِ فِلَاشٍ عَمَلِيَّةٍ.",
+    "exampleDE": "Sie speichert die Sicherungskopie auf einem handlichen USB-Stick."
+  },
+  {
+    "front": "die Festplatte",
+    "back": "قُرْصٌ صُلْب",
+    "roman": "qurṣ ṣulb",
+    "example": "يُوَفِّرُ الْقُرْصُ الصُّلْبُ الْخَارِجِيُّ مِسَاحَةَ تَخْزِينٍ وَاسِعَةً لِلصُّوَرِ.",
+    "exampleDE": "Die externe Festplatte bietet reichlich Speicherplatz für Fotos."
+  },
+  {
+    "front": "der Webbrowser",
+    "back": "مُتَصَفِّحُ وِيب",
+    "roman": "mutaṣaffiḥ wēb",
+    "example": "يُرْجَى فَتْحُ مَوْقِعِ الْوِيبِ فِي مُتَصَفِّحِ وِيبٍ حَدِيثٍ.",
+    "exampleDE": "Öffnen Sie die Webseite bitte in einem aktuellen Webbrowser."
+  },
+  {
+    "front": "das Benutzerkonto",
+    "back": "حِسَابُ مُسْتَخْدِم",
+    "roman": "ḥisāb mustakhdim",
+    "example": "سَجِّلِ الدُّخُولَ بِحِسَابِ الْمُسْتَخْدِمِ الشَّخْصِيِّ الْخَاصِّ بِكَ.",
+    "exampleDE": "Melden Sie sich mit Ihrem persönlichen Benutzerkonto an."
+  },
+  {
+    "front": "das sichere Passwort",
+    "back": "كَلِمَةُ مُرُورٍ آمِنَة",
+    "roman": "kalimat murūr āmina",
+    "example": "كَلِمَةُ الْمُرُورِ الْآمِنَةُ تَحْتَوِي عَلَى حُرُوفٍ وَأَرْقَامٍ وَرُمُوزٍ خَاصَّةٍ.",
+    "exampleDE": "Ein sicheres Passwort enthält Buchstaben, Ziffern und Sonderzeichen."
+  },
+  {
+    "front": "die Suchmaschine",
+    "back": "مُحَرِّكُ بَحْث",
+    "roman": "muḥarrik baḥth",
+    "example": "أَدْخِلْ كَلِمَاتِ الْبَحْثِ فِي مُحَرِّكِ الْبَحْثِ.",
+    "exampleDE": "Geben Sie die Suchbegriffe in die Suchmaschine ein."
+  },
+  {
+    "front": "die E-Mail-Adresse",
+    "back": "عُنْوَانُ بَرِيدٍ إِلِكْتُرُونِيّ",
+    "roman": "ʿunwān barīd iliktrūniyy",
+    "example": "يُرْجَى إِدْخَالُ عُنْوَانِ بَرِيدِكَ الْإِلِكْتُرُونِيِّ الصَّالِحِ فِي الِاسْتِمَارَةِ.",
+    "exampleDE": "Bitte tragen Sie Ihre gültige E-Mail-Adresse in das Formular ein."
+  },
+  {
+    "front": "der Anhang",
+    "back": "مُرْفَق",
+    "roman": "murfaq",
+    "example": "فِي مُرْفَقِ الرِّسَالَةِ تَجِدُونَ الْوَثِيقَةَ بِصِيغَةِ PDF.",
+    "exampleDE": "Im Anhang der Nachricht finden Sie das Dokument im PDF-Format."
+  },
+  {
+    "front": "die Datensicherung",
+    "back": "نَسْخٌ احْتِيَاطِيٌّ لِلْبَيَانَات",
+    "roman": "naskh iḥtiyāṭiyy li-l-bayānāt",
+    "example": "النَّسْخُ الِاحْتِيَاطِيُّ التِّلْقَائِيُّ لِلْبَيَانَاتِ يَحْمِي مِنْ فِقْدَانِ الْبَيَانَاتِ الْمُفَاجِئِ.",
+    "exampleDE": "Eine automatische Datensicherung schützt vor überraschendem Datenverlust."
+  },
+  {
+    "front": "das Update",
+    "back": "تَحْدِيث",
+    "roman": "taḥdīth",
+    "example": "قُمْ بِتَثْبِيتِ تَحْدِيثَاتِ الْبَرَامِجِ الْمُنْتَظَمَةِ لِسَدِّ الثَّغَرَاتِ الْأَمْنِيَّةِ.",
+    "exampleDE": "Installieren Sie regelmäßige Software-Updates zur Schließung von Sicherheitslücken."
+  },
+  {
+    "front": "der Touchscreen",
+    "back": "شَاشَةُ لَمْس",
+    "roman": "shāshat lams",
+    "example": "شَاشَةُ اللَّمْسِ الْحَسَّاسَةُ تَسْتَجِيبُ فَوْرًا لِلَمْسَاتِ الْأَصَابِعِ.",
+    "exampleDE": "Der berührungsempfindliche Touchscreen reagiert sofort auf Fingertippen."
+  },
+  {
+    "front": "die Sprachnachricht",
+    "back": "رِسَالَةٌ صَوْتِيَّة",
+    "roman": "risāla ṣawtiyya",
+    "example": "بَدَلًا مِنَ الْكِتَابَةِ الطَّوِيلَةِ، أَرْسَلَ لَهَا رِسَالَةً صَوْتِيَّةً قَصِيرَةً.",
+    "exampleDE": "Statt lange zu tippen, schickte er ihr eine kurze Sprachnachricht."
+  },
+  {
+    "front": "die Benachrichtigung",
+    "back": "إِشْعَار",
+    "roman": "ishʿār",
+    "example": "عَلَى شَاشَةِ الْقَفْلِ ظَهَرَ إِشْعَارٌ جَدِيدٌ.",
+    "exampleDE": "Auf dem Sperrbildschirm erschien eine neue Benachrichtigung."
+  },
+  {
+    "front": "der Flugmodus",
+    "back": "وَضْعُ الطَّيَرَان",
+    "roman": "waḍʿ aṭ-ṭayarān",
+    "example": "أَثْنَاءَ الرِّحْلَةِ الْجَوِّيَّةِ يَجِبُ تَبْدِيلُ جَمِيعِ الْهَوَاتِفِ إِلَى وَضْعِ الطَّيَرَانِ.",
+    "exampleDE": "Während des Fluges müssen alle Telefone in den Flugmodus geschaltet werden."
+  },
+  {
+    "front": "die Akkukapazität",
+    "back": "سَعَةُ الْبَطَّارِيَّة",
+    "roman": "saʿat al-baṭṭāriyya",
+    "example": "بَعْدَ الِاسْتِعْمَالِ الْمُكَثَّفِ انْخَفَضَتْ سَعَةُ الْبَطَّارِيَّةِ إِلَى عِشْرِينَ فِي الْمِائَةِ.",
+    "exampleDE": "Nach intensivem Gebrauch sank die Akkukapazität auf zwanzig Prozent."
+  },
+  {
+    "front": "das WLAN-Netzwerk",
+    "back": "شَبَكَةُ وَايْ فَاي",
+    "roman": "shabakat wāy fāy",
+    "example": "فِي الْفُنْدُقِ نَتَّصِلُ بِشَبَكَةِ الْوَايْ فَاي الْمَجَّانِيَّةِ.",
+    "exampleDE": "Im Hotel verbinden wir uns mit dem kostenlosen WLAN-Netzwerk."
+  },
+  {
+    "front": "die Internetverbindung",
+    "back": "اتِّصَالٌ بِالْإِنْتَرْنِت",
+    "roman": "ittiṣāl bi-l-intarnit",
+    "example": "الِاتِّصَالُ الْمُسْتَقِرُّ بِالْإِنْتَرْنِت مُهِمٌّ لِمُكَالَمَاتِ الْفِيدْيُو السَّلِسَةِ.",
+    "exampleDE": "Eine stabile Internetverbindung ist wichtig für flüssige Videoanrufe."
+  },
+  {
+    "front": "das Wochenende",
+    "back": "عُطْلَةُ نِهَايَةِ الْأُسْبُوع",
+    "roman": "ʿuṭlat nihāyat al-usbūʿ",
+    "example": "فِي عُطْلَةِ نِهَايَةِ الْأُسْبُوعِ أُحِبُّ النَّوْمَ كَثِيرًا وَتَنَاوُلَ الْإِفْطَارِ بِهُدُوءٍ.",
+    "exampleDE": "Am Wochenende schlafe ich gerne lange aus und frühstücke in Ruhe."
+  },
+  {
+    "front": "der Feiertag",
+    "back": "عُطْلَةٌ رَسْمِيَّة",
+    "roman": "ʿuṭla rasmiyya",
+    "example": "فِي الْعُطْلَاتِ الرَّسْمِيَّةِ تَبْقَى مُعْظَمُ الْمَحَلَّاتِ مُغْلَقَةً.",
+    "exampleDE": "An gesetzlichen Feiertagen bleiben die meisten Geschäfte geschlossen."
+  },
+  {
+    "front": "der Ausflug",
+    "back": "نُزْهَة",
+    "roman": "nuzha",
+    "example": "يَوْمَ السَّبْتِ قَامَتِ الْعَائِلَةُ بِنُزْهَةٍ إِلَى حَدِيقَةِ الْحَيَوَانِ.",
+    "exampleDE": "Am Samstag unternahm die Familie einen Ausflug in den Tierpark."
+  },
+  {
+    "front": "das Picknick",
+    "back": "رِحْلَةُ اسْتِجْمَام",
+    "roman": "riḥlat istijmām",
+    "example": "فَرَشْنَا بِسَاطًا وَأَقَمْنَا نُزْهَةً فِي الظِّلِّ.",
+    "exampleDE": "Wir breiteten eine Decke aus und machten ein Picknick im Schatten."
+  },
+  {
+    "front": "die Hängematte",
+    "back": "أُرْجُوحَةٌ شَبَكِيَّة",
+    "roman": "urjūḥa shabakiyya",
+    "example": "بَيْنَ شَجَرَتَيْنِ ظَلِيلَتَيْنِ شَدَّ أُرْجُوحَةً شَبَكِيَّةً مُرِيحَةً.",
+    "exampleDE": "Zwischen zwei schattigen Bäumen spannte er eine bequeme Hängematte auf."
+  },
+  {
+    "front": "das Gesellschaftsspiel",
+    "back": "لُعْبَةٌ جَمَاعِيَّة",
+    "roman": "luʿba jamāʿiyya",
+    "example": "مَسَاءً نُحِبُّ لَعِبَ لُعْبَةٍ جَمَاعِيَّةٍ مُثِيرَةٍ عَلَى الطَّاوِلَةِ.",
+    "exampleDE": "Abends spielen wir gerne ein spannendes Gesellschaftsspiel am Tisch."
+  },
+  {
+    "front": "das Kartenspiel",
+    "back": "لُعْبَةُ وَرَق",
+    "roman": "luʿbat waraq",
+    "example": "أَرْبَعَتُهُمْ لَعِبُوا جَوْلَةً مُسَلِّيَةً مِنْ لُعْبَةِ الْوَرَقِ.",
+    "exampleDE": "Zu viert spielten sie eine unterhaltsame Runde Skat."
+  },
+  {
+    "front": "das Kreuzworträtsel",
+    "back": "كَلِمَاتٌ مُتَقَاطِعَة",
+    "roman": "kalimāt mutaqāṭiʿa",
+    "example": "أَثْنَاءَ قَهْوَةِ يَوْمِ الْأَحَدِ يَحُلُّ جَدِّي الْكَلِمَاتِ الْمُتَقَاطِعَةَ.",
+    "exampleDE": "Beim sonntäglichen Kaffee löst mein Großvater das Kreuzworträtsel."
+  },
+  {
+    "front": "die Fotografie",
+    "back": "تَصْوِيرٌ فُوتُوغْرَافِيّ",
+    "roman": "taṣwīr fūtūghrāfiyy",
+    "example": "التَّصْوِيرُ الْفُوتُوغْرَافِيُّ لِلطَّبِيعَةِ هُوَ هِوَايَتُهُ الشَّغُوفَةُ مُنْذُ سَنَوَاتٍ عَدِيدَةٍ.",
+    "exampleDE": "Die Naturfotografie ist seit vielen Jahren sein leidenschaftliches Hobby."
+  },
+  {
+    "front": "das Gärtnern",
+    "back": "عِنَايَةٌ بِالْحَدِيقَة",
+    "roman": "ʿināya bi-l-ḥadīqa",
+    "example": "الْعِنَايَةُ بِحَدِيقَةِ الْخُضْرَاوَاتِ الْخَاصَّةِ تَبْعَثُ عَلَى الِاسْتِرْخَاءِ بَعْدَ أُسْبُوعٍ شَاقٍّ.",
+    "exampleDE": "Das Gärtnern im eigenen Gemüsegarten entspannt nach einer anstrengenden Woche."
+  },
+  {
+    "front": "das Stricken",
+    "back": "حِيَاكَة",
+    "roman": "ḥiyāka",
+    "example": "تَحِيكُ مِنْ صُوفٍ دَافِئٍ جَوَارِبَ مُلَوَّنَةً لِأَحْفَادِهَا.",
+    "exampleDE": "Sie strickt aus warmer Wolle bunte Socken für ihre Enkelkinder."
+  },
+  {
+    "front": "das Häkeln",
+    "back": "حِيَاكَةُ كْرُوشِيه",
+    "roman": "ḥiyākat krūshēh",
+    "example": "بِإِبْرَةِ كْرُوشِيه دَقِيقَةٍ تَحِيكُ مَفَارِشَ نَاعِمَةً.",
+    "exampleDE": "Mit einer feinen Häkelnadel häkelt sie zarte Deckchen."
+  },
+  {
+    "front": "die Nähmaschine",
+    "back": "آلَةُ خِيَاطَة",
+    "roman": "ālat khiyāṭa",
+    "example": "بِآلَةِ الْخِيَاطَةِ الْكَهْرَبَائِيَّةِ تَخِيطُ أَغْطِيَةَ وِسَادَاتٍ جَدِيدَةً.",
+    "exampleDE": "Mit der elektrischen Nähmaschine näht sie neue Kissenbezüge."
+  },
+  {
+    "front": "das Heimwerken",
+    "back": "أَعْمَالُ صِيَانَةٍ مَنْزِلِيَّة",
+    "roman": "aʿmāl ṣiyāna manziliyya",
+    "example": "يَوْمَ السَّبْتِ يُكَرِّسُ نَفْسَهُ كُلِّيًّا لِأَعْمَالِ الصِّيَانَةِ الْمَنْزِلِيَّةِ فِي الْقَبْوِ.",
+    "exampleDE": "Am Samstag widmet er sich voll und ganz dem Heimwerken im Keller."
+  },
+  {
+    "front": "das Basteln",
+    "back": "أَعْمَالٌ يَدَوِيَّة",
+    "roman": "aʿmāl yadawiyya",
+    "example": "قَبْلَ عِيدِ الْمِيلَادِ يَصْنَعُ الْأَطْفَالُ زِينَةً احْتِفَالِيَّةً مِنَ الْوَرَقِ.",
+    "exampleDE": "Vor Weihnachten basteln die Kinder festlichen Schmuck aus Papier."
+  },
+  {
+    "front": "der Bestseller",
+    "back": "كِتَابٌ أَعْلَى مَبِيعًا",
+    "roman": "kitāb aʿlā mabīʿan",
+    "example": "الرِّوَايَةُ الْبُولِيسِيَّةُ الْمُثِيرَةُ وَصَلَتْ فَوْرًا إِلَى قَائِمَةِ الْكُتُبِ الْأَعْلَى مَبِيعًا.",
+    "exampleDE": "Der spannende Kriminalroman schaffte es sofort auf die Bestsellerliste."
+  },
+  {
+    "front": "das Taschenbuch",
+    "back": "كِتَابُ جَيْب",
+    "roman": "kitāb jayb",
+    "example": "لِلْعُطْلَةِ تَضَعُ كِتَابَيْ جَيْبٍ خَفِيفَيْنِ فِي الْحَقِيبَةِ.",
+    "exampleDE": "Für den Urlaub packt sie zwei leichte Taschenbücher in den Koffer."
+  },
+  {
+    "front": "das Lesezeichen",
+    "back": "فَاصِلُ كِتَاب",
+    "roman": "fāṣil kitāb",
+    "example": "فَاصِلُ كِتَابٍ جَمِيلٌ يُحَدِّدُ آخِرَ صَفْحَةٍ مَقْرُوءَةٍ.",
+    "exampleDE": "Ein schönes Lesezeichen markiert die zuletzt gelesene Seite."
+  },
+  {
+    "front": "die Buchhandlung",
+    "back": "مَكْتَبَةُ بَيْعِ كُتُب",
+    "roman": "maktabat bayʿ kutub",
+    "example": "فِي مَكْتَبَةِ بَيْعِ الْكُتُبِ الصَّغِيرَةِ عَلَى الزَّاوِيَةِ يَتَصَفَّحُ لِسَاعَاتٍ.",
+    "exampleDE": "In der kleinen Buchhandlung an der Ecke stöbert er stundenlang."
+  },
+  {
+    "front": "die Handlung",
+    "back": "حَبْكَة",
+    "roman": "ḥabka",
+    "example": "حَبْكَةُ الرِّوَايَةِ الْمُثِيرَةُ تَدُورُ أَحْدَاثُهَا فِي لَنْدَنَ الْفِكْتُورِيَّةِ.",
+    "exampleDE": "Die fesselnde Handlung des Romans spielt im viktorianischen London."
+  },
+  {
+    "front": "die Hauptfigur",
+    "back": "شَخْصِيَّةٌ رَئِيسِيَّة",
+    "roman": "shakhṣiyya raʾīsiyya",
+    "example": "الشَّخْصِيَّةُ الرَّئِيسِيَّةُ الشُّجَاعَةُ تَتَغَلَّبُ عَلَى الْكَثِيرِ مِنَ الْمُغَامَرَاتِ عَلَى مَدَارِ الْكِتَابِ.",
+    "exampleDE": "Die mutige Hauptfigur meistert im Laufe des Buches viele Abenteuer."
+  },
+  {
+    "front": "das Kapitel",
+    "back": "فَصْل",
+    "roman": "faṣl",
+    "example": "قَبْلَ النَّوْمِ أَقْرَأُ فَصْلًا مُثِيرًا حَتَّى نِهَايَتِهِ.",
+    "exampleDE": "Vor dem Einschlafen lese ich noch ein spannendes Kapitel zu Ende."
+  },
+  {
+    "front": "der Autor",
+    "back": "مُؤَلِّف",
+    "roman": "muʾallif",
+    "example": "وَقَّعَ الْمُؤَلِّفُ الْمَرْمُوقُ الْعَدِيدَ مِنَ النُّسَخِ بَعْدَ الْأُمْسِيَةِ الْأَدَبِيَّةِ.",
+    "exampleDE": "Der renommierte Autor signierte nach der Lesung viele Exemplare."
+  },
+  {
+    "front": "die Leinwand",
+    "back": "شَاشَةُ سِينَمَا",
+    "roman": "shāshat sīnamā",
+    "example": "عَلَى شَاشَةِ السِّينَمَا الضَّخْمَةِ تَبْدُو مَشَاهِدُ الطَّبِيعَةِ مُبْهِرَةً.",
+    "exampleDE": "Auf der riesigen Leinwand des Kinos wirken Landschaftsaufnahmen überwältigend."
+  },
+  {
+    "front": "der Dokumentarfilm",
+    "back": "فِيلْمٌ وَثَائِقِيّ",
+    "roman": "fīlm wathāʾiqiyy",
+    "example": "يُلْقِي الْفِيلْمُ الْوَثَائِقِيُّ الضَّوْءَ عَلَى الْحَيَاةِ الرَّائِعَةِ لِلْحَيَوَانَاتِ الْبَرِّيَّةِ.",
+    "exampleDE": "Der Dokumentarfilm beleuchtet das faszinierende Leben wilder Tiere."
+  },
+  {
+    "front": "die Komödie",
+    "back": "كُومِيدْيَا",
+    "roman": "kūmīdyā",
+    "example": "كُومِيدْيَا مَرِحَةٌ جَلَبَتِ الْكَثِيرَ مِنَ الضَّحَكَاتِ الصَّادِقَةِ فِي الْقَاعَةِ.",
+    "exampleDE": "Eine heitere Komödie sorgte für viele herzliche Lacher im Saal."
+  },
+  {
+    "front": "der Untertitel",
+    "back": "تَرْجَمَةٌ مَرْئِيَّة",
+    "roman": "tarjama marʾiyya",
+    "example": "أُفَضِّلُ مُشَاهَدَةَ الْأَفْلَامِ الْأَجْنَبِيَّةِ مَعَ تَرْجَمَةٍ مَرْئِيَّةٍ أَلْمَانِيَّةٍ.",
+    "exampleDE": "Fremdsprachige Filme schaue ich am liebsten mit deutschen Untertiteln."
+  },
+  {
+    "front": "die Fernbedienung",
+    "back": "جِهَازُ تَحَكُّمٍ عَنْ بُعْد",
+    "roman": "jihāz taḥakkum ʿan buʿd",
+    "example": "بِجِهَازِ التَّحَكُّمِ عَنْ بُعْدٍ يَخْفِضُ صَوْتَ التِّلْفَازِ.",
+    "exampleDE": "Mit der Fernbedienung schaltet er die Lautstärke des Fernsehers leiser."
+  },
+  {
+    "front": "die Fernsehserie",
+    "back": "مُسَلْسَلٌ تِلْفِزْيُونِيّ",
+    "roman": "musalsal tilfizyūniyy",
+    "example": "الْمَوْسِمُ الْجَدِيدُ مِنَ الْمُسَلْسَلِ التِّلْفِزْيُونِيِّ الشَّهِيرِ سَيَصْدُرُ الْأُسْبُوعَ الْمُقْبِلَ.",
+    "exampleDE": "Die neue Staffel der beliebten Fernsehserie erscheint nächste Woche."
+  },
+  {
+    "front": "der Schauspieler",
+    "back": "مُمَثِّل",
+    "roman": "mumaththil",
+    "example": "يُجَسِّدُ الْمُمَثِّلُ الْمَوْهُوبُ دَوْرَهُ بِمِصْدَاقِيَّةٍ عَالِيَةٍ.",
+    "exampleDE": "Der talentierte Schauspieler verkörpert seine Rolle sehr glaubwürdig."
+  },
+  {
+    "front": "das Theaterstück",
+    "back": "مَسْرَحِيَّة",
+    "roman": "masraḥiyya",
+    "example": "قُدِّمَتِ الْمَسْرَحِيَّةُ الْكَلَاسِيكِيَّةُ لِشِيلَر بِإِخْرَاجٍ حَدِيثٍ.",
+    "exampleDE": "Das klassische Theaterstück von Schiller wurde modern inszeniert."
+  },
+  {
+    "front": "der Theatervorhang",
+    "back": "سِتَارُ الْمَسْرَح",
+    "roman": "sitār al-masraḥ",
+    "example": "وَسَطَ تَصْفِيقٍ كَبِيرٍ أُسْدِلَ سِتَارُ الْمَسْرَحِ الْأَحْمَرُ الثَّقِيلُ.",
+    "exampleDE": "Unter großem Applaus senkte sich der schwere rote Theatervorhang."
+  },
+  {
+    "front": "der Beifall",
+    "back": "تَصْفِيق",
+    "roman": "taṣfīq",
+    "example": "وَجَّهَ الْجُمْهُورُ الْمُتَحَمِّسُ تَصْفِيقًا حَارًّا لِلْمُمَثِّلِينَ.",
+    "exampleDE": "Das begeisterte Publikum spendete den Darstellern tosenden Beifall."
+  },
+  {
+    "front": "das Bühnenbild",
+    "back": "دِيكُورُ الْمَسْرَح",
+    "roman": "dīkūr al-masraḥ",
+    "example": "مَثَّلَ دِيكُورُ الْمَسْرَحِ الْمُتْقَنُ سَاحَةَ سُوقٍ تَارِيخِيَّةً.",
+    "exampleDE": "Das aufwendige Bühnenbild stellte einen historischen Marktplatz dar."
+  },
+  {
+    "front": "die Garderobe",
+    "back": "مَكْتَبُ أَمَانَاتِ الْمَلَابِس",
+    "roman": "maktab amānāt al-malābis",
+    "example": "قَبْلَ بَدْءِ الْعَرْضِ يَتِمُّ تَسْلِيمُ السُّتُرِ إِلَى مَكْتَبِ أَمَانَاتِ الْمَلَابِسِ.",
+    "exampleDE": "Vor Beginn der Vorstellung gibt man Jacken an der Garderobe ab."
+  },
+  {
+    "front": "die Pause",
+    "back": "اسْتِرَاحَة",
+    "roman": "istirāḥa",
+    "example": "فِي الِاسْتِرَاحَةِ الَّتِي تَمْتَدُّ لِعِشْرِينَ دَقِيقَةً يَشْرَبُ الزُّوَّارُ كَأْسًا.",
+    "exampleDE": "In der zwanzigminütigen Pause trinken die Besucher ein Glas Sekt."
+  },
+  {
+    "front": "der Rang",
+    "back": "شُرْفَةُ الْمَسْرَح",
+    "roman": "shurfat al-masraḥ",
+    "example": "مِنَ الْمَقَاعِدِ فِي شُرْفَةِ الْمَسْرَحِ الْأُولَى يَتَمَتَّعُ الْمَرْءُ بِإِطْلَالَةٍ مُمْتَازَةٍ.",
+    "exampleDE": "Von den Plätzen im ersten Rang hat man einen ausgezeichneten Überblick."
+  },
+  {
+    "front": "die Generalprobe",
+    "back": "بْرُوفَةٌ نِهَائِيَّة",
+    "roman": "brūfa nihāʾiyya",
+    "example": "مَرَّتِ الْبْرُوفَةُ النِّهَائِيَّةُ الْأَخِيرَةُ قَبْلَ الْعَرْضِ الْأَوَّلِ الْكَبِيرِ بِلَا أَخْطَاءٍ.",
+    "exampleDE": "Die letzte Probe vor der großen Premiere verlief fehlerfrei."
+  },
+  {
+    "front": "die Kunstgalerie",
+    "back": "مَعْرِضٌ فَنِّيّ",
+    "roman": "maʿriḍ fanniyy",
+    "example": "فِي الْمَعْرِضِ الْفَنِّيِّ لِلْمَدِينَةِ يَعْرِضُ الرَّسَّامُونَ الشَّبَابُ أَعْمَالَهُمْ.",
+    "exampleDE": "In der städtischen Kunstgalerie stellen junge Maler ihre Werke aus."
+  },
+  {
+    "front": "das Ölgemälde",
+    "back": "لَوْحَةٌ زَيْتِيَّة",
+    "roman": "lawḥa zaytiyya",
+    "example": "اللَّوْحَةُ الزَّيْتِيَّةُ الْقَيِّمَةُ تَعُودُ إِلَى الْقَرْنِ السَّابِعَ عَشَرَ.",
+    "exampleDE": "Das wertvolle Ölgemälde stammt aus dem siebzehnten Jahrhundert."
+  },
+  {
+    "front": "die Skulptur",
+    "back": "تِمْثَال",
+    "roman": "timthāl",
+    "example": "فِي حَدِيقَةِ الْمَتْحَفِ يَقِفُ تِمْثَالٌ بِمَقَاسٍ طَبِيعِيٍّ مَصْنُوعٌ مِنَ الْبُرُونْزِ.",
+    "exampleDE": "Im Museumsgarten steht eine lebensgroße Skulptur aus Bronze."
+  },
+  {
+    "front": "der Museumsführer",
+    "back": "دَلِيلُ الْمَتْحَف",
+    "roman": "dalīl al-matḥaf",
+    "example": "الدَّلِيلُ الصَّوْتِيُّ الْإِلِكْتُرُونِيُّ يَقُودُ الزُّوَّارَ بِمَعْلُومَاتٍ وَافِيَةٍ عَبْرَ الْقَاعَاتِ.",
+    "exampleDE": "Der elektronische Audioguide führt Besucher informativ durch die Räume."
+  },
+  {
+    "front": "der Eintritt",
+    "back": "رَسْمُ الدُّخُول",
+    "roman": "rasm ad-dukhūl",
+    "example": "لِلتَّلَامِيذِ وَالطُّلَّابِ يَكُونُ رَسْمُ الدُّخُولِ مُخَفَّضًا أَيَّامَ الْأَحَدِ.",
+    "exampleDE": "Für Schüler und Studierende ist der Eintritt sonntags ermäßigt."
+  },
+  {
+    "front": "die Sonderausstellung",
+    "back": "مَعْرِضٌ خَاصّ",
+    "roman": "maʿriḍ khāṣṣ",
+    "example": "الْمَعْرِضُ الْخَاصُّ عَنِ الْعُصُورِ الْقَدِيمَةِ يَجْذِبُ الْكَثِيرَ مِنَ الزُّوَّارِ.",
+    "exampleDE": "Die Sonderausstellung über die Antike lockt viele Besucher an."
+  },
+  {
+    "front": "das Meisterwerk",
+    "back": "تُحْفَةٌ فَنِّيَّة",
+    "roman": "tuḥfa fanniyya",
+    "example": "تُعْتَبَرُ هَذِهِ اللَّوْحَةُ الشَّخْصِيَّةُ الشَّهِيرَةُ عَالَمِيًّا تُحْفَةَ الرَّسَّامِ الْفَنِّيَّةَ.",
+    "exampleDE": "Dieses weltberühmte Porträt gilt als das Meisterwerk des Malers."
+  },
+  {
+    "front": "die Akustikgitarre",
+    "back": "قِيثَارَةٌ صَوْتِيَّة",
+    "roman": "qīthāra ṣawtiyya",
+    "example": "حَوْلَ نَارِ الْمُخَيَّمِ يُرَافِقُ الْأَغَانِيَ بِالْقِيثَارَةِ الصَّوْتِيَّةِ.",
+    "exampleDE": "Am Lagerfeuer begleitet er die Lieder auf der Akustikgitarre."
+  },
+  {
+    "front": "das Klavier",
+    "back": "بِيَانُو",
+    "roman": "biyānū",
+    "example": "تَتَدَرَّبُ كُلَّ بَعْدِ ظُهْرٍ بِاجْتِهَادٍ عَلَى السَّلَالِمِ الْمُوسِيقِيَّةِ عَلَى الْبِيَانُو.",
+    "exampleDE": "Sie übt jeden Nachmittag fleißig Tonleitern auf dem Klavier."
+  },
+  {
+    "front": "die Geige",
+    "back": "كَمَان",
+    "roman": "kamān",
+    "example": "حَمَلَ الصَّوْتُ الصَّافِي لِلْكَمَانِ لَحْنَ الرُّبَاعِيِّ الْوَتَرِيِّ.",
+    "exampleDE": "Der klare Klang der Geige trug die Melodie des Streichquartetts."
+  },
+  {
+    "front": "das Schlagzeug",
+    "back": "طُقُومُ طُبُول",
+    "roman": "ṭuqūm ṭubūl",
+    "example": "عَازِفُ الطُّبُولِ يُعْطِي الْفِرْقَةَ الْإِيقَاعَ الْحَمَاسِيَّ.",
+    "exampleDE": "Der Schlagzeuger gibt der Band den treibenden Rhythmus vor."
+  },
+  {
+    "front": "der Notenständer",
+    "back": "حَامِلُ نُوَتٍ مُوسِيقِيَّة",
+    "roman": "ḥāmil nuwat mūsīqiyya",
+    "example": "كُتَيِّبُ النُّوَتِ مَفْتُوحٌ عَلَى حَامِلِ النُّوَتِ الْمُوسِيقِيَّةِ الثَّابِتِ.",
+    "exampleDE": "Das Notenheft steht aufgeschlagen auf dem stabilen Notenständer."
+  },
+  {
+    "front": "der Kopfhörer",
+    "back": "سَمَّاعَاتُ رَأْس",
+    "roman": "sammāʿāt raʾs",
+    "example": "فِي الْقِطَارِ تَسْتَمِعُ إِلَى مُوسِيقَاهَا الْمُفَضَّلَةِ عَبْرَ سَمَّاعَاتِ رَأْسٍ لَاسِلْكِيَّةٍ.",
+    "exampleDE": "In der Bahn hört sie ihre Lieblingsmusik über kabellose Kopfhörer."
+  },
+  {
+    "front": "der Songtext",
+    "back": "كَلِمَاتُ أُغْنِيَة",
+    "roman": "kalimāt ughniya",
+    "example": "يَحْفَظُ كَلِمَاتِ الْأُغْنِيَةِ الْإِنْجِلِيزِيَّةِ عَنْ ظَهْرِ قَلْبٍ كَامِلَةً.",
+    "exampleDE": "Er kennt den Songtext des englischen Liedes komplett auswendig."
+  },
+  {
+    "front": "der Chor",
+    "back": "جَوْقَة",
+    "roman": "jawqa",
+    "example": "تَتَدَرَّبُ جَوْقَةُ الْكَنِيسَةِ أُسْبُوعِيًّا لِلْحَفْلِ الْمُوسِيقِيِّ لِعِيدِ الْمِيلَادِ.",
+    "exampleDE": "Der Kirchenchor probt wöchentlich für das festliche Weihnachtskonzert."
+  },
+  {
+    "front": "die Laufschuhe",
+    "back": "أَحْذِيَةُ رَكْض",
+    "roman": "aḥdhiyat rakḍ",
+    "example": "أَحْذِيَةُ الرَّكْضِ الْجَيِّدَةُ تَمْتَصُّ كُلَّ خُطْوَةٍ عِنْدَ الْجَرْيِ عَلَى الْإِسْفَلْتِ.",
+    "exampleDE": "Gute Laufschuhe dämpfen jeden Schritt beim Joggen auf Asphalt."
+  },
+  {
+    "front": "die Trinkflasche",
+    "back": "زُجَاجَةُ مَاء",
+    "roman": "zujājat māʾ",
+    "example": "أَثْنَاءَ الرِّيَاضَةِ تَكُونُ مَعِي دَائِمًا زُجَاجَةُ مَاءٍ مَمْلُوءَةٌ فِي مُتَنَاوَلِ الْيَدِ.",
+    "exampleDE": "Beim Sport habe ich immer eine gefüllte Trinkflasche griffbereit."
+  },
+  {
+    "front": "das Fitnessstudio",
+    "back": "صَالَةُ لِيَاقَةٍ بَدَنِيَّة",
+    "roman": "ṣālat liyāqa badaniyya",
+    "example": "يَتَدَرَّبُ ثَلَاثَ مَرَّاتٍ فِي الْأُسْبُوعِ عَلَى الْأَجْهِزَةِ فِي صَالَةِ اللِّيَاقَةِ الْبَدَنِيَّةِ.",
+    "exampleDE": "Dreimal pro Woche trainiert er an den Geräten im Fitnessstudio."
+  },
+  {
+    "front": "die Gymnastikmatte",
+    "back": "بِسَاطُ تَمَارِين",
+    "roman": "bisāṭ tamārīn",
+    "example": "تَفْرُشُ بِسَاطَ التَّمَارِينِ الْمَانِعَ لِلِانْزِلَاقِ لِمُمَارَسَةِ الْيُوغَا.",
+    "exampleDE": "Sie rollt ihre rutschfeste Gymnastikmatte für das Yoga aus."
+  },
+  {
+    "front": "die Liegestütze",
+    "back": "تَمْرِينُ ضَغْط",
+    "roman": "tamrīn ḍaghṭ",
+    "example": "عَشَرَةُ تَمَارِينِ ضَغْطٍ مُتْقَنَةٍ هِيَ جُزْءٌ مِنْ تَدْرِيبِهِ الدَّائِرِيِّ الصَّبَاحِيِّ.",
+    "exampleDE": "Zehn saubere Liegestütze gehören zu seinem morgendlichen Zirkeltraining."
+  },
+  {
+    "front": "das Seilspringen",
+    "back": "قَفْزُ الْحَبْل",
+    "roman": "qafz al-ḥabl",
+    "example": "قَفْزُ الْحَبْلِ هُوَ تَمْرِينٌ مُمْتَازٌ لِلتَّنَاسُقِ وَاللِّيَاقَةِ الْبَدَنِيَّةِ.",
+    "exampleDE": "Seilspringen ist eine hervorragende Übung für Koordination und Kondition."
+  },
+  {
+    "front": "der Marathon",
+    "back": "مَارَاثُون",
+    "roman": "mārāthūn",
+    "example": "اسْتَعَدَّ بِضَمِيرٍ حَيٍّ لِأَشْهُرٍ لِمَارَاثُونِهِ الْأَوَّلِ.",
+    "exampleDE": "Monatelang bereitete er sich gewissenhaft auf seinen ersten Marathon vor."
+  },
+  {
+    "front": "der Fußballplatz",
+    "back": "مَلْعَبُ كُرَةِ قَدَم",
+    "roman": "malʿab kurat qadam",
+    "example": "يَلْتَقِي الشَّبَابُ بَعْدَ الْمَدْرَسَةِ فِي مَلْعَبِ كُرَةِ الْقَدَمِ.",
+    "exampleDE": "Die Jugendlichen treffen sich nach der Schule auf dem Fußballplatz."
+  },
+  {
+    "front": "das Tor",
+    "back": "هَدَف",
+    "roman": "hadaf",
+    "example": "فِي الدَّقِيقَةِ الْأَخِيرَةِ مِنَ الْمُبَارَاةِ سَجَّلَتِ الْمُهَاجِمَةُ الْهَدَفَ الْحَاسِمَ.",
+    "exampleDE": "In der letzten Spielminute schoss die Stürmerin das entscheidende Tor."
+  },
+  {
+    "front": "der Schiedsrichter",
+    "back": "حَكَم",
+    "roman": "ḥakam",
+    "example": "صَفَّرَ الْحَكَمُ النَّزِيهُ مُعْلِنًا بَدْءَ الْمُبَارَاةِ الْعَادِلَةِ فِي الْمَوْعِدِ.",
+    "exampleDE": "Der unparteiische Schiedsrichter pfiff das faire Spiel pünktlich an."
+  },
+  {
+    "front": "die Halbzeitpause",
+    "back": "اسْتِرَاحَةُ الشَّوْطَيْن",
+    "roman": "istirāḥat ash-shawṭayn",
+    "example": "فِي اسْتِرَاحَةِ الشَّوْطَيْنِ لِمُدَّةِ خَمْسَ عَشْرَةَ دَقِيقَةً يُنَاقِشُ اللَّاعِبُونَ الْخُطَّةَ.",
+    "exampleDE": "In der fünfzehnminütigen Halbzeitpause besprechen die Spieler die Taktik."
+  },
+  {
+    "front": "der Basketballkorb",
+    "back": "سَلَّةُ كُرَةِ السَّلَّة",
+    "roman": "sallat kurat as-salla",
+    "example": "بِرَمْيَةٍ مُحْكَمَةٍ أَدْخَلَ الْكُرَةَ مُبَاشَرَةً فِي سَلَّةِ كُرَةِ السَّلَّةِ.",
+    "exampleDE": "Mit einem gezielten Wurf traf er den Ball direkt in den Basketballkorb."
+  },
+  {
+    "front": "der Tennisschläger",
+    "back": "مِضْرَبُ تِنِس",
+    "roman": "miḍrab tinis",
+    "example": "تُعِيدُ شَدَّ أَوْتَارِ مِضْرَبِ التِّنِسِ قَبْلَ الْبُطُولَةِ الْكَبِيرَةِ.",
+    "exampleDE": "Sie bespannt ihren Tennisschläger vor dem großen Turnier neu."
+  },
+  {
+    "front": "die Tischtennisplatte",
+    "back": "طَاوِلَةُ كُرَةِ طَاوِلَة",
+    "roman": "ṭāwilat kurat ṭāwila",
+    "example": "فِي الْحَدِيقَةِ تُوجَدُ طَاوِلَةُ كُرَةِ طَاوِلَةٍ خَرَسَانِيَّةٌ مُقَاوِمَةٌ لِلْعَوَامِلِ الْجَوِّيَّةِ.",
+    "exampleDE": "Im Garten steht eine wetterfeste Tischtennisplatte aus Beton."
+  },
+  {
+    "front": "das Turnier",
+    "back": "بُطُولَة",
+    "roman": "buṭūla",
+    "example": "يُشَارِكُ فِي الْبُطُولَةِ الرِّيَاضِيَّةِ الْإِقْلِيمِيَّةِ أَكْثَرُ مِنْ عِشْرِينَ فَرِيقًا.",
+    "exampleDE": "An dem regionalen Sportturnier nehmen über zwanzig Teams teil."
+  },
+  {
+    "front": "das Schwimmbad",
+    "back": "مَسْبَح",
+    "roman": "masbaḥ",
+    "example": "فِي الْمَسْبَحِ الْمُغَطَّى يَسْبَحُ عِشْرِينَ جَوْلَةً صَبَاحَ كُلِّ ثُلَاثَاءٍ.",
+    "exampleDE": "Im Hallenbad schwimmt er jeden Dienstagmorgen zwanzig Bahnen."
+  },
+  {
+    "front": "die Schwimmbrille",
+    "back": "نَظَّارَةُ سِبَاحَة",
+    "roman": "naẓẓārat sibāḥa",
+    "example": "نَظَّارَةُ السِّبَاحَةِ الْمُحْكَمَةُ تَحْمِي الْعَيْنَيْنِ مِنْ مَاءِ الْكُلُورِ.",
+    "exampleDE": "Eine dicht sitzende Schwimmbrille schützt die Augen vor Chlorwasser."
+  },
+  {
+    "front": "der Sprungturm",
+    "back": "مِنْصَّةُ قَفْز",
+    "roman": "minaṣṣat qafz",
+    "example": "بِشَجَاعَةٍ قَفَزَتِ الْفَتَاةُ مِنْ مِنْصَّةِ قَفْزٍ عَلَى ارْتِفَاعِ ثَلَاثَةِ أَمْتَارٍ فِي الْحَوْضِ.",
+    "exampleDE": "Mutig sprang das Mädchen vom Dreimeter-Sprungturm ins Becken."
+  },
+  {
+    "front": "das Segelboot",
+    "back": "قَارِبٌ شِرَاعِيّ",
+    "roman": "qārib shirāʿiyy",
+    "example": "بِأَشْرِعَةٍ مَرْفُوعَةٍ يَنْزَلِقُ الْقَارِبُ الشِّرَاعِيُّ الصَّغِيرُ فَوْقَ الْبُحَيْرَةِ.",
+    "exampleDE": "Mit gesetzten Segeln gleitet das kleine Segelboot über den See."
+  },
+  {
+    "front": "die Schwimmweste",
+    "back": "سُتْرَةُ نَجَاة",
+    "roman": "sutrat najāh",
+    "example": "فِي الْمِيَاهِ الْمَفْتُوحَةِ يَكُونُ ارْتِدَاءُ سُتْرَةِ النَّجَاةِ إِجْبَارِيًّا.",
+    "exampleDE": "Auf dem offenen Wasser ist das Tragen einer Schwimmweste Pflicht."
+  },
+  {
+    "front": "das Paddel",
+    "back": "مِجْدَاف",
+    "roman": "mijdāf",
+    "example": "بِحَرَكَاتٍ مُنْتَظَمَةٍ يَغْمِسُ الْمِجْدَافَ فِي الْمَاءِ الْهَادِئِ.",
+    "exampleDE": "Mit gleichmäßigen Zügen taucht er das Paddel ins ruhige Wasser."
+  }
+]

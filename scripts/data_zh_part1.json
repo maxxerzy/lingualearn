@@ -1,0 +1,1402 @@
+[
+  {
+    "front": "die Bettdecke",
+    "back": "被子",
+    "roman": "bèizi",
+    "example": "柔软的被子在冬天非常保暖。",
+    "exampleDE": "Die weiche Bettdecke hält im Winter schön warm."
+  },
+  {
+    "front": "der Wecker",
+    "back": "闹钟",
+    "roman": "nàozhōng",
+    "example": "闹钟在七点准时响了。",
+    "exampleDE": "Der Wecker klingelt pünktlich um sieben Uhr."
+  },
+  {
+    "front": "das Schlummern",
+    "back": "贪睡",
+    "roman": "tānshuì",
+    "example": "闹钟第一次响后，他按下了贪睡键。",
+    "exampleDE": "Nach dem ersten Weckerklingeln drückt er auf die Schlummertaste."
+  },
+  {
+    "front": "das Zähneputzen",
+    "back": "刷牙",
+    "roman": "shuāyá",
+    "example": "彻底刷牙对牙齿健康很重要。",
+    "exampleDE": "Gründliches Zähneputzen ist wichtig für gesunde Zähne."
+  },
+  {
+    "front": "sich anziehen",
+    "back": "穿衣服",
+    "roman": "chuān yīfu",
+    "example": "快点穿衣服，我们得走了。",
+    "exampleDE": "Zieh dich schnell an, wir müssen los."
+  },
+  {
+    "front": "die Haarbürste",
+    "back": "发刷",
+    "roman": "fàshuā",
+    "example": "她用发刷梳理她的长发。",
+    "exampleDE": "Sie kämmt ihre langen Haare mit einer Haarbürste."
+  },
+  {
+    "front": "der Spiegel",
+    "back": "镜子",
+    "roman": "jìngzi",
+    "example": "他在走廊的镜子前看了一眼。",
+    "exampleDE": "Er schaut kurz in den Spiegel im Flur."
+  },
+  {
+    "front": "die Routine",
+    "back": "日常习惯",
+    "roman": "rìcháng xíguàn",
+    "example": "固定的早晨日常习惯能节省很多时间。",
+    "exampleDE": "Eine feste Morgenroutine spart viel Zeit."
+  },
+  {
+    "front": "der Mietvertrag",
+    "back": "租房合同",
+    "roman": "zūfáng hétong",
+    "example": "我们昨天签了新的租房合同。",
+    "exampleDE": "Wir haben gestern den neuen Mietvertrag unterschrieben."
+  },
+  {
+    "front": "die Kaution",
+    "back": "押金",
+    "roman": "yājīn",
+    "example": "押金是三个月的房租。",
+    "exampleDE": "Die Kaution beträgt drei Monatsmieten."
+  },
+  {
+    "front": "die Nebenkosten",
+    "back": "附加费用",
+    "roman": "fùjiā fèiyong",
+    "example": "暖气和水费包含在附加费用中。",
+    "exampleDE": "Heizung und Wasser sind in den Nebenkosten enthalten."
+  },
+  {
+    "front": "der Vermieter",
+    "back": "房东",
+    "roman": "fángdōng",
+    "example": "房东修理坏了的暖气。",
+    "exampleDE": "Der Vermieter repariert die defekte Heizung."
+  },
+  {
+    "front": "der Mieter",
+    "back": "租户",
+    "roman": "zūhù",
+    "example": "租户在月初支付房租。",
+    "exampleDE": "Der Mieter bezahlt die Miete am Anfang des Monats."
+  },
+  {
+    "front": "die Kündigung",
+    "back": "解约通知",
+    "roman": "jiěyuē tōngzhī",
+    "example": "旧公寓的解约通知必须采用书面形式。",
+    "exampleDE": "Die Kündigung der alten Wohnung muss schriftlich erfolgen."
+  },
+  {
+    "front": "die Wohnfläche",
+    "back": "居住面积",
+    "roman": "jūzhù miànjī",
+    "example": "这套公寓的居住面积是八十平方米。",
+    "exampleDE": "Die Wohnung hat eine Wohnfläche von achtzig Quadratmetern."
+  },
+  {
+    "front": "der Umzug",
+    "back": "搬家",
+    "roman": "bānjiā",
+    "example": "搬家到新城市非常顺利。",
+    "exampleDE": "Der Umzug in die neue Stadt verlief reibungslos."
+  },
+  {
+    "front": "das Bücherregal",
+    "back": "书架",
+    "roman": "shūjià",
+    "example": "书架靠在书房的墙边。",
+    "exampleDE": "Das Bücherregal steht an der Wand im Arbeitszimmer."
+  },
+  {
+    "front": "der Kleiderschrank",
+    "back": "衣柜",
+    "roman": "yīguì",
+    "example": "他把衬衫整齐地挂在衣柜里。",
+    "exampleDE": "Er hängt seine Hemden ordentlich in den Kleiderschrank."
+  },
+  {
+    "front": "der Schreibtischstuhl",
+    "back": "办公椅",
+    "roman": "bàngōngyǐ",
+    "example": "一把舒适的办公椅对背部很好。",
+    "exampleDE": "Ein bequemer Schreibtischstuhl schont den Rücken."
+  },
+  {
+    "front": "die Stehlampe",
+    "back": "落地灯",
+    "roman": "luòdìdēng",
+    "example": "落地灯在晚上发出温暖的光。",
+    "exampleDE": "Die Stehlampe spendet warmes Licht am Abend."
+  },
+  {
+    "front": "der Esstisch",
+    "back": "餐桌",
+    "roman": "cānzhuō",
+    "example": "全家人晚上坐在大餐桌旁。",
+    "exampleDE": "Die ganze Familie sitzt abends am großen Esstisch."
+  },
+  {
+    "front": "das Sofa",
+    "back": "沙发",
+    "roman": "shāfā",
+    "example": "在舒适的沙发上可以很好地放松。",
+    "exampleDE": "Auf dem bequemen Sofa kann man herrlich entspannen."
+  },
+  {
+    "front": "der Vorhang",
+    "back": "窗帘",
+    "roman": "chuānglián",
+    "example": "天黑时她把窗帘拉上。",
+    "exampleDE": "Sie zieht den Vorhang zu, wenn es dunkel wird."
+  },
+  {
+    "front": "der Staubsauger",
+    "back": "吸尘器",
+    "roman": "xīchénqì",
+    "example": "他用新吸尘器吸地毯。",
+    "exampleDE": "Er saugt den Teppich mit dem neuen Staubsauger."
+  },
+  {
+    "front": "das Bügelbrett",
+    "back": "烫衣板",
+    "roman": "tàngyībǎn",
+    "example": "烫衣板折叠好放在柜子里。",
+    "exampleDE": "Das Bügelbrett steht zusammengeklappt im Schrank."
+  },
+  {
+    "front": "das Bügeleisen",
+    "back": "熨斗",
+    "roman": "yùndǒu",
+    "example": "熨斗变得非常烫。",
+    "exampleDE": "Das Bügeleisen wird sehr heiß."
+  },
+  {
+    "front": "der Wischmop",
+    "back": "拖把",
+    "roman": "tuōbǎ",
+    "example": "她用拖把擦厨房地板。",
+    "exampleDE": "Sie wischt den Küchenboden mit dem Wischmop."
+  },
+  {
+    "front": "das Spülmittel",
+    "back": "洗洁精",
+    "roman": "xǐjiéjīng",
+    "example": "几滴洗洁精就足够洗碗了。",
+    "exampleDE": "Ein paar Tropfen Spülmittel genügen für das Geschirr."
+  },
+  {
+    "front": "die Mülltonne",
+    "back": "垃圾桶",
+    "roman": "lājītǒng",
+    "example": "请把垃圾桶推到街边。",
+    "exampleDE": "Bring bitte die Mülltonne an die Straße."
+  },
+  {
+    "front": "der Wäscheständer",
+    "back": "晾衣架",
+    "roman": "liàngyījià",
+    "example": "湿衣服在晾衣架上晾干。",
+    "exampleDE": "Die nasse Wäsche trocknet auf dem Wäscheständer."
+  },
+  {
+    "front": "die Glühbirne",
+    "back": "灯泡",
+    "roman": "dēngpào",
+    "example": "我们必须更换走廊里坏了的灯泡。",
+    "exampleDE": "Wir müssen die kaputte Glühbirne im Flur auswechseln."
+  },
+  {
+    "front": "der Schraubenzieher",
+    "back": "螺丝刀",
+    "roman": "luósīdāo",
+    "example": "他用螺丝刀拧紧松动的螺丝。",
+    "exampleDE": "Mit dem Schraubenzieher zieht er die lose Schraube fest."
+  },
+  {
+    "front": "die Zange",
+    "back": "钳子",
+    "roman": "qiánzi",
+    "example": "他用钳子夹住铁丝。",
+    "exampleDE": "Er hält den Draht mit einer Zange fest."
+  },
+  {
+    "front": "die Bohrmaschine",
+    "back": "电钻",
+    "roman": "diànzuàn",
+    "example": "电钻在墙上钻了一个孔。",
+    "exampleDE": "Die Bohrmaschine bohrt ein Loch in die Wand."
+  },
+  {
+    "front": "der Handwerker",
+    "back": "维修工",
+    "roman": "wéixiūgōng",
+    "example": "维修工明天早上八点来。",
+    "exampleDE": "Der Handwerker kommt morgen früh um acht."
+  },
+  {
+    "front": "der Pinsel",
+    "back": "油漆刷",
+    "roman": "yóuqīshuā",
+    "example": "她用宽油漆刷给木凳刷漆。",
+    "exampleDE": "Sie streicht die Holzbank mit einem breiten Pinsel."
+  },
+  {
+    "front": "reparieren",
+    "back": "修理",
+    "roman": "xiūlǐ",
+    "example": "你能修一下这辆坏了的自行车吗？",
+    "exampleDE": "Kannst du das kaputte Fahrrad bitte reparieren?"
+  },
+  {
+    "front": "der Werkzeugkasten",
+    "back": "工具箱",
+    "roman": "gōngjùxiāng",
+    "example": "所有工具都在工具箱里随手可取。",
+    "exampleDE": "Alle Werkzeuge liegen griffbereit im Werkzeugkasten."
+  },
+  {
+    "front": "das Schneidebrett",
+    "back": "砧板",
+    "roman": "zhēnbǎn",
+    "example": "请在砧板上切洋葱。",
+    "exampleDE": "Schneide die Zwiebel bitte auf dem Schneidebrett."
+  },
+  {
+    "front": "der Kochtopf",
+    "back": "汤锅",
+    "roman": "tāngguō",
+    "example": "汤在炉子上的大汤锅里煮着。",
+    "exampleDE": "Die Suppe kocht im großen Kochtopf auf dem Herd."
+  },
+  {
+    "front": "die Bratpfanne",
+    "back": "煎锅",
+    "roman": "jiānguō",
+    "example": "蔬菜在热煎锅里翻炒。",
+    "exampleDE": "In der heißen Bratpfanne brät das Gemüse."
+  },
+  {
+    "front": "der Wasserkocher",
+    "back": "电热水壶",
+    "roman": "diànrèshuǐhú",
+    "example": "电热水壶在两分钟内把泡茶的水烧开。",
+    "exampleDE": "Der Wasserkocher kocht das Teewasser in zwei Minuten."
+  },
+  {
+    "front": "der Backofen",
+    "back": "烤箱",
+    "roman": "kǎoxiāng",
+    "example": "蛋糕在烤箱里烤了半个小时。",
+    "exampleDE": "Der Kuchen backt eine halbe Stunde im Backofen."
+  },
+  {
+    "front": "das Rezept",
+    "back": "食谱",
+    "roman": "shípǔ",
+    "example": "这个食谱是我祖母发明的。",
+    "exampleDE": "Dieses Rezept hat meine Großmutter erfunden."
+  },
+  {
+    "front": "die Zutat",
+    "back": "配料",
+    "roman": "pèiliào",
+    "example": "新鲜香草是酱汁最重要的配料。",
+    "exampleDE": "Frische Kräuter sind die wichtigste Zutat für die Soße."
+  },
+  {
+    "front": "fein hacken",
+    "back": "切碎",
+    "roman": "qiēsuì",
+    "example": "她用锋利的刀把洋葱和欧芹切碎。",
+    "exampleDE": "Sie hackt die Zwiebeln und Petersilie mit einem scharfen Messer fein."
+  },
+  {
+    "front": "das Meersalz",
+    "back": "海盐",
+    "roman": "hǎiyán",
+    "example": "一小撮海盐能提升汤的风味。",
+    "exampleDE": "Eine Prise Meersalz hebt den Geschmack der Suppe."
+  },
+  {
+    "front": "der schwarze Pfeffer",
+    "back": "黑胡椒",
+    "roman": "hēi hújiāo",
+    "example": "现磨的黑胡椒闻起来很香。",
+    "exampleDE": "Frisch gemahlener schwarzer Pfeffer duftet herrlich."
+  },
+  {
+    "front": "das Olivenöl",
+    "back": "橄榄油",
+    "roman": "gǎnlǎnyóu",
+    "example": "冷压初榨橄榄油非常适合配沙拉。",
+    "exampleDE": "Kaltgepresstes Olivenöl passt hervorragend zum Salat."
+  },
+  {
+    "front": "der Knoblauch",
+    "back": "大蒜",
+    "roman": "dàsuàn",
+    "example": "两瓣大蒜为这道菜增添了香气。",
+    "exampleDE": "Zwei Zehen Knoblauch verleihen dem Gericht Aroma."
+  },
+  {
+    "front": "die Petersilie",
+    "back": "欧芹",
+    "roman": "ōuqín",
+    "example": "上菜前撒上新鲜切碎的欧芹。",
+    "exampleDE": "Frisch gehackte Petersilie kommt vor dem Servieren darauf."
+  },
+  {
+    "front": "das Basilikum",
+    "back": "罗勒",
+    "roman": "luólè",
+    "example": "新鲜罗勒和西红柿是绝配。",
+    "exampleDE": "Frisches Basilikum passt perfekt zu Tomaten."
+  },
+  {
+    "front": "der Zimt",
+    "back": "肉桂",
+    "roman": "ròuguì",
+    "example": "冬天我们喜欢喝加了一撮肉桂的茶。",
+    "exampleDE": "Im Winter trinken wir gerne Tee mit einer Prise Zimt."
+  },
+  {
+    "front": "das Vollkornbrot",
+    "back": "全麦面包",
+    "roman": "quánmài miànbāo",
+    "example": "新鲜全麦面包味道浓郁且很有饱腹感。",
+    "exampleDE": "Frisches Vollkornbrot schmeckt kräftig und hält lange satt."
+  },
+  {
+    "front": "das Brötchen",
+    "back": "小面包",
+    "roman": "xiǎo miànbāo",
+    "example": "星期天我们去面包店买温热的小面包。",
+    "exampleDE": "Sonntags holen wir warme Brötchen beim Bäcker."
+  },
+  {
+    "front": "die Butter",
+    "back": "黄油",
+    "roman": "huángyóu",
+    "example": "请在面包片上抹一点黄油。",
+    "exampleDE": "Streich bitte etwas Butter auf die Scheibe Brot."
+  },
+  {
+    "front": "die Marmelade",
+    "back": "果酱",
+    "roman": "guǒjiàng",
+    "example": "草莓果酱是我最喜欢的抹酱。",
+    "exampleDE": "Erdbeermarmelade ist mein liebster Brotaufstrich."
+  },
+  {
+    "front": "das Müsli",
+    "back": "麦片",
+    "roman": "màipiàn",
+    "example": "早上我喜欢吃配新鲜水果的麦片。",
+    "exampleDE": "Morgens esse ich gerne Müsli mit frischem Obst."
+  },
+  {
+    "front": "der Joghurt",
+    "back": "酸奶",
+    "roman": "suānnǎi",
+    "example": "原味酸奶加一点蜂蜜特别好吃。",
+    "exampleDE": "Naturjoghurt schmeckt besonders gut mit etwas Honig."
+  },
+  {
+    "front": "das gekochte Ei",
+    "back": "水煮蛋",
+    "roman": "shuǐzhǔdàn",
+    "example": "溏心水煮蛋是周日早餐的一部分。",
+    "exampleDE": "Ein weich gekochtes Ei gehört zum Sonntagsfrühstück."
+  },
+  {
+    "front": "der Orangensaft",
+    "back": "橙汁",
+    "roman": "chéngzhī",
+    "example": "鲜榨橙汁含有丰富的维生素。",
+    "exampleDE": "Frisch gepresster Orangensaft enthält viele Vitamine."
+  },
+  {
+    "front": "die Reservierung",
+    "back": "预订",
+    "roman": "yùdìng",
+    "example": "我有一个以米勒为名的预订。",
+    "exampleDE": "Ich habe eine Reservierung auf den Namen Müller."
+  },
+  {
+    "front": "die Speisekarte",
+    "back": "菜单",
+    "roman": "càidān",
+    "example": "我们可以看一下菜单吗？",
+    "exampleDE": "Dürfen wir bitte die Speisekarte sehen?"
+  },
+  {
+    "front": "die Vorspeise",
+    "back": "前菜",
+    "roman": "qiáncài",
+    "example": "作为前菜，我们点了一份小沙拉。",
+    "exampleDE": "Als Vorspeise bestellen wir einen kleinen Salat."
+  },
+  {
+    "front": "das Hauptgericht",
+    "back": "主菜",
+    "roman": "zhǔcài",
+    "example": "主菜热气腾腾地盛在大盘子里端上来。",
+    "exampleDE": "Das Hauptgericht wird heiß auf einem großen Teller serviert."
+  },
+  {
+    "front": "die Nachspeise",
+    "back": "甜点",
+    "roman": "tiándiǎn",
+    "example": "饭后您还想来一份甜点吗？",
+    "exampleDE": "Möchten Sie nach dem Essen noch eine Nachspeise?"
+  },
+  {
+    "front": "die Rechnung",
+    "back": "账单",
+    "roman": "zhàngdān",
+    "example": "我们想买单，请把账单拿来。",
+    "exampleDE": "Wir möchten bitte zahlen, bringen Sie uns die Rechnung."
+  },
+  {
+    "front": "das Trinkgeld",
+    "back": "小费",
+    "roman": "xiǎofèi",
+    "example": "热情友好的服务员值得一份不错的小费。",
+    "exampleDE": "Der freundliche Kellner hat ein gutes Trinkgeld verdient."
+  },
+  {
+    "front": "die Spezialität des Hauses",
+    "back": "招牌菜",
+    "roman": "zhāopáicài",
+    "example": "服务员推荐手工意面作为招牌菜。",
+    "exampleDE": "Der Kellner empfiehlt die hausgemachte Pasta als Spezialität des Hauses."
+  },
+  {
+    "front": "der Kaffee",
+    "back": "咖啡",
+    "roman": "kāfēi",
+    "example": "一杯热咖啡能驱走疲劳。",
+    "exampleDE": "Eine Tasse heißer Kaffee vertreibt die Müdigkeit."
+  },
+  {
+    "front": "der Cappuccino",
+    "back": "卡布奇诺",
+    "roman": "kǎbùqínuò",
+    "example": "这杯卡布奇诺有着极佳的绵密奶泡。",
+    "exampleDE": "Der Cappuccino hat einen wunderbar cremigen Schaum."
+  },
+  {
+    "front": "der Kräutertee",
+    "back": "草本茶",
+    "roman": "cǎoběnchá",
+    "example": "晚上我喜欢喝一杯热草本茶。",
+    "exampleDE": "Abends trinke ich gerne eine Tasse warmen Kräutertee."
+  },
+  {
+    "front": "das Mineralwasser",
+    "back": "矿泉水",
+    "roman": "kuàngquánshuǐ",
+    "example": "一杯带气泡的凉矿泉水让人神清气爽。",
+    "exampleDE": "Ein Glas kühles Mineralwasser mit Kohlensäure erfrischt."
+  },
+  {
+    "front": "das Stück Kuchen",
+    "back": "一块蛋糕",
+    "roman": "yī kuài dàngāo",
+    "example": "下午我们犒劳自己吃了一块蛋糕。",
+    "exampleDE": "Am Nachmittag gönnen wir uns ein Stück Kuchen."
+  },
+  {
+    "front": "die Barista",
+    "back": "咖啡师",
+    "roman": "kāfēishī",
+    "example": "咖啡师巧妙地制作浓缩咖啡。",
+    "exampleDE": "Die Barista bereitet den Espresso kunstvoll zu."
+  },
+  {
+    "front": "die Stammkundin",
+    "back": "老顾客",
+    "roman": "lǎogùkè",
+    "example": "她是转角处这家温馨咖啡馆的老顾客。",
+    "exampleDE": "Sie ist Stammkundin in diesem gemütlichen Café an der Ecke."
+  },
+  {
+    "front": "der Einkaufswagen",
+    "back": "购物车",
+    "roman": "gòuwùchē",
+    "example": "请带一枚硬币用来取购物车。",
+    "exampleDE": "Nimm bitte eine Münze für den Einkaufswagen mit."
+  },
+  {
+    "front": "der Einkaufszettel",
+    "back": "购物清单",
+    "roman": "gòuwù qīngdān",
+    "example": "我把所有重要物品都记在购物清单上了。",
+    "exampleDE": "Ich habe alle wichtigen Dinge auf dem Einkaufszettel notiert."
+  },
+  {
+    "front": "das Sonderangebot",
+    "back": "特价商品",
+    "roman": "tèjià shāngpǐn",
+    "example": "新鲜草莓今天特价。",
+    "exampleDE": "Frische Erdbeeren sind heute im Sonderangebot."
+  },
+  {
+    "front": "die Kasse",
+    "back": "收银台",
+    "roman": "shōuyíntái",
+    "example": "收银台前排着长长的顾客队伍。",
+    "exampleDE": "An der Kasse steht eine lange Schlange von Kunden."
+  },
+  {
+    "front": "der Kassenbon",
+    "back": "收据",
+    "roman": "shōujù",
+    "example": "请妥善保存收据作为凭证。",
+    "exampleDE": "Bewahren Sie den Kassenbon als Beleg gut auf."
+  },
+  {
+    "front": "die Stofftasche",
+    "back": "布袋",
+    "roman": "bùdài",
+    "example": "我们用布袋装购买的物品。",
+    "exampleDE": "Wir transportieren unsere Einkäufe in einer Stofftasche."
+  },
+  {
+    "front": "das Haltbarkeitsdatum",
+    "back": "保质期",
+    "roman": "bǎozhìqī",
+    "example": "请务必检查包装上的保质期。",
+    "exampleDE": "Prüfen Sie immer das Haltbarkeitsdatum auf der Verpackung."
+  },
+  {
+    "front": "die Frischetheke",
+    "back": "生鲜柜台",
+    "roman": "shēngxiān guìtái",
+    "example": "生鲜柜台有当地生产的奶酪。",
+    "exampleDE": "An der Frischetheke gibt es regionalen Käse."
+  },
+  {
+    "front": "anprobieren",
+    "back": "试穿",
+    "roman": "shìchuān",
+    "example": "我想试穿一下这件深蓝色的夹克。",
+    "exampleDE": "Ich möchte diese dunkelblaue Jacke gerne anprobieren."
+  },
+  {
+    "front": "die Umkleidekabine",
+    "back": "试衣间",
+    "roman": "shìyījiān",
+    "example": "那边左手边有一间空的试衣间。",
+    "exampleDE": "Dort drüben links ist eine freie Umkleidekabine."
+  },
+  {
+    "front": "die Konfektionsgröße",
+    "back": "服装尺码",
+    "roman": "fúzhuāng chǐmǎ",
+    "example": "您平时穿什么服装尺码？",
+    "exampleDE": "Welche Konfektionsgröße tragen Sie normalerweise?"
+  },
+  {
+    "front": "passen",
+    "back": "合身",
+    "roman": "héshēn",
+    "example": "这条裤子我穿非常合身。",
+    "exampleDE": "Die Hose passt mir wie angegossen."
+  },
+  {
+    "front": "zu eng",
+    "back": "太紧",
+    "roman": "tài jǐn",
+    "example": "这件毛衣对我来说肩膀太紧了。",
+    "exampleDE": "Dieser Pullover ist mir an den Schultern leider zu eng."
+  },
+  {
+    "front": "zu weit",
+    "back": "太宽松",
+    "roman": "tài kuānsōng",
+    "example": "这条裙子有点太宽松，走路时会往下滑。",
+    "exampleDE": "Der Rock ist etwas zu weit und rutscht beim Gehen."
+  },
+  {
+    "front": "der Schnitt",
+    "back": "剪裁",
+    "roman": "jiǎncái",
+    "example": "我特别喜欢这种现代的剪裁。",
+    "exampleDE": "Der moderne Schnitt gefällt mir besonders gut."
+  },
+  {
+    "front": "die Baumwolle",
+    "back": "棉花",
+    "roman": "miánhua",
+    "example": "这件T恤由纯净柔软的棉制成。",
+    "exampleDE": "Dieses T-Shirt besteht aus reiner, weicher Baumwolle."
+  },
+  {
+    "front": "die Schurwolle",
+    "back": "纯羊毛",
+    "roman": "chún yángmáo",
+    "example": "这件厚实的纯羊毛毛衣在冬天非常保暖。",
+    "exampleDE": "Der dicke Pullover aus Schurwolle hält im Winter warm."
+  },
+  {
+    "front": "die Seide",
+    "back": "丝绸",
+    "roman": "sīchóu",
+    "example": "这条丝绸围巾摸起来非常柔软。",
+    "exampleDE": "Das Halstuch aus Seide fühlt sich herrlich weich an."
+  },
+  {
+    "front": "das Leder",
+    "back": "皮革",
+    "roman": "pígé",
+    "example": "这件结实的夹克是用真皮制成的。",
+    "exampleDE": "Die robuste Jacke ist aus echtem Leder gefertigt."
+  },
+  {
+    "front": "gestreift",
+    "back": "条纹的",
+    "roman": "tiáowén de",
+    "example": "他今天穿了一件蓝白条纹的衬衫。",
+    "exampleDE": "Er trägt heute ein blau-weiß gestreiftes Hemd."
+  },
+  {
+    "front": "kariert",
+    "back": "格子的",
+    "roman": "gézi de",
+    "example": "格子图案与伐木工衬衫非常相配。",
+    "exampleDE": "Das karierte Muster passt hervorragend zum Holzfällerhemd."
+  },
+  {
+    "front": "einfarbig",
+    "back": "单色的",
+    "roman": "dānsè de",
+    "example": "一件简约的单色连衣裙总是显得很优雅。",
+    "exampleDE": "Ein schlichtes, einfarbiges Kleid wirkt immer elegant."
+  },
+  {
+    "front": "der Reißverschluss",
+    "back": "拉链",
+    "roman": "lāliàn",
+    "example": "我夹克上的拉链有时会卡住。",
+    "exampleDE": "Der Reißverschluss an meiner Jacke klemmt manchmal."
+  },
+  {
+    "front": "die Schnürsenkel",
+    "back": "鞋带",
+    "roman": "xiédài",
+    "example": "把鞋带系好，免得绊倒。",
+    "exampleDE": "Binde dir die Schnürsenkel zu, damit du nicht stolperst."
+  },
+  {
+    "front": "die Lederschuhe",
+    "back": "皮鞋",
+    "roman": "píxié",
+    "example": "在节日场合他穿擦得锃亮的皮鞋。",
+    "exampleDE": "Zu festlichen Anlässen trägt er polierte Lederschuhe."
+  },
+  {
+    "front": "die Turnschuhe",
+    "back": "运动鞋",
+    "roman": "yùndòngxié",
+    "example": "在公园慢跑我需要舒适的运动鞋。",
+    "exampleDE": "Zum Laufen im Park brauche ich bequeme Turnschuhe."
+  },
+  {
+    "front": "die Handtasche",
+    "back": "手提包",
+    "roman": "shǒutíbāo",
+    "example": "她在大手提包里找钥匙。",
+    "exampleDE": "Sie sucht ihren Schlüssel in der großen Handtasche."
+  },
+  {
+    "front": "der Ledergürtel",
+    "back": "皮带",
+    "roman": "pídài",
+    "example": "一条黑色皮带系牢了裤子。",
+    "exampleDE": "Ein schwarzer Ledergürtel hält die Hose fest."
+  },
+  {
+    "front": "der Regenschirm",
+    "back": "雨伞",
+    "roman": "yǔsǎn",
+    "example": "带把雨伞，天空阴沉下来了。",
+    "exampleDE": "Nimm einen Regenschirm mit, der Himmel zieht sich zu."
+  },
+  {
+    "front": "die Sonnenbrille",
+    "back": "太阳镜",
+    "roman": "tàiyángjìng",
+    "example": "夏天一副好的太阳镜可以保护眼睛。",
+    "exampleDE": "Im Sommer schützt eine gute Sonnenbrille die Augen."
+  },
+  {
+    "front": "das Girokonto",
+    "back": "活期账户",
+    "roman": "huóqī zhànghù",
+    "example": "我的工资每月转账到我的活期账户上。",
+    "exampleDE": "Mein Gehalt wird monatlich auf mein Girokonto überwiesen."
+  },
+  {
+    "front": "die Überweisung",
+    "back": "转账",
+    "roman": "zhuǎnzhàng",
+    "example": "我通过网上银行方便地进行了转账。",
+    "exampleDE": "Ich mache die Überweisung bequem per Online-Banking."
+  },
+  {
+    "front": "der Dauerauftrag",
+    "back": "定期自动转账",
+    "roman": "dìngqī zìdòng zhuǎnzhàng",
+    "example": "我每个月通过定期自动转账支付房租。",
+    "exampleDE": "Die Miete bezahle ich jeden Monat per Dauerauftrag."
+  },
+  {
+    "front": "der Geldautomat",
+    "back": "自动取款机",
+    "roman": "zìdòng qǔkuǎnjī",
+    "example": "在这台自动取款机上可以免手续费取款。",
+    "exampleDE": "An diesem Geldautomaten kann man gebührenfrei abheben."
+  },
+  {
+    "front": "die Geheimzahl",
+    "back": "密码",
+    "roman": "mìmǎ",
+    "example": "绝不要把你的四位数密码告诉陌生人。",
+    "exampleDE": "Gib deine vierstellige Geheimzahl niemals an Fremde weiter."
+  },
+  {
+    "front": "der Kontoauszug",
+    "back": "银行对账单",
+    "roman": "yínháng duìzhàngdān",
+    "example": "银行对账单上列出了所有收入和支出。",
+    "exampleDE": "Auf dem Kontoauszug stehen alle Einnahmen und Ausgaben."
+  },
+  {
+    "front": "das Sparguthaben",
+    "back": "储蓄存款",
+    "roman": "chǔxù cúnkuǎn",
+    "example": "她每个月存一笔固定数额作为储蓄存款。",
+    "exampleDE": "Sie legt jeden Monat einen festen Betrag als Sparguthaben an."
+  },
+  {
+    "front": "die Zinsen",
+    "back": "利息",
+    "roman": "lìxī",
+    "example": "银行目前对定期存款支付适度的利息。",
+    "exampleDE": "Die Bank zahlt derzeit moderate Zinsen auf das Festgeld."
+  },
+  {
+    "front": "das Bargeld",
+    "back": "现金",
+    "roman": "xiànjīn",
+    "example": "您随身带现金了吗，还是刷卡？",
+    "exampleDE": "Haben Sie etwas Bargeld dabei oder zahlen Sie mit Karte?"
+  },
+  {
+    "front": "die Kreditkarte",
+    "back": "信用卡",
+    "roman": "xìnyòngkǎ",
+    "example": "旅行时购物我大多用信用卡付款。",
+    "exampleDE": "Auf Reisen bezahle ich Einkäufe meist mit Kreditkarte."
+  },
+  {
+    "front": "kontaktlos",
+    "back": "免接触",
+    "roman": "miǎn jiēchù",
+    "example": "五十欧元以下的金额可以免接触支付。",
+    "exampleDE": "Beträge unter fünfzig Euro kann man kontaktlos bezahlen."
+  },
+  {
+    "front": "die Münze",
+    "back": "硬币",
+    "roman": "yìngbì",
+    "example": "他把一枚两欧元的硬币投进停车售票机。",
+    "exampleDE": "Er wirft eine Zwei-Euro-Münze in den Parkscheinautomaten."
+  },
+  {
+    "front": "der Geldschein",
+    "back": "纸币",
+    "roman": "zhǐbì",
+    "example": "她把十欧元的纸币仔细折叠起来。",
+    "exampleDE": "Sie faltet den Zehn-Euro-Geldschein sorgfältig zusammen."
+  },
+  {
+    "front": "das Wechselgeld",
+    "back": "找零",
+    "roman": "zhǎolíng",
+    "example": "请别在收银台忘了拿找零。",
+    "exampleDE": "Vergessen Sie bitte nicht Ihr Wechselgeld an der Kasse."
+  },
+  {
+    "front": "der Wechselkurs",
+    "back": "汇率",
+    "roman": "huìlǜ",
+    "example": "出国旅行前我们先查看当前汇率。",
+    "exampleDE": "Vor der Auslandsreise prüfen wir den aktuellen Wechselkurs."
+  },
+  {
+    "front": "das Paket",
+    "back": "包裹",
+    "roman": "bāoguǒ",
+    "example": "快递员把沉重的包裹送到家门口。",
+    "exampleDE": "Der Bote liefert das schwere Paket an die Haustür."
+  },
+  {
+    "front": "der Briefumschlag",
+    "back": "信封",
+    "roman": "xìnfēng",
+    "example": "她把信放进一个白色信封里。",
+    "exampleDE": "Sie steckt den Brief in einen weißen Briefumschlag."
+  },
+  {
+    "front": "die Briefmarke",
+    "back": "邮票",
+    "roman": "yóupiào",
+    "example": "请在信封右上角贴一张邮票。",
+    "exampleDE": "Kleb bitte eine Briefmarke oben rechts auf den Brief."
+  },
+  {
+    "front": "der Absender",
+    "back": "寄件人",
+    "roman": "jìjiànrén",
+    "example": "信封左上角写着寄件人的地址。",
+    "exampleDE": "Oben links auf dem Kuvert steht die Adresse des Absenders."
+  },
+  {
+    "front": "der Empfänger",
+    "back": "收件人",
+    "roman": "shōujiànrén",
+    "example": "这个小包裹是给指定的收件人的。",
+    "exampleDE": "Das Päckchen ist für den angegebenen Empfänger bestimmt."
+  },
+  {
+    "front": "die Packstation",
+    "back": "自提柜",
+    "roman": "zìtíguì",
+    "example": "我下班后去自提柜取包裹。",
+    "exampleDE": "Ich hole meine Sendung nach Feierabend an der Packstation ab."
+  },
+  {
+    "front": "das Einschreiben",
+    "back": "挂号信",
+    "roman": "guàhàoxìn",
+    "example": "重要文件用挂号信寄最保险。",
+    "exampleDE": "Wichtige Dokumente versendet man am sichersten per Einschreiben."
+  },
+  {
+    "front": "die Postleitzahl",
+    "back": "邮政编码",
+    "roman": "yóuzhèng biānmǎ",
+    "example": "请提供您的五位数邮政编码。",
+    "exampleDE": "Geben Sie bitte Ihre fünfstellige Postleitzahl an."
+  },
+  {
+    "front": "die Zahnpasta",
+    "back": "牙膏",
+    "roman": "yágāo",
+    "example": "这款牙膏有效防止蛀牙。",
+    "exampleDE": "Diese Zahnpasta schützt wirksam vor Karies."
+  },
+  {
+    "front": "das Duschgel",
+    "back": "沐浴露",
+    "roman": "mùyùlù",
+    "example": "这款沐浴露散发着新鲜柠檬的清香。",
+    "exampleDE": "Das Duschgel duftet angenehm nach frischen Zitronen."
+  },
+  {
+    "front": "das Shampoo",
+    "back": "洗发水",
+    "roman": "xǐfàshuǐ",
+    "example": "温和的洗发水呵护头皮和头发。",
+    "exampleDE": "Ein mildes Shampoo pflegt die Kopfhaut und das Haar."
+  },
+  {
+    "front": "die Seife",
+    "back": "肥皂",
+    "roman": "féizào",
+    "example": "用温水和肥皂把手洗干净。",
+    "exampleDE": "Wasch dir die Hände gründlich mit warmem Wasser und Seife."
+  },
+  {
+    "front": "die Feuchtigkeitscreme",
+    "back": "保湿霜",
+    "roman": "bǎoshīshuāng",
+    "example": "淋浴后她涂抹保湿霜。",
+    "exampleDE": "Nach dem Duschen trägt sie eine feuchtigkeitsspendende Creme auf."
+  },
+  {
+    "front": "das Deodorant",
+    "back": "止汗露",
+    "roman": "zhǐhànlù",
+    "example": "一款好的止汗露能保持一整天的清新。",
+    "exampleDE": "Ein gutes Deodorant sorgt den ganzen Tag für Frische."
+  },
+  {
+    "front": "das Taschentuch",
+    "back": "纸巾",
+    "roman": "zhǐjīn",
+    "example": "你有一张纸巾给我吗？",
+    "exampleDE": "Hast du ein Papiertaschentuch für mich?"
+  },
+  {
+    "front": "der Rasierer",
+    "back": "剃须刀",
+    "roman": "tìxūdāo",
+    "example": "他定期更换剃须刀的刀片。",
+    "exampleDE": "Er wechselt regelmäßig die Klingen an seinem Rasierer."
+  },
+  {
+    "front": "der Rasierschaum",
+    "back": "剃须泡沫",
+    "roman": "tìxū pàomò",
+    "example": "将剃须泡沫轻轻涂抹在脸颊上。",
+    "exampleDE": "Verteile den Rasierschaum sanft auf den Wangen."
+  },
+  {
+    "front": "die Nagelschere",
+    "back": "指甲剪",
+    "roman": "zhǐjiajiǎn",
+    "example": "用小指甲剪可以精确地修剪指甲。",
+    "exampleDE": "Mit einer kleinen Nagelschere schneidet man Fingernägel präzise."
+  },
+  {
+    "front": "die Nagelfeile",
+    "back": "指甲锉",
+    "roman": "zhǐjiacuò",
+    "example": "她用指甲锉小心地打磨指甲。",
+    "exampleDE": "Sie glättet ihre Nägel vorsichtig mit einer Nagelfeile."
+  },
+  {
+    "front": "die Sonnencreme",
+    "back": "防晒霜",
+    "roman": "fángshàishuāng",
+    "example": "度假时我们经常涂防晒霜。",
+    "exampleDE": "Im Urlaub cremen wir uns regelmäßig mit Sonnencreme ein."
+  },
+  {
+    "front": "der Lippenbalsam",
+    "back": "润唇膏",
+    "roman": "rùnchúngāo",
+    "example": "冬天润唇膏可以防止嘴唇干裂。",
+    "exampleDE": "Im Winter schützt Lippenbalsam vor spröden Lippen."
+  },
+  {
+    "front": "das Wattepad",
+    "back": "化妆棉",
+    "roman": "huàzhuāngmián",
+    "example": "她用柔软的化妆棉卸妆。",
+    "exampleDE": "Zum Abschminken verwendet sie ein weiches Wattepad."
+  },
+  {
+    "front": "das Wattestäbchen",
+    "back": "棉签",
+    "roman": "miánqiān",
+    "example": "棉签放在浴室柜里。",
+    "exampleDE": "Wattestäbchen gehören in den Badezimmerschrank."
+  },
+  {
+    "front": "der Umtausch",
+    "back": "退换",
+    "roman": "tuìhuàn",
+    "example": "十四天内可以退换。",
+    "exampleDE": "Ein Umtausch ist innerhalb von vierzehn Tagen möglich."
+  },
+  {
+    "front": "die Reklamation",
+    "back": "投诉",
+    "roman": "tóusù",
+    "example": "因有缺陷，客户提出了投诉。",
+    "exampleDE": "Wegen eines Mangels reichte der Kunde eine Reklamation ein."
+  },
+  {
+    "front": "die Garantie",
+    "back": "保修",
+    "roman": "bǎoxiū",
+    "example": "这台电器有两年的厂家保修。",
+    "exampleDE": "Auf dieses Elektrogerät gibt es zwei Jahre Herstellergarantie."
+  },
+  {
+    "front": "die Rückerstattung",
+    "back": "退款",
+    "roman": "tuìkuǎn",
+    "example": "款项将作为退款返还给您。",
+    "exampleDE": "Der Betrag wird Ihnen als Rückerstattung gutgeschrieben."
+  },
+  {
+    "front": "der Rabatt",
+    "back": "折扣",
+    "roman": "zhékòu",
+    "example": "使用这张会员卡您可以享受九折优惠。",
+    "exampleDE": "Mit dieser Kundenkarte erhalten Sie zehn Prozent Rabatt."
+  },
+  {
+    "front": "das Schnäppchen",
+    "back": "划算的买卖",
+    "roman": "huásuàn de mǎimai",
+    "example": "这件高品质大衣真是划算的买卖。",
+    "exampleDE": "Dieser hochwertige Mantel war ein echtes Schnäppchen."
+  },
+  {
+    "front": "die Beschwerde",
+    "back": "投诉",
+    "roman": "tóusù",
+    "example": "投诉已由管理层进行了审核。",
+    "exampleDE": "Die Beschwerde wurde von der Geschäftsleitung geprüft."
+  },
+  {
+    "front": "die Kopfschmerzen",
+    "back": "头痛",
+    "roman": "tóutòng",
+    "example": "漫长的工作日过后，我有些轻微头痛。",
+    "exampleDE": "Nach dem langen Arbeitstag habe ich leichte Kopfschmerzen."
+  },
+  {
+    "front": "die Halsschmerzen",
+    "back": "喉咙痛",
+    "roman": "hóulong tòng",
+    "example": "加蜂蜜的温洋甘菊茶可以缓解喉咙痛。",
+    "exampleDE": "Warmer Kamillentee mit Honig lindert die Halsschmerzen."
+  },
+  {
+    "front": "die Magenschmerzen",
+    "back": "胃痛",
+    "roman": "wèitòng",
+    "example": "油腻的食物经常引起他胃痛。",
+    "exampleDE": "Fettes Essen verursacht bei ihm oft Magenschmerzen."
+  },
+  {
+    "front": "der Schwindel",
+    "back": "头晕",
+    "roman": "tóuyūn",
+    "example": "猛然站起时，她感到一阵短暂的头晕。",
+    "exampleDE": "Beim schnellen Aufstehen überkam sie ein kurzer Schwindel."
+  },
+  {
+    "front": "die Übelkeit",
+    "back": "恶心",
+    "roman": "ěxin",
+    "example": "新鲜空气通常对突然的恶心很有帮助。",
+    "exampleDE": "Frische Luft hilft meist gut gegen plötzliche Übelkeit."
+  },
+  {
+    "front": "der Husten",
+    "back": "咳嗽",
+    "roman": "késou",
+    "example": "他已经干咳、顽固咳嗽三天了。",
+    "exampleDE": "Er hat seit drei Tagen einen trockenen, hartnäckigen Husten."
+  },
+  {
+    "front": "der Schnupfen",
+    "back": "伤风鼻塞",
+    "roman": "shāngfēng bísè",
+    "example": "严重伤风鼻塞时，用鼻子呼吸很困难。",
+    "exampleDE": "Bei starkem Schnupfen fällt das Atmen durch die Nase schwer."
+  },
+  {
+    "front": "die Heiserkeit",
+    "back": "声音嘶哑",
+    "roman": "shēngyīn sīyǎ",
+    "example": "喧闹的音乐会过后，歌手声音嘶哑。",
+    "exampleDE": "Nach dem lauten Konzert litt der Sänger unter Heiserkeit."
+  },
+  {
+    "front": "das Fieberthermometer",
+    "back": "体温计",
+    "roman": "tǐwēnjì",
+    "example": "电子体温计几秒钟内就能测出体温。",
+    "exampleDE": "Das digitale Fieberthermometer misst die Temperatur sekundenschnell."
+  },
+  {
+    "front": "die erhöhte Temperatur",
+    "back": "体温偏高",
+    "roman": "tǐwēn piāngāo",
+    "example": "孩子今天晚上体温偏高。",
+    "exampleDE": "Das Kind hat heute Abend leicht erhöhte Temperatur."
+  },
+  {
+    "front": "der Schüttelfrost",
+    "back": "寒战",
+    "roman": "hánzhàn",
+    "example": "突然发冷寒战往往是流感的首要征兆。",
+    "exampleDE": "Plötzlicher Schüttelfrost ist oft ein erstes Anzeichen einer Grippe."
+  },
+  {
+    "front": "die Entzündung",
+    "back": "炎症",
+    "roman": "yánzhèng",
+    "example": "医生用药膏治疗炎症。",
+    "exampleDE": "Der Arzt behandelt die Entzündung mit einer Heilsalbe."
+  },
+  {
+    "front": "die Infektion",
+    "back": "感染",
+    "roman": "gǎnrǎn",
+    "example": "经常洗手能可靠地预防感染。",
+    "exampleDE": "Regelmäßiges Händewaschen schützt zuverlässig vor einer Infektion."
+  },
+  {
+    "front": "ansteckend",
+    "back": "传染性的",
+    "roman": "chuánrǎnxìng de",
+    "example": "只要您还在发烧，就对他人具有传染性。",
+    "exampleDE": "Solange Sie Fieber haben, sind Sie für andere ansteckend."
+  },
+  {
+    "front": "sich schonen",
+    "back": "休养",
+    "roman": "xiūyǎng",
+    "example": "感冒时应该卧床休养。",
+    "exampleDE": "Bei einer Erkältung sollte man im Bett bleiben und sich schonen."
+  },
+  {
+    "front": "die Arztpraxis",
+    "back": "诊所",
+    "roman": "zhěnsuǒ",
+    "example": "诊所周一早上七点就开门了。",
+    "exampleDE": "Die Arztpraxis öffnet montags bereits um sieben Uhr morgens."
+  },
+  {
+    "front": "das Wartezimmer",
+    "back": "候诊室",
+    "roman": "hòuzhěnshì",
+    "example": "病人们耐心地坐在明亮的候诊室里。",
+    "exampleDE": "Die Patienten sitzen geduldig im hellen Wartezimmer."
+  },
+  {
+    "front": "die Versichertenkarte",
+    "back": "医保卡",
+    "roman": "yībǎokǎ",
+    "example": "请出示您的电子医保卡。",
+    "exampleDE": "Legen Sie bitte Ihre elektronische Versichertenkarte vor."
+  },
+  {
+    "front": "der Termin",
+    "back": "预约",
+    "roman": "yùyuē",
+    "example": "我预约了下周二的具体时间。",
+    "exampleDE": "Ich habe für kommenden Dienstag einen festen Termin vereinbart."
+  },
+  {
+    "front": "die Untersuchung",
+    "back": "检查",
+    "roman": "jiǎnchá",
+    "example": "彻底的检查没有发现任何异常。",
+    "exampleDE": "Die gründliche Untersuchung ergab keine Auffälligkeiten."
+  },
+  {
+    "front": "der Blutdruck",
+    "back": "血压",
+    "roman": "xuèyā",
+    "example": "护士在左上臂测量血压。",
+    "exampleDE": "Die Schwester misst den Blutdruck am linken Oberarm."
+  },
+  {
+    "front": "der Puls",
+    "back": "脉搏",
+    "roman": "màibó",
+    "example": "稍作休息后，脉搏又恢复了正常。",
+    "exampleDE": "Nach der kurzen Ruhepause schlägt der Puls wieder normal."
+  },
+  {
+    "front": "das Stethoskop",
+    "back": "听诊器",
+    "roman": "tīngzhěnqì",
+    "example": "女医生用听诊器听肺部。",
+    "exampleDE": "Die Ärztin hört die Lunge mit dem Stethoskop ab."
+  },
+  {
+    "front": "das Rezept",
+    "back": "处方",
+    "roman": "chǔfāng",
+    "example": "医生给您开药片的处方。",
+    "exampleDE": "Der Arzt stellt Ihnen ein Rezept für die Tabletten aus."
+  },
+  {
+    "front": "die Apotheke",
+    "back": "药店",
+    "roman": "yàodiàn",
+    "example": "集市旁的药店今天有急诊值班。",
+    "exampleDE": "Die Apotheke am Markt hat heute Notdienst."
+  },
+  {
+    "front": "die Packungsbeilage",
+    "back": "药品说明书",
+    "roman": "yàopǐn shuōmíngshū",
+    "example": "服用前请仔细阅读药品说明书。",
+    "exampleDE": "Lesen Sie vor der Einnahme sorgfältig die Packungsbeilage."
+  },
+  {
+    "front": "die Nebenwirkung",
+    "back": "副作用",
+    "roman": "fùzuòyòng",
+    "example": "这种耐受性良好的药物几乎没有已知的副作用。",
+    "exampleDE": "Dieses gut verträgliche Medikament hat kaum bekannte Nebenwirkungen."
+  },
+  {
+    "front": "die Dosierung",
+    "back": "剂量",
+    "roman": "jìliàng",
+    "example": "请严格遵守医生指定的剂量。",
+    "exampleDE": "Beachten Sie genau die vom Arzt verordnete Dosierung."
+  },
+  {
+    "front": "das Schmerzmittel",
+    "back": "止痛药",
+    "roman": "zhǐtòngyào",
+    "example": "止痛药通常在半小时内见效。",
+    "exampleDE": "Das Schmerzmittel wirkt meistens innerhalb einer halben Stunde."
+  },
+  {
+    "front": "der Hustensaft",
+    "back": "止咳糖浆",
+    "roman": "zhǐké tángjiāng",
+    "example": "晚上睡觉前喝一勺止咳糖浆。",
+    "exampleDE": "Nehmen Sie abends vor dem Schlafen einen Löffel Hustensaft."
+  },
+  {
+    "front": "das Heftpflaster",
+    "back": "创口贴",
+    "roman": "chuàngkǒutiē",
+    "example": "请在小割伤处贴一张创口贴。",
+    "exampleDE": "Kleb bitte ein Heftpflaster auf die kleine Schnittwunde."
+  },
+  {
+    "front": "der Verband",
+    "back": "绷带",
+    "roman": "bēngdài",
+    "example": "护士在脚踝上缠了一层干净的绷带。",
+    "exampleDE": "Die Krankenschwester legt einen sauberen Verband um den Knöchel."
+  },
+  {
+    "front": "die Wundsalbe",
+    "back": "伤口软膏",
+    "roman": "shāngkǒu ruǎngāo",
+    "example": "这种药膏可以加速皮肤伤口的愈合。",
+    "exampleDE": "Die Heilsalbe beschleunigt das Schließen der Hautwunde."
+  },
+  {
+    "front": "die Desinfektion",
+    "back": "消毒",
+    "roman": "xiāodú",
+    "example": "包扎前彻底消毒很重要。",
+    "exampleDE": "Vor dem Verbinden ist eine gründliche Desinfektion wichtig."
+  },
+  {
+    "front": "der Verbandskasten",
+    "back": "急救箱",
+    "roman": "jíjiùxiāng",
+    "example": "车里必须始终备有完整的急救箱。",
+    "exampleDE": "Im Auto muss stets ein vollständiger Verbandskasten liegen."
+  },
+  {
+    "front": "der Notruf",
+    "back": "急救电话",
+    "roman": "jíjiù diànhuà",
+    "example": "在紧急情况下，全欧洲均可拨打112急救电话。",
+    "exampleDE": "In dringenden Notfällen wählt man europaweit den Notruf 112."
+  },
+  {
+    "front": "die Erste Hilfe",
+    "back": "急救",
+    "roman": "jíjiù",
+    "example": "每个驾照持有者都应该能够提供急救。",
+    "exampleDE": "Jeder Führerscheininhaber sollte Erste Hilfe leisten können."
+  },
+  {
+    "front": "bluten",
+    "back": "流血",
+    "roman": "liúxuè",
+    "example": "膝盖上的擦伤幸好已经止住流血了。",
+    "exampleDE": "Die Schürfwunde am Knie hat zum Glück aufgehört zu bluten."
+  },
+  {
+    "front": "die Zahnarztpraxis",
+    "back": "牙医诊所",
+    "roman": "yáyī zhěnsuǒ",
+    "example": "我每年去牙医诊所检查两次。",
+    "exampleDE": "Zweimal im Jahr gehe ich zur Kontrolle in die Zahnarztpraxis."
+  },
+  {
+    "front": "die Zahnseide",
+    "back": "牙线",
+    "roman": "yáxiàn",
+    "example": "牙线清洁牙齿之间的狭窄缝隙。",
+    "exampleDE": "Zahnseide reinigt die engen Zwischenräume zwischen den Zähnen."
+  },
+  {
+    "front": "das Zahnfleisch",
+    "back": "牙龈",
+    "roman": "yáyín",
+    "example": "定期护理能长久强化牙龈。",
+    "exampleDE": "Regelmäßige Pflege stärkt das Zahnfleisch dauerhaft."
+  },
+  {
+    "front": "die Zahnfüllung",
+    "back": "补牙充填",
+    "roman": "bǔyá chōngtián",
+    "example": "牙医补了一小块白色的充填材料。",
+    "exampleDE": "Der Zahnarzt setzte eine kleine weiße Zahnfüllung ein."
+  },
+  {
+    "front": "der Backenzahn",
+    "back": "臼齿",
+    "roman": "jiùchǐ",
+    "example": "上颌的一颗臼齿对冷刺激很敏感。",
+    "exampleDE": "Ein Backenzahn im Oberkiefer reagiert empfindlich auf Kälte."
+  },
+  {
+    "front": "die Mundspülung",
+    "back": "漱口水",
+    "roman": "shùkǒushuǐ",
+    "example": "抗菌漱口水带来清新口气。",
+    "exampleDE": "Eine antibakterielle Mundspülung sorgt für frischen Atem."
+  },
+  {
+    "front": "die Zahnschmerzen",
+    "back": "牙痛",
+    "roman": "yátòng",
+    "example": "突发牙痛应尽快去看牙医。",
+    "exampleDE": "Gegen plötzliche Zahnschmerzen sollte man rasch zum Zahnarzt."
+  },
+  {
+    "front": "das Handgelenk",
+    "back": "手腕",
+    "roman": "shǒuwàn",
+    "example": "她左手腕上戴着一块优雅的手表。",
+    "exampleDE": "Sie trägt eine elegante Armbanduhr am linken Handgelenk."
+  },
+  {
+    "front": "der Ellbogen",
+    "back": "肘部",
+    "roman": "zhǒubù",
+    "example": "他的肘部在桌角上撞得很痛。",
+    "exampleDE": "Er hat sich den Ellbogen schmerzhaft an der Tischkante gestoßen."
+  },
+  {
+    "front": "das Kniegelenk",
+    "back": "膝关节",
+    "roman": "xīguānjié",
+    "example": "慢跑时膝关节承受很大压力。",
+    "exampleDE": "Beim Joggen wird das Kniegelenk stark beansprucht."
+  },
+  {
+    "front": "der Knöchel",
+    "back": "脚踝",
+    "roman": "jiǎohuái",
+    "example": "在崎岖的小径上徒步时，他扭伤了脚踝。",
+    "exampleDE": "Beim Wandern auf unebenem Pfad ist er mit dem Knöchel umgeknickt."
+  }
+]

@@ -1,0 +1,1346 @@
+[
+  {
+    "front": "der Wanderweg",
+    "back": "trames ambulatorius",
+    "ipa": "ˈtraː.mɛs am.bʊ.laˈtoː.rɪ.ʊs",
+    "example": "Trames ambulatorius signis notatus per silvas opacas in montem ducit.",
+    "exampleDE": "Der markierte Wanderweg führt durch schattige Wälder auf den Berg."
+  },
+  {
+    "front": "das Bürgeramt",
+    "back": "officium civium",
+    "ipa": "ɔfˈfɪ.kɪ.ʊm ˈkiː.wɪ.ʊm",
+    "example": "Novum indicium personae quisque ipse in officio civium petit.",
+    "exampleDE": "Einen neuen Ausweis beantragt man persönlich im Bürgeramt."
+  },
+  {
+    "front": "der Personalausweis",
+    "back": "indicium personae",
+    "ipa": "ɪnˈdɪ.kɪ.ʊm pɛrˈsoː.nae̯",
+    "example": "Indicium personae decem annos in patria valet.",
+    "exampleDE": "Der Personalausweis ist zehn Jahre lang im Inland gültig."
+  },
+  {
+    "front": "die Geburtsurkunde",
+    "back": "testimonium nativitatis",
+    "ipa": "tɛs.tɪˈmoː.nɪ.ʊm naː.tiː.wɪˈtaː.tɪs",
+    "example": "Ad multas petitiones publicas testimonio nativitatis publico opus est.",
+    "exampleDE": "Für viele behördliche Anträge benötigt man eine offizielle Geburtsurkunde."
+  },
+  {
+    "front": "die Meldebestätigung",
+    "back": "testimonium domicilii",
+    "ipa": "tɛs.tɪˈmoː.nɪ.ʊm dɔ.mɪˈkɪ.lɪ.iː",
+    "example": "Post migrationem testimonium domicilii in officio accipimus.",
+    "exampleDE": "Nach dem Umzug erhält man beim Einwohnermeldeamt die Meldebestätigung."
+  },
+  {
+    "front": "das Formular",
+    "back": "formula",
+    "ipa": "ˈfɔr.mʊ.la",
+    "example": "Imple, quaeso, formulam publicam litteris maiusculis.",
+    "exampleDE": "Füllen Sie das behördliche Formular bitte in Druckbuchstaben aus."
+  },
+  {
+    "front": "die Unterschrift",
+    "back": "subscriptio",
+    "ipa": "sʊbˈskrɪp.tɪ.oː",
+    "example": "Pone subscriptionem tuam manu scriptam infra in linea.",
+    "exampleDE": "Setzen Sie Ihre eigenhändige Unterschrift unten auf die Linie."
+  },
+  {
+    "front": "der Stempel",
+    "back": "sigillum",
+    "ipa": "sɪˈɡɪl.lʊm",
+    "example": "Sigillum publicum veritatem scripti confirmat.",
+    "exampleDE": "Ein offizieller Stempel bestätigt die Echtheit des Schreibens."
+  },
+  {
+    "front": "die Beglaubigung",
+    "back": "attestatio",
+    "ipa": "at.tɛsˈtaː.tɪ.oː",
+    "example": "Testimonia universitati destinata saepe attestationem publicam poscunt.",
+    "exampleDE": "Zeugnisse für die Universität erfordern oft eine amtliche Beglaubigung."
+  },
+  {
+    "front": "die Vorschrift",
+    "back": "praeceptum",
+    "ipa": "prae̯ˈkɛp.tʊm",
+    "example": "Omnes socii praecepta securitatis accurate servare debent.",
+    "exampleDE": "Alle Mitarbeiter müssen die geltenden Sicherheitsvorschriften strikt befolgen."
+  },
+  {
+    "front": "die Erlaubnis",
+    "back": "venia",
+    "ipa": "ˈwɛ.nɪ.a",
+    "example": "Sine venia scripta magistratus hic aedificare non licet.",
+    "exampleDE": "Ohne schriftliche Erlaubnis der Behörde darf hier nicht gebaut werden."
+  },
+  {
+    "front": "das Verbot",
+    "back": "interdictio",
+    "ipa": "ɪn.tɛrˈdɪk.tɪ.oː",
+    "example": "In toto aedificio fumificatio sine exceptione interdicta est.",
+    "exampleDE": "Im gesamten Gebäude gilt ein ausnahmsloses Rauchverbot."
+  },
+  {
+    "front": "die Strafe",
+    "back": "poena",
+    "ipa": "ˈpoe̯.na",
+    "example": "Qui perperam raedam collocat, multam pecuniariam timeret.",
+    "exampleDE": "Falschparker müssen mit einer empfindlichen Geldstrafe rechnen."
+  },
+  {
+    "front": "das Fundbüro",
+    "back": "officium repertorum",
+    "ipa": "ɔfˈfɪ.kɪ.ʊm rɛ.pɛrˈtoː.rʊm",
+    "example": "Claves amissae ab honestis repertoribus in officio repertorum deponuntur.",
+    "exampleDE": "Verlorene Schlüssel werden oft von ehrlichen Findern im Fundbüro abgegeben."
+  },
+  {
+    "front": "die Polizeiwache",
+    "back": "statio vigilum",
+    "ipa": "ˈsta.tɪ.oː ˈwɪ.ɡɪ.lʊm",
+    "example": "In statione vigilum loci delationem de incognito fecit.",
+    "exampleDE": "Er erstattete auf der örtlichen Polizeiwache Anzeige gegen Unbekannt."
+  },
+  {
+    "front": "der Zeuge",
+    "back": "testis",
+    "ipa": "ˈtɛs.tɪs",
+    "example": "Vigiles complures testes de ratione casus interrogaverunt.",
+    "exampleDE": "Die Polizei befragte mehrere Zeugen zum Hergang des Unfalls."
+  },
+  {
+    "front": "die Wahl",
+    "back": "suffragium",
+    "ipa": "sʊfˈfraː.ɡɪ.ʊm",
+    "example": "Quarto quoque anno democratica comitia ad senatum habentur.",
+    "exampleDE": "Alle vier Jahre findet die demokratische Wahl zum Parlament statt."
+  },
+  {
+    "front": "der Stimmzettel",
+    "back": "tabella suffragii",
+    "ipa": "taˈbɛl.la sʊfˈfraː.ɡɪ.iː",
+    "example": "Pone, quaeso, notam tuam clam in tabella suffragii.",
+    "exampleDE": "Setzen Sie Ihr Kreuz bitte verdeckt auf dem Stimmzettel."
+  },
+  {
+    "front": "die Wahlurne",
+    "back": "cista suffragiorum",
+    "ipa": "ˈkɪs.ta sʊf.fraː.ɡɪˈoː.rʊm",
+    "example": "Tabella suffragii complicata in cistam obsignatam conicitur.",
+    "exampleDE": "Der gefaltete Stimmzettel wird in die versiegelte Wahlurne geworfen."
+  },
+  {
+    "front": "das Grundgesetz",
+    "back": "lex primaria",
+    "ipa": "lɛks priːˈmaː.rɪ.a",
+    "example": "Lex primaria inviolabilia iura humana omnium civium spondet.",
+    "exampleDE": "Das Grundgesetz garantiert die unverletzlichen Menschenrechte aller Bürger."
+  },
+  {
+    "front": "die Meinungsfreiheit",
+    "back": "libertas sententiae",
+    "ipa": "lɪˈbɛr.taːs sɛnˈtɛn.tɪ.ae̯",
+    "example": "Libertas sententiae dicendae est praecipua columna democratiae.",
+    "exampleDE": "Die freie Meinungsäußerung ist ein tragender Pfeiler der Demokratie."
+  },
+  {
+    "front": "die Bürgerbeteiligung",
+    "back": "participatio civium",
+    "ipa": "par.tɪ.kɪˈpaː.tɪ.oː ˈkiː.wɪ.ʊm",
+    "example": "Participatione civium incolae civitatem suam ipsi conformare possunt.",
+    "exampleDE": "Durch Bürgerbeteiligung können Einwohner ihre Stadt aktiv mitgestalten."
+  },
+  {
+    "front": "die Gleichberechtigung",
+    "back": "aequitas iuris",
+    "ipa": "ˈae̯.kʷɪ.taːs ˈjuː.rɪs",
+    "example": "Aequitas iuris amborum sexuum legibus sancita est.",
+    "exampleDE": "Gleichberechtigung aller Geschlechter ist gesetzlich fest verankert."
+  },
+  {
+    "front": "das Ehrenamt",
+    "back": "munus honorarium",
+    "ipa": "ˈmʊ.nʊs hɔ.nɔˈraː.rɪ.ʊm",
+    "example": "Multi homines tempore otioso munus honorarium libenter obeunt.",
+    "exampleDE": "Viele Menschen engagieren sich in ihrer Freizeit in einem Ehrenamt."
+  },
+  {
+    "front": "das Silvester",
+    "back": "dies sancti Silvestri",
+    "ipa": "ˈdɪ.eːs ˈsaŋk.tiː sɪlˈwɛs.triː",
+    "example": "Die sancti Silvestri media nocte in novum annum bibimus.",
+    "exampleDE": "An Silvester stoßen wir um Mitternacht auf das neue Jahr an."
+  },
+  {
+    "front": "das Feuerwerk",
+    "back": "ignes artificiosi",
+    "ipa": "ˈɪŋ.neːs ar.tɪ.fɪ.kɪˈoː.siː",
+    "example": "Ignes artificiosi variis coloribus caelum nocturnum collustrant.",
+    "exampleDE": "Ein farbenfrohes Feuerwerk erhellt den nächtlichen Himmel."
+  },
+  {
+    "front": "das Neujahr",
+    "back": "annus novus",
+    "ipa": "ˈan.nʊs ˈnɔ.wʊs",
+    "example": "Kalendis Ianuariis vicini et amici faustum annum sibi precantur.",
+    "exampleDE": "Am Neujahrstag wünschen sich Nachbarn und Freunde viel Glück."
+  },
+  {
+    "front": "die Weihnachtstage",
+    "back": "dies festi Nativitatis",
+    "ipa": "ˈdɪ.eːs ˈfɛs.tiː naː.tiː.wɪˈtaː.tɪs",
+    "example": "Dies festos Nativitatis familia ex more una domi degit.",
+    "exampleDE": "Die Weihnachtstage verbringt die Familie traditionell gemeinsam zu Hause."
+  },
+  {
+    "front": "der Heiligabend",
+    "back": "vigilia Nativitatis",
+    "ipa": "wɪˈɡɪ.lɪ.a naː.tiː.wɪˈtaː.tɪs",
+    "example": "Vigilia Nativitatis sub ornata arbore munera aperiuntur.",
+    "exampleDE": "An Heiligabend werden unter dem geschmückten Baum Geschenke ausgepackt."
+  },
+  {
+    "front": "das Geschenkpapier",
+    "back": "charta involucri",
+    "ipa": "ˈkʰar.ta ɪn.wɔˈluː.kriː",
+    "example": "Charta involucri colorata et lemnisci fasciculos ornant.",
+    "exampleDE": "Buntes Geschenkpapier und Schleifen zieren die Päckchen."
+  },
+  {
+    "front": "die Glückwunschkarte",
+    "back": "chartula gratulatoria",
+    "ipa": "ˈkʰar.tʊ.la ɡraː.tʊ.laˈtoː.rɪ.a",
+    "example": "In chartulam gratulatoriam paucos versus familiares scripsit.",
+    "exampleDE": "Auf die Glückwunschkarte schrieb sie ein paar persönliche Zeilen."
+  },
+  {
+    "front": "die Geburtstagstorte",
+    "back": "placenta natalis",
+    "ipa": "plaˈkɛn.ta naˈtaː.lɪs",
+    "example": "In placenta natali candelae variae ardent ut exsufflentur.",
+    "exampleDE": "Auf der Geburtstagstorte brennen bunte Kerzen zum Auspusten."
+  },
+  {
+    "front": "die Überraschungsparty",
+    "back": "convivium inopinatum",
+    "ipa": "kɔnˈwɪ.wɪ.ʊm ɪn.ɔ.pɪˈnaː.tʊm",
+    "example": "Amici clam magnum convivium inopinatum ei paraverunt.",
+    "exampleDE": "Freunde organisierten heimlich eine tolle Überraschungsparty für ihn."
+  },
+  {
+    "front": "der Luftballon",
+    "back": "follis inflatilis",
+    "ipa": "ˈfɔl.lɪs ɪn.flaˈtiː.lɪs",
+    "example": "Folles inflatiles colorati aulam festivam pueris ornant.",
+    "exampleDE": "Bunte Luftballons schmücken den Festsaal für die Kinderparty."
+  },
+  {
+    "front": "die Einladungskarte",
+    "back": "tessera invitationis",
+    "ipa": "ˈtɛs.sɛ.ra ɪn.wɪ.taː.tɪˈoː.nɪs",
+    "example": "Duabus hebdomadibus ante festum tesseras invitationis emisit.",
+    "exampleDE": "Zwei Wochen vor dem Fest verschickte er die Einladungskarten."
+  },
+  {
+    "front": "anstoßen",
+    "back": "poculis concrepare",
+    "ipa": "ˈpɔ.kʊ.liːs kɔŋ.krɛˈpaː.rɛ",
+    "example": "Gelida potione poculis concrepamus pro salute eius qui natalem agit.",
+    "exampleDE": "Wir stoßen mit einem kühlen Getränk auf das Wohl des Geburtstagskindes an."
+  },
+  {
+    "front": "der Ehrengast",
+    "back": "hospes honoratus",
+    "ipa": "ˈhɔs.pɛs hɔ.nɔˈraː.tʊs",
+    "example": "Magister civium ut hospes honoratus comiter acceptus est.",
+    "exampleDE": "Der Bürgermeister wurde als Ehrengast herzlich begrüßt."
+  },
+  {
+    "front": "die Festrede",
+    "back": "oratio sollemnis",
+    "ipa": "ɔˈraː.tɪ.oː sɔlˈlɛm.nɪs",
+    "example": "In oratione sollemni praeses sodalitatis res gestas laudavit.",
+    "exampleDE": "In seiner Festrede blickte der Vereinsvorsitzende auf Erfolge zurück."
+  },
+  {
+    "front": "gratulieren",
+    "back": "gratulari",
+    "ipa": "ɡraː.tʊˈlaː.riː",
+    "example": "Omnes collegae ex animo ei de die sollemni gratulantur.",
+    "exampleDE": "Alle Kollegen gratulieren ihm herzlich zum runden Jubiläum."
+  },
+  {
+    "front": "die Gegenwart",
+    "back": "praesens tempus",
+    "ipa": "ˈprae̯.seːns ˈtɛm.pʊs",
+    "example": "Ad officia praesentis temporis animum attende.",
+    "exampleDE": "Konzentriere dich auf die Aufgaben in der Gegenwart."
+  },
+  {
+    "front": "die Vergangenheit",
+    "back": "praeteritum tempus",
+    "ipa": "prae̯ˈtɛ.rɪ.tʊm ˈtɛm.pʊs",
+    "example": "Ex erroribus praeteriti temporis multa in futurum discere licet.",
+    "exampleDE": "Aus den Fehlern der Vergangenheit kann man viel für die Zukunft lernen."
+  },
+  {
+    "front": "die Zukunft",
+    "back": "futurum tempus",
+    "ipa": "fʊˈtuː.rʊm ˈtɛm.pʊs",
+    "example": "Fiducia et studio iuvenis familia in futurum tempus spectat.",
+    "exampleDE": "Mit Zuversicht und Fleiß blickt die junge Familie in die Zukunft."
+  },
+  {
+    "front": "die Zeitspanne",
+    "back": "spatium temporis",
+    "ipa": "ˈspa.tɪ.ʊm ˈtɛm.pɔ.rɪs",
+    "example": "Brevi spatio temporis paucorum dierum omnia commutata sunt.",
+    "exampleDE": "In der kurzen Zeitspanne von wenigen Tagen änderte sich alles."
+  },
+  {
+    "front": "der Zeitraum",
+    "back": "intervallum temporis",
+    "ipa": "ɪn.tɛrˈwal.lʊm ˈtɛm.pɔ.rɪs",
+    "example": "Per longum intervallum temporis manifesta emendatio apparuit.",
+    "exampleDE": "Über einen längeren Zeitraum hinweg zeigte sich eine deutliche Besserung."
+  },
+  {
+    "front": "der Augenblick",
+    "back": "momentum",
+    "ipa": "mɔˈmɛn.tʊm",
+    "example": "Breve momentum omnes in conclavi spiritum continuere.",
+    "exampleDE": "Für einen kurzen Augenblick hielten alle im Raum den Atem an."
+  },
+  {
+    "front": "die Ewigkeit",
+    "back": "aeternitas",
+    "ipa": "ae̯ˈtɛr.nɪ.taːs",
+    "example": "Mora in crepidine traminis tardati ei aeternitas videbatur.",
+    "exampleDE": "Das Warten am verspäteten Bahnsteig kam ihm wie eine Ewigkeit vor."
+  },
+  {
+    "front": "gelegentlich",
+    "back": "interdum",
+    "ipa": "ɪnˈtɛr.dʊm",
+    "example": "Interdum post cenam frustulum socolatae fuscae sibi indulget.",
+    "exampleDE": "Gelegentlich gönnt er sich nach dem Essen ein Stück dunkle Schokolade."
+  },
+  {
+    "front": "regelmäßig",
+    "back": "assidue",
+    "ipa": "asˈsɪ.dʊ.eː",
+    "example": "Qui assidue vocabula repetit, celerem profectum assequitur.",
+    "exampleDE": "Wer regelmäßig Vokabeln wiederholt, erzielt schnelle Lernerfolge."
+  },
+  {
+    "front": "stetig",
+    "back": "constanter",
+    "ipa": "kɔnˈstan.tɛr",
+    "example": "Eius intellegentia linguae superioribus mensibus constanter emendata est.",
+    "exampleDE": "Ihr Sprachverständnis verbesserte sich in den letzten Monaten stetig."
+  },
+  {
+    "front": "ununterbrochen",
+    "back": "continenter",
+    "ipa": "kɔn.tɪˈnɛn.tɛr",
+    "example": "A primo mane foris continenter pluit.",
+    "exampleDE": "Seit dem frühen Morgen regnet es draußen ununterbrochen."
+  },
+  {
+    "front": "inzwischen",
+    "back": "interea",
+    "ipa": "ɪnˈtɛ.rɛ.a",
+    "example": "Interea expedite et sine dubitatione loquitur.",
+    "exampleDE": "Inzwischen spricht sie fließend und ohne langes Nachdenken."
+  },
+  {
+    "front": "demnächst",
+    "back": "mox",
+    "ipa": "mɔks",
+    "example": "Nova editio programmatis mox in promptu erit.",
+    "exampleDE": "Die neue Version der Lern-App erscheint demnächst im Store."
+  },
+  {
+    "front": "seinerzeit",
+    "back": "illo tempore",
+    "ipa": "ˈɪl.loː ˈtɛm.pɔ.rɛ",
+    "example": "Illo tempore fabri curiam sine machinis modernis aedificaverunt.",
+    "exampleDE": "Seinerzeit bauten die Handwerker das Rathaus ohne moderne Maschinen."
+  },
+  {
+    "front": "bisher",
+    "back": "adhuc",
+    "ipa": "adˈhuːk",
+    "example": "Adhuc omnia examina omnino sine mendo evenerunt.",
+    "exampleDE": "Bisher sind alle Tests und Prüfungen absolut fehlerfrei verlaufen."
+  },
+  {
+    "front": "die Umgebung",
+    "back": "vicinia",
+    "ipa": "wɪˈkiː.nɪ.a",
+    "example": "In propinqua vicinia deversorii amoeni tramites patent.",
+    "exampleDE": "In der näheren Umgebung des Hotels gibt es herrliche Wanderwege."
+  },
+  {
+    "front": "die Entfernung",
+    "back": "distantia",
+    "ipa": "dɪsˈtan.tɪ.a",
+    "example": "Distantia inter duas urbes circiter quinquaginta milia passuum efficit.",
+    "exampleDE": "Die Entfernung zwischen den beiden Städten beträgt rund fünfzig Kilometer."
+  },
+  {
+    "front": "die Zwischenzeit",
+    "back": "intervallum",
+    "ipa": "ɪn.tɛrˈwal.lʊm",
+    "example": "Interim mensam ad cenam sternere possumus.",
+    "exampleDE": "In der Zwischenzeit können wir schon den Tisch für das Essen decken."
+  },
+  {
+    "front": "gegenüber",
+    "back": "contra",
+    "ipa": "ˈkɔn.traː",
+    "example": "Pharmacopolium directe contra ostium primarium stationis situm est.",
+    "exampleDE": "Die Apotheke liegt direkt gegenüber dem Haupteingang des Bahnhofs."
+  },
+  {
+    "front": "nebenan",
+    "back": "prope",
+    "ipa": "ˈprɔ.pɛ",
+    "example": "In proximo habitaculo familia benignissima habitat.",
+    "exampleDE": "In der Wohnung nebenan wohnt eine sehr freundliche Familie."
+  },
+  {
+    "front": "mittendrin",
+    "back": "in medio",
+    "ipa": "ɪn ˈmɛ.dɪ.oː",
+    "example": "In medio veteris urbis veterrimus fons loci stat.",
+    "exampleDE": "Mitten in der Altstadt steht der älteste Brunnen des Ortes."
+  },
+  {
+    "front": "außerhalb",
+    "back": "extra",
+    "ipa": "ˈɛks.traː",
+    "example": "Locus mercaturae paulum extra urbem iacet.",
+    "exampleDE": "Das Gewerbegebiet liegt etwas außerhalb der geschlossenen Ortschaft."
+  },
+  {
+    "front": "einerseits",
+    "back": "ex altera parte",
+    "ipa": "ɛks ˈal.tɛ.raː ˈpar.tɛ",
+    "example": "Ex altera parte peregrinari vult, ex altera in currum parcit.",
+    "exampleDE": "Einerseits möchte er verreisen, andererseits spart er auf ein Auto."
+  },
+  {
+    "front": "andererseits",
+    "back": "contra vero",
+    "ipa": "ˈkɔn.traː ˈweː.roː",
+    "example": "Contra vero novus locus multo meliores opportunitates praebet.",
+    "exampleDE": "Andererseits bietet die neue Stelle wesentlich bessere Aufstiegschancen."
+  },
+  {
+    "front": "infolgedessen",
+    "back": "qua de causa",
+    "ipa": "kʷaː deː ˈkaʊ̯.saː",
+    "example": "Viae glaciatae erant, qua de causa congestio incidit.",
+    "exampleDE": "Die Straßen waren vereist, infolgedessen kam es zu Staus."
+  },
+  {
+    "front": "dennoch",
+    "back": "tamen",
+    "ipa": "ˈta.mɛn",
+    "example": "Vehementer pluebat, tamen longam spatiationem in silva fecimus.",
+    "exampleDE": "Es regnete in Strömen, dennoch machten wir einen langen Waldspaziergang."
+  },
+  {
+    "front": "nichtsdestotrotz",
+    "back": "nihilominus",
+    "ipa": "nɪ.hɪˈlɔ.mɪ.nʊs",
+    "example": "Valde fessus erat, nihilominus caput diligenter absolvit.",
+    "exampleDE": "Er war sehr müde, nichtsdestotrotz beendete er das Kapitel sorgfältig."
+  },
+  {
+    "front": "außerdem",
+    "back": "praeterea",
+    "ipa": "prae̯ˈtɛ.rɛ.aː",
+    "example": "Cibus egregie sapiebat et praeterea minister percomis erat.",
+    "exampleDE": "Das Essen schmeckte hervorragend und die Bedienung war außerdem sehr nett."
+  },
+  {
+    "front": "aus diesem Grund",
+    "back": "hac de causa",
+    "ipa": "haːk deː ˈkaʊ̯.saː",
+    "example": "Sedulo studuerat et hac de causa examen nullo negotio superavit.",
+    "exampleDE": "Sie hatte fleißig gelernt und bestand aus diesem Grund die Prüfung spielend."
+  },
+  {
+    "front": "nämlich",
+    "back": "enim",
+    "ipa": "ˈɛ.nɪm",
+    "example": "Hodie domi maneo, gravi enim capitis dolore teneor.",
+    "exampleDE": "Ich bleibe heute daheim, ich habe nämlich starke Kopfschmerzen."
+  },
+  {
+    "front": "stattdessen",
+    "back": "potius",
+    "ipa": "ˈpɔ.tɪ.ʊs",
+    "example": "Non raeda vecti sumus, sed potius pedibus ivimus.",
+    "exampleDE": "Wir fuhren nicht mit dem Auto, sondern gingen stattdessen zu Fuß."
+  },
+  {
+    "front": "vorausgesetzt",
+    "back": "dummodo",
+    "ipa": "dʊmˈmɔ.doː",
+    "example": "Cras iter faciemus, dummodo tempestas sicca maneat.",
+    "exampleDE": "Wir wandern morgen, vorausgesetzt das Wetter bleibt trocken."
+  },
+  {
+    "front": "währenddessen",
+    "back": "interea",
+    "ipa": "ɪnˈtɛ.rɛ.a",
+    "example": "Ille holera frigebat, interea illa comiter mensam sternebat.",
+    "exampleDE": "Er briet das Gemüse, währenddessen deckte sie liebevoll den Tisch."
+  },
+  {
+    "front": "sowohl ... als auch",
+    "back": "cum ... tum",
+    "ipa": "kʊm tʊm",
+    "example": "Cum Hispanice expedite tum Anglice perite loquitur.",
+    "exampleDE": "Sie spricht sowohl fließend Spanisch als auch verhandlungssicheres Englisch."
+  },
+  {
+    "front": "weder ... noch",
+    "back": "neque ... neque",
+    "ipa": "ˈnɛ.kʷɛ ˈnɛ.kʷɛ",
+    "example": "Mane neque potionem Arabicam neque theam nigram bibit.",
+    "exampleDE": "Er trinkt weder Kaffee noch schwarzen Tee am Morgen."
+  },
+  {
+    "front": "je ... desto",
+    "back": "quanto ... tanto",
+    "ipa": "ˈkʷan.toː ˈtan.toː",
+    "example": "Quanto magis exerces, tanto facilius libere loqueris.",
+    "exampleDE": "Je mehr man übt, desto leichter fällt das freie Sprechen."
+  },
+  {
+    "front": "obgleich",
+    "back": "quamquam",
+    "ipa": "ˈkʷaŋ.kʷam",
+    "example": "Quamquam procella saeviebat, piscatores naviculis profecti sunt.",
+    "exampleDE": "Obgleich es stürmisch war, liefen die Fischer mit ihren Booten aus."
+  },
+  {
+    "front": "anpacken",
+    "back": "manum admovere",
+    "ipa": "ˈma.nʊm ad.mɔˈweː.rɛ",
+    "example": "Si omnes manum admovent, difficilis labor momento conficitur.",
+    "exampleDE": "Wenn alle mit anpacken, ist die schwere Arbeit im Nu erledigt."
+  },
+  {
+    "front": "erledigen",
+    "back": "conficere",
+    "ipa": "kɔnˈfɪ.kɛ.rɛ",
+    "example": "Hoc mane adhuc magnas emptiones conficere debeo.",
+    "exampleDE": "Ich muss heute Vormittag noch wichtige Einkäufe erledigen."
+  },
+  {
+    "front": "vorbereiten",
+    "back": "praeparare",
+    "ipa": "prae̯.paˈraː.rɛ",
+    "example": "Demonstrationem in crastinum conventum diligenter praeparat.",
+    "exampleDE": "Sie bereitet die Präsentation für das morgige Meeting gründlich vor."
+  },
+  {
+    "front": "aufräumen",
+    "back": "componere",
+    "ipa": "kɔmˈpoː.nɛ.rɛ",
+    "example": "Diebus Saturni pueri una cubicula sua componunt.",
+    "exampleDE": "Samstags räumen die Kinder gemeinsam ihre Zimmer auf."
+  },
+  {
+    "front": "wegwerfen",
+    "back": "abicere",
+    "ipa": "aˈbɪ.kɛ.rɛ",
+    "example": "Veteres accumulatores in rudera domestica abicere non licet.",
+    "exampleDE": "Alte Batterien darf man nicht einfach in den Hausmüll wegwerfen."
+  },
+  {
+    "front": "behalten",
+    "back": "retinere",
+    "ipa": "rɛ.tɪˈneː.rɛ",
+    "example": "Hoc pulchrum monumentum totam vitam retinere velim.",
+    "exampleDE": "Dieses schöne Erinnerungsstück möchte ich mein Leben lang behalten."
+  },
+  {
+    "front": "verschenken",
+    "back": "donare",
+    "ipa": "dɔˈnaː.rɛ",
+    "example": "Libros iam perlectos libenter amicis donat.",
+    "exampleDE": "Bücher, die sie schon gelesen hat, verschenkt sie gerne an Freunde."
+  },
+  {
+    "front": "organisieren",
+    "back": "instruere",
+    "ipa": "ɪnˈstrʊ.ɛ.rɛ",
+    "example": "Sollemne festum aestivum consociationis nostrae instruit.",
+    "exampleDE": "Er organisiert das alljährliche Sommerfest unseres Sportvereins."
+  },
+  {
+    "front": "bemerken",
+    "back": "animadvertere",
+    "ipa": "a.nɪ.madˈwɛr.tɛ.rɛ",
+    "example": "Tarde animadvertit se clavem domus reliquisse.",
+    "exampleDE": "Erst spät bemerkte er, dass er seinen Hausschlüssel vergessen hatte."
+  },
+  {
+    "front": "begreifen",
+    "back": "comprehendere",
+    "ipa": "kɔm.prɛˈhɛn.dɛ.rɛ",
+    "example": "Post claram explicationem rationem comprehendere potuit.",
+    "exampleDE": "Nach der anschaulichen Erklärung konnte er den Zusammenhang begreifen."
+  },
+  {
+    "front": "nachdenken",
+    "back": "deliberare",
+    "ipa": "deː.lɪ.bɛˈraː.rɛ",
+    "example": "De hac gravi condicione primum tranquillo animo deliberare debeo.",
+    "exampleDE": "Über dieses wichtige Angebot muss ich erst in Ruhe nachdenken."
+  },
+  {
+    "front": "feststellen",
+    "back": "comperire",
+    "ipa": "kɔm.pɛˈriː.rɛ",
+    "example": "Censores compererunt omnia securitatis mandata servata esse.",
+    "exampleDE": "Die Prüfer stellten fest, dass alle Sicherheitskriterien erfüllt sind."
+  },
+  {
+    "front": "vermuten",
+    "back": "suspicari",
+    "ipa": "sʊs.pɪˈkaː.riː",
+    "example": "Periti suspicantur pretia mox rursus minutum iri.",
+    "exampleDE": "Die Experten vermuten, dass die Preise bald wieder sinken werden."
+  },
+  {
+    "front": "bezweifeln",
+    "back": "dubitare",
+    "ipa": "dʊ.bɪˈtaː.rɛ",
+    "example": "Valde dubito num hoc vetus consilium hodie adhuc valeat.",
+    "exampleDE": "Ich bezweifle stark, dass dieser alte Plan heute noch funktioniert."
+  },
+  {
+    "front": "beurteilen",
+    "back": "iudicare",
+    "ipa": "juː.dɪˈkaː.rɛ",
+    "example": "E longinquo ardua res vix iudicari potest.",
+    "exampleDE": "Aus der Ferne lässt sich die schwierige Lage nur schwer beurteilen."
+  },
+  {
+    "front": "begründen",
+    "back": "rationem reddere",
+    "ipa": "ra.tɪˈoː.nɛm ˈrɛd.dɛ.rɛ",
+    "example": "Potesne sententiam tuam exemplis manifestis rationem reddere?",
+    "exampleDE": "Können Sie Ihren Standpunkt bitte mit konkreten Beispielen begründen?"
+  },
+  {
+    "front": "bestätigen",
+    "back": "confirmare",
+    "ipa": "kɔn.fɪrˈmaː.rɛ",
+    "example": "Societas aeria reservationem nuntio automatico confirmavit.",
+    "exampleDE": "Die Fluggesellschaft bestätigte die Buchung per automatischer Nachricht."
+  },
+  {
+    "front": "vereinbaren",
+    "back": "constituere",
+    "ipa": "kɔn.stɪˈtʊ.ɛ.rɛ",
+    "example": "Novum tempus in sequentem hebdomadem constituimus.",
+    "exampleDE": "Wir vereinbarten einen neuen Termin für die kommende Woche."
+  },
+  {
+    "front": "anregen",
+    "back": "suadere",
+    "ipa": "sʊˈaː.deː.rɛ",
+    "example": "Suasit ut conventus dimidia hora differretur.",
+    "exampleDE": "Er regte an, die Besprechung um eine halbe Stunde zu verschieben."
+  },
+  {
+    "front": "zur Sprache bringen",
+    "back": "in medium proferre",
+    "ipa": "ɪn ˈmɛ.dɪ.ʊm prɔˈfɛr.rɛ",
+    "example": "Gravissimam rem in conventu fortiter in medium protulit.",
+    "exampleDE": "Sie brachte das wichtige Thema in der Sitzung mutig zur Sprache."
+  },
+  {
+    "front": "zusammenfassen",
+    "back": "in summam redigere",
+    "ipa": "ɪn ˈsʊm.mam rɛˈdɪ.ɡɛ.rɛ",
+    "example": "Orator praecipuas sententias breviter in summam redegit.",
+    "exampleDE": "Der Sprecher fasste die wichtigsten Kernaussagen kurz zusammen."
+  },
+  {
+    "front": "berichten",
+    "back": "narrare",
+    "ipa": "narˈraː.rɛ",
+    "example": "Relatrix de praesentibus rebus statim narrat.",
+    "exampleDE": "Die Korrespondentin berichtet live von den aktuellen Ereignissen."
+  },
+  {
+    "front": "mitteilen",
+    "back": "nuntiare",
+    "ipa": "nʊn.tɪˈaː.rɛ",
+    "example": "Nuntia, quaeso, tempestive nobis novam inscriptionem tuam.",
+    "exampleDE": "Bitte teilen Sie uns Ihre neue Anschrift zeitnah mit."
+  },
+  {
+    "front": "verbessern",
+    "back": "emendare",
+    "ipa": "ɛ.mɛnˈdaː.rɛ",
+    "example": "Cotidiana exercitatione spatium cursus sui emendare potuit.",
+    "exampleDE": "Mit täglichem Training konnte er seine persönliche Laufzeit verbessern."
+  },
+  {
+    "front": "verschlechtern",
+    "back": "peiorem facere",
+    "ipa": "pɛˈjoː.rɛm ˈfa.kɛ.rɛ",
+    "example": "Subita pluvia conspectus celeriter peior fit.",
+    "exampleDE": "Bei plötzlichem Regen verschlechtern sich die Sichtverhältnisse rasch."
+  },
+  {
+    "front": "zunehmen",
+    "back": "crescere",
+    "ipa": "ˈkreːs.kɛ.rɛ",
+    "example": "Superioribus annis studium salubris victus crevit.",
+    "exampleDE": "In den letzten Jahren hat das Interesse an gesunder Ernährung zugenommen."
+  },
+  {
+    "front": "abnehmen",
+    "back": "pondus deponere",
+    "ipa": "ˈpɔn.dʊs deːˈpoː.nɛ.rɛ",
+    "example": "Plus movendo et minus sacchari edendo pondus salubriter deposuit.",
+    "exampleDE": "Durch mehr Bewegung und weniger Zucker konnte er gesund abnehmen."
+  },
+  {
+    "front": "entwickeln",
+    "back": "excogitare",
+    "ipa": "ɛks.koː.ɡɪˈtaː.rɛ",
+    "example": "Ingeniarii novum ac modicum systema motus excogitant.",
+    "exampleDE": "Das Ingenieurteam entwickelt ein neuartiges, sparsames Antriebssystem."
+  },
+  {
+    "front": "entstehen",
+    "back": "oriri",
+    "ipa": "ɔˈriː.riː",
+    "example": "In libero prato nova domus puerilis oritur.",
+    "exampleDE": "Auf der freien Wiese entsteht ein moderner Kindergarten."
+  },
+  {
+    "front": "verschwinden",
+    "back": "evanescere",
+    "ipa": "ɛ.waˈneːs.kɛ.rɛ",
+    "example": "Densa nebula evanescit simul ac sol lucet.",
+    "exampleDE": "Die dichten Nebelschwaden verschwinden, sobald die Sonne scheint."
+  },
+  {
+    "front": "überqueren",
+    "back": "transire",
+    "ipa": "tranˈsiː.rɛ",
+    "example": "Pedestres viam tantum per tutos transitus transire debent.",
+    "exampleDE": "Fußgänger sollten die Straße nur an gesicherten Überwegen überqueren."
+  },
+  {
+    "front": "eintreffen",
+    "back": "advenire",
+    "ipa": "ad.wɛˈniː.rɛ",
+    "example": "Tramen tempestivum hora quarta decima adveniet.",
+    "exampleDE": "Der pünktliche Zug wird planmäßig um vierzehn Uhr eintreffen."
+  },
+  {
+    "front": "abbiegen",
+    "back": "deflectere",
+    "ipa": "deːˈflɛk.tɛ.rɛ",
+    "example": "In compito sinistrorsum in aream pedestrem deflectere debes.",
+    "exampleDE": "An der Ampelkreuzung müssen Sie links in die Fußgängerzone abbiegen."
+  },
+  {
+    "front": "beschleunigen",
+    "back": "accelerare",
+    "ipa": "ak.kɛ.lɛˈraː.rɛ",
+    "example": "In ascensu raeda celeriter cursum accelerat.",
+    "exampleDE": "Auf der Auffahrt beschleunigt der Wagen zügig auf Autobahntempo."
+  },
+  {
+    "front": "bremsen",
+    "back": "frenare",
+    "ipa": "freːˈnaː.rɛ",
+    "example": "Ante anfractum acutum rector tempestive frenat.",
+    "exampleDE": "Vor der scharfen Kurve bremst der Fahrer rechtzeitig ab."
+  },
+  {
+    "front": "anhalten",
+    "back": "sistere",
+    "ipa": "ˈsɪs.tɛ.rɛ",
+    "example": "Ad signum sistendi omne vehiculum tribus secundis sistere debet.",
+    "exampleDE": "Am Stoppschild muss jedes Fahrzeug für drei Sekunden anhalten."
+  },
+  {
+    "front": "vorbeifahren",
+    "back": "praetervehi",
+    "ipa": "prae̯.tɛrˈwɛ.hiː",
+    "example": "Tramen velox sine mora parvam stationem praetervehitur.",
+    "exampleDE": "Der Expresszug fährt ohne Halt am kleinen Provinzbahnhof vorbei."
+  },
+  {
+    "front": "umkehren",
+    "back": "reverti",
+    "ipa": "rɛˈwɛr.tiː",
+    "example": "Propter subitam nivium procellam montani reverti coacti sunt.",
+    "exampleDE": "Wegen des plötzlichen Schneesturms mussten die Bergsteiger umkehren."
+  },
+  {
+    "front": "beruhigen",
+    "back": "sedare",
+    "ipa": "sɛˈdaː.rɛ",
+    "example": "Mater flentem puerum lene voce celeriter sedavit.",
+    "exampleDE": "Die Mutter konnte das weinende Kind mit sanfter Stimme rasch beruhigen."
+  },
+  {
+    "front": "beunruhigen",
+    "back": "sollicitare",
+    "ipa": "sɔl.lɪ.kɪˈtaː.rɛ",
+    "example": "Atrae nubes tempestatis in caelo viatores sollicitabant.",
+    "exampleDE": "Die dunklen Gewitterwolken am Himmel beunruhigten die Wanderer."
+  },
+  {
+    "front": "überraschen",
+    "back": "obprimere",
+    "ipa": "ɔbˈprɪ.mɛ.rɛ",
+    "example": "Amici placentam a se factam afferentes eum obpresserunt.",
+    "exampleDE": "Seine Freunde überraschten ihn mit einem selbstgebackenen Kuchen."
+  },
+  {
+    "front": "trösten",
+    "back": "consolari",
+    "ipa": "kɔn.sɔˈlaː.riː",
+    "example": "Amicam maestam comibus verbis consolari conata est.",
+    "exampleDE": "Sie versuchte ihre traurige Freundin mit lieben Worten zu trösten."
+  },
+  {
+    "front": "bewundern",
+    "back": "admirari",
+    "ipa": "ad.mɪˈraː.riː",
+    "example": "Peregrini ex toto orbe egregiam aedificiorum formam admirantur.",
+    "exampleDE": "Touristen aus aller Welt bewundern die meisterhafte Architektur."
+  },
+  {
+    "front": "respektieren",
+    "back": "vereri",
+    "ipa": "wɛˈreː.riː",
+    "example": "Varias aliorum sententias semper vereri debemus.",
+    "exampleDE": "Wir sollten die unterschiedlichen Meinungen anderer stets respektieren."
+  },
+  {
+    "front": "schätzen",
+    "back": "aestimare",
+    "ipa": "ae̯s.tɪˈmaː.rɛ",
+    "example": "Ingenium tuum sincerum ac directum magni aestimo.",
+    "exampleDE": "Ich schätze deine ehrliche und direkte Art sehr."
+  },
+  {
+    "front": "hervorragend",
+    "back": "praestans",
+    "ipa": "ˈprae̯s.tans",
+    "example": "Actrix praestantissimam operam praebuit.",
+    "exampleDE": "Die Schauspielerin lieferte eine rundum hervorragende Leistung ab."
+  },
+  {
+    "front": "bemerkenswert",
+    "back": "memorabilis",
+    "ipa": "mɛ.mɔˈraː.bɪ.lɪs",
+    "example": "Eius celeris ingenii acies vere memorabilis est.",
+    "exampleDE": "Ihre schnelle Auffassungsgabe ist wirklich bemerkenswert."
+  },
+  {
+    "front": "angemessen",
+    "back": "idoneus",
+    "ipa": "ɪˈdɔ.nɛ.ʊs",
+    "example": "Pretium qualitati oblatae omnino idoneum est.",
+    "exampleDE": "Der Preis für die gebotene Qualität ist absolut angemessen."
+  },
+  {
+    "front": "überflüssig",
+    "back": "supervacaneus",
+    "ipa": "sʊ.pɛr.wa.kaˈnɛ.ʊs",
+    "example": "Diuturna mora ad cancellos libris per rete factis supervacanea fit.",
+    "exampleDE": "Langes Warten am Schalter wird durch Online-Buchungen überflüssig."
+  },
+  {
+    "front": "wesentlich",
+    "back": "gravissimus",
+    "ipa": "ɡraˈwɪs.sɪ.mʊs",
+    "example": "Bona praeparatio maxime ad rem bene gerendam conducit.",
+    "exampleDE": "Gute Vorbereitung trägt wesentlich zum Erfolg eines Vorhabens bei."
+  },
+  {
+    "front": "ausreichend",
+    "back": "sufficiens",
+    "ipa": "sʊfˈfɪ.kɪ.eːns",
+    "example": "In armario frigidario satis cibi in finem hebdomadis manet.",
+    "exampleDE": "Im Kühlschrank sind noch ausreichend Vorräte für das Wochenende."
+  },
+  {
+    "front": "wertvoll",
+    "back": "pretiosus",
+    "ipa": "prɛ.tɪˈoː.sʊs",
+    "example": "Consilia eius utilia omnibus nobis pretiosissima fuerunt.",
+    "exampleDE": "Ihre praktischen Ratschläge waren für uns alle sehr wertvoll."
+  },
+  {
+    "front": "wirkungsvoll",
+    "back": "efficax",
+    "ipa": "ˈɛf.fɪ.kaks",
+    "example": "Assidua aeris mutatio efficax remedium contra mucorem est.",
+    "exampleDE": "Regelmäßiges Lüften ist eine wirkungsvolle Maßnahme gegen Schimmel."
+  },
+  {
+    "front": "gepflegt",
+    "back": "cultus",
+    "ipa": "ˈkʊl.tʊs",
+    "example": "Antiquus hortulus ante aedes admodum cultus videtur.",
+    "exampleDE": "Der alte Vorgarten macht einen überaus gepflegten Eindruck."
+  },
+  {
+    "front": "unordentlich",
+    "back": "inconditus",
+    "ipa": "ɪnˈkɔn.dɪ.tʊs",
+    "example": "Post opus manuum conclave puerile satis inconditum erat.",
+    "exampleDE": "Nach dem Bastelnachmittag sah das Kinderzimmer recht unordentlich aus."
+  },
+  {
+    "front": "gemütlich",
+    "back": "amoenus",
+    "ipa": "aˈmoe̯.nʊs",
+    "example": "Amoenum vesperum ad calidum focum egimus.",
+    "exampleDE": "Wir verbrachten einen gemütlichen Abend am warmen Kaminfeuer."
+  },
+  {
+    "front": "anstrengend",
+    "back": "laboriosus",
+    "ipa": "la.bɔ.rɪˈoː.sʊs",
+    "example": "Longum iter per arduos tramites saxosos valde laboriosum fuit.",
+    "exampleDE": "Die lange Wanderung über steile Geröllpfade war sehr anstrengend."
+  },
+  {
+    "front": "erträglich",
+    "back": "tolerabilis",
+    "ipa": "tɔ.lɛˈraː.bɪ.lɪs",
+    "example": "Levi aura marina magni calores tolerabiles erant.",
+    "exampleDE": "Dank des leichten Seewinds waren die hohen Temperaturen erträglich."
+  },
+  {
+    "front": "tadellos",
+    "back": "integer",
+    "ipa": "ˈɪn.tɛ.ɡɛr",
+    "example": "Balneum modo refectum integre operatur.",
+    "exampleDE": "Das frisch renovierte Badezimmer funktioniert tadellos."
+  },
+  {
+    "front": "makellos",
+    "back": "immaculatus",
+    "ipa": "ɪm.ma.kʊˈlaː.tʊs",
+    "example": "Superficies modo polita immaculata in sole splendet.",
+    "exampleDE": "Die frisch polierte Oberfläche glänzt makellos im Sonnenlicht."
+  },
+  {
+    "front": "aufrichtig",
+    "back": "sincerus",
+    "ipa": "sɪnˈkeː.rʊs",
+    "example": "Sinceris verbis pro liberali auxilio gratias egit.",
+    "exampleDE": "Sie bedankte sich mit aufrichtigen Worten für die großzügige Hilfe."
+  },
+  {
+    "front": "rücksichtsvoll",
+    "back": "consideratus",
+    "ipa": "kɔn.sɪ.dɛˈraː.tʊs",
+    "example": "In pleno laophorio erga seniores consideratus se gerit.",
+    "exampleDE": "Im vollen Bus verhält er sich rücksichtsvoll gegenüber älteren Menschen."
+  },
+  {
+    "front": "aufmerksam",
+    "back": "attentus",
+    "ipa": "atˈtɛn.tʊs",
+    "example": "Minister attentus statim calicem vacuum esse vidit.",
+    "exampleDE": "Der aufmerksame Kellner bemerkte sofort, dass das Glas leer war."
+  },
+  {
+    "front": "willensstark",
+    "back": "animo constans",
+    "ipa": "ˈa.nɪ.moː ˈkɔn.stans",
+    "example": "Constanti animo athleta finem certaminis assecuta est.",
+    "exampleDE": "Mit willensstarkem Einsatz erreichte die Athletin ihr sportliches Ziel."
+  },
+  {
+    "front": "selbstständig",
+    "back": "sui iuris",
+    "ipa": "ˈsʊ.iː ˈjuː.rɪs",
+    "example": "Discipula difficile pensum omnino per se solvit.",
+    "exampleDE": "Die Schülerin löste die anspruchsvolle Aufgabe völlig selbstständig."
+  },
+  {
+    "front": "verantwortungsbewusst",
+    "back": "officii memor",
+    "ipa": "ɔfˈfɪ.kɪ.iː ˈmɛ.mɔr",
+    "example": "Rector officii memor velocitatis modum semper servat.",
+    "exampleDE": "Ein verantwortungsbewusster Fahrer achtet stets auf das Tempolimit."
+  },
+  {
+    "front": "friedlich",
+    "back": "pacificus",
+    "ipa": "paˈkɪ.fɪ.kʊs",
+    "example": "Conventus ab initio ad finem omnino pacificus fuit.",
+    "exampleDE": "Die Kundgebung verlief von Anfang bis Ende vollkommen friedlich."
+  },
+  {
+    "front": "hilfsbereit",
+    "back": "comis",
+    "ipa": "ˈkɔ.mɪs",
+    "example": "Novus vicinus comiter auxilium ad commigrandum obtulit.",
+    "exampleDE": "Der neue Nachbar bot hilfsbereit seine Unterstützung beim Umzug an."
+  },
+  {
+    "front": "keine Ursache",
+    "back": "nihil est",
+    "ipa": "ˈnɪ.hɪl ɛst",
+    "example": "«Multas gratias pro auxilio tuo!» – «Nihil est, libenter feci!»",
+    "exampleDE": "„Vielen Dank für deine Hilfe!“ – „Keine Ursache, gern geschehen!“"
+  },
+  {
+    "front": "mach dir keine Sorgen",
+    "back": "noli timere",
+    "ipa": "ˈnoː.lɪ tɪˈmeː.rɛ",
+    "example": "Noli timere, omnia in melius cedent.",
+    "exampleDE": "Mach dir keine Sorgen, alles wird sich zum Guten wenden."
+  },
+  {
+    "front": "bis zum nächsten Mal",
+    "back": "in proximum tempus",
+    "ipa": "ɪn ˈprɔ.k͡sɪ.mʊm ˈtɛm.pʊs",
+    "example": "Vesper iucundus fuit: vale et in proximum tempus!",
+    "exampleDE": "Es war ein schöner Abend, auf Wiedersehen und bis zum nächsten Mal!"
+  },
+  {
+    "front": "im Großen und Ganzen",
+    "back": "in universum",
+    "ipa": "ɪn ʊ.nɪˈwɛr.sʊm",
+    "example": "In universum eventu valde contenti sumus.",
+    "exampleDE": "Im Großen und Ganzen sind wir mit dem Ergebnis sehr zufrieden."
+  },
+  {
+    "front": "Schritt für Schritt",
+    "back": "gradatim",
+    "ipa": "ɡraˈdaː.tɪm",
+    "example": "Lingua externa patienter ac gradatim optime discitur.",
+    "exampleDE": "Man lernt eine fremde Sprache am besten geduldig Schritt für Schritt."
+  },
+  {
+    "front": "auf jeden Fall",
+    "back": "omnino",
+    "ipa": "ɔmˈniː.noː",
+    "example": "Veterem urbem spectatu dignam omnino visere debemus.",
+    "exampleDE": "Wir sollten die sehenswerte Altstadt auf jeden Fall besichtigen."
+  },
+  {
+    "front": "unter vier Augen",
+    "back": "secretis arbitris",
+    "ipa": "seːˈkreː.tiːs arˈbɪ.triːs",
+    "example": "Hanc arcanam rem secretis arbitris conferre velim.",
+    "exampleDE": "Ich möchte diese vertrauliche Angelegenheit gerne unter vier Augen besprechen."
+  },
+  {
+    "front": "das Visum",
+    "back": "visum",
+    "ipa": "ˈwiː.sʊm",
+    "example": "Ad diuturnam moram viso publico egebat.",
+    "exampleDE": "Für den längeren Aufenthalt benötigte sie ein offizielles Visum."
+  },
+  {
+    "front": "die Zollkontrolle",
+    "back": "inspectio telonialis",
+    "ipa": "ɪnˈspɛk.tɪ.oː tɛ.lɔ.nɪˈaː.lɪs",
+    "example": "Ad finem publicani vectigalia passim inspiciunt.",
+    "exampleDE": "An der Grenze kontrollieren die Beamten stichprobenartig den Zoll."
+  },
+  {
+    "front": "die Einreisebestimmung",
+    "back": "leges ingressus",
+    "ipa": "ˈlɛ.ɡeːs ɪnˈɡrɛs.suːs",
+    "example": "Ante profectionem leges ingressus hodiernas inspicere oportet.",
+    "exampleDE": "Vor der Abreise sollte man die aktuellen Einreisebestimmungen prüfen."
+  },
+  {
+    "front": "das Konsulat",
+    "back": "consulatus",
+    "ipa": "kɔn.sʊˈlaː.tʊs",
+    "example": "Si diploma abroad amittitur, consulatus succurrit.",
+    "exampleDE": "Bei Passverlust im Ausland hilft das zuständige Konsulat weiter."
+  },
+  {
+    "front": "der Grenzbeamte",
+    "back": "publicanus limitaneus",
+    "ipa": "pʊ.blɪˈkaː.nʊs lɪ.mɪˈtaː.nɛ.ʊs",
+    "example": "Publicanus limitaneus comis diploma commeatus sigillo signavit.",
+    "exampleDE": "Der freundliche Grenzbeamte stempelte den Reisepass sorgfältig ab."
+  },
+  {
+    "front": "die Grenzkontrolle",
+    "back": "inspectio limitis",
+    "ipa": "ɪnˈspɛk.tɪ.oː ˈlɪ.mɪ.tɪs",
+    "example": "Propter inspectionem limitis brevis series vehiculorum stetit.",
+    "exampleDE": "Wegen der Grenzkontrolle bildete sich eine kurze Fahrzeugschlange."
+  },
+  {
+    "front": "die Aufenthaltsgenehmigung",
+    "back": "facultas commorandi",
+    "ipa": "faˈkʊl.taːs kɔm.mɔˈran.diː",
+    "example": "Facultas commorandi duos amplius annos producta est.",
+    "exampleDE": "Die Aufenthaltsgenehmigung wurde um weitere zwei Jahre verlängert."
+  },
+  {
+    "front": "der Auslandskrankenschutz",
+    "back": "securitas valetudinis peregre",
+    "ipa": "seːˈkuː.rɪ.taːs wa.lɛˈtuː.dɪ.nɪs ˈpɛ.rɛ.ɡreː",
+    "example": "Securitas valetudinis peregre a sumptibus medendi repentinis tuetur.",
+    "exampleDE": "Ein Auslandskrankenschutz schützt vor unvorhersehbaren Behandlungskosten."
+  },
+  {
+    "front": "die Schlagzeile",
+    "back": "titulus principalis",
+    "ipa": "ˈtɪ.tʊ.lʊs priːn.kɪˈpaː.lɪs",
+    "example": "Magnus titulus principalis in prima pagina multam curam movit.",
+    "exampleDE": "Die große Schlagzeile auf der Titelseite erregte viel Aufsehen."
+  },
+  {
+    "front": "die Pressekonferenz",
+    "back": "congressus diurnariorum",
+    "ipa": "kɔŋˈɡrɛs.sʊs dɪ.ʊr.naː.rɪˈoː.rʊm",
+    "example": "In congressu diurnariorum scriptores multa dubia proposuerunt.",
+    "exampleDE": "Auf der Pressekonferenz stellten Journalisten viele kritische Fragen."
+  },
+  {
+    "front": "der Leitartikel",
+    "back": "commentarius primarius",
+    "ipa": "kɔm.mɛnˈtaː.rɪ.ʊs priːˈmaː.rɪ.ʊs",
+    "example": "Princeps scriptorum commentarium primarium gravem composuit.",
+    "exampleDE": "Der Chefredakteur verfasste einen nachdenklichen Leitartikel."
+  },
+  {
+    "front": "die Berichterstattung",
+    "back": "relatio actorum",
+    "ipa": "rɛˈlaː.tɪ.oː akˈtoː.rʊm",
+    "example": "Aequa relatio actorum veras causas aperuit.",
+    "exampleDE": "Die objektive Berichterstattung lieferte fundierte Hintergründe."
+  },
+  {
+    "front": "die Sondersendung",
+    "back": "transmissio extraordinaria",
+    "ipa": "tranˈsmɪs.sɪ.oː ɛks.traː.ɔr.dɪˈnaː.rɪ.a",
+    "example": "Propter novissimas res transmissio extraordinaria statim emissa est.",
+    "exampleDE": "Wegen der aktuellen Entwicklung unterbrach der Sender das Programm für eine Sondersendung."
+  },
+  {
+    "front": "das Rundfunkprogramm",
+    "back": "index radiophonicus",
+    "ipa": "ˈɪn.dɛks ra.dɪ.ɔˈpʰɔ.nɪ.kʊs",
+    "example": "In indice radiophonico postmeridie concentus classici emittuntur.",
+    "exampleDE": "Im Rundfunkprogramm laufen am Nachmittag klassische Konzerte."
+  },
+  {
+    "front": "die Nachrichtenagentur",
+    "back": "officium nuntiorum",
+    "ipa": "ɔfˈfɪ.kɪ.ʊm nʊn.tɪˈoː.rʊm",
+    "example": "Praeclarum officium nuntiorum celerem nuntium toto orbe sparsit.",
+    "exampleDE": "Die renommierte Nachrichtenagentur verbreitete die Eilmeldung weltweit."
+  },
+  {
+    "front": "die Nachbarschaftshilfe",
+    "back": "auxilium vicinale",
+    "ipa": "aʊ̯kˈsɪ.lɪ.ʊm wɪ.kɪˈnaː.lɛ",
+    "example": "Bonum auxilium vicinale vitam cotidianam senioribus levat.",
+    "exampleDE": "Funktionierende Nachbarschaftshilfe erleichtert älteren Bewohnern den Alltag."
+  },
+  {
+    "front": "das Wohnviertel",
+    "back": "vicus habitandi",
+    "ipa": "ˈwiː.kʊs ha.bɪˈtan.diː",
+    "example": "Tranquillus vicus habitandi noster prope hortos et scholas iacet.",
+    "exampleDE": "Unser ruhiges Wohnviertel liegt nahe an Parks und Schulen."
+  },
+  {
+    "front": "der Spielplatz",
+    "back": "area ludicra",
+    "ipa": "ˈa.rɛ.a ˈluː.dɪ.kra",
+    "example": "In area ludicra postmeridie multi pueri hilares ludunt.",
+    "exampleDE": "Auf dem Spielplatz toben am Nachmittag viele fröhliche Kinder."
+  },
+  {
+    "front": "das Treppenhaus",
+    "back": "scalae aedificii",
+    "ipa": "ˈskaː.lae̯ ae̯.dɪˈfɪ.kɪ.iː",
+    "example": "Scalae aedificii alternis vicibus a conductoribus purgantur.",
+    "exampleDE": "Das Treppenhaus wird wöchentlich abwechselnd von den Mietern geputzt."
+  },
+  {
+    "front": "die Hausordnung",
+    "back": "lex domestica",
+    "ipa": "lɛks dɔˈmɛs.tɪ.ka",
+    "example": "Lex domestica horas quietis meridie ac nocte temperat.",
+    "exampleDE": "Die Hausordnung regelt die Ruhezeiten in den Mittags- und Nachtstunden."
+  },
+  {
+    "front": "der Hausmeister",
+    "back": "curio aedium",
+    "ipa": "ˈkʊ.rɪ.oː ˈae̯.dɪ.ʊm",
+    "example": "Curio aedium comis parvis reficiendis in domo consulit.",
+    "exampleDE": "Der hilfsbereite Hausmeister kümmert sich um kleine Reparaturen im Haus."
+  },
+  {
+    "front": "die Wohnsiedlung",
+    "back": "colonia urbana",
+    "ipa": "kɔˈlɔː.nɪ.a ʊrˈbaː.na",
+    "example": "Moderna colonia urbana vehiculis interdictis condita est.",
+    "exampleDE": "Die moderne Wohnsiedlung wurde komplett verkehrsberuhigt angelegt."
+  },
+  {
+    "front": "die Grünanlage",
+    "back": "viridarium",
+    "ipa": "wɪ.rɪˈdaː.rɪ.ʊm",
+    "example": "In culto viridario ante aedes variae rosae florent.",
+    "exampleDE": "In der gepflegten Grünanlage vor dem Haus blühen bunte Rosen."
+  },
+  {
+    "front": "die Produktverpackung",
+    "back": "involucrum mercis",
+    "ipa": "ɪn.wɔˈluː.krʊm ˈmɛr.kɪs",
+    "example": "Involucrum mercis omnino e charta reficienda constat.",
+    "exampleDE": "Die Produktverpackung besteht vollständig aus recycelbarem Karton."
+  },
+  {
+    "front": "der Markenartikel",
+    "back": "merx insignis",
+    "ipa": "mɛrks ɪnˈsɪŋ.nɪs",
+    "example": "Merces insignes saepe certa bonitate excellunt.",
+    "exampleDE": "Markenartikel zeichnen sich oft durch verlässliche Qualität aus."
+  },
+  {
+    "front": "das Preisschild",
+    "back": "index pretii",
+    "ipa": "ˈɪn.dɛks ˈprɛ.tɪ.iː",
+    "example": "In pluteo index pretii perspicue affictus erat.",
+    "exampleDE": "Am Regal war das gut lesbare Preisschild angebracht."
+  },
+  {
+    "front": "die Kundenkarte",
+    "back": "tessera emptoris",
+    "ipa": "ˈtɛs.sɛ.ra eːmpˈtoː.rɪs",
+    "example": "Tessera emptoris omnibus emptionibus puncta praemii colliguntur.",
+    "exampleDE": "Mit der Kundenkarte sammelt man bei jedem Einkauf Bonuspunkte."
+  },
+  {
+    "front": "das Warensortiment",
+    "back": "apparatus mercium",
+    "ipa": "ap.paˈraː.tʊs ˈmɛr.kɪ.ʊm",
+    "example": "Taberna lautior apparatum mercium selectarum e vicinia habet.",
+    "exampleDE": "Der Feinkostladen führt ein auserlesenes Warensortiment aus der Region."
+  },
+  {
+    "front": "die Werbeanzeige",
+    "back": "praedicatio mercatoria",
+    "ipa": "prae̯.dɪˈkaː.tɪ.oː mɛr.kaˈtoː.rɪ.a",
+    "example": "Iucunda praedicatio mercatoria eam ad mercem attendit.",
+    "exampleDE": "Eine ansprechende Werbeanzeige machte sie auf das Produkt aufmerksam."
+  },
+  {
+    "front": "die Einkaufsstraße",
+    "back": "via mercatoria",
+    "ipa": "ˈwɪ.a mɛr.kaˈtoː.rɪ.a",
+    "example": "Die Saturni multi per viam mercatoriam otiose ambulant.",
+    "exampleDE": "Am Samstag schlendern viele Menschen gemütlich durch die Einkaufsstraße."
+  },
+  {
+    "front": "die Hypothese",
+    "back": "coniectura",
+    "ipa": "kɔn.jɛkˈtuː.ra",
+    "example": "Investigatrix coniecturam suam serie experimentorum probavit.",
+    "exampleDE": "Die Forscherin überprüfte ihre Hypothese in einer Versuchsreihe."
+  },
+  {
+    "front": "die Messung",
+    "back": "dimensio",
+    "ipa": "dɪˈmɛn.sɪ.oː",
+    "example": "Accurata dimensio minimam aberrationem a norma ostendit.",
+    "exampleDE": "Die präzise Messung ergab eine minimale Abweichung vom Sollwert."
+  },
+  {
+    "front": "die Erkenntnis",
+    "back": "cognitio",
+    "ipa": "kɔŋˈnɪ.tɪ.oː",
+    "example": "Haec nova cognitio medicinam modernam penitus immutavit.",
+    "exampleDE": "Diese neue Erkenntnis revolutionierte die moderne Medizin nachhaltig."
+  },
+  {
+    "front": "das Mikroskop",
+    "back": "microscopium",
+    "ipa": "mɪ.krɔsˈkɔ.pɪ.ʊm",
+    "example": "Sub microscopio tenuis cellularum ordo perspicue cernitur.",
+    "exampleDE": "Unter dem Mikroskop erkennt man die feine Zellstruktur deutlich."
+  },
+  {
+    "front": "die Gesetzmäßigkeit",
+    "back": "lex naturae",
+    "ipa": "lɛks naˈtuː.rae̯",
+    "example": "Lex physica ubique in universo noto valet.",
+    "exampleDE": "Die physikalische Gesetzmäßigkeit gilt überall im bekannten Kosmos."
+  },
+  {
+    "front": "das Phänomen",
+    "back": "phaenomenon",
+    "ipa": "pʰae̯ˈnɔ.mɛ.nɔn",
+    "example": "Lumina borealia mirum phaenomenon naturale sunt.",
+    "exampleDE": "Die Polarlichter sind ein faszinierendes natürliches Phänomen."
+  },
+  {
+    "front": "die Beobachtung",
+    "back": "observatio",
+    "ipa": "ɔb.sɛrˈwaː.tɪ.oː",
+    "example": "Per multos menses astronomi accuratas observationes fecerunt.",
+    "exampleDE": "Über Monate hinweg führten die Astronomen genaue Beobachtungen durch."
+  },
+  {
+    "front": "die Schlussfolgerung",
+    "back": "conclusio",
+    "ipa": "kɔnˈkluː.sɪ.oː",
+    "example": "Ex indicibus grex manifestam conclusionem deduxit.",
+    "exampleDE": "Aus den Daten zog das Team eine einleuchtende Schlussfolgerung."
+  },
+  {
+    "front": "die Tradition",
+    "back": "traditio",
+    "ipa": "traˈdɪ.tɪ.oː",
+    "example": "Haec vetus ars multis aetatibus traditio familiaris servatur.",
+    "exampleDE": "Dieses alte Handwerk wird seit Generationen als Familientradition gepflegt."
+  },
+  {
+    "front": "das Kunsthandwerk",
+    "back": "ars opificum",
+    "ipa": "ars ɔˈpɪ.fɪ.kʊm",
+    "example": "In foro visitatores artem translaticiam textorum admirabantur.",
+    "exampleDE": "Auf dem Markt bestaunten Besucher das traditionelle Kunsthandwerk der Weber."
+  },
+  {
+    "front": "die Tracht",
+    "back": "habitus gentilis",
+    "ipa": "ˈha.bɪ.tʊs ɡɛnˈtiː.lɪs",
+    "example": "In pompa festiva incolae habitum gentilem induunt.",
+    "exampleDE": "Zum Festumzug tragen die Dorfbewohner ihre Festtagstrachten."
+  }
+]

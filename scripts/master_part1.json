@@ -1,0 +1,1007 @@
+{
+  "part": 1,
+  "start": 0,
+  "count": 200,
+  "items": [
+    {
+      "front": "die Bettdecke",
+      "exampleDE": "Die weiche Bettdecke hält im Winter schön warm.",
+      "theme": "Alltag & Morgenroutine"
+    },
+    {
+      "front": "der Wecker",
+      "exampleDE": "Der Wecker klingelt pünktlich um sieben Uhr.",
+      "theme": "Alltag & Morgenroutine"
+    },
+    {
+      "front": "das Schlummern",
+      "exampleDE": "Nach dem ersten Weckerklingeln drückt er auf die Schlummertaste.",
+      "theme": "Alltag & Morgenroutine"
+    },
+    {
+      "front": "das Zähneputzen",
+      "exampleDE": "Gründliches Zähneputzen ist wichtig für gesunde Zähne.",
+      "theme": "Alltag & Morgenroutine"
+    },
+    {
+      "front": "sich anziehen",
+      "exampleDE": "Zieh dich schnell an, wir müssen los.",
+      "theme": "Alltag & Morgenroutine"
+    },
+    {
+      "front": "die Haarbürste",
+      "exampleDE": "Sie kämmt ihre langen Haare mit einer Haarbürste.",
+      "theme": "Alltag & Morgenroutine"
+    },
+    {
+      "front": "der Spiegel",
+      "exampleDE": "Er schaut kurz in den Spiegel im Flur.",
+      "theme": "Alltag & Morgenroutine"
+    },
+    {
+      "front": "die Routine",
+      "exampleDE": "Eine feste Morgenroutine spart viel Zeit.",
+      "theme": "Alltag & Morgenroutine"
+    },
+    {
+      "front": "der Mietvertrag",
+      "exampleDE": "Wir haben gestern den neuen Mietvertrag unterschrieben.",
+      "theme": "Wohnung & Mietvertrag"
+    },
+    {
+      "front": "die Kaution",
+      "exampleDE": "Die Kaution beträgt drei Monatsmieten.",
+      "theme": "Wohnung & Mietvertrag"
+    },
+    {
+      "front": "die Nebenkosten",
+      "exampleDE": "Heizung und Wasser sind in den Nebenkosten enthalten.",
+      "theme": "Wohnung & Mietvertrag"
+    },
+    {
+      "front": "der Vermieter",
+      "exampleDE": "Der Vermieter repariert die defekte Heizung.",
+      "theme": "Wohnung & Mietvertrag"
+    },
+    {
+      "front": "der Mieter",
+      "exampleDE": "Der Mieter bezahlt die Miete am Anfang des Monats.",
+      "theme": "Wohnung & Mietvertrag"
+    },
+    {
+      "front": "die Kündigung",
+      "exampleDE": "Die Kündigung der alten Wohnung muss schriftlich erfolgen.",
+      "theme": "Wohnung & Mietvertrag"
+    },
+    {
+      "front": "die Wohnfläche",
+      "exampleDE": "Die Wohnung hat eine Wohnfläche von achtzig Quadratmetern.",
+      "theme": "Wohnung & Mietvertrag"
+    },
+    {
+      "front": "der Umzug",
+      "exampleDE": "Der Umzug in die neue Stadt verlief reibungslos.",
+      "theme": "Wohnung & Mietvertrag"
+    },
+    {
+      "front": "das Bücherregal",
+      "exampleDE": "Das Bücherregal steht an der Wand im Arbeitszimmer.",
+      "theme": "Möbel & Einrichtung"
+    },
+    {
+      "front": "der Kleiderschrank",
+      "exampleDE": "Er hängt seine Hemden ordentlich in den Kleiderschrank.",
+      "theme": "Möbel & Einrichtung"
+    },
+    {
+      "front": "der Schreibtischstuhl",
+      "exampleDE": "Ein bequemer Schreibtischstuhl schont den Rücken.",
+      "theme": "Möbel & Einrichtung"
+    },
+    {
+      "front": "die Stehlampe",
+      "exampleDE": "Die Stehlampe spendet warmes Licht am Abend.",
+      "theme": "Möbel & Einrichtung"
+    },
+    {
+      "front": "der Esstisch",
+      "exampleDE": "Die ganze Familie sitzt abends am großen Esstisch.",
+      "theme": "Möbel & Einrichtung"
+    },
+    {
+      "front": "das Sofa",
+      "exampleDE": "Auf dem bequemen Sofa kann man herrlich entspannen.",
+      "theme": "Möbel & Einrichtung"
+    },
+    {
+      "front": "der Vorhang",
+      "exampleDE": "Sie zieht den Vorhang zu, wenn es dunkel wird.",
+      "theme": "Möbel & Einrichtung"
+    },
+    {
+      "front": "der Staubsauger",
+      "exampleDE": "Er saugt den Teppich mit dem neuen Staubsauger.",
+      "theme": "Haushalt & Reinigung"
+    },
+    {
+      "front": "das Bügelbrett",
+      "exampleDE": "Das Bügelbrett steht zusammengeklappt im Schrank.",
+      "theme": "Haushalt & Reinigung"
+    },
+    {
+      "front": "das Bügeleisen",
+      "exampleDE": "Das Bügeleisen wird sehr heiß.",
+      "theme": "Haushalt & Reinigung"
+    },
+    {
+      "front": "der Wischmop",
+      "exampleDE": "Sie wischt den Küchenboden mit dem Wischmop.",
+      "theme": "Haushalt & Reinigung"
+    },
+    {
+      "front": "das Spülmittel",
+      "exampleDE": "Ein paar Tropfen Spülmittel genügen für das Geschirr.",
+      "theme": "Haushalt & Reinigung"
+    },
+    {
+      "front": "die Mülltonne",
+      "exampleDE": "Bring bitte die Mülltonne an die Straße.",
+      "theme": "Haushalt & Reinigung"
+    },
+    {
+      "front": "der Wäscheständer",
+      "exampleDE": "Die nasse Wäsche trocknet auf dem Wäscheständer.",
+      "theme": "Haushalt & Reinigung"
+    },
+    {
+      "front": "die Glühbirne",
+      "exampleDE": "Wir müssen die kaputte Glühbirne im Flur auswechseln.",
+      "theme": "Haushalt & Reinigung"
+    },
+    {
+      "front": "der Schraubenzieher",
+      "exampleDE": "Mit dem Schraubenzieher zieht er die lose Schraube fest.",
+      "theme": "Handwerk & Reparatur"
+    },
+    {
+      "front": "die Zange",
+      "exampleDE": "Er hält den Draht mit einer Zange fest.",
+      "theme": "Handwerk & Reparatur"
+    },
+    {
+      "front": "die Bohrmaschine",
+      "exampleDE": "Die Bohrmaschine bohrt ein Loch in die Wand.",
+      "theme": "Handwerk & Reparatur"
+    },
+    {
+      "front": "der Handwerker",
+      "exampleDE": "Der Handwerker kommt morgen früh um acht.",
+      "theme": "Handwerk & Reparatur"
+    },
+    {
+      "front": "der Pinsel",
+      "exampleDE": "Sie streicht die Holzbank mit einem breiten Pinsel.",
+      "theme": "Handwerk & Reparatur"
+    },
+    {
+      "front": "reparieren",
+      "exampleDE": "Kannst du das kaputte Fahrrad bitte reparieren?",
+      "theme": "Handwerk & Reparatur"
+    },
+    {
+      "front": "der Werkzeugkasten",
+      "exampleDE": "Alle Werkzeuge liegen griffbereit im Werkzeugkasten.",
+      "theme": "Handwerk & Reparatur"
+    },
+    {
+      "front": "das Schneidebrett",
+      "exampleDE": "Schneide die Zwiebel bitte auf dem Schneidebrett.",
+      "theme": "Küche & Zubereitung"
+    },
+    {
+      "front": "der Kochtopf",
+      "exampleDE": "Die Suppe kocht im großen Kochtopf auf dem Herd.",
+      "theme": "Küche & Zubereitung"
+    },
+    {
+      "front": "die Bratpfanne",
+      "exampleDE": "In der heißen Bratpfanne brät das Gemüse.",
+      "theme": "Küche & Zubereitung"
+    },
+    {
+      "front": "der Wasserkocher",
+      "exampleDE": "Der Wasserkocher kocht das Teewasser in zwei Minuten.",
+      "theme": "Küche & Zubereitung"
+    },
+    {
+      "front": "der Backofen",
+      "exampleDE": "Der Kuchen backt eine halbe Stunde im Backofen.",
+      "theme": "Küche & Zubereitung"
+    },
+    {
+      "front": "das Rezept",
+      "exampleDE": "Dieses Rezept hat meine Großmutter erfunden.",
+      "theme": "Küche & Zubereitung"
+    },
+    {
+      "front": "die Zutat",
+      "exampleDE": "Frische Kräuter sind die wichtigste Zutat für die Soße.",
+      "theme": "Küche & Zubereitung"
+    },
+    {
+      "front": "fein hacken",
+      "exampleDE": "Sie hackt die Zwiebeln und Petersilie mit einem scharfen Messer fein.",
+      "theme": "Küche & Zubereitung"
+    },
+    {
+      "front": "das Meersalz",
+      "exampleDE": "Eine Prise Meersalz hebt den Geschmack der Suppe.",
+      "theme": "Gewürze & Geschmack"
+    },
+    {
+      "front": "der schwarze Pfeffer",
+      "exampleDE": "Frisch gemahlener schwarzer Pfeffer duftet herrlich.",
+      "theme": "Gewürze & Geschmack"
+    },
+    {
+      "front": "das Olivenöl",
+      "exampleDE": "Kaltgepresstes Olivenöl passt hervorragend zum Salat.",
+      "theme": "Gewürze & Geschmack"
+    },
+    {
+      "front": "der Knoblauch",
+      "exampleDE": "Zwei Zehen Knoblauch verleihen dem Gericht Aroma.",
+      "theme": "Gewürze & Geschmack"
+    },
+    {
+      "front": "die Petersilie",
+      "exampleDE": "Frisch gehackte Petersilie kommt vor dem Servieren darauf.",
+      "theme": "Gewürze & Geschmack"
+    },
+    {
+      "front": "das Basilikum",
+      "exampleDE": "Frisches Basilikum passt perfekt zu Tomaten.",
+      "theme": "Gewürze & Geschmack"
+    },
+    {
+      "front": "der Zimt",
+      "exampleDE": "Im Winter trinken wir gerne Tee mit einer Prise Zimt.",
+      "theme": "Gewürze & Geschmack"
+    },
+    {
+      "front": "das Vollkornbrot",
+      "exampleDE": "Frisches Vollkornbrot schmeckt kräftig und hält lange satt.",
+      "theme": "Backwaren & Frühstück"
+    },
+    {
+      "front": "das Brötchen",
+      "exampleDE": "Sonntags holen wir warme Brötchen beim Bäcker.",
+      "theme": "Backwaren & Frühstück"
+    },
+    {
+      "front": "die Butter",
+      "exampleDE": "Streich bitte etwas Butter auf die Scheibe Brot.",
+      "theme": "Backwaren & Frühstück"
+    },
+    {
+      "front": "die Marmelade",
+      "exampleDE": "Erdbeermarmelade ist mein liebster Brotaufstrich.",
+      "theme": "Backwaren & Frühstück"
+    },
+    {
+      "front": "das Müsli",
+      "exampleDE": "Morgens esse ich gerne Müsli mit frischem Obst.",
+      "theme": "Backwaren & Frühstück"
+    },
+    {
+      "front": "der Joghurt",
+      "exampleDE": "Naturjoghurt schmeckt besonders gut mit etwas Honig.",
+      "theme": "Backwaren & Frühstück"
+    },
+    {
+      "front": "das gekochte Ei",
+      "exampleDE": "Ein weich gekochtes Ei gehört zum Sonntagsfrühstück.",
+      "theme": "Backwaren & Frühstück"
+    },
+    {
+      "front": "der Orangensaft",
+      "exampleDE": "Frisch gepresster Orangensaft enthält viele Vitamine.",
+      "theme": "Backwaren & Frühstück"
+    },
+    {
+      "front": "die Reservierung",
+      "exampleDE": "Ich habe eine Reservierung auf den Namen Müller.",
+      "theme": "Restaurant & Bedienung"
+    },
+    {
+      "front": "die Speisekarte",
+      "exampleDE": "Dürfen wir bitte die Speisekarte sehen?",
+      "theme": "Restaurant & Bedienung"
+    },
+    {
+      "front": "die Vorspeise",
+      "exampleDE": "Als Vorspeise bestellen wir einen kleinen Salat.",
+      "theme": "Restaurant & Bedienung"
+    },
+    {
+      "front": "das Hauptgericht",
+      "exampleDE": "Das Hauptgericht wird heiß auf einem großen Teller serviert.",
+      "theme": "Restaurant & Bedienung"
+    },
+    {
+      "front": "die Nachspeise",
+      "exampleDE": "Möchten Sie nach dem Essen noch eine Nachspeise?",
+      "theme": "Restaurant & Bedienung"
+    },
+    {
+      "front": "die Rechnung",
+      "exampleDE": "Wir möchten bitte zahlen, bringen Sie uns die Rechnung.",
+      "theme": "Restaurant & Bedienung"
+    },
+    {
+      "front": "das Trinkgeld",
+      "exampleDE": "Der freundliche Kellner hat ein gutes Trinkgeld verdient.",
+      "theme": "Restaurant & Bedienung"
+    },
+    {
+      "front": "die Spezialität des Hauses",
+      "exampleDE": "Der Kellner empfiehlt die hausgemachte Pasta als Spezialität des Hauses.",
+      "theme": "Restaurant & Bedienung"
+    },
+    {
+      "front": "der Kaffee",
+      "exampleDE": "Eine Tasse heißer Kaffee vertreibt die Müdigkeit.",
+      "theme": "Café & Getränke"
+    },
+    {
+      "front": "der Cappuccino",
+      "exampleDE": "Der Cappuccino hat einen wunderbar cremigen Schaum.",
+      "theme": "Café & Getränke"
+    },
+    {
+      "front": "der Kräutertee",
+      "exampleDE": "Abends trinke ich gerne eine Tasse warmen Kräutertee.",
+      "theme": "Café & Getränke"
+    },
+    {
+      "front": "das Mineralwasser",
+      "exampleDE": "Ein Glas kühles Mineralwasser mit Kohlensäure erfrischt.",
+      "theme": "Café & Getränke"
+    },
+    {
+      "front": "das Stück Kuchen",
+      "exampleDE": "Am Nachmittag gönnen wir uns ein Stück Kuchen.",
+      "theme": "Café & Getränke"
+    },
+    {
+      "front": "die Barista",
+      "exampleDE": "Die Barista bereitet den Espresso kunstvoll zu.",
+      "theme": "Café & Getränke"
+    },
+    {
+      "front": "die Stammkundin",
+      "exampleDE": "Sie ist Stammkundin in diesem gemütlichen Café an der Ecke.",
+      "theme": "Café & Getränke"
+    },
+    {
+      "front": "der Einkaufswagen",
+      "exampleDE": "Nimm bitte eine Münze für den Einkaufswagen mit.",
+      "theme": "Supermarkt & Markt"
+    },
+    {
+      "front": "der Einkaufszettel",
+      "exampleDE": "Ich habe alle wichtigen Dinge auf dem Einkaufszettel notiert.",
+      "theme": "Supermarkt & Markt"
+    },
+    {
+      "front": "das Sonderangebot",
+      "exampleDE": "Frische Erdbeeren sind heute im Sonderangebot.",
+      "theme": "Supermarkt & Markt"
+    },
+    {
+      "front": "die Kasse",
+      "exampleDE": "An der Kasse steht eine lange Schlange von Kunden.",
+      "theme": "Supermarkt & Markt"
+    },
+    {
+      "front": "der Kassenbon",
+      "exampleDE": "Bewahren Sie den Kassenbon als Beleg gut auf.",
+      "theme": "Supermarkt & Markt"
+    },
+    {
+      "front": "die Stofftasche",
+      "exampleDE": "Wir transportieren unsere Einkäufe in einer Stofftasche.",
+      "theme": "Supermarkt & Markt"
+    },
+    {
+      "front": "das Haltbarkeitsdatum",
+      "exampleDE": "Prüfen Sie immer das Haltbarkeitsdatum auf der Verpackung.",
+      "theme": "Supermarkt & Markt"
+    },
+    {
+      "front": "die Frischetheke",
+      "exampleDE": "An der Frischetheke gibt es regionalen Käse.",
+      "theme": "Supermarkt & Markt"
+    },
+    {
+      "front": "anprobieren",
+      "exampleDE": "Ich möchte diese dunkelblaue Jacke gerne anprobieren.",
+      "theme": "Kleidung & Passform"
+    },
+    {
+      "front": "die Umkleidekabine",
+      "exampleDE": "Dort drüben links ist eine freie Umkleidekabine.",
+      "theme": "Kleidung & Passform"
+    },
+    {
+      "front": "die Konfektionsgröße",
+      "exampleDE": "Welche Konfektionsgröße tragen Sie normalerweise?",
+      "theme": "Kleidung & Passform"
+    },
+    {
+      "front": "passen",
+      "exampleDE": "Die Hose passt mir wie angegossen.",
+      "theme": "Kleidung & Passform"
+    },
+    {
+      "front": "zu eng",
+      "exampleDE": "Dieser Pullover ist mir an den Schultern leider zu eng.",
+      "theme": "Kleidung & Passform"
+    },
+    {
+      "front": "zu weit",
+      "exampleDE": "Der Rock ist etwas zu weit und rutscht beim Gehen.",
+      "theme": "Kleidung & Passform"
+    },
+    {
+      "front": "der Schnitt",
+      "exampleDE": "Der moderne Schnitt gefällt mir besonders gut.",
+      "theme": "Kleidung & Passform"
+    },
+    {
+      "front": "die Baumwolle",
+      "exampleDE": "Dieses T-Shirt besteht aus reiner, weicher Baumwolle.",
+      "theme": "Stoffe & Muster"
+    },
+    {
+      "front": "die Schurwolle",
+      "exampleDE": "Der dicke Pullover aus Schurwolle hält im Winter warm.",
+      "theme": "Stoffe & Muster"
+    },
+    {
+      "front": "die Seide",
+      "exampleDE": "Das Halstuch aus Seide fühlt sich herrlich weich an.",
+      "theme": "Stoffe & Muster"
+    },
+    {
+      "front": "das Leder",
+      "exampleDE": "Die robuste Jacke ist aus echtem Leder gefertigt.",
+      "theme": "Stoffe & Muster"
+    },
+    {
+      "front": "gestreift",
+      "exampleDE": "Er trägt heute ein blau-weiß gestreiftes Hemd.",
+      "theme": "Stoffe & Muster"
+    },
+    {
+      "front": "kariert",
+      "exampleDE": "Das karierte Muster passt hervorragend zum Holzfällerhemd.",
+      "theme": "Stoffe & Muster"
+    },
+    {
+      "front": "einfarbig",
+      "exampleDE": "Ein schlichtes, einfarbiges Kleid wirkt immer elegant.",
+      "theme": "Stoffe & Muster"
+    },
+    {
+      "front": "der Reißverschluss",
+      "exampleDE": "Der Reißverschluss an meiner Jacke klemmt manchmal.",
+      "theme": "Stoffe & Muster"
+    },
+    {
+      "front": "die Schnürsenkel",
+      "exampleDE": "Binde dir die Schnürsenkel zu, damit du nicht stolperst.",
+      "theme": "Schuhe & Accessoires"
+    },
+    {
+      "front": "die Lederschuhe",
+      "exampleDE": "Zu festlichen Anlässen trägt er polierte Lederschuhe.",
+      "theme": "Schuhe & Accessoires"
+    },
+    {
+      "front": "die Turnschuhe",
+      "exampleDE": "Zum Laufen im Park brauche ich bequeme Turnschuhe.",
+      "theme": "Schuhe & Accessoires"
+    },
+    {
+      "front": "die Handtasche",
+      "exampleDE": "Sie sucht ihren Schlüssel in der großen Handtasche.",
+      "theme": "Schuhe & Accessoires"
+    },
+    {
+      "front": "der Ledergürtel",
+      "exampleDE": "Ein schwarzer Ledergürtel hält die Hose fest.",
+      "theme": "Schuhe & Accessoires"
+    },
+    {
+      "front": "der Regenschirm",
+      "exampleDE": "Nimm einen Regenschirm mit, der Himmel zieht sich zu.",
+      "theme": "Schuhe & Accessoires"
+    },
+    {
+      "front": "die Sonnenbrille",
+      "exampleDE": "Im Sommer schützt eine gute Sonnenbrille die Augen.",
+      "theme": "Schuhe & Accessoires"
+    },
+    {
+      "front": "das Girokonto",
+      "exampleDE": "Mein Gehalt wird monatlich auf mein Girokonto überwiesen.",
+      "theme": "Bank & Girokonto"
+    },
+    {
+      "front": "die Überweisung",
+      "exampleDE": "Ich mache die Überweisung bequem per Online-Banking.",
+      "theme": "Bank & Girokonto"
+    },
+    {
+      "front": "der Dauerauftrag",
+      "exampleDE": "Die Miete bezahle ich jeden Monat per Dauerauftrag.",
+      "theme": "Bank & Girokonto"
+    },
+    {
+      "front": "der Geldautomat",
+      "exampleDE": "An diesem Geldautomaten kann man gebührenfrei abheben.",
+      "theme": "Bank & Girokonto"
+    },
+    {
+      "front": "die Geheimzahl",
+      "exampleDE": "Gib deine vierstellige Geheimzahl niemals an Fremde weiter.",
+      "theme": "Bank & Girokonto"
+    },
+    {
+      "front": "der Kontoauszug",
+      "exampleDE": "Auf dem Kontoauszug stehen alle Einnahmen und Ausgaben.",
+      "theme": "Bank & Girokonto"
+    },
+    {
+      "front": "das Sparguthaben",
+      "exampleDE": "Sie legt jeden Monat einen festen Betrag als Sparguthaben an.",
+      "theme": "Bank & Girokonto"
+    },
+    {
+      "front": "die Zinsen",
+      "exampleDE": "Die Bank zahlt derzeit moderate Zinsen auf das Festgeld.",
+      "theme": "Bank & Girokonto"
+    },
+    {
+      "front": "das Bargeld",
+      "exampleDE": "Haben Sie etwas Bargeld dabei oder zahlen Sie mit Karte?",
+      "theme": "Zahlung & Währung"
+    },
+    {
+      "front": "die Kreditkarte",
+      "exampleDE": "Auf Reisen bezahle ich Einkäufe meist mit Kreditkarte.",
+      "theme": "Zahlung & Währung"
+    },
+    {
+      "front": "kontaktlos",
+      "exampleDE": "Beträge unter fünfzig Euro kann man kontaktlos bezahlen.",
+      "theme": "Zahlung & Währung"
+    },
+    {
+      "front": "die Münze",
+      "exampleDE": "Er wirft eine Zwei-Euro-Münze in den Parkscheinautomaten.",
+      "theme": "Zahlung & Währung"
+    },
+    {
+      "front": "der Geldschein",
+      "exampleDE": "Sie faltet den Zehn-Euro-Geldschein sorgfältig zusammen.",
+      "theme": "Zahlung & Währung"
+    },
+    {
+      "front": "das Wechselgeld",
+      "exampleDE": "Vergessen Sie bitte nicht Ihr Wechselgeld an der Kasse.",
+      "theme": "Zahlung & Währung"
+    },
+    {
+      "front": "der Wechselkurs",
+      "exampleDE": "Vor der Auslandsreise prüfen wir den aktuellen Wechselkurs.",
+      "theme": "Zahlung & Währung"
+    },
+    {
+      "front": "das Paket",
+      "exampleDE": "Der Bote liefert das schwere Paket an die Haustür.",
+      "theme": "Post & Versand"
+    },
+    {
+      "front": "der Briefumschlag",
+      "exampleDE": "Sie steckt den Brief in einen weißen Briefumschlag.",
+      "theme": "Post & Versand"
+    },
+    {
+      "front": "die Briefmarke",
+      "exampleDE": "Kleb bitte eine Briefmarke oben rechts auf den Brief.",
+      "theme": "Post & Versand"
+    },
+    {
+      "front": "der Absender",
+      "exampleDE": "Oben links auf dem Kuvert steht die Adresse des Absenders.",
+      "theme": "Post & Versand"
+    },
+    {
+      "front": "der Empfänger",
+      "exampleDE": "Das Päckchen ist für den angegebenen Empfänger bestimmt.",
+      "theme": "Post & Versand"
+    },
+    {
+      "front": "die Packstation",
+      "exampleDE": "Ich hole meine Sendung nach Feierabend an der Packstation ab.",
+      "theme": "Post & Versand"
+    },
+    {
+      "front": "das Einschreiben",
+      "exampleDE": "Wichtige Dokumente versendet man am sichersten per Einschreiben.",
+      "theme": "Post & Versand"
+    },
+    {
+      "front": "die Postleitzahl",
+      "exampleDE": "Geben Sie bitte Ihre fünfstellige Postleitzahl an.",
+      "theme": "Post & Versand"
+    },
+    {
+      "front": "die Zahnpasta",
+      "exampleDE": "Diese Zahnpasta schützt wirksam vor Karies.",
+      "theme": "Drogerie & Hygiene"
+    },
+    {
+      "front": "das Duschgel",
+      "exampleDE": "Das Duschgel duftet angenehm nach frischen Zitronen.",
+      "theme": "Drogerie & Hygiene"
+    },
+    {
+      "front": "das Shampoo",
+      "exampleDE": "Ein mildes Shampoo pflegt die Kopfhaut und das Haar.",
+      "theme": "Drogerie & Hygiene"
+    },
+    {
+      "front": "die Seife",
+      "exampleDE": "Wasch dir die Hände gründlich mit warmem Wasser und Seife.",
+      "theme": "Drogerie & Hygiene"
+    },
+    {
+      "front": "die Feuchtigkeitscreme",
+      "exampleDE": "Nach dem Duschen trägt sie eine feuchtigkeitsspendende Creme auf.",
+      "theme": "Drogerie & Hygiene"
+    },
+    {
+      "front": "das Deodorant",
+      "exampleDE": "Ein gutes Deodorant sorgt den ganzen Tag für Frische.",
+      "theme": "Drogerie & Hygiene"
+    },
+    {
+      "front": "das Taschentuch",
+      "exampleDE": "Hast du ein Papiertaschentuch für mich?",
+      "theme": "Drogerie & Hygiene"
+    },
+    {
+      "front": "der Rasierer",
+      "exampleDE": "Er wechselt regelmäßig die Klingen an seinem Rasierer.",
+      "theme": "Körperpflege & Kosmetik"
+    },
+    {
+      "front": "der Rasierschaum",
+      "exampleDE": "Verteile den Rasierschaum sanft auf den Wangen.",
+      "theme": "Körperpflege & Kosmetik"
+    },
+    {
+      "front": "die Nagelschere",
+      "exampleDE": "Mit einer kleinen Nagelschere schneidet man Fingernägel präzise.",
+      "theme": "Körperpflege & Kosmetik"
+    },
+    {
+      "front": "die Nagelfeile",
+      "exampleDE": "Sie glättet ihre Nägel vorsichtig mit einer Nagelfeile.",
+      "theme": "Körperpflege & Kosmetik"
+    },
+    {
+      "front": "die Sonnencreme",
+      "exampleDE": "Im Urlaub cremen wir uns regelmäßig mit Sonnencreme ein.",
+      "theme": "Körperpflege & Kosmetik"
+    },
+    {
+      "front": "der Lippenbalsam",
+      "exampleDE": "Im Winter schützt Lippenbalsam vor spröden Lippen.",
+      "theme": "Körperpflege & Kosmetik"
+    },
+    {
+      "front": "das Wattepad",
+      "exampleDE": "Zum Abschminken verwendet sie ein weiches Wattepad.",
+      "theme": "Körperpflege & Kosmetik"
+    },
+    {
+      "front": "das Wattestäbchen",
+      "exampleDE": "Wattestäbchen gehören in den Badezimmerschrank.",
+      "theme": "Körperpflege & Kosmetik"
+    },
+    {
+      "front": "der Umtausch",
+      "exampleDE": "Ein Umtausch ist innerhalb von vierzehn Tagen möglich.",
+      "theme": "Einkaufserlebnis & Reklamation"
+    },
+    {
+      "front": "die Reklamation",
+      "exampleDE": "Wegen eines Mangels reichte der Kunde eine Reklamation ein.",
+      "theme": "Einkaufserlebnis & Reklamation"
+    },
+    {
+      "front": "die Garantie",
+      "exampleDE": "Auf dieses Elektrogerät gibt es zwei Jahre Herstellergarantie.",
+      "theme": "Einkaufserlebnis & Reklamation"
+    },
+    {
+      "front": "die Rückerstattung",
+      "exampleDE": "Der Betrag wird Ihnen als Rückerstattung gutgeschrieben.",
+      "theme": "Einkaufserlebnis & Reklamation"
+    },
+    {
+      "front": "der Rabatt",
+      "exampleDE": "Mit dieser Kundenkarte erhalten Sie zehn Prozent Rabatt.",
+      "theme": "Einkaufserlebnis & Reklamation"
+    },
+    {
+      "front": "das Schnäppchen",
+      "exampleDE": "Dieser hochwertige Mantel war ein echtes Schnäppchen.",
+      "theme": "Einkaufserlebnis & Reklamation"
+    },
+    {
+      "front": "die Beschwerde",
+      "exampleDE": "Die Beschwerde wurde von der Geschäftsleitung geprüft.",
+      "theme": "Einkaufserlebnis & Reklamation"
+    },
+    {
+      "front": "die Kopfschmerzen",
+      "exampleDE": "Nach dem langen Arbeitstag habe ich leichte Kopfschmerzen.",
+      "theme": "Symptome & Unwohlsein"
+    },
+    {
+      "front": "die Halsschmerzen",
+      "exampleDE": "Warmer Kamillentee mit Honig lindert die Halsschmerzen.",
+      "theme": "Symptome & Unwohlsein"
+    },
+    {
+      "front": "die Magenschmerzen",
+      "exampleDE": "Fettes Essen verursacht bei ihm oft Magenschmerzen.",
+      "theme": "Symptome & Unwohlsein"
+    },
+    {
+      "front": "der Schwindel",
+      "exampleDE": "Beim schnellen Aufstehen überkam sie ein kurzer Schwindel.",
+      "theme": "Symptome & Unwohlsein"
+    },
+    {
+      "front": "die Übelkeit",
+      "exampleDE": "Frische Luft hilft meist gut gegen plötzliche Übelkeit.",
+      "theme": "Symptome & Unwohlsein"
+    },
+    {
+      "front": "der Husten",
+      "exampleDE": "Er hat seit drei Tagen einen trockenen, hartnäckigen Husten.",
+      "theme": "Symptome & Unwohlsein"
+    },
+    {
+      "front": "der Schnupfen",
+      "exampleDE": "Bei starkem Schnupfen fällt das Atmen durch die Nase schwer.",
+      "theme": "Symptome & Unwohlsein"
+    },
+    {
+      "front": "die Heiserkeit",
+      "exampleDE": "Nach dem lauten Konzert litt der Sänger unter Heiserkeit.",
+      "theme": "Symptome & Unwohlsein"
+    },
+    {
+      "front": "das Fieberthermometer",
+      "exampleDE": "Das digitale Fieberthermometer misst die Temperatur sekundenschnell.",
+      "theme": "Fieber & Infektionen"
+    },
+    {
+      "front": "die erhöhte Temperatur",
+      "exampleDE": "Das Kind hat heute Abend leicht erhöhte Temperatur.",
+      "theme": "Fieber & Infektionen"
+    },
+    {
+      "front": "der Schüttelfrost",
+      "exampleDE": "Plötzlicher Schüttelfrost ist oft ein erstes Anzeichen einer Grippe.",
+      "theme": "Fieber & Infektionen"
+    },
+    {
+      "front": "die Entzündung",
+      "exampleDE": "Der Arzt behandelt die Entzündung mit einer Heilsalbe.",
+      "theme": "Fieber & Infektionen"
+    },
+    {
+      "front": "die Infektion",
+      "exampleDE": "Regelmäßiges Händewaschen schützt zuverlässig vor einer Infektion.",
+      "theme": "Fieber & Infektionen"
+    },
+    {
+      "front": "ansteckend",
+      "exampleDE": "Solange Sie Fieber haben, sind Sie für andere ansteckend.",
+      "theme": "Fieber & Infektionen"
+    },
+    {
+      "front": "sich schonen",
+      "exampleDE": "Bei einer Erkältung sollte man im Bett bleiben und sich schonen.",
+      "theme": "Fieber & Infektionen"
+    },
+    {
+      "front": "die Arztpraxis",
+      "exampleDE": "Die Arztpraxis öffnet montags bereits um sieben Uhr morgens.",
+      "theme": "Arztpraxis & Untersuchung"
+    },
+    {
+      "front": "das Wartezimmer",
+      "exampleDE": "Die Patienten sitzen geduldig im hellen Wartezimmer.",
+      "theme": "Arztpraxis & Untersuchung"
+    },
+    {
+      "front": "die Versichertenkarte",
+      "exampleDE": "Legen Sie bitte Ihre elektronische Versichertenkarte vor.",
+      "theme": "Arztpraxis & Untersuchung"
+    },
+    {
+      "front": "der Termin",
+      "exampleDE": "Ich habe für kommenden Dienstag einen festen Termin vereinbart.",
+      "theme": "Arztpraxis & Untersuchung"
+    },
+    {
+      "front": "die Untersuchung",
+      "exampleDE": "Die gründliche Untersuchung ergab keine Auffälligkeiten.",
+      "theme": "Arztpraxis & Untersuchung"
+    },
+    {
+      "front": "der Blutdruck",
+      "exampleDE": "Die Schwester misst den Blutdruck am linken Oberarm.",
+      "theme": "Arztpraxis & Untersuchung"
+    },
+    {
+      "front": "der Puls",
+      "exampleDE": "Nach der kurzen Ruhepause schlägt der Puls wieder normal.",
+      "theme": "Arztpraxis & Untersuchung"
+    },
+    {
+      "front": "das Stethoskop",
+      "exampleDE": "Die Ärztin hört die Lunge mit dem Stethoskop ab.",
+      "theme": "Arztpraxis & Untersuchung"
+    },
+    {
+      "front": "das Rezept",
+      "exampleDE": "Der Arzt stellt Ihnen ein Rezept für die Tabletten aus.",
+      "theme": "Apotheke & Medikamente"
+    },
+    {
+      "front": "die Apotheke",
+      "exampleDE": "Die Apotheke am Markt hat heute Notdienst.",
+      "theme": "Apotheke & Medikamente"
+    },
+    {
+      "front": "die Packungsbeilage",
+      "exampleDE": "Lesen Sie vor der Einnahme sorgfältig die Packungsbeilage.",
+      "theme": "Apotheke & Medikamente"
+    },
+    {
+      "front": "die Nebenwirkung",
+      "exampleDE": "Dieses gut verträgliche Medikament hat kaum bekannte Nebenwirkungen.",
+      "theme": "Apotheke & Medikamente"
+    },
+    {
+      "front": "die Dosierung",
+      "exampleDE": "Beachten Sie genau die vom Arzt verordnete Dosierung.",
+      "theme": "Apotheke & Medikamente"
+    },
+    {
+      "front": "das Schmerzmittel",
+      "exampleDE": "Das Schmerzmittel wirkt meistens innerhalb einer halben Stunde.",
+      "theme": "Apotheke & Medikamente"
+    },
+    {
+      "front": "der Hustensaft",
+      "exampleDE": "Nehmen Sie abends vor dem Schlafen einen Löffel Hustensaft.",
+      "theme": "Apotheke & Medikamente"
+    },
+    {
+      "front": "das Heftpflaster",
+      "exampleDE": "Kleb bitte ein Heftpflaster auf die kleine Schnittwunde.",
+      "theme": "Wundversorgung & Erste Hilfe"
+    },
+    {
+      "front": "der Verband",
+      "exampleDE": "Die Krankenschwester legt einen sauberen Verband um den Knöchel.",
+      "theme": "Wundversorgung & Erste Hilfe"
+    },
+    {
+      "front": "die Wundsalbe",
+      "exampleDE": "Die Heilsalbe beschleunigt das Schließen der Hautwunde.",
+      "theme": "Wundversorgung & Erste Hilfe"
+    },
+    {
+      "front": "die Desinfektion",
+      "exampleDE": "Vor dem Verbinden ist eine gründliche Desinfektion wichtig.",
+      "theme": "Wundversorgung & Erste Hilfe"
+    },
+    {
+      "front": "der Verbandskasten",
+      "exampleDE": "Im Auto muss stets ein vollständiger Verbandskasten liegen.",
+      "theme": "Wundversorgung & Erste Hilfe"
+    },
+    {
+      "front": "der Notruf",
+      "exampleDE": "In dringenden Notfällen wählt man europaweit den Notruf 112.",
+      "theme": "Wundversorgung & Erste Hilfe"
+    },
+    {
+      "front": "die Erste Hilfe",
+      "exampleDE": "Jeder Führerscheininhaber sollte Erste Hilfe leisten können.",
+      "theme": "Wundversorgung & Erste Hilfe"
+    },
+    {
+      "front": "bluten",
+      "exampleDE": "Die Schürfwunde am Knie hat zum Glück aufgehört zu bluten.",
+      "theme": "Wundversorgung & Erste Hilfe"
+    },
+    {
+      "front": "die Zahnarztpraxis",
+      "exampleDE": "Zweimal im Jahr gehe ich zur Kontrolle in die Zahnarztpraxis.",
+      "theme": "Zahngesundheit & Zahnarzt"
+    },
+    {
+      "front": "die Zahnseide",
+      "exampleDE": "Zahnseide reinigt die engen Zwischenräume zwischen den Zähnen.",
+      "theme": "Zahngesundheit & Zahnarzt"
+    },
+    {
+      "front": "das Zahnfleisch",
+      "exampleDE": "Regelmäßige Pflege stärkt das Zahnfleisch dauerhaft.",
+      "theme": "Zahngesundheit & Zahnarzt"
+    },
+    {
+      "front": "die Zahnfüllung",
+      "exampleDE": "Der Zahnarzt setzte eine kleine weiße Zahnfüllung ein.",
+      "theme": "Zahngesundheit & Zahnarzt"
+    },
+    {
+      "front": "der Backenzahn",
+      "exampleDE": "Ein Backenzahn im Oberkiefer reagiert empfindlich auf Kälte.",
+      "theme": "Zahngesundheit & Zahnarzt"
+    },
+    {
+      "front": "die Mundspülung",
+      "exampleDE": "Eine antibakterielle Mundspülung sorgt für frischen Atem.",
+      "theme": "Zahngesundheit & Zahnarzt"
+    },
+    {
+      "front": "die Zahnschmerzen",
+      "exampleDE": "Gegen plötzliche Zahnschmerzen sollte man rasch zum Zahnarzt.",
+      "theme": "Zahngesundheit & Zahnarzt"
+    },
+    {
+      "front": "das Handgelenk",
+      "exampleDE": "Sie trägt eine elegante Armbanduhr am linken Handgelenk.",
+      "theme": "Körperteile & Gelenke"
+    },
+    {
+      "front": "der Ellbogen",
+      "exampleDE": "Er hat sich den Ellbogen schmerzhaft an der Tischkante gestoßen.",
+      "theme": "Körperteile & Gelenke"
+    },
+    {
+      "front": "das Kniegelenk",
+      "exampleDE": "Beim Joggen wird das Kniegelenk stark beansprucht.",
+      "theme": "Körperteile & Gelenke"
+    },
+    {
+      "front": "der Knöchel",
+      "exampleDE": "Beim Wandern auf unebenem Pfad ist er mit dem Knöchel umgeknickt.",
+      "theme": "Körperteile & Gelenke"
+    }
+  ]
+}

@@ -1,0 +1,1402 @@
+[
+  {
+    "front": "die Ferse",
+    "back": "calx",
+    "ipa": "kalks",
+    "example": "Novi calcei a tergo calcem premunt.",
+    "exampleDE": "Die neuen Schuhe drücken hinten an der Ferse."
+  },
+  {
+    "front": "die Wirbelsäule",
+    "back": "spina dorsi",
+    "ipa": "ˈspiː.na ˈdɔr.siː",
+    "example": "Exercitatio apta musculos secundum spinam dorsi roborat.",
+    "exampleDE": "Gezielte Gymnastik stärkt die Muskeln entlang der Wirbelsäule."
+  },
+  {
+    "front": "das Schulterblatt",
+    "back": "scapula",
+    "ipa": "ˈska.pʊ.la",
+    "example": "Levem tensionem sub scapula dextra sentit.",
+    "exampleDE": "Er spürt eine leichte Verspannung unter dem rechten Schulterblatt."
+  },
+  {
+    "front": "die Hüfte",
+    "back": "coxa",
+    "ipa": "ˈkɔk.sa",
+    "example": "Stans manus laxe in coxas reponit.",
+    "exampleDE": "Sie stützt die Hände beim Stehen locker in die Hüfte."
+  },
+  {
+    "front": "das Herz",
+    "back": "cor",
+    "ipa": "kɔr",
+    "example": "Cor humanum circiter septuagies singulis minutis pulsat.",
+    "exampleDE": "Das menschliche Herz schlägt rund siebzig Mal pro Minute."
+  },
+  {
+    "front": "die Lunge",
+    "back": "pulmo",
+    "ipa": "ˈpʊl.moː",
+    "example": "Alte haustus aer silvae recens pulmonibus prodest.",
+    "exampleDE": "Tiefes Einatmen frischer Waldluft tut der Lunge gut."
+  },
+  {
+    "front": "der Magen",
+    "back": "stomachus",
+    "ipa": "ˈstɔ.ma.kʰʊs",
+    "example": "Post opiparam cenam stomachus plenus dolet.",
+    "exampleDE": "Nach dem üppigen Festessen rebelliert der volle Magen."
+  },
+  {
+    "front": "die Leber",
+    "back": "iecur",
+    "ipa": "ˈjɛ.kʊr",
+    "example": "Iecur est praecipuum organum corporis purgandi.",
+    "exampleDE": "Die Leber ist das wichtigste Entgiftungsorgan des Körpers."
+  },
+  {
+    "front": "die Nieren",
+    "back": "renes",
+    "ipa": "ˈreː.neːs",
+    "example": "Satis aquae bibere renes adiuvat.",
+    "exampleDE": "Ausreichend Wasser zu trinken unterstützt die Nieren."
+  },
+  {
+    "front": "das Gehirn",
+    "back": "cerebrum",
+    "ipa": "kɛˈrɛ.brʊm",
+    "example": "Cerebrum multum aeris ad intentum laborem postulat.",
+    "exampleDE": "Das Gehirn benötigt viel Sauerstoff für konzentriertes Arbeiten."
+  },
+  {
+    "front": "die Blutgefäße",
+    "back": "vasa sanguinea",
+    "ipa": "ˈwaː.sa saŋˈɡʷɪ.nɛ.a",
+    "example": "Assidua motio vasa sanguinea mollia servat.",
+    "exampleDE": "Regelmäßige Bewegung hält die Blutgefäße elastisch."
+  },
+  {
+    "front": "die Ausdauer",
+    "back": "patientia",
+    "ipa": "pa.tɪˈɛn.tɪ.a",
+    "example": "Assidua birota vectio patientiam manifesto auget.",
+    "exampleDE": "Regelmäßiges Radfahren steigert die persönliche Ausdauer spürbar."
+  },
+  {
+    "front": "der Muskelkater",
+    "back": "dolor musculorum",
+    "ipa": "ˈdɔ.lɔr mʊs.kʊˈloː.rʊm",
+    "example": "Post prima exercitia duos dies dolorem musculorum passus est.",
+    "exampleDE": "Nach dem ersten Training hatte er zwei Tage Muskelkater."
+  },
+  {
+    "front": "das Dehnen",
+    "back": "extentio",
+    "ipa": "ɛksˈtɛn.tɪ.oː",
+    "example": "Lenis extentio post cursum contracturae musculorum resistit.",
+    "exampleDE": "Sanftes Dehnen nach dem Laufen beugt Muskelverkürzungen vor."
+  },
+  {
+    "front": "das Aufwärmen",
+    "back": "praecalefactio",
+    "ipa": "prae̯.ka.lɛˈfak.tɪ.oː",
+    "example": "Ante omne certamen praecalefactio quinque minutorum adhibenda est.",
+    "exampleDE": "Vor jedem Sport gehört ein fünfminütiges Aufwärmen dazu."
+  },
+  {
+    "front": "die Entspannung",
+    "back": "remissio",
+    "ipa": "rɛˈmɪs.sɪ.oː",
+    "example": "Calidum balneum vespere altam animi remissionem iuvat.",
+    "exampleDE": "Ein warmes Bad am Abend fördert die tiefe Entspannung."
+  },
+  {
+    "front": "der Tiefschlaf",
+    "back": "somnus altus",
+    "ipa": "ˈsɔm.nʊs ˈal.tʊs",
+    "example": "Somnus altus et imperturbatus ad vires recreandas necessarius est.",
+    "exampleDE": "Ungestörter Tiefschlaf ist unverzichtbar für die Regeneration."
+  },
+  {
+    "front": "das Wohlbefinden",
+    "back": "salubritas",
+    "ipa": "saˈluː.brɪ.taːs",
+    "example": "Salubris victus ad valetudinem maximam vim habet.",
+    "exampleDE": "Gesunde Ernährung trägt entscheidend zum Wohlbefinden bei."
+  },
+  {
+    "front": "die frische Luft",
+    "back": "aer recens",
+    "ipa": "ˈae̯.ɛr ˈrɛ.kɛns",
+    "example": "Velox ambulatio in aere recenti animum recreat.",
+    "exampleDE": "Ein zügiger Spaziergang an der frischen Luft belebt den Geist."
+  },
+  {
+    "front": "die Ballaststoffe",
+    "back": "fibrae cibariae",
+    "ipa": "ˈfɪ.brae̯ kɪˈbaː.rɪ.ae̯",
+    "example": "Cibi e grano integro et legumina pretiosas fibras cibarias continent.",
+    "exampleDE": "Vollkornprodukte und Hülsenfrüchte enthalten wertvolle Ballaststoffe."
+  },
+  {
+    "front": "die Vitamine",
+    "back": "vitaminae",
+    "ipa": "wɪ.taˈmiː.nae̯",
+    "example": "Poma recentia corpus vitaminis vitae necessariis instruunt.",
+    "exampleDE": "Frisches Obst versorgt den Körper mit lebenswichtigen Vitaminen."
+  },
+  {
+    "front": "das Eiweiß",
+    "back": "albumina",
+    "ipa": "al.buːˈmiː.na",
+    "example": "Caseus recens, pisces et ova nobilem albuminam animalem praebent.",
+    "exampleDE": "Quark, Fisch und Eier liefern hochwertiges tierisches Eiweiß."
+  },
+  {
+    "front": "die Kalorien",
+    "back": "caloriae",
+    "ipa": "kaˈlɔ.rɪ.ae̯",
+    "example": "Natando mirum quantum calorias ardes.",
+    "exampleDE": "Beim Schwimmen verbrennt man überraschend viele Kalorien."
+  },
+  {
+    "front": "der Blutzucker",
+    "back": "saccharum sanguinis",
+    "ipa": "ˈsak.kʰa.rʊm ˈsaŋ.ɡʷɪ.nɪs",
+    "example": "Panis integer saccharum sanguinis lente tantum augeri sinit.",
+    "exampleDE": "Vollkornbrot lässt den Blutzucker nur langsam ansteigen."
+  },
+  {
+    "front": "das Übergewicht",
+    "back": "nimium pondus",
+    "ipa": "ˈnɪ.mɪ.ʊm ˈpɔn.dʊs",
+    "example": "Assidua motio contra nimium pondus efficaciter prodest.",
+    "exampleDE": "Regelmäßige Bewegung hilft wirksam gegen Übergewicht."
+  },
+  {
+    "front": "die Flüssigkeitszufuhr",
+    "back": "haustus umoris",
+    "ipa": "ˈhaʊ̯s.tʊs ʊˈmoː.rɪs",
+    "example": "Aestuosis diebus aestivis satis magnus haustus umoris gravis est.",
+    "exampleDE": "An heißen Sommertagen ist ausreichende Flüssigkeitszufuhr wichtig."
+  },
+  {
+    "front": "die Schwiegereltern",
+    "back": "soceri",
+    "ipa": "ˈsɔ.kɛ.riː",
+    "example": "Die Solis a soceris meis ad potionem Arabicam vocamur.",
+    "exampleDE": "Am Sonntag sind wir bei meinen Schwiegereltern zum Kaffee eingeladen."
+  },
+  {
+    "front": "der Schwiegersohn",
+    "back": "gener",
+    "ipa": "ˈɡɛ.nɛr",
+    "example": "Gener eius cum tota familia optime concordat.",
+    "exampleDE": "Ihr Schwiegersohn versteht sich prächtig mit der ganzen Familie."
+  },
+  {
+    "front": "die Schwiegertochter",
+    "back": "nurus",
+    "ipa": "ˈnʊ.rʊs",
+    "example": "Nurus placentam malorum a se coctam attulit.",
+    "exampleDE": "Die Schwiegertochter brachte einen selbstgebackenen Apfelkuchen mit."
+  },
+  {
+    "front": "die Urgroßmutter",
+    "back": "proavia",
+    "ipa": "prɔˈa.wɪ.a",
+    "example": "Proavia mea hoc anno nonagesimum natalem celebravit.",
+    "exampleDE": "Meine Urgroßmutter feierte dieses Jahr ihren neunzigsten Geburtstag."
+  },
+  {
+    "front": "der Urgroßvater",
+    "back": "proavus",
+    "ipa": "ˈprɔ.a.wʊs",
+    "example": "Proavus pueris libenter veteres fabulas narrat.",
+    "exampleDE": "Der Urgroßvater erzählt den Kindern gerne alte Geschichten."
+  },
+  {
+    "front": "die Patentante",
+    "back": "matrina",
+    "ipa": "maˈtriː.na",
+    "example": "Matrina mea mihi schola confecta bonum librum donavit.",
+    "exampleDE": "Meine Patentante schenkte mir zum Schulabschluss ein gutes Buch."
+  },
+  {
+    "front": "der Patenonkel",
+    "back": "patrinus",
+    "ipa": "paˈtriː.nʊs",
+    "example": "Patrinus eum toto tempore studiorum adiuvat.",
+    "exampleDE": "Sein Patenonkel unterstützt ihn während des gesamten Studiums."
+  },
+  {
+    "front": "die Großfamilie",
+    "back": "familia ampla",
+    "ipa": "faˈmɪ.lɪ.a ˈam.pla",
+    "example": "Festo Nativitatis tota familia ampla in conclavi convenit.",
+    "exampleDE": "Zu Weihnachten versammelt sich die ganze Großfamilie im Wohnzimmer."
+  },
+  {
+    "front": "die Kindheit",
+    "back": "infantia",
+    "ipa": "ɪnˈfan.tɪ.a",
+    "example": "Libenter recordor infantiam securam ruri actam.",
+    "exampleDE": "Ich denke gerne an die unbeschwerte Kindheit auf dem Land zurück."
+  },
+  {
+    "front": "die Jugend",
+    "back": "adulescentia",
+    "ipa": "a.dʊ.lɛsˈkɛn.tɪ.a",
+    "example": "Adulescentia multas novas artes atque studia experimur.",
+    "exampleDE": "In der Jugend probiert man viele neue Hobbys und Interessen aus."
+  },
+  {
+    "front": "das Erwachsenenalter",
+    "back": "aetas matura",
+    "ipa": "ˈae̯.taːs maˈtuː.ra",
+    "example": "Aetate matura quisque pro vita sua rationem reddit.",
+    "exampleDE": "Im Erwachsenenalter übernimmt man Verantwortung für sein eigenes Leben."
+  },
+  {
+    "front": "der Ruhestand",
+    "back": "otium emeritum",
+    "ipa": "ˈɔ.tɪ.ʊm ɛˈmɛ.rɪ.tʊm",
+    "example": "In otio emerito et merito coniuges multum per Europam iter faciunt.",
+    "exampleDE": "Im wohlverdienten Ruhestand reist das Ehepaar viel durch Europa."
+  },
+  {
+    "front": "der Geburtstag",
+    "back": "dies natalis",
+    "ipa": "ˈdɪ.eːs naˈtaː.lɪs",
+    "example": "Tricesimum eius diem natalem magno convivio celebramus.",
+    "exampleDE": "Wir feiern seinen dreißigsten Geburtstag mit einer großen Party."
+  },
+  {
+    "front": "die Generation",
+    "back": "aetas",
+    "ipa": "ˈae̯.taːs",
+    "example": "Quaeque aetas suas proprias virtutes atque opiniones habet.",
+    "exampleDE": "Jede Generation hat ihre eigenen Werte und Vorstellungen."
+  },
+  {
+    "front": "die Lebenserfahrung",
+    "back": "vitae usus",
+    "ipa": "ˈwiː.tae̯ ˈuː.suːs",
+    "example": "Procedente tempore pretiosus vitae usus colligitur.",
+    "exampleDE": "Mit den Jahren sammelt man wertvolle Lebenserfahrung."
+  },
+  {
+    "front": "die Freundschaft",
+    "back": "amicitia",
+    "ipa": "a.mɪˈkiː.tɪ.a",
+    "example": "Vera amicitia etiam longis intervallis perstat.",
+    "exampleDE": "Eine echte Freundschaft hält auch über weite Entfernungen."
+  },
+  {
+    "front": "das Vertrauen",
+    "back": "fides",
+    "ipa": "ˈfɪ.deːs",
+    "example": "Mutua fides est fundamentum omnis bonae necessitudinis.",
+    "exampleDE": "Gegenseitiges Vertrauen ist das Fundament jeder guten Beziehung."
+  },
+  {
+    "front": "sich verlassen auf",
+    "back": "fidere",
+    "ipa": "ˈfɪː.dɛ.rɛ",
+    "example": "Optimae amicae meae semper plane fidere possum.",
+    "exampleDE": "Auf meine beste Freundin kann ich mich immer voll verlassen."
+  },
+  {
+    "front": "die Ehrlichkeit",
+    "back": "veritas",
+    "ipa": "ˈweː.rɪ.taːs",
+    "example": "Veritas diutissime manet, praecipue inter amicos.",
+    "exampleDE": "Ehrlichkeit währt am längsten, besonders unter Freunden."
+  },
+  {
+    "front": "die Hilfsbereitschaft",
+    "back": "promptitudo auxilii",
+    "ipa": "prɔmp.tɪˈtuː.doː aʊ̯kˈsɪ.lɪ.iː",
+    "example": "Promptitudinem eius auxilii omnes vicini magni aestimant.",
+    "exampleDE": "Ihre herzliche Hilfsbereitschaft schätzen alle Nachbarn sehr."
+  },
+  {
+    "front": "das Geheimnis",
+    "back": "arcanum",
+    "ipa": "arˈkaː.nʊm",
+    "example": "Arcanum sibi creditum numquam proderet.",
+    "exampleDE": "Er würde ein ihm anvertrautes Geheimnis niemals verraten."
+  },
+  {
+    "front": "zusammenhalten",
+    "back": "concordiam servare",
+    "ipa": "kɔŋˈkɔr.dɪ.am sɛrˈwaː.rɛ",
+    "example": "In rebus adversis amicos concordiam firmiter servare oportet.",
+    "exampleDE": "In schwierigen Momenten müssen Freunde fest zusammenhalten."
+  },
+  {
+    "front": "kennenlernen",
+    "back": "cognoscere",
+    "ipa": "kɔŋˈnoːs.kɛ.rɛ",
+    "example": "Nos ante quinque annos in universitate cognovimus.",
+    "exampleDE": "Wir haben uns vor fünf Jahren an der Universität kennengelernt."
+  },
+  {
+    "front": "die Verliebtheit",
+    "back": "amor recens",
+    "ipa": "ˈa.mɔr ˈrɛ.kɛns",
+    "example": "Initio consortionis amor recens vehementissimus est.",
+    "exampleDE": "Am Anfang einer Beziehung ist die Verliebtheit besonders intensiv."
+  },
+  {
+    "front": "die Zuneigung",
+    "back": "affectus",
+    "ipa": "afˈfɛk.tʊs",
+    "example": "Affectum suum parvis et attentis signis ostendit.",
+    "exampleDE": "Er zeigte seine Zuneigung durch kleine, aufmerksame Gesten."
+  },
+  {
+    "front": "die Verlobung",
+    "back": "sponsalia",
+    "ipa": "spɔnˈsaː.lɪ.a",
+    "example": "In cena amatoria sponsalia sua nuntiaverunt.",
+    "exampleDE": "Bei einem romantischen Abendessen gaben sie ihre Verlobung bekannt."
+  },
+  {
+    "front": "die Hochzeit",
+    "back": "nuptiae",
+    "ipa": "ˈnʊp.tɪ.ae̯",
+    "example": "Nuptiae in vetusto curia veteris urbis habitae sunt.",
+    "exampleDE": "Die Hochzeit fand im historischen Rathaus der Altstadt statt."
+  },
+  {
+    "front": "der Ehepartner",
+    "back": "coniunx",
+    "ipa": "ˈkɔn.jʊŋks",
+    "example": "Opinionem coniugis suae in omnibus rebus veretur.",
+    "exampleDE": "Sie respektiert die Meinung ihres Ehepartners in allen Belangen."
+  },
+  {
+    "front": "der Hochzeitstag",
+    "back": "dies nuptiarum",
+    "ipa": "ˈdɪ.eːs nʊp.tɪˈaː.rʊm",
+    "example": "Decimo die nuptiarum breve iter commune fecerunt.",
+    "exampleDE": "Zum zehnten Hochzeitstag machten sie eine gemeinsame Kurzreise."
+  },
+  {
+    "front": "die Trennung",
+    "back": "divortium",
+    "ipa": "dɪˈwɔr.tɪ.ʊm",
+    "example": "Post diuturnam deliberationem ambo iustum divortium elegerunt.",
+    "exampleDE": "Nach langer Überlegung entschieden sich beide für eine faire Trennung."
+  },
+  {
+    "front": "die Dankbarkeit",
+    "back": "gratia",
+    "ipa": "ˈɡraː.tɪ.a",
+    "example": "Magnam gratiam propter egregium auxilium tuum habeo.",
+    "exampleDE": "Ich empfinde tiefe Dankbarkeit für deine großartige Hilfe."
+  },
+  {
+    "front": "die Erleichterung",
+    "back": "levatio",
+    "ipa": "lɛˈwaː.tɪ.oː",
+    "example": "Examine probato ingentem animi levationem sensit.",
+    "exampleDE": "Nach der bestandenen Prüfung spürte sie riesige Erleichterung."
+  },
+  {
+    "front": "die Vorfreude",
+    "back": "laetitia praecurrens",
+    "ipa": "lae̯ˈtiː.tɪ.a prae̯ˈkʊr.reːns",
+    "example": "Laetitia praecurrens aestivorum feriarum laborem hebdomadis minuit.",
+    "exampleDE": "Die Vorfreude auf den Sommerurlaub verkürzt die Arbeitswoche."
+  },
+  {
+    "front": "die Begeisterung",
+    "back": "alacritas",
+    "ipa": "aˈla.krɪ.taːs",
+    "example": "Spectatores alacres post ludum per multa minuta plauserunt.",
+    "exampleDE": "Das begeisterte Publikum klatschte nach der Vorstellung minutenlang."
+  },
+  {
+    "front": "die Zufriedenheit",
+    "back": "aequitas animi",
+    "ipa": "ˈae̯.kʷɪ.taːs ˈa.nɪ.miː",
+    "example": "Tranquillus vesper cum bono libro aequitatem animi praebet.",
+    "exampleDE": "Ein ruhiger Abend mit einem guten Buch schenkt Zufriedenheit."
+  },
+  {
+    "front": "die Hoffnung",
+    "back": "spes",
+    "ipa": "speːs",
+    "example": "Spem boni exitus numquam deponimus.",
+    "exampleDE": "Wir geben die Hoffnung auf ein gutes Ende niemals auf."
+  },
+  {
+    "front": "der Optimismus",
+    "back": "animus laetus",
+    "ipa": "ˈa.nɪ.mʊs ˈlae̯.tʊs",
+    "example": "Animo laeto multas res arduas superamus.",
+    "exampleDE": "Mit gesundem Optimismus meistert man viele schwierige Situationen."
+  },
+  {
+    "front": "das Selbstvertrauen",
+    "back": "fiducia sui",
+    "ipa": "fɪˈduː.kɪ.a ˈsʊ.iː",
+    "example": "Res bene gestae fiduciam sui diuturne roborant.",
+    "exampleDE": "Erfolge stärken das persönliche Selbstvertrauen nachhaltig."
+  },
+  {
+    "front": "die Enttäuschung",
+    "back": "deceptio",
+    "ipa": "dɛˈkɛp.tɪ.oː",
+    "example": "Clades in certamine postremo gregi acerba deceptio fuit.",
+    "exampleDE": "Die Niederlage im Finale war eine herbe Enttäuschung für das Team."
+  },
+  {
+    "front": "die Eifersucht",
+    "back": "zelotypia",
+    "ipa": "zeː.lɔˈtyː.pɪ.a",
+    "example": "Zelotypia vana societati amantium grave detrimentum afferre potest.",
+    "exampleDE": "Unbegründete Eifersucht kann eine Partnerschaft schwer belasten."
+  },
+  {
+    "front": "der Neid",
+    "back": "invidia",
+    "ipa": "ɪnˈwɪ.dɪ.a",
+    "example": "Invidia secundarum rerum aliorum hominem non iuvat.",
+    "exampleDE": "Neid auf den Erfolg anderer bringt einen selbst nicht weiter."
+  },
+  {
+    "front": "die Scham",
+    "back": "pudor",
+    "ipa": "ˈpʊ.dɔr",
+    "example": "Pudore errati faciem eius rubor suffudit.",
+    "exampleDE": "Vor Scham über das Missgeschick wurde er im Gesicht rot."
+  },
+  {
+    "front": "die Reue",
+    "back": "paenitentia",
+    "ipa": "pae̯.nɪˈtɛn.tɪ.a",
+    "example": "Veram paenitentiam prae se tulit statimque veniam rogavit.",
+    "exampleDE": "Er zeigte aufrichtige Reue und entschuldigte sich sofort."
+  },
+  {
+    "front": "die Verzweiflung",
+    "back": "desperatio",
+    "ipa": "deːs.pɛˈraː.tɪ.oː",
+    "example": "Desperatione fracta consilium auxiliique locum adiit.",
+    "exampleDE": "In ihrer Verzweiflung bat sie eine Beratungsstelle um Hilfe."
+  },
+  {
+    "front": "die Ungeduld",
+    "back": "impatientia",
+    "ipa": "ɪm.pa.tɪˈɛn.tɪ.a",
+    "example": "Prae impatientia in conclavi trepidus ultro citroque ibat.",
+    "exampleDE": "Vor lauter Ungeduld lief er im Zimmer unruhig auf und ab."
+  },
+  {
+    "front": "zuverlässig",
+    "back": "fidus",
+    "ipa": "ˈfiː.dʊs",
+    "example": "In officio collega maxime fida est.",
+    "exampleDE": "Sie ist eine äußerst zuverlässige Kollegin im Büro."
+  },
+  {
+    "front": "pünktlich",
+    "back": "tempori parens",
+    "ipa": "ˈtɛm.pɔ.riː ˈpa.reːns",
+    "example": "Ad omnem conventum ad momentum tempori parens advenit.",
+    "exampleDE": "Er erscheint zu jeder Besprechung auf die Minute pünktlich."
+  },
+  {
+    "front": "ehrgeizig",
+    "back": "ambitiosus",
+    "ipa": "am.bɪ.tɪˈoː.sʊs",
+    "example": "Athleta ambitiosa cotidie disciplina se exercet.",
+    "exampleDE": "Als ehrgeizige Sportlerin trainiert sie diszipliniert jeden Tag."
+  },
+  {
+    "front": "großzügig",
+    "back": "liberalis",
+    "ipa": "lɪ.bɛˈraː.lɪs",
+    "example": "Magnus avunculus meus semper homo liberalissimus fuit.",
+    "exampleDE": "Mein Großonkel war schon immer ein sehr großzügiger Mensch."
+  },
+  {
+    "front": "bescheiden",
+    "back": "modestus",
+    "ipa": "mɔˈdɛs.tʊs",
+    "example": "Quamquam res magnas gessit, semper modestus mansit.",
+    "exampleDE": "Trotz seiner großen Erfolge ist er stets bescheiden geblieben."
+  },
+  {
+    "front": "nachdenklich",
+    "back": "cogitabundus",
+    "ipa": "koː.ɡɪ.taˈbʊn.dʊs",
+    "example": "Cogitabunda per fenestram in pluviam intuebatur.",
+    "exampleDE": "Sie blickte nachdenklich aus dem Fenster in den Regen."
+  },
+  {
+    "front": "geduldig",
+    "back": "patiens",
+    "ipa": "ˈpa.tɪ.eːns",
+    "example": "Magister negotium difficile patienti voce explanat.",
+    "exampleDE": "Der Lehrer erklärt die schwierige Aufgabe mit geduldiger Stimme."
+  },
+  {
+    "front": "humorvoll",
+    "back": "facetus",
+    "ipa": "faˈkeː.tʊs",
+    "example": "Faceto more suo universam coronam in risum movet.",
+    "exampleDE": "Mit seiner humorvollen Art bringt er die ganze Runde zum Lachen."
+  },
+  {
+    "front": "das Missverständnis",
+    "back": "error interpretationis",
+    "ipa": "ˈɛr.rɔr ɪn.tɛr.prɛ.taː.tɪˈoː.nɪs",
+    "example": "Brevi colloquio error interpretationis dilutus est.",
+    "exampleDE": "Durch ein kurzes Telefongespräch klärte sich das Missverständnis auf."
+  },
+  {
+    "front": "der Streit",
+    "back": "rixa",
+    "ipa": "ˈrɪk.sa",
+    "example": "Post rixam ardentem ambo placide inter se locuti sunt.",
+    "exampleDE": "Nach dem hitzigen Streit sprachen beide in Ruhe miteinander."
+  },
+  {
+    "front": "die Versöhnung",
+    "back": "reconciliatio",
+    "ipa": "rɛ.kɔn.kɪ.lɪˈaː.tɪ.oː",
+    "example": "Sincera veniae petitio viam ad reconciliationem munivit.",
+    "exampleDE": "Eine ehrliche Entschuldigung ebnete den Weg zur Versöhnung."
+  },
+  {
+    "front": "der Kompromiss",
+    "back": "transactio",
+    "ipa": "tranˈsak.tɪ.oː",
+    "example": "Utraque pars aequa transactione consensit.",
+    "exampleDE": "Beide Verhandlungsparteien einigten sich auf einen fairen Kompromiss."
+  },
+  {
+    "front": "zuhören",
+    "back": "auscultare",
+    "ipa": "aʊ̯s.kʊlˈtaː.rɛ",
+    "example": "Bene auscultare saepe gravius est quam ipsum multa loqui.",
+    "exampleDE": "Gutes Zuhören ist oft wichtiger als selbst viel zu reden."
+  },
+  {
+    "front": "unterbrechen",
+    "back": "interpellare",
+    "ipa": "ɪn.tɛr.pɛlˈlaː.rɛ",
+    "example": "Sine, quaeso, orationem absolvam neve me interpellaveris.",
+    "exampleDE": "Bitte lass mich meinen Satz beenden und unterbrich mich nicht."
+  },
+  {
+    "front": "kritisieren",
+    "back": "reprehendere",
+    "ipa": "rɛ.prɛˈhɛn.dɛ.rɛ",
+    "example": "Reprehendere semper prudenter atque moderate oportet.",
+    "exampleDE": "Man sollte Kritik stets sachlich und konstruktiv formulieren."
+  },
+  {
+    "front": "die Meinung",
+    "back": "sententia",
+    "ipa": "sɛnˈtɛn.tɪ.a",
+    "example": "Mea sententia consilia iterum considerare debemus.",
+    "exampleDE": "Meiner Meinung nach sollten wir die Pläne noch einmal überdenken."
+  },
+  {
+    "front": "der Standpunkt",
+    "back": "status",
+    "ipa": "ˈsta.tʊs",
+    "example": "Statum suum claris argumentis defendit.",
+    "exampleDE": "Sie vertrat ihren Standpunkt mit klaren und überzeugenden Argumenten."
+  },
+  {
+    "front": "das Argument",
+    "back": "argumentum",
+    "ipa": "ar.ɡʊˈmɛn.tʊm",
+    "example": "Validum argumentum etiam dubios auditores persuasit.",
+    "exampleDE": "Ein starkes Argument überzeugte auch die skeptischen Zuhörer."
+  },
+  {
+    "front": "beipflichten",
+    "back": "assentiri",
+    "ipa": "as.sɛnˈtiː.riː",
+    "example": "In hoc iudicio tibi plane assentiri debeo.",
+    "exampleDE": "In dieser Einschätzung muss ich Ihnen vollkommen beipflichten."
+  },
+  {
+    "front": "Einwand erheben",
+    "back": "intercedere",
+    "ipa": "ɪn.tɛr.keːˈdɛ.rɛ",
+    "example": "Iusta de causa novae condicioni intercessit.",
+    "exampleDE": "Er erhob einen sachlichen Einwand gegen den neuen Vorschlag."
+  },
+  {
+    "front": "die Überzeugungskraft",
+    "back": "persuasio",
+    "ipa": "pɛr.sʊˈaː.sɪ.oː",
+    "example": "Magna persuasione auditores sibi conciliavit.",
+    "exampleDE": "Mit großer Überzeugungskraft gewann sie die Zuhörer für sich."
+  },
+  {
+    "front": "die Diskussion",
+    "back": "disceptatio",
+    "ipa": "dɪs.kɛpˈtaː.tɪ.oː",
+    "example": "Acris disceptatio ad multam noctem protracta est.",
+    "exampleDE": "Die lebhafte Diskussion dauerte bis spät in den Abend."
+  },
+  {
+    "front": "das Fazit",
+    "back": "conclusio",
+    "ipa": "kɔnˈkluː.sɪ.oː",
+    "example": "In conclusione statui potest inceptum bene cessisse.",
+    "exampleDE": "Als Fazit lässt sich festhalten, dass das Projekt gelungen ist."
+  },
+  {
+    "front": "die Höflichkeit",
+    "back": "comitas",
+    "ipa": "ˈkɔ.mɪ.taːs",
+    "example": "Comitas multas ianuas in vita privata atque publica aperit.",
+    "exampleDE": "Höflichkeit öffnet viele Türen im privaten und beruflichen Leben."
+  },
+  {
+    "front": "der Respekt",
+    "back": "observantia",
+    "ipa": "ɔb.sɛrˈwan.tɪ.a",
+    "example": "Mutua observantia fundamentum est vitae tranquillae.",
+    "exampleDE": "Gegenseitiger Respekt ist die Grundlage für ein friedliches Miteinander."
+  },
+  {
+    "front": "die Entschuldigung",
+    "back": "veniae petitio",
+    "ipa": "ˈwɛ.nɪ.ae̯ pɛˈtɪ.tɪ.oː",
+    "example": "Veram veniae petitionem sine dubio accepit.",
+    "exampleDE": "Er nahm die aufrichtige Entschuldigung ohne Zögern an."
+  },
+  {
+    "front": "die Einladung",
+    "back": "invitatio",
+    "ipa": "ɪn.wɪˈtaː.tɪ.oː",
+    "example": "Magnas tibi gratias ago pro comi invitatione ad cenam.",
+    "exampleDE": "Vielen herzlichen Dank für die freundliche Einladung zum Abendessen."
+  },
+  {
+    "front": "der Dank",
+    "back": "gratiae",
+    "ipa": "ˈɡraː.tɪ.ae̯",
+    "example": "Summas gratias pro auxilio tuo tibi agere velim.",
+    "exampleDE": "Ich möchte Ihnen meinen herzlichen Dank für die Unterstützung aussprechen."
+  },
+  {
+    "front": "die Gastfreundschaft",
+    "back": "hospitalitas",
+    "ipa": "hɔs.pɪˈtaː.lɪ.taːs",
+    "example": "Benigna hospitalitas familiae nos vehementer commovit.",
+    "exampleDE": "Die herzliche Gastfreundschaft der Familie hat uns tief beeindruckt."
+  },
+  {
+    "front": "das Kompliment",
+    "back": "laus",
+    "ipa": "laʊ̯s",
+    "example": "Valde laetata est laudi comi de oratione sua tributae.",
+    "exampleDE": "Sie freute sich sehr über das nette Kompliment zu ihrem Vortrag."
+  },
+  {
+    "front": "die Fußgängerzone",
+    "back": "area pedestris",
+    "ipa": "ˈa.rɛ.a pɛˈdɛs.trɪs",
+    "example": "In celebri area pedestri taberna tabernam sequitur.",
+    "exampleDE": "In der belebten Fußgängerzone reiht sich ein Geschäft an das andere."
+  },
+  {
+    "front": "der Zebrastreifen",
+    "back": "transitus pedestris",
+    "ipa": "ˈtran.sɪ.tʊs pɛˈdɛs.trɪs",
+    "example": "Ad transitum pedestrem raedae consistunt, ut pedestres transeant.",
+    "exampleDE": "Am Zebrastreifen halten die Autos an, um Fußgänger queren zu lassen."
+  },
+  {
+    "front": "der Bürgersteig",
+    "back": "crepido",
+    "ipa": "krɛˈpiː.doː",
+    "example": "Pueri rhedulis secure in lata crepidine vehuntur.",
+    "exampleDE": "Die Kinder fahren mit ihren Rollern sicher auf dem breiten Bürgersteig."
+  },
+  {
+    "front": "die Ampel",
+    "back": "signum luminosum",
+    "ipa": "ˈsɪŋ.nʊm luː.mɪˈnoː.sʊm",
+    "example": "Cum signum luminosum rubet, omnia vehicula consistere debent.",
+    "exampleDE": "Wenn die Ampel auf Rot schaltet, müssen alle Fahrzeuge anhalten."
+  },
+  {
+    "front": "die Kreuzung",
+    "back": "compitum",
+    "ipa": "ˈkɔm.pɪ.tʊm",
+    "example": "In proximo magno compito dextrorsum flecte, quaeso.",
+    "exampleDE": "An der nächsten großen Kreuzung biegen Sie bitte rechts ab."
+  },
+  {
+    "front": "die Einbahnstraße",
+    "back": "via unius cursus",
+    "ipa": "ˈwɪ.a ʊˈniː.ʊs ˈkʊr.suːs",
+    "example": "Attende tabulam: haec angiportus est via unius cursus.",
+    "exampleDE": "Achten Sie auf das Schild, diese schmale Gasse ist eine Einbahnstraße."
+  },
+  {
+    "front": "der Marktplatz",
+    "back": "forum",
+    "ipa": "ˈfɔ.rʊm",
+    "example": "Diebus Mercurii et Saturni mercatus in foro habetur.",
+    "exampleDE": "Mittwochs und samstags findet auf dem Marktplatz der Wochenmarkt statt."
+  },
+  {
+    "front": "das Rathaus",
+    "back": "curia",
+    "ipa": "ˈkuː.rɪ.a",
+    "example": "Curia vetusta cum conspicua turri in media urbe stat.",
+    "exampleDE": "Das historische Rathaus mit seinem markanten Turm steht im Zentrum."
+  },
+  {
+    "front": "der Fahrplan",
+    "back": "ordo cursuum",
+    "ipa": "ˈɔr.doː ˈkʊr.sʊ.ʊm",
+    "example": "In ordine cursuum ad stationem omnia tempora profectionum leguntur.",
+    "exampleDE": "Auf dem Fahrplan an der Haltestelle stehen alle Abfahrtszeiten."
+  },
+  {
+    "front": "die Haltestelle",
+    "back": "statio",
+    "ipa": "ˈsta.tɪ.oː",
+    "example": "Tramvia directe in statione ante museum consistit.",
+    "exampleDE": "Die Straßenbahn hält direkt an der Haltestelle vor dem Museum."
+  },
+  {
+    "front": "die Fahrkarte",
+    "back": "tessera vectoria",
+    "ipa": "ˈtɛs.sɛ.ra wɛkˈtoː.rɪ.a",
+    "example": "Eme, quaeso, tesseram vectoriam ante ascensum ex machina.",
+    "exampleDE": "Kaufen Sie die Fahrkarte bitte vor dem Einsteigen am Automaten."
+  },
+  {
+    "front": "der Entwerter",
+    "back": "machina signatoria",
+    "ipa": "ˈma.kʰɪ.na sɪŋ.naˈtoː.rɪ.a",
+    "example": "Insere tesseram in machinam signatoriam, ut rata fiat.",
+    "exampleDE": "Stecken Sie das Ticket in den Entwerter, um es gültig zu machen."
+  },
+  {
+    "front": "umsteigen",
+    "back": "vehiculum mutare",
+    "ipa": "wɛˈhɪ.kʊ.lʊm muːˈtaː.rɛ",
+    "example": "In statione primaria vehiculum mutare debemus.",
+    "exampleDE": "Am Hauptbahnhof müssen wir in die U-Bahn-Linie 2 umsteigen."
+  },
+  {
+    "front": "die Verspätung",
+    "back": "tarditas",
+    "ipa": "ˈtar.dɪ.taːs",
+    "example": "Propter impedimentum laophorium decem minutorum tarditatem habet.",
+    "exampleDE": "Wegen einer Weichenstörung hat der Bus zehn Minuten Verspätung."
+  },
+  {
+    "front": "die Monatskarte",
+    "back": "tessera menstrua",
+    "ipa": "ˈtɛs.sɛ.ra ˈmɛn.strʊ.a",
+    "example": "Commeantibus tessera menstrua propria conducit.",
+    "exampleDE": "Für Berufspendler lohnt sich eine persönliche Monatskarte."
+  },
+  {
+    "front": "der Führerschein",
+    "back": "diploma gubernandi",
+    "ipa": "dɪˈploː.ma ɡʊ.bɛrˈnan.diː",
+    "example": "Duodeviginti annos nata examen diplomatis gubernandi superavit.",
+    "exampleDE": "Mit achtzehn Jahren bestand sie die Prüfung für den Führerschein."
+  },
+  {
+    "front": "der Sicherheitsgurt",
+    "back": "fascia securitatis",
+    "ipa": "ˈfas.kɪ.a seː.kuː.rɪˈtaː.tɪs",
+    "example": "Astringe, quaeso, te et fasciam securitatis indue.",
+    "exampleDE": "Bitte schnallen Sie sich an und legen Sie den Sicherheitsgurt an."
+  },
+  {
+    "front": "die Tankstelle",
+    "back": "statio benzinaria",
+    "ipa": "ˈsta.tɪ.oː bɛn.zɪˈnaː.rɪ.a",
+    "example": "In proxima statione benzinaria fomitem et aquam supplere debemus.",
+    "exampleDE": "An der nächsten Tankstelle müssen wir Benzin und Wischwasser nachfüllen."
+  },
+  {
+    "front": "der Kofferraum",
+    "back": "theca sarcinaria",
+    "ipa": "ˈtʰeː.ka sar.kɪˈnaː.rɪ.a",
+    "example": "In ampla theca sarcinaria satis spatii tribus magnis manticis patet.",
+    "exampleDE": "Im geräumigen Kofferraum ist genug Platz für drei große Koffer."
+  },
+  {
+    "front": "der Rückspiegel",
+    "back": "speculum retroversum",
+    "ipa": "ˈspɛ.kʊ.lʊm rɛ.trɔˈwɛr.sʊm",
+    "example": "Antequam viam mutat, rector attente in speculum retroversum spectat.",
+    "exampleDE": "Vor dem Spurwechsel schaut der Fahrer aufmerksam in den Rückspiegel."
+  },
+  {
+    "front": "der Blinker",
+    "back": "index cursus",
+    "ipa": "ˈɪn.dɛks ˈkʊr.suːs",
+    "example": "Noli oblivisci indicem cursus flectens tempestive movere.",
+    "exampleDE": "Vergessen Sie beim Abbiegen nicht, rechtzeitig den Blinker zu setzen."
+  },
+  {
+    "front": "der Scheibenwischer",
+    "back": "tergitabula",
+    "ipa": "tɛr.ɡɪˈta.bʊ.la",
+    "example": "Magna pluvia tergitabulae celerrime moventur.",
+    "exampleDE": "Bei starkem Regen laufen die Scheibenwischer auf höchster Stufe."
+  },
+  {
+    "front": "der Stau",
+    "back": "congestio vehiculorum",
+    "ipa": "kɔŋˈɡɛs.tɪ.oː wɛ.hɪ.kʊˈloː.rʊm",
+    "example": "Propter opus raedae in autocinetica via congestione retinentur.",
+    "exampleDE": "Wegen einer Baustelle stehen die Autos auf der Autobahn im Stau."
+  },
+  {
+    "front": "der Fahrradhelm",
+    "back": "galea birotarii",
+    "ipa": "ˈɡa.lɛ.a bɪ.rɔˈtaː.rɪ.iː",
+    "example": "Galea birotarii bene aptata caput in casu tegit.",
+    "exampleDE": "Ein gut sitzender Fahrradhelm schützt den Kopf bei einem Sturz."
+  },
+  {
+    "front": "der Fahrradweg",
+    "back": "semita birotarum",
+    "ipa": "ˈsɛ.mɪ.ta bɪ.rɔˈtaː.rʊm",
+    "example": "Secundum flumen lata semita birotarum patet.",
+    "exampleDE": "Entlang des Flusses verläuft ein breiter und asphaltierter Fahrradweg."
+  },
+  {
+    "front": "das Fahrradschloss",
+    "back": "sera birotae",
+    "ipa": "ˈsɛ.ra bɪˈrɔ.tae̯",
+    "example": "Semper birotam firma sera alliga.",
+    "exampleDE": "Schließen Sie Ihr Rad immer mit einem stabilen Fahrradschloss an."
+  },
+  {
+    "front": "die Klingel",
+    "back": "tintinnabulum",
+    "ipa": "tɪn.tɪnˈna.bʊ.lʊm",
+    "example": "Brevi tintinnabuli sono pedestres monet.",
+    "exampleDE": "Mit einer kurzen Betätigung der Klingel warnt sie Fußgänger vor."
+  },
+  {
+    "front": "die Luftpumpe",
+    "back": "antlia aerea",
+    "ipa": "ˈant.lɪ.a ae̯ˈɛ.rɛ.a",
+    "example": "Antlia aerea manaria aerem rotarum optime supplet.",
+    "exampleDE": "Mit der Handluftpumpe bringt er den Reifendruck auf das Optimum."
+  },
+  {
+    "front": "der E-Scooter",
+    "back": "scutra electrica",
+    "ipa": "ˈskʊ.tra ɛˈlɛk.trɪ.ka",
+    "example": "In media urbe multi commeantes scutram electricam conducunt.",
+    "exampleDE": "In der Innenstadt leihen sich viele Pendler einen E-Scooter."
+  },
+  {
+    "front": "die Pedale",
+    "back": "calcaria birotae",
+    "ipa": "kalˈkaː.rɪ.a bɪˈrɔ.tae̯",
+    "example": "Calcaria birotae vehementer premit, ut arduum collem ascendat.",
+    "exampleDE": "Er tritt kräftig in die Pedale, um den steilen Hügel hinaufzufahren."
+  },
+  {
+    "front": "der Hauptbahnhof",
+    "back": "statio primaria",
+    "ipa": "ˈsta.tɪ.oː priːˈmaː.rɪ.a",
+    "example": "Ex statione primaria tramina in omnes urbes Europaeas proficiscuntur.",
+    "exampleDE": "Vom Hauptbahnhof aus fahren Züge in alle europäischen Metropolen."
+  },
+  {
+    "front": "der Bahnsteig",
+    "back": "crepido stationis",
+    "ipa": "krɛˈpiː.doː sta.tɪˈoː.nɪs",
+    "example": "Vectores in quarta crepidine stationis tramen adveniens opperiuntur.",
+    "exampleDE": "Die Fahrgäste warten auf Bahnsteig vier auf den einfahrenden Zug."
+  },
+  {
+    "front": "das Gleis",
+    "back": "orbita",
+    "ipa": "ˈɔr.bɪ.ta",
+    "example": "Tramen velox Berolinum petens hodie ex orbita nona proficiscitur.",
+    "exampleDE": "Der Schnellzug nach Berlin fährt heute abweichend von Gleis neun."
+  },
+  {
+    "front": "die Sitzplatzreservierung",
+    "back": "servatio sedis",
+    "ipa": "sɛrˈwaː.tɪ.oː ˈseː.dɪs",
+    "example": "Servatio sedis diuturnam quaestionem in pleno tramina vitat.",
+    "exampleDE": "Eine Sitzplatzreservierung erspart langes Suchen im vollen Zug."
+  },
+  {
+    "front": "der Schaffner",
+    "back": "inspector tesserarum",
+    "ipa": "ɪnˈspɛk.tɔr tɛs.sɛˈraː.rʊm",
+    "example": "Inspector tesserarum comis chartas vectorum inspicit.",
+    "exampleDE": "Der freundliche Schaffner kontrolliert die Tickets der Fahrgäste."
+  },
+  {
+    "front": "der Speisewagen",
+    "back": "currus cenatorius",
+    "ipa": "ˈkʊr.rʊs keː.naˈtoː.rɪ.ʊs",
+    "example": "In curru cenatorio inter cursum potione cibisque frui licet.",
+    "exampleDE": "Im Speisewagen kann man während der Fahrt Kaffee und Snacks genießen."
+  },
+  {
+    "front": "der Anschlusszug",
+    "back": "tramen connectens",
+    "ipa": "ˈtraː.mɛn kɔnˈnɛk.teːns",
+    "example": "Quamquam tramen paulum tardatum est, omnes tramen connectens ceperunt.",
+    "exampleDE": "Trotz kurzer Verspätung erreichten alle Reisenden ihren Anschlusszug."
+  },
+  {
+    "front": "das Gepäckfach",
+    "back": "theca sarcinarum",
+    "ipa": "ˈtʰeː.ka sar.kɪˈnaː.rʊm",
+    "example": "Manticae graves in superiore theca sarcinarum secure collocantur.",
+    "exampleDE": "Schwere Reisetaschen verstaut man sicher im oberen Gepäckfach."
+  },
+  {
+    "front": "der Flughafen",
+    "back": "aëroportus",
+    "ipa": "a.ɛ.rɔˈpɔr.tʊs",
+    "example": "Duabus horis ante volatum tramina ad aëroportum vehimur.",
+    "exampleDE": "Wir fahren zwei Stunden vor dem Abflug mit dem Zug zum Flughafen."
+  },
+  {
+    "front": "die Bordkarte",
+    "back": "tessera ascensionis",
+    "ipa": "ˈtɛs.sɛ.ra as.kɛn.sɪˈoː.nɪs",
+    "example": "Ascendens, quaeso, tesseram ascensionis et indicium personae profer.",
+    "exampleDE": "Zeigen Sie beim Einsteigen bitte Ihre Bordkarte und den Ausweis vor."
+  },
+  {
+    "front": "die Sicherheitskontrolle",
+    "back": "inspectio securitatis",
+    "ipa": "ɪnˈspɛk.tɪ.oː seː.kuː.rɪˈtaː.tɪs",
+    "example": "In inspectione securitatis computatra separatim demonstrari debent.",
+    "exampleDE": "An der Sicherheitskontrolle müssen Laptops separat vorgezeigt werden."
+  },
+  {
+    "front": "das Abfluggos",
+    "back": "porta profectionis",
+    "ipa": "ˈpɔr.ta prɔ.fɛk.tɪˈoː.nɪs",
+    "example": "Aëroplanum Romam petens tempore ad portam profectionis proficiscitur.",
+    "exampleDE": "Das Flugzeug nach Rom startet pünktlich an Abfluggate B zwölf."
+  },
+  {
+    "front": "das Handgepäck",
+    "back": "sarcina manualis",
+    "ipa": "ˈsar.kɪ.na ma.nʊˈaː.lɪs",
+    "example": "Umores in sarcina manuali centum millilitra non superent.",
+    "exampleDE": "Flüssigkeiten im Handgepäck dürfen maximal hundert Milliliter fassen."
+  },
+  {
+    "front": "die Gepäckausgabe",
+    "back": "locus sarcinas recipiendi",
+    "ipa": "ˈlɔ.kʊs ˈsar.kɪ.naːs rɛ.kɪ.pɪˈɛn.diː",
+    "example": "Post appulsum manticae e loco sarcinas recipiendi petuntur.",
+    "exampleDE": "Nach der Landung holt man die Koffer an der Gepäckausgabe ab."
+  },
+  {
+    "front": "der Reisepass",
+    "back": "commeatus diploma",
+    "ipa": "kɔm.mɛˈaː.tʊs dɪˈploː.ma",
+    "example": "Ad peregrinandum extra Europam commeatus diplomate opus est.",
+    "exampleDE": "Für Reisen außerhalb der Europäischen Union benötigt man einen Reisepass."
+  },
+  {
+    "front": "die Rezeption",
+    "back": "officium hospitii",
+    "ipa": "ɔfˈfɪ.kɪ.ʊm hɔsˈpɪ.tɪ.iː",
+    "example": "Officium deversorii per omnes horas diei noctisque patet.",
+    "exampleDE": "Die Rezeption des Hotels ist rund um die Uhr mit Personal besetzt."
+  },
+  {
+    "front": "die Schlüsselkarte",
+    "back": "tessera clavis",
+    "ipa": "ˈtɛs.sɛ.ra ˈklaː.wɪs",
+    "example": "Tessera clavis electronica ostium cubiculi aperitur.",
+    "exampleDE": "Mit der elektronischen Schlüsselkarte öffnet sich die Zimmertür."
+  },
+  {
+    "front": "das Einzelzimmer",
+    "back": "cubiculum singulare",
+    "ipa": "kʊˈbɪ.kʊ.lʊm sɪŋ.ɡʊˈlaː.rɛ",
+    "example": "In itinere operis cubiculum singulare tranquillum conducit.",
+    "exampleDE": "Für die Geschäftsreise bucht er ein ruhiges Einzelzimmer."
+  },
+  {
+    "front": "das Doppelzimmer",
+    "back": "cubiculum duplex",
+    "ipa": "kʊˈbɪ.kʊ.lʊm ˈdʊ.plɛks",
+    "example": "Cubiculum duplex pulcherrimum conspectum maris praebet.",
+    "exampleDE": "Das Doppelzimmer bietet einen herrlichen Ausblick auf das Meer."
+  },
+  {
+    "front": "das Frühstücksbuffet",
+    "back": "mensa ientaculi",
+    "ipa": "ˈmɛn.sa jɛn.taˈkuː.liː",
+    "example": "Copiosa mensa ientaculi omnia genera ciborum praebet.",
+    "exampleDE": "Das reichhaltige Frühstücksbuffet lässt keine kulinarischen Wünsche offen."
+  },
+  {
+    "front": "der Zimmerservice",
+    "back": "ministerium cubiculi",
+    "ipa": "mɪ.nɪsˈtɛ.rɪ.ʊm kʊˈbɪ.kʊ.liː",
+    "example": "Cena commode per ministerium cubiculi posci potest.",
+    "exampleDE": "Man kann sich das Abendessen bequem über den Zimmerservice bestellen."
+  },
+  {
+    "front": "auschecken",
+    "back": "deversorio discedere",
+    "ipa": "deː.wɛrˈsɔ.rɪ.oː dɪsˈkeː.dɛ.rɛ",
+    "example": "Hospites ante horam undecimam matutinam deversorio discedant.",
+    "exampleDE": "Die Hotelgäste müssen bis spätestens elf Uhr vormittags auschecken."
+  },
+  {
+    "front": "die Jugendherberge",
+    "back": "hospitiolum iuventutis",
+    "ipa": "hɔs.pɪ.tɪˈɔ.lʊm jʊ.wɛnˈtuː.tɪs",
+    "example": "Viatoribus hospitiolum iuventutis commodum ac vile perfugium est.",
+    "exampleDE": "Für Rucksackreisende ist die Jugendherberge eine günstige Übernachtungsmöglichkeit."
+  },
+  {
+    "front": "die Ferienwohnung",
+    "back": "habitaculum feriarum",
+    "ipa": "ha.bɪˈtaː.kʊ.lʊm fɛ.rɪˈaː.rʊm",
+    "example": "Feriis familiae habitaculum commodum conducimus.",
+    "exampleDE": "Für den Familienurlaub mieten wir eine gemütliche Ferienwohnung."
+  },
+  {
+    "front": "das Reiseziel",
+    "back": "finis itineris",
+    "ipa": "ˈfiː.nɪs ɪˈtɪ.nɛ.rɪs",
+    "example": "Italia iam multos annos aestate finis itineris eius carissimus est.",
+    "exampleDE": "Italien ist seit vielen Jahren ihr liebstes Reiseziel im Sommer."
+  },
+  {
+    "front": "die Sehenswürdigkeit",
+    "back": "locus spectabilis",
+    "ipa": "ˈlɔ.kʊs spɛkˈtaː.bɪ.lɪs",
+    "example": "Ecclesia cathedralis vetusta est locus maxime spectabilis urbis.",
+    "exampleDE": "Die historische Kathedrale ist die bekannteste Sehenswürdigkeit der Stadt."
+  },
+  {
+    "front": "der Reiseleiter",
+    "back": "dux itineris",
+    "ipa": "dʊks ɪˈtɪ.nɛ.rɪs",
+    "example": "Dux itineris peritus iucundam aedificii memoriam narrat.",
+    "exampleDE": "Der kundige Reiseleiter erklärt die spannende Geschichte des Bauwerks."
+  },
+  {
+    "front": "das Souvenir",
+    "back": "monumentum peregrinationis",
+    "ipa": "mɔ.nʊˈmɛn.tʊm pɛ.rɛ.ɡriː.naː.tɪˈoː.nɪs",
+    "example": "In monumentum peregrinationis pateram fictilem pictam emit.",
+    "exampleDE": "Als schönes Souvenir kaufte sie eine handbemalte Keramikschale."
+  },
+  {
+    "front": "die Ansichtskarte",
+    "back": "chartula picta",
+    "ipa": "ˈkʰar.tʊ.la ˈpɪk.ta",
+    "example": "Chartulam pictam cum salutationibus ad avos scribit.",
+    "exampleDE": "Er schreibt eine Ansichtskarte mit Grüßen an seine Großeltern."
+  },
+  {
+    "front": "der Sonnenbrand",
+    "back": "ustio solaris",
+    "ipa": "ˈʊs.tɪ.oː sɔˈlaː.rɪs",
+    "example": "Sine unguento solari in litore quisque ustionem solarem periclitetur.",
+    "exampleDE": "Ohne schützende Sonnencreme riskiert man am Strand einen Sonnenbrand."
+  },
+  {
+    "front": "der Campingplatz",
+    "back": "campus tentoriis aptus",
+    "ipa": "ˈkam.pʊs tɛnˈtoː.rɪ.iːs ˈap.tʊs",
+    "example": "Campus tentoriis aptus amoene iuxta purum lacum situs est.",
+    "exampleDE": "Der Campingplatz liegt idyllisch direkt an einem klaren Badesee."
+  },
+  {
+    "front": "das Zelt",
+    "back": "tentorium",
+    "ipa": "tɛnˈtoː.rɪ.ʊm",
+    "example": "Una in plano prato tentorium posuerunt.",
+    "exampleDE": "Gemeinsam bauten sie das Zelt auf einer ebenen Wiese auf."
+  },
+  {
+    "front": "der Schlafsack",
+    "back": "saccus dormitorius",
+    "ipa": "ˈsak.kʊs dɔr.mɪˈtoː.rɪ.ʊs",
+    "example": "Saccus dormitorius calidus nocturno frigore secure tuetur.",
+    "exampleDE": "Ein warmer Schlafsack schützt zuverlässig vor der nächtlichen Kälte."
+  },
+  {
+    "front": "die Isomatte",
+    "back": "stratum insulans",
+    "ipa": "ˈstraː.tʊm ˈiːn.sʊ.lans",
+    "example": "Stratum insulans molle ab umore terrae defendit.",
+    "exampleDE": "Die weiche Isomatte isoliert gegen die Feuchtigkeit des Bodens."
+  },
+  {
+    "front": "die Taschenlampe",
+    "back": "lucerna gestabilis",
+    "ipa": "lʊˈkɛr.na ɡɛsˈtaː.bɪ.lɪs",
+    "example": "In tenebris lucerna gestabili viam sibi illustrat.",
+    "exampleDE": "Im Dunkeln leuchtet er sich den Weg mit der Taschenlampe."
+  },
+  {
+    "front": "der Gaskocher",
+    "back": "foculus gaseosus",
+    "ipa": "ˈfɔ.kʊ.lʊs ɡa.sɛˈoː.sʊs",
+    "example": "Super parvo foculo gaseoso mane recens caffeum coquunt.",
+    "exampleDE": "Auf dem kleinen Gaskocher kochen sie morgens frischen Kaffee."
+  },
+  {
+    "front": "das Lagerfeuer",
+    "back": "ignis castrensis",
+    "ipa": "ˈɪŋ.nɪs kasˈtrɛn.sɪs",
+    "example": "Vespere omnes iucunde circum crepitantem ignem castrensem sedebant.",
+    "exampleDE": "Am Abend saßen alle gemütlich um das knisternde Lagerfeuer."
+  },
+  {
+    "front": "das Mückenspray",
+    "back": "aspersorium culicibus",
+    "ipa": "as.pɛrˈsoː.rɪ.ʊm kʊˈlɪ.kɪ.bʊs",
+    "example": "Prope aquas efficax aspersorium culicibus commendatur.",
+    "exampleDE": "In Gewässernähe empfiehlt sich ein wirksames Mückenspray."
+  },
+  {
+    "front": "der Berggipfel",
+    "back": "cacumen montis",
+    "ipa": "kaˈkuː.mɛn ˈmɔn.tɪs",
+    "example": "De nivoso cacumine montis late mirabilis prospectus patet.",
+    "exampleDE": "Vom schneebedeckten Berggipfel hat man eine fantastische Fernsicht."
+  },
+  {
+    "front": "der Gebirgsbach",
+    "back": "rivus montanus",
+    "ipa": "ˈriː.wʊs mɔnˈtaː.nʊs",
+    "example": "Aqua limpida et gelidissima per rivum montanum murmurat.",
+    "exampleDE": "Klares, eiskaltes Wasser plätschert durch den Gebirgsbach."
+  },
+  {
+    "front": "die Klippe",
+    "back": "cautes",
+    "ipa": "ˈkaʊ̯.teːs",
+    "example": "Fluctus magno fragore ad arduam cautem franguntur.",
+    "exampleDE": "Wellen brechen mit lautem Tosen an der steilen Felsklippe."
+  },
+  {
+    "front": "die Sanddüne",
+    "back": "tumulus harenae",
+    "ipa": "ˈtʊ.mʊ.lʊs haˈreː.nae̯",
+    "example": "Assiduus ventus tenues tumulos harenae ad litus format.",
+    "exampleDE": "Der stetige Wind formt die feinen Sanddünen an der Küste."
+  },
+  {
+    "front": "der Wasserfall",
+    "back": "deiectus aquae",
+    "ipa": "deːˈjɛk.tʊs ˈa.kʷae̯",
+    "example": "Aqua fragore per viginti metra alti deiectus aquae praeceps ruit.",
+    "exampleDE": "Das Wasser stürzt tosend über den zwanzig Meter hohen Wasserfall."
+  },
+  {
+    "front": "die Halbinsel",
+    "back": "paeninsula",
+    "ipa": "pae̯ˈnɪn.sʊ.la",
+    "example": "Paeninsula amoena longe in caeruleum mare eminet.",
+    "exampleDE": "Die malerische Halbinsel ragt weit in das azurblaue Meer hinein."
+  },
+  {
+    "front": "das Flussufer",
+    "back": "ripa fluminis",
+    "ipa": "ˈriː.pa ˈflʊ.mɪ.nɪs",
+    "example": "In viridi prato ad ripam fluminis amoene epulari licet.",
+    "exampleDE": "Auf der grünen Wiese am Flussufer kann man wunderbar picknicken."
+  },
+  {
+    "front": "der Laubwald",
+    "back": "silva frondosa",
+    "ipa": "ˈsɪl.wa frɔnˈdoː.sa",
+    "example": "Autumno varia frons in silva frondosa splendet.",
+    "exampleDE": "Im Herbst leuchtet das bunte Blätterkleid im Laubwald."
+  },
+  {
+    "front": "der Nadelwald",
+    "back": "silva conifera",
+    "ipa": "ˈsɪl.wa kɔˈnɪ.fɛ.ra",
+    "example": "In silva conifera aer recens resina muscoque redolet.",
+    "exampleDE": "Im Nadelwald duftet die frische Luft nach Harz und Moos."
+  },
+  {
+    "front": "die Eiche",
+    "back": "quercus",
+    "ipa": "ˈkʷɛr.kʊs",
+    "example": "Quercus antiquissima calidis diebus aestivis frigus praebet.",
+    "exampleDE": "Die uralte Eiche spendet an heißen Sommertagen kühlen Schatten."
+  },
+  {
+    "front": "die Tanne",
+    "back": "abies",
+    "ipa": "ˈa.bɪ.eːs",
+    "example": "Hieme viridis abies ad festa Nativitatis ornatur.",
+    "exampleDE": "Im Winter schmückt man die grüne Tanne als Weihnachtsbaum."
+  },
+  {
+    "front": "die Baumkrone",
+    "back": "cacumen arboris",
+    "ipa": "kaˈkuː.mɛn ˈar.bɔ.rɪs",
+    "example": "Aves abditae in spisso cacumine arboris pipant.",
+    "exampleDE": "Vögel zwitschern versteckt in der dichten Baumkrone."
+  },
+  {
+    "front": "der Baumstamm",
+    "back": "truncus arboris",
+    "ipa": "ˈtrʊŋ.kʊs ˈar.bɔ.rɪs",
+    "example": "Ingens truncus arboris ambitum plus quam duorum metrorum habet.",
+    "exampleDE": "Der mächtige Baumstamm hat einen Umfang von über zwei Metern."
+  },
+  {
+    "front": "der Zapfen",
+    "back": "conus",
+    "ipa": "ˈkɔ.nʊs",
+    "example": "Pueri fuscos conos pineos ad fingendum colligunt.",
+    "exampleDE": "Die Kinder sammeln braune Kiefernzapfen zum Basteln."
+  },
+  {
+    "front": "das Moos",
+    "back": "muscus",
+    "ipa": "ˈmʊs.kʊs",
+    "example": "In saxis opacis densus teges viridis musci crescit.",
+    "exampleDE": "Auf den schattigen Steinen wächst ein dicker Teppich aus grünem Moos."
+  },
+  {
+    "front": "die Sonnenblume",
+    "back": "helianthus",
+    "ipa": "hɛ.lɪˈan.tʰʊs",
+    "example": "Helianthus flavus et fulgens se semper ad lucem vertit.",
+    "exampleDE": "Die leuchtend gelbe Sonnenblume wendet sich stets dem Licht zu."
+  },
+  {
+    "front": "der Löwenzahn",
+    "back": "taraxacum",
+    "ipa": "taˈrak.sa.kʊm",
+    "example": "Vere taraxacum pratum in mare aureum mutat.",
+    "exampleDE": "Im Frühling verwandelt der Löwenzahn die Wiese in ein gelbes Meer."
+  },
+  {
+    "front": "das Gänseblümchen",
+    "back": "bellis",
+    "ipa": "ˈbɛl.lɪs",
+    "example": "Parvae albae bellides ubique in herba secta crescunt.",
+    "exampleDE": "Kleine weiße Gänseblümchen wachsen überall im kurz gemähten Rasen."
+  },
+  {
+    "front": "die Lilie",
+    "back": "lilium",
+    "ipa": "ˈlɪ.lɪ.ʊm",
+    "example": "Candida lilia suavem et nobilem odorem spargunt.",
+    "exampleDE": "Weiße Lilien verströmen einen intensiven, edlen Duft."
+  },
+  {
+    "front": "die Orchidee",
+    "back": "orchis",
+    "ipa": "ˈɔr.kʰɪs",
+    "example": "In fenestra aprica egregia orchis floret.",
+    "exampleDE": "Auf der sonnigen Fensterbank blüht eine prächtige Orchidee."
+  },
+  {
+    "front": "das Blütenblatt",
+    "back": "petalum",
+    "ipa": "ˈpɛ.ta.lʊm",
+    "example": "Levis aura tenera petala per hortum spargit.",
+    "exampleDE": "Ein sanfter Windstoß weht zarte Blütenblätter durch den Garten."
+  },
+  {
+    "front": "verblühen",
+    "back": "deflorescere",
+    "ipa": "deː.flɔˈreːs.kɛ.rɛ",
+    "example": "Post aliquot apricas hebdomades verni flores deflorescere incipiunt.",
+    "exampleDE": "Nach einigen sonnigen Wochen beginnen die Frühlingsblumen zu verblühen."
+  },
+  {
+    "front": "das Wildschwein",
+    "back": "aper",
+    "ipa": "ˈa.pɛr",
+    "example": "Grex aprorum noctu per densam silvam vagatur.",
+    "exampleDE": "Eine Rotte Wildschweine durchstreift nachts den dichten Wald."
+  },
+  {
+    "front": "das Reh",
+    "back": "caprea",
+    "ipa": "ˈka.prɛ.a",
+    "example": "Diluculo timida caprea in margine silvae pascitur.",
+    "exampleDE": "In der Morgendämmerung äst ein scheues Reh am Waldrand."
+  },
+  {
+    "front": "das Eichhörnchen",
+    "back": "sciurus",
+    "ipa": "skɪˈuː.rʊs",
+    "example": "Sciurus agilis nuces in menses hiemales abscondit.",
+    "exampleDE": "Das flinke Eichhörnchen versteckt Nüsse für die Wintermonate."
+  },
+  {
+    "front": "der Igel",
+    "back": "erinaceus",
+    "ipa": "ɛ.rɪˈnaː.kɛ.ʊs",
+    "example": "In periculo erinaceus in globum spinosum se colligit.",
+    "exampleDE": "Bei Gefahr rollt sich der Igel zu einer stacheligen Kugel zusammen."
+  },
+  {
+    "front": "der Dachs",
+    "back": "meles",
+    "ipa": "ˈmɛ.leːs",
+    "example": "Meles timida cuniculos ramosos sub arboribus antiquis incolit.",
+    "exampleDE": "Der scheue Dachs bewohnt einen verzweigten Erdbau unter alten Bäumen."
+  },
+  {
+    "front": "der Biber",
+    "back": "castor",
+    "ipa": "ˈkas.tɔr",
+    "example": "Castor acutis dentibus salices iuvenes secundum rivum caedit.",
+    "exampleDE": "Mit scharfen Zähnen fällt der Biber junge Weiden am Bachlauf."
+  },
+  {
+    "front": "die Fledermaus",
+    "back": "vespertilio",
+    "ipa": "wɛs.pɛrˈtɪ.lɪ.oː",
+    "example": "Crepusculo mutus vespertilio noctuas insectatur.",
+    "exampleDE": "In der Abenddämmerung jagt die lautlose Fledermaus nach Nachtfaltern."
+  },
+  {
+    "front": "der Feldhase",
+    "back": "lepus",
+    "ipa": "ˈlɛ.pʊs",
+    "example": "Lepus vigil magnis saltibus per agrum effugit.",
+    "exampleDE": "Mit weiten Sprüngen flieht der wachsame Feldhase über den Acker."
+  },
+  {
+    "front": "der Spatz",
+    "back": "passer",
+    "ipa": "ˈpas.sɛr",
+    "example": "Parvus passer curiosus micas quaerens accurrit.",
+    "exampleDE": "Ein kleiner Spatz hüpft neugierig auf der Suche nach Krümeln heran."
+  }
+]

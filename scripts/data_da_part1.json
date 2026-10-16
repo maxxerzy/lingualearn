@@ -1,0 +1,1402 @@
+[
+  {
+    "front": "die Bettdecke",
+    "back": "dyne",
+    "ipa": "ˈdyːnə",
+    "example": "Den bløde dyne holder dig dejlig varm om vinteren.",
+    "exampleDE": "Die weiche Bettdecke hält im Winter schön warm."
+  },
+  {
+    "front": "der Wecker",
+    "back": "vækkeur",
+    "ipa": "ˈvɛɡ̊əˌuɐ̯ˀ",
+    "example": "Vækkeuret ringer præcis klokken syv.",
+    "exampleDE": "Der Wecker klingelt pünktlich um sieben Uhr."
+  },
+  {
+    "front": "das Schlummern",
+    "back": "slumre",
+    "ipa": "ˈslɔmʁə",
+    "example": "Efter at vækkeuret ringer første gang, trykker han på slumreknappen.",
+    "exampleDE": "Nach dem ersten Weckerklingeln drückt er auf die Schlummertaste."
+  },
+  {
+    "front": "das Zähneputzen",
+    "back": "tandbørstning",
+    "ipa": "ˈtˢanˌb̥ɶɐ̯sd̥neŋ",
+    "example": "Grundig tandbørstning er vigtig for sunde tænder.",
+    "exampleDE": "Gründliches Zähneputzen ist wichtig für gesunde Zähne."
+  },
+  {
+    "front": "sich anziehen",
+    "back": "tage tøj på",
+    "ipa": "tˢæ ˈtˢʌjˀ ˈpʰɔˀ",
+    "example": "Tag hurtigt tøj på, vi skal afsted.",
+    "exampleDE": "Zieh dich schnell an, wir müssen los."
+  },
+  {
+    "front": "die Haarbürste",
+    "back": "hårbørste",
+    "ipa": "ˈhɒːˌb̥ɶɐ̯sd̥ə",
+    "example": "Hun reder sit lange hår med en hårbørste.",
+    "exampleDE": "Sie kämmt ihre langen Haare mit einer Haarbürste."
+  },
+  {
+    "front": "der Spiegel",
+    "back": "spejl",
+    "ipa": "sb̥ɑjˀl",
+    "example": "Han kigger kort i spejlet i gangen.",
+    "exampleDE": "Er schaut kurz in den Spiegel im Flur."
+  },
+  {
+    "front": "die Routine",
+    "back": "rutine",
+    "ipa": "ʁuˈtˢiːnə",
+    "example": "En fast morgenrutine sparer en masse tid.",
+    "exampleDE": "Eine feste Morgenroutine spart viel Zeit."
+  },
+  {
+    "front": "der Mietvertrag",
+    "back": "lejekontrakt",
+    "ipa": "ˈlɑjəkʰʌnˌtˢʁɑɡ̊d̥",
+    "example": "Vi underskrev den nye lejekontrakt i går.",
+    "exampleDE": "Wir haben gestern den neuen Mietvertrag unterschrieben."
+  },
+  {
+    "front": "die Kaution",
+    "back": "depositum",
+    "ipa": "deˈpʰoːsid̥om",
+    "example": "Depositummet svarer til tre måneders leje.",
+    "exampleDE": "Die Kaution beträgt drei Monatsmieten."
+  },
+  {
+    "front": "die Nebenkosten",
+    "back": "forbrugsudgifter",
+    "ipa": "fʌˈb̥ʁɔwˀsˌud̥ˌɡ̊ifd̥ɐ",
+    "example": "Varme og vand er inkluderet i forbrugsudgifterne.",
+    "exampleDE": "Heizung und Wasser sind in den Nebenkosten enthalten."
+  },
+  {
+    "front": "der Vermieter",
+    "back": "udlejer",
+    "ipa": "ˈuðˌlɑjɐ",
+    "example": "Udlejeren reparerer det defekte varmeanlæg.",
+    "exampleDE": "Der Vermieter repariert die defekte Heizung."
+  },
+  {
+    "front": "der Mieter",
+    "back": "lejer",
+    "ipa": "ˈlɑjɐ",
+    "example": "Lejeren betaler huslejen i begyndelsen af måneden.",
+    "exampleDE": "Der Mieter bezahlt die Miete am Anfang des Monats."
+  },
+  {
+    "front": "die Kündigung",
+    "back": "opsigelse",
+    "ipa": "ˈʌb̥ˌsiˀəlsə",
+    "example": "Opsigelsen af den gamle lejlighed skal ske skriftligt.",
+    "exampleDE": "Die Kündigung der alten Wohnung muss schriftlich erfolgen."
+  },
+  {
+    "front": "die Wohnfläche",
+    "back": "boligareal",
+    "ipa": "b̥oˈliˀˌæʁeˌæˀl",
+    "example": "Lejligheden har et boligareal på firs kvadratmeter.",
+    "exampleDE": "Die Wohnung hat eine Wohnfläche von achtzig Quadratmetern."
+  },
+  {
+    "front": "der Umzug",
+    "back": "flytning",
+    "ipa": "ˈflyd̥neŋ",
+    "example": "Flytningen til den nye by forløb uden problemer.",
+    "exampleDE": "Der Umzug in die neue Stadt verlief reibungslos."
+  },
+  {
+    "front": "das Bücherregal",
+    "back": "bogreol",
+    "ipa": "ˈb̥oːwʁeˌoˀl",
+    "example": "Bogreolen står ved væggen på arbejdsværelset.",
+    "exampleDE": "Das Bücherregal steht an der Wand im Arbeitszimmer."
+  },
+  {
+    "front": "der Kleiderschrank",
+    "back": "klædeskab",
+    "ipa": "ˈklɛːðəˌsɡ̊æˀb̥",
+    "example": "Han hænger sine skjorter pænt ind i klædeskabet.",
+    "exampleDE": "Er hängt seine Hemden ordentlich in den Kleiderschrank."
+  },
+  {
+    "front": "der Schreibtischstuhl",
+    "back": "skrivebordsstol",
+    "ipa": "ˈsɡ̊ʁiːwəb̥oɐ̯sˌsd̥oˀl",
+    "example": "En behagelig skrivebordsstol skåner ryggen.",
+    "exampleDE": "Ein bequemer Schreibtischstuhl schont den Rücken."
+  },
+  {
+    "front": "die Stehlampe",
+    "back": "gulvlampe",
+    "ipa": "ˈɡ̊ulˌlɑmb̥ə",
+    "example": "Gulvlampen giver et varmt lys om aftenen.",
+    "exampleDE": "Die Stehlampe spendet warmes Licht am Abend."
+  },
+  {
+    "front": "der Esstisch",
+    "back": "spisebord",
+    "ipa": "ˈsb̥iːsəˌb̥oɐ̯ˀ",
+    "example": "Hele familien sidder omkring det store spisebord om aftenen.",
+    "exampleDE": "Die ganze Familie sitzt abends am großen Esstisch."
+  },
+  {
+    "front": "das Sofa",
+    "back": "sofa",
+    "ipa": "ˈsoːfæ",
+    "example": "På den behagelige sofa kan man slappe vidunderligt af.",
+    "exampleDE": "Auf dem bequemen Sofa kann man herrlich entspannen."
+  },
+  {
+    "front": "der Vorhang",
+    "back": "gardin",
+    "ipa": "ɡ̊ɑˈd̥iˀn",
+    "example": "Hun trækker gardinet for, når det bliver mørkt.",
+    "exampleDE": "Sie zieht den Vorhang zu, wenn es dunkel wird."
+  },
+  {
+    "front": "der Staubsauger",
+    "back": "støvsuger",
+    "ipa": "ˈsd̥œwˌsuˀwɐ",
+    "example": "Han støvsuger tæppet med den nye støvsuger.",
+    "exampleDE": "Er saugt den Teppich mit dem neuen Staubsauger."
+  },
+  {
+    "front": "das Bügelbrett",
+    "back": "strygebræt",
+    "ipa": "ˈsd̥ʁyːəˌb̥ʁæd̥",
+    "example": "Strygebrættet står klappet sammen i skabet.",
+    "exampleDE": "Das Bügelbrett steht zusammengeklappt im Schrank."
+  },
+  {
+    "front": "das Bügeleisen",
+    "back": "strygejern",
+    "ipa": "ˈsd̥ʁyːəˌjæɐ̯ˀn",
+    "example": "Strygejernet bliver meget varmt.",
+    "exampleDE": "Das Bügeleisen wird sehr heiß."
+  },
+  {
+    "front": "der Wischmop",
+    "back": "gulvmoppe",
+    "ipa": "ˈɡ̊ulˌmʌb̥ə",
+    "example": "Hun vasker køkkengulvet med en gulvmoppe.",
+    "exampleDE": "Sie wischt den Küchenboden mit dem Wischmop."
+  },
+  {
+    "front": "das Spülmittel",
+    "back": "opvaskemiddel",
+    "ipa": "ˈʌb̥ˌvæsɡ̊əˌmeðəl",
+    "example": "Et par dråber opvaskemiddel er nok til opvasken.",
+    "exampleDE": "Ein paar Tropfen Spülmittel genügen für das Geschirr."
+  },
+  {
+    "front": "die Mülltonne",
+    "back": "skraldespand",
+    "ipa": "ˈsɡ̊ʁɑləˌsb̥anˀ",
+    "example": "Stil venligst skraldespanden ud til vejen.",
+    "exampleDE": "Bring bitte die Mülltonne an die Straße."
+  },
+  {
+    "front": "der Wäscheständer",
+    "back": "tørrestativ",
+    "ipa": "ˈtˢɶɐ̯əsd̥æˌtˢiˀw",
+    "example": "Det våde tøj tørrer på tørrestativet.",
+    "exampleDE": "Die nasse Wäsche trocknet auf dem Wäscheständer."
+  },
+  {
+    "front": "die Glühbirne",
+    "back": "elpære",
+    "ipa": "ˈɛlˌpʰɛːɐ",
+    "example": "Vi skal udskifte den ødelagte elpære i gangen.",
+    "exampleDE": "Wir müssen die kaputte Glühbirne im Flur auswechseln."
+  },
+  {
+    "front": "der Schraubenzieher",
+    "back": "skruetrækker",
+    "ipa": "ˈsɡ̊ʁuːəˌtˢʁæɡ̊ɐ",
+    "example": "Med skruetrækkeren spænder han den løse skrue fast.",
+    "exampleDE": "Mit dem Schraubenzieher zieht er die lose Schraube fest."
+  },
+  {
+    "front": "die Zange",
+    "back": "tang",
+    "ipa": "tˢɑŋˀ",
+    "example": "Han holder ståltråden fast med en tang.",
+    "exampleDE": "Er hält den Draht mit einer Zange fest."
+  },
+  {
+    "front": "die Bohrmaschine",
+    "back": "boremaskine",
+    "ipa": "ˈb̥oːɐ̯əmæˌsɡ̊iːnə",
+    "example": "Boremaskinen borer et hul i væggen.",
+    "exampleDE": "Die Bohrmaschine bohrt ein Loch in die Wand."
+  },
+  {
+    "front": "der Handwerker",
+    "back": "håndværker",
+    "ipa": "ˈhʌnˌvɛɐ̯ɡ̊ɐ",
+    "example": "Håndværkeren kommer i morgen tidlig klokken otte.",
+    "exampleDE": "Der Handwerker kommt morgen früh um acht."
+  },
+  {
+    "front": "der Pinsel",
+    "back": "pensel",
+    "ipa": "ˈpʰɛnsəl",
+    "example": "Hun maler træbænken med en bred pensel.",
+    "exampleDE": "Sie streicht die Holzbank mit einem breiten Pinsel."
+  },
+  {
+    "front": "reparieren",
+    "back": "reparere",
+    "ipa": "ʁæpʰæˈʁeˀɐ",
+    "example": "Kan du være sød at reparere den ødelagte cykel?",
+    "exampleDE": "Kannst du das kaputte Fahrrad bitte reparieren?"
+  },
+  {
+    "front": "der Werkzeugkasten",
+    "back": "værktøjskasse",
+    "ipa": "ˈvɛɐ̯ɡ̊tˢʌjsˌkʰæsə",
+    "example": "Alt værktøjet ligger lige ved hånden i værktøjskassen.",
+    "exampleDE": "Alle Werkzeuge liegen griffbereit im Werkzeugkasten."
+  },
+  {
+    "front": "das Schneidebrett",
+    "back": "skærebræt",
+    "ipa": "ˈsɡ̊ɛːɐ̯əˌb̥ʁæd̥",
+    "example": "Skær venligst løget på skærebrættet.",
+    "exampleDE": "Schneide die Zwiebel bitte auf dem Schneidebrett."
+  },
+  {
+    "front": "der Kochtopf",
+    "back": "gryde",
+    "ipa": "ˈɡ̊ʁyːðə",
+    "example": "Suppen koger i den store gryde på komfuret.",
+    "exampleDE": "Die Suppe kocht im großen Kochtopf auf dem Herd."
+  },
+  {
+    "front": "die Bratpfanne",
+    "back": "stegepande",
+    "ipa": "ˈsd̥æːjəˌpʰænə",
+    "example": "Grøntsagerne steger på den varme stegepande.",
+    "exampleDE": "In der heißen Bratpfanne brät das Gemüse."
+  },
+  {
+    "front": "der Wasserkocher",
+    "back": "elkedel",
+    "ipa": "ˈɛlˌkʰeðəl",
+    "example": "Elkedlen koger tevand på to minutter.",
+    "exampleDE": "Der Wasserkocher kocht das Teewasser in zwei Minuten."
+  },
+  {
+    "front": "der Backofen",
+    "back": "bageovn",
+    "ipa": "ˈb̥æːjəˌʌwˀn",
+    "example": "Kagen bager en halv time i bageovnen.",
+    "exampleDE": "Der Kuchen backt eine halbe Stunde im Backofen."
+  },
+  {
+    "front": "das Rezept",
+    "back": "opskrift",
+    "ipa": "ˈʌb̥ˌsɡ̊ʁœfd̥",
+    "example": "Denne opskrift fandt min bedstemor på.",
+    "exampleDE": "Dieses Rezept hat meine Großmutter erfunden."
+  },
+  {
+    "front": "die Zutat",
+    "back": "ingrediens",
+    "ipa": "eŋɡ̊ʁæd̥iˈɛns",
+    "example": "Friske krydderurter er den vigtigste ingrediens i sovsen.",
+    "exampleDE": "Frische Kräuter sind die wichtigste Zutat für die Soße."
+  },
+  {
+    "front": "fein hacken",
+    "back": "finhakke",
+    "ipa": "ˈfiːnˌhɑɡ̊ə",
+    "example": "Hun finhakker løgene og persillen med en skarp kniv.",
+    "exampleDE": "Sie hackt die Zwiebeln und Petersilie mit einem scharfen Messer fein."
+  },
+  {
+    "front": "das Meersalz",
+    "back": "havsalt",
+    "ipa": "ˈhɑwˌsælˀd̥",
+    "example": "En knivspids havsalt fremhæver suppens smag.",
+    "exampleDE": "Eine Prise Meersalz hebt den Geschmack der Suppe."
+  },
+  {
+    "front": "der schwarze Pfeffer",
+    "back": "sort peber",
+    "ipa": "ˈsoɐ̯d̥ ˈpʰe̝wɐ",
+    "example": "Friskkværnet sort peber dufter herligt.",
+    "exampleDE": "Frisch gemahlener schwarzer Pfeffer duftet herrlich."
+  },
+  {
+    "front": "das Olivenöl",
+    "back": "olivenolie",
+    "ipa": "oˈliːvənˌoːljə",
+    "example": "Koldpresset olivenolie passer fremragende til salaten.",
+    "exampleDE": "Kaltgepresstes Olivenöl passt hervorragend zum Salat."
+  },
+  {
+    "front": "der Knoblauch",
+    "back": "hvidløg",
+    "ipa": "ˈviðˌlʌjˀ",
+    "example": "To fed hvidløg giver retten masser af smag.",
+    "exampleDE": "Zwei Zehen Knoblauch verleihen dem Gericht Aroma."
+  },
+  {
+    "front": "die Petersilie",
+    "back": "persille",
+    "ipa": "pʰæˈsiːlə",
+    "example": "Friskhakket persille drysses over før servering.",
+    "exampleDE": "Frisch gehackte Petersilie kommt vor dem Servieren darauf."
+  },
+  {
+    "front": "das Basilikum",
+    "back": "basilikum",
+    "ipa": "b̥æˈsiːliɡ̊ɔm",
+    "example": "Frisk basilikum passer perfekt til tomater.",
+    "exampleDE": "Frisches Basilikum passt perfekt zu Tomaten."
+  },
+  {
+    "front": "der Zimt",
+    "back": "kanel",
+    "ipa": "kʰæˈneˀl",
+    "example": "Om vinteren drikker vi gerne te med en knivspids kanel.",
+    "exampleDE": "Im Winter trinken wir gerne Tee mit einer Prise Zimt."
+  },
+  {
+    "front": "das Vollkornbrot",
+    "back": "fuldkornsbrød",
+    "ipa": "ˈfulkʰoɐ̯nsˌb̥ʁœðˀ",
+    "example": "Friskbagt fuldkornsbrød smager kraftigt og mætter længe.",
+    "exampleDE": "Frisches Vollkornbrot schmeckt kräftig und hält lange satt."
+  },
+  {
+    "front": "das Brötchen",
+    "back": "rundstykke",
+    "ipa": "ˈʁɔnˌsd̥yɡ̊ə",
+    "example": "Om søndagen henter vi varme rundstykker hos bageren.",
+    "exampleDE": "Sonntags holen wir warme Brötchen beim Bäcker."
+  },
+  {
+    "front": "die Butter",
+    "back": "smør",
+    "ipa": "smɶɐ̯ˀ",
+    "example": "Smør venligst lidt smør på brødskiven.",
+    "exampleDE": "Streich bitte etwas Butter auf die Scheibe Brot."
+  },
+  {
+    "front": "die Marmelade",
+    "back": "marmelade",
+    "ipa": "mɑmæˈlæːðə",
+    "example": "Jordbærmarmelade er mit foretrukne pålæg.",
+    "exampleDE": "Erdbeermarmelade ist mein liebster Brotaufstrich."
+  },
+  {
+    "front": "das Müsli",
+    "back": "mysli",
+    "ipa": "ˈmysli",
+    "example": "Om morgenen spiser jeg gerne mysli med frisk frugt.",
+    "exampleDE": "Morgens esse ich gerne Müsli mit frischem Obst."
+  },
+  {
+    "front": "der Joghurt",
+    "back": "yoghurt",
+    "ipa": "ˈjoːɡ̊oɐ̯d̥",
+    "example": "Naturel yoghurt smager særligt godt med lidt honning.",
+    "exampleDE": "Naturjoghurt schmeckt besonders gut mit etwas Honig."
+  },
+  {
+    "front": "das gekochte Ei",
+    "back": "kogt æg",
+    "ipa": "ˈkʰʌɡ̊d̥ ˈɛɡ̊",
+    "example": "Et blødkogt æg hører til søndagsmorgenmaden.",
+    "exampleDE": "Ein weich gekochtes Ei gehört zum Sonntagsfrühstück."
+  },
+  {
+    "front": "der Orangensaft",
+    "back": "appelsinjuice",
+    "ipa": "ɑb̥əlˈsiːnˌdɕuːs",
+    "example": "Friskpresset appelsinjuice indeholder mange vitaminer.",
+    "exampleDE": "Frisch gepresster Orangensaft enthält viele Vitamine."
+  },
+  {
+    "front": "die Reservierung",
+    "back": "reservation",
+    "ipa": "ʁæsæwæˈɕoˀn",
+    "example": "Jeg har en reservation i navnet Müller.",
+    "exampleDE": "Ich habe eine Reservierung auf den Namen Müller."
+  },
+  {
+    "front": "die Speisekarte",
+    "back": "menukort",
+    "ipa": "meˈnyːˌkʰoɐ̯d̥",
+    "example": "Må vi se menukortet, tak?",
+    "exampleDE": "Dürfen wir bitte die Speisekarte sehen?"
+  },
+  {
+    "front": "die Vorspeise",
+    "back": "forret",
+    "ipa": "ˈfɒːˌʁæd̥",
+    "example": "Som forret bestiller vi en lille salat.",
+    "exampleDE": "Als Vorspeise bestellen wir einen kleinen Salat."
+  },
+  {
+    "front": "das Hauptgericht",
+    "back": "hovedret",
+    "ipa": "ˈhoːwəðˌʁæd̥",
+    "example": "Hovedretten serveres rygende varm på en stor tallerken.",
+    "exampleDE": "Das Hauptgericht wird heiß auf einem großen Teller serviert."
+  },
+  {
+    "front": "die Nachspeise",
+    "back": "dessert",
+    "ipa": "d̥ɛˈsɛɐ̯",
+    "example": "Kunne De tænke Dem en dessert efter maden?",
+    "exampleDE": "Möchten Sie nach dem Essen noch eine Nachspeise?"
+  },
+  {
+    "front": "die Rechnung",
+    "back": "regning",
+    "ipa": "ˈʁɑjneŋ",
+    "example": "Vi vil gerne betale, må vi få regningen?",
+    "exampleDE": "Wir möchten bitte zahlen, bringen Sie uns die Rechnung."
+  },
+  {
+    "front": "das Trinkgeld",
+    "back": "drikkepenge",
+    "ipa": "ˈd̥ʁæɡ̊əˌpʰɛŋə",
+    "example": "Den venlige tjener har fortjent gode drikkepenge.",
+    "exampleDE": "Der freundliche Kellner hat ein gutes Trinkgeld verdient."
+  },
+  {
+    "front": "die Spezialität des Hauses",
+    "back": "husets specialitet",
+    "ipa": "ˈhuːsəðs sb̥eɕæliˈtˢeˀd̥",
+    "example": "Tjeneren anbefaler den hjemmelavede pasta som husets specialitet.",
+    "exampleDE": "Der Kellner empfiehlt die hausgemachte Pasta als Spezialität des Hauses."
+  },
+  {
+    "front": "der Kaffee",
+    "back": "kaffe",
+    "ipa": "ˈkʰɑfə",
+    "example": "En kop varm kaffe jager trætheden på flugt.",
+    "exampleDE": "Eine Tasse heißer Kaffee vertreibt die Müdigkeit."
+  },
+  {
+    "front": "der Cappuccino",
+    "back": "cappuccino",
+    "ipa": "kʰɑb̥uˈtɕiːno",
+    "example": "Cappuccinoen har et vidunderligt cremet skum.",
+    "exampleDE": "Der Cappuccino hat einen wunderbar cremigen Schaum."
+  },
+  {
+    "front": "der Kräutertee",
+    "back": "urtete",
+    "ipa": "ˈuɐ̯d̥əˌtˢeˀ",
+    "example": "Om aftenen drikker jeg gerne en kop varm urtete.",
+    "exampleDE": "Abends trinke ich gerne eine Tasse warmen Kräutertee."
+  },
+  {
+    "front": "das Mineralwasser",
+    "back": "danskvand",
+    "ipa": "ˈd̥anˀsɡ̊ˌvænˀ",
+    "example": "Et glas koldt danskvand med brus virker forfriskende.",
+    "exampleDE": "Ein Glas kühles Mineralwasser mit Kohlensäure erfrischt."
+  },
+  {
+    "front": "das Stück Kuchen",
+    "back": "et stykke kage",
+    "ipa": "ed̥ ˈsd̥yɡ̊ə ˈkʰæːjə",
+    "example": "Om eftermiddagen under vi os et stykke kage.",
+    "exampleDE": "Am Nachmittag gönnen wir uns ein Stück Kuchen."
+  },
+  {
+    "front": "die Barista",
+    "back": "barista",
+    "ipa": "b̥æˈʁisd̥æ",
+    "example": "Baristaen tilbereder espressoen kunstfærdigt.",
+    "exampleDE": "Die Barista bereitet den Espresso kunstvoll zu."
+  },
+  {
+    "front": "die Stammkundin",
+    "back": "stammekunde",
+    "ipa": "ˈsd̥ɑməˌkʰɔnə",
+    "example": "Hun er stammekunde på denne hyggelige café på hjørnet.",
+    "exampleDE": "Sie ist Stammkundin in diesem gemütlichen Café an der Ecke."
+  },
+  {
+    "front": "der Einkaufswagen",
+    "back": "indkøbsvogn",
+    "ipa": "ˈenɡ̊øb̥sˌvɒwˀn",
+    "example": "Tag venligst en mønt med til indkøbsvognen.",
+    "exampleDE": "Nimm bitte eine Münze für den Einkaufswagen mit."
+  },
+  {
+    "front": "der Einkaufszettel",
+    "back": "indkøbsseddel",
+    "ipa": "ˈenɡ̊øb̥sˌseðəl",
+    "example": "Jeg har skrevet alle vigtige ting på indkøbssedlen.",
+    "exampleDE": "Ich habe alle wichtigen Dinge auf dem Einkaufszettel notiert."
+  },
+  {
+    "front": "das Sonderangebot",
+    "back": "tilbud",
+    "ipa": "ˈtˢelˌb̥uð",
+    "example": "Friske jordbær er på tilbud i dag.",
+    "exampleDE": "Frische Erdbeeren sind heute im Sonderangebot."
+  },
+  {
+    "front": "die Kasse",
+    "back": "kasse",
+    "ipa": "ˈkʰæsə",
+    "example": "Ved kassen er der en lang kø af kunder.",
+    "exampleDE": "An der Kasse steht eine lange Schlange von Kunden."
+  },
+  {
+    "front": "der Kassenbon",
+    "back": "kassebon",
+    "ipa": "ˈkʰæsəˌb̥ʌŋ",
+    "example": "Gem kassebonen som kvittering.",
+    "exampleDE": "Bewahren Sie den Kassenbon als Beleg gut auf."
+  },
+  {
+    "front": "die Stofftasche",
+    "back": "stofnet",
+    "ipa": "ˈsd̥ʌfˌnɛd̥",
+    "example": "Vi bærer vores indkøb i et stofnet.",
+    "exampleDE": "Wir transportieren unsere Einkäufe in einer Stofftasche."
+  },
+  {
+    "front": "das Haltbarkeitsdatum",
+    "back": "udløbsdato",
+    "ipa": "ˈuðløb̥sˌd̥æːd̥o",
+    "example": "Tjek altid udløbsdatoen på emballagen.",
+    "exampleDE": "Prüfen Sie immer das Haltbarkeitsdatum auf der Verpackung."
+  },
+  {
+    "front": "die Frischetheke",
+    "back": "delikatesseafdeling",
+    "ipa": "d̥eliɡ̊æˈtˢɛsəɑwˌd̥eˀleŋ",
+    "example": "I delikatesseafdelingen kan man få regional ost.",
+    "exampleDE": "An der Frischetheke gibt es regionalen Käse."
+  },
+  {
+    "front": "anprobieren",
+    "back": "prøve",
+    "ipa": "ˈpʰʁœːwə",
+    "example": "Jeg vil gerne prøve denne mørkeblå jakke.",
+    "exampleDE": "Ich möchte diese dunkelblaue Jacke gerne anprobieren."
+  },
+  {
+    "front": "die Umkleidekabine",
+    "back": "prøverum",
+    "ipa": "ˈpʰʁœːwəˌʁɔmˀ",
+    "example": "Derovre til venstre er der et ledigt prøverum.",
+    "exampleDE": "Dort drüben links ist eine freie Umkleidekabine."
+  },
+  {
+    "front": "die Konfektionsgröße",
+    "back": "tøjstørrelse",
+    "ipa": "ˈtˢʌjˌsd̥ɶɐ̯əlsə",
+    "example": "Hvilken tøjstørrelse bruger De normalt?",
+    "exampleDE": "Welche Konfektionsgröße tragen Sie normalerweise?"
+  },
+  {
+    "front": "passen",
+    "back": "passe",
+    "ipa": "ˈpʰæsə",
+    "example": "Bukserne passer mig helt perfekt.",
+    "exampleDE": "Die Hose passt mir wie angegossen."
+  },
+  {
+    "front": "zu eng",
+    "back": "for stram",
+    "ipa": "fʌ ˈsd̥ʁɑmˀ",
+    "example": "Denne trøje er desværre for stram over skuldrene.",
+    "exampleDE": "Dieser Pullover ist mir an den Schultern leider zu eng."
+  },
+  {
+    "front": "zu weit",
+    "back": "for løs",
+    "ipa": "fʌ ˈløˀs",
+    "example": "Nederdelen er lidt for løs og glider, når jeg går.",
+    "exampleDE": "Der Rock ist etwas zu weit und rutscht beim Gehen."
+  },
+  {
+    "front": "der Schnitt",
+    "back": "snit",
+    "ipa": "sned̥",
+    "example": "Det moderne snit tiltaler mig særligt.",
+    "exampleDE": "Der moderne Schnitt gefällt mir besonders gut."
+  },
+  {
+    "front": "die Baumwolle",
+    "back": "bomuld",
+    "ipa": "ˈb̥oˌmulˀ",
+    "example": "Denne T-shirt er lavet af ren, blød bomuld.",
+    "exampleDE": "Dieses T-Shirt besteht aus reiner, weicher Baumwolle."
+  },
+  {
+    "front": "die Schurwolle",
+    "back": "ren uld",
+    "ipa": "ˈʁæˀn ˈulˀ",
+    "example": "Den tykke trøje af ren uld holder en varm om vinteren.",
+    "exampleDE": "Der dicke Pullover aus Schurwolle hält im Winter warm."
+  },
+  {
+    "front": "die Seide",
+    "back": "silke",
+    "ipa": "ˈselɡ̊ə",
+    "example": "Silketørklædet føles vidunderligt blødt.",
+    "exampleDE": "Das Halstuch aus Seide fühlt sich herrlich weich an."
+  },
+  {
+    "front": "das Leder",
+    "back": "læder",
+    "ipa": "ˈlɛːðɐ",
+    "example": "Den slidstærke jakke er fremstillet af ægte læder.",
+    "exampleDE": "Die robuste Jacke ist aus echtem Leder gefertigt."
+  },
+  {
+    "front": "gestreift",
+    "back": "stribet",
+    "ipa": "ˈsd̥ʁiːb̥əð",
+    "example": "Han bærer en blå- og hvidstribet skjorte i dag.",
+    "exampleDE": "Er trägt heute ein blau-weiß gestreiftes Hemd."
+  },
+  {
+    "front": "kariert",
+    "back": "ternet",
+    "ipa": "ˈtˢɛɐ̯nəð",
+    "example": "Det ternede mønster passer fantastisk til skovmandsskjorten.",
+    "exampleDE": "Das karierte Muster passt hervorragend zum Holzfällerhemd."
+  },
+  {
+    "front": "einfarbig",
+    "back": "ensfarvet",
+    "ipa": "ˈeˀnsˌfɑːvəð",
+    "example": "En enkel, ensfarvet kjole virker altid elegant.",
+    "exampleDE": "Ein schlichtes, einfarbiges Kleid wirkt immer elegant."
+  },
+  {
+    "front": "der Reißverschluss",
+    "back": "lynlås",
+    "ipa": "ˈlynˌlɔˀs",
+    "example": "Lynlåsen på min jakke binder nogle gange.",
+    "exampleDE": "Der Reißverschluss an meiner Jacke klemmt manchmal."
+  },
+  {
+    "front": "die Schnürsenkel",
+    "back": "snørebånd",
+    "ipa": "ˈsnøːɐ̯əˌb̥ɒnˀ",
+    "example": "Bind dine snørebånd, så du ikke snubler.",
+    "exampleDE": "Binde dir die Schnürsenkel zu, damit du nicht stolperst."
+  },
+  {
+    "front": "die Lederschuhe",
+    "back": "lædersko",
+    "ipa": "ˈlɛːðɐˌsɡ̊oˀ",
+    "example": "Til festlige lejligheder bærer han pudsede lædersko.",
+    "exampleDE": "Zu festlichen Anlässen trägt er polierte Lederschuhe."
+  },
+  {
+    "front": "die Turnschuhe",
+    "back": "gummisko",
+    "ipa": "ˈɡ̊umiˌsɡ̊oˀ",
+    "example": "Til at løbe i parken har jeg brug for behagelige gummisko.",
+    "exampleDE": "Zum Laufen im Park brauche ich bequeme Turnschuhe."
+  },
+  {
+    "front": "die Handtasche",
+    "back": "håndtaske",
+    "ipa": "ˈhʌnˌtˢæsɡ̊ə",
+    "example": "Hun leder efter sin nøgle i den store håndtaske.",
+    "exampleDE": "Sie sucht ihren Schlüssel in der großen Handtasche."
+  },
+  {
+    "front": "der Ledergürtel",
+    "back": "læderbælte",
+    "ipa": "ˈlɛːðɐˌb̥ɛld̥ə",
+    "example": "Et sort læderbælte holder bukserne oppe.",
+    "exampleDE": "Ein schwarzer Ledergürtel hält die Hose fest."
+  },
+  {
+    "front": "der Regenschirm",
+    "back": "paraply",
+    "ipa": "pʰɑʁɑˈpʰlyˀ",
+    "example": "Tag en paraply med, himlen trækker sammen.",
+    "exampleDE": "Nimm einen Regenschirm mit, der Himmel zieht sich zu."
+  },
+  {
+    "front": "die Sonnenbrille",
+    "back": "solbriller",
+    "ipa": "ˈsoːlˌb̥ʁilɐ",
+    "example": "Om sommeren beskytter et par gode solbriller øjnene.",
+    "exampleDE": "Im Sommer schützt eine gute Sonnenbrille die Augen."
+  },
+  {
+    "front": "das Girokonto",
+    "back": "lønkonto",
+    "ipa": "ˈlœnˌkʰʌnto",
+    "example": "Min løn overføres månedligt til min lønkonto.",
+    "exampleDE": "Mein Gehalt wird monatlich auf mein Girokonto überwiesen."
+  },
+  {
+    "front": "die Überweisung",
+    "back": "overførsel",
+    "ipa": "ˈʌwɐˌfœɐ̯ˀsəl",
+    "example": "Jeg laver overførslen nemt via netbank.",
+    "exampleDE": "Ich mache die Überweisung bequem per Online-Banking."
+  },
+  {
+    "front": "der Dauerauftrag",
+    "back": "fast overførsel",
+    "ipa": "ˈfæsd̥ ˈʌwɐˌfœɐ̯ˀsəl",
+    "example": "Huslejen betaler jeg hver måned via en fast overførsel.",
+    "exampleDE": "Die Miete bezahle ich jeden Monat per Dauerauftrag."
+  },
+  {
+    "front": "der Geldautomat",
+    "back": "hæveautomat",
+    "ipa": "ˈhɛːvəʌwtoˌmæˀd̥",
+    "example": "I denne hæveautomat kan man hæve penge uden gebyr.",
+    "exampleDE": "An diesem Geldautomaten kann man gebührenfrei abheben."
+  },
+  {
+    "front": "die Geheimzahl",
+    "back": "pinkode",
+    "ipa": "ˈpʰe̝nˌkʰoːðə",
+    "example": "Videregiv aldrig din firecifrede pinkode til fremmede.",
+    "exampleDE": "Gib deine vierstellige Geheimzahl niemals an Fremde weiter."
+  },
+  {
+    "front": "der Kontoauszug",
+    "back": "kontoudtog",
+    "ipa": "ˈkʰʌntoˌuðˌtˢɔwˀ",
+    "example": "På kontoudtoget står alle indtægter og udgifter.",
+    "exampleDE": "Auf dem Kontoauszug stehen alle Einnahmen und Ausgaben."
+  },
+  {
+    "front": "das Sparguthaben",
+    "back": "opsparing",
+    "ipa": "ˈʌb̥ˌsb̥ɑːʁeŋ",
+    "example": "Hun sætter hver måned et fast beløb ind på opsparingen.",
+    "exampleDE": "Sie legt jeden Monat einen festen Betrag als Sparguthaben an."
+  },
+  {
+    "front": "die Zinsen",
+    "back": "renter",
+    "ipa": "ˈʁɛnd̥ɐ",
+    "example": "Banken betaler i øjeblikket moderate renter på opsparingskontoen.",
+    "exampleDE": "Die Bank zahlt derzeit moderate Zinsen auf das Festgeld."
+  },
+  {
+    "front": "das Bargeld",
+    "back": "kontanter",
+    "ipa": "kʰʌnˈtˢanˀd̥ɐ",
+    "example": "Har De kontanter på Dem, eller betaler De med kort?",
+    "exampleDE": "Haben Sie etwas Bargeld dabei oder zahlen Sie mit Karte?"
+  },
+  {
+    "front": "die Kreditkarte",
+    "back": "kreditkort",
+    "ipa": "kʰʁæˈd̥iˀd̥ˌkʰoɐ̯d̥",
+    "example": "På rejser betaler jeg for det meste indkøb med kreditkort.",
+    "exampleDE": "Auf Reisen bezahle ich Einkäufe meist mit Kreditkarte."
+  },
+  {
+    "front": "kontaktlos",
+    "back": "kontaktløs",
+    "ipa": "kʰʌnˈtˢɑɡ̊d̥ˌløˀs",
+    "example": "Beløb under halvtreds euro kan man betale kontaktløst.",
+    "exampleDE": "Beträge unter fünfzig Euro kann man kontaktlos bezahlen."
+  },
+  {
+    "front": "die Münze",
+    "back": "mønt",
+    "ipa": "mœnˀd̥",
+    "example": "Han kaster en to-euro-mønt i parkeringsautomaten.",
+    "exampleDE": "Er wirft eine Zwei-Euro-Münze in den Parkscheinautomaten."
+  },
+  {
+    "front": "der Geldschein",
+    "back": "seddel",
+    "ipa": "ˈseðəl",
+    "example": "Hun folder ti-euro-sedlen omhyggeligt sammen.",
+    "exampleDE": "Sie faltet den Zehn-Euro-Geldschein sorgfältig zusammen."
+  },
+  {
+    "front": "das Wechselgeld",
+    "back": "byttepenge",
+    "ipa": "ˈb̥yd̥əˌpʰɛŋə",
+    "example": "Glem venligst ikke dine byttepenge ved kassen.",
+    "exampleDE": "Vergessen Sie bitte nicht Ihr Wechselgeld an der Kasse."
+  },
+  {
+    "front": "der Wechselkurs",
+    "back": "valutakurs",
+    "ipa": "væˈluːtˢæˌkʰuɐ̯s",
+    "example": "Før udlandsrejsen tjekker vi den aktuelle valutakurs.",
+    "exampleDE": "Vor der Auslandsreise prüfen wir den aktuellen Wechselkurs."
+  },
+  {
+    "front": "das Paket",
+    "back": "pakke",
+    "ipa": "ˈpʰɑɡ̊ə",
+    "example": "Buddet leverer den tunge pakke ved hoveddøren.",
+    "exampleDE": "Der Bote liefert das schwere Paket an die Haustür."
+  },
+  {
+    "front": "der Briefumschlag",
+    "back": "kuvert",
+    "ipa": "kʰuˈvɛɐ̯d̥",
+    "example": "Hun lægger brevet i en hvid kuvert.",
+    "exampleDE": "Sie steckt den Brief in einen weißen Briefumschlag."
+  },
+  {
+    "front": "die Briefmarke",
+    "back": "frimærke",
+    "ipa": "ˈfʁiˌmɛɐ̯ɡ̊ə",
+    "example": "Sæt venligst et frimærke øverst til højre på brevet.",
+    "exampleDE": "Kleb bitte eine Briefmarke oben rechts auf den Brief."
+  },
+  {
+    "front": "der Absender",
+    "back": "afsender",
+    "ipa": "ˈɑwˌsɛnˀɐ",
+    "example": "Øverst til venstre på kuverten står afsenderens adresse.",
+    "exampleDE": "Oben links auf dem Kuvert steht die Adresse des Absenders."
+  },
+  {
+    "front": "der Empfänger",
+    "back": "modtager",
+    "ipa": "ˈmoðˌtˢæˀjɐ",
+    "example": "Pakken er beregnet til den angivne modtager.",
+    "exampleDE": "Das Päckchen ist für den angegebenen Empfänger bestimmt."
+  },
+  {
+    "front": "die Packstation",
+    "back": "pakkeboks",
+    "ipa": "ˈpʰɑɡ̊əˌb̥ʌɡ̊s",
+    "example": "Jeg henter min forsendelse i pakkeboksen efter fyraften.",
+    "exampleDE": "Ich hole meine Sendung nach Feierabend an der Packstation ab."
+  },
+  {
+    "front": "das Einschreiben",
+    "back": "anbefalet brev",
+    "ipa": "anb̥əˈfɛˀləð ˈb̥ʁæwˀ",
+    "example": "Vigtige dokumenter sendes sikrest som anbefalet brev.",
+    "exampleDE": "Wichtige Dokumente versendet man am sichersten per Einschreiben."
+  },
+  {
+    "front": "die Postleitzahl",
+    "back": "postnummer",
+    "ipa": "ˈpʰʌsd̥ˌnɔmɐ",
+    "example": "Oplys venligst dit postnummer.",
+    "exampleDE": "Geben Sie bitte Ihre fünfstellige Postleitzahl an."
+  },
+  {
+    "front": "die Zahnpasta",
+    "back": "tandpasta",
+    "ipa": "ˈtˢanˌpʰæsd̥æ",
+    "example": "Denne tandpasta beskytter effektivt mod karies.",
+    "exampleDE": "Diese Zahnpasta schützt wirksam vor Karies."
+  },
+  {
+    "front": "das Duschgel",
+    "back": "showergel",
+    "ipa": "ˈɕɑwɐˌdɕɛl",
+    "example": "Showergelen dufter behageligt af friske citroner.",
+    "exampleDE": "Das Duschgel duftet angenehm nach frischen Zitronen."
+  },
+  {
+    "front": "das Shampoo",
+    "back": "shampoo",
+    "ipa": "ɕɑmˈb̥u",
+    "example": "En mild shampoo plejer hovedbunden og håret.",
+    "exampleDE": "Ein mildes Shampoo pflegt die Kopfhaut und das Haar."
+  },
+  {
+    "front": "die Seife",
+    "back": "sæbe",
+    "ipa": "ˈsɛːb̥ə",
+    "example": "Vask hænderne grundigt med varmt vand og sæbe.",
+    "exampleDE": "Wasch dir die Hände gründlich mit warmem Wasser und Seife."
+  },
+  {
+    "front": "die Feuchtigkeitscreme",
+    "back": "fugtighedscreme",
+    "ipa": "ˈfuɡ̊d̥iˌheðsˌkʰʁɛˀm",
+    "example": "Efter badet smører hun sig ind i en fugtgivende creme.",
+    "exampleDE": "Nach dem Duschen trägt sie eine feuchtigkeitsspendende Creme auf."
+  },
+  {
+    "front": "das Deodorant",
+    "back": "deodorant",
+    "ipa": "d̥eod̥oˈʁɑnd̥",
+    "example": "En god deodorant sikrer friskhed hele dagen.",
+    "exampleDE": "Ein gutes Deodorant sorgt den ganzen Tag für Frische."
+  },
+  {
+    "front": "das Taschentuch",
+    "back": "lommetørklæde",
+    "ipa": "ˈlʌməˌtˢɶɐ̯ˌklɛːðə",
+    "example": "Har du et papirlommetørklæde til mig?",
+    "exampleDE": "Hast du ein Papiertaschentuch für mich?"
+  },
+  {
+    "front": "der Rasierer",
+    "back": "barberskraber",
+    "ipa": "b̥ɑˈb̥eˀɐ̯ˌsɡ̊ʁɑːb̥ɐ",
+    "example": "Han skifter jævnligt bladene på sin barberskraber.",
+    "exampleDE": "Er wechselt regelmäßig die Klingen an seinem Rasierer."
+  },
+  {
+    "front": "der Rasierschaum",
+    "back": "barberskum",
+    "ipa": "b̥ɑˈb̥eˀɐ̯ˌsɡ̊ɔmˀ",
+    "example": "Fordel barberskummet blidt på kinderne.",
+    "exampleDE": "Verteile den Rasierschaum sanft auf den Wangen."
+  },
+  {
+    "front": "die Nagelschere",
+    "back": "neglesaks",
+    "ipa": "ˈnɑjləˌsɑɡ̊s",
+    "example": "Med en lille neglesaks klipper man neglene præcist.",
+    "exampleDE": "Mit einer kleinen Nagelschere schneidet man Fingernägel präzise."
+  },
+  {
+    "front": "die Nagelfeile",
+    "back": "neglefil",
+    "ipa": "ˈnɑjləˌfiˀl",
+    "example": "Hun filer forsigtigt sine negle med en neglefil.",
+    "exampleDE": "Sie glättet ihre Nägel vorsichtig mit einer Nagelfeile."
+  },
+  {
+    "front": "die Sonnencreme",
+    "back": "solcreme",
+    "ipa": "ˈsoːlˌkʰʁɛˀm",
+    "example": "På ferien smører vi os regelmæssigt ind i solcreme.",
+    "exampleDE": "Im Urlaub cremen wir uns regelmäßig mit Sonnencreme ein."
+  },
+  {
+    "front": "der Lippenbalsam",
+    "back": "læbepomade",
+    "ipa": "ˈlɛːb̥əpʰoˌmæːðə",
+    "example": "Om vinteren beskytter læbepomade mod sprukne læber.",
+    "exampleDE": "Im Winter schützt Lippenbalsam vor spröden Lippen."
+  },
+  {
+    "front": "das Wattepad",
+    "back": "vatrondel",
+    "ipa": "ˈvætʁʌnˌd̥ɛl",
+    "example": "Til at fjerne makeup bruger hun en blød vatrondel.",
+    "exampleDE": "Zum Abschminken verwendet sie ein weiches Wattepad."
+  },
+  {
+    "front": "das Wattestäbchen",
+    "back": "vatpind",
+    "ipa": "ˈvætˌpʰenˀ",
+    "example": "Vatpinde hører til i badeværelsesskabet.",
+    "exampleDE": "Wattestäbchen gehören in den Badezimmerschrank."
+  },
+  {
+    "front": "der Umtausch",
+    "back": "ombytning",
+    "ipa": "ˈʌmˌb̥yd̥neŋ",
+    "example": "Ombytning er muligt inden for fjorten dage.",
+    "exampleDE": "Ein Umtausch ist innerhalb von vierzehn Tagen möglich."
+  },
+  {
+    "front": "die Reklamation",
+    "back": "reklamation",
+    "ipa": "ʁæɡ̊læmæˈɕoˀn",
+    "example": "På grund af en fejl indgav kunden en reklamation.",
+    "exampleDE": "Wegen eines Mangels reichte der Kunde eine Reklamation ein."
+  },
+  {
+    "front": "die Garantie",
+    "back": "garanti",
+    "ipa": "ɡ̊æʁɑnˈtˢiˀ",
+    "example": "På dette apparat er der to års garanti.",
+    "exampleDE": "Auf dieses Elektrogerät gibt es zwei Jahre Herstellergarantie."
+  },
+  {
+    "front": "die Rückerstattung",
+    "back": "refusion",
+    "ipa": "ʁæfuˈɕoˀn",
+    "example": "Beløbet godskrives dig som en refusion.",
+    "exampleDE": "Der Betrag wird Ihnen als Rückerstattung gutgeschrieben."
+  },
+  {
+    "front": "der Rabatt",
+    "back": "rabat",
+    "ipa": "ʁɑˈb̥æd̥",
+    "example": "Med dette kundekort får du ti procents rabat.",
+    "exampleDE": "Mit dieser Kundenkarte erhalten Sie zehn Prozent Rabatt."
+  },
+  {
+    "front": "das Schnäppchen",
+    "back": "røverkøb",
+    "ipa": "ˈʁœwɐˌkʰøˀb̥",
+    "example": "Denne kvalitetsfrakke var et ægte røverkøb.",
+    "exampleDE": "Dieser hochwertige Mantel war ein echtes Schnäppchen."
+  },
+  {
+    "front": "die Beschwerde",
+    "back": "klage",
+    "ipa": "ˈklæːjə",
+    "example": "Klagen blev undersøgt af ledelsen.",
+    "exampleDE": "Die Beschwerde wurde von der Geschäftsleitung geprüft."
+  },
+  {
+    "front": "die Kopfschmerzen",
+    "back": "hovedpine",
+    "ipa": "ˈhoːwəðˌpʰiːnə",
+    "example": "Efter den lange arbejdsdag har jeg let hovedpine.",
+    "exampleDE": "Nach dem langen Arbeitstag habe ich leichte Kopfschmerzen."
+  },
+  {
+    "front": "die Halsschmerzen",
+    "back": "ondt i halsen",
+    "ipa": "ˈʌnˀd̥ i ˈhælˀsn̩",
+    "example": "Varm kamillete med honning lindrer ondt i halsen.",
+    "exampleDE": "Warmer Kamillentee mit Honig lindert die Halsschmerzen."
+  },
+  {
+    "front": "die Magenschmerzen",
+    "back": "mavesmerter",
+    "ipa": "ˈmæːwəˌsmɛɐ̯d̥ɐ",
+    "example": "Fed mad giver ham ofte mavesmerter.",
+    "exampleDE": "Fettes Essen verursacht bei ihm oft Magenschmerzen."
+  },
+  {
+    "front": "der Schwindel",
+    "back": "svimmelhed",
+    "ipa": "ˈsveml̩ˌheð",
+    "example": "Da hun rejste sig hurtigt op, følte hun en kort svimmelhed.",
+    "exampleDE": "Beim schnellen Aufstehen überkam sie ein kurzer Schwindel."
+  },
+  {
+    "front": "die Übelkeit",
+    "back": "kvalme",
+    "ipa": "ˈkvɑlmə",
+    "example": "Frisk luft hjælper som regel godt mod pludselig kvalme.",
+    "exampleDE": "Frische Luft hilft meist gut gegen plötzliche Übelkeit."
+  },
+  {
+    "front": "der Husten",
+    "back": "hoste",
+    "ipa": "ˈhostə",
+    "example": "Han har haft en tør og stædig hoste i tre dage.",
+    "exampleDE": "Er hat seit drei Tagen einen trockenen, hartnäckigen Husten."
+  },
+  {
+    "front": "der Schnupfen",
+    "back": "snue",
+    "ipa": "ˈsnuːə",
+    "example": "Ved slem snue er det svært at trække vejret gennem næsen.",
+    "exampleDE": "Bei starkem Schnupfen fällt das Atmen durch die Nase schwer."
+  },
+  {
+    "front": "die Heiserkeit",
+    "back": "hæshed",
+    "ipa": "ˈhɛːsˌheð",
+    "example": "Efter den larmende koncert led sangeren af hæshed.",
+    "exampleDE": "Nach dem lauten Konzert litt der Sänger unter Heiserkeit."
+  },
+  {
+    "front": "das Fieberthermometer",
+    "back": "febertermometer",
+    "ipa": "ˈfeːwɐtˢæɐ̯moˌmeˀd̥ɐ",
+    "example": "Det digitale febertermometer måler temperaturen på få sekunder.",
+    "exampleDE": "Das digitale Fieberthermometer misst die Temperatur sekundenschnell."
+  },
+  {
+    "front": "die erhöhte Temperatur",
+    "back": "forhøjet temperatur",
+    "ipa": "fʌˈhʌjˀəð tˢɛmb̥ʁɑˈtˢuɐ̯ˀ",
+    "example": "Barnet har en let forhøjet temperatur i aften.",
+    "exampleDE": "Das Kind hat heute Abend leicht erhöhte Temperatur."
+  },
+  {
+    "front": "der Schüttelfrost",
+    "back": "kuldegysninger",
+    "ipa": "ˈkʰuləˌɡ̊ysneŋɐ",
+    "example": "Pludselige kuldegysninger er ofte et første tegn på influenza.",
+    "exampleDE": "Plötzlicher Schüttelfrost ist oft ein erstes Anzeichen einer Grippe."
+  },
+  {
+    "front": "die Entzündung",
+    "back": "betændelse",
+    "ipa": "b̥eˈtˢɛnˀəlsə",
+    "example": "Lægen behandler betændelsen med en helende salve.",
+    "exampleDE": "Der Arzt behandelt die Entzündung mit einer Heilsalbe."
+  },
+  {
+    "front": "die Infektion",
+    "back": "infektion",
+    "ipa": "enfeɡ̊ˈɕoˀn",
+    "example": "Regelmæssig håndvask beskytter pålideligt mod en infektion.",
+    "exampleDE": "Regelmäßiges Händewaschen schützt zuverlässig vor einer Infektion."
+  },
+  {
+    "front": "ansteckend",
+    "back": "smitsom",
+    "ipa": "ˈsmid̥sʌmˀ",
+    "example": "Så længe du har feber, er du smitsom for andre.",
+    "exampleDE": "Solange Sie Fieber haben, sind Sie für andere ansteckend."
+  },
+  {
+    "front": "sich schonen",
+    "back": "skåne sig selv",
+    "ipa": "ˈsɡ̊ɔːnə sɑj ˈsɛlˀ",
+    "example": "Ved en forkølelse bør man blive i sengen og skåne sig selv.",
+    "exampleDE": "Bei einer Erkältung sollte man im Bett bleiben und sich schonen."
+  },
+  {
+    "front": "die Arztpraxis",
+    "back": "lægepraksis",
+    "ipa": "ˈlɛːjəˌpʰʁɑɡ̊sis",
+    "example": "Lægepraksissen åbner om mandagen allerede klokken syv om morgenen.",
+    "exampleDE": "Die Arztpraxis öffnet montags bereits um sieben Uhr morgens."
+  },
+  {
+    "front": "das Wartezimmer",
+    "back": "venteværelse",
+    "ipa": "ˈvɛnd̥əˌvɛːɐ̯əlsə",
+    "example": "Patienterne sidder tålmodigt i det lyse venteværelse.",
+    "exampleDE": "Die Patienten sitzen geduldig im hellen Wartezimmer."
+  },
+  {
+    "front": "die Versichertenkarte",
+    "back": "sundhedskort",
+    "ipa": "ˈsunhed̥sˌkʰoɐ̯d̥",
+    "example": "Vis venligst dit sundhedskort.",
+    "exampleDE": "Legen Sie bitte Ihre elektronische Versichertenkarte vor."
+  },
+  {
+    "front": "der Termin",
+    "back": "tid",
+    "ipa": "tˢiðˀ",
+    "example": "Jeg har bestilt en fast tid til næste tirsdag.",
+    "exampleDE": "Ich habe für kommenden Dienstag einen festen Termin vereinbart."
+  },
+  {
+    "front": "die Untersuchung",
+    "back": "undersøgelse",
+    "ipa": "ˈonɐˌsøˀəlsə",
+    "example": "Den grundige undersøgelse viste ingen abnormiteter.",
+    "exampleDE": "Die gründliche Untersuchung ergab keine Auffälligkeiten."
+  },
+  {
+    "front": "der Blutdruck",
+    "back": "blodtryk",
+    "ipa": "ˈb̥loðˌtˢʁœɡ̊",
+    "example": "Sygeplejersken måler blodtrykket på venstre overarm.",
+    "exampleDE": "Die Schwester misst den Blutdruck am linken Oberarm."
+  },
+  {
+    "front": "der Puls",
+    "back": "puls",
+    "ipa": "pʰulˀs",
+    "example": "Efter en kort pause slår pulsen normalt igen.",
+    "exampleDE": "Nach der kurzen Ruhepause schlägt der Puls wieder normal."
+  },
+  {
+    "front": "das Stethoskop",
+    "back": "stetoskop",
+    "ipa": "sd̥ed̥oˈsɡ̊oˀb̥",
+    "example": "Lægen lytter til lungerne med stetoskopet.",
+    "exampleDE": "Die Ärztin hört die Lunge mit dem Stethoskop ab."
+  },
+  {
+    "front": "das Rezept",
+    "back": "recept",
+    "ipa": "ʁeˈsɛb̥d̥",
+    "example": "Lægen udskriver en recept på pillerne til dig.",
+    "exampleDE": "Der Arzt stellt Ihnen ein Rezept für die Tabletten aus."
+  },
+  {
+    "front": "die Apotheke",
+    "back": "apotek",
+    "ipa": "ɑb̥oˈtˢeɡ̊",
+    "example": "Apoteket ved torvet har vagttjeneste i dag.",
+    "exampleDE": "Die Apotheke am Markt hat heute Notdienst."
+  },
+  {
+    "front": "die Packungsbeilage",
+    "back": "indlægsseddel",
+    "ipa": "ˈenˌlɛɡ̊sˌseðəl",
+    "example": "Læs indlægssedlen grundigt inden indtagelse.",
+    "exampleDE": "Lesen Sie vor der Einnahme sorgfältig die Packungsbeilage."
+  },
+  {
+    "front": "die Nebenwirkung",
+    "back": "bivirkning",
+    "ipa": "ˈb̥iːˌviɐ̯ɡ̊neŋ",
+    "example": "Denne veltålte medicin har næsten ingen kendte bivirkninger.",
+    "exampleDE": "Dieses gut verträgliche Medikament hat kaum bekannte Nebenwirkungen."
+  },
+  {
+    "front": "die Dosierung",
+    "back": "dosering",
+    "ipa": "doˈseˀɐ̯eŋ",
+    "example": "Følg nøje den dosering, som lægen har ordineret.",
+    "exampleDE": "Beachten Sie genau die vom Arzt verordnete Dosierung."
+  },
+  {
+    "front": "das Schmerzmittel",
+    "back": "smertestillende",
+    "ipa": "ˈsmɛɐ̯d̥əˌsd̥elənə",
+    "example": "Det smertestillende middel virker for det meste inden for en halv time.",
+    "exampleDE": "Das Schmerzmittel wirkt meistens innerhalb einer halben Stunde."
+  },
+  {
+    "front": "der Hustensaft",
+    "back": "hostesaft",
+    "ipa": "ˈhostəˌsɑfd̥",
+    "example": "Tag en skefuld hostesaft om aftenen før sengetid.",
+    "exampleDE": "Nehmen Sie abends vor dem Schlafen einen Löffel Hustensaft."
+  },
+  {
+    "front": "das Heftpflaster",
+    "back": "plaster",
+    "ipa": "ˈpʰlæsd̥ɐ",
+    "example": "Sæt venligst et plaster på det lille snitsår.",
+    "exampleDE": "Kleb bitte ein Heftpflaster auf die kleine Schnittwunde."
+  },
+  {
+    "front": "der Verband",
+    "back": "forbinding",
+    "ipa": "fʌˈb̥eneŋ",
+    "example": "Sygeplejersken lægger en ren forbinding om anklen.",
+    "exampleDE": "Die Krankenschwester legt einen sauberen Verband um den Knöchel."
+  },
+  {
+    "front": "die Wundsalbe",
+    "back": "sårsalve",
+    "ipa": "ˈsɒːˌsælˀvə",
+    "example": "Den helende sårsalve fremskynder helingen af hudsåret.",
+    "exampleDE": "Die Heilsalbe beschleunigt das Schließen der Hautwunde."
+  },
+  {
+    "front": "die Desinfektion",
+    "back": "desinfektion",
+    "ipa": "d̥esənfɛɡ̊ˈɕoˀn",
+    "example": "Før forbindingen lægges, er en grundig desinfektion vigtig.",
+    "exampleDE": "Vor dem Verbinden ist eine gründliche Desinfektion wichtig."
+  },
+  {
+    "front": "der Verbandskasten",
+    "back": "forbindskasse",
+    "ipa": "fʌˈb̥ensˌkʰæsə",
+    "example": "I bilen skal der altid ligge en fuldstændig forbindskasse.",
+    "exampleDE": "Im Auto muss stets ein vollständiger Verbandskasten liegen."
+  },
+  {
+    "front": "der Notruf",
+    "back": "nødopkald",
+    "ipa": "ˈnøðˌʌb̥ˌkʰælˀ",
+    "example": "I hastende nødstilfælde ringer man til 112 i hele Europa.",
+    "exampleDE": "In dringenden Notfällen wählt man europaweit den Notruf 112."
+  },
+  {
+    "front": "die Erste Hilfe",
+    "back": "førstehjælp",
+    "ipa": "ˈfɶɐ̯sd̥əˌhjɛlˀb̥",
+    "example": "Enhver indehaver af et kørekort bør kunne yde førstehjælp.",
+    "exampleDE": "Jeder Führerscheininhaber sollte Erste Hilfe leisten können."
+  },
+  {
+    "front": "bluten",
+    "back": "bløde",
+    "ipa": "ˈb̥løːðə",
+    "example": "Skrammen på knæet er heldigvis holdt op med at bløde.",
+    "exampleDE": "Die Schürfwunde am Knie hat zum Glück aufgehört zu bluten."
+  },
+  {
+    "front": "die Zahnarztpraxis",
+    "back": "tandlægeklinik",
+    "ipa": "ˈtˢanlɛːjəkliˌniɡ̊",
+    "example": "To gange om året tager jeg til tjek på tandlægeklinikken.",
+    "exampleDE": "Zweimal im Jahr gehe ich zur Kontrolle in die Zahnarztpraxis."
+  },
+  {
+    "front": "die Zahnseide",
+    "back": "tandtråd",
+    "ipa": "ˈtˢanˌtˢʁɔˀð",
+    "example": "Tandtråd renser de smalle mellemrum mellem tænderne.",
+    "exampleDE": "Zahnseide reinigt die engen Zwischenräume zwischen den Zähnen."
+  },
+  {
+    "front": "das Zahnfleisch",
+    "back": "tandkød",
+    "ipa": "ˈtˢanˌkʰøð",
+    "example": "Regelmæssig pleje styrker tandkødet i længden.",
+    "exampleDE": "Regelmäßige Pflege stärkt das Zahnfleisch dauerhaft."
+  },
+  {
+    "front": "die Zahnfüllung",
+    "back": "tandfyldning",
+    "ipa": "ˈtˢanˌfylneŋ",
+    "example": "Tandlægen lagde en lille hvid tandfyldning i.",
+    "exampleDE": "Der Zahnarzt setzte eine kleine weiße Zahnfüllung ein."
+  },
+  {
+    "front": "der Backenzahn",
+    "back": "kindtand",
+    "ipa": "ˈkʰenˌtˢanˀ",
+    "example": "En kindtand i overmunden reagerer følsomt på kulde.",
+    "exampleDE": "Ein Backenzahn im Oberkiefer reagiert empfindlich auf Kälte."
+  },
+  {
+    "front": "die Mundspülung",
+    "back": "mundskyllevand",
+    "ipa": "ˈmɔnˌsɡ̊yləˌvænˀ",
+    "example": "Et antibakterielt mundskyllevand sikrer frisk ånde.",
+    "exampleDE": "Eine antibakterielle Mundspülung sorgt für frischen Atem."
+  },
+  {
+    "front": "die Zahnschmerzen",
+    "back": "tandpine",
+    "ipa": "ˈtˢanˌpʰiːnə",
+    "example": "Ved pludselig tandpine bør man hurtigt gå til tandlægen.",
+    "exampleDE": "Gegen plötzliche Zahnschmerzen sollte man rasch zum Zahnarzt."
+  },
+  {
+    "front": "das Handgelenk",
+    "back": "håndled",
+    "ipa": "ˈhʌnˌleð",
+    "example": "Hun bærer et elegant armbåndsur på sit venstre håndled.",
+    "exampleDE": "Sie trägt eine elegante Armbanduhr am linken Handgelenk."
+  },
+  {
+    "front": "der Ellbogen",
+    "back": "albue",
+    "ipa": "ˈælˌb̥uːə",
+    "example": "Han slog albuen smertefuldt mod bordkanten.",
+    "exampleDE": "Er hat sich den Ellbogen schmerzhaft an der Tischkante gestoßen."
+  },
+  {
+    "front": "das Kniegelenk",
+    "back": "knæled",
+    "ipa": "ˈkʰnɛːˌleð",
+    "example": "Under løbetræning belastes knæleddet kraftigt.",
+    "exampleDE": "Beim Joggen wird das Kniegelenk stark beansprucht."
+  },
+  {
+    "front": "der Knöchel",
+    "back": "ankel",
+    "ipa": "ˈɑŋɡ̊əl",
+    "example": "På vandreturen ad den ujævne sti vrikkede han om på anklen.",
+    "exampleDE": "Beim Wandern auf unebenem Pfad ist er mit dem Knöchel umgeknickt."
+  }
+]

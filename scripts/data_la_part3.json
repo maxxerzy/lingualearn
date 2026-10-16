@@ -1,0 +1,1402 @@
+[
+  {
+    "front": "die Amsel",
+    "back": "merula",
+    "ipa": "ˈmɛ.rʊ.la",
+    "example": "Mane primo merula carmen suum canorum de tecto domus canit.",
+    "exampleDE": "Früh am Morgen singt die Amsel ihr melodisches Lied vom Hausdach."
+  },
+  {
+    "front": "die Schwalbe",
+    "back": "hirundo",
+    "ipa": "hɪˈrʊn.doː",
+    "example": "Hirundines nidos artificiosos ex luto sub subgrundam aedificant.",
+    "exampleDE": "Schwalben bauen ihre kunstvollen Nester aus Lehm unter den Dachvorsprung."
+  },
+  {
+    "front": "der Storch",
+    "back": "ciconia",
+    "ipa": "kɪˈkoː.nɪ.a",
+    "example": "In camino veteris horrei par ciconiarum nidificat.",
+    "exampleDE": "Auf dem Schornstein der alten Scheune nistet ein Storchenpaar."
+  },
+  {
+    "front": "die Elster",
+    "back": "pica",
+    "ipa": "ˈpɪ.ka",
+    "example": "Pica nigra et candida vulgo avis furax habetur.",
+    "exampleDE": "Die schwarz-weiße Elster gilt im Volksmund als diebischer Vogel."
+  },
+  {
+    "front": "der Specht",
+    "back": "picus",
+    "ipa": "ˈpɪ.kʊs",
+    "example": "E silva rhythmicum pici ictum audimus.",
+    "exampleDE": "Aus dem Wald hört man das rhythmische Hämmern eines Spechts."
+  },
+  {
+    "front": "der Zugvogel",
+    "back": "avis migratoria",
+    "ipa": "ˈa.wɪs mɪ.ɡraːˈtoː.rɪ.a",
+    "example": "Autumno aves migratoriae cuneatim meridiem petunt.",
+    "exampleDE": "Im Herbst fliegen Zugvögel in V-Formation Richtung Süden."
+  },
+  {
+    "front": "die Forelle",
+    "back": "trutta",
+    "ipa": "ˈtrʊt.ta",
+    "example": "In gelido rivo montano argentea trutta natat.",
+    "exampleDE": "Im kühlen Gebirgsbach schwimmt eine silbrige Bachforelle."
+  },
+  {
+    "front": "der Lachs",
+    "back": "salmo",
+    "ipa": "ˈsal.moː",
+    "example": "Tempore feturae salmo multa milia passuum adverso flumine migrat.",
+    "exampleDE": "Zur Laichzeit wandert der Lachs viele Kilometer flussaufwärts."
+  },
+  {
+    "front": "der Karpfen",
+    "back": "cyprinus",
+    "ipa": "kyˈpriː.nʊs",
+    "example": "In imo tranquillae piscinae vici magnus cyprinus fodit.",
+    "exampleDE": "Am Grund des ruhigen Dorfteichs gründelt ein großer Karpfen."
+  },
+  {
+    "front": "die Kröte",
+    "back": "bufo",
+    "ipa": "ˈbʊ.foː",
+    "example": "Vere multi bufones ad aquas feturae migrant.",
+    "exampleDE": "Im Frühjahr wandern viele Kröten zu ihren Laichgewässern."
+  },
+  {
+    "front": "der Salamander",
+    "back": "salamandra",
+    "ipa": "sa.laˈman.dra",
+    "example": "Salamandra nigra et flava silvas frondosas humidas amat.",
+    "exampleDE": "Der schwarz-gelbe Feuersalamander liebt feuchte Laubwälder."
+  },
+  {
+    "front": "die Kaulquappe",
+    "back": "ranunculus",
+    "ipa": "raˈnʊŋ.kʊ.lʊs",
+    "example": "E minutis ranunculis paulatim iuvenes ranae oriuntur.",
+    "exampleDE": "Aus den winzigen Kaulquappen entwickeln sich nach und nach junge Frösche."
+  },
+  {
+    "front": "der Krebs",
+    "back": "cancer",
+    "ipa": "ˈkaŋ.kɛr",
+    "example": "Sub plano saxo in rivo cancer fluviatilis latet.",
+    "exampleDE": "Unter einem flachen Stein im Bach verbirgt sich ein Flusskrebs."
+  },
+  {
+    "front": "die Muschel",
+    "back": "concha",
+    "ipa": "ˈkɔŋ.kʰa",
+    "example": "In litore harenoso pueri vacuas conchas legerunt.",
+    "exampleDE": "Am Sandstrand sammelten die Kinder leere Muschelschalen."
+  },
+  {
+    "front": "der Marienkäfer",
+    "back": "coccinella",
+    "ipa": "kɔk.kɪˈnɛl.la",
+    "example": "Coccinella rubra septem nigris maculis in culmo repit.",
+    "exampleDE": "Ein roter Marienkäfer mit sieben schwarzen Punkten krabbelt am Halm."
+  },
+  {
+    "front": "die Libelle",
+    "back": "libellula",
+    "ipa": "lɪˈbɛl.lʊ.la",
+    "example": "Libellula versicolor celerrime super aequor aquae volat.",
+    "exampleDE": "Eine schillernde Libelle schwirrt blitzschnell über die Wasseroberfläche."
+  },
+  {
+    "front": "die Hummel",
+    "back": "bombus",
+    "ipa": "ˈbɔm.bʊs",
+    "example": "Crassus villosusque bombus assidue de flore in florem murmurat.",
+    "exampleDE": "Eine dicke, pelzige Hummel summt emsig von Blüte zu Blüte."
+  },
+  {
+    "front": "die Wespe",
+    "back": "vespa",
+    "ipa": "ˈwɛs.pa",
+    "example": "Cibi dulces sub dio exeunte aestate molestas vespas alliciunt.",
+    "exampleDE": "Süße Speisen im Freien locken im Spätsommer lästige Wespen an."
+  },
+  {
+    "front": "die Heuschrecke",
+    "back": "locusta",
+    "ipa": "lɔˈkʊs.ta",
+    "example": "Longis cruribus posterioribus viridis locusta longe salit.",
+    "exampleDE": "Mit ihren langen Hinterbeinen springt die grüne Heuschrecke weit."
+  },
+  {
+    "front": "die Eidechse",
+    "back": "lacerta",
+    "ipa": "laˈkɛr.ta",
+    "example": "In maceria aprica parva lacerta se calefacit.",
+    "exampleDE": "Auf der sonnenwarmen Steinmauer wärmt sich eine kleine Eidechse."
+  },
+  {
+    "front": "die Schnecke",
+    "back": "cochlea",
+    "ipa": "ˈkɔkʰ.lɛ.a",
+    "example": "Post calidam pluviam cochlea per viam serpit.",
+    "exampleDE": "Nach dem warmen Regen kriecht eine Weinbergschnecke über den Weg."
+  },
+  {
+    "front": "die Wettervorhersage",
+    "back": "praedictio tempestatis",
+    "ipa": "prae̯ˈdɪk.tɪ.oː tɛm.pɛsˈtaː.tɪs",
+    "example": "Secundum praedictionem tempestatis fine hebdomadis caelum apricum et mite erit.",
+    "exampleDE": "Laut Wettervorhersage soll es am Wochenende sonnig und mild werden."
+  },
+  {
+    "front": "der Regenschauer",
+    "back": "nimbus",
+    "ipa": "ˈnɪm.bʊs",
+    "example": "Brevis nimbus ambulantes in viridario urbis oppressit.",
+    "exampleDE": "Ein kurzer Regenschauer überraschte die Spaziergänger im Stadtpark."
+  },
+  {
+    "front": "der Nieselregen",
+    "back": "pluvia tenuis",
+    "ipa": "ˈplʊ.wɪ.a ˈtɛ.nʊ.ɪs",
+    "example": "Densa ac tenuis pluvia prospectum matutinum obscurat.",
+    "exampleDE": "Dichter, feiner Nieselregen trübt die Sicht am Vormittag."
+  },
+  {
+    "front": "das Gewitter",
+    "back": "tempestas",
+    "ipa": "tɛmˈpɛs.taːs",
+    "example": "In fine horizontis atrae nubes tempestatem nuntiant.",
+    "exampleDE": "Am Horizont ziehen dunkle Wolken auf, die ein Gewitter ankündigen."
+  },
+  {
+    "front": "der Donnerschlag",
+    "back": "tonitrus",
+    "ipa": "ˈtɔ.nɪ.trʊs",
+    "example": "Clarus tonitrus fenestras domus concussit.",
+    "exampleDE": "Ein lauter Donnerschlag ließ die Fensterscheiben im Haus erzittern."
+  },
+  {
+    "front": "der Blitzschlag",
+    "back": "fulmen",
+    "ipa": "ˈfʊl.mɛn",
+    "example": "Fulmen antiquam arborem ad marginem agri icit.",
+    "exampleDE": "Ein Blitzschlag traf den alten Baum am Feldrand."
+  },
+  {
+    "front": "die Windböe",
+    "back": "procella repentina",
+    "ipa": "prɔˈkɛl.la rɛ.pɛnˈtiː.na",
+    "example": "Vehemens flatus venti aridas autumni frondes per aera egit.",
+    "exampleDE": "Eine heftige Windböe wirbelte trockenes Herbstlaub durch die Luft."
+  },
+  {
+    "front": "der Nebel",
+    "back": "nebula",
+    "ipa": "ˈnɛ.bʊ.la",
+    "example": "Densa nebula matutina quasi stragulum super vallem fluminis iacet.",
+    "exampleDE": "Dichter Frühnebel liegt wie eine Decke über dem Flusstal."
+  },
+  {
+    "front": "der Frost",
+    "back": "gelu",
+    "ipa": "ˈɡɛ.luː",
+    "example": "Nocte gelu solum infecit et pratum argenteum reddidit.",
+    "exampleDE": "In der Nacht gab es Bodenfrost, der die Wiese silbern färbte."
+  },
+  {
+    "front": "das Glatteis",
+    "back": "lubricitas glacialis",
+    "ipa": "luːˈbrɪ.kɪ.taːs ɡla.kɪˈaː.lɪs",
+    "example": "Cave in viis: propter lubricitatem glacialem spatium frenandi augetur.",
+    "exampleDE": "Vorsicht auf den Straßen, bei Glatteis verlängert sich der Bremsweg."
+  },
+  {
+    "front": "die Schneeflocke",
+    "back": "floccus nivis",
+    "ipa": "ˈflɔk.kʊs ˈnɪ.wɪs",
+    "example": "Taciti densi nivei flocci de caelo decidunt.",
+    "exampleDE": "Lautlos schweben dicke weiße Schneeflocken vom Himmel herab."
+  },
+  {
+    "front": "die Hitzewelle",
+    "back": "unda caloris",
+    "ipa": "ˈʊn.da kaˈloː.rɪs",
+    "example": "Aestiva unda caloris noctu quoque vix refrigerat.",
+    "exampleDE": "Während der sommerlichen Hitzewelle kühlt es auch nachts kaum ab."
+  },
+  {
+    "front": "der Sonnenschein",
+    "back": "solis fulgor",
+    "ipa": "ˈsɔ.lɪs ˈfʊl.ɡɔr",
+    "example": "Calidus solis fulgor multos in lavacrum publicum allicit.",
+    "exampleDE": "Warmer Sonnenschein lockt viele Menschen ins Freibad."
+  },
+  {
+    "front": "das Abendrot",
+    "back": "rubor vespertinus",
+    "ipa": "ˈrʊ.bɔr wɛs.pɛrˈtiː.nʊs",
+    "example": "Igneus rubor vespertinus serenum caelum in posterum diem nuntiat.",
+    "exampleDE": "Ein feuriges Abendrot kündigt schönes Wetter für den nächsten Tag an."
+  },
+  {
+    "front": "die Dämmerung",
+    "back": "crepusculum",
+    "ipa": "krɛˈpʊs.kʊ.lʊm",
+    "example": "Vespertino crepusculo lucernae viarum lucere incipiunt.",
+    "exampleDE": "In der Abenddämmerung beginnen die Straßenlaternen zu leuchten."
+  },
+  {
+    "front": "die Mülltrennung",
+    "back": "partitio ruderum",
+    "ipa": "parˈtiː.tɪ.oː ˈrʊ.dɛ.rʊm",
+    "example": "Diligens partitio ruderum novum usum materiarum facilioris facit.",
+    "exampleDE": "Sorgfältige Mülltrennung erleichtert die Wiederverwertung wertvoller Rohstoffe."
+  },
+  {
+    "front": "der Plastikmüll",
+    "back": "rudera plastica",
+    "ipa": "ˈrʊ.dɛ.ra ˈplas.tɪ.ka",
+    "example": "Vasis multiplicis usus supervacua rudera plastica vitari possunt.",
+    "exampleDE": "Durch Mehrwegverpackungen lässt sich unnötiger Plastikmüll vermeiden."
+  },
+  {
+    "front": "das Recycling",
+    "back": "refectio materiarum",
+    "ipa": "rɛˈfɛk.tɪ.oː ma.tɛ.rɪˈaː.rʊm",
+    "example": "Officinae modernae vitrum vetus atque chartam reficiunt.",
+    "exampleDE": "Moderne Anlagen führen Altglas und Papier dem Recycling zu."
+  },
+  {
+    "front": "der Umweltschutz",
+    "back": "tutela naturae",
+    "ipa": "tʊˈteː.la naˈtuː.rae̯",
+    "example": "Tutela naturae atque locorum periclitatorum omnibus hominibus mandata est.",
+    "exampleDE": "Der Schutz bedrohter Lebensräume ist eine Aufgabe für alle Menschen."
+  },
+  {
+    "front": "die Nachhaltigkeit",
+    "back": "sustentabilitas",
+    "ipa": "sʊs.tɛn.taˈbiː.lɪ.taːs",
+    "example": "Sustentabilitas opes naturae in futuros ordines servare significat.",
+    "exampleDE": "Nachhaltigkeit bedeutet, Ressourcen für künftige Generationen zu bewahren."
+  },
+  {
+    "front": "die Mehrwegflasche",
+    "back": "lagoena multiplicis usus",
+    "ipa": "laˈɡoe̯.na mʊlˈtɪ.plɪ.kɪs ˈuː.suːs",
+    "example": "Ad aquam mineralem potissimum lagoenis multiplicis usus utimur.",
+    "exampleDE": "Für Mineralwasser nutzen wir bevorzugt wiederbefüllbare Mehrwegflaschen."
+  },
+  {
+    "front": "der Energiesparer",
+    "back": "servator energiae",
+    "ipa": "sɛrˈwaː.tɔr ɛ.nɛrˈɡiː.ae̯",
+    "example": "Lucernae modernae veri servatores energiae in domo sunt.",
+    "exampleDE": "Moderne LED-Lampen sind wahre Energiesparer im Haushalt."
+  },
+  {
+    "front": "schonen",
+    "back": "parcere",
+    "ipa": "ˈpar.kɛ.rɛ",
+    "example": "Oribus naturae et aquis nostris parcere debemus.",
+    "exampleDE": "Wir sollten unsere natürlichen Ressourcen und Gewässer schonen."
+  },
+  {
+    "front": "die Solarenergie",
+    "back": "energia solaris",
+    "ipa": "ɛ.nɛrˈɡiː.a sɔˈlaː.rɪs",
+    "example": "Apparatus solaris in tecto viam electricam puram generat.",
+    "exampleDE": "Die Solaranlage auf dem Dach erzeugt umweltfreundlichen Strom."
+  },
+  {
+    "front": "die Windkraft",
+    "back": "vis venti",
+    "ipa": "wiːs ˈwɛn.tiː",
+    "example": "Molae pneumaticae vim venti ad electricitatem efficiendam adhibent.",
+    "exampleDE": "Windkrafträder nutzen die Kraft des Windes zur Stromerzeugung."
+  },
+  {
+    "front": "das Wasserkraftwerk",
+    "back": "officina hydroelectrica",
+    "ipa": "ɔf.fɪˈkiː.na hy.drɔ.ɛˈlɛk.trɪ.ka",
+    "example": "Officina hydroelectrica ad flumen pure ac certo vim gignit.",
+    "exampleDE": "Das Wasserkraftwerk am Fluss produziert zuverlässig saubere Energie."
+  },
+  {
+    "front": "der Stromverbrauch",
+    "back": "consumptio electricitatis",
+    "ipa": "kɔnˈsʊmp.tɪ.oː ɛ.lɛk.trɪ.kɪˈtaː.tɪs",
+    "example": "Instrumenta opperientia consumptionem electricitatis supervacue augent.",
+    "exampleDE": "Geräte im Standby-Modus erhöhen unnötig den Stromverbrauch."
+  },
+  {
+    "front": "die Wärmepumpe",
+    "back": "antlia calorifica",
+    "ipa": "ˈant.lɪ.a ka.lɔˈrɪ.fɪ.ka",
+    "example": "Moderna antlia calorifica aedes optime calefacit.",
+    "exampleDE": "Eine moderne Wärmepumpe heizt das Wohnhaus sehr effizient."
+  },
+  {
+    "front": "der CO2-Ausstoß",
+    "back": "emissio dioxidi carbonii",
+    "ipa": "eːˈmɪs.sɪ.oː dɪˈɔk.sɪ.diː karˈbɔ.nɪ.iː",
+    "example": "Vehicula electrica ad minuendam emissionem dioxidi carbonii conducunt.",
+    "exampleDE": "Elektrofahrzeuge tragen zur Senkung des lokalen CO2-Ausstoßes bei."
+  },
+  {
+    "front": "die Ressource",
+    "back": "ops",
+    "ipa": "ɔps",
+    "example": "Aqua potabilis pura est pretiosissima ops naturae.",
+    "exampleDE": "Sauberes Trinkwasser ist die kostbarste natürliche Ressource."
+  },
+  {
+    "front": "der Stundenplan",
+    "back": "horarium",
+    "ipa": "hɔˈraː.rɪ.ʊm",
+    "example": "Secundum horarium diebus Lunae duas horas mathematicae habemus.",
+    "exampleDE": "Laut Stundenplan haben wir montags zwei Stunden Mathematik."
+  },
+  {
+    "front": "das Klassenzimmer",
+    "back": "conclave scholasticum",
+    "ipa": "kɔnˈklaː.wɛ skʰɔˈlas.tɪ.kʊm",
+    "example": "Discipuli conclave scholasticum suum picturis variis ornaverunt.",
+    "exampleDE": "Die Schüler schmückten ihr Klassenzimmer mit bunten Bildern."
+  },
+  {
+    "front": "die Schultasche",
+    "back": "pera scholastica",
+    "ipa": "ˈpɛ.ra skʰɔˈlas.tɪ.ka",
+    "example": "Pugillares et libros diligenter in peram scholasticam componit.",
+    "exampleDE": "Er packt seine Hefte und Bücher sorgfältig in die Schultasche."
+  },
+  {
+    "front": "das Federmäppchen",
+    "back": "theca scriptoria",
+    "ipa": "ˈtʰeː.ka skrɪpˈtoː.rɪ.a",
+    "example": "In theca scriptoria calami colorati et deletilis iacent.",
+    "exampleDE": "Im Federmäppchen liegen Buntstifte, Füller und ein Radiergummi."
+  },
+  {
+    "front": "die Klassenarbeit",
+    "back": "probatio scholastica",
+    "ipa": "prɔˈbaː.tɪ.oː skʰɔˈlas.tɪ.ka",
+    "example": "Pro gravi probatione scholastica biologiae multum studuit.",
+    "exampleDE": "Für die schwere Klassenarbeit in Biologie hat sie viel gelernt."
+  },
+  {
+    "front": "das Zeugnis",
+    "back": "testimonium scholasticum",
+    "ipa": "tɛs.tɪˈmoː.nɪ.ʊm skʰɔˈlas.tɪ.kʊm",
+    "example": "Postremo die scholae ante ferias omnes testimonium accipiunt.",
+    "exampleDE": "Am letzten Schultag vor den Ferien erhalten alle ihr Zeugnis."
+  },
+  {
+    "front": "die Schulferien",
+    "back": "feriae scholasticae",
+    "ipa": "ˈfɛ.rɪ.ae̯ skʰɔˈlas.tɪ.kae̯",
+    "example": "Pueri valde gaudent de sex hebdomadibus feriarum aestivarum.",
+    "exampleDE": "Die Kinder freuen sich riesig auf die sechswöchigen Sommerferien."
+  },
+  {
+    "front": "der Pausenhof",
+    "back": "area recreationis",
+    "ipa": "ˈa.rɛ.a rɛ.krɛ.aː.tɪˈoː.nɪs",
+    "example": "Magno intermisso tempore discipuli foris in area recreationis ludunt.",
+    "exampleDE": "In der großen Pause spielen die Schüler draußen auf dem Pausenhof."
+  },
+  {
+    "front": "die Geometrie",
+    "back": "geometria",
+    "ipa": "ɡɛ.ɔˈmɛ.trɪ.a",
+    "example": "In disciplina geometriae triangula norma describimus.",
+    "exampleDE": "Im Geometrieunterricht zeichnen wir Dreiecke mit dem Geodreieck."
+  },
+  {
+    "front": "die Grammatik",
+    "back": "grammatica",
+    "ipa": "ɡramˈma.tɪ.ka",
+    "example": "Assidua exercitatio adiuvat ut praecepta grammaticae memoriae mandentur.",
+    "exampleDE": "Regelmäßiges Üben hilft, die Regeln der Grammatik zu verinnerlichen."
+  },
+  {
+    "front": "der Fremdsprachenunterricht",
+    "back": "disciplina linguae exterae",
+    "ipa": "dɪs.kɪˈpliː.na ˈlɪŋ.ɡʷae̯ ˈɛks.tɛ.rae̯",
+    "example": "In disciplina linguae exterae libere colloqui exercemus.",
+    "exampleDE": "Im Fremdsprachenunterricht üben wir das freie Sprechen in Dialogen."
+  },
+  {
+    "front": "das Experiment",
+    "back": "experimentum",
+    "ipa": "ɛks.pɛ.rɪˈmɛn.tʊm",
+    "example": "In laboratorio chemico classis experimentum mirabile facit.",
+    "exampleDE": "Im Chemielabor führt die Klasse ein spannendes Experiment durch."
+  },
+  {
+    "front": "das Referat",
+    "back": "relatio",
+    "ipa": "rɛˈlaː.tɪ.oː",
+    "example": "Relationem liberam de tutela balaenarum periclitatarum habet.",
+    "exampleDE": "Er hält ein freies Referat über den Schutz bedrohter Wale."
+  },
+  {
+    "front": "die Hausaufgabe",
+    "back": "pensum domesticum",
+    "ipa": "ˈpɛn.sʊm dɔˈmɛs.tɪ.kʊm",
+    "example": "Post prandium pensa domestica intenta cura absolvit.",
+    "exampleDE": "Nach dem Mittagessen erledigt sie konzentriert ihre Hausaufgaben."
+  },
+  {
+    "front": "die Nachhilfe",
+    "back": "adiumentum scholasticum",
+    "ipa": "ad.jʊˈmɛn.tʊm skʰɔˈlas.tɪ.kʊm",
+    "example": "Bis in hebdomade adiumentum capit ut notas suas emendet.",
+    "exampleDE": "Zweimal wöchentlich nimmt er Nachhilfe, um seine Noten zu verbessern."
+  },
+  {
+    "front": "der Hörsaal",
+    "back": "auditorium",
+    "ipa": "aʊ̯.dɪˈtoː.rɪ.ʊm",
+    "example": "Auditorium magnum ad ultimum usque locum completum est.",
+    "exampleDE": "Der große Hörsaal ist bis auf den letzten Platz besetzt."
+  },
+  {
+    "front": "die Vorlesung",
+    "back": "praelectio",
+    "ipa": "prae̯ˈlɛk.tɪ.oː",
+    "example": "Professrix miram praelectionem de physica moderna habet.",
+    "exampleDE": "Die Professorin hält eine fesselnde Vorlesung über moderne Physik."
+  },
+  {
+    "front": "das Seminar",
+    "back": "seminarium",
+    "ipa": "sɛ.mɪˈnaː.rɪ.ʊm",
+    "example": "In seminario studiosi de novis scriptis scientificis disputant.",
+    "exampleDE": "Im Seminar diskutieren die Studierenden aktuelle wissenschaftliche Texte."
+  },
+  {
+    "front": "die Universitätsbibliothek",
+    "back": "bibliotheca universitatis",
+    "ipa": "bɪ.blɪ.ɔˈtʰeː.ka ʊ.nɪ.wɛr.sɪˈtaː.tɪs",
+    "example": "In bibliotheca universitatis intentum silentium ad discendum regnat.",
+    "exampleDE": "In der Universitätsbibliothek herrscht konzentrierte Stille zum Lernen."
+  },
+  {
+    "front": "das Semester",
+    "back": "semestre",
+    "ipa": "sɛˈmɛs.trɛ",
+    "example": "Semestre hibernum in plerisque universitatibus mense Octobri incipit.",
+    "exampleDE": "Das Wintersemester beginnt an den meisten Hochschulen im Oktober."
+  },
+  {
+    "front": "die Bachelorarbeit",
+    "back": "thesis baccalaureatus",
+    "ipa": "ˈtʰeː.sɪs bak.ka.laʊ̯.rɛˈaː.tuːs",
+    "example": "Nunc magna diligentia thesim baccalaureatus suam conscribit.",
+    "exampleDE": "Sie schreibt zurzeit intensiv an ihrer Abschlussarbeit im Bachelor."
+  },
+  {
+    "front": "das Stipendium",
+    "back": "stipendium",
+    "ipa": "stɪˈpɛn.dɪ.ʊm",
+    "example": "Propter stipendium ingenii studiis totum animum dare potest.",
+    "exampleDE": "Dank eines Begabtenstipendiums kann er sich voll auf das Studium konzentrieren."
+  },
+  {
+    "front": "der Campus",
+    "back": "campus universitarius",
+    "ipa": "ˈkam.pʊs ʊ.nɪ.wɛr.sɪˈtaː.rɪ.ʊs",
+    "example": "In viridi campo universitario studiosi inter lectiones conveniunt.",
+    "exampleDE": "Auf dem grünen Campus treffen sich Studierende zwischen den Kursen."
+  },
+  {
+    "front": "die Stellenausschreibung",
+    "back": "condicio muneris oblata",
+    "ipa": "kɔnˈdɪ.kɪ.oː ˈmʊ.nɛ.rɪs ɔbˈlaː.ta",
+    "example": "In actis diurnis condicionem muneris egregiam invenit.",
+    "exampleDE": "In der Zeitung fand er eine interessante Stellenausschreibung."
+  },
+  {
+    "front": "das Anschreiben",
+    "back": "epistula commendaticia",
+    "ipa": "ɛˈpɪs.tʊ.la kɔm.mɛn.daˈtiː.kɪ.a",
+    "example": "Diserta epistula commendaticia curam locatoris operis excitat.",
+    "exampleDE": "Ein aussagekräftiges Anschreiben weckt das Interesse des Arbeitgebers."
+  },
+  {
+    "front": "der Lebenslauf",
+    "back": "curriculum vitae",
+    "ipa": "kʊrˈrɪ.kʊ.lʊm ˈwiː.tae̯",
+    "example": "Curriculum vitae omnes anteactas munerum stationes demonstrat.",
+    "exampleDE": "Der tabellarische Lebenslauf listet alle bisherigen Berufsstationen auf."
+  },
+  {
+    "front": "das Vorstellungsgespräch",
+    "back": "colloquium de munere",
+    "ipa": "kɔlˈlɔ.kʷɪ.ʊm deː ˈmʊ.nɛ.rɛ",
+    "example": "Ad colloquium de munere vestem decentem ac mundam induit.",
+    "exampleDE": "Zum Vorstellungsgespräch kleidet er sich professionell und ordentlich."
+  },
+  {
+    "front": "die Berufserfahrung",
+    "back": "usus muneris",
+    "ipa": "ˈuː.suːs ˈmʊ.nɛ.rɪs",
+    "example": "Ad hoc officium plurium annorum usus muneris poscitur.",
+    "exampleDE": "Für diese verantwortungsvolle Position ist mehrjährige Berufserfahrung erforderlich."
+  },
+  {
+    "front": "die Qualifikation",
+    "back": "habilitas",
+    "ipa": "haˈbɪ.lɪ.taːs",
+    "example": "Habilitas eius peculiaris optime ad postulata quadrat.",
+    "exampleDE": "Ihre fachliche Qualifikation passt genau zum geforderten Profil."
+  },
+  {
+    "front": "das Zeugnis",
+    "back": "testimonium",
+    "ipa": "tɛs.tɪˈmoː.nɪ.ʊm",
+    "example": "Bonum testimonium operis transitum ad aliud officium adiuvat.",
+    "exampleDE": "Ein positives Arbeitszeugnis erleichtert den beruflichen Wechsel."
+  },
+  {
+    "front": "der Arbeitsvertrag",
+    "back": "pactum operarium",
+    "ipa": "ˈpak.tʊm ɔ.pɛˈraː.rɪ.ʊm",
+    "example": "Pactionibus prosperis pactum operarium subscripsit.",
+    "exampleDE": "Nach erfolgreichen Verhandlungen unterschrieb sie den Arbeitsvertrag."
+  },
+  {
+    "front": "die Probezeit",
+    "back": "tempus probationis",
+    "ipa": "ˈtɛm.pʊs prɔ.baː.tɪˈoː.nɪs",
+    "example": "Sex mensum tempore probationis utraque pars aliam cognoscit.",
+    "exampleDE": "Während der sechsmonatigen Probezeit lernen sich beide Seiten kennen."
+  },
+  {
+    "front": "das Gehalt",
+    "back": "merces",
+    "ipa": "ˈmɛr.keːs",
+    "example": "Aequa merces fine cuiusque mensis ad tempus solvitur.",
+    "exampleDE": "Ein faires Gehalt wird jeweils zum Monatsende pünktlich überwiesen."
+  },
+  {
+    "front": "die Gleitzeit",
+    "back": "horae mutabiles",
+    "ipa": "ˈhoː.rae̯ muːˈtaː.bɪ.leːs",
+    "example": "Horis mutabilibus tempora laboris sui bene disponere potest.",
+    "exampleDE": "Dank flexibler Gleitzeit kann er seine Arbeitszeiten gut einteilen."
+  },
+  {
+    "front": "der Feierabend",
+    "back": "finis laboris",
+    "ipa": "ˈfiː.nɪs laˈboː.rɪs",
+    "example": "Post octo horas intenti laboris fine laboris fruitur.",
+    "exampleDE": "Nach acht Stunden konzentrierter Arbeit genießt er den Feierabend."
+  },
+  {
+    "front": "der Urlaubstag",
+    "back": "dies feriatus",
+    "ipa": "ˈdɪ.eːs fɛ.rɪˈaː.tʊs",
+    "example": "Omnibus horis laborantibus triginta dies feriati debentur.",
+    "exampleDE": "Vollzeitbeschäftigte haben Anspruch auf dreißig bezahlte Urlaubstage."
+  },
+  {
+    "front": "die Überstunden",
+    "back": "horae additae",
+    "ipa": "ˈhoː.rae̯ ˈad.dɪ.tae̯",
+    "example": "Horae additae tempore otioso compensari possunt.",
+    "exampleDE": "Geleistete Überstunden können durch Freizeit ausgeglichen werden."
+  },
+  {
+    "front": "die Kaffeepause",
+    "back": "intermissio potionis",
+    "ipa": "ɪn.tɛrˈmɪs.sɪ.oː pɔ.tɪˈoː.nɪs",
+    "example": "Intermissione potionis collegae sermones de fine hebdomadis serunt.",
+    "exampleDE": "In der Kaffeepause tauschen sich die Kollegen über das Wochenende aus."
+  },
+  {
+    "front": "die Besprechung",
+    "back": "conventus",
+    "ipa": "kɔnˈwɛn.tʊs",
+    "example": "Hora decima hebdomadalis conventus in auditorio habetur.",
+    "exampleDE": "Um zehn Uhr findet die wöchentliche Besprechung im Konferenzraum statt."
+  },
+  {
+    "front": "die Tagesordnung",
+    "back": "ordo rerum agendarum",
+    "ipa": "ˈɔr.doː ˈreː.rʊm a.ɡɛnˈdaː.rʊm",
+    "example": "Capita ordinis rerum agendarum antea per litteras electronicas missa sunt.",
+    "exampleDE": "Die Punkte der Tagesordnung wurden vorab per E-Mail verschickt."
+  },
+  {
+    "front": "das Protokoll",
+    "back": "acta",
+    "ipa": "ˈak.ta",
+    "example": "Acta scribit et omnia decreta perscribit.",
+    "exampleDE": "Er schreibt das Protokoll und hält alle getroffenen Beschlüsse fest."
+  },
+  {
+    "front": "die Präsentation",
+    "back": "demonstratio",
+    "ipa": "deː.mɔnˈstraː.tɪ.oː",
+    "example": "Demonstratio exitus figuris claris exponit.",
+    "exampleDE": "Die Präsentation veranschaulicht die Ergebnisse mit übersichtlichen Grafiken."
+  },
+  {
+    "front": "die Frist",
+    "back": "dies constitutus",
+    "ipa": "ˈdɪ.eːs kɔn.stɪˈtuː.tʊs",
+    "example": "Diem constitutum ad finem mensis accurate servare debemus.",
+    "exampleDE": "Wir müssen die vereinbarte Frist bis Ende des Monats unbedingt einhalten."
+  },
+  {
+    "front": "die Teamarbeit",
+    "back": "opus coniunctum",
+    "ipa": "ˈɔ.pʊs kɔnˈjʊŋk.tʊm",
+    "example": "Felix opus coniunctum liberam sententiarum permutationem auxiliumque postulat.",
+    "exampleDE": "Erfolgreiche Teamarbeit erfordert offenen Austausch und gegenseitige Unterstützung."
+  },
+  {
+    "front": "die Zusammenarbeit",
+    "back": "collaboratio",
+    "ipa": "kɔl.la.bɔˈraː.tɪ.oː",
+    "example": "Collaboratio inter partes societatis sine impedimento procedit.",
+    "exampleDE": "Die Zusammenarbeit zwischen den Abteilungen klappt reibungslos."
+  },
+  {
+    "front": "der Aktenordner",
+    "back": "theca chartarum",
+    "ipa": "ˈtʰeː.ka kʰarˈtaː.rʊm",
+    "example": "Pacta gravia ordine temporum in theca chartarum colliguntur.",
+    "exampleDE": "Wichtige Verträge werden chronologisch im Aktenordner abgeheftet."
+  },
+  {
+    "front": "der Locher",
+    "back": "perforator",
+    "ipa": "pɛr.fɔˈraː.tɔr",
+    "example": "Perforatore duo foramina munda in charta efficit.",
+    "exampleDE": "Mit dem Locher stanzt er zwei saubere Löcher in das Dokument."
+  },
+  {
+    "front": "das Heftgerät",
+    "back": "machina consutoria",
+    "ipa": "ˈma.kʰɪ.na kɔn.suːˈtoː.rɪ.a",
+    "example": "Machina consutoria paginas coniunctas astringit.",
+    "exampleDE": "Mit dem Heftgerät heftet sie die zusammengehörigen Seiten fest."
+  },
+  {
+    "front": "die Büroklammer",
+    "back": "fibula chartacea",
+    "ipa": "ˈfɪ.bʊ.la kʰarˈtaː.kɛ.a",
+    "example": "Varia fibula chartacea apocas continet.",
+    "exampleDE": "Eine bunte Büroklammer hält die Quittungen lose zusammen."
+  },
+  {
+    "front": "der Textmarker",
+    "back": "calamus notatorius",
+    "ipa": "ˈka.la.mʊs nɔ.taˈtoː.rɪ.ʊs",
+    "example": "Locos scripturae graves flavo calamo notatorio designat.",
+    "exampleDE": "Wichtige Textstellen hebt er mit einem gelben Textmarker hervor."
+  },
+  {
+    "front": "der Notizblock",
+    "back": "libellus memorialis",
+    "ipa": "lɪˈbɛl.lʊs mɛ.mɔ.rɪˈaː.lɪs",
+    "example": "Iuxta telephonum parvus libellus memorialis ad adnotationes semper iacet.",
+    "exampleDE": "Neben dem Telefon liegt immer ein kleiner Notizblock für Notizen."
+  },
+  {
+    "front": "der Reißwolf",
+    "back": "machina chartis lacerandis",
+    "ipa": "ˈma.kʰɪ.na ˈkʰar.tiːs la.kɛˈran.diːs",
+    "example": "Chartae arcanae ante coniectionem in machina conciduntur.",
+    "exampleDE": "Vertrauliche Papiere werden vor dem Entsorgen im Reißwolf zerkleinert."
+  },
+  {
+    "front": "der Drehstuhl",
+    "back": "sella versatilis",
+    "ipa": "ˈsɛl.la wɛrˈsaː.tɪ.lɪs",
+    "example": "Sella versatilis apta salubre sedere in loco operis adiuvat.",
+    "exampleDE": "Ein ergonomischer Drehstuhl unterstützt gesundes Sitzen am Arbeitsplatz."
+  },
+  {
+    "front": "der Bildschirm",
+    "back": "siparium",
+    "ipa": "sɪˈpaː.rɪ.ʊm",
+    "example": "Siparium acerrimum litteras perspicue monstrat.",
+    "exampleDE": "Der hochauflösende Bildschirm zeigt Schriften gestochen scharf an."
+  },
+  {
+    "front": "die Tastatur",
+    "back": "plectrum computatrale",
+    "ipa": "ˈplɛk.trʊm kɔm.pʊ.taˈtraː.lɛ",
+    "example": "Decem digitis expedite ac sine mendo in plectro computatrali scribit.",
+    "exampleDE": "Er tippt flüssig und fehlerfrei mit zehn Fingern auf der Tastatur."
+  },
+  {
+    "front": "die Computermaus",
+    "back": "mus computatralis",
+    "ipa": "muːs kɔm.pʊ.taˈtraː.lɪs",
+    "example": "Mure computatrali impulsa partem indicis eligit.",
+    "exampleDE": "Mit einem Klick auf die Computermaus wählt er den Menüpunkt aus."
+  },
+  {
+    "front": "der Drucker",
+    "back": "typographus",
+    "ipa": "tyːˈpɔ.ɡra.pʰʊs",
+    "example": "Typographus retialis utraque parte celeriter imprimit.",
+    "exampleDE": "Der Netzwerkdrucker druckt doppelseitig in hoher Geschwindigkeit."
+  },
+  {
+    "front": "das Ladekabel",
+    "back": "funiculus oneratorius",
+    "ipa": "fʊˈnɪ.kʊ.lʊs ɔ.nɛ.raˈtoː.rɪ.ʊs",
+    "example": "Noli oblivisci funiculum oneratorium computatri gestabilis condere.",
+    "exampleDE": "Vergiss nicht, das Ladekabel für das Notebook einzupacken."
+  },
+  {
+    "front": "der USB-Stick",
+    "back": "clavicula memorialis",
+    "ipa": "klaˈwɪ.kʊ.la mɛ.mɔ.rɪˈaː.lɪs",
+    "example": "Exemplar securitatis in clavicula memoriali servat.",
+    "exampleDE": "Sie speichert die Sicherungskopie auf einem handlichen USB-Stick."
+  },
+  {
+    "front": "die Festplatte",
+    "back": "discus computatralis",
+    "ipa": "ˈdɪs.kʊs kɔm.pʊ.taˈtraː.lɪs",
+    "example": "Discus computatralis externus copiosum spatium imaginibus praebet.",
+    "exampleDE": "Die externe Festplatte bietet reichlich Speicherplatz für Fotos."
+  },
+  {
+    "front": "der Webbrowser",
+    "back": "navigatrum interretiale",
+    "ipa": "na.wɪˈɡaː.trʊm ɪn.tɛr.rɛ.tɪˈaː.lɛ",
+    "example": "Aperi, quaeso, paginam in recenti navigatro interretiali.",
+    "exampleDE": "Öffnen Sie die Webseite bitte in einem aktuellen Webbrowser."
+  },
+  {
+    "front": "das Benutzerkonto",
+    "back": "ratio usoris",
+    "ipa": "ˈra.tɪ.oː ʊˈsoː.rɪs",
+    "example": "Proficiscere nomine tuo in propria ratione usoris.",
+    "exampleDE": "Melden Sie sich mit Ihrem persönlichen Benutzerkonto an."
+  },
+  {
+    "front": "das sichere Passwort",
+    "back": "tessera secura",
+    "ipa": "ˈtɛs.sɛ.ra seːˈkuː.ra",
+    "example": "Tessera secura litteras, numeros notasque singulares continet.",
+    "exampleDE": "Ein sicheres Passwort enthält Buchstaben, Ziffern und Sonderzeichen."
+  },
+  {
+    "front": "die Suchmaschine",
+    "back": "machina investigatoria",
+    "ipa": "ˈma.kʰɪ.na ɪn.wɛs.tɪ.ɡaˈtoː.rɪ.a",
+    "example": "Insere verba quaerenda in machinam investigatoriam.",
+    "exampleDE": "Geben Sie die Suchbegriffe in die Suchmaschine ein."
+  },
+  {
+    "front": "die E-Mail-Adresse",
+    "back": "inscriptio cursualis electronica",
+    "ipa": "ɪnˈskrɪp.tɪ.oː kʊr.sʊˈaː.lɪs ɛ.lɛkˈtrɔ.nɪ.ka",
+    "example": "Inscribe, quaeso, inscriptionem tuam cursualem ratam in formulam.",
+    "exampleDE": "Bitte tragen Sie Ihre gültige E-Mail-Adresse in das Formular ein."
+  },
+  {
+    "front": "der Anhang",
+    "back": "additamentum",
+    "ipa": "ad.dɪ.taˈmɛn.tʊm",
+    "example": "In additamento nuntii chartam reperies.",
+    "exampleDE": "Im Anhang der Nachricht finden Sie das Dokument im PDF-Format."
+  },
+  {
+    "front": "die Datensicherung",
+    "back": "conservatio datorum",
+    "ipa": "kɔn.sɛrˈwaː.tɪ.oː daˈtoː.rʊm",
+    "example": "Conservatio datorum automatica a subita iactura tuetur.",
+    "exampleDE": "Eine automatische Datensicherung schützt vor überraschendem Datenverlust."
+  },
+  {
+    "front": "das Update",
+    "back": "renovatio",
+    "ipa": "rɛ.nɔˈwaː.tɪ.oː",
+    "example": "Renovationes assiduas impone, ne securitas violetur.",
+    "exampleDE": "Installieren Sie regelmäßige Software-Updates zur Schließung von Sicherheitslücken."
+  },
+  {
+    "front": "der Touchscreen",
+    "back": "siparium tactile",
+    "ipa": "sɪˈpaː.rɪ.ʊm takˈtiː.lɛ",
+    "example": "Siparium tactile tactu digiti statim commovetur.",
+    "exampleDE": "Der berührungsempfindliche Touchscreen reagiert sofort auf Fingertippen."
+  },
+  {
+    "front": "die Sprachnachricht",
+    "back": "nuntius vocalis",
+    "ipa": "ˈnʊn.tɪ.ʊs wɔˈkaː.lɪs",
+    "example": "Potius quam diu scribere, brevem nuntium vocalem ei misit.",
+    "exampleDE": "Statt lange zu tippen, schickte er ihr eine kurze Sprachnachricht."
+  },
+  {
+    "front": "die Benachrichtigung",
+    "back": "notificatio",
+    "ipa": "nɔ.tɪ.fɪˈkaː.tɪ.oː",
+    "example": "In sipario clauso nova notificatio apparuit.",
+    "exampleDE": "Auf dem Sperrbildschirm erschien eine neue Benachrichtigung."
+  },
+  {
+    "front": "der Flugmodus",
+    "back": "modus volatus",
+    "ipa": "ˈmɔ.dʊs wɔˈlaː.tuːs",
+    "example": "Dum volamus, omnia telephona in modum volatus converti debent.",
+    "exampleDE": "Während des Fluges müssen alle Telefone in den Flugmodus geschaltet werden."
+  },
+  {
+    "front": "die Akkukapazität",
+    "back": "capacitas accumulatoris",
+    "ipa": "kaˈpa.kɪ.taːs ak.kʊ.mʊ.laˈtoː.rɪs",
+    "example": "Post magnum usum capacitas accumulatoris ad viginti centesimas decidit.",
+    "exampleDE": "Nach intensivem Gebrauch sank die Akkukapazität auf zwanzig Prozent."
+  },
+  {
+    "front": "das WLAN-Netzwerk",
+    "back": "rete sine filo",
+    "ipa": "ˈrɛ.tɛ ˈsɪ.nɛ ˈfiː.loː",
+    "example": "In deversorio nos cum reti sine filo gratuito coniungimus.",
+    "exampleDE": "Im Hotel verbinden wir uns mit dem kostenlosen WLAN-Netzwerk."
+  },
+  {
+    "front": "die Internetverbindung",
+    "back": "nexus interretialis",
+    "ipa": "ˈnɛk.sʊs ɪn.tɛr.rɛ.tɪˈaː.lɪs",
+    "example": "Stabilis nexus interretialis ad continuas conloquutiones visificas necessarius est.",
+    "exampleDE": "Eine stabile Internetverbindung ist wichtig für flüssige Videoanrufe."
+  },
+  {
+    "front": "das Wochenende",
+    "back": "finis hebdomadis",
+    "ipa": "ˈfiː.nɪs hɛbˈdɔ.ma.dɪs",
+    "example": "Fine hebdomadis libenter diu dormio et placide iento.",
+    "exampleDE": "Am Wochenende schlafe ich gerne lange aus und frühstücke in Ruhe."
+  },
+  {
+    "front": "der Feiertag",
+    "back": "dies festus",
+    "ipa": "ˈdɪ.eːs ˈfɛs.tʊs",
+    "example": "Diebus festis publicis pleraeque tabernae clausae manent.",
+    "exampleDE": "An gesetzlichen Feiertagen bleiben die meisten Geschäfte geschlossen."
+  },
+  {
+    "front": "der Ausflug",
+    "back": "excursio",
+    "ipa": "ɛksˈkʊr.sɪ.oː",
+    "example": "Die Saturni familia excursionem in vivarium fecit.",
+    "exampleDE": "Am Samstag unternahm die Familie einen Ausflug in den Tierpark."
+  },
+  {
+    "front": "das Picknick",
+    "back": "epulae subdiales",
+    "ipa": "ˈɛ.pʊ.lae̯ sʊb.dɪˈaː.leːs",
+    "example": "Stragulo expanso epulas subdiales in umbra fecimus.",
+    "exampleDE": "Wir breiteten eine Decke aus und machten ein Picknick im Schatten."
+  },
+  {
+    "front": "die Hängematte",
+    "back": "lectulus pensilis",
+    "ipa": "ˈlɛk.tʊ.lʊs ˈpɛn.sɪ.lɪs",
+    "example": "Inter duas opacas arbores lectulum pensilem commodum tetendit.",
+    "exampleDE": "Zwischen zwei schattigen Bäumen spannte er eine bequeme Hängematte auf."
+  },
+  {
+    "front": "das Gesellschaftsspiel",
+    "back": "ludus mensalis",
+    "ipa": "ˈlʊ.dʊs mɛnˈsaː.lɪs",
+    "example": "Vespere libenter ludum mensalem mirandum ad mensam agimus.",
+    "exampleDE": "Abends spielen wir gerne ein spannendes Gesellschaftsspiel am Tisch."
+  },
+  {
+    "front": "das Kartenspiel",
+    "back": "ludus chartarum",
+    "ipa": "ˈlʊ.dʊs kʰarˈtaː.rʊm",
+    "example": "Quattuor viri iucundum ludum chartarum luserunt.",
+    "exampleDE": "Zu viert spielten sie eine unterhaltsame Runde Skat."
+  },
+  {
+    "front": "das Kreuzworträtsel",
+    "back": "aenigma litterarum",
+    "ipa": "ae̯ˈnɪɡ.ma lɪt.tɛˈraː.rʊm",
+    "example": "Inter potionem diei Solis avus meus aenigma litterarum solvit.",
+    "exampleDE": "Beim sonntäglichen Kaffee löst mein Großvater das Kreuzworträtsel."
+  },
+  {
+    "front": "die Fotografie",
+    "back": "ars photographica",
+    "ipa": "ars pʰɔ.tɔˈɡra.pʰɪ.ka",
+    "example": "Ars photographica naturae multos annos carissimum studium eius est.",
+    "exampleDE": "Die Naturfotografie ist seit vielen Jahren sein leidenschaftliches Hobby."
+  },
+  {
+    "front": "das Gärtnern",
+    "back": "horticultura",
+    "ipa": "hɔr.tɪ.kʊlˈtuː.ra",
+    "example": "Horticultura in horto suo post laboriosam hebdomadem recreat.",
+    "exampleDE": "Das Gärtnern im eigenen Gemüsegarten entspannt nach einer anstrengenden Woche."
+  },
+  {
+    "front": "das Stricken",
+    "back": "nexio lanae",
+    "ipa": "ˈnɛk.sɪ.oː ˈlaː.nae̯",
+    "example": "Ex calida lana varios tibiales nepotibus nectit.",
+    "exampleDE": "Sie strickt aus warmer Wolle bunte Socken für ihre Enkelkinder."
+  },
+  {
+    "front": "das Häkeln",
+    "back": "opus unco textum",
+    "ipa": "ˈɔ.pʊs ˈʊŋ.koː ˈtɛk.sʊm",
+    "example": "Acicula uncinata subtilia linteola texit.",
+    "exampleDE": "Mit einer feinen Häkelnadel häkelt sie zarte Deckchen."
+  },
+  {
+    "front": "die Nähmaschine",
+    "back": "machina sartoria",
+    "ipa": "ˈma.kʰɪ.na sarˈtoː.rɪ.a",
+    "example": "Machina sartoria electrica nova involucra pulvinorum suit.",
+    "exampleDE": "Mit der elektrischen Nähmaschine näht sie neue Kissenbezüge."
+  },
+  {
+    "front": "das Heimwerken",
+    "back": "opus domesticum fabrile",
+    "ipa": "ˈɔ.pʊs dɔˈmɛs.tɪ.kʊm faˈbriː.lɛ",
+    "example": "Die Saturni toto animo operi domestico fabrili in cella studet.",
+    "exampleDE": "Am Samstag widmet er sich voll und ganz dem Heimwerken im Keller."
+  },
+  {
+    "front": "das Basteln",
+    "back": "opus manu factum",
+    "ipa": "ˈɔ.pʊs ˈma.nuː ˈfak.tʊm",
+    "example": "Ante festum Nativitatis pueri ornamenta chartacea manibus fingunt.",
+    "exampleDE": "Vor Weihnachten basteln die Kinder festlichen Schmuck aus Papier."
+  },
+  {
+    "front": "der Bestseller",
+    "back": "liber maxime venalis",
+    "ipa": "ˈlɪ.bɛr ˈmak.sɪ.meː wɛˈnaː.lɪs",
+    "example": "Fabulosa narratio sceleris statim inter libros maxime venales habita est.",
+    "exampleDE": "Der spannende Kriminalroman schaffte es sofort auf die Bestsellerliste."
+  },
+  {
+    "front": "das Taschenbuch",
+    "back": "liber manualis",
+    "ipa": "ˈlɪ.bɛr ma.nʊˈaː.lɪs",
+    "example": "Ad ferias duos leves libros manuales in manticam condit.",
+    "exampleDE": "Für den Urlaub packt sie zwei leichte Taschenbücher in den Koffer."
+  },
+  {
+    "front": "das Lesezeichen",
+    "back": "signum libri",
+    "ipa": "ˈsɪŋ.nʊm ˈlɪ.briː",
+    "example": "Pulchrum signum libri paginam novissime lectam designat.",
+    "exampleDE": "Ein schönes Lesezeichen markiert die zuletzt gelesene Seite."
+  },
+  {
+    "front": "die Buchhandlung",
+    "back": "taberna libraria",
+    "ipa": "taˈbɛr.na lɪˈbraː.rɪ.a",
+    "example": "In parva taberna libraria ad angulum sita per multas horas versatur.",
+    "exampleDE": "In der kleinen Buchhandlung an der Ecke stöbert er stundenlang."
+  },
+  {
+    "front": "die Handlung",
+    "back": "argumentum fabulae",
+    "ipa": "ar.ɡʊˈmɛn.tʊm ˈfaː.bʊ.lae̯",
+    "example": "Fascinans argumentum fabulae Londinii antiqui geritur.",
+    "exampleDE": "Die fesselnde Handlung des Romans spielt im viktorianischen London."
+  },
+  {
+    "front": "die Hauptfigur",
+    "back": "persona primaria",
+    "ipa": "pɛrˈsoː.na priːˈmaː.rɪ.a",
+    "example": "Persona primaria fortis in libro multos casus superat.",
+    "exampleDE": "Die mutige Hauptfigur meistert im Laufe des Buches viele Abenteuer."
+  },
+  {
+    "front": "das Kapitel",
+    "back": "caput libri",
+    "ipa": "ˈka.pʊt ˈlɪ.briː",
+    "example": "Ante somnum adhuc unum caput libri lectu dignum absolvo.",
+    "exampleDE": "Vor dem Einschlafen lese ich noch ein spannendes Kapitel zu Ende."
+  },
+  {
+    "front": "der Autor",
+    "back": "auctor",
+    "ipa": "ˈaʊ̯k.tɔr",
+    "example": "Clarus auctor post recitationem multis libris nomen suum inscripsit.",
+    "exampleDE": "Der renommierte Autor signierte nach der Lesung viele Exemplare."
+  },
+  {
+    "front": "die Leinwand",
+    "back": "siparium cinematographicum",
+    "ipa": "sɪˈpaː.rɪ.ʊm kɪ.nɛ.ma.tɔˈɡra.pʰɪ.kʊm",
+    "example": "In ingenti sipario cinematographico imagines naturae mirabiles videntur.",
+    "exampleDE": "Auf der riesigen Leinwand des Kinos wirken Landschaftsaufnahmen überwältigend."
+  },
+  {
+    "front": "der Dokumentarfilm",
+    "back": "pellicula documentaria",
+    "ipa": "pɛlˈlɪ.kʊ.la dɔ.kʊ.mɛnˈtaː.rɪ.a",
+    "example": "Pellicula documentaria vitam mirabilem ferarum demonstrat.",
+    "exampleDE": "Der Dokumentarfilm beleuchtet das faszinierende Leben wilder Tiere."
+  },
+  {
+    "front": "die Komödie",
+    "back": "comoedia",
+    "ipa": "kɔˈmoe̯.dɪ.a",
+    "example": "Comoedia hilaris multos risus in auditorio excitavit.",
+    "exampleDE": "Eine heitere Komödie sorgte für viele herzliche Lacher im Saal."
+  },
+  {
+    "front": "der Untertitel",
+    "back": "titulus subiectus",
+    "ipa": "ˈtɪ.tʊ.lʊs sʊbˈjɛk.tʊs",
+    "example": "Pelliculas alienae linguae libentissime cum titulis Germanicis subiectis specto.",
+    "exampleDE": "Fremdsprachige Filme schaue ich am liebsten mit deutschen Untertiteln."
+  },
+  {
+    "front": "die Fernbedienung",
+    "back": "instrumentum remotivum",
+    "ipa": "ɪn.strʊˈmɛn.tʊm rɛ.mɔˈtiː.wʊm",
+    "example": "Instrumento remotivo vocem televisoris minuit.",
+    "exampleDE": "Mit der Fernbedienung schaltet er die Lautstärke des Fernsehers leiser."
+  },
+  {
+    "front": "die Fernsehserie",
+    "back": "series televisifica",
+    "ipa": "ˈsɛ.rɪ.eːs tɛ.lɛ.wɪˈsiː.fɪ.ka",
+    "example": "Nova pars seriei televisificae dilectae proxima hebdomade exibit.",
+    "exampleDE": "Die neue Staffel der beliebten Fernsehserie erscheint nächste Woche."
+  },
+  {
+    "front": "der Schauspieler",
+    "back": "actor",
+    "ipa": "ˈak.tɔr",
+    "example": "Actor ingeniosus personam suam fidissime agit.",
+    "exampleDE": "Der talentierte Schauspieler verkörpert seine Rolle sehr glaubwürdig."
+  },
+  {
+    "front": "das Theaterstück",
+    "back": "fabula scaenica",
+    "ipa": "ˈfaː.bʊ.la ˈskae̯.nɪ.ka",
+    "example": "Fabula scaenica nobilis more novo in scaenam prolata est.",
+    "exampleDE": "Das klassische Theaterstück von Schiller wurde modern inszeniert."
+  },
+  {
+    "front": "der Theatervorhang",
+    "back": "aulaeum",
+    "ipa": "aʊ̯ˈlae̯.ʊm",
+    "example": "Inter magnum plausum grave aulaeum rubrum cecidit.",
+    "exampleDE": "Unter großem Applaus senkte sich der schwere rote Theatervorhang."
+  },
+  {
+    "front": "der Beifall",
+    "back": "plausus",
+    "ipa": "ˈplaʊ̯.sʊs",
+    "example": "Populus alacer actoribus ingentem plausum tribuit.",
+    "exampleDE": "Das begeisterte Publikum spendete den Darstellern tosenden Beifall."
+  },
+  {
+    "front": "das Bühnenbild",
+    "back": "apparatus scaenicus",
+    "ipa": "ap.paˈraː.tʊs ˈskae̯.nɪ.kʊs",
+    "example": "Apparatus scaenicus sumptuosus forum antiquum referebat.",
+    "exampleDE": "Das aufwendige Bühnenbild stellte einen historischen Marktplatz dar."
+  },
+  {
+    "front": "die Garderobe",
+    "back": "vestiarium",
+    "ipa": "wɛs.tɪˈaː.rɪ.ʊm",
+    "example": "Ante ludum tunicae in vestiario deponuntur.",
+    "exampleDE": "Vor Beginn der Vorstellung gibt man Jacken an der Garderobe ab."
+  },
+  {
+    "front": "die Pause",
+    "back": "intermissio",
+    "ipa": "ɪn.tɛrˈmɪs.sɪ.oː",
+    "example": "Viginti minutorum intermissione spectatores vinum spumans bibunt.",
+    "exampleDE": "In der zwanzigminütigen Pause trinken die Besucher ein Glas Sekt."
+  },
+  {
+    "front": "der Rang",
+    "back": "gradus theatri",
+    "ipa": "ˈɡra.dʊs tʰɛˈaː.triː",
+    "example": "De sedibus primi gradus theatri prospectus egregius patet.",
+    "exampleDE": "Von den Plätzen im ersten Rang hat man einen ausgezeichneten Überblick."
+  },
+  {
+    "front": "die Generalprobe",
+    "back": "proba generalis",
+    "ipa": "ˈprɔ.ba ɡɛ.nɛˈraː.lɪs",
+    "example": "Proba generalis ante sollemnem ludum sine mendo successit.",
+    "exampleDE": "Die letzte Probe vor der großen Premiere verlief fehlerfrei."
+  },
+  {
+    "front": "die Kunstgalerie",
+    "back": "pinacotheca",
+    "ipa": "pɪ.na.kɔˈtʰeː.ka",
+    "example": "In pinacotheca publica iuvenes pictores opera sua exponunt.",
+    "exampleDE": "In der städtischen Kunstgalerie stellen junge Maler ihre Werke aus."
+  },
+  {
+    "front": "das Ölgemälde",
+    "back": "pictura olearia",
+    "ipa": "pɪkˈtuː.ra ɔ.lɛˈaː.rɪ.a",
+    "example": "Pretiosa pictura olearia a septimo decimo saeculo repetitur.",
+    "exampleDE": "Das wertvolle Ölgemälde stammt aus dem siebzehnten Jahrhundert."
+  },
+  {
+    "front": "die Skulptur",
+    "back": "statua",
+    "ipa": "ˈsta.tʊ.a",
+    "example": "In hortis musei statua aenea magnitudine naturali stat.",
+    "exampleDE": "Im Museumsgarten steht eine lebensgroße Skulptur aus Bronze."
+  },
+  {
+    "front": "der Museumsführer",
+    "back": "dux musealis",
+    "ipa": "dʊks mʊ.sɛˈaː.lɪs",
+    "example": "Dux electronicus visitatores per conclavia perite ducit.",
+    "exampleDE": "Der elektronische Audioguide führt Besucher informativ durch die Räume."
+  },
+  {
+    "front": "der Eintritt",
+    "back": "aditus",
+    "ipa": "ˈa.dɪ.tʊs",
+    "example": "Discipulis studiosisque aditus diebus Solis vilius constat.",
+    "exampleDE": "Für Schüler und Studierende ist der Eintritt sonntags ermäßigt."
+  },
+  {
+    "front": "die Sonderausstellung",
+    "back": "expositio extraordinaria",
+    "ipa": "ɛks.pɔˈsɪ.tɪ.oː ɛks.traː.ɔr.dɪˈnaː.rɪ.a",
+    "example": "Expositio extraordinaria de antiquitate multos visitatores allicit.",
+    "exampleDE": "Die Sonderausstellung über die Antike lockt viele Besucher an."
+  },
+  {
+    "front": "das Meisterwerk",
+    "back": "opus summum",
+    "ipa": "ˈɔ.pʊs ˈsʊm.mʊm",
+    "example": "Haec effigies toto orbe praeclara opus summum pictoris habetur.",
+    "exampleDE": "Dieses weltberühmte Porträt gilt als das Meisterwerk des Malers."
+  },
+  {
+    "front": "die Akustikgitarre",
+    "back": "cithara Hispanica",
+    "ipa": "ˈkɪ.tʰa.ra hɪsˈpaː.nɪ.ka",
+    "example": "Ad ignem castrensem carmina cithara Hispanica comitatur.",
+    "exampleDE": "Am Lagerfeuer begleitet er die Lieder auf der Akustikgitarre."
+  },
+  {
+    "front": "das Klavier",
+    "back": "clavicymbalum",
+    "ipa": "kla.wɪˈkym.ba.lʊm",
+    "example": "Omni postmeridie modorum scalas in clavicymbalo sedulo exercet.",
+    "exampleDE": "Sie übt jeden Nachmittag fleißig Tonleitern auf dem Klavier."
+  },
+  {
+    "front": "die Geige",
+    "back": "violina",
+    "ipa": "wɪ.ɔˈliː.na",
+    "example": "Clarus sonus violinae melodiam concentus quattuor fidium ferebat.",
+    "exampleDE": "Der klare Klang der Geige trug die Melodie des Streichquartetts."
+  },
+  {
+    "front": "das Schlagzeug",
+    "back": "tympana",
+    "ipa": "ˈtym.pa.na",
+    "example": "Tympanista gregi concitatum numerum praescribit.",
+    "exampleDE": "Der Schlagzeuger gibt der Band den treibenden Rhythmus vor."
+  },
+  {
+    "front": "der Notenständer",
+    "back": "fulcrum musicalis",
+    "ipa": "ˈfʊl.krʊm muː.sɪˈkaː.lɪs",
+    "example": "Libellus sonorum apertus in firmo fulcro musicali stat.",
+    "exampleDE": "Das Notenheft steht aufgeschlagen auf dem stabilen Notenständer."
+  },
+  {
+    "front": "der Kopfhörer",
+    "back": "acusticum gestabile",
+    "ipa": "aˈkuːs.tɪ.kʊm ɡɛsˈtaː.bɪ.lɛ",
+    "example": "In tramina dilectam musicam per acustica sine filo audit.",
+    "exampleDE": "In der Bahn hört sie ihre Lieblingsmusik über kabellose Kopfhörer."
+  },
+  {
+    "front": "der Songtext",
+    "back": "verba cantus",
+    "ipa": "ˈwɛr.ba ˈkan.tuːs",
+    "example": "Verba carminis Anglici omnia memoria tenet.",
+    "exampleDE": "Er kennt den Songtext des englischen Liedes komplett auswendig."
+  },
+  {
+    "front": "der Chor",
+    "back": "chorus",
+    "ipa": "ˈkʰɔ.rʊs",
+    "example": "Chorus ecclesiae hebdomadatim ad festivum concentum Nativitatis canit.",
+    "exampleDE": "Der Kirchenchor probt wöchentlich für das festliche Weihnachtskonzert."
+  },
+  {
+    "front": "die Laufschuhe",
+    "back": "calcei cursorii",
+    "ipa": "ˈkal.kɛ.iː kʊrˈsoː.rɪ.iː",
+    "example": "Boni calcei cursorii omnem gradum in asphalto cursitantibus leniunt.",
+    "exampleDE": "Gute Laufschuhe dämpfen jeden Schritt beim Joggen auf Asphalt."
+  },
+  {
+    "front": "die Trinkflasche",
+    "back": "lagoena potoria",
+    "ipa": "laˈɡoe̯.na pɔˈtoː.rɪ.a",
+    "example": "In exercitiis semper plenam lagoenam potoriam promptam habeo.",
+    "exampleDE": "Beim Sport habe ich immer eine gefüllte Trinkflasche griffbereit."
+  },
+  {
+    "front": "das Fitnessstudio",
+    "back": "palaestra athletica",
+    "ipa": "paˈlae̯s.tra atʰˈleː.tɪ.ka",
+    "example": "Ter in hebdomade machinis palaestrae athleticae exercetur.",
+    "exampleDE": "Dreimal pro Woche trainiert er an den Geräten im Fitnessstudio."
+  },
+  {
+    "front": "die Gymnastikmatte",
+    "back": "stratum gymnasticum",
+    "ipa": "ˈstraː.tʊm ɡymˈnas.tɪ.kʊm",
+    "example": "Stratum gymnasticum non lubricum ad exercitia extendit.",
+    "exampleDE": "Sie rollt ihre rutschfeste Gymnastikmatte für das Yoga aus."
+  },
+  {
+    "front": "die Liegestütze",
+    "back": "pressio brachialis",
+    "ipa": "ˈprɛs.sɪ.oː bra.kʰɪˈaː.lɪs",
+    "example": "Decem rectae pressiones brachiales ad matutinum exercitium pertinent.",
+    "exampleDE": "Zehn saubere Liegestütze gehören zu seinem morgendlichen Zirkeltraining."
+  },
+  {
+    "front": "das Seilspringen",
+    "back": "saltatio funis",
+    "ipa": "salˈtaː.tɪ.oː ˈfuː.nɪs",
+    "example": "Saltatio funis egregia exercitatio corporis est.",
+    "exampleDE": "Seilspringen ist eine hervorragende Übung für Koordination und Kondition."
+  },
+  {
+    "front": "der Marathon",
+    "back": "cursus Marathonius",
+    "ipa": "ˈkʊr.suːs ma.raˈtʰɔː.nɪ.ʊs",
+    "example": "Multos menses ad primum cursum Marathonium suum diligenter se paravit.",
+    "exampleDE": "Monatelang bereitete er sich gewissenhaft auf seinen ersten Marathon vor."
+  },
+  {
+    "front": "der Fußballplatz",
+    "back": "campus pediludii",
+    "ipa": "ˈkam.pʊs pɛ.dɪˈluː.dɪ.iː",
+    "example": "Adulescentes post scholam in campo pediludii conveniunt.",
+    "exampleDE": "Die Jugendlichen treffen sich nach der Schule auf dem Fußballplatz."
+  },
+  {
+    "front": "das Tor",
+    "back": "porta pilalis",
+    "ipa": "ˈpɔr.ta pɪˈlaː.lɪs",
+    "example": "Extremo ludi minuto impetus dux pilam in portam decernentem iecit.",
+    "exampleDE": "In der letzten Spielminute schoss die Stürmerin das entscheidende Tor."
+  },
+  {
+    "front": "der Schiedsrichter",
+    "back": "arbiter certaminis",
+    "ipa": "ˈar.bɪ.tɛr kɛrˈtaː.mɪ.nɪs",
+    "example": "Arbiter certaminis aequus iustum ludum ad tempus inchoavit.",
+    "exampleDE": "Der unparteiische Schiedsrichter pfiff das faire Spiel pünktlich an."
+  },
+  {
+    "front": "die Halbzeitpause",
+    "back": "intermissio dimidia",
+    "ipa": "ɪn.tɛrˈmɪs.sɪ.oː dɪˈmɪ.dɪ.a",
+    "example": "Quindecim minutorum intermissione dimidia lusores de consilio colloquuntur.",
+    "exampleDE": "In der fünfzehnminütigen Halbzeitpause besprechen die Spieler die Taktik."
+  },
+  {
+    "front": "der Basketballkorb",
+    "back": "corbis canistriludii",
+    "ipa": "ˈkɔr.bɪs ka.nɪs.trɪˈluː.dɪ.iː",
+    "example": "Ictu directo pilam recte in corbim coniecit.",
+    "exampleDE": "Mit einem gezielten Wurf traf er den Ball direkt in den Basketballkorb."
+  },
+  {
+    "front": "der Tennisschläger",
+    "back": "reticulum teniludii",
+    "ipa": "rɛˈtɪ.kʊ.lʊm tɛ.nɪˈluː.dɪ.iː",
+    "example": "Reticulum teniludii ante magnum certamen novis filis reficit.",
+    "exampleDE": "Sie bespannt ihren Tennisschläger vor dem großen Turnier neu."
+  },
+  {
+    "front": "die Tischtennisplatte",
+    "back": "tabula teniludii mensalis",
+    "ipa": "ˈta.bʊ.la tɛ.nɪˈluː.dɪ.iː mɛnˈsaː.lɪs",
+    "example": "In horto tabula teniludii mensalis ex caemento contra tempestates stat.",
+    "exampleDE": "Im Garten steht eine wetterfeste Tischtennisplatte aus Beton."
+  },
+  {
+    "front": "das Turnier",
+    "back": "certamen",
+    "ipa": "kɛrˈtaː.mɛn",
+    "example": "Certamini athletico vicinitatis plus quam viginti greges intersunt.",
+    "exampleDE": "An dem regionalen Sportturnier nehmen über zwanzig Teams teil."
+  },
+  {
+    "front": "das Schwimmbad",
+    "back": "natatorium",
+    "ipa": "na.taːˈtoː.rɪ.ʊm",
+    "example": "In natatorio tecto diebus Martis viginti spatia mane pernatat.",
+    "exampleDE": "Im Hallenbad schwimmt er jeden Dienstagmorgen zwanzig Bahnen."
+  },
+  {
+    "front": "die Schwimmbrille",
+    "back": "conspicilia natatoria",
+    "ipa": "kɔn.spɪˈkɪ.lɪ.a na.taːˈtoː.rɪ.a",
+    "example": "Conspicilia natatoria apta oculos ab aqua defendunt.",
+    "exampleDE": "Eine dicht sitzende Schwimmbrille schützt die Augen vor Chlorwasser."
+  },
+  {
+    "front": "der Sprungturm",
+    "back": "turris desultoria",
+    "ipa": "ˈtʊr.rɪs deː.sʊlˈtoː.rɪ.a",
+    "example": "Fortiter puella de turri desultoria trium metrorum in piscinam desiluit.",
+    "exampleDE": "Mutig sprang das Mädchen vom Dreimeter-Sprungturm ins Becken."
+  },
+  {
+    "front": "das Segelboot",
+    "back": "navicula velifera",
+    "ipa": "naˈwɪ.kʊ.la wɛˈlɪ.fɛ.ra",
+    "example": "Velis passis parva navicula velifera per lacum labitur.",
+    "exampleDE": "Mit gesetzten Segeln gleitet das kleine Segelboot über den See."
+  },
+  {
+    "front": "die Schwimmweste",
+    "back": "thorax natatorius",
+    "ipa": "ˈtʰoː.raːks na.taːˈtoː.rɪ.ʊs",
+    "example": "In aperto mari thoracem natatorium gerere necessarium est.",
+    "exampleDE": "Auf dem offenen Wasser ist das Tragen einer Schwimmweste Pflicht."
+  },
+  {
+    "front": "das Paddel",
+    "back": "tonsa",
+    "ipa": "ˈtɔn.sa",
+    "example": "Aequis motibus tonsam in placidam aquam demergit.",
+    "exampleDE": "Mit gleichmäßigen Zügen taucht er das Paddel ins ruhige Wasser."
+  }
+]
