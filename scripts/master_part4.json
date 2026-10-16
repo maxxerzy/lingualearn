@@ -1,0 +1,967 @@
+{
+  "part": 4,
+  "start": 600,
+  "count": 192,
+  "items": [
+    {
+      "front": "der Wanderweg",
+      "exampleDE": "Der markierte Wanderweg führt durch schattige Wälder auf den Berg.",
+      "theme": "Outdoor & Wassersport"
+    },
+    {
+      "front": "das Bürgeramt",
+      "exampleDE": "Einen neuen Ausweis beantragt man persönlich im Bürgeramt.",
+      "theme": "Bürgeramt & Dokumente"
+    },
+    {
+      "front": "der Personalausweis",
+      "exampleDE": "Der Personalausweis ist zehn Jahre lang im Inland gültig.",
+      "theme": "Bürgeramt & Dokumente"
+    },
+    {
+      "front": "die Geburtsurkunde",
+      "exampleDE": "Für viele behördliche Anträge benötigt man eine offizielle Geburtsurkunde.",
+      "theme": "Bürgeramt & Dokumente"
+    },
+    {
+      "front": "die Meldebestätigung",
+      "exampleDE": "Nach dem Umzug erhält man beim Einwohnermeldeamt die Meldebestätigung.",
+      "theme": "Bürgeramt & Dokumente"
+    },
+    {
+      "front": "das Formular",
+      "exampleDE": "Füllen Sie das behördliche Formular bitte in Druckbuchstaben aus.",
+      "theme": "Bürgeramt & Dokumente"
+    },
+    {
+      "front": "die Unterschrift",
+      "exampleDE": "Setzen Sie Ihre eigenhändige Unterschrift unten auf die Linie.",
+      "theme": "Bürgeramt & Dokumente"
+    },
+    {
+      "front": "der Stempel",
+      "exampleDE": "Ein offizieller Stempel bestätigt die Echtheit des Schreibens.",
+      "theme": "Bürgeramt & Dokumente"
+    },
+    {
+      "front": "die Beglaubigung",
+      "exampleDE": "Zeugnisse für die Universität erfordern oft eine amtliche Beglaubigung.",
+      "theme": "Bürgeramt & Dokumente"
+    },
+    {
+      "front": "die Vorschrift",
+      "exampleDE": "Alle Mitarbeiter müssen die geltenden Sicherheitsvorschriften strikt befolgen.",
+      "theme": "Recht & Sicherheit"
+    },
+    {
+      "front": "die Erlaubnis",
+      "exampleDE": "Ohne schriftliche Erlaubnis der Behörde darf hier nicht gebaut werden.",
+      "theme": "Recht & Sicherheit"
+    },
+    {
+      "front": "das Verbot",
+      "exampleDE": "Im gesamten Gebäude gilt ein ausnahmsloses Rauchverbot.",
+      "theme": "Recht & Sicherheit"
+    },
+    {
+      "front": "die Strafe",
+      "exampleDE": "Falschparker müssen mit einer empfindlichen Geldstrafe rechnen.",
+      "theme": "Recht & Sicherheit"
+    },
+    {
+      "front": "das Fundbüro",
+      "exampleDE": "Verlorene Schlüssel werden oft von ehrlichen Findern im Fundbüro abgegeben.",
+      "theme": "Recht & Sicherheit"
+    },
+    {
+      "front": "die Polizeiwache",
+      "exampleDE": "Er erstattete auf der örtlichen Polizeiwache Anzeige gegen Unbekannt.",
+      "theme": "Recht & Sicherheit"
+    },
+    {
+      "front": "der Zeuge",
+      "exampleDE": "Die Polizei befragte mehrere Zeugen zum Hergang des Unfalls.",
+      "theme": "Recht & Sicherheit"
+    },
+    {
+      "front": "die Wahl",
+      "exampleDE": "Alle vier Jahre findet die demokratische Wahl zum Parlament statt.",
+      "theme": "Demokratie & Wahlen"
+    },
+    {
+      "front": "der Stimmzettel",
+      "exampleDE": "Setzen Sie Ihr Kreuz bitte verdeckt auf dem Stimmzettel.",
+      "theme": "Demokratie & Wahlen"
+    },
+    {
+      "front": "die Wahlurne",
+      "exampleDE": "Der gefaltete Stimmzettel wird in die versiegelte Wahlurne geworfen.",
+      "theme": "Demokratie & Wahlen"
+    },
+    {
+      "front": "das Grundgesetz",
+      "exampleDE": "Das Grundgesetz garantiert die unverletzlichen Menschenrechte aller Bürger.",
+      "theme": "Demokratie & Wahlen"
+    },
+    {
+      "front": "die Meinungsfreiheit",
+      "exampleDE": "Die freie Meinungsäußerung ist ein tragender Pfeiler der Demokratie.",
+      "theme": "Demokratie & Wahlen"
+    },
+    {
+      "front": "die Bürgerbeteiligung",
+      "exampleDE": "Durch Bürgerbeteiligung können Einwohner ihre Stadt aktiv mitgestalten.",
+      "theme": "Demokratie & Wahlen"
+    },
+    {
+      "front": "die Gleichberechtigung",
+      "exampleDE": "Gleichberechtigung aller Geschlechter ist gesetzlich fest verankert.",
+      "theme": "Demokratie & Wahlen"
+    },
+    {
+      "front": "das Ehrenamt",
+      "exampleDE": "Viele Menschen engagieren sich in ihrer Freizeit in einem Ehrenamt.",
+      "theme": "Demokratie & Wahlen"
+    },
+    {
+      "front": "das Silvester",
+      "exampleDE": "An Silvester stoßen wir um Mitternacht auf das neue Jahr an.",
+      "theme": "Feste & Feiertage"
+    },
+    {
+      "front": "das Feuerwerk",
+      "exampleDE": "Ein farbenfrohes Feuerwerk erhellt den nächtlichen Himmel.",
+      "theme": "Feste & Feiertage"
+    },
+    {
+      "front": "das Neujahr",
+      "exampleDE": "Am Neujahrstag wünschen sich Nachbarn und Freunde viel Glück.",
+      "theme": "Feste & Feiertage"
+    },
+    {
+      "front": "die Weihnachtstage",
+      "exampleDE": "Die Weihnachtstage verbringt die Familie traditionell gemeinsam zu Hause.",
+      "theme": "Feste & Feiertage"
+    },
+    {
+      "front": "der Heiligabend",
+      "exampleDE": "An Heiligabend werden unter dem geschmückten Baum Geschenke ausgepackt.",
+      "theme": "Feste & Feiertage"
+    },
+    {
+      "front": "das Geschenkpapier",
+      "exampleDE": "Buntes Geschenkpapier und Schleifen zieren die Päckchen.",
+      "theme": "Feste & Feiertage"
+    },
+    {
+      "front": "die Glückwunschkarte",
+      "exampleDE": "Auf die Glückwunschkarte schrieb sie ein paar persönliche Zeilen.",
+      "theme": "Feste & Feiertage"
+    },
+    {
+      "front": "die Geburtstagstorte",
+      "exampleDE": "Auf der Geburtstagstorte brennen bunte Kerzen zum Auspusten.",
+      "theme": "Geburtstag & Partys"
+    },
+    {
+      "front": "die Überraschungsparty",
+      "exampleDE": "Freunde organisierten heimlich eine tolle Überraschungsparty für ihn.",
+      "theme": "Geburtstag & Partys"
+    },
+    {
+      "front": "der Luftballon",
+      "exampleDE": "Bunte Luftballons schmücken den Festsaal für die Kinderparty.",
+      "theme": "Geburtstag & Partys"
+    },
+    {
+      "front": "die Einladungskarte",
+      "exampleDE": "Zwei Wochen vor dem Fest verschickte er die Einladungskarten.",
+      "theme": "Geburtstag & Partys"
+    },
+    {
+      "front": "anstoßen",
+      "exampleDE": "Wir stoßen mit einem kühlen Getränk auf das Wohl des Geburtstagskindes an.",
+      "theme": "Geburtstag & Partys"
+    },
+    {
+      "front": "der Ehrengast",
+      "exampleDE": "Der Bürgermeister wurde als Ehrengast herzlich begrüßt.",
+      "theme": "Geburtstag & Partys"
+    },
+    {
+      "front": "die Festrede",
+      "exampleDE": "In seiner Festrede blickte der Vereinsvorsitzende auf Erfolge zurück.",
+      "theme": "Geburtstag & Partys"
+    },
+    {
+      "front": "gratulieren",
+      "exampleDE": "Alle Kollegen gratulieren ihm herzlich zum runden Jubiläum.",
+      "theme": "Geburtstag & Partys"
+    },
+    {
+      "front": "die Gegenwart",
+      "exampleDE": "Konzentriere dich auf die Aufgaben in der Gegenwart.",
+      "theme": "Zeit, Dauer & Verlauf"
+    },
+    {
+      "front": "die Vergangenheit",
+      "exampleDE": "Aus den Fehlern der Vergangenheit kann man viel für die Zukunft lernen.",
+      "theme": "Zeit, Dauer & Verlauf"
+    },
+    {
+      "front": "die Zukunft",
+      "exampleDE": "Mit Zuversicht und Fleiß blickt die junge Familie in die Zukunft.",
+      "theme": "Zeit, Dauer & Verlauf"
+    },
+    {
+      "front": "die Zeitspanne",
+      "exampleDE": "In der kurzen Zeitspanne von wenigen Tagen änderte sich alles.",
+      "theme": "Zeit, Dauer & Verlauf"
+    },
+    {
+      "front": "der Zeitraum",
+      "exampleDE": "Über einen längeren Zeitraum hinweg zeigte sich eine deutliche Besserung.",
+      "theme": "Zeit, Dauer & Verlauf"
+    },
+    {
+      "front": "der Augenblick",
+      "exampleDE": "Für einen kurzen Augenblick hielten alle im Raum den Atem an.",
+      "theme": "Zeit, Dauer & Verlauf"
+    },
+    {
+      "front": "die Ewigkeit",
+      "exampleDE": "Das Warten am verspäteten Bahnsteig kam ihm wie eine Ewigkeit vor.",
+      "theme": "Zeit, Dauer & Verlauf"
+    },
+    {
+      "front": "gelegentlich",
+      "exampleDE": "Gelegentlich gönnt er sich nach dem Essen ein Stück dunkle Schokolade.",
+      "theme": "Häufigkeit & Zeitpunkte"
+    },
+    {
+      "front": "regelmäßig",
+      "exampleDE": "Wer regelmäßig Vokabeln wiederholt, erzielt schnelle Lernerfolge.",
+      "theme": "Häufigkeit & Zeitpunkte"
+    },
+    {
+      "front": "stetig",
+      "exampleDE": "Ihr Sprachverständnis verbesserte sich in den letzten Monaten stetig.",
+      "theme": "Häufigkeit & Zeitpunkte"
+    },
+    {
+      "front": "ununterbrochen",
+      "exampleDE": "Seit dem frühen Morgen regnet es draußen ununterbrochen.",
+      "theme": "Häufigkeit & Zeitpunkte"
+    },
+    {
+      "front": "inzwischen",
+      "exampleDE": "Inzwischen spricht sie fließend und ohne langes Nachdenken.",
+      "theme": "Häufigkeit & Zeitpunkte"
+    },
+    {
+      "front": "demnächst",
+      "exampleDE": "Die neue Version der Lern-App erscheint demnächst im Store.",
+      "theme": "Häufigkeit & Zeitpunkte"
+    },
+    {
+      "front": "seinerzeit",
+      "exampleDE": "Seinerzeit bauten die Handwerker das Rathaus ohne moderne Maschinen.",
+      "theme": "Häufigkeit & Zeitpunkte"
+    },
+    {
+      "front": "bisher",
+      "exampleDE": "Bisher sind alle Tests und Prüfungen absolut fehlerfrei verlaufen.",
+      "theme": "Häufigkeit & Zeitpunkte"
+    },
+    {
+      "front": "die Umgebung",
+      "exampleDE": "In der näheren Umgebung des Hotels gibt es herrliche Wanderwege.",
+      "theme": "Raum & Lagebeziehungen"
+    },
+    {
+      "front": "die Entfernung",
+      "exampleDE": "Die Entfernung zwischen den beiden Städten beträgt rund fünfzig Kilometer.",
+      "theme": "Raum & Lagebeziehungen"
+    },
+    {
+      "front": "die Zwischenzeit",
+      "exampleDE": "In der Zwischenzeit können wir schon den Tisch für das Essen decken.",
+      "theme": "Raum & Lagebeziehungen"
+    },
+    {
+      "front": "gegenüber",
+      "exampleDE": "Die Apotheke liegt direkt gegenüber dem Haupteingang des Bahnhofs.",
+      "theme": "Raum & Lagebeziehungen"
+    },
+    {
+      "front": "nebenan",
+      "exampleDE": "In der Wohnung nebenan wohnt eine sehr freundliche Familie.",
+      "theme": "Raum & Lagebeziehungen"
+    },
+    {
+      "front": "mittendrin",
+      "exampleDE": "Mitten in der Altstadt steht der älteste Brunnen des Ortes.",
+      "theme": "Raum & Lagebeziehungen"
+    },
+    {
+      "front": "außerhalb",
+      "exampleDE": "Das Gewerbegebiet liegt etwas außerhalb der geschlossenen Ortschaft.",
+      "theme": "Raum & Lagebeziehungen"
+    },
+    {
+      "front": "einerseits",
+      "exampleDE": "Einerseits möchte er verreisen, andererseits spart er auf ein Auto.",
+      "theme": "Konnektoren & Satzbau 1"
+    },
+    {
+      "front": "andererseits",
+      "exampleDE": "Andererseits bietet die neue Stelle wesentlich bessere Aufstiegschancen.",
+      "theme": "Konnektoren & Satzbau 1"
+    },
+    {
+      "front": "infolgedessen",
+      "exampleDE": "Die Straßen waren vereist, infolgedessen kam es zu Staus.",
+      "theme": "Konnektoren & Satzbau 1"
+    },
+    {
+      "front": "dennoch",
+      "exampleDE": "Es regnete in Strömen, dennoch machten wir einen langen Waldspaziergang.",
+      "theme": "Konnektoren & Satzbau 1"
+    },
+    {
+      "front": "nichtsdestotrotz",
+      "exampleDE": "Er war sehr müde, nichtsdestotrotz beendete er das Kapitel sorgfältig.",
+      "theme": "Konnektoren & Satzbau 1"
+    },
+    {
+      "front": "außerdem",
+      "exampleDE": "Das Essen schmeckte hervorragend und die Bedienung war außerdem sehr nett.",
+      "theme": "Konnektoren & Satzbau 1"
+    },
+    {
+      "front": "aus diesem Grund",
+      "exampleDE": "Sie hatte fleißig gelernt und bestand aus diesem Grund die Prüfung spielend.",
+      "theme": "Konnektoren & Satzbau 1"
+    },
+    {
+      "front": "nämlich",
+      "exampleDE": "Ich bleibe heute daheim, ich habe nämlich starke Kopfschmerzen.",
+      "theme": "Konnektoren & Satzbau 1"
+    },
+    {
+      "front": "stattdessen",
+      "exampleDE": "Wir fuhren nicht mit dem Auto, sondern gingen stattdessen zu Fuß.",
+      "theme": "Konnektoren & Satzbau 2"
+    },
+    {
+      "front": "vorausgesetzt",
+      "exampleDE": "Wir wandern morgen, vorausgesetzt das Wetter bleibt trocken.",
+      "theme": "Konnektoren & Satzbau 2"
+    },
+    {
+      "front": "währenddessen",
+      "exampleDE": "Er briet das Gemüse, währenddessen deckte sie liebevoll den Tisch.",
+      "theme": "Konnektoren & Satzbau 2"
+    },
+    {
+      "front": "sowohl ... als auch",
+      "exampleDE": "Sie spricht sowohl fließend Spanisch als auch verhandlungssicheres Englisch.",
+      "theme": "Konnektoren & Satzbau 2"
+    },
+    {
+      "front": "weder ... noch",
+      "exampleDE": "Er trinkt weder Kaffee noch schwarzen Tee am Morgen.",
+      "theme": "Konnektoren & Satzbau 2"
+    },
+    {
+      "front": "je ... desto",
+      "exampleDE": "Je mehr man übt, desto leichter fällt das freie Sprechen.",
+      "theme": "Konnektoren & Satzbau 2"
+    },
+    {
+      "front": "obgleich",
+      "exampleDE": "Obgleich es stürmisch war, liefen die Fischer mit ihren Booten aus.",
+      "theme": "Konnektoren & Satzbau 2"
+    },
+    {
+      "front": "anpacken",
+      "exampleDE": "Wenn alle mit anpacken, ist die schwere Arbeit im Nu erledigt.",
+      "theme": "Handlungsverben im Alltag"
+    },
+    {
+      "front": "erledigen",
+      "exampleDE": "Ich muss heute Vormittag noch wichtige Einkäufe erledigen.",
+      "theme": "Handlungsverben im Alltag"
+    },
+    {
+      "front": "vorbereiten",
+      "exampleDE": "Sie bereitet die Präsentation für das morgige Meeting gründlich vor.",
+      "theme": "Handlungsverben im Alltag"
+    },
+    {
+      "front": "aufräumen",
+      "exampleDE": "Samstags räumen die Kinder gemeinsam ihre Zimmer auf.",
+      "theme": "Handlungsverben im Alltag"
+    },
+    {
+      "front": "wegwerfen",
+      "exampleDE": "Alte Batterien darf man nicht einfach in den Hausmüll wegwerfen.",
+      "theme": "Handlungsverben im Alltag"
+    },
+    {
+      "front": "behalten",
+      "exampleDE": "Dieses schöne Erinnerungsstück möchte ich mein Leben lang behalten.",
+      "theme": "Handlungsverben im Alltag"
+    },
+    {
+      "front": "verschenken",
+      "exampleDE": "Bücher, die sie schon gelesen hat, verschenkt sie gerne an Freunde.",
+      "theme": "Handlungsverben im Alltag"
+    },
+    {
+      "front": "organisieren",
+      "exampleDE": "Er organisiert das alljährliche Sommerfest unseres Sportvereins.",
+      "theme": "Handlungsverben im Alltag"
+    },
+    {
+      "front": "bemerken",
+      "exampleDE": "Erst spät bemerkte er, dass er seinen Hausschlüssel vergessen hatte.",
+      "theme": "Kognitions- & Wahrnehmungsverben"
+    },
+    {
+      "front": "begreifen",
+      "exampleDE": "Nach der anschaulichen Erklärung konnte er den Zusammenhang begreifen.",
+      "theme": "Kognitions- & Wahrnehmungsverben"
+    },
+    {
+      "front": "nachdenken",
+      "exampleDE": "Über dieses wichtige Angebot muss ich erst in Ruhe nachdenken.",
+      "theme": "Kognitions- & Wahrnehmungsverben"
+    },
+    {
+      "front": "feststellen",
+      "exampleDE": "Die Prüfer stellten fest, dass alle Sicherheitskriterien erfüllt sind.",
+      "theme": "Kognitions- & Wahrnehmungsverben"
+    },
+    {
+      "front": "vermuten",
+      "exampleDE": "Die Experten vermuten, dass die Preise bald wieder sinken werden.",
+      "theme": "Kognitions- & Wahrnehmungsverben"
+    },
+    {
+      "front": "bezweifeln",
+      "exampleDE": "Ich bezweifle stark, dass dieser alte Plan heute noch funktioniert.",
+      "theme": "Kognitions- & Wahrnehmungsverben"
+    },
+    {
+      "front": "beurteilen",
+      "exampleDE": "Aus der Ferne lässt sich die schwierige Lage nur schwer beurteilen.",
+      "theme": "Kognitions- & Wahrnehmungsverben"
+    },
+    {
+      "front": "begründen",
+      "exampleDE": "Können Sie Ihren Standpunkt bitte mit konkreten Beispielen begründen?",
+      "theme": "Kommunikationsverben"
+    },
+    {
+      "front": "bestätigen",
+      "exampleDE": "Die Fluggesellschaft bestätigte die Buchung per automatischer Nachricht.",
+      "theme": "Kommunikationsverben"
+    },
+    {
+      "front": "vereinbaren",
+      "exampleDE": "Wir vereinbarten einen neuen Termin für die kommende Woche.",
+      "theme": "Kommunikationsverben"
+    },
+    {
+      "front": "anregen",
+      "exampleDE": "Er regte an, die Besprechung um eine halbe Stunde zu verschieben.",
+      "theme": "Kommunikationsverben"
+    },
+    {
+      "front": "zur Sprache bringen",
+      "exampleDE": "Sie brachte das wichtige Thema in der Sitzung mutig zur Sprache.",
+      "theme": "Kommunikationsverben"
+    },
+    {
+      "front": "zusammenfassen",
+      "exampleDE": "Der Sprecher fasste die wichtigsten Kernaussagen kurz zusammen.",
+      "theme": "Kommunikationsverben"
+    },
+    {
+      "front": "berichten",
+      "exampleDE": "Die Korrespondentin berichtet live von den aktuellen Ereignissen.",
+      "theme": "Kommunikationsverben"
+    },
+    {
+      "front": "mitteilen",
+      "exampleDE": "Bitte teilen Sie uns Ihre neue Anschrift zeitnah mit.",
+      "theme": "Kommunikationsverben"
+    },
+    {
+      "front": "verbessern",
+      "exampleDE": "Mit täglichem Training konnte er seine persönliche Laufzeit verbessern.",
+      "theme": "Verben der Veränderung"
+    },
+    {
+      "front": "verschlechtern",
+      "exampleDE": "Bei plötzlichem Regen verschlechtern sich die Sichtverhältnisse rasch.",
+      "theme": "Verben der Veränderung"
+    },
+    {
+      "front": "zunehmen",
+      "exampleDE": "In den letzten Jahren hat das Interesse an gesunder Ernährung zugenommen.",
+      "theme": "Verben der Veränderung"
+    },
+    {
+      "front": "abnehmen",
+      "exampleDE": "Durch mehr Bewegung und weniger Zucker konnte er gesund abnehmen.",
+      "theme": "Verben der Veränderung"
+    },
+    {
+      "front": "entwickeln",
+      "exampleDE": "Das Ingenieurteam entwickelt ein neuartiges, sparsames Antriebssystem.",
+      "theme": "Verben der Veränderung"
+    },
+    {
+      "front": "entstehen",
+      "exampleDE": "Auf der freien Wiese entsteht ein moderner Kindergarten.",
+      "theme": "Verben der Veränderung"
+    },
+    {
+      "front": "verschwinden",
+      "exampleDE": "Die dichten Nebelschwaden verschwinden, sobald die Sonne scheint.",
+      "theme": "Verben der Veränderung"
+    },
+    {
+      "front": "überqueren",
+      "exampleDE": "Fußgänger sollten die Straße nur an gesicherten Überwegen überqueren.",
+      "theme": "Bewegung & Fortbewegung"
+    },
+    {
+      "front": "eintreffen",
+      "exampleDE": "Der pünktliche Zug wird planmäßig um vierzehn Uhr eintreffen.",
+      "theme": "Bewegung & Fortbewegung"
+    },
+    {
+      "front": "abbiegen",
+      "exampleDE": "An der Ampelkreuzung müssen Sie links in die Fußgängerzone abbiegen.",
+      "theme": "Bewegung & Fortbewegung"
+    },
+    {
+      "front": "beschleunigen",
+      "exampleDE": "Auf der Auffahrt beschleunigt der Wagen zügig auf Autobahntempo.",
+      "theme": "Bewegung & Fortbewegung"
+    },
+    {
+      "front": "bremsen",
+      "exampleDE": "Vor der scharfen Kurve bremst der Fahrer rechtzeitig ab.",
+      "theme": "Bewegung & Fortbewegung"
+    },
+    {
+      "front": "anhalten",
+      "exampleDE": "Am Stoppschild muss jedes Fahrzeug für drei Sekunden anhalten.",
+      "theme": "Bewegung & Fortbewegung"
+    },
+    {
+      "front": "vorbeifahren",
+      "exampleDE": "Der Expresszug fährt ohne Halt am kleinen Provinzbahnhof vorbei.",
+      "theme": "Bewegung & Fortbewegung"
+    },
+    {
+      "front": "umkehren",
+      "exampleDE": "Wegen des plötzlichen Schneesturms mussten die Bergsteiger umkehren.",
+      "theme": "Bewegung & Fortbewegung"
+    },
+    {
+      "front": "beruhigen",
+      "exampleDE": "Die Mutter konnte das weinende Kind mit sanfter Stimme rasch beruhigen.",
+      "theme": "Gefühls- & Beziehungs-Verben"
+    },
+    {
+      "front": "beunruhigen",
+      "exampleDE": "Die dunklen Gewitterwolken am Himmel beunruhigten die Wanderer.",
+      "theme": "Gefühls- & Beziehungs-Verben"
+    },
+    {
+      "front": "überraschen",
+      "exampleDE": "Seine Freunde überraschten ihn mit einem selbstgebackenen Kuchen.",
+      "theme": "Gefühls- & Beziehungs-Verben"
+    },
+    {
+      "front": "trösten",
+      "exampleDE": "Sie versuchte ihre traurige Freundin mit lieben Worten zu trösten.",
+      "theme": "Gefühls- & Beziehungs-Verben"
+    },
+    {
+      "front": "bewundern",
+      "exampleDE": "Touristen aus aller Welt bewundern die meisterhafte Architektur.",
+      "theme": "Gefühls- & Beziehungs-Verben"
+    },
+    {
+      "front": "respektieren",
+      "exampleDE": "Wir sollten die unterschiedlichen Meinungen anderer stets respektieren.",
+      "theme": "Gefühls- & Beziehungs-Verben"
+    },
+    {
+      "front": "schätzen",
+      "exampleDE": "Ich schätze deine ehrliche und direkte Art sehr.",
+      "theme": "Gefühls- & Beziehungs-Verben"
+    },
+    {
+      "front": "hervorragend",
+      "exampleDE": "Die Schauspielerin lieferte eine rundum hervorragende Leistung ab.",
+      "theme": "Nuancierte Bewertung"
+    },
+    {
+      "front": "bemerkenswert",
+      "exampleDE": "Ihre schnelle Auffassungsgabe ist wirklich bemerkenswert.",
+      "theme": "Nuancierte Bewertung"
+    },
+    {
+      "front": "angemessen",
+      "exampleDE": "Der Preis für die gebotene Qualität ist absolut angemessen.",
+      "theme": "Nuancierte Bewertung"
+    },
+    {
+      "front": "überflüssig",
+      "exampleDE": "Langes Warten am Schalter wird durch Online-Buchungen überflüssig.",
+      "theme": "Nuancierte Bewertung"
+    },
+    {
+      "front": "wesentlich",
+      "exampleDE": "Gute Vorbereitung trägt wesentlich zum Erfolg eines Vorhabens bei.",
+      "theme": "Nuancierte Bewertung"
+    },
+    {
+      "front": "ausreichend",
+      "exampleDE": "Im Kühlschrank sind noch ausreichend Vorräte für das Wochenende.",
+      "theme": "Nuancierte Bewertung"
+    },
+    {
+      "front": "wertvoll",
+      "exampleDE": "Ihre praktischen Ratschläge waren für uns alle sehr wertvoll.",
+      "theme": "Nuancierte Bewertung"
+    },
+    {
+      "front": "wirkungsvoll",
+      "exampleDE": "Regelmäßiges Lüften ist eine wirkungsvolle Maßnahme gegen Schimmel.",
+      "theme": "Nuancierte Bewertung"
+    },
+    {
+      "front": "gepflegt",
+      "exampleDE": "Der alte Vorgarten macht einen überaus gepflegten Eindruck.",
+      "theme": "Zustand & Erscheinung"
+    },
+    {
+      "front": "unordentlich",
+      "exampleDE": "Nach dem Bastelnachmittag sah das Kinderzimmer recht unordentlich aus.",
+      "theme": "Zustand & Erscheinung"
+    },
+    {
+      "front": "gemütlich",
+      "exampleDE": "Wir verbrachten einen gemütlichen Abend am warmen Kaminfeuer.",
+      "theme": "Zustand & Erscheinung"
+    },
+    {
+      "front": "anstrengend",
+      "exampleDE": "Die lange Wanderung über steile Geröllpfade war sehr anstrengend.",
+      "theme": "Zustand & Erscheinung"
+    },
+    {
+      "front": "erträglich",
+      "exampleDE": "Dank des leichten Seewinds waren die hohen Temperaturen erträglich.",
+      "theme": "Zustand & Erscheinung"
+    },
+    {
+      "front": "tadellos",
+      "exampleDE": "Das frisch renovierte Badezimmer funktioniert tadellos.",
+      "theme": "Zustand & Erscheinung"
+    },
+    {
+      "front": "makellos",
+      "exampleDE": "Die frisch polierte Oberfläche glänzt makellos im Sonnenlicht.",
+      "theme": "Zustand & Erscheinung"
+    },
+    {
+      "front": "aufrichtig",
+      "exampleDE": "Sie bedankte sich mit aufrichtigen Worten für die großzügige Hilfe.",
+      "theme": "Charakter & Verhalten"
+    },
+    {
+      "front": "rücksichtsvoll",
+      "exampleDE": "Im vollen Bus verhält er sich rücksichtsvoll gegenüber älteren Menschen.",
+      "theme": "Charakter & Verhalten"
+    },
+    {
+      "front": "aufmerksam",
+      "exampleDE": "Der aufmerksame Kellner bemerkte sofort, dass das Glas leer war.",
+      "theme": "Charakter & Verhalten"
+    },
+    {
+      "front": "willensstark",
+      "exampleDE": "Mit willensstarkem Einsatz erreichte die Athletin ihr sportliches Ziel.",
+      "theme": "Charakter & Verhalten"
+    },
+    {
+      "front": "selbstständig",
+      "exampleDE": "Die Schülerin löste die anspruchsvolle Aufgabe völlig selbstständig.",
+      "theme": "Charakter & Verhalten"
+    },
+    {
+      "front": "verantwortungsbewusst",
+      "exampleDE": "Ein verantwortungsbewusster Fahrer achtet stets auf das Tempolimit.",
+      "theme": "Charakter & Verhalten"
+    },
+    {
+      "front": "friedlich",
+      "exampleDE": "Die Kundgebung verlief von Anfang bis Ende vollkommen friedlich.",
+      "theme": "Charakter & Verhalten"
+    },
+    {
+      "front": "hilfsbereit",
+      "exampleDE": "Der neue Nachbar bot hilfsbereit seine Unterstützung beim Umzug an.",
+      "theme": "Charakter & Verhalten"
+    },
+    {
+      "front": "keine Ursache",
+      "exampleDE": "„Vielen Dank für deine Hilfe!“ – „Keine Ursache, gern geschehen!“",
+      "theme": "Redewendungen A2/B1"
+    },
+    {
+      "front": "mach dir keine Sorgen",
+      "exampleDE": "Mach dir keine Sorgen, alles wird sich zum Guten wenden.",
+      "theme": "Redewendungen A2/B1"
+    },
+    {
+      "front": "bis zum nächsten Mal",
+      "exampleDE": "Es war ein schöner Abend, auf Wiedersehen und bis zum nächsten Mal!",
+      "theme": "Redewendungen A2/B1"
+    },
+    {
+      "front": "im Großen und Ganzen",
+      "exampleDE": "Im Großen und Ganzen sind wir mit dem Ergebnis sehr zufrieden.",
+      "theme": "Redewendungen A2/B1"
+    },
+    {
+      "front": "Schritt für Schritt",
+      "exampleDE": "Man lernt eine fremde Sprache am besten geduldig Schritt für Schritt.",
+      "theme": "Redewendungen A2/B1"
+    },
+    {
+      "front": "auf jeden Fall",
+      "exampleDE": "Wir sollten die sehenswerte Altstadt auf jeden Fall besichtigen.",
+      "theme": "Redewendungen A2/B1"
+    },
+    {
+      "front": "unter vier Augen",
+      "exampleDE": "Ich möchte diese vertrauliche Angelegenheit gerne unter vier Augen besprechen.",
+      "theme": "Redewendungen A2/B1"
+    },
+    {
+      "front": "das Visum",
+      "exampleDE": "Für den längeren Aufenthalt benötigte sie ein offizielles Visum.",
+      "theme": "Reisen & Grenzverkehr"
+    },
+    {
+      "front": "die Zollkontrolle",
+      "exampleDE": "An der Grenze kontrollieren die Beamten stichprobenartig den Zoll.",
+      "theme": "Reisen & Grenzverkehr"
+    },
+    {
+      "front": "die Einreisebestimmung",
+      "exampleDE": "Vor der Abreise sollte man die aktuellen Einreisebestimmungen prüfen.",
+      "theme": "Reisen & Grenzverkehr"
+    },
+    {
+      "front": "das Konsulat",
+      "exampleDE": "Bei Passverlust im Ausland hilft das zuständige Konsulat weiter.",
+      "theme": "Reisen & Grenzverkehr"
+    },
+    {
+      "front": "der Grenzbeamte",
+      "exampleDE": "Der freundliche Grenzbeamte stempelte den Reisepass sorgfältig ab.",
+      "theme": "Reisen & Grenzverkehr"
+    },
+    {
+      "front": "die Grenzkontrolle",
+      "exampleDE": "Wegen der Grenzkontrolle bildete sich eine kurze Fahrzeugschlange.",
+      "theme": "Reisen & Grenzverkehr"
+    },
+    {
+      "front": "die Aufenthaltsgenehmigung",
+      "exampleDE": "Die Aufenthaltsgenehmigung wurde um weitere zwei Jahre verlängert.",
+      "theme": "Reisen & Grenzverkehr"
+    },
+    {
+      "front": "der Auslandskrankenschutz",
+      "exampleDE": "Ein Auslandskrankenschutz schützt vor unvorhersehbaren Behandlungskosten.",
+      "theme": "Reisen & Grenzverkehr"
+    },
+    {
+      "front": "die Schlagzeile",
+      "exampleDE": "Die große Schlagzeile auf der Titelseite erregte viel Aufsehen.",
+      "theme": "Medien & Berichterstattung"
+    },
+    {
+      "front": "die Pressekonferenz",
+      "exampleDE": "Auf der Pressekonferenz stellten Journalisten viele kritische Fragen.",
+      "theme": "Medien & Berichterstattung"
+    },
+    {
+      "front": "der Leitartikel",
+      "exampleDE": "Der Chefredakteur verfasste einen nachdenklichen Leitartikel.",
+      "theme": "Medien & Berichterstattung"
+    },
+    {
+      "front": "die Berichterstattung",
+      "exampleDE": "Die objektive Berichterstattung lieferte fundierte Hintergründe.",
+      "theme": "Medien & Berichterstattung"
+    },
+    {
+      "front": "die Sondersendung",
+      "exampleDE": "Wegen der aktuellen Entwicklung unterbrach der Sender das Programm für eine Sondersendung.",
+      "theme": "Medien & Berichterstattung"
+    },
+    {
+      "front": "das Rundfunkprogramm",
+      "exampleDE": "Im Rundfunkprogramm laufen am Nachmittag klassische Konzerte.",
+      "theme": "Medien & Berichterstattung"
+    },
+    {
+      "front": "die Nachrichtenagentur",
+      "exampleDE": "Die renommierte Nachrichtenagentur verbreitete die Eilmeldung weltweit.",
+      "theme": "Medien & Berichterstattung"
+    },
+    {
+      "front": "die Nachbarschaftshilfe",
+      "exampleDE": "Funktionierende Nachbarschaftshilfe erleichtert älteren Bewohnern den Alltag.",
+      "theme": "Wohnumfeld & Nachbarschaft"
+    },
+    {
+      "front": "das Wohnviertel",
+      "exampleDE": "Unser ruhiges Wohnviertel liegt nahe an Parks und Schulen.",
+      "theme": "Wohnumfeld & Nachbarschaft"
+    },
+    {
+      "front": "der Spielplatz",
+      "exampleDE": "Auf dem Spielplatz toben am Nachmittag viele fröhliche Kinder.",
+      "theme": "Wohnumfeld & Nachbarschaft"
+    },
+    {
+      "front": "das Treppenhaus",
+      "exampleDE": "Das Treppenhaus wird wöchentlich abwechselnd von den Mietern geputzt.",
+      "theme": "Wohnumfeld & Nachbarschaft"
+    },
+    {
+      "front": "die Hausordnung",
+      "exampleDE": "Die Hausordnung regelt die Ruhezeiten in den Mittags- und Nachtstunden.",
+      "theme": "Wohnumfeld & Nachbarschaft"
+    },
+    {
+      "front": "der Hausmeister",
+      "exampleDE": "Der hilfsbereite Hausmeister kümmert sich um kleine Reparaturen im Haus.",
+      "theme": "Wohnumfeld & Nachbarschaft"
+    },
+    {
+      "front": "die Wohnsiedlung",
+      "exampleDE": "Die moderne Wohnsiedlung wurde komplett verkehrsberuhigt angelegt.",
+      "theme": "Wohnumfeld & Nachbarschaft"
+    },
+    {
+      "front": "die Grünanlage",
+      "exampleDE": "In der gepflegten Grünanlage vor dem Haus blühen bunte Rosen.",
+      "theme": "Wohnumfeld & Nachbarschaft"
+    },
+    {
+      "front": "die Produktverpackung",
+      "exampleDE": "Die Produktverpackung besteht vollständig aus recycelbarem Karton.",
+      "theme": "Einkauf & Konsumgüter"
+    },
+    {
+      "front": "der Markenartikel",
+      "exampleDE": "Markenartikel zeichnen sich oft durch verlässliche Qualität aus.",
+      "theme": "Einkauf & Konsumgüter"
+    },
+    {
+      "front": "das Preisschild",
+      "exampleDE": "Am Regal war das gut lesbare Preisschild angebracht.",
+      "theme": "Einkauf & Konsumgüter"
+    },
+    {
+      "front": "die Kundenkarte",
+      "exampleDE": "Mit der Kundenkarte sammelt man bei jedem Einkauf Bonuspunkte.",
+      "theme": "Einkauf & Konsumgüter"
+    },
+    {
+      "front": "das Warensortiment",
+      "exampleDE": "Der Feinkostladen führt ein auserlesenes Warensortiment aus der Region.",
+      "theme": "Einkauf & Konsumgüter"
+    },
+    {
+      "front": "die Werbeanzeige",
+      "exampleDE": "Eine ansprechende Werbeanzeige machte sie auf das Produkt aufmerksam.",
+      "theme": "Einkauf & Konsumgüter"
+    },
+    {
+      "front": "die Einkaufsstraße",
+      "exampleDE": "Am Samstag schlendern viele Menschen gemütlich durch die Einkaufsstraße.",
+      "theme": "Einkauf & Konsumgüter"
+    },
+    {
+      "front": "die Hypothese",
+      "exampleDE": "Die Forscherin überprüfte ihre Hypothese in einer Versuchsreihe.",
+      "theme": "Wissenschaft & Entdeckungen"
+    },
+    {
+      "front": "die Messung",
+      "exampleDE": "Die präzise Messung ergab eine minimale Abweichung vom Sollwert.",
+      "theme": "Wissenschaft & Entdeckungen"
+    },
+    {
+      "front": "die Erkenntnis",
+      "exampleDE": "Diese neue Erkenntnis revolutionierte die moderne Medizin nachhaltig.",
+      "theme": "Wissenschaft & Entdeckungen"
+    },
+    {
+      "front": "das Mikroskop",
+      "exampleDE": "Unter dem Mikroskop erkennt man die feine Zellstruktur deutlich.",
+      "theme": "Wissenschaft & Entdeckungen"
+    },
+    {
+      "front": "die Gesetzmäßigkeit",
+      "exampleDE": "Die physikalische Gesetzmäßigkeit gilt überall im bekannten Kosmos.",
+      "theme": "Wissenschaft & Entdeckungen"
+    },
+    {
+      "front": "das Phänomen",
+      "exampleDE": "Die Polarlichter sind ein faszinierendes natürliches Phänomen.",
+      "theme": "Wissenschaft & Entdeckungen"
+    },
+    {
+      "front": "die Beobachtung",
+      "exampleDE": "Über Monate hinweg führten die Astronomen genaue Beobachtungen durch.",
+      "theme": "Wissenschaft & Entdeckungen"
+    },
+    {
+      "front": "die Schlussfolgerung",
+      "exampleDE": "Aus den Daten zog das Team eine einleuchtende Schlussfolgerung.",
+      "theme": "Wissenschaft & Entdeckungen"
+    },
+    {
+      "front": "die Tradition",
+      "exampleDE": "Dieses alte Handwerk wird seit Generationen als Familientradition gepflegt.",
+      "theme": "Kultur & Brauchtum"
+    },
+    {
+      "front": "das Kunsthandwerk",
+      "exampleDE": "Auf dem Markt bestaunten Besucher das traditionelle Kunsthandwerk der Weber.",
+      "theme": "Kultur & Brauchtum"
+    },
+    {
+      "front": "die Tracht",
+      "exampleDE": "Zum Festumzug tragen die Dorfbewohner ihre Festtagstrachten.",
+      "theme": "Kultur & Brauchtum"
+    }
+  ]
+}

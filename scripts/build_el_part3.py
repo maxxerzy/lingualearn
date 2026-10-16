@@ -1,0 +1,1617 @@
+# -*- coding: utf-8 -*-
+"""
+Generator for scripts/data_el_part3.json (Items 400..599)
+"""
+import json
+
+part3_cards = [
+  # 400..449
+  {
+    "front": "die Amsel",
+    "back": "κοτσύφι",
+    "ipa": "koˈtsifi",
+    "roman": "kotsýfi",
+    "example": "Νωρίς το πρωί το κοτσύφι τραγουδάει το μελωδικό τραγούδι του από τη στέγη του σπιτιού.",
+    "exampleDE": "Früh am Morgen singt die Amsel ihr melodisches Lied vom Hausdach."
+  },
+  {
+    "front": "die Schwalbe",
+    "back": "χελιδόνι",
+    "ipa": "xeliˈðoni",
+    "roman": "chelidóni",
+    "example": "Τα χελιδόνια χτίζουν τις περίτεχνες φωλιές τους από λάσπη κάτω από τη μαρκίζα της στέγης.",
+    "exampleDE": "Schwalben bauen ihre kunstvollen Nester aus Lehm unter den Dachvorsprung."
+  },
+  {
+    "front": "der Storch",
+    "back": "πελαργός",
+    "ipa": "pelarˈɣos",
+    "roman": "pelargós",
+    "example": "Στην καμινάδα του παλιού αχυρώνα φωλιάζει ένα ζευγάρι πελαργών.",
+    "exampleDE": "Auf dem Schornstein der alten Scheune nistet ein Storchenpaar."
+  },
+  {
+    "front": "die Elster",
+    "back": "καρακάξα",
+    "ipa": "karaˈkaksa",
+    "roman": "karakáxa",
+    "example": "Η ασπρόμαυρη καρακάξα θεωρείται στη λαϊκή παράδοση κλέφτρα.",
+    "exampleDE": "Die schwarz-weiße Elster gilt im Volksmund als diebischer Vogel."
+  },
+  {
+    "front": "der Specht",
+    "back": "δρυοκολάπτης",
+    "ipa": "ðriokoˈlaptis",
+    "roman": "dryokoláptis",
+    "example": "Από το δάσος ακούγεται το ρυθμικό χτύπημα ενός δρυοκολάπτη.",
+    "exampleDE": "Aus dem Wald hört man das rhythmische Hämmern eines Spechts."
+  },
+  {
+    "front": "der Zugvogel",
+    "back": "αποδημητικό πουλί",
+    "ipa": "apoðimitiˈko puˈli",
+    "roman": "apodimitikó poulí",
+    "example": "Το φθινόπωρο τα αποδημητικά πουλιά πετούν σε σχηματισμό V προς τον νότο.",
+    "exampleDE": "Im Herbst fliegen Zugvögel in V-Formation Richtung Süden."
+  },
+  {
+    "front": "die Forelle",
+    "back": "πέστροφα",
+    "ipa": "ˈpestrofa",
+    "roman": "péstrofa",
+    "example": "Στο δροσερό ορεινό ρυάκι κολυμπάει μια ασημένια πέστροφα.",
+    "exampleDE": "Im kühlen Gebirgsbach schwimmt eine silbrige Bachforelle."
+  },
+  {
+    "front": "der Lachs",
+    "back": "σολομός",
+    "ipa": "soloˈmos",
+    "roman": "solomós",
+    "example": "Την περίοδο της ωοτοκίας ο σολομός ταξιδεύει πολλά χιλιόμετρα αντίθετα στο ρεύμα.",
+    "exampleDE": "Zur Laichzeit wandert der Lachs viele Kilometer flussaufwärts."
+  },
+  {
+    "front": "der Karpfen",
+    "back": "κυπρίνος",
+    "ipa": "ciˈprinos",
+    "roman": "kyprínos",
+    "example": "Στον βυθό της ήρεμης λιμνούλας του χωριού κολυμπάει ένας μεγάλος κυπρίνος.",
+    "exampleDE": "Am Grund des ruhigen Dorfteichs gründelt ein großer Karpfen."
+  },
+  {
+    "front": "die Kröte",
+    "back": "φρύνος",
+    "ipa": "ˈfrinos",
+    "roman": "frýnos",
+    "example": "Την άνοιξη πολλοί φρύνοι μετακινούνται προς τα νερά όπου αναπαράγονται.",
+    "exampleDE": "Im Frühjahr wandern viele Kröten zu ihren Laichgewässern."
+  },
+  {
+    "front": "der Salamander",
+    "back": "σαλαμάνδρα",
+    "ipa": "salaˈmandra",
+    "roman": "salamándra",
+    "example": "Η μαυροκίτρινη σαλαμάνδρα αγαπά τα υγρά φυλλοβόλα δάση.",
+    "exampleDE": "Der schwarz-gelbe Feuersalamander liebt feuchte Laubwälder."
+  },
+  {
+    "front": "die Kaulquappe",
+    "back": "γυρίνος",
+    "ipa": "ʝiˈrinos",
+    "roman": "gyrínos",
+    "example": "Από τους μικροσκοπικούς γυρίνους αναπτύσσονται σταδιακά νεαρά βατραχάκια.",
+    "exampleDE": "Aus den winzigen Kaulquappen entwickeln sich nach und nach junge Frösche."
+  },
+  {
+    "front": "der Krebs",
+    "back": "καραβίδα",
+    "ipa": "karaˈviða",
+    "roman": "karavída",
+    "example": "Κάτω από μια επίπεδη πέτρα στο ρυάκι κρύβεται μια καραβίδα.",
+    "exampleDE": "Unter einem flachen Stein im Bach verbirgt sich ein Flusskrebs."
+  },
+  {
+    "front": "die Muschel",
+    "back": "κοχύλι",
+    "ipa": "koˈçili",
+    "roman": "kochýli",
+    "example": "Στην αμμώδη παραλία τα παιδιά μάζευαν άδεια κοχύλια.",
+    "exampleDE": "Am Sandstrand sammelten die Kinder leere Muschelschalen."
+  },
+  {
+    "front": "der Marienkäfer",
+    "back": "πασχαλίτσα",
+    "ipa": "pasxaˈlitsa",
+    "roman": "paschalítsa",
+    "example": "Μια κόκκινη πασχαλίτσα με επτά μαύρες βούλες σκαρφαλώνει στο κλαδάκι.",
+    "exampleDE": "Ein roter Marienkäfer mit sieben schwarzen Punkten krabbelt am Halm."
+  },
+  {
+    "front": "die Libelle",
+    "back": "λιβελούλα",
+    "ipa": "liveˈlula",
+    "roman": "liveloúla",
+    "example": "Μια αστραφτερή λιβελούλα πετάει αστραπιαία πάνω από την επιφάνεια του νερού.",
+    "exampleDE": "Eine schillernde Libelle schwirrt blitzschnell über die Wasseroberfläche."
+  },
+  {
+    "front": "die Hummel",
+    "back": "βομβίνος",
+    "ipa": "vomˈvinos",
+    "roman": "vomvínos",
+    "example": "Ένας χοντρός βομβίνος βουίζει ακούραστα από λουλούδι σε λουλούδι.",
+    "exampleDE": "Eine dicke, pelzige Hummel summt emsig von Blüte zu Blüte."
+  },
+  {
+    "front": "die Wespe",
+    "back": "σφήκα",
+    "ipa": "ˈsfika",
+    "roman": "sfíka",
+    "example": "Τα γλυκά φαγητά στην ύπαιθρο προσελκύουν στο τέλος του καλοκαιριού ενοχλητικές σφήκες.",
+    "exampleDE": "Süße Speisen im Freien locken im Spätsommer lästige Wespen an."
+  },
+  {
+    "front": "die Heuschrecke",
+    "back": "ακρίδα",
+    "ipa": "aˈkriða",
+    "roman": "akrída",
+    "example": "Με τα μακριά πίσω πόδια της η πράσινη ακρίδα πηδάει μακριά.",
+    "exampleDE": "Mit ihren langen Hinterbeinen springt die grüne Heuschrecke weit."
+  },
+  {
+    "front": "die Eidechse",
+    "back": "σαύρα",
+    "ipa": "ˈsavra",
+    "roman": "sávra",
+    "example": "Στον ζεστό πέτρινο τοίχο ζεσταίνεται στον ήλιο μια μικρή σαύρα.",
+    "exampleDE": "Auf der sonnenwarmen Steinmauer wärmt sich eine kleine Eidechse."
+  },
+  {
+    "front": "die Schnecke",
+    "back": "σαλιγκάρι",
+    "ipa": "saliŋˈgari",
+    "roman": "salingári",
+    "example": "Μετά τη ζεστή βροχή ένα σαλιγκάρι σέρνεται στον δρόμο.",
+    "exampleDE": "Nach dem warmen Regen kriecht eine Weinbergschnecke über den Weg."
+  },
+  {
+    "front": "die Wettervorhersage",
+    "back": "πρόγνωση καιρού",
+    "ipa": "ˈproɣnosi ceˈru",
+    "roman": "prógnosi kairoú",
+    "example": "Σύμφωνα με την πρόγνωση καιρού το σαββατοκύριακο θα είναι ηλιόλουστο και ήπιο.",
+    "exampleDE": "Laut Wettervorhersage soll es am Wochenende sonnig und mild werden."
+  },
+  {
+    "front": "der Regenschauer",
+    "back": "μπόρα",
+    "ipa": "ˈbora",
+    "roman": "bóra",
+    "example": "Μια σύντομη μπόρα ξάφνιασε τους περιπατητές στο πάρκο της πόλης.",
+    "exampleDE": "Ein kurzer Regenschauer überraschte die Spaziergänger im Stadtpark."
+  },
+  {
+    "front": "der Nieselregen",
+    "back": "ψιχάλα",
+    "ipa": "psiˈxala",
+    "roman": "psichála",
+    "example": "Πυκνή, λεπτή ψιχάλα περιορίζει την ορατότητα το πρωί.",
+    "exampleDE": "Dichter, feiner Nieselregen trübt die Sicht am Vormittag."
+  },
+  {
+    "front": "das Gewitter",
+    "back": "καταιγίδα",
+    "ipa": "keteˈʝiða",
+    "roman": "kataigída",
+    "example": "Στον ορίζοντα μαζεύονται σκοτεινά σύννεφα που προμηνύουν καταιγίδα.",
+    "exampleDE": "Am Horizont ziehen dunkle Wolken auf, die ein Gewitter ankündigen."
+  },
+  {
+    "front": "der Donnerschlag",
+    "back": "βροντή",
+    "ipa": "vronˈdi",
+    "roman": "vrontí",
+    "example": "Μια δυνατή βροντή έκανε τα τζάμια του σπιτιού να τρέμουν.",
+    "exampleDE": "Ein lauter Donnerschlag ließ die Fensterscheiben im Haus erzittern."
+  },
+  {
+    "front": "der Blitzschlag",
+    "back": "κεραυνός",
+    "ipa": "keravˈnos",
+    "roman": "keravnós",
+    "example": "Ένας κεραυνός χτύπησε το παλιό δέντρο στην άκρη του χωραφιού.",
+    "exampleDE": "Ein Blitzschlag traf den alten Baum am Feldrand."
+  },
+  {
+    "front": "die Windböe",
+    "back": "ριπή ανέμου",
+    "ipa": "riˈpi aˈnemu",
+    "roman": "ripí anémou",
+    "example": "Μια δυνατή ριπή ανέμου σήκωσε στον αέρα ξερά φθινοπωρινά φύλλα.",
+    "exampleDE": "Eine heftige Windböe wirbelte trockenes Herbstlaub durch die Luft."
+  },
+  {
+    "front": "der Nebel",
+    "back": "ομίχλη",
+    "ipa": "oˈmixli",
+    "roman": "omíchli",
+    "example": "Πυκνή πρωινή ομίχλη σκεπάζει σαν πάπλωμα την κοιλάδα του ποταμού.",
+    "exampleDE": "Dichter Frühnebel liegt wie eine Decke über dem Flusstal."
+  },
+  {
+    "front": "der Frost",
+    "back": "παγετός",
+    "ipa": "paʝeˈtos",
+    "roman": "pagetós",
+    "example": "Τη νύχτα έκανε παγετό που έβαψε ασημένιο το λιβάδι.",
+    "exampleDE": "In der Nacht gab es Bodenfrost, der die Wiese silbern färbte."
+  },
+  {
+    "front": "das Glatteis",
+    "back": "πάγος στον δρόμο",
+    "ipa": "ˈpaɣos ston ˈðromo",
+    "roman": "págos ston drómo",
+    "example": "Προσοχή στους δρόμους, στον πάγο η απόσταση φρεναρίσματος μεγαλώνει.",
+    "exampleDE": "Vorsicht auf den Straßen, bei Glatteis verlängert sich der Bremsweg."
+  },
+  {
+    "front": "die Schneeflocke",
+    "back": "χιονονιφάδα",
+    "ipa": "çinoniˈfaða",
+    "roman": "chiononifáda",
+    "example": "Αθόρυβα πέφτουν μεγάλες λευκές χιονονιφάδες από τον ουρανό.",
+    "exampleDE": "Lautlos schweben dicke weiße Schneeflocken vom Himmel herab."
+  },
+  {
+    "front": "die Hitzewelle",
+    "back": "καύσωνας",
+    "ipa": "ˈkavsonas",
+    "roman": "kávsonas",
+    "example": "Κατά τη διάρκεια του καλοκαιρινού καύσωνα η θερμοκρασία δεν πέφτει σχεδόν καθόλου ούτε τη νύχτα.",
+    "exampleDE": "Während der sommerlichen Hitzewelle kühlt es auch nachts kaum ab."
+  },
+  {
+    "front": "der Sonnenschein",
+    "back": "λιακάδα",
+    "ipa": "ljaˈkaða",
+    "roman": "liakáda",
+    "example": "Η ζεστή λιακάδα προσελκύει πολλούς ανθρώπους στην εξωτερική πισίνα.",
+    "exampleDE": "Warmer Sonnenschein lockt viele Menschen ins Freibad."
+  },
+  {
+    "front": "das Abendrot",
+    "back": "δειλινό",
+    "ipa": "ðiliˈno",
+    "roman": "deilinó",
+    "example": "Ένα φλογερό δειλινό προμηνύει καλό καιρό για την επόμενη μέρα.",
+    "exampleDE": "Ein feuriges Abendrot kündigt schönes Wetter für den nächsten Tag an."
+  },
+  {
+    "front": "die Dämmerung",
+    "back": "σούρουπο",
+    "ipa": "ˈsurupo",
+    "roman": "soúroupo",
+    "example": "Στο σούρουπο τα φώτα στους δρόμους αρχίζουν να ανάβουν.",
+    "exampleDE": "In der Abenddämmerung beginnen die Straßenlaternen zu leuchten."
+  },
+  {
+    "front": "die Mülltrennung",
+    "back": "διαλογή απορριμμάτων",
+    "ipa": "ðjaloˈʝi aporiˈmaton",
+    "roman": "dialogí aporrimmáton",
+    "example": "Η προσεκτική διαλογή απορριμμάτων διευκολύνει την ανακύκλωση πολύτιμων πρώτων υλών.",
+    "exampleDE": "Sorgfältige Mülltrennung erleichtert die Wiederverwertung wertvoller Rohstoffe."
+  },
+  {
+    "front": "der Plastikmüll",
+    "back": "πλαστικά απορρίμματα",
+    "ipa": "plastiˈka apoˈrimata",
+    "roman": "plastiká aporrímmata",
+    "example": "Μέσω επαναχρησιμοποιούμενων συσκευασιών αποφεύγονται περιττά πλαστικά απορρίμματα.",
+    "exampleDE": "Durch Mehrwegverpackungen lässt sich unnötiger Plastikmüll vermeiden."
+  },
+  {
+    "front": "das Recycling",
+    "back": "ανακύκλωση",
+    "ipa": "anaˈciclosi",
+    "roman": "anakýklosi",
+    "example": "Σύγχρονες εγκαταστάσεις οδηγούν το παλιό γυαλί και το χαρτί στην ανακύκλωση.",
+    "exampleDE": "Moderne Anlagen führen Altglas und Papier dem Recycling zu."
+  },
+  {
+    "front": "der Umweltschutz",
+    "back": "προστασία του περιβάλλοντος",
+    "ipa": "prostaˈsia tu periˈvalondos",
+    "roman": "prostasía tou perivállontos",
+    "example": "Η προστασία των απειλούμενων βιοτόπων είναι καθήκον όλων των ανθρώπων.",
+    "exampleDE": "Der Schutz bedrohter Lebensräume ist eine Aufgabe für alle Menschen."
+  },
+  {
+    "front": "die Nachhaltigkeit",
+    "back": "βιωσιμότητα",
+    "ipa": "viosiˈmotita",
+    "roman": "viosimótita",
+    "example": "Βιωσιμότητα σημαίνει τη διατήρηση των πόρων για τις μελλοντικές γενιές.",
+    "exampleDE": "Nachhaltigkeit bedeutet, Ressourcen für künftige Generationen zu bewahren."
+  },
+  {
+    "front": "die Mehrwegflasche",
+    "back": "επαναχρησιμοποιούμενο μπουκάλι",
+    "ipa": "epanaxrisimopiˈumeno buˈkali",
+    "roman": "epanachrisimopoioúmeno boukáli",
+    "example": "Για το μεταλλικό νερό προτιμάμε επαναχρησιμοποιούμενα μπουκάλια.",
+    "exampleDE": "Für Mineralwasser nutzen wir bevorzugt wiederbefüllbare Mehrwegflaschen."
+  },
+  {
+    "front": "der Energiesparer",
+    "back": "συσκευή εξοικονόμησης ενέργειας",
+    "ipa": "sisceˈvi eksikoˈnomisis eˈnerʝias",
+    "roman": "syskeví exoikonómisis enérgeias",
+    "example": "Οι σύγχρονοι λαμπτήρες LED εξοικονομούν πραγματικά ενέργεια στο νοικοκυριό.",
+    "exampleDE": "Moderne LED-Lampen sind wahre Energiesparer im Haushalt."
+  },
+  {
+    "front": "schonen",
+    "back": "προστατεύω",
+    "ipa": "prostaˈtevo",
+    "roman": "prostatévo",
+    "example": "Θα πρέπει να προστατεύουμε τους φυσικούς πόρους και τα νερά μας.",
+    "exampleDE": "Wir sollten unsere natürlichen Ressourcen und Gewässer schonen."
+  },
+  {
+    "front": "die Solarenergie",
+    "back": "ηλιακή ενέργεια",
+    "ipa": "iljaˈci eˈnerʝia",
+    "roman": "iliakí enérgeia",
+    "example": "Το ηλιακό σύστημα στη στέγη παράγει ρεύμα φιλικό προς το περιβάλλον.",
+    "exampleDE": "Die Solaranlage auf dem Dach erzeugt umweltfreundlichen Strom."
+  },
+  {
+    "front": "die Windkraft",
+    "back": "αιολική ενέργεια",
+    "ipa": "eoliˈci eˈnerʝia",
+    "roman": "aiolikí enérgeia",
+    "example": "Οι ανεμογεννήτριες χρησιμοποιούν τη δύναμη του ανέμου για παραγωγή ηλεκτρικού ρεύματος.",
+    "exampleDE": "Windkrafträder nutzen die Kraft des Windes zur Stromerzeugung."
+  },
+  {
+    "front": "das Wasserkraftwerk",
+    "back": "υδροηλεκτρικός σταθμός",
+    "ipa": "iðro-ilektriˈkos staθˈmos",
+    "roman": "ydroïlektrikós stathmós",
+    "example": "Ο υδροηλεκτρικός σταθμός στον ποταμό παράγει αξιόπιστα καθαρή ενέργεια.",
+    "exampleDE": "Das Wasserkraftwerk am Fluss produziert zuverlässig saubere Energie."
+  },
+  {
+    "front": "der Stromverbrauch",
+    "back": "κατανάλωση ρεύματος",
+    "ipa": "kataˈnalosi ˈrevmatos",
+    "roman": "katanálosi révmatos",
+    "example": "Οι συσκευές σε λειτουργία αναμονής αυξάνουν άσκοπα την κατανάλωση ρεύματος.",
+    "exampleDE": "Geräte im Standby-Modus erhöhen unnötig den Stromverbrauch."
+  },
+  {
+    "front": "die Wärmepumpe",
+    "back": "αντλία θερμότητας",
+    "ipa": "andˈlia θerˈmotitas",
+    "roman": "antlía thermótitas",
+    "example": "Μια σύγχρονη αντλία θερμότητας θερμαίνει την κατοικία πολύ αποδοτικά.",
+    "exampleDE": "Eine moderne Wärmepumpe heizt das Wohnhaus sehr effizient."
+  },
+  {
+    "front": "der CO2-Ausstoß",
+    "back": "εκπομπές διοξειδίου του άνθρακα",
+    "ipa": "ekpomˈbes ðjoksiˈðiu tu ˈanθraka",
+    "roman": "ekpompés dioxeidíou tou ánthraka",
+    "example": "Τα ηλεκτρικά οχήματα συμβάλλουν στη μείωση των τοπικών εκπομπών διοξειδίου του άνθρακα.",
+    "exampleDE": "Elektrofahrzeuge tragen zur Senkung des lokalen CO2-Ausstoßes bei."
+  },
+  # 450..499
+  {
+    "front": "die Ressource",
+    "back": "φυσικός πόρος",
+    "ipa": "fisiˈkos ˈporos",
+    "roman": "fysikós póros",
+    "example": "Το καθαρό πόσιμο νερό είναι ο πιο πολύτιμος φυσικός πόρος.",
+    "exampleDE": "Sauberes Trinkwasser ist die kostbarste natürliche Ressource."
+  },
+  {
+    "front": "der Stundenplan",
+    "back": "πρόγραμμα μαθημάτων",
+    "ipa": "ˈproɣrama maθiˈmaton",
+    "roman": "prógramma mathimáton",
+    "example": "Σύμφωνα με το πρόγραμμα μαθημάτων έχουμε τις Δευτέρες δύο ώρες μαθηματικά.",
+    "exampleDE": "Laut Stundenplan haben wir montags zwei Stunden Mathematik."
+  },
+  {
+    "front": "das Klassenzimmer",
+    "back": "σχολική αίθουσα",
+    "ipa": "sxoliˈci ˈeθusa",
+    "roman": "scholikí aíthousa",
+    "example": "Οι μαθητές στόλισαν τη σχολική αίθουσά τους με πολύχρωμες ζωγραφιές.",
+    "exampleDE": "Die Schüler schmückten ihr Klassenzimmer mit bunten Bildern."
+  },
+  {
+    "front": "die Schultasche",
+    "back": "σχολική τσάντα",
+    "ipa": "sxoliˈci ˈtsanda",
+    "roman": "scholikí tsánta",
+    "example": "Ετοιμάζει τα τετράδια και τα βιβλία του προσεκτικά στη σχολική τσάντα.",
+    "exampleDE": "Er packt seine Hefte und Bücher sorgfältig in die Schultasche."
+  },
+  {
+    "front": "das Federmäppchen",
+    "back": "κασετίνα",
+    "ipa": "kaseˈtina",
+    "roman": "kasetína",
+    "example": "Στην κασετίνα βρίσκονται ξυλομπογιές, πένα και μια γόμα.",
+    "exampleDE": "Im Federmäppchen liegen Buntstifte, Füller und ein Radiergummi."
+  },
+  {
+    "front": "die Klassenarbeit",
+    "back": "διαγώνισμα",
+    "ipa": "ðjaˈɣonizma",
+    "roman": "diagónisma",
+    "example": "Για το δύσκολο διαγώνισμα στη βιολογία διάβασε πολύ.",
+    "exampleDE": "Für die schwere Klassenarbeit in Biologie hat sie viel gelernt."
+  },
+  {
+    "front": "das Zeugnis",
+    "back": "έλεγχος",
+    "ipa": "ˈeleɲxos",
+    "roman": "élenchos",
+    "example": "Την τελευταία μέρα του σχολείου πριν από τις διακοπές όλοι παίρνουν τον έλεγχό τους.",
+    "exampleDE": "Am letzten Schultag vor den Ferien erhalten alle ihr Zeugnis."
+  },
+  {
+    "front": "die Schulferien",
+    "back": "σχολικές διακοπές",
+    "ipa": "sxoliˈces ðjakoˈpes",
+    "roman": "scholikés diakopés",
+    "example": "Τα παιδιά ανυπομονούν για τις καλοκαιρινές διακοπές έξι εβδομάδων.",
+    "exampleDE": "Die Kinder freuen sich riesig auf die sechswöchigen Sommerferien."
+  },
+  {
+    "front": "der Pausenhof",
+    "back": "προαύλιο",
+    "ipa": "proˈavlio",
+    "roman": "proávlio",
+    "example": "Στο μεγάλο διάλειμμα οι μαθητές παίζουν έξω στο προαύλιο.",
+    "exampleDE": "In der großen Pause spielen die Schüler draußen auf dem Pausenhof."
+  },
+  {
+    "front": "die Geometrie",
+    "back": "γεωμετρία",
+    "ipa": "ʝeometriˈa",
+    "roman": "geometriá",
+    "example": "Στο μάθημα γεωμετρίας σχεδιάζουμε τρίγωνα με το γεωμετρικό τρίγωνο.",
+    "exampleDE": "Im Geometrieunterricht zeichnen wir Dreiecke mit dem Geodreieck."
+  },
+  {
+    "front": "die Grammatik",
+    "back": "γραμματική",
+    "ipa": "ɣramatiˈci",
+    "roman": "grammatikí",
+    "example": "Η τακτική εξάσκηση βοηθάει να εμπεδωθούν οι κανόνες της γραμματικής.",
+    "exampleDE": "Regelmäßiges Üben hilft, die Regeln der Grammatik zu verinnerlichen."
+  },
+  {
+    "front": "der Fremdsprachenunterricht",
+    "back": "μάθημα ξένων γλωσσών",
+    "ipa": "ˈmaθima ˈksenon ɣloˈson",
+    "roman": "máthima xénon glossón",
+    "example": "Στο μάθημα ξένων γλωσσών εξασκούμαστε στην ελεύθερη ομιλία μέσα από διαλόγους.",
+    "exampleDE": "Im Fremdsprachenunterricht üben wir das freie Sprechen in Dialogen."
+  },
+  {
+    "front": "das Experiment",
+    "back": "πείραμα",
+    "ipa": "ˈpirama",
+    "roman": "peírama",
+    "example": "Στο εργαστήριο χημείας η τάξη εκτελεί ένα συναρπαστικό πείραμα.",
+    "exampleDE": "Im Chemielabor führt die Klasse ein spannendes Experiment durch."
+  },
+  {
+    "front": "das Referat",
+    "back": "εισήγηση",
+    "ipa": "iˈsiʝisi",
+    "roman": "eisígisi",
+    "example": "Κάνει μια ελεύθερη εισήγηση για την προστασία των απειλούμενων φαλαινών.",
+    "exampleDE": "Er hält ein freies Referat über den Schutz bedrohter Wale."
+  },
+  {
+    "front": "die Hausaufgabe",
+    "back": "σχολική εργασία για το σπίτι",
+    "ipa": "sxoliˈci erɣaˈsia ja to ˈspiti",
+    "roman": "scholikí ergasía gia to spíti",
+    "example": "Μετά το μεσημεριανό φαγητό ολοκληρώνει συγκεντρωμένη τις σχολικές της εργασίες.",
+    "exampleDE": "Nach dem Mittagessen erledigt sie konzentriert ihre Hausaufgaben."
+  },
+  {
+    "front": "die Nachhilfe",
+    "back": "ιδιαίτερα μαθήματα",
+    "ipa": "iðiˈetera maˈθimata",
+    "roman": "idiaítera mathímata",
+    "example": "Δύο φορές την εβδομάδα κάνει ιδιαίτερα μαθήματα για να βελτιώσει τους βαθμούς του.",
+    "exampleDE": "Zweimal wöchentlich nimmt er Nachhilfe, um seine Noten zu verbessern."
+  },
+  {
+    "front": "der Hörsaal",
+    "back": "αμφιθέατρο",
+    "ipa": "amfiˈθeatro",
+    "roman": "amfithéatro",
+    "example": "Το μεγάλο αμφιθέατρο είναι γεμάτο μέχρι την τελευταία θέση.",
+    "exampleDE": "Der große Hörsaal ist bis auf den letzten Platz besetzt."
+  },
+  {
+    "front": "die Vorlesung",
+    "back": "πανεπιστημιακή διάλεξη",
+    "ipa": "panepistimjaˈci ˈðjaleksi",
+    "roman": "panepistimiakí diálexi",
+    "example": "Η καθηγήτρια κάνει μια καθηλωτική διάλεξη για τη σύγχρονη φυσική.",
+    "exampleDE": "Die Professorin hält eine fesselnde Vorlesung über moderne Physik."
+  },
+  {
+    "front": "das Seminar",
+    "back": "σεμινάριο",
+    "ipa": "semiˈnario",
+    "roman": "seminário",
+    "example": "Στο σεμινάριο οι φοιτητές συζητούν σύγχρονα επιστημονικά κείμενα.",
+    "exampleDE": "Im Seminar diskutieren die Studierenden aktuelle wissenschaftliche Texte."
+  },
+  {
+    "front": "die Universitätsbibliothek",
+    "back": "πανεπιστημιακή βιβλιοθήκη",
+    "ipa": "panepistimjaˈci vivlioˈθici",
+    "roman": "panepistimiakí vivliothíki",
+    "example": "Στην πανεπιστημιακή βιβλιοθήκη επικρατεί συγκεντρωμένη σιωπή για διάβασμα.",
+    "exampleDE": "In der Universitätsbibliothek herrscht konzentrierte Stille zum Lernen."
+  },
+  {
+    "front": "das Semester",
+    "back": "εξάμηνο",
+    "ipa": "eˈksamino",
+    "roman": "exámino",
+    "example": "Το χειμερινό εξάμηνο ξεκινά στα περισσότερα πανεπιστήμια τον Οκτώβριο.",
+    "exampleDE": "Das Wintersemester beginnt an den meisten Hochschulen im Oktober."
+  },
+  {
+    "front": "die Bachelorarbeit",
+    "back": "πτυχιακή εργασία",
+    "ipa": "ptiçjaˈci erɣaˈsia",
+    "roman": "ptychiakí ergasía",
+    "example": "Αυτή την περίοδο γράφει εντατικά την πτυχιακή της εργασία.",
+    "exampleDE": "Sie schreibt zurzeit intensiv an ihrer Abschlussarbeit im Bachelor."
+  },
+  {
+    "front": "das Stipendium",
+    "back": "υποτροφία",
+    "ipa": "ipotroˈfia",
+    "roman": "ypotrofía",
+    "example": "Χάρη σε μια υποτροφία αριστείας μπορεί να αφοσιωθεί πλήρως στις σπουδές του.",
+    "exampleDE": "Dank eines Begabtenstipendiums kann er sich voll auf das Studium konzentrieren."
+  },
+  {
+    "front": "der Campus",
+    "back": "πανεπιστημιούπολη",
+    "ipa": "panepistimjuˈpoli",
+    "roman": "panepistimioúpoli",
+    "example": "Στην καταπράσινη πανεπιστημιούπολη συναντιούνται οι φοιτητές ανάμεσα στα μαθήματα.",
+    "exampleDE": "Auf dem grünen Campus treffen sich Studierende zwischen den Kursen."
+  },
+  {
+    "front": "die Stellenausschreibung",
+    "back": "αγγελία εργασίας",
+    "ipa": "aɲɟeˈlia erɣaˈsias",
+    "roman": "angelía ergasías",
+    "example": "Στην εφημερίδα βρήκε μια ενδιαφέρουσα αγγελία εργασίας.",
+    "exampleDE": "In der Zeitung fand er eine interessante Stellenausschreibung."
+  },
+  {
+    "front": "das Anschreiben",
+    "back": "συνοδευτική επιστολή",
+    "ipa": "sinoðeftiˈci epistoˈli",
+    "roman": "synodeftikí epistolí",
+    "example": "Μια καλογραμμένη συνοδευτική επιστολή κινεί το ενδιαφέρον του εργοδότη.",
+    "exampleDE": "Ein aussagekräftiges Anschreiben weckt das Interesse des Arbeitgebers."
+  },
+  {
+    "front": "der Lebenslauf",
+    "back": "βιογραφικό σημείωμα",
+    "ipa": "vioɣrafiˈko siˈmioma",
+    "roman": "viografikó semeíoma",
+    "example": "Το συνοπτικό βιογραφικό σημείωμα παραθέτει όλους τους προηγούμενους επαγγελματικούς σταθμούς.",
+    "exampleDE": "Der tabellarische Lebenslauf listet alle bisherigen Berufsstationen auf."
+  },
+  {
+    "front": "das Vorstellungsgespräch",
+    "back": "συνέντευξη εργασίας",
+    "ipa": "siˈnendefksi erɣaˈsias",
+    "roman": "synénteuxi ergasías",
+    "example": "Για τη συνέντευξη εργασίας ντύνεται επαγγελματικά και προσεγμένα.",
+    "exampleDE": "Zum Vorstellungsgespräch kleidet er sich professionell und ordentlich."
+  },
+  {
+    "front": "die Berufserfahrung",
+    "back": "επαγγελματική εμπειρία",
+    "ipa": "epaɲɟelmatiˈci embiˈria",
+    "roman": "epangelmatikí empeiría",
+    "example": "Για αυτή την υπεύθυνη θέση απαιτείται πολυετής επαγγελματική εμπειρία.",
+    "exampleDE": "Für diese verantwortungsvolle Position ist mehrjährige Berufserfahrung erforderlich."
+  },
+  {
+    "front": "die Qualifikation",
+    "back": "επαγγελματικά προσόντα",
+    "ipa": "epaɲɟelmatiˈka proˈsonda",
+    "roman": "epangelmatiká prosónta",
+    "example": "Τα επαγγελματικά της προσόντα ταιριάζουν ακριβώς στο ζητούμενο προφίλ.",
+    "exampleDE": "Ihre fachliche Qualifikation passt genau zum geforderten Profil."
+  },
+  {
+    "front": "das Zeugnis",
+    "back": "συστατική επιστολή εργασίας",
+    "ipa": "sistatiˈci epistoˈli erɣaˈsias",
+    "roman": "systatikí epistolí ergasías",
+    "example": "Μια θετική συστατική επιστολή εργασίας διευκολύνει την αλλαγή καριέρας.",
+    "exampleDE": "Ein positives Arbeitszeugnis erleichtert den beruflichen Wechsel."
+  },
+  {
+    "front": "der Arbeitsvertrag",
+    "back": "σύμβαση εργασίας",
+    "ipa": "ˈsimvasi erɣaˈsias",
+    "roman": "sýmvasi ergasías",
+    "example": "Μετά από επιτυχείς διαπραγματεύσεις υπέγραψε τη σύμβαση εργασίας.",
+    "exampleDE": "Nach erfolgreichen Verhandlungen unterschrieb sie den Arbeitsvertrag."
+  },
+  {
+    "front": "die Probezeit",
+    "back": "δοκιμαστική περίοδος",
+    "ipa": "ðocimastiˈci peˈrioðos",
+    "roman": "dokimastikí períodos",
+    "example": "Κατά την εξάμηνη δοκιμαστική περίοδο γνωρίζονται και οι δύο πλευρές.",
+    "exampleDE": "Während der sechsmonatigen Probezeit lernen sich beide Seiten kennen."
+  },
+  {
+    "front": "das Gehalt",
+    "back": "μισθός",
+    "ipa": "miˈsθos",
+    "roman": "misthós",
+    "example": "Ένας δίκαιος μισθός κατατίθεται στην ώρα του στο τέλος κάθε μήνα.",
+    "exampleDE": "Ein faires Gehalt wird jeweils zum Monatsende pünktlich überwiesen."
+  },
+  {
+    "front": "die Gleitzeit",
+    "back": "ευέλικτο ωράριο",
+    "ipa": "evˈelikto oˈrario",
+    "roman": "evélikto orário",
+    "example": "Χάρη στο ευέλικτο ωράριο μπορεί να οργανώνει καλά τον χρόνο εργασίας του.",
+    "exampleDE": "Dank flexibler Gleitzeit kann er seine Arbeitszeiten gut einteilen."
+  },
+  {
+    "front": "der Feierabend",
+    "back": "σχόλασμα",
+    "ipa": "ˈsxolazma",
+    "roman": "schólasma",
+    "example": "Μετά από οκτώ ώρες συγκεντρωμένης δουλειάς απολαμβάνει το σχόλασμα.",
+    "exampleDE": "Nach acht Stunden konzentrierter Arbeit genießt er den Feierabend."
+  },
+  {
+    "front": "der Urlaubstag",
+    "back": "ημέρα άδειας",
+    "ipa": "iˈmera ˈaðjas",
+    "roman": "iméra ádeias",
+    "example": "Οι εργαζόμενοι πλήρους απασχόλησης δικαιούνται τριάντα ημέρες άδειας μετ' αποδοχών.",
+    "exampleDE": "Vollzeitbeschäftigte haben Anspruch auf dreißig bezahlte Urlaubstage."
+  },
+  {
+    "front": "die Überstunden",
+    "back": "υπερωρίες",
+    "ipa": "iperoˈries",
+    "roman": "yperoríes",
+    "example": "Οι δεδουλευμένες υπερωρίες μπορούν να αντισταθμιστούν με ρεπό.",
+    "exampleDE": "Geleistete Überstunden können durch Freizeit ausgeglichen werden."
+  },
+  {
+    "front": "die Kaffeepause",
+    "back": "διάλειμμα για καφέ",
+    "ipa": "ˈðjalima ja kaˈfe",
+    "roman": "diáleimma gia kafé",
+    "example": "Στο διάλειμμα για καφέ οι συνάδελφοι ανταλλάσσουν νέα για το σαββατοκύριακο.",
+    "exampleDE": "In der Kaffeepause tauschen sich die Kollegen über das Wochenende aus."
+  },
+  {
+    "front": "die Besprechung",
+    "back": "σύσκεψη",
+    "ipa": "ˈsiskepsi",
+    "roman": "sýskepsi",
+    "example": "Στις δέκα πραγματοποιείται η εβδομαδιαία σύσκεψη στην αίθουσα συνεδριάσεων.",
+    "exampleDE": "Um zehn Uhr findet die wöchentliche Besprechung im Konferenzraum statt."
+  },
+  {
+    "front": "die Tagesordnung",
+    "back": "ημερήσια διάταξη",
+    "ipa": "imeˈrisia ˈðjataksi",
+    "roman": "imerísia diátaxi",
+    "example": "Τα θέματα της ημερήσιας διάταξης στάλθηκαν εκ των προτέρων μέσω ηλεκτρονικού ταχυδρομείου.",
+    "exampleDE": "Die Punkte der Tagesordnung wurden vorab per E-Mail verschickt."
+  },
+  {
+    "front": "das Protokoll",
+    "back": "πρακτικά",
+    "ipa": "praktiˈka",
+    "roman": "praktiká",
+    "example": "Κρατάει τα πρακτικά και καταγράφει όλες τις αποφάσεις που ελήφθησαν.",
+    "exampleDE": "Er schreibt das Protokoll und hält alle getroffenen Beschlüsse fest."
+  },
+  {
+    "front": "die Präsentation",
+    "back": "παρουσίαση",
+    "ipa": "paruˈsiasi",
+    "roman": "parousíasi",
+    "example": "Η παρουσίαση απεικονίζει τα αποτελέσματα με ευκρινή γραφήματα.",
+    "exampleDE": "Die Präsentation veranschaulicht die Ergebnisse mit übersichtlichen Grafiken."
+  },
+  {
+    "front": "die Frist",
+    "back": "προθεσμία",
+    "ipa": "proθeˈzmia",
+    "roman": "prothesmía",
+    "example": "Πρέπει οπωσδήποτε να τηρήσουμε τη συμφωνημένη προθεσμία μέχρι το τέλος του μήνα.",
+    "exampleDE": "Wir müssen die vereinbarte Frist bis Ende des Monats unbedingt einhalten."
+  },
+  {
+    "front": "die Teamarbeit",
+    "back": "ομαδική εργασία",
+    "ipa": "omaðiˈci erɣaˈsia",
+    "roman": "omadikí ergasía",
+    "example": "Η επιτυχημένη ομαδική εργασία απαιτεί ανοιχτή επικοινωνία και αμοιβαία υποστήριξη.",
+    "exampleDE": "Erfolgreiche Teamarbeit erfordert offenen Austausch und gegenseitige Unterstützung."
+  },
+  {
+    "front": "die Zusammenarbeit",
+    "back": "συνεργασία",
+    "ipa": "sinerɣaˈsia",
+    "roman": "synergasía",
+    "example": "Η συνεργασία μεταξύ των τμημάτων λειτουργεί άψογα.",
+    "exampleDE": "Die Zusammenarbeit zwischen den Abteilungen klappt reibungslos."
+  },
+  {
+    "front": "der Aktenordner",
+    "back": "κλασέρ αρχειοθέτησης",
+    "ipa": "klaˈser arçioˈθetisis",
+    "roman": "klasér archeiothétisis",
+    "example": "Σημαντικά συμβόλαια ταξινομούνται χρονολογικά στο κλασέρ.",
+    "exampleDE": "Wichtige Verträge werden chronologisch im Aktenordner abgeheftet."
+  },
+  {
+    "front": "der Locher",
+    "back": "περφορατέρ",
+    "ipa": "perforaˈter",
+    "roman": "perforatér",
+    "example": "Με το περφορατέρ ανοίγει δύο καθαρές τρύπες στο έγγραφο.",
+    "exampleDE": "Mit dem Locher stanzt er zwei saubere Löcher in das Dokument."
+  },
+  {
+    "front": "das Heftgerät",
+    "back": "συρραπτικό",
+    "ipa": "siraptiˈko",
+    "roman": "syrraptikó",
+    "example": "Με το συρραπτικό συρράπτει τις σελίδες που ανήκουν μαζί.",
+    "exampleDE": "Mit dem Heftgerät heftet sie die zusammengehörigen Seiten fest."
+  },
+  {
+    "front": "die Büroklammer",
+    "back": "συνδετήρας",
+    "ipa": "sindeˈtiras",
+    "roman": "syndetíras",
+    "example": "Ένας πολύχρωμος συνδετήρας συγκρατεί τις αποδείξεις.",
+    "exampleDE": "Eine bunte Büroklammer hält die Quittungen lose zusammen."
+  },
+  # 500..549
+  {
+    "front": "der Textmarker",
+    "back": "μαρκαδόρος υπογράμμισης",
+    "ipa": "markaˈðoros ipoˈɣramisis",
+    "roman": "markadóros ypográmmisis",
+    "example": "Υπογραμμίζει τα σημαντικά σημεία του κειμένου με έναν κίτρινο μαρκαδόρο.",
+    "exampleDE": "Wichtige Textstellen hebt er mit einem gelben Textmarker hervor."
+  },
+  {
+    "front": "der Notizblock",
+    "back": "μπλοκ σημειώσεων",
+    "ipa": "blok simiˈoseon",
+    "roman": "blok semeióseon",
+    "example": "Δίπλα στο τηλέφωνο υπάρχει πάντα ένα μικρό μπλοκ σημειώσεων για σημειώσεις.",
+    "exampleDE": "Neben dem Telefon liegt immer ein kleiner Notizblock für Notizen."
+  },
+  {
+    "front": "der Reißwolf",
+    "back": "καταστροφέας εγγράφων",
+    "ipa": "katastroˈfeas eˈŋɣrafon",
+    "roman": "katastroféas engráfon",
+    "example": "Εμπιστευτικά έγγραφα τεμαχίζονται στον καταστροφέα εγγράφων πριν απορριφθούν.",
+    "exampleDE": "Vertrauliche Papiere werden vor dem Entsorgen im Reißwolf zerkleinert."
+  },
+  {
+    "front": "der Drehstuhl",
+    "back": "περιστρεφόμενη καρέκλα",
+    "ipa": "peristreˈfomeni kaˈrekla",
+    "roman": "peristrefómeni karékla",
+    "example": "Μια εργονομική περιστρεφόμενη καρέκλα υποστηρίζει το υγιές κάθισμα στον χώρο εργασίας.",
+    "exampleDE": "Ein ergonomischer Drehstuhl unterstützt gesundes Sitzen am Arbeitsplatz."
+  },
+  {
+    "front": "der Bildschirm",
+    "back": "οθόνη",
+    "ipa": "oˈθoni",
+    "roman": "othóni",
+    "example": "Η οθόνη υψηλής ανάλυσης εμφανίζει τις γραμματοσειρές πεντακάθαρα.",
+    "exampleDE": "Der hochauflösende Bildschirm zeigt Schriften gestochen scharf an."
+  },
+  {
+    "front": "die Tastatur",
+    "back": "πληκτρολόγιο",
+    "ipa": "pliktroˈloʝio",
+    "roman": "pliktrológio",
+    "example": "Πληκτρολογεί άπταιστα και χωρίς λάθη με δέκα δάχτυλα στο πληκτρολόγιο.",
+    "exampleDE": "Er tippt flüssig und fehlerfrei mit zehn Fingern auf der Tastatur."
+  },
+  {
+    "front": "die Computermaus",
+    "back": "ποντίκι υπολογιστή",
+    "ipa": "ponˈdici ipoloʝiˈsti",
+    "roman": "pontíki ypologistí",
+    "example": "Με ένα κλικ στο ποντίκι του υπολογιστή επιλέγει το σημείο του μενού.",
+    "exampleDE": "Mit einem Klick auf die Computermaus wählt er den Menüpunkt aus."
+  },
+  {
+    "front": "der Drucker",
+    "back": "εκτυπωτής",
+    "ipa": "ektipoˈtis",
+    "roman": "ektypotís",
+    "example": "Ο δικτυακός εκτυπωτής εκτυπώνει διπλής όψης σε υψηλή ταχύτητα.",
+    "exampleDE": "Der Netzwerkdrucker druckt doppelseitig in hoher Geschwindigkeit."
+  },
+  {
+    "front": "das Ladekabel",
+    "back": "καλώδιο φόρτισης",
+    "ipa": "kaˈloðio ˈfortisis",
+    "roman": "kalódio fórtisis",
+    "example": "Μην ξεχάσεις να πάρεις μαζί σου το καλώδιο φόρτισης για το λάπτοπ.",
+    "exampleDE": "Vergiss nicht, das Ladekabel für das Notebook einzupacken."
+  },
+  {
+    "front": "der USB-Stick",
+    "back": "στικάκι USB",
+    "ipa": "stiˈkaci ju es ˈbi",
+    "roman": "stikáki USB",
+    "example": "Αποθηκεύει το αντίγραφο ασφαλείας σε ένα εύχρηστο στικάκι USB.",
+    "exampleDE": "Sie speichert die Sicherungskopie auf einem handlichen USB-Stick."
+  },
+  {
+    "front": "die Festplatte",
+    "back": "σκληρός δίσκος",
+    "ipa": "skliˈros ˈðiskos",
+    "roman": "sklirós dískos",
+    "example": "Ο εξωτερικός σκληρός δίσκος προσφέρει άφθονο χώρο αποθήκευσης για φωτογραφίες.",
+    "exampleDE": "Die externe Festplatte bietet reichlich Speicherplatz für Fotos."
+  },
+  {
+    "front": "der Webbrowser",
+    "back": "πρόγραμμα περιήγησης",
+    "ipa": "ˈproɣrama periˈiʝisis",
+    "roman": "prógramma periígisis",
+    "example": "Ανοίξτε την ιστοσελίδα παρακαλώ σε ένα ενημερωμένο πρόγραμμα περιήγησης.",
+    "exampleDE": "Öffnen Sie die Webseite bitte in einem aktuellen Webbrowser."
+  },
+  {
+    "front": "das Benutzerkonto",
+    "back": "λογαριασμός χρήστη",
+    "ipa": "loɣarjaˈzmos ˈxristi",
+    "roman": "logariazmós chrísti",
+    "example": "Συνδεθείτε με τον προσωπικό σας λογαριασμό χρήστη.",
+    "exampleDE": "Melden Sie sich mit Ihrem persönlichen Benutzerkonto an."
+  },
+  {
+    "front": "das sichere Passwort",
+    "back": "ασφαλής κωδικός πρόσβασης",
+    "ipa": "asfaˈlis koðiˈkos ˈprozvasis",
+    "roman": "asfalís kodikós prósvasis",
+    "example": "Ένας ασφαλής κωδικός πρόσβασης περιέχει γράμματα, αριθμούς και ειδικούς χαρακτήρες.",
+    "exampleDE": "Ein sicheres Passwort enthält Buchstaben, Ziffern und Sonderzeichen."
+  },
+  {
+    "front": "die Suchmaschine",
+    "back": "μηχανή αναζήτησης",
+    "ipa": "mixaˈni anaˈzitisis",
+    "roman": "michaní anazítisis",
+    "example": "Εισαγάγετε τους όρους αναζήτησης στη μηχανή αναζήτησης.",
+    "exampleDE": "Geben Sie die Suchbegriffe in die Suchmaschine ein."
+  },
+  {
+    "front": "die E-Mail-Adresse",
+    "back": "διεύθυνση email",
+    "ipa": "ðiˈefθinsi iˈmejl",
+    "roman": "diéfthynsi email",
+    "example": "Συμπληρώστε παρακαλώ την έγκυρη διεύθυνση email σας στη φόρμα.",
+    "exampleDE": "Bitte tragen Sie Ihre gültige E-Mail-Adresse in das Formular ein."
+  },
+  {
+    "front": "der Anhang",
+    "back": "συνημμένο αρχείο",
+    "ipa": "sinimˈmeno arˈçio",
+    "roman": "synimméno archeío",
+    "example": "Στο συνημμένο του μηνύματος θα βρείτε το έγγραφο σε μορφή PDF.",
+    "exampleDE": "Im Anhang der Nachricht finden Sie das Dokument im PDF-Format."
+  },
+  {
+    "front": "die Datensicherung",
+    "back": "αντίγραφο ασφαλείας",
+    "ipa": "anˈdiɣrafo asfaˈlias",
+    "roman": "antígrafo asfaleías",
+    "example": "Ένα αυτόματο αντίγραφο ασφαλείας προστατεύει από απροσδόκητη απώλεια δεδομένων.",
+    "exampleDE": "Eine automatische Datensicherung schützt vor überraschendem Datenverlust."
+  },
+  {
+    "front": "das Update",
+    "back": "ενημέρωση λογισμικού",
+    "ipa": "eniˈmerosi loʝizmiˈku",
+    "roman": "enimérosi logizmikoú",
+    "example": "Εγκαθιστάτε τακτικές ενημερώσεις λογισμικού για την κάλυψη κενών ασφαλείας.",
+    "exampleDE": "Installieren Sie regelmäßige Software-Updates zur Schließung von Sicherheitslücken."
+  },
+  {
+    "front": "der Touchscreen",
+    "back": "οθόνη αφής",
+    "ipa": "oˈθoni aˈfis",
+    "roman": "othóni afís",
+    "example": "Η οθόνη αφής αντιδρά αμέσως στο άγγιγμα των δαχτύλων.",
+    "exampleDE": "Der berührungsempfindliche Touchscreen reagiert sofort auf Fingertippen."
+  },
+  {
+    "front": "die Sprachnachricht",
+    "back": "φωνητικό μήνυμα",
+    "ipa": "foniˈtiˈko ˈminima",
+    "roman": "fonitikó mýnyma",
+    "example": "Αντί να γράφει για ώρα, της έστειλε ένα σύντομο φωνητικό μήνυμα.",
+    "exampleDE": "Statt lange zu tippen, schickte er ihr eine kurze Sprachnachricht."
+  },
+  {
+    "front": "die Benachrichtigung",
+    "back": "ειδοποίηση",
+    "ipa": "iðoˈpiisi",
+    "roman": "eidopoíisi",
+    "example": "Στην οθόνη κλειδώματος εμφανίστηκε μια νέα ειδοποίηση.",
+    "exampleDE": "Auf dem Sperrbildschirm erschien eine neue Benachrichtigung."
+  },
+  {
+    "front": "der Flugmodus",
+    "back": "λειτουργία πτήσης",
+    "ipa": "liturˈʝia ˈptisis",
+    "roman": "leitourgía ptísis",
+    "example": "Κατά τη διάρκεια της πτήσης όλα τα τηλέφωνα πρέπει να τεθούν σε λειτουργία πτήσης.",
+    "exampleDE": "Während des Fluges müssen alle Telefone in den Flugmodus geschaltet werden."
+  },
+  {
+    "front": "die Akkukapazität",
+    "back": "χωρητικότητα μπαταρίας",
+    "ipa": "xoritiˈkotita batariˈas",
+    "roman": "choritikótita batarías",
+    "example": "Μετά από έντονη χρήση η χωρητικότητα της μπαταρίας έπεσε στο είκοσι τοις εκατό.",
+    "exampleDE": "Nach intensivem Gebrauch sank die Akkukapazität auf zwanzig Prozent."
+  },
+  {
+    "front": "das WLAN-Netzwerk",
+    "back": "δίκτυο Wi-Fi",
+    "ipa": "ˈðictio ˈwajfaj",
+    "roman": "díktyo Wi-Fi",
+    "example": "Στο ξενοδοχείο συνδεόμαστε στο δωρεάν δίκτυο Wi-Fi.",
+    "exampleDE": "Im Hotel verbinden wir uns mit dem kostenlosen WLAN-Netzwerk."
+  },
+  {
+    "front": "die Internetverbindung",
+    "back": "σύνδεση στο διαδίκτυο",
+    "ipa": "ˈsinðesi sto ðjaˈðictio",
+    "roman": "sýndesi sto diadíktyo",
+    "example": "Μια σταθερή σύνδεση στο διαδίκτυο είναι σημαντική για ομαλές βιντεοκλήσεις.",
+    "exampleDE": "Eine stabile Internetverbindung ist wichtig für flüssige Videoanrufe."
+  },
+  {
+    "front": "das Wochenende",
+    "back": "σαββατοκύριακο",
+    "ipa": "savatoˈcirjako",
+    "roman": "savvatokýriako",
+    "example": "Το σαββατοκύριακο μου αρέσει να κοιμάμαι πολύ και να παίρνω το πρωινό μου με την ησυχία μου.",
+    "exampleDE": "Am Wochenende schlafe ich gerne lange aus und frühstücke in Ruhe."
+  },
+  {
+    "front": "der Feiertag",
+    "back": "αργία",
+    "ipa": "arˈʝia",
+    "roman": "argía",
+    "example": "Τις επίσημες αργίες τα περισσότερα καταστήματα παραμένουν κλειστά.",
+    "exampleDE": "An gesetzlichen Feiertagen bleiben die meisten Geschäfte geschlossen."
+  },
+  {
+    "front": "der Ausflug",
+    "back": "εκδρομή",
+    "ipa": "ekðroˈmi",
+    "roman": "ekdromí",
+    "example": "Το Σάββατο η οικογένεια έκανε μια εκδρομή στον ζωολογικό κήπο.",
+    "exampleDE": "Am Samstag unternahm die Familie einen Ausflug in den Tierpark."
+  },
+  {
+    "front": "das Picknick",
+    "back": "πικνίκ",
+    "ipa": "pikˈnik",
+    "roman": "pikník",
+    "example": "Απλώσαμε μια κουβέρτα και κάναμε πικνίκ στη σκιά.",
+    "exampleDE": "Wir breiteten eine Decke aus und machten ein Picknick im Schatten."
+  },
+  {
+    "front": "die Hängematte",
+    "back": "αιώρα",
+    "ipa": "eˈora",
+    "roman": "aióra",
+    "example": "Ανάμεσα σε δύο σκιερά δέντρα άπλωσε μια άνετη αιώρα.",
+    "exampleDE": "Zwischen zwei schattigen Bäumen spannte er eine bequeme Hängematte auf."
+  },
+  {
+    "front": "das Gesellschaftsspiel",
+    "back": "επιτραπέζιο παιχνίδι",
+    "ipa": "epitraˈpezio peˈxniði",
+    "roman": "epitrapézio paichnídi",
+    "example": "Το βράδυ παίζουμε ευχάριστα ένα συναρπαστικό επιτραπέζιο παιχνίδι στο τραπέζι.",
+    "exampleDE": "Abends spielen wir gerne ein spannendes Gesellschaftsspiel am Tisch."
+  },
+  {
+    "front": "das Kartenspiel",
+    "back": "παιχνίδι με κάρτες",
+    "ipa": "peˈxniði me ˈkartes",
+    "roman": "paichnídi me kártes",
+    "example": "Οι τέσσερίς τους έπαιξαν έναν διασκεδαστικό γύρο χαρτιά.",
+    "exampleDE": "Zu viert spielten sie eine unterhaltsame Runde Skat."
+  },
+  {
+    "front": "das Kreuzworträtsel",
+    "back": "σταυρόλεξο",
+    "ipa": "stavˈrolekso",
+    "roman": "stavrólexo",
+    "example": "Στον κυριακάτικο καφέ ο παππούς μου λύνει το σταυρόλεξο.",
+    "exampleDE": "Beim sonntäglichen Kaffee löst mein Großvater das Kreuzworträtsel."
+  },
+  {
+    "front": "die Fotografie",
+    "back": "φωτογραφία",
+    "ipa": "fotoɣraˈfia",
+    "roman": "fotografía",
+    "example": "Η φωτογραφία φύσης είναι εδώ και πολλά χρόνια το πάθος του.",
+    "exampleDE": "Die Naturfotografie ist seit vielen Jahren sein leidenschaftliches Hobby."
+  },
+  {
+    "front": "das Gärtnern",
+    "back": "κηπουρική",
+    "ipa": "cipuriˈci",
+    "roman": "kipourikí",
+    "example": "Η κηπουρική στον λαχανόκηπο χαλαρώνει μετά από μια κουραστική εβδομάδα.",
+    "exampleDE": "Das Gärtnern im eigenen Gemüsegarten entspannt nach einer anstrengenden Woche."
+  },
+  {
+    "front": "das Stricken",
+    "back": "πλέξιμο",
+    "ipa": "ˈpleksimo",
+    "roman": "pléximo",
+    "example": "Πλέκει με ζεστό μαλλί πολύχρωμες κάλτσες για τα εγγόνια της.",
+    "exampleDE": "Sie strickt aus warmer Wolle bunte Socken für ihre Enkelkinder."
+  },
+  {
+    "front": "das Häkeln",
+    "back": "πλέξιμο με βελονάκι",
+    "ipa": "ˈpleksimo me veloˈnaci",
+    "roman": "pléximo me velonáki",
+    "example": "Με ένα λεπτό βελονάκι πλέκει ντελικάτα σεμεδάκια.",
+    "exampleDE": "Mit einer feinen Häkelnadel häkelt sie zarte Deckchen."
+  },
+  {
+    "front": "die Nähmaschine",
+    "back": "ραπτομηχανή",
+    "ipa": "raptomixaˈni",
+    "roman": "raptomichaní",
+    "example": "Με την ηλεκτρική ραπτομηχανή ράβει νέες μαξιλαροθήκες.",
+    "exampleDE": "Mit der elektrischen Nähmaschine näht sie neue Kissenbezüge."
+  },
+  {
+    "front": "das Heimwerken",
+    "back": "μαστορέματα",
+    "ipa": "mastoˈremata",
+    "roman": "mastorémata",
+    "example": "Το Σάββατο αφιερώνεται αποκλειστικά στα μαστορέματα στο υπόγειο.",
+    "exampleDE": "Am Samstag widmet er sich voll und ganz dem Heimwerken im Keller."
+  },
+  {
+    "front": "das Basteln",
+    "back": "χειροτεχνία",
+    "ipa": "çroteˈxnia",
+    "roman": "cheirotechnía",
+    "example": "Πριν από τα Χριστούγεννα τα παιδιά φτιάχνουν γιορτινά στολίδια από χαρτί.",
+    "exampleDE": "Vor Weihnachten basteln die Kinder festlichen Schmuck aus Papier."
+  },
+  {
+    "front": "der Bestseller",
+    "back": "μπεστ σέλερ",
+    "ipa": "best ˈseler",
+    "roman": "best séler",
+    "example": "Το συναρπαστικό αστυνομικό μυθιστόρημα μπήκε αμέσως στη λίστα των μπεστ σέλερ.",
+    "exampleDE": "Der spannende Kriminalroman schaffte es sofort auf die Bestsellerliste."
+  },
+  {
+    "front": "das Taschenbuch",
+    "back": "βιβλίο τσέπης",
+    "ipa": "viˈvlio ˈtsepis",
+    "roman": "vivlío tsépis",
+    "example": "Για τις διακοπές βάζει δύο ελαφριά βιβλία τσέπης στη βαλίτσα.",
+    "exampleDE": "Für den Urlaub packt sie zwei leichte Taschenbücher in den Koffer."
+  },
+  {
+    "front": "das Lesezeichen",
+    "back": "σελιδοδείκτης",
+    "ipa": "seliðoˈðiktis",
+    "roman": "selidodeíktis",
+    "example": "Ένας όμορφος σελιδοδείκτης σημαδεύει την τελευταία σελίδα που διαβάστηκε.",
+    "exampleDE": "Ein schönes Lesezeichen markiert die zuletzt gelesene Seite."
+  },
+  {
+    "front": "die Buchhandlung",
+    "back": "βιβλιοπωλείο",
+    "ipa": "vivliopoˈlio",
+    "roman": "vivliopoleío",
+    "example": "Στο μικρό βιβλιοπωλείο στη γωνία ξεφυλλίζει βιβλία για ώρες.",
+    "exampleDE": "In der kleinen Buchhandlung an der Ecke stöbert er stundenlang."
+  },
+  {
+    "front": "die Handlung",
+    "back": "πλοκή",
+    "ipa": "ploˈci",
+    "roman": "plokí",
+    "example": "Η καθηλωτική πλοκή του μυθιστορήματος εκτυλίσσεται στο βικτωριανό Λονδίνο.",
+    "exampleDE": "Die fesselnde Handlung des Romans spielt im viktorianischen London."
+  },
+  {
+    "front": "die Hauptfigur",
+    "back": "κεντρικός χαρακτήρας",
+    "ipa": "kendriˈkos xarakˈtiras",
+    "roman": "kentrikós charaktíras",
+    "example": "Ο θαρραλέος κεντρικός χαρακτήρας ξεπερνά πολλές περιπέτειες κατά τη διάρκεια του βιβλίου.",
+    "exampleDE": "Die mutige Hauptfigur meistert im Laufe des Buches viele Abenteuer."
+  },
+  {
+    "front": "das Kapitel",
+    "back": "κεφάλαιο",
+    "ipa": "ceˈfaleo",
+    "roman": "kefálaio",
+    "example": "Πριν κοιμηθώ διαβάζω ακόμα ένα συναρπαστικό κεφάλαιο μέχρι το τέλος.",
+    "exampleDE": "Vor dem Einschlafen lese ich noch ein spannendes Kapitel zu Ende."
+  },
+  {
+    "front": "der Autor",
+    "back": "συγγραφέας",
+    "ipa": "siɲɡraˈfeas",
+    "roman": "syngraféas",
+    "example": "Ο διακεκριμένος συγγραφέας υπέγραψε πολλά αντίτυπα μετά την ανάγνωση.",
+    "exampleDE": "Der renommierte Autor signierte nach der Lesung viele Exemplare."
+  },
+  {
+    "front": "die Leinwand",
+    "back": "οθόνη κινηματογράφου",
+    "ipa": "oˈθoni cinimatoˈɣrafu",
+    "roman": "othóni kinematográfou",
+    "example": "Στην τεράστια οθόνη του κινηματογράφου τα τοπία φαίνονται εντυπωσιακά.",
+    "exampleDE": "Auf der riesigen Leinwand des Kinos wirken Landschaftsaufnahmen überwältigend."
+  },
+  # 550..599
+  {
+    "front": "der Dokumentarfilm",
+    "back": "ντοκιμαντέρ",
+    "ipa": "dokimanˈter",
+    "roman": "ntokimantér",
+    "example": "Το ντοκιμαντέρ ρίχνει φως στη συναρπαστική ζωή των άγριων ζώων.",
+    "exampleDE": "Der Dokumentarfilm beleuchtet das faszinierende Leben wilder Tiere."
+  },
+  {
+    "front": "die Komödie",
+    "back": "κωμωδία",
+    "ipa": "komoˈðia",
+    "roman": "komodía",
+    "example": "Μια κεφάτη κωμωδία πρόσφερε πολλά εγκάρδια γέλια στην αίθουσα.",
+    "exampleDE": "Eine heitere Komödie sorgte für viele herzliche Lacher im Saal."
+  },
+  {
+    "front": "der Untertitel",
+    "back": "υπότιτλοι",
+    "ipa": "iˈpotitli",
+    "roman": "ypótitloi",
+    "example": "Τις ξενόγλωσσες ταινίες προτιμώ να τις βλέπω με γερμανικούς υπότιτλους.",
+    "exampleDE": "Fremdsprachige Filme schaue ich am liebsten mit deutschen Untertiteln."
+  },
+  {
+    "front": "die Fernbedienung",
+    "back": "τηλεκοντρόλ",
+    "ipa": "tilekonˈtrol",
+    "roman": "tilekontról",
+    "example": "Με το τηλεκοντρόλ χαμηλώνει την ένταση της τηλεόρασης.",
+    "exampleDE": "Mit der Fernbedienung schaltet er die Lautstärke des Fernsehers leiser."
+  },
+  {
+    "front": "die Fernsehserie",
+    "back": "τηλεοπτική σειρά",
+    "ipa": "tileoptiˈci siˈra",
+    "roman": "tileoptikí seirá",
+    "example": "Ο νέος κύκλος της δημοφιλούς τηλεοπτικής σειράς κυκλοφορεί την επόμενη εβδομάδα.",
+    "exampleDE": "Die neue Staffel der beliebten Fernsehserie erscheint nächste Woche."
+  },
+  {
+    "front": "der Schauspieler",
+    "back": "ηθοποιός",
+    "ipa": "iθopiˈos",
+    "roman": "ithopoiós",
+    "example": "Ο ταλαντούχος ηθοποιός ενσαρκώνει τον ρόλο του με μεγάλη πειστικότητα.",
+    "exampleDE": "Der talentierte Schauspieler verkörpert seine Rolle sehr glaubwürdig."
+  },
+  {
+    "front": "das Theaterstück",
+    "back": "θεατρικό έργο",
+    "ipa": "θeatriˈko ˈerɣo",
+    "roman": "theatrikó érgo",
+    "example": "Το κλασικό θεατρικό έργο του Σίλερ ανέβηκε σε σύγχρονη σκηνοθεσία.",
+    "exampleDE": "Das klassische Theaterstück von Schiller wurde modern inszeniert."
+  },
+  {
+    "front": "der Theatervorhang",
+    "back": "θεατρική αυλαία",
+    "ipa": "θeatriˈci avˈlea",
+    "roman": "theatrikí avlaía",
+    "example": "Κάτω από δυνατό χειροκρότημα έπεσε η βαριά κόκκινη θεατρική αυλαία.",
+    "exampleDE": "Unter großem Applaus senkte sich der schwere rote Theatervorhang."
+  },
+  {
+    "front": "der Beifall",
+    "back": "χειροκρότημα",
+    "ipa": "çiroˈkrotima",
+    "roman": "cheirokrótima",
+    "example": "Το ενθουσιασμένο κοινό χάρισε στους ηθοποιούς θυελλώδες χειροκρότημα.",
+    "exampleDE": "Das begeisterte Publikum spendete den Darstellern tosenden Beifall."
+  },
+  {
+    "front": "das Bühnenbild",
+    "back": "σκηνικά",
+    "ipa": "sciniˈka",
+    "roman": "skiniká",
+    "example": "Τα περίτεχνα σκηνικά απεικόνιζαν μια ιστορική πλατεία της αγοράς.",
+    "exampleDE": "Das aufwendige Bühnenbild stellte einen historischen Marktplatz dar."
+  },
+  {
+    "front": "die Garderobe",
+    "back": "γκαρνταρόμπα",
+    "ipa": "ɡardaˈromba",
+    "roman": "gkantarmópa",
+    "example": "Πριν από την έναρξη της παράστασης αφήνει κανείς τα παλτά στην γκαρνταρόμπα.",
+    "exampleDE": "Vor Beginn der Vorstellung gibt man Jacken an der Garderobe ab."
+  },
+  {
+    "front": "die Pause",
+    "back": "διάλειμμα",
+    "ipa": "ˈðjalima",
+    "roman": "diáleimma",
+    "example": "Στο εικοσάλεπτο διάλειμμα οι θεατές πίνουν ένα ποτήρι αφρώδη οίνο.",
+    "exampleDE": "In der zwanzigminütigen Pause trinken die Besucher ein Glas Sekt."
+  },
+  {
+    "front": "der Rang",
+    "back": "εξώστης",
+    "ipa": "eˈksostis",
+    "roman": "exóstis",
+    "example": "Από τις θέσεις στον πρώτο εξώστη έχει κανείς εξαιρετική ορατότητα.",
+    "exampleDE": "Von den Plätzen im ersten Rang hat man einen ausgezeichneten Überblick."
+  },
+  {
+    "front": "die Generalprobe",
+    "back": "γενική δοκιμή",
+    "ipa": "ʝeniˈci ðociˈmi",
+    "roman": "genikí dokimí",
+    "example": "Η τελευταία πρόβα πριν από τη μεγάλη πρεμιέρα κύλησε χωρίς λάθη.",
+    "exampleDE": "Die letzte Probe vor der großen Premiere verlief fehlerfrei."
+  },
+  {
+    "front": "die Kunstgalerie",
+    "back": "γκαλερί τέχνης",
+    "ipa": "ɡaleˈri ˈtexnis",
+    "roman": "gkalerí téchnis",
+    "example": "Στη δημοτική γκαλερί τέχνης νέοι ζωγράφοι εκθέτουν τα έργα τους.",
+    "exampleDE": "In der städtischen Kunstgalerie stellen junge Maler ihre Werke aus."
+  },
+  {
+    "front": "das Ölgemälde",
+    "back": "ελαιογραφία",
+    "ipa": "eleoɣraˈfia",
+    "roman": "elaiografía",
+    "example": "Η πολύτιμη ελαιογραφία χρονολογείται από τον δέκατο έβδομο αιώνα.",
+    "exampleDE": "Das wertvolle Ölgemälde stammt aus dem siebzehnten Jahrhundert."
+  },
+  {
+    "front": "die Skulptur",
+    "back": "γλυπτό",
+    "ipa": "ɣliˈpto",
+    "roman": "glyptó",
+    "example": "Στον κήπο του μουσείου στέκεται ένα χάλκινο γλυπτό σε φυσικό μέγεθος.",
+    "exampleDE": "Im Museumsgarten steht eine lebensgroße Skulptur aus Bronze."
+  },
+  {
+    "front": "der Museumsführer",
+    "back": "ηχητικός οδηγός",
+    "ipa": "içiˈtiˈkos oðiˈɣos",
+    "roman": "ichitikós odigós",
+    "example": "Ο ηλεκτρονικός ηχητικός οδηγός ξεναγεί ενημερωτικά τους επισκέπτες στις αίθουσες.",
+    "exampleDE": "Der elektronische Audioguide führt Besucher informativ durch die Räume."
+  },
+  {
+    "front": "der Eintritt",
+    "back": "είσοδος",
+    "ipa": "ˈisoðos",
+    "roman": "eísodos",
+    "example": "Για μαθητές και φοιτητές η είσοδος τις Κυριακές είναι μειωμένη.",
+    "exampleDE": "Für Schüler und Studierende ist der Eintritt sonntags ermäßigt."
+  },
+  {
+    "front": "die Sonderausstellung",
+    "back": "περιοδική έκθεση",
+    "ipa": "perioðiˈci ˈekθesi",
+    "roman": "periodikí ékthesi",
+    "example": "Η περιοδική έκθεση για την αρχαιότητα προσελκύει πολλούς επισκέπτες.",
+    "exampleDE": "Die Sonderausstellung über die Antike lockt viele Besucher an."
+  },
+  {
+    "front": "das Meisterwerk",
+    "back": "αριστούργημα",
+    "ipa": "ariˈsturʝima",
+    "roman": "aristoúrgima",
+    "example": "Αυτό το παγκοσμίως διάσημο πορτρέτο θεωρείται το αριστούργημα του ζωγράφου.",
+    "exampleDE": "Dieses weltberühmte Porträt gilt als das Meisterwerk des Malers."
+  },
+  {
+    "front": "die Akustikgitarre",
+    "back": "ακουστική κιθάρα",
+    "ipa": "akustiˈci ciˈθara",
+    "roman": "akoustikí kithára",
+    "example": "Στη φωτιά της κατασκήνωσης συνοδεύει τα τραγούδια στην ακουστική κιθάρα.",
+    "exampleDE": "Am Lagerfeuer begleitet er die Lieder auf der Akustikgitarre."
+  },
+  {
+    "front": "das Klavier",
+    "back": "πιάνο",
+    "ipa": "ˈpjano",
+    "roman": "piáno",
+    "example": "Εξασκείται επιμελώς κάθε απόγευμα σε μουσικές κλίμακες στο πιάνο.",
+    "exampleDE": "Sie übt jeden Nachmittag fleißig Tonleitern auf dem Klavier."
+  },
+  {
+    "front": "die Geige",
+    "back": "βιολί",
+    "ipa": "vioˈli",
+    "roman": "violí",
+    "example": "Ο καθαρός ήχος του βιολιού οδηγούσε τη μελωδία του κουαρτέτου εγχόρδων.",
+    "exampleDE": "Der klare Klang der Geige trug die Melodie des Streichquartetts."
+  },
+  {
+    "front": "das Schlagzeug",
+    "back": "ντραμς",
+    "ipa": "drams",
+    "roman": "ntrams",
+    "example": "Ο ντράμερ δίνει στο συγκρότημα τον δυναμικό ρυθμό.",
+    "exampleDE": "Der Schlagzeuger gibt der Band den treibenden Rhythmus vor."
+  },
+  {
+    "front": "der Notenständer",
+    "back": "αναλόγιο",
+    "ipa": "anaˈloʝio",
+    "roman": "analógio",
+    "example": "Το βιβλίο με τις παρτιτούρες στέκεται ανοιχτό στο σταθερό αναλόγιο.",
+    "exampleDE": "Das Notenheft steht aufgeschlagen auf dem stabilen Notenständer."
+  },
+  {
+    "front": "der Kopfhörer",
+    "back": "ακουστικά",
+    "ipa": "akustiˈka",
+    "roman": "akoustiká",
+    "example": "Στο τρένο ακούει την αγαπημένη της μουσική με ασύρματα ακουστικά.",
+    "exampleDE": "In der Bahn hört sie ihre Lieblingsmusik über kabellose Kopfhörer."
+  },
+  {
+    "front": "der Songtext",
+    "back": "στίχοι τραγουδιού",
+    "ipa": "ˈstiçi traɣuˈðju",
+    "roman": "stíchoi tragoudioú",
+    "example": "Ξέρει τους στίχους του αγγλικού τραγουδιού εντελώς απ' έξω.",
+    "exampleDE": "Er kennt den Songtext des englischen Liedes komplett auswendig."
+  },
+  {
+    "front": "der Chor",
+    "back": "χορωδία",
+    "ipa": "xoroˈðia",
+    "roman": "chorodía",
+    "example": "Η εκκλησιαστική χορωδία κάνει εβδομαδιαίες πρόβες για τη γιορτινή χριστουγεννιάτικη συναυλία.",
+    "exampleDE": "Der Kirchenchor probt wöchentlich für das festliche Weihnachtskonzert."
+  },
+  {
+    "front": "die Laufschuhe",
+    "back": "παπούτσια για τρέξιμο",
+    "ipa": "paˈputsja ja ˈtreksimo",
+    "roman": "papoútsia gia tréximo",
+    "example": "Τα καλά παπούτσια για τρέξιμο απορροφούν τους κραδασμούς σε κάθε βήμα στην άσφαλτο.",
+    "exampleDE": "Gute Laufschuhe dämpfen jeden Schritt beim Joggen auf Asphalt."
+  },
+  {
+    "front": "die Trinkflasche",
+    "back": "παγούρι νερού",
+    "ipa": "paˈɣuri neˈru",
+    "roman": "pagoúri neroú",
+    "example": "Στον αθλητισμό έχω πάντα πρόχειρο ένα γεμάτο παγούρι νερού.",
+    "exampleDE": "Beim Sport habe ich immer eine gefüllte Trinkflasche griffbereit."
+  },
+  {
+    "front": "das Fitnessstudio",
+    "back": "γυμναστήριο",
+    "ipa": "ʝimnaˈstirio",
+    "roman": "gymnastírio",
+    "example": "Τρεις φορές την εβδομάδα προπονείται στα όργανα στο γυμναστήριο.",
+    "exampleDE": "Dreimal pro Woche trainiert er an den Geräten im Fitnessstudio."
+  },
+  {
+    "front": "die Gymnastikmatte",
+    "back": "στρώμα γυμναστικής",
+    "ipa": "ˈstroma ʝimnastiˈcis",
+    "roman": "stróma gymnastikís",
+    "example": "Ξετυλίγει το αντιολισθητικό στρώμα γυμναστικής για τη γιόγκα.",
+    "exampleDE": "Sie rollt ihre rutschfeste Gymnastikmatte für das Yoga aus."
+  },
+  {
+    "front": "die Liegestütze",
+    "back": "κάμψεις",
+    "ipa": "ˈkampsis",
+    "roman": "kámpseis",
+    "example": "Δέκα σωστές κάμψεις ανήκουν στην πρωινή κυκλική του προπόνηση.",
+    "exampleDE": "Zehn saubere Liegestütze gehören zu seinem morgendlichen Zirkeltraining."
+  },
+  {
+    "front": "das Seilspringen",
+    "back": "σχοινάκι",
+    "ipa": "sçiˈnaci",
+    "roman": "schoináki",
+    "example": "Το σχοινάκι είναι μια εξαιρετική άσκηση για τον συντονισμό και τη φυσική κατάσταση.",
+    "exampleDE": "Seilspringen ist eine hervorragende Übung für Koordination und Kondition."
+  },
+  {
+    "front": "der Marathon",
+    "back": "μαραθώνιος",
+    "ipa": "maraˈθonios",
+    "roman": "marathónios",
+    "example": "Επί μήνες προετοιμαζόταν ευσυνείδητα για τον πρώτο του μαραθώνιο.",
+    "exampleDE": "Monatelang bereitete er sich gewissenhaft auf seinen ersten Marathon vor."
+  },
+  {
+    "front": "der Fußballplatz",
+    "back": "γήπεδο ποδοσφαίρου",
+    "ipa": "ˈʝipeðo poðoˈsferu",
+    "roman": "gípedo podosfaírou",
+    "example": "Οι έφηβοι συναντιούνται μετά το σχολείο στο γήπεδο ποδοσφαίρου.",
+    "exampleDE": "Die Jugendlichen treffen sich nach der Schule auf dem Fußballplatz."
+  },
+  {
+    "front": "das Tor",
+    "back": "γκολ",
+    "ipa": "ɡol",
+    "roman": "gkol",
+    "example": "Στο τελευταίο λεπτό του αγώνα η επιθετικός σκόραρε το καθοριστικό γκολ.",
+    "exampleDE": "In der letzten Spielminute schoss die Stürmerin das entscheidende Tor."
+  },
+  {
+    "front": "der Schiedsrichter",
+    "back": "διαιτητής",
+    "ipa": "ðietiˈtis",
+    "roman": "diaititís",
+    "example": "Ο αμερόληπτος διαιτητής σφύριξε την έναρξη του δίκαιου αγώνα στην ώρα του.",
+    "exampleDE": "Der unparteiische Schiedsrichter pfiff das faire Spiel pünktlich an."
+  },
+  {
+    "front": "die Halbzeitpause",
+    "back": "ημίχρονο",
+    "ipa": "iˈmixrono",
+    "roman": "imíchrono",
+    "example": "Στο δεκαπεντάλεπτο ημίχρονο οι παίκτες συζητούν την τακτική.",
+    "exampleDE": "In der fünfzehnminütigen Halbzeitpause besprechen die Spieler die Taktik."
+  },
+  {
+    "front": "der Basketballkorb",
+    "back": "καλάθι μπάσκετ",
+    "ipa": "kaˈlaθi ˈbasket",
+    "roman": "kaláthi básket",
+    "example": "Με ένα στοχευμένο σουτ έστειλε την μπάλα κατευθείαν στο καλάθι.",
+    "exampleDE": "Mit einem gezielten Wurf traf er den Ball direkt in den Basketballkorb."
+  },
+  {
+    "front": "der Tennisschläger",
+    "back": "ρακέτα του τένις",
+    "ipa": "raˈceta tu ˈtenis",
+    "roman": "rakéta tou ténis",
+    "example": "Αλλάζει τις χορδές στη ρακέτα του τένις πριν από το μεγάλο τουρνουά.",
+    "exampleDE": "Sie bespannt ihren Tennisschläger vor dem großen Turnier neu."
+  },
+  {
+    "front": "die Tischtennisplatte",
+    "back": "τραπέζι πινγκ πονγκ",
+    "ipa": "traˈpezi piŋɡ poŋɡ",
+    "roman": "trapézi pingk pongk",
+    "example": "Στον κήπο υπάρχει ένα ανθεκτικό στις καιρικές συνθήκες τραπέζι πινγκ πονγκ από μπετόν.",
+    "exampleDE": "Im Garten steht eine wetterfeste Tischtennisplatte aus Beton."
+  },
+  {
+    "front": "das Turnier",
+    "back": "τουρνουά",
+    "ipa": "turnuˈa",
+    "roman": "tournouá",
+    "example": "Στο περιφερειακό αθλητικό τουρνουά συμμετέχουν πάνω από είκοσι ομάδες.",
+    "exampleDE": "An dem regionalen Sportturnier nehmen über zwanzig Teams teil."
+  },
+  {
+    "front": "das Schwimmbad",
+    "back": "κολυμβητήριο",
+    "ipa": "kolimviˈtirio",
+    "roman": "kolymvitírio",
+    "example": "Στο κλειστό κολυμβητήριο κολυμπάει είκοσι διαδρομές κάθε Τρίτη πρωί.",
+    "exampleDE": "Im Hallenbad schwimmt er jeden Dienstagmorgen zwanzig Bahnen."
+  },
+  {
+    "front": "die Schwimmbrille",
+    "back": "γυαλάκια κολύμβησης",
+    "ipa": "jaˈlacja koˈlimvisis",
+    "roman": "gialákia kolýmvisis",
+    "example": "Τα στεγανά γυαλάκια κολύμβησης προστατεύουν τα μάτια από το χλωριωμένο νερό.",
+    "exampleDE": "Eine dicht sitzende Schwimmbrille schützt die Augen vor Chlorwasser."
+  },
+  {
+    "front": "der Sprungturm",
+    "back": "βατήρας καταδύσεων",
+    "ipa": "vaˈtiras kataˈðiseon",
+    "roman": "vatíras katadýseon",
+    "example": "Με θάρρος το κορίτσι πήδηξε από τον βατήρα τριών μέτρων στην πισίνα.",
+    "exampleDE": "Mutig sprang das Mädchen vom Dreimeter-Sprungturm ins Becken."
+  },
+  {
+    "front": "das Segelboot",
+    "back": "ιστιοφόρο",
+    "ipa": "istjoˈforo",
+    "roman": "istiofóro",
+    "example": "Με ανοιγμένα πανιά το μικρό ιστιοφόρο γλιστράει πάνω στη λίμνη.",
+    "exampleDE": "Mit gesetzten Segeln gleitet das kleine Segelboot über den See."
+  },
+  {
+    "front": "die Schwimmweste",
+    "back": "σωσίβιο γιλέκο",
+    "ipa": "soˈsivio ʝiˈleko",
+    "roman": "sosívio giléko",
+    "example": "Στα ανοιχτά νερά η χρήση σωσίβιου γιλέκου είναι υποχρεωτική.",
+    "exampleDE": "Auf dem offenen Wasser ist das Tragen einer Schwimmweste Pflicht."
+  },
+  {
+    "front": "das Paddel",
+    "back": "κουπί",
+    "ipa": "kuˈpi",
+    "roman": "koupí",
+    "example": "Με ομοιόμορφες κινήσεις βυθίζει το κουπί στα ήρεμα νερά.",
+    "exampleDE": "Mit gleichmäßigen Zügen taucht er das Paddel ins ruhige Wasser."
+  }
+]
+
+with open('scripts/data_el_part3.json', 'w', encoding='utf-8') as f:
+    json.dump(part3_cards, f, ensure_ascii=False, indent=2)
+print(f"Successfully wrote {len(part3_cards)} cards to scripts/data_el_part3.json")
+

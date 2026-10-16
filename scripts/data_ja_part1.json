@@ -1,0 +1,1402 @@
+[
+  {
+    "front": "die Bettdecke",
+    "back": "掛け布団",
+    "roman": "kakebuton",
+    "example": "柔らかい掛け布団は冬にとても暖かいです。",
+    "exampleDE": "Die weiche Bettdecke hält im Winter schön warm."
+  },
+  {
+    "front": "der Wecker",
+    "back": "目覚まし時計",
+    "roman": "mezamashidokei",
+    "example": "目覚まし時計がちょうど7時に鳴ります。",
+    "exampleDE": "Der Wecker klingelt pünktlich um sieben Uhr."
+  },
+  {
+    "front": "das Schlummern",
+    "back": "スヌーズ",
+    "roman": "sunūzu",
+    "example": "最初に目覚ましが鳴った後、彼はスヌーズボタンを押します。",
+    "exampleDE": "Nach dem ersten Weckerklingeln drückt er auf die Schlummertaste."
+  },
+  {
+    "front": "das Zähneputzen",
+    "back": "歯磨き",
+    "roman": "hamigaki",
+    "example": "ていねいな歯磨きは健康な歯のために大切です。",
+    "exampleDE": "Gründliches Zähneputzen ist wichtig für gesunde Zähne."
+  },
+  {
+    "front": "sich anziehen",
+    "back": "服を着る",
+    "roman": "fuku o kiru",
+    "example": "早く服を着て、もう行かないと。",
+    "exampleDE": "Zieh dich schnell an, wir müssen los."
+  },
+  {
+    "front": "die Haarbürste",
+    "back": "ヘアブラシ",
+    "roman": "heaburashi",
+    "example": "彼女はヘアブラシで長い髪をとかします。",
+    "exampleDE": "Sie kämmt ihre langen Haare mit einer Haarbürste."
+  },
+  {
+    "front": "der Spiegel",
+    "back": "鏡",
+    "roman": "kagami",
+    "example": "彼は廊下の鏡をちらっと見ます。",
+    "exampleDE": "Er schaut kurz in den Spiegel im Flur."
+  },
+  {
+    "front": "die Routine",
+    "back": "ルーティン",
+    "roman": "rūtin",
+    "example": "決まった朝のルーティンは時間の大きな節約になります。",
+    "exampleDE": "Eine feste Morgenroutine spart viel Zeit."
+  },
+  {
+    "front": "der Mietvertrag",
+    "back": "賃貸契約",
+    "roman": "chintai keiyaku",
+    "example": "私たちは昨日、新しい賃貸契約にサインしました。",
+    "exampleDE": "Wir haben gestern den neuen Mietvertrag unterschrieben."
+  },
+  {
+    "front": "die Kaution",
+    "back": "敷金",
+    "roman": "shikikin",
+    "example": "敷金は家賃の3か月分です。",
+    "exampleDE": "Die Kaution beträgt drei Monatsmieten."
+  },
+  {
+    "front": "die Nebenkosten",
+    "back": "共益費",
+    "roman": "kyōekihi",
+    "example": "暖房費と水道代は共益費に含まれています。",
+    "exampleDE": "Heizung und Wasser sind in den Nebenkosten enthalten."
+  },
+  {
+    "front": "der Vermieter",
+    "back": "大家",
+    "roman": "ōya",
+    "example": "大家さんが壊れた暖房を修理します。",
+    "exampleDE": "Der Vermieter repariert die defekte Heizung."
+  },
+  {
+    "front": "der Mieter",
+    "back": "賃借人",
+    "roman": "chinshakunin",
+    "example": "入居者は月の初めに家賃を支払います。",
+    "exampleDE": "Der Mieter bezahlt die Miete am Anfang des Monats."
+  },
+  {
+    "front": "die Kündigung",
+    "back": "解約",
+    "roman": "kaiyaku",
+    "example": "古いアパートの解約は書面で行わなければなりません。",
+    "exampleDE": "Die Kündigung der alten Wohnung muss schriftlich erfolgen."
+  },
+  {
+    "front": "die Wohnfläche",
+    "back": "居住面積",
+    "roman": "kyojū menseki",
+    "example": "その部屋の居住面積は80平方メートルです。",
+    "exampleDE": "Die Wohnung hat eine Wohnfläche von achtzig Quadratmetern."
+  },
+  {
+    "front": "der Umzug",
+    "back": "引っ越し",
+    "roman": "hikkoshi",
+    "example": "新しい街への引っ越しはスムーズに進みました。",
+    "exampleDE": "Der Umzug in die neue Stadt verlief reibungslos."
+  },
+  {
+    "front": "das Bücherregal",
+    "back": "本棚",
+    "roman": "hondana",
+    "example": "本棚は書斎の壁際にあります。",
+    "exampleDE": "Das Bücherregal steht an der Wand im Arbeitszimmer."
+  },
+  {
+    "front": "der Kleiderschrank",
+    "back": "クローゼット",
+    "roman": "kurōzetto",
+    "example": "彼はシャツをクローゼットにきれいに掛けます。",
+    "exampleDE": "Er hängt seine Hemden ordentlich in den Kleiderschrank."
+  },
+  {
+    "front": "der Schreibtischstuhl",
+    "back": "事務用椅子",
+    "roman": "jimuyō isu",
+    "example": "座り心地のいい事務用椅子は腰の負担を和らげます。",
+    "exampleDE": "Ein bequemer Schreibtischstuhl schont den Rücken."
+  },
+  {
+    "front": "die Stehlampe",
+    "back": "フロアランプ",
+    "roman": "furoaranpu",
+    "example": "フロアランプが夜に温かい光を届けます。",
+    "exampleDE": "Die Stehlampe spendet warmes Licht am Abend."
+  },
+  {
+    "front": "der Esstisch",
+    "back": "食卓",
+    "roman": "shokutaku",
+    "example": "夜は家族みんなで大きな食卓を囲みます。",
+    "exampleDE": "Die ganze Familie sitzt abends am großen Esstisch."
+  },
+  {
+    "front": "das Sofa",
+    "back": "ソファ",
+    "roman": "sofa",
+    "example": "心地よいソファの上で、ゆったりとくつろげます。",
+    "exampleDE": "Auf dem bequemen Sofa kann man herrlich entspannen."
+  },
+  {
+    "front": "der Vorhang",
+    "back": "カーテン",
+    "roman": "kāten",
+    "example": "暗くなると、彼女はカーテンを閉めます。",
+    "exampleDE": "Sie zieht den Vorhang zu, wenn es dunkel wird."
+  },
+  {
+    "front": "der Staubsauger",
+    "back": "掃除機",
+    "roman": "sōjiki",
+    "example": "彼は新しい掃除機でカーペットに掃除機をかけます。",
+    "exampleDE": "Er saugt den Teppich mit dem neuen Staubsauger."
+  },
+  {
+    "front": "das Bügelbrett",
+    "back": "アイロン台",
+    "roman": "airondai",
+    "example": "アイロン台は折りたたまれて押し入れに置いてあります。",
+    "exampleDE": "Das Bügelbrett steht zusammengeklappt im Schrank."
+  },
+  {
+    "front": "das Bügeleisen",
+    "back": "アイロン",
+    "roman": "airon",
+    "example": "アイロンはとても熱くなります。",
+    "exampleDE": "Das Bügeleisen wird sehr heiß."
+  },
+  {
+    "front": "der Wischmop",
+    "back": "モップ",
+    "roman": "moppu",
+    "example": "彼女はモップでキッチンの床を拭きます。",
+    "exampleDE": "Sie wischt den Küchenboden mit dem Wischmop."
+  },
+  {
+    "front": "das Spülmittel",
+    "back": "食器用洗剤",
+    "roman": "shokkiyō senzai",
+    "example": "食器には洗剤が数滴あれば十分です。",
+    "exampleDE": "Ein paar Tropfen Spülmittel genügen für das Geschirr."
+  },
+  {
+    "front": "die Mülltonne",
+    "back": "ゴミ箱",
+    "roman": "gomibako",
+    "example": "ゴミ箱を通りまで出してください。",
+    "exampleDE": "Bring bitte die Mülltonne an die Straße."
+  },
+  {
+    "front": "der Wäscheständer",
+    "back": "物干し台",
+    "roman": "monohoshidai",
+    "example": "濡れた洗濯物は物干し台の上で乾きます。",
+    "exampleDE": "Die nasse Wäsche trocknet auf dem Wäscheständer."
+  },
+  {
+    "front": "die Glühbirne",
+    "back": "電球",
+    "roman": "denkyū",
+    "example": "廊下の切れた電球を交換しなければなりません。",
+    "exampleDE": "Wir müssen die kaputte Glühbirne im Flur auswechseln."
+  },
+  {
+    "front": "der Schraubenzieher",
+    "back": "ドライバー",
+    "roman": "doraibā",
+    "example": "彼はドライバーで緩んだねじを締めます。",
+    "exampleDE": "Mit dem Schraubenzieher zieht er die lose Schraube fest."
+  },
+  {
+    "front": "die Zange",
+    "back": "ペンチ",
+    "roman": "penchi",
+    "example": "彼はペンチで針金をしっかりつかみます。",
+    "exampleDE": "Er hält den Draht mit einer Zange fest."
+  },
+  {
+    "front": "die Bohrmaschine",
+    "back": "電動ドリル",
+    "roman": "dendō doriru",
+    "example": "ドリルで壁に穴を開けます。",
+    "exampleDE": "Die Bohrmaschine bohrt ein Loch in die Wand."
+  },
+  {
+    "front": "der Handwerker",
+    "back": "職人",
+    "roman": "shokunin",
+    "example": "職人さんは明日の朝8時に来ます。",
+    "exampleDE": "Der Handwerker kommt morgen früh um acht."
+  },
+  {
+    "front": "der Pinsel",
+    "back": "はけ",
+    "roman": "hake",
+    "example": "彼女は幅の広いはけで木製のベンチを塗ります。",
+    "exampleDE": "Sie streicht die Holzbank mit einem breiten Pinsel."
+  },
+  {
+    "front": "reparieren",
+    "back": "修理する",
+    "roman": "shūri suru",
+    "example": "壊れた自転車を修理してもらえますか。",
+    "exampleDE": "Kannst du das kaputte Fahrrad bitte reparieren?"
+  },
+  {
+    "front": "der Werkzeugkasten",
+    "back": "工具箱",
+    "roman": "kōgubako",
+    "example": "すべての工具が工具箱の中にすぐに使える状態で入っています。",
+    "exampleDE": "Alle Werkzeuge liegen griffbereit im Werkzeugkasten."
+  },
+  {
+    "front": "das Schneidebrett",
+    "back": "まな板",
+    "roman": "manaita",
+    "example": "まな板の上で玉ねぎを切ってください。",
+    "exampleDE": "Schneide die Zwiebel bitte auf dem Schneidebrett."
+  },
+  {
+    "front": "der Kochtopf",
+    "back": "鍋",
+    "roman": "nabe",
+    "example": "コンロの上の大きな鍋でスープが煮えています。",
+    "exampleDE": "Die Suppe kocht im großen Kochtopf auf dem Herd."
+  },
+  {
+    "front": "die Bratpfanne",
+    "back": "フライパン",
+    "roman": "furaipan",
+    "example": "熱いフライパンで野菜を炒めます。",
+    "exampleDE": "In der heißen Bratpfanne brät das Gemüse."
+  },
+  {
+    "front": "der Wasserkocher",
+    "back": "電気ケトル",
+    "roman": "denki ketoru",
+    "example": "電気ケトルは2分でお茶用のお湯を沸かします。",
+    "exampleDE": "Der Wasserkocher kocht das Teewasser in zwei Minuten."
+  },
+  {
+    "front": "der Backofen",
+    "back": "オーブン",
+    "roman": "ōbun",
+    "example": "ケーキはオーブンで30分間焼きます。",
+    "exampleDE": "Der Kuchen backt eine halbe Stunde im Backofen."
+  },
+  {
+    "front": "das Rezept",
+    "back": "レシピ",
+    "roman": "reshipi",
+    "example": "このレシピは私の祖母が考案しました。",
+    "exampleDE": "Dieses Rezept hat meine Großmutter erfunden."
+  },
+  {
+    "front": "die Zutat",
+    "back": "材料",
+    "roman": "zairyō",
+    "example": "新鮮なハーブがソースの一番大切な材料です。",
+    "exampleDE": "Frische Kräuter sind die wichtigste Zutat für die Soße."
+  },
+  {
+    "front": "fein hacken",
+    "back": "みじん切りにする",
+    "roman": "mijingiri ni suru",
+    "example": "彼女は鋭い包丁で玉ねぎとパセリをみじん切りにします。",
+    "exampleDE": "Sie hackt die Zwiebeln und Petersilie mit einem scharfen Messer fein."
+  },
+  {
+    "front": "das Meersalz",
+    "back": "海塩",
+    "roman": "kaien",
+    "example": "ひとつまみの海塩がスープの味を引き立てます。",
+    "exampleDE": "Eine Prise Meersalz hebt den Geschmack der Suppe."
+  },
+  {
+    "front": "der schwarze Pfeffer",
+    "back": "黒コショウ",
+    "roman": "kuro koshō",
+    "example": "挽きたての黒コショウは素晴らしい香りがします。",
+    "exampleDE": "Frisch gemahlener schwarzer Pfeffer duftet herrlich."
+  },
+  {
+    "front": "das Olivenöl",
+    "back": "オリーブオイル",
+    "roman": "orību oiru",
+    "example": "コールドプレスのオリーブオイルはサラダによく合います。",
+    "exampleDE": "Kaltgepresstes Olivenöl passt hervorragend zum Salat."
+  },
+  {
+    "front": "der Knoblauch",
+    "back": "ニンニク",
+    "roman": "ninniku",
+    "example": "ニンニク2片が料理に豊かな風味を加えます。",
+    "exampleDE": "Zwei Zehen Knoblauch verleihen dem Gericht Aroma."
+  },
+  {
+    "front": "die Petersilie",
+    "back": "パセリ",
+    "roman": "paseri",
+    "example": "出す直前に刻みたてのパセリを散らします。",
+    "exampleDE": "Frisch gehackte Petersilie kommt vor dem Servieren darauf."
+  },
+  {
+    "front": "das Basilikum",
+    "back": "バジル",
+    "roman": "bajiru",
+    "example": "新鮮なバジルはトマトと相性抜群です。",
+    "exampleDE": "Frisches Basilikum passt perfekt zu Tomaten."
+  },
+  {
+    "front": "der Zimt",
+    "back": "シナモン",
+    "roman": "shinamon",
+    "example": "冬にはシナモンをひとつまみ入れたお茶をよく飲みます。",
+    "exampleDE": "Im Winter trinken wir gerne Tee mit einer Prise Zimt."
+  },
+  {
+    "front": "das Vollkornbrot",
+    "back": "全粒粉パン",
+    "roman": "zenryūfun pan",
+    "example": "焼きたての全粒粉パンは香ばしく腹持ちがいいです。",
+    "exampleDE": "Frisches Vollkornbrot schmeckt kräftig und hält lange satt."
+  },
+  {
+    "front": "das Brötchen",
+    "back": "丸パン",
+    "roman": "marupan",
+    "example": "日曜日にはパン屋で温かい丸パンを買います。",
+    "exampleDE": "Sonntags holen wir warme Brötchen beim Bäcker."
+  },
+  {
+    "front": "die Butter",
+    "back": "バター",
+    "roman": "batā",
+    "example": "パンにバターを少し塗ってください。",
+    "exampleDE": "Streich bitte etwas Butter auf die Scheibe Brot."
+  },
+  {
+    "front": "die Marmelade",
+    "back": "ジャム",
+    "roman": "jamu",
+    "example": "イチゴジャムは私の一番好きなパンのトッピングです。",
+    "exampleDE": "Erdbeermarmelade ist mein liebster Brotaufstrich."
+  },
+  {
+    "front": "das Müsli",
+    "back": "ミューズリー",
+    "roman": "myūzurī",
+    "example": "朝は新鮮なフルーツと一緒にミューズリーを好んで食べます。",
+    "exampleDE": "Morgens esse ich gerne Müsli mit frischem Obst."
+  },
+  {
+    "front": "der Joghurt",
+    "back": "ヨーグルト",
+    "roman": "yōguruto",
+    "example": "プレーンヨーグルトに少しハチミツを入れるととてもおいしいです。",
+    "exampleDE": "Naturjoghurt schmeckt besonders gut mit etwas Honig."
+  },
+  {
+    "front": "das gekochte Ei",
+    "back": "ゆで卵",
+    "roman": "yudetamago",
+    "example": "半熟のゆで卵は日曜日の朝食に欠かせません。",
+    "exampleDE": "Ein weich gekochtes Ei gehört zum Sonntagsfrühstück."
+  },
+  {
+    "front": "der Orangensaft",
+    "back": "オレンジジュース",
+    "roman": "orenji jūsu",
+    "example": "搾りたてのオレンジジュースにはビタミンがたくさん含まれています。",
+    "exampleDE": "Frisch gepresster Orangensaft enthält viele Vitamine."
+  },
+  {
+    "front": "die Reservierung",
+    "back": "予約",
+    "roman": "yoyaku",
+    "example": "ミュラーという名前で予約しています。",
+    "exampleDE": "Ich habe eine Reservierung auf den Namen Müller."
+  },
+  {
+    "front": "die Speisekarte",
+    "back": "メニュー",
+    "roman": "menyū",
+    "example": "メニューを見せてもらえますか。",
+    "exampleDE": "Dürfen wir bitte die Speisekarte sehen?"
+  },
+  {
+    "front": "die Vorspeise",
+    "back": "前菜",
+    "roman": "zensai",
+    "example": "前菜として小さなサラダを注文します。",
+    "exampleDE": "Als Vorspeise bestellen wir einen kleinen Salat."
+  },
+  {
+    "front": "das Hauptgericht",
+    "back": "メインディッシュ",
+    "roman": "mein disshu",
+    "example": "メインディッシュは大きな皿に熱々の状態で出されます。",
+    "exampleDE": "Das Hauptgericht wird heiß auf einem großen Teller serviert."
+  },
+  {
+    "front": "die Nachspeise",
+    "back": "デザート",
+    "roman": "dezāto",
+    "example": "食後にデザートはいかがですか。",
+    "exampleDE": "Möchten Sie nach dem Essen noch eine Nachspeise?"
+  },
+  {
+    "front": "die Rechnung",
+    "back": "お会計",
+    "roman": "okaikei",
+    "example": "お会計をお願いします。",
+    "exampleDE": "Wir möchten bitte zahlen, bringen Sie uns die Rechnung."
+  },
+  {
+    "front": "das Trinkgeld",
+    "back": "チップ",
+    "roman": "chippu",
+    "example": "親切なウェイターは十分なチップをもらう価値がありました。",
+    "exampleDE": "Der freundliche Kellner hat ein gutes Trinkgeld verdient."
+  },
+  {
+    "front": "die Spezialität des Hauses",
+    "back": "看板料理",
+    "roman": "kamban ryōri",
+    "example": "ウェイターは看板料理として自家製パスタを勧めています。",
+    "exampleDE": "Der Kellner empfiehlt die hausgemachte Pasta als Spezialität des Hauses."
+  },
+  {
+    "front": "der Kaffee",
+    "back": "コーヒー",
+    "roman": "kōhī",
+    "example": "一杯の温かいコーヒーが眠気を吹き飛ばしてくれます。",
+    "exampleDE": "Eine Tasse heißer Kaffee vertreibt die Müdigkeit."
+  },
+  {
+    "front": "der Cappuccino",
+    "back": "カプチーノ",
+    "roman": "kapuchīno",
+    "example": "このカプチーノにはとてもクリーミーな泡がのっています。",
+    "exampleDE": "Der Cappuccino hat einen wunderbar cremigen Schaum."
+  },
+  {
+    "front": "der Kräutertee",
+    "back": "ハーブティー",
+    "roman": "hābutī",
+    "example": "夜には温かいハーブティーを飲むのが好きです。",
+    "exampleDE": "Abends trinke ich gerne eine Tasse warmen Kräutertee."
+  },
+  {
+    "front": "das Mineralwasser",
+    "back": "ミネラルウォーター",
+    "roman": "mineraru wōtā",
+    "example": "冷たい炭酸水はすっきり爽やかです。",
+    "exampleDE": "Ein Glas kühles Mineralwasser mit Kohlensäure erfrischt."
+  },
+  {
+    "front": "das Stück Kuchen",
+    "back": "ケーキ一切れ",
+    "roman": "kēki hitokire",
+    "example": "午後はケーキ一切れを味わいます。",
+    "exampleDE": "Am Nachmittag gönnen wir uns ein Stück Kuchen."
+  },
+  {
+    "front": "die Barista",
+    "back": "バリスタ",
+    "roman": "barisuta",
+    "example": "バリスタはエスプレッソを芸術的に淹れます。",
+    "exampleDE": "Die Barista bereitet den Espresso kunstvoll zu."
+  },
+  {
+    "front": "die Stammkundin",
+    "back": "常連客",
+    "roman": "jōrenkyaku",
+    "example": "彼女は角にあるこの居心地のいいカフェの常連客です。",
+    "exampleDE": "Sie ist Stammkundin in diesem gemütlichen Café an der Ecke."
+  },
+  {
+    "front": "der Einkaufswagen",
+    "back": "ショッピングカート",
+    "roman": "shoppingu kāto",
+    "example": "ショッピングカート用のコインを忘れずに持ってきてください。",
+    "exampleDE": "Nimm bitte eine Münze für den Einkaufswagen mit."
+  },
+  {
+    "front": "der Einkaufszettel",
+    "back": "買い物メモ",
+    "roman": "kaimono memo",
+    "example": "私は大切なものをすべて買い物メモに書き留めました。",
+    "exampleDE": "Ich habe alle wichtigen Dinge auf dem Einkaufszettel notiert."
+  },
+  {
+    "front": "das Sonderangebot",
+    "back": "特売品",
+    "roman": "tokubaihin",
+    "example": "今日は新鮮なイチゴが特売になっています。",
+    "exampleDE": "Frische Erdbeeren sind heute im Sonderangebot."
+  },
+  {
+    "front": "die Kasse",
+    "back": "レジ",
+    "roman": "reji",
+    "example": "レジの前には客の長い列ができています。",
+    "exampleDE": "An der Kasse steht eine lange Schlange von Kunden."
+  },
+  {
+    "front": "der Kassenbon",
+    "back": "レシート",
+    "roman": "reshīto",
+    "example": "レシートは領収書として大切に保管してください。",
+    "exampleDE": "Bewahren Sie den Kassenbon als Beleg gut auf."
+  },
+  {
+    "front": "die Stofftasche",
+    "back": "エコバッグ",
+    "roman": "ekobaggu",
+    "example": "私たちは買ったものを布製のエコバッグに入れて運びます。",
+    "exampleDE": "Wir transportieren unsere Einkäufe in einer Stofftasche."
+  },
+  {
+    "front": "das Haltbarkeitsdatum",
+    "back": "賞味期限",
+    "roman": "shōmi kigen",
+    "example": "パッケージの賞味期限を必ず確認してください。",
+    "exampleDE": "Prüfen Sie immer das Haltbarkeitsdatum auf der Verpackung."
+  },
+  {
+    "front": "die Frischetheke",
+    "back": "対面売り場",
+    "roman": "taimen uriba",
+    "example": "対面売り場には地元のチーズが並んでいます。",
+    "exampleDE": "An der Frischetheke gibt es regionalen Käse."
+  },
+  {
+    "front": "anprobieren",
+    "back": "試着する",
+    "roman": "shichaku suru",
+    "example": "この紺色のジャケットを試着してみたいです。",
+    "exampleDE": "Ich möchte diese dunkelblaue Jacke gerne anprobieren."
+  },
+  {
+    "front": "die Umkleidekabine",
+    "back": "試着室",
+    "roman": "shichakushitsu",
+    "example": "あちらの左手に空いている試着室があります。",
+    "exampleDE": "Dort drüben links ist eine freie Umkleidekabine."
+  },
+  {
+    "front": "die Konfektionsgröße",
+    "back": "服のサイズ",
+    "roman": "fuku no saizu",
+    "example": "普段はどの服のサイズを着ていますか。",
+    "exampleDE": "Welche Konfektionsgröße tragen Sie normalerweise?"
+  },
+  {
+    "front": "passen",
+    "back": "ぴったり合う",
+    "roman": "pittari au",
+    "example": "そのズボンは私にぴったり合います。",
+    "exampleDE": "Die Hose passt mir wie angegossen."
+  },
+  {
+    "front": "zu eng",
+    "back": "きつすぎる",
+    "roman": "kitsusugiru",
+    "example": "このセーターは肩のあたりが残念ながらきつすぎます。",
+    "exampleDE": "Dieser Pullover ist mir an den Schultern leider zu eng."
+  },
+  {
+    "front": "zu weit",
+    "back": "緩すぎる",
+    "roman": "yurusugiru",
+    "example": "スカートが少し緩すぎて、歩くと下がってきます。",
+    "exampleDE": "Der Rock ist etwas zu weit und rutscht beim Gehen."
+  },
+  {
+    "front": "der Schnitt",
+    "back": "仕立て",
+    "roman": "shitate",
+    "example": "このモダンな仕立てが特に気に入っています。",
+    "exampleDE": "Der moderne Schnitt gefällt mir besonders gut."
+  },
+  {
+    "front": "die Baumwolle",
+    "back": "綿",
+    "roman": "momen",
+    "example": "このTシャツは柔らかい純綿でできています。",
+    "exampleDE": "Dieses T-Shirt besteht aus reiner, weicher Baumwolle."
+  },
+  {
+    "front": "die Schurwolle",
+    "back": "バージンウール",
+    "roman": "bājin ūru",
+    "example": "バージンウールの厚手セーターは冬に暖かく過ごせます。",
+    "exampleDE": "Der dicke Pullover aus Schurwolle hält im Winter warm."
+  },
+  {
+    "front": "die Seide",
+    "back": "絹",
+    "roman": "kinu",
+    "example": "絹のスカーフは驚くほど柔らかい手触りです。",
+    "exampleDE": "Das Halstuch aus Seide fühlt sich herrlich weich an."
+  },
+  {
+    "front": "das Leder",
+    "back": "革",
+    "roman": "kawa",
+    "example": "その丈夫なジャケットは本革で作られています。",
+    "exampleDE": "Die robuste Jacke ist aus echtem Leder gefertigt."
+  },
+  {
+    "front": "gestreift",
+    "back": "しま模様の",
+    "roman": "shimamoyō no",
+    "example": "彼は今日、青と白のしま模様のシャツを着ています。",
+    "exampleDE": "Er trägt heute ein blau-weiß gestreiftes Hemd."
+  },
+  {
+    "front": "kariert",
+    "back": "チェック柄の",
+    "roman": "chekku-gara no",
+    "example": "チェック柄はフランネルシャツによく似合います。",
+    "exampleDE": "Das karierte Muster passt hervorragend zum Holzfällerhemd."
+  },
+  {
+    "front": "einfarbig",
+    "back": "無地の",
+    "roman": "muji no",
+    "example": "シンプルな無地のワンピースはいつも上品に見えます。",
+    "exampleDE": "Ein schlichtes, einfarbiges Kleid wirkt immer elegant."
+  },
+  {
+    "front": "der Reißverschluss",
+    "back": "ファスナー",
+    "roman": "fasunā",
+    "example": "私のジャケットのファスナーは時々引っかかります。",
+    "exampleDE": "Der Reißverschluss an meiner Jacke klemmt manchmal."
+  },
+  {
+    "front": "die Schnürsenkel",
+    "back": "靴ひも",
+    "roman": "kutsuhimo",
+    "example": "つまずかないように靴ひもを結んでください。",
+    "exampleDE": "Binde dir die Schnürsenkel zu, damit du nicht stolperst."
+  },
+  {
+    "front": "die Lederschuhe",
+    "back": "革靴",
+    "roman": "kawagutsu",
+    "example": "お祝いの席には磨かれた革靴を履きます。",
+    "exampleDE": "Zu festlichen Anlässen trägt er polierte Lederschuhe."
+  },
+  {
+    "front": "die Turnschuhe",
+    "back": "スニーカー",
+    "roman": "sunīkā",
+    "example": "公園を走るには履き心地のいいスニーカーが必要です。",
+    "exampleDE": "Zum Laufen im Park brauche ich bequeme Turnschuhe."
+  },
+  {
+    "front": "die Handtasche",
+    "back": "ハンドバッグ",
+    "roman": "handobaggu",
+    "example": "彼女は大きなハンドバッグの中で鍵を探しています。",
+    "exampleDE": "Sie sucht ihren Schlüssel in der großen Handtasche."
+  },
+  {
+    "front": "der Ledergürtel",
+    "back": "革のベルト",
+    "roman": "kawa no beruto",
+    "example": "黒い革のベルトがズボンをしっかり留めています。",
+    "exampleDE": "Ein schwarzer Ledergürtel hält die Hose fest."
+  },
+  {
+    "front": "der Regenschirm",
+    "back": "傘",
+    "roman": "kasa",
+    "example": "空が曇ってきたので傘を持っていきなさい。",
+    "exampleDE": "Nimm einen Regenschirm mit, der Himmel zieht sich zu."
+  },
+  {
+    "front": "die Sonnenbrille",
+    "back": "サングラス",
+    "roman": "sangurasu",
+    "example": "夏には良いサングラスが目を守ってくれます。",
+    "exampleDE": "Im Sommer schützt eine gute Sonnenbrille die Augen."
+  },
+  {
+    "front": "das Girokonto",
+    "back": "普通預金口座",
+    "roman": "futsū yokin kōza",
+    "example": "私の給料は毎月普通預金口座に振り込まれます。",
+    "exampleDE": "Mein Gehalt wird monatlich auf mein Girokonto überwiesen."
+  },
+  {
+    "front": "die Überweisung",
+    "back": "銀行振込",
+    "roman": "ginkō furikomi",
+    "example": "オンラインバンキングで簡単に振込を行います。",
+    "exampleDE": "Ich mache die Überweisung bequem per Online-Banking."
+  },
+  {
+    "front": "der Dauerauftrag",
+    "back": "定期送金",
+    "roman": "teiki sōkin",
+    "example": "家賃は毎月自動送金で支払っています。",
+    "exampleDE": "Die Miete bezahle ich jeden Monat per Dauerauftrag."
+  },
+  {
+    "front": "der Geldautomat",
+    "back": "ATM",
+    "roman": "ē-tī-emu",
+    "example": "このATMでは手数料なしでお金を引き出せます。",
+    "exampleDE": "An diesem Geldautomaten kann man gebührenfrei abheben."
+  },
+  {
+    "front": "die Geheimzahl",
+    "back": "暗証番号",
+    "roman": "anshō bangō",
+    "example": "4桁の暗証番号は絶対に他人に教えてはいけません。",
+    "exampleDE": "Gib deine vierstellige Geheimzahl niemals an Fremde weiter."
+  },
+  {
+    "front": "der Kontoauszug",
+    "back": "取引明細書",
+    "roman": "torihiki meisaisho",
+    "example": "明細書にはすべての収入と支出が記載されています。",
+    "exampleDE": "Auf dem Kontoauszug stehen alle Einnahmen und Ausgaben."
+  },
+  {
+    "front": "das Sparguthaben",
+    "back": "貯蓄",
+    "roman": "chochiku",
+    "example": "彼女は毎月決まった金額を貯蓄に回しています。",
+    "exampleDE": "Sie legt jeden Monat einen festen Betrag als Sparguthaben an."
+  },
+  {
+    "front": "die Zinsen",
+    "back": "利息",
+    "roman": "risoku",
+    "example": "銀行は現在、定期預金に適度な利息を支払っています。",
+    "exampleDE": "Die Bank zahlt derzeit moderate Zinsen auf das Festgeld."
+  },
+  {
+    "front": "das Bargeld",
+    "back": "現金",
+    "roman": "genkin",
+    "example": "現金をお持ちですか、それともカードで払われますか。",
+    "exampleDE": "Haben Sie etwas Bargeld dabei oder zahlen Sie mit Karte?"
+  },
+  {
+    "front": "die Kreditkarte",
+    "back": "クレジットカード",
+    "roman": "kurejitto kādo",
+    "example": "旅行中の買い物はたいていクレジットカードで支払います。",
+    "exampleDE": "Auf Reisen bezahle ich Einkäufe meist mit Kreditkarte."
+  },
+  {
+    "front": "kontaktlos",
+    "back": "非接触で",
+    "roman": "hisesshoku de",
+    "example": "50ユーロ未満の金額は非接触で決済できます。",
+    "exampleDE": "Beträge unter fünfzig Euro kann man kontaktlos bezahlen."
+  },
+  {
+    "front": "die Münze",
+    "back": "硬貨",
+    "roman": "kōka",
+    "example": "彼は駐車券の券売機に2ユーロ硬貨を投入します。",
+    "exampleDE": "Er wirft eine Zwei-Euro-Münze in den Parkscheinautomaten."
+  },
+  {
+    "front": "der Geldschein",
+    "back": "紙幣",
+    "roman": "shihei",
+    "example": "彼女は10ユーロ紙幣を丁寧に折りたたみます。",
+    "exampleDE": "Sie faltet den Zehn-Euro-Geldschein sorgfältig zusammen."
+  },
+  {
+    "front": "das Wechselgeld",
+    "back": "お釣り",
+    "roman": "otsuri",
+    "example": "レジでお釣りを忘れないでください。",
+    "exampleDE": "Vergessen Sie bitte nicht Ihr Wechselgeld an der Kasse."
+  },
+  {
+    "front": "der Wechselkurs",
+    "back": "為替レート",
+    "roman": "kawase rēto",
+    "example": "海外旅行の前に最新の為替レートを確認します。",
+    "exampleDE": "Vor der Auslandsreise prüfen wir den aktuellen Wechselkurs."
+  },
+  {
+    "front": "das Paket",
+    "back": "小包",
+    "roman": "kozutsumi",
+    "example": "配達員が重い小包を玄関まで届けてくれます。",
+    "exampleDE": "Der Bote liefert das schwere Paket an die Haustür."
+  },
+  {
+    "front": "der Briefumschlag",
+    "back": "封筒",
+    "roman": "fūtō",
+    "example": "彼女は手紙を白い封筒に入れます。",
+    "exampleDE": "Sie steckt den Brief in einen weißen Briefumschlag."
+  },
+  {
+    "front": "die Briefmarke",
+    "back": "切手",
+    "roman": "kitte",
+    "example": "手紙の右上に切手を貼ってください。",
+    "exampleDE": "Kleb bitte eine Briefmarke oben rechts auf den Brief."
+  },
+  {
+    "front": "der Absender",
+    "back": "差出人",
+    "roman": "sashidashinin",
+    "example": "封筒の左上に差出人の住所が書かれています。",
+    "exampleDE": "Oben links auf dem Kuvert steht die Adresse des Absenders."
+  },
+  {
+    "front": "der Empfänger",
+    "back": "受取人",
+    "roman": "uketorinin",
+    "example": "小包は指定された受取人宛てです。",
+    "exampleDE": "Das Päckchen ist für den angegebenen Empfänger bestimmt."
+  },
+  {
+    "front": "die Packstation",
+    "back": "宅配ロッカー",
+    "roman": "takuhai rokkā",
+    "example": "仕事帰りに宅配ロッカーで荷物を受け取ります。",
+    "exampleDE": "Ich hole meine Sendung nach Feierabend an der Packstation ab."
+  },
+  {
+    "front": "das Einschreiben",
+    "back": "書留",
+    "roman": "kakitome",
+    "example": "重要な書類は書留で送るのが最も安全です。",
+    "exampleDE": "Wichtige Dokumente versendet man am sichersten per Einschreiben."
+  },
+  {
+    "front": "die Postleitzahl",
+    "back": "郵便番号",
+    "roman": "yūbin bangō",
+    "example": "5桁の郵便番号を入力してください。",
+    "exampleDE": "Geben Sie bitte Ihre fünfstellige Postleitzahl an."
+  },
+  {
+    "front": "die Zahnpasta",
+    "back": "歯磨き粉",
+    "roman": "hamigakiko",
+    "example": "この歯磨き粉は虫歯を効果的に予防します。",
+    "exampleDE": "Diese Zahnpasta schützt wirksam vor Karies."
+  },
+  {
+    "front": "das Duschgel",
+    "back": "ボディソープ",
+    "roman": "bodi sōpu",
+    "example": "そのボディソープはさわやかなレモンのいい香りがします。",
+    "exampleDE": "Das Duschgel duftet angenehm nach frischen Zitronen."
+  },
+  {
+    "front": "das Shampoo",
+    "back": "シャンプー",
+    "roman": "shampū",
+    "example": "刺激の少ないシャンプーが頭皮と髪をいたわります。",
+    "exampleDE": "Ein mildes Shampoo pflegt die Kopfhaut und das Haar."
+  },
+  {
+    "front": "die Seife",
+    "back": "石鹸",
+    "roman": "sekken",
+    "example": "温かいお湯と石鹸で手をしっかり洗いなさい。",
+    "exampleDE": "Wasch dir die Hände gründlich mit warmem Wasser und Seife."
+  },
+  {
+    "front": "die Feuchtigkeitscreme",
+    "back": "保湿クリーム",
+    "roman": "hoshitsu kurīmu",
+    "example": "シャワーを浴びた後、彼女は保湿クリームを塗ります。",
+    "exampleDE": "Nach dem Duschen trägt sie eine feuchtigkeitsspendende Creme auf."
+  },
+  {
+    "front": "das Deodorant",
+    "back": "デオドラント",
+    "roman": "deodoranto",
+    "example": "良いデオドラントは一日中さわやかさを保ちます。",
+    "exampleDE": "Ein gutes Deodorant sorgt den ganzen Tag für Frische."
+  },
+  {
+    "front": "das Taschentuch",
+    "back": "ポケットティッシュ",
+    "roman": "poketto tisshu",
+    "example": "ティッシュを1枚持っていますか。",
+    "exampleDE": "Hast du ein Papiertaschentuch für mich?"
+  },
+  {
+    "front": "der Rasierer",
+    "back": "かみそり",
+    "roman": "kamisori",
+    "example": "彼はかみそりの刃を定期的に交換します。",
+    "exampleDE": "Er wechselt regelmäßig die Klingen an seinem Rasierer."
+  },
+  {
+    "front": "der Rasierschaum",
+    "back": "シェービングフォーム",
+    "roman": "shēbingu fōmu",
+    "example": "頬にシェービングフォームを優しく広げてください。",
+    "exampleDE": "Verteile den Rasierschaum sanft auf den Wangen."
+  },
+  {
+    "front": "die Nagelschere",
+    "back": "爪切りばさみ",
+    "roman": "tsumekiribasami",
+    "example": "小さな爪切りばさみで爪をきれいに切ります。",
+    "exampleDE": "Mit einer kleinen Nagelschere schneidet man Fingernägel präzise."
+  },
+  {
+    "front": "die Nagelfeile",
+    "back": "爪やすり",
+    "roman": "tsumeyasuri",
+    "example": "彼女は爪やすりで丁寧に爪を整えます。",
+    "exampleDE": "Sie glättet ihre Nägel vorsichtig mit einer Nagelfeile."
+  },
+  {
+    "front": "die Sonnencreme",
+    "back": "日焼け止め",
+    "roman": "hiyakedome",
+    "example": "休暇中は定期的に日焼け止めを塗ります。",
+    "exampleDE": "Im Urlaub cremen wir uns regelmäßig mit Sonnencreme ein."
+  },
+  {
+    "front": "der Lippenbalsam",
+    "back": "リップクリーム",
+    "roman": "rippukurīmu",
+    "example": "冬はリップクリームが唇の荒れを防ぎます。",
+    "exampleDE": "Im Winter schützt Lippenbalsam vor spröden Lippen."
+  },
+  {
+    "front": "das Wattepad",
+    "back": "コットン",
+    "roman": "kotton",
+    "example": "メイクを落とすために柔らかいコットンを使います。",
+    "exampleDE": "Zum Abschminken verwendet sie ein weiches Wattepad."
+  },
+  {
+    "front": "das Wattestäbchen",
+    "back": "綿棒",
+    "roman": "membō",
+    "example": "綿棒は洗面所の棚にしまってあります。",
+    "exampleDE": "Wattestäbchen gehören in den Badezimmerschrank."
+  },
+  {
+    "front": "der Umtausch",
+    "back": "交換",
+    "roman": "kōkan",
+    "example": "14日以内なら商品の交換が可能です。",
+    "exampleDE": "Ein Umtausch ist innerhalb von vierzehn Tagen möglich."
+  },
+  {
+    "front": "die Reklamation",
+    "back": "苦情",
+    "roman": "kujō",
+    "example": "不具合があったため、客は苦情を申し立てました。",
+    "exampleDE": "Wegen eines Mangels reichte der Kunde eine Reklamation ein."
+  },
+  {
+    "front": "die Garantie",
+    "back": "保証",
+    "roman": "hoshō",
+    "example": "この電化製品には2年間のメーカー保証が付いています。",
+    "exampleDE": "Auf dieses Elektrogerät gibt es zwei Jahre Herstellergarantie."
+  },
+  {
+    "front": "die Rückerstattung",
+    "back": "返金",
+    "roman": "henkin",
+    "example": "金額はお客様のアカウントに返金されます。",
+    "exampleDE": "Der Betrag wird Ihnen als Rückerstattung gutgeschrieben."
+  },
+  {
+    "front": "der Rabatt",
+    "back": "割引",
+    "roman": "waribiki",
+    "example": "この会員カードで10パーセントの割引が受けられます。",
+    "exampleDE": "Mit dieser Kundenkarte erhalten Sie zehn Prozent Rabatt."
+  },
+  {
+    "front": "das Schnäppchen",
+    "back": "お買い得品",
+    "roman": "okaidokuhin",
+    "example": "この上質なコートは本当にお買い得でした。",
+    "exampleDE": "Dieser hochwertige Mantel war ein echtes Schnäppchen."
+  },
+  {
+    "front": "die Beschwerde",
+    "back": "クレーム",
+    "roman": "kurēmu",
+    "example": "その苦情は経営陣によって調査されました。",
+    "exampleDE": "Die Beschwerde wurde von der Geschäftsleitung geprüft."
+  },
+  {
+    "front": "die Kopfschmerzen",
+    "back": "頭痛",
+    "roman": "zutsū",
+    "example": "長い一日の仕事の後、軽い頭痛がします。",
+    "exampleDE": "Nach dem langen Arbeitstag habe ich leichte Kopfschmerzen."
+  },
+  {
+    "front": "die Halsschmerzen",
+    "back": "喉の痛み",
+    "roman": "nodo no itami",
+    "example": "ハチミツ入りの温かいカモミールティーが喉の痛みを和らげます。",
+    "exampleDE": "Warmer Kamillentee mit Honig lindert die Halsschmerzen."
+  },
+  {
+    "front": "die Magenschmerzen",
+    "back": "胃痛",
+    "roman": "itsū",
+    "example": "脂っこい食べ物は彼によく胃痛を引き起こします。",
+    "exampleDE": "Fettes Essen verursacht bei ihm oft Magenschmerzen."
+  },
+  {
+    "front": "der Schwindel",
+    "back": "めまい",
+    "roman": "memai",
+    "example": "急に立ち上がったとき、彼女は一瞬めまいを感じました。",
+    "exampleDE": "Beim schnellen Aufstehen überkam sie ein kurzer Schwindel."
+  },
+  {
+    "front": "die Übelkeit",
+    "back": "吐き気",
+    "roman": "hakike",
+    "example": "新鮮な空気は突然の吐き気にとても効果があります。",
+    "exampleDE": "Frische Luft hilft meist gut gegen plötzliche Übelkeit."
+  },
+  {
+    "front": "der Husten",
+    "back": "咳",
+    "roman": "seki",
+    "example": "彼は3日前から乾いたしつこい咳が出ています。",
+    "exampleDE": "Er hat seit drei Tagen einen trockenen, hartnäckigen Husten."
+  },
+  {
+    "front": "der Schnupfen",
+    "back": "鼻風邪",
+    "roman": "hanakaze",
+    "example": "ひどい鼻風邪のときは鼻呼吸が苦しくなります。",
+    "exampleDE": "Bei starkem Schnupfen fällt das Atmen durch die Nase schwer."
+  },
+  {
+    "front": "die Heiserkeit",
+    "back": "声がれ",
+    "roman": "koegare",
+    "example": "にぎやかなコンサートの後、歌手は声がれに悩まされました。",
+    "exampleDE": "Nach dem lauten Konzert litt der Sänger unter Heiserkeit."
+  },
+  {
+    "front": "das Fieberthermometer",
+    "back": "体温計",
+    "roman": "taionkei",
+    "example": "デジタル体温計は数秒で体温を測ります。",
+    "exampleDE": "Das digitale Fieberthermometer misst die Temperatur sekundenschnell."
+  },
+  {
+    "front": "die erhöhte Temperatur",
+    "back": "微熱",
+    "roman": "binetsu",
+    "example": "今夜その子は少し微熱があります。",
+    "exampleDE": "Das Kind hat heute Abend leicht erhöhte Temperatur."
+  },
+  {
+    "front": "der Schüttelfrost",
+    "back": "悪寒",
+    "roman": "okan",
+    "example": "突然の悪寒はインフルエンザの初期症状であることが多いです。",
+    "exampleDE": "Plötzlicher Schüttelfrost ist oft ein erstes Anzeichen einer Grippe."
+  },
+  {
+    "front": "die Entzündung",
+    "back": "炎症",
+    "roman": "enshō",
+    "example": "医師は塗り薬で炎症を治療します。",
+    "exampleDE": "Der Arzt behandelt die Entzündung mit einer Heilsalbe."
+  },
+  {
+    "front": "die Infektion",
+    "back": "感染症",
+    "roman": "kansenshō",
+    "example": "定期的な手洗いは感染症を確実に防ぎます。",
+    "exampleDE": "Regelmäßiges Händewaschen schützt zuverlässig vor einer Infektion."
+  },
+  {
+    "front": "ansteckend",
+    "back": "伝染性の",
+    "roman": "densen-sei no",
+    "example": "熱がある間は、他の人にうつす可能性があります。",
+    "exampleDE": "Solange Sie Fieber haben, sind Sie für andere ansteckend."
+  },
+  {
+    "front": "sich schonen",
+    "back": "安静にする",
+    "roman": "ansei ni suru",
+    "example": "風邪をひいたときはベッドに入って安静にするべきです。",
+    "exampleDE": "Bei einer Erkältung sollte man im Bett bleiben und sich schonen."
+  },
+  {
+    "front": "die Arztpraxis",
+    "back": "診療所",
+    "roman": "shinryōjo",
+    "example": "診療所は月曜日の朝7時に開きます。",
+    "exampleDE": "Die Arztpraxis öffnet montags bereits um sieben Uhr morgens."
+  },
+  {
+    "front": "das Wartezimmer",
+    "back": "待合室",
+    "roman": "machiaishitsu",
+    "example": "患者たちは明るい待合室で静かに待っています。",
+    "exampleDE": "Die Patienten sitzen geduldig im hellen Wartezimmer."
+  },
+  {
+    "front": "die Versichertenkarte",
+    "back": "保険証",
+    "roman": "hokenshō",
+    "example": "健康保険証をご提示ください。",
+    "exampleDE": "Legen Sie bitte Ihre elektronische Versichertenkarte vor."
+  },
+  {
+    "front": "der Termin",
+    "back": "予約",
+    "roman": "yoyaku",
+    "example": "来週の火曜日に予約を取りました。",
+    "exampleDE": "Ich habe für kommenden Dienstag einen festen Termin vereinbart."
+  },
+  {
+    "front": "die Untersuchung",
+    "back": "診察",
+    "roman": "shinsatsu",
+    "example": "詳しい診察の結果、特に異常は見つかりませんでした。",
+    "exampleDE": "Die gründliche Untersuchung ergab keine Auffälligkeiten."
+  },
+  {
+    "front": "der Blutdruck",
+    "back": "血圧",
+    "roman": "ketsuatsu",
+    "example": "看護師が左腕で血圧を測ります。",
+    "exampleDE": "Die Schwester misst den Blutdruck am linken Oberarm."
+  },
+  {
+    "front": "der Puls",
+    "back": "脈拍",
+    "roman": "myakuhaku",
+    "example": "少し休んだ後、脈拍は正常に戻りました。",
+    "exampleDE": "Nach der kurzen Ruhepause schlägt der Puls wieder normal."
+  },
+  {
+    "front": "das Stethoskop",
+    "back": "聴診器",
+    "roman": "chōshinki",
+    "example": "医師は聴診器で肺の音を聞きます。",
+    "exampleDE": "Die Ärztin hört die Lunge mit dem Stethoskop ab."
+  },
+  {
+    "front": "das Rezept",
+    "back": "処方箋",
+    "roman": "shohōsen",
+    "example": "医師は薬の処方箋を書いてくれます。",
+    "exampleDE": "Der Arzt stellt Ihnen ein Rezept für die Tabletten aus."
+  },
+  {
+    "front": "die Apotheke",
+    "back": "薬局",
+    "roman": "yakkyoku",
+    "example": "広場の前にある薬局は本日当番薬局です。",
+    "exampleDE": "Die Apotheke am Markt hat heute Notdienst."
+  },
+  {
+    "front": "die Packungsbeilage",
+    "back": "添付文書",
+    "roman": "tempu bunsho",
+    "example": "服用する前に添付文書をよく読んでください。",
+    "exampleDE": "Lesen Sie vor der Einnahme sorgfältig die Packungsbeilage."
+  },
+  {
+    "front": "die Nebenwirkung",
+    "back": "副作用",
+    "roman": "fukusayō",
+    "example": "この体に優しい薬には目立った副作用がほとんどありません。",
+    "exampleDE": "Dieses gut verträgliche Medikament hat kaum bekannte Nebenwirkungen."
+  },
+  {
+    "front": "die Dosierung",
+    "back": "用量",
+    "roman": "yōryō",
+    "example": "医師から指示された用量を正確に守ってください。",
+    "exampleDE": "Beachten Sie genau die vom Arzt verordnete Dosierung."
+  },
+  {
+    "front": "das Schmerzmittel",
+    "back": "鎮痛剤",
+    "roman": "chintsūzai",
+    "example": "鎮痛剤はたいてい30分以内に効いてきます。",
+    "exampleDE": "Das Schmerzmittel wirkt meistens innerhalb einer halben Stunde."
+  },
+  {
+    "front": "der Hustensaft",
+    "back": "咳止めシロップ",
+    "roman": "sekidome shiroppu",
+    "example": "夜寝る前に咳止めシロップをスプーン1杯飲んでください。",
+    "exampleDE": "Nehmen Sie abends vor dem Schlafen einen Löffel Hustensaft."
+  },
+  {
+    "front": "das Heftpflaster",
+    "back": "絆創膏",
+    "roman": "bansōkō",
+    "example": "小さな切り傷に絆創膏を貼ってください。",
+    "exampleDE": "Kleb bitte ein Heftpflaster auf die kleine Schnittwunde."
+  },
+  {
+    "front": "der Verband",
+    "back": "包帯",
+    "roman": "hōtai",
+    "example": "看護師が足首に清潔な包帯を巻きます。",
+    "exampleDE": "Die Krankenschwester legt einen sauberen Verband um den Knöchel."
+  },
+  {
+    "front": "die Wundsalbe",
+    "back": "傷薬軟膏",
+    "roman": "kizugusuri nankō",
+    "example": "傷薬は皮膚の傷の治りを早めます。",
+    "exampleDE": "Die Heilsalbe beschleunigt das Schließen der Hautwunde."
+  },
+  {
+    "front": "die Desinfektion",
+    "back": "消毒",
+    "roman": "shōdoku",
+    "example": "包帯を巻く前にしっかり消毒することが大切です。",
+    "exampleDE": "Vor dem Verbinden ist eine gründliche Desinfektion wichtig."
+  },
+  {
+    "front": "der Verbandskasten",
+    "back": "救急箱",
+    "roman": "kyūkyūbako",
+    "example": "車の中には常に救急箱を備えておかなければなりません。",
+    "exampleDE": "Im Auto muss stets ein vollständiger Verbandskasten liegen."
+  },
+  {
+    "front": "der Notruf",
+    "back": "緊急通報",
+    "roman": "kinkyū tsūhō",
+    "example": "緊急時にはヨーロッパ全域共通の112番に通報します。",
+    "exampleDE": "In dringenden Notfällen wählt man europaweit den Notruf 112."
+  },
+  {
+    "front": "die Erste Hilfe",
+    "back": "応急手当",
+    "roman": "ōkyū teate",
+    "example": "運転免許を持つ人は誰もが応急手当を行えるべきです。",
+    "exampleDE": "Jeder Führerscheininhaber sollte Erste Hilfe leisten können."
+  },
+  {
+    "front": "bluten",
+    "back": "出血する",
+    "roman": "shukketsu suru",
+    "example": "幸いなことに、膝の擦り傷からの出血は止まりました。",
+    "exampleDE": "Die Schürfwunde am Knie hat zum Glück aufgehört zu bluten."
+  },
+  {
+    "front": "die Zahnarztpraxis",
+    "back": "歯科医院",
+    "roman": "shika iin",
+    "example": "私は年に2回、定期健診のために歯科医院に通っています。",
+    "exampleDE": "Zweimal im Jahr gehe ich zur Kontrolle in die Zahnarztpraxis."
+  },
+  {
+    "front": "die Zahnseide",
+    "back": "デンタルフロス",
+    "roman": "dentaru furosu",
+    "example": "デンタルフロスは歯の間の狭いすき間をきれいにします。",
+    "exampleDE": "Zahnseide reinigt die engen Zwischenräume zwischen den Zähnen."
+  },
+  {
+    "front": "das Zahnfleisch",
+    "back": "歯茎",
+    "roman": "haguki",
+    "example": "定期的なケアが歯茎を長く健康に保ちます。",
+    "exampleDE": "Regelmäßige Pflege stärkt das Zahnfleisch dauerhaft."
+  },
+  {
+    "front": "die Zahnfüllung",
+    "back": "歯の詰め物",
+    "roman": "ha no tsumemono",
+    "example": "歯医者さんは小さくて白い詰め物を入れました。",
+    "exampleDE": "Der Zahnarzt setzte eine kleine weiße Zahnfüllung ein."
+  },
+  {
+    "front": "der Backenzahn",
+    "back": "奥歯",
+    "roman": "okuba",
+    "example": "上あごの奥歯が冷たいものにしみます。",
+    "exampleDE": "Ein Backenzahn im Oberkiefer reagiert empfindlich auf Kälte."
+  },
+  {
+    "front": "die Mundspülung",
+    "back": "洗口液",
+    "roman": "senkōeki",
+    "example": "殺菌作用のある洗口液が息をさわやかに保ちます。",
+    "exampleDE": "Eine antibakterielle Mundspülung sorgt für frischen Atem."
+  },
+  {
+    "front": "die Zahnschmerzen",
+    "back": "歯痛",
+    "roman": "shitsū",
+    "example": "突然歯が痛くなったら、すぐに歯医者に行くべきです。",
+    "exampleDE": "Gegen plötzliche Zahnschmerzen sollte man rasch zum Zahnarzt."
+  },
+  {
+    "front": "das Handgelenk",
+    "back": "手首",
+    "roman": "tekubi",
+    "example": "彼女は左手首におしゃれな腕時計を着けています。",
+    "exampleDE": "Sie trägt eine elegante Armbanduhr am linken Handgelenk."
+  },
+  {
+    "front": "der Ellbogen",
+    "back": "肘",
+    "roman": "hiji",
+    "example": "彼は机の角に肘を痛そうにぶつけました。",
+    "exampleDE": "Er hat sich den Ellbogen schmerzhaft an der Tischkante gestoßen."
+  },
+  {
+    "front": "das Kniegelenk",
+    "back": "膝関節",
+    "roman": "hizakansetsu",
+    "example": "ジョギングをすると膝関節に大きな負担がかかります。",
+    "exampleDE": "Beim Joggen wird das Kniegelenk stark beansprucht."
+  },
+  {
+    "front": "der Knöchel",
+    "back": "くるぶし",
+    "roman": "kurubushi",
+    "example": "彼は険しい小道を歩いているときにくるぶしをひねりました。",
+    "exampleDE": "Beim Wandern auf unebenem Pfad ist er mit dem Knöchel umgeknickt."
+  }
+]

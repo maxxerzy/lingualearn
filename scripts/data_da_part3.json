@@ -1,0 +1,1402 @@
+[
+  {
+    "front": "die Amsel",
+    "back": "solsort",
+    "ipa": "ˈsoːlˌsoɐ̯d̥",
+    "example": "Tidligt om morgenen synger solsorten sin melodiske sang fra tagryggen.",
+    "exampleDE": "Früh am Morgen singt die Amsel ihr melodisches Lied vom Hausdach."
+  },
+  {
+    "front": "die Schwalbe",
+    "back": "svale",
+    "ipa": "ˈsvæːlə",
+    "example": "Svaler bygger deres kunstfærdige reder af mudder under tagskægget.",
+    "exampleDE": "Schwalben bauen ihre kunstvollen Nester aus Lehm unter den Dachvorsprung."
+  },
+  {
+    "front": "der Storch",
+    "back": "stork",
+    "ipa": "sd̥oɐ̯ɡ̊",
+    "example": "På skorstenen af den gamle lade yngler et storkepar.",
+    "exampleDE": "Auf dem Schornstein der alten Scheune nistet ein Storchenpaar."
+  },
+  {
+    "front": "die Elster",
+    "back": "husskade",
+    "ipa": "ˈhuːsˌsɡ̊æːðə",
+    "example": "Den sort-hvide husskade regnes i folkemunde for at være en tyvagtig fugl.",
+    "exampleDE": "Die schwarz-weiße Elster gilt im Volksmund als diebischer Vogel."
+  },
+  {
+    "front": "der Specht",
+    "back": "spætte",
+    "ipa": "ˈsb̥ɛd̥ə",
+    "example": "Fra skoven hører man den rytmiske hakken fra en spætte.",
+    "exampleDE": "Aus dem Wald hört man das rhythmische Hämmern eines Spechts."
+  },
+  {
+    "front": "der Zugvogel",
+    "back": "trækfugl",
+    "ipa": "ˈtˢʁæɡ̊ˌfuˀl",
+    "example": "Om efteråret flyver trækfugle i V-formation mod syd.",
+    "exampleDE": "Im Herbst fliegen Zugvögel in V-Formation Richtung Süden."
+  },
+  {
+    "front": "die Forelle",
+    "back": "ørred",
+    "ipa": "ˈœːɐ̯əð",
+    "example": "I den kølige bjergbæk svømmer en sølvskinnende bækørred.",
+    "exampleDE": "Im kühlen Gebirgsbach schwimmt eine silbrige Bachforelle."
+  },
+  {
+    "front": "der Lachs",
+    "back": "laks",
+    "ipa": "lɑɡ̊s",
+    "example": "I gydetiden vandrer laksen mange kilometer op ad floden.",
+    "exampleDE": "Zur Laichzeit wandert der Lachs viele Kilometer flussaufwärts."
+  },
+  {
+    "front": "der Karpfen",
+    "back": "karpe",
+    "ipa": "ˈkʰɑːb̥ə",
+    "example": "På bunden af den rolige landsbydam søger en stor karpe efter føde.",
+    "exampleDE": "Am Grund des ruhigen Dorfteichs gründelt ein großer Karpfen."
+  },
+  {
+    "front": "die Kröte",
+    "back": "tudse",
+    "ipa": "ˈtˢusə",
+    "example": "Om foråret vandrer mange tudser til deres ynglevandshuller.",
+    "exampleDE": "Im Frühjahr wandern viele Kröten zu ihren Laichgewässern."
+  },
+  {
+    "front": "der Salamander",
+    "back": "salamander",
+    "ipa": "sælæˈmɑnˀd̥ɐ",
+    "example": "Den sort-gule ildsalamander elsker fugtige løvskove.",
+    "exampleDE": "Der schwarz-gelbe Feuersalamander liebt feuchte Laubwälder."
+  },
+  {
+    "front": "die Kaulquappe",
+    "back": "haletudse",
+    "ipa": "ˈhæːləˌtˢusə",
+    "example": "Af de bittesmå haletudser udvikler der sig efterhånden unge frøer.",
+    "exampleDE": "Aus den winzigen Kaulquappen entwickeln sich nach und nach junge Frösche."
+  },
+  {
+    "front": "der Krebs",
+    "back": "krebs",
+    "ipa": "kʰʁɛb̥s",
+    "example": "Under en flad sten i bækken gemmer der sig en flodkrebs.",
+    "exampleDE": "Unter einem flachen Stein im Bach verbirgt sich ein Flusskrebs."
+  },
+  {
+    "front": "die Muschel",
+    "back": "musling",
+    "ipa": "ˈmusleŋ",
+    "example": "På sandstranden samlede børnene tomme muslingeskaller.",
+    "exampleDE": "Am Sandstrand sammelten die Kinder leere Muschelschalen."
+  },
+  {
+    "front": "der Marienkäfer",
+    "back": "mariehøne",
+    "ipa": "mæˈʁiːəˌhøːnə",
+    "example": "En rød mariehøne med syv sorte prikker kravler på strået.",
+    "exampleDE": "Ein roter Marienkäfer mit sieben schwarzen Punkten krabbelt am Halm."
+  },
+  {
+    "front": "die Libelle",
+    "back": "guldsmed",
+    "ipa": "ˈɡ̊ulˌsmeðˀ",
+    "example": "En glinsende guldsmed svirrer lynhurtigt over vandoverfladen.",
+    "exampleDE": "Eine schillernde Libelle schwirrt blitzschnell über die Wasseroberfläche."
+  },
+  {
+    "front": "die Hummel",
+    "back": "humlebi",
+    "ipa": "ˈhumləˌb̥iˀ",
+    "example": "En tyk, pelsen humlebi summer flittigt fra blomst til blomst.",
+    "exampleDE": "Eine dicke, pelzige Hummel summt emsig von Blüte zu Blüte."
+  },
+  {
+    "front": "die Wespe",
+    "back": "hveps",
+    "ipa": "vɛb̥s",
+    "example": "Søde sager i det fri lokker generende hvepse til i sensommeren.",
+    "exampleDE": "Süße Speisen im Freien locken im Spätsommer lästige Wespen an."
+  },
+  {
+    "front": "die Heuschrecke",
+    "back": "græshoppe",
+    "ipa": "ˈɡ̊ʁɑsˌhʌb̥ə",
+    "example": "Med sine lange bagben springer den grønne græshoppe langt.",
+    "exampleDE": "Mit ihren langen Hinterbeinen springt die grüne Heuschrecke weit."
+  },
+  {
+    "front": "die Eidechse",
+    "back": "firben",
+    "ipa": "ˈfiɐ̯ˌb̥eˀn",
+    "example": "På den solvarme stenmur soler et lille firben sig.",
+    "exampleDE": "Auf der sonnenwarmen Steinmauer wärmt sich eine kleine Eidechse."
+  },
+  {
+    "front": "die Schnecke",
+    "back": "snegl",
+    "ipa": "snɑjˀl",
+    "example": "Efter den varme regn kryber en vinbjergsnegl over stien.",
+    "exampleDE": "Nach dem warmen Regen kriecht eine Weinbergschnecke über den Weg."
+  },
+  {
+    "front": "die Wettervorhersage",
+    "back": "vejrudsigt",
+    "ipa": "ˈvɑjɐˌuðˌseɡ̊d̥",
+    "example": "Ifølge vejrudsigten bliver det solrigt og mildt i weekenden.",
+    "exampleDE": "Laut Wettervorhersage soll es am Wochenende sonnig und mild werden."
+  },
+  {
+    "front": "der Regenschauer",
+    "back": "regnbyge",
+    "ipa": "ˈʁɑjnˌb̥yːə",
+    "example": "En kort regnbyge overraskede de gående i byparken.",
+    "exampleDE": "Ein kurzer Regenschauer überraschte die Spaziergänger im Stadtpark."
+  },
+  {
+    "front": "der Nieselregen",
+    "back": "støvregn",
+    "ipa": "ˈsd̥œwˌʁɑjnˀ",
+    "example": "Tæt, fin støvregn slører sigtbarheden om formiddagen.",
+    "exampleDE": "Dichter, feiner Nieselregen trübt die Sicht am Vormittag."
+  },
+  {
+    "front": "das Gewitter",
+    "back": "tordenvejr",
+    "ipa": "ˈtˢoɐ̯nɐˌvɑjɐ",
+    "example": "I horisonten trækker mørke skyer op, der varsler tordenvejr.",
+    "exampleDE": "Am Horizont ziehen dunkle Wolken auf, die ein Gewitter ankündigen."
+  },
+  {
+    "front": "der Donnerschlag",
+    "back": "tordenskrald",
+    "ipa": "ˈtˢoɐ̯nɐˌsɡ̊ʁɑlˀ",
+    "example": "Et højt tordenskrald fik vinduesruderne i huset til at ryste.",
+    "exampleDE": "Ein lauter Donnerschlag ließ die Fensterscheiben im Haus erzittern."
+  },
+  {
+    "front": "der Blitzschlag",
+    "back": "lynnedslag",
+    "ipa": "ˈlynˌɛðˌslæˀw",
+    "example": "Et lynnedslag ramte det gamle træ i kanten af marken.",
+    "exampleDE": "Ein Blitzschlag traf den alten Baum am Feldrand."
+  },
+  {
+    "front": "die Windböe",
+    "back": "vindstød",
+    "ipa": "ˈvenˌsd̥øð",
+    "example": "Et kraftigt vindstød hvirvlede tørre efterårsblade gennem luften.",
+    "exampleDE": "Eine heftige Windböe wirbelte trockenes Herbstlaub durch die Luft."
+  },
+  {
+    "front": "der Nebel",
+    "back": "tåge",
+    "ipa": "ˈtˢɔːwə",
+    "example": "Tæt morgentåge ligger som et tæppe over floddalen.",
+    "exampleDE": "Dichter Frühnebel liegt wie eine Decke über dem Flusstal."
+  },
+  {
+    "front": "der Frost",
+    "back": "frost",
+    "ipa": "fʁʌsd̥",
+    "example": "Om natten var der nattefrost, som farvede engen sølvhvid.",
+    "exampleDE": "In der Nacht gab es Bodenfrost, der die Wiese silbern färbte."
+  },
+  {
+    "front": "das Glatteis",
+    "back": "isslag",
+    "ipa": "ˈiːsˌslæˀw",
+    "example": "Forsigtig på vejene, ved isslag bliver bremselængden længere.",
+    "exampleDE": "Vorsicht auf den Straßen, bei Glatteis verlängert sich der Bremsweg."
+  },
+  {
+    "front": "die Schneeflocke",
+    "back": "snefnug",
+    "ipa": "ˈsneːˌfnuˀw",
+    "example": "Lydløst daler store hvide snefnug ned fra himlen.",
+    "exampleDE": "Lautlos schweben dicke weiße Schneeflocken vom Himmel herab."
+  },
+  {
+    "front": "die Hitzewelle",
+    "back": "hedebølge",
+    "ipa": "ˈheːðəˌb̥øljə",
+    "example": "Under den sommerlige hedebølge køler det knap nok af om natten.",
+    "exampleDE": "Während der sommerlichen Hitzewelle kühlt es auch nachts kaum ab."
+  },
+  {
+    "front": "der Sonnenschein",
+    "back": "solskin",
+    "ipa": "ˈsoːlˌsɡ̊enˀ",
+    "example": "Varmt solskin lokker mange mennesker til friluftsbadet.",
+    "exampleDE": "Warmer Sonnenschein lockt viele Menschen ins Freibad."
+  },
+  {
+    "front": "das Abendrot",
+    "back": "aftenrøde",
+    "ipa": "ˈɑfd̥n̩ˌʁœːðə",
+    "example": "En flammende aftenrøde varsler godt vejr til den følgende dag.",
+    "exampleDE": "Ein feuriges Abendrot kündigt schönes Wetter für den nächsten Tag an."
+  },
+  {
+    "front": "die Dämmerung",
+    "back": "skumring",
+    "ipa": "ˈsɡ̊ɔmʁeŋ",
+    "example": "I aftenskumringen begynder gadelamperne at lyse.",
+    "exampleDE": "In der Abenddämmerung beginnen die Straßenlaternen zu leuchten."
+  },
+  {
+    "front": "die Mülltrennung",
+    "back": "affaldssortering",
+    "ipa": "ˈɑwfælˀssoɐ̯ˌtˢeˀɐ̯eŋ",
+    "example": "Omhyggelig affaldssortering gør genanvendelsen af værdifulde råstoffer nemmere.",
+    "exampleDE": "Sorgfältige Mülltrennung erleichtert die Wiederverwertung wertvoller Rohstoffe."
+  },
+  {
+    "front": "der Plastikmüll",
+    "back": "plastikaffald",
+    "ipa": "ˈpʰlæsd̥iɡ̊ˌɑwfælˀ",
+    "example": "Med genbrugsemballage kan unødvendigt plastikaffald undgås.",
+    "exampleDE": "Durch Mehrwegverpackungen lässt sich unnötiger Plastikmüll vermeiden."
+  },
+  {
+    "front": "das Recycling",
+    "back": "genanvendelse",
+    "ipa": "ˈɡ̊ɛnænˌvɛnˀəlsə",
+    "example": "Moderne anlæg sender brugt glas og papir til genanvendelse.",
+    "exampleDE": "Moderne Anlagen führen Altglas und Papier dem Recycling zu."
+  },
+  {
+    "front": "der Umweltschutz",
+    "back": "miljøbeskyttelse",
+    "ipa": "melˈjøːb̥eˌsɡ̊yd̥əlsə",
+    "example": "Beskyttelse af truede levesteder er en opgave for alle mennesker.",
+    "exampleDE": "Der Schutz bedrohter Lebensräume ist eine Aufgabe für alle Menschen."
+  },
+  {
+    "front": "die Nachhaltigkeit",
+    "back": "bæredygtighed",
+    "ipa": "ˈb̥ɛːɐ̯əˌd̥yɡ̊d̥iˌheð",
+    "example": "Bæredygtighed betyder at bevare ressourcer til fremtidige generationer.",
+    "exampleDE": "Nachhaltigkeit bedeutet, Ressourcen für künftige Generationen zu bewahren."
+  },
+  {
+    "front": "die Mehrwegflasche",
+    "back": "genbrugsflaske",
+    "ipa": "ˈɡ̊ɛnb̥ʁuːsˌflæsɡ̊ə",
+    "example": "Til danskvand bruger vi helst genopfyldelige genbrugsflasker.",
+    "exampleDE": "Für Mineralwasser nutzen wir bevorzugt wiederbefüllbare Mehrwegflaschen."
+  },
+  {
+    "front": "der Energiesparer",
+    "back": "energisparepære",
+    "ipa": "enæɐ̯ˈɡ̊iːsb̥ɑːɐ̯əˌpʰɛːɐ",
+    "example": "Moderne LED-pærer er sande energisparepærer i husholdningen.",
+    "exampleDE": "Moderne LED-Lampen sind wahre Energiesparer im Haushalt."
+  },
+  {
+    "front": "schonen",
+    "back": "skåne",
+    "ipa": "ˈsɡ̊ɔːnə",
+    "example": "Vi bør skåne vores naturlige ressourcer og vandløb.",
+    "exampleDE": "Wir sollten unsere natürlichen Ressourcen und Gewässer schonen."
+  },
+  {
+    "front": "die Solarenergie",
+    "back": "solenergi",
+    "ipa": "ˈsoːlʔenæɐ̯ˌɡ̊iˀ",
+    "example": "Solcelleanlægget på taget producerer miljøvenlig strøm.",
+    "exampleDE": "Die Solaranlage auf dem Dach erzeugt umweltfreundlichen Strom."
+  },
+  {
+    "front": "die Windkraft",
+    "back": "vindkraft",
+    "ipa": "ˈvenˌkʰʁɑfd̥",
+    "example": "Vindmøller udnytter vindens kraft til elproduktion.",
+    "exampleDE": "Windkrafträder nutzen die Kraft des Windes zur Stromerzeugung."
+  },
+  {
+    "front": "das Wasserkraftwerk",
+    "back": "vandkraftværk",
+    "ipa": "ˈvænˌkʰʁɑfd̥ˌvɛɐ̯ɡ̊",
+    "example": "Vandkraftværket ved floden producerer pålideligt ren energi.",
+    "exampleDE": "Das Wasserkraftwerk am Fluss produziert zuverlässig saubere Energie."
+  },
+  {
+    "front": "der Stromverbrauch",
+    "back": "strømforbrug",
+    "ipa": "ˈsd̥ʁɶmˀfʌˌb̥ʁɔwˀ",
+    "example": "Apparater i standby-tilstand øger strømforbruget unødvendigt.",
+    "exampleDE": "Geräte im Standby-Modus erhöhen unnötig den Stromverbrauch."
+  },
+  {
+    "front": "die Wärmepumpe",
+    "back": "varmepumpe",
+    "ipa": "ˈvɑːməˌpʰɔmb̥ə",
+    "example": "En moderne varmepumpe opvarmer boligen meget effektivt.",
+    "exampleDE": "Eine moderne Wärmepumpe heizt das Wohnhaus sehr effizient."
+  },
+  {
+    "front": "der CO2-Ausstoß",
+    "back": "CO2-udledning",
+    "ipa": "seːoˈtˢoˀuðˌleˀðneŋ",
+    "example": "Elbiler bidrager til at nedbringe den lokale CO2-udledning.",
+    "exampleDE": "Elektrofahrzeuge tragen zur Senkung des lokalen CO2-Ausstoßes bei."
+  },
+  {
+    "front": "die Ressource",
+    "back": "ressource",
+    "ipa": "ʁæˈsuɐ̯sə",
+    "example": "Rent drikkevand er den mest dyrebare naturlige ressource.",
+    "exampleDE": "Sauberes Trinkwasser ist die kostbarste natürliche Ressource."
+  },
+  {
+    "front": "der Stundenplan",
+    "back": "skoleskema",
+    "ipa": "ˈsɡ̊oːləˌsɡ̊eːmæ",
+    "example": "Ifølge skoleskemaet har vi to timers matematik om mandagen.",
+    "exampleDE": "Laut Stundenplan haben wir montags zwei Stunden Mathematik."
+  },
+  {
+    "front": "das Klassenzimmer",
+    "back": "klasselokale",
+    "ipa": "ˈkʰlæsəloˌkʰæːlə",
+    "example": "Eleverne pyntede deres klasselokale med farverige tegninger.",
+    "exampleDE": "Die Schüler schmückten ihr Klassenzimmer mit bunten Bildern."
+  },
+  {
+    "front": "die Schultasche",
+    "back": "skoletaske",
+    "ipa": "ˈsɡ̊oːləˌtˢæsɡ̊ə",
+    "example": "Han pakker sine hæfter og bøger omhyggeligt i skoletasken.",
+    "exampleDE": "Er packt seine Hefte und Bücher sorgfältig in die Schultasche."
+  },
+  {
+    "front": "das Federmäppchen",
+    "back": "penalhus",
+    "ipa": "pʰenæˈlhuˀs",
+    "example": "I penalhuset ligger farveblyanter, fyldepen og et viskelæder.",
+    "exampleDE": "Im Federmäppchen liegen Buntstifte, Füller und ein Radiergummi."
+  },
+  {
+    "front": "die Klassenarbeit",
+    "back": "klasseprøve",
+    "ipa": "ˈkʰlæsəˌpʰʁœːwə",
+    "example": "Hun har læst meget op til den svære klasseprøve i biologi.",
+    "exampleDE": "Für die schwere Klassenarbeit in Biologie hat sie viel gelernt."
+  },
+  {
+    "front": "das Zeugnis",
+    "back": "karakterblad",
+    "ipa": "kʰæʁɑɡ̊ˈtˢeˀɐ̯ˌb̥læð",
+    "example": "På den sidste skoledag før ferien modtager alle deres karakterblad.",
+    "exampleDE": "Am letzten Schultag vor den Ferien erhalten alle ihr Zeugnis."
+  },
+  {
+    "front": "die Schulferien",
+    "back": "skoleferie",
+    "ipa": "ˈsɡ̊oːləˌfeːʁiə",
+    "example": "Børnene glæder sig vildt til den seks uger lange sommerferie.",
+    "exampleDE": "Die Kinder freuen sich riesig auf die sechswöchigen Sommerferien."
+  },
+  {
+    "front": "der Pausenhof",
+    "back": "skolegård",
+    "ipa": "ˈsɡ̊oːləˌɡ̊oɐ̯ˀ",
+    "example": "I frikvarteret leger eleverne ude i skolegården.",
+    "exampleDE": "In der großen Pause spielen die Schüler draußen auf dem Pausenhof."
+  },
+  {
+    "front": "die Geometrie",
+    "back": "geometri",
+    "ipa": "ɡ̊eoməˈtˢʁiˀ",
+    "example": "I geometriundervisningen tegner vi trekanter med en vinkelmåler.",
+    "exampleDE": "Im Geometrieunterricht zeichnen wir Dreiecke mit dem Geodreieck."
+  },
+  {
+    "front": "die Grammatik",
+    "back": "grammatik",
+    "ipa": "ɡ̊ʁɑmæˈtˢiɡ̊",
+    "example": "Regelmæssig øvelse hjælper med at lære grammatikkens regler udenad.",
+    "exampleDE": "Regelmäßiges Üben hilft, die Regeln der Grammatik zu verinnerlichen."
+  },
+  {
+    "front": "der Fremdsprachenunterricht",
+    "back": "fremmedsprogsundervisning",
+    "ipa": "ˈfʁæmðsb̥ʁɔwˀsɔnɐˌviˀsneŋ",
+    "example": "I fremmedsprogsundervisningen øver vi frit talesprog i dialoger.",
+    "exampleDE": "Im Fremdsprachenunterricht üben wir das freie Sprechen in Dialogen."
+  },
+  {
+    "front": "das Experiment",
+    "back": "eksperiment",
+    "ipa": "ɛɡ̊sb̥æʁiˈmɛnd̥",
+    "example": "I kemilokalet udfører klassen et spændende eksperiment.",
+    "exampleDE": "Im Chemielabor führt die Klasse ein spannendes Experiment durch."
+  },
+  {
+    "front": "das Referat",
+    "back": "oplæg",
+    "ipa": "ˈʌb̥ˌlɛɡ̊",
+    "example": "Han holder et frit mundtligt oplæg om beskyttelse af truede hvaler.",
+    "exampleDE": "Er hält ein freies Referat über den Schutz bedrohter Wale."
+  },
+  {
+    "front": "die Hausaufgabe",
+    "back": "lektier",
+    "ipa": "ˈlɛɡ̊tˢjɐ",
+    "example": "Efter frokosten laver hun koncentreret sine lektier.",
+    "exampleDE": "Nach dem Mittagessen erledigt sie konzentriert ihre Hausaufgaben."
+  },
+  {
+    "front": "die Nachhilfe",
+    "back": "lektiehjælp",
+    "ipa": "ˈlɛɡ̊tˢjəˌhjɛlˀb̥",
+    "example": "To gange om ugen får han lektiehjælp for at forbedre sine karakterer.",
+    "exampleDE": "Zweimal wöchentlich nimmt er Nachhilfe, um seine Noten zu verbessern."
+  },
+  {
+    "front": "der Hörsaal",
+    "back": "auditorium",
+    "ipa": "ʌwdiˈtˢoˀʁiɔm",
+    "example": "Det store auditorium er fyldt til sidste plads.",
+    "exampleDE": "Der große Hörsaal ist bis auf den letzten Platz besetzt."
+  },
+  {
+    "front": "die Vorlesung",
+    "back": "forelæsning",
+    "ipa": "ˈfɒːˌlɛˀsneŋ",
+    "example": "Professoren holder en fængslende forelæsning om moderne fysik.",
+    "exampleDE": "Die Professorin hält eine fesselnde Vorlesung über moderne Physik."
+  },
+  {
+    "front": "das Seminar",
+    "back": "seminar",
+    "ipa": "semiˈnɑˀ",
+    "example": "I seminaret diskuterer de studerende aktuelle videnskabelige tekster.",
+    "exampleDE": "Im Seminar diskutieren die Studierenden aktuelle wissenschaftliche Texte."
+  },
+  {
+    "front": "die Universitätsbibliothek",
+    "back": "universitetsbibliotek",
+    "ipa": "univɛɐ̯siˈtˢeˀd̥sbip-lioˌtˢeɡ̊",
+    "example": "På universitetsbiblioteket hersker der koncentreret stilhed til fordybelse.",
+    "exampleDE": "In der Universitätsbibliothek herrscht konzentrierte Stille zum Lernen."
+  },
+  {
+    "front": "das Semester",
+    "back": "semester",
+    "ipa": "seˈmɛsd̥ɐ",
+    "example": "Vintersemestret begynder på de fleste videregående uddannelser i oktober.",
+    "exampleDE": "Das Wintersemester beginnt an den meisten Hochschulen im Oktober."
+  },
+  {
+    "front": "die Bachelorarbeit",
+    "back": "bachelorprojekt",
+    "ipa": "ˈb̥ætɕəlɐpʰʁoˌjɛɡ̊d̥",
+    "example": "Hun skriver i øjeblikket intensivt på sit bachelorprojekt.",
+    "exampleDE": "Sie schreibt zurzeit intensiv an ihrer Abschlussarbeit im Bachelor."
+  },
+  {
+    "front": "das Stipendium",
+    "back": "stipendium",
+    "ipa": "sd̥iˈpʰɛnˀdiɔm",
+    "example": "Takket være et talentstipendium kan han koncentrere sig fuldt ud om studiet.",
+    "exampleDE": "Dank eines Begabtenstipendiums kann er sich voll auf das Studium konzentrieren."
+  },
+  {
+    "front": "der Campus",
+    "back": "campus",
+    "ipa": "ˈkʰɑmb̥ɔs",
+    "example": "På det grønne campus mødes studerende mellem kurserne.",
+    "exampleDE": "Auf dem grünen Campus treffen sich Studierende zwischen den Kursen."
+  },
+  {
+    "front": "die Stellenausschreibung",
+    "back": "jobopslag",
+    "ipa": "ˈtɕʌb̥ˌʌb̥ˌslæˀw",
+    "example": "I avisen fandt han et interessant jobopslag.",
+    "exampleDE": "In der Zeitung fand er eine interessante Stellenausschreibung."
+  },
+  {
+    "front": "das Anschreiben",
+    "back": "ansøgning",
+    "ipa": "ˈænˌsøˀneŋ",
+    "example": "En overbevisende ansøgning vækker arbejdsgiverens interesse.",
+    "exampleDE": "Ein aussagekräftiges Anschreiben weckt das Interesse des Arbeitgebers."
+  },
+  {
+    "front": "der Lebenslauf",
+    "back": "cv",
+    "ipa": "seːˈveˀ",
+    "example": "Det opstillede cv oplister alle tidligere stillinger.",
+    "exampleDE": "Der tabellarische Lebenslauf listet alle bisherigen Berufsstationen auf."
+  },
+  {
+    "front": "das Vorstellungsgespräch",
+    "back": "jobsamtale",
+    "ipa": "ˈtɕʌb̥sɑmˌtˢæːlə",
+    "example": "Til jobsamtalen klæder han sig professionelt og pænt på.",
+    "exampleDE": "Zum Vorstellungsgespräch kleidet er sich professionell und ordentlich."
+  },
+  {
+    "front": "die Berufserfahrung",
+    "back": "erhvervserfaring",
+    "ipa": "ɛɐ̯ˈvɛɐ̯ˀwsæɐ̯ˌfɑˀʁeŋ",
+    "example": "Til denne ansvarsfulde stilling kræves der flere års erhvervserfaring.",
+    "exampleDE": "Für diese verantwortungsvolle Position ist mehrjährige Berufserfahrung erforderlich."
+  },
+  {
+    "front": "die Qualifikation",
+    "back": "kvalifikation",
+    "ipa": "kʰvælifiɡ̊æˈɕoˀn",
+    "example": "Hendes faglige kvalifikationer passer nøjagtigt til den krævede profil.",
+    "exampleDE": "Ihre fachliche Qualifikation passt genau zum geforderten Profil."
+  },
+  {
+    "front": "das Zeugnis",
+    "back": "anbefaling",
+    "ipa": "anb̥əˈfɛˀleŋ",
+    "example": "En positiv udtalelse og anbefaling gør det nemmere at skifte job.",
+    "exampleDE": "Ein positives Arbeitszeugnis erleichtert den beruflichen Wechsel."
+  },
+  {
+    "front": "der Arbeitsvertrag",
+    "back": "ansættelseskontrakt",
+    "ipa": "ˈænˌsɛd̥əlsəskʰʌnˌtˢʁɑɡ̊d̥",
+    "example": "Efter vellykkede forhandlinger underskrev hun ansættelseskontrakten.",
+    "exampleDE": "Nach erfolgreichen Verhandlungen unterschrieb sie den Arbeitsvertrag."
+  },
+  {
+    "front": "die Probezeit",
+    "back": "prøvetid",
+    "ipa": "ˈpʰʁœːwəˌtˢiðˀ",
+    "example": "I løbet af den seks måneder lange prøvetid lærer begge parter hinanden at kende.",
+    "exampleDE": "Während der sechsmonatigen Probezeit lernen sich beide Seiten kennen."
+  },
+  {
+    "front": "das Gehalt",
+    "back": "løn",
+    "ipa": "lœnˀ",
+    "example": "En retfærdig løn overføres punktligt i slutningen af hver måned.",
+    "exampleDE": "Ein faires Gehalt wird jeweils zum Monatsende pünktlich überwiesen."
+  },
+  {
+    "front": "die Gleitzeit",
+    "back": "flextid",
+    "ipa": "ˈflɛɡ̊sˌtˢiðˀ",
+    "example": "Takket være flextid kan han tilrettelægge sine arbejdstider godt.",
+    "exampleDE": "Dank flexibler Gleitzeit kann er seine Arbeitszeiten gut einteilen."
+  },
+  {
+    "front": "der Feierabend",
+    "back": "fyraften",
+    "ipa": "ˈfyɐ̯ˌɑfd̥n̩",
+    "example": "Efter otte timers koncentreret arbejde nyder han at holde fyraften.",
+    "exampleDE": "Nach acht Stunden konzentrierter Arbeit genießt er den Feierabend."
+  },
+  {
+    "front": "der Urlaubstag",
+    "back": "feriedag",
+    "ipa": "ˈfeːʁiəˌd̥æˀ",
+    "example": "Fuldtidsansatte har ret til tredive betalte feriedage.",
+    "exampleDE": "Vollzeitbeschäftigte haben Anspruch auf dreißig bezahlte Urlaubstage."
+  },
+  {
+    "front": "die Überstunden",
+    "back": "overarbejde",
+    "ipa": "ˈʌwɐʔɑːˌb̥ɑjˀdə",
+    "example": "Udført overarbejde kan afspadseres som frihed.",
+    "exampleDE": "Geleistete Überstunden können durch Freizeit ausgeglichen werden."
+  },
+  {
+    "front": "die Kaffeepause",
+    "back": "kaffepause",
+    "ipa": "ˈkʰɑfəˌpʰɒwse",
+    "example": "I kaffepausen taler kollegerne om weekenden.",
+    "exampleDE": "In der Kaffeepause tauschen sich die Kollegen über das Wochenende aus."
+  },
+  {
+    "front": "die Besprechung",
+    "back": "møde",
+    "ipa": "ˈmøːðə",
+    "example": "Klokken ti finder det ugentlige møde sted i mødelokalet.",
+    "exampleDE": "Um zehn Uhr findet die wöchentliche Besprechung im Konferenzraum statt."
+  },
+  {
+    "front": "die Tagesordnung",
+    "back": "dagsorden",
+    "ipa": "ˈd̥ɑwsˌoɐ̯ˀdn̩",
+    "example": "Punkterne på dagsordenen blev sendt ud på forhånd via e-mail.",
+    "exampleDE": "Die Punkte der Tagesordnung wurden vorab per E-Mail verschickt."
+  },
+  {
+    "front": "das Protokoll",
+    "back": "referat",
+    "ipa": "ʁæfəˈʁɑˀd̥",
+    "example": "Han skriver referat og noterer alle trufne beslutninger.",
+    "exampleDE": "Er schreibt das Protokoll und hält alle getroffenen Beschlüsse fest."
+  },
+  {
+    "front": "die Präsentation",
+    "back": "præsentation",
+    "ipa": "pʰʁɛsɛnd̥æˈɕoˀn",
+    "example": "Præsentationen anskueliggør resultaterne med overskuelige grafer.",
+    "exampleDE": "Die Präsentation veranschaulicht die Ergebnisse mit übersichtlichen Grafiken."
+  },
+  {
+    "front": "die Frist",
+    "back": "frist",
+    "ipa": "fʁisd̥",
+    "example": "Vi skal ubetinget overholde den aftalte frist inden udgangen af måneden.",
+    "exampleDE": "Wir müssen die vereinbarte Frist bis Ende des Monats unbedingt einhalten."
+  },
+  {
+    "front": "die Teamarbeit",
+    "back": "teamwork",
+    "ipa": "ˈtˢiːmˌvœɐ̯ɡ̊",
+    "example": "Vellykket teamwork kræver åben udveksling og gensidig støtte.",
+    "exampleDE": "Erfolgreiche Teamarbeit erfordert offenen Austausch und gegenseitige Unterstützung."
+  },
+  {
+    "front": "die Zusammenarbeit",
+    "back": "samarbejde",
+    "ipa": "ˈsɑmʔɑːˌb̥ɑjˀdə",
+    "example": "Samarbejdet mellem afdelingerne fungerer gnidningsløst.",
+    "exampleDE": "Die Zusammenarbeit zwischen den Abteilungen klappt reibungslos."
+  },
+  {
+    "front": "der Aktenordner",
+    "back": "ringbind",
+    "ipa": "ˈʁɛŋˌb̥enˀ",
+    "example": "Vigtige kontrakter sættes kronologisk ind i ringbindet.",
+    "exampleDE": "Wichtige Verträge werden chronologisch im Aktenordner abgeheftet."
+  },
+  {
+    "front": "der Locher",
+    "back": "hullemaskine",
+    "ipa": "ˈhuləmæˌsɡ̊iːnə",
+    "example": "Med hullemaskinen laver han to fine huller i dokumentet.",
+    "exampleDE": "Mit dem Locher stanzt er zwei saubere Löcher in das Dokument."
+  },
+  {
+    "front": "das Heftgerät",
+    "back": "hæftemaskine",
+    "ipa": "ˈhɛfd̥əmæˌsɡ̊iːnə",
+    "example": "Med hæftemaskinen hæfter hun de tilhørende sider sammen.",
+    "exampleDE": "Mit dem Heftgerät heftet sie die zusammengehörigen Seiten fest."
+  },
+  {
+    "front": "die Büroklammer",
+    "back": "papirclips",
+    "ipa": "pʰæˈpʰiɐ̯ˌkʰleb̥s",
+    "example": "En farverig papirclips holder kvitteringerne løst sammen.",
+    "exampleDE": "Eine bunte Büroklammer hält die Quittungen lose zusammen."
+  },
+  {
+    "front": "der Textmarker",
+    "back": "overstregningstusch",
+    "ipa": "ˈʌwɐˌsd̥ʁɑjˀneŋsˌtˢus",
+    "example": "Vigtige tekststeder fremhæver han med en gul overstregningstusch.",
+    "exampleDE": "Wichtige Textstellen hebt er mit einem gelben Textmarker hervor."
+  },
+  {
+    "front": "der Notizblock",
+    "back": "notesblok",
+    "ipa": "noˈtˢiːsˌb̥lʌɡ̊",
+    "example": "Ved siden af telefonen ligger der altid en lille notesblok til noter.",
+    "exampleDE": "Neben dem Telefon liegt immer ein kleiner Notizblock für Notizen."
+  },
+  {
+    "front": "der Reißwolf",
+    "back": "makulator",
+    "ipa": "mæɡ̊uˈlɑːtˢoɐ̯",
+    "example": "Fortrolige papirer findeles i makulatoren før bortskaffelse.",
+    "exampleDE": "Vertrauliche Papiere werden vor dem Entsorgen im Reißwolf zerkleinert."
+  },
+  {
+    "front": "der Drehstuhl",
+    "back": "kontorstol",
+    "ipa": "kʰʌnˈtˢoɐ̯ˌsd̥oˀl",
+    "example": "En ergonomisk kontorstol understøtter en sund siddestilling på arbejdspladsen.",
+    "exampleDE": "Ein ergonomischer Drehstuhl unterstützt gesundes Sitzen am Arbeitsplatz."
+  },
+  {
+    "front": "der Bildschirm",
+    "back": "skærm",
+    "ipa": "sɡ̊ɛɐ̯ˀm",
+    "example": "Den højopløselige skærm viser skrift knivskarpt.",
+    "exampleDE": "Der hochauflösende Bildschirm zeigt Schriften gestochen scharf an."
+  },
+  {
+    "front": "die Tastatur",
+    "back": "tastatur",
+    "ipa": "tˢæsd̥æˈtˢuɐ̯ˀ",
+    "example": "Han skriver flydende og fejlfrit med ti fingre på tastaturet.",
+    "exampleDE": "Er tippt flüssig und fehlerfrei mit zehn Fingern auf der Tastatur."
+  },
+  {
+    "front": "die Computermaus",
+    "back": "computermus",
+    "ipa": "kʰʌmˈpʰjuːd̥ɐˌmuˀs",
+    "example": "Med et klik på musen vælger han menupunktet.",
+    "exampleDE": "Mit einem Klick auf die Computermaus wählt er den Menüpunkt aus."
+  },
+  {
+    "front": "der Drucker",
+    "back": "printer",
+    "ipa": "ˈpʰʁɛnd̥ɐ",
+    "example": "Netværksprinteren udskriver på begge sider med høj hastighed.",
+    "exampleDE": "Der Netzwerkdrucker druckt doppelseitig in hoher Geschwindigkeit."
+  },
+  {
+    "front": "das Ladekabel",
+    "back": "opladerkabel",
+    "ipa": "ˈʌb̥ˌlɑːðɐˌkʰæːb̥əl",
+    "example": "Glem ikke at pakke opladerkablet til den bærbare computer.",
+    "exampleDE": "Vergiss nicht, das Ladekabel für das Notebook einzupacken."
+  },
+  {
+    "front": "der USB-Stick",
+    "back": "usb-stik",
+    "ipa": "uːɛsˈb̥eːˌsd̥eɡ̊",
+    "example": "Hun gemmer sikkerhedskopien på et praktisk usb-stik.",
+    "exampleDE": "Sie speichert die Sicherungskopie auf einem handlichen USB-Stick."
+  },
+  {
+    "front": "die Festplatte",
+    "back": "harddisk",
+    "ipa": "ˈhɑːd̥ˌd̥isɡ̊",
+    "example": "Den eksterne harddisk giver masser af lagerplads til billeder.",
+    "exampleDE": "Die externe Festplatte bietet reichlich Speicherplatz für Fotos."
+  },
+  {
+    "front": "der Webbrowser",
+    "back": "browser",
+    "ipa": "ˈb̥ʁɑwsɐ",
+    "example": "Åbn venligst hjemmesiden i en opdateret browser.",
+    "exampleDE": "Öffnen Sie die Webseite bitte in einem aktuellen Webbrowser."
+  },
+  {
+    "front": "das Benutzerkonto",
+    "back": "brugerkonto",
+    "ipa": "ˈb̥ʁuːwɐˌkʰʌnto",
+    "example": "Log ind med din personlige brugerkonto.",
+    "exampleDE": "Melden Sie sich mit Ihrem persönlichen Benutzerkonto an."
+  },
+  {
+    "front": "das sichere Passwort",
+    "back": "sikkert kodeord",
+    "ipa": "ˈseɡ̊ɐd̥ ˈkʰoːðəˌoɐ̯ˀ",
+    "example": "Et sikkert kodeord indeholder bogstaver, tal og specialtegn.",
+    "exampleDE": "Ein sicheres Passwort enthält Buchstaben, Ziffern und Sonderzeichen."
+  },
+  {
+    "front": "die Suchmaschine",
+    "back": "søgemaskine",
+    "ipa": "ˈsøːjəmæˌsɡ̊iːnə",
+    "example": "Indtast søgeordene i søgemaskinen.",
+    "exampleDE": "Geben Sie die Suchbegriffe in die Suchmaschine ein."
+  },
+  {
+    "front": "die E-Mail-Adresse",
+    "back": "e-mailadresse",
+    "ipa": "ˈiːmɛjlʔæˌd̥ʁɑsə",
+    "example": "Indtast venligst din gyldige e-mailadresse i formularen.",
+    "exampleDE": "Bitte tragen Sie Ihre gültige E-Mail-Adresse in das Formular ein."
+  },
+  {
+    "front": "der Anhang",
+    "back": "vedhæftet fil",
+    "ipa": "veðˈhɛfd̥əð ˈfiˀl",
+    "example": "Som vedhæftet fil finder du dokumentet i pdf-format.",
+    "exampleDE": "Im Anhang der Nachricht finden Sie das Dokument im PDF-Format."
+  },
+  {
+    "front": "die Datensicherung",
+    "back": "sikkerhedskopiering",
+    "ipa": "ˈseɡ̊ɐheðskʰoˌpʰiˀɐ̯eŋ",
+    "example": "En automatisk sikkerhedskopiering beskytter mod pludseligt datatab.",
+    "exampleDE": "Eine automatische Datensicherung schützt vor überraschendem Datenverlust."
+  },
+  {
+    "front": "das Update",
+    "back": "opdatering",
+    "ipa": "ʌb̥d̥æˈtˢeˀɐ̯eŋ",
+    "example": "Installer regelmæssige softwareopdateringer for at lukke sikkerhedshuller.",
+    "exampleDE": "Installieren Sie regelmäßige Software-Updates zur Schließung von Sicherheitslücken."
+  },
+  {
+    "front": "der Touchscreen",
+    "back": "berøringsskærm",
+    "ipa": "b̥eˈʁœːɐ̯eŋsˌsɡ̊ɛɐ̯ˀm",
+    "example": "Den følsomme berøringsskærm reagerer omgående på berøring.",
+    "exampleDE": "Der berührungsempfindliche Touchscreen reagiert sofort auf Fingertippen."
+  },
+  {
+    "front": "die Sprachnachricht",
+    "back": "talebesked",
+    "ipa": "ˈtˢæːləb̥eˌsɡ̊eðˀ",
+    "example": "I stedet for at skrive længe sendte han hende en kort talebesked.",
+    "exampleDE": "Statt lange zu tippen, schickte er ihr eine kurze Sprachnachricht."
+  },
+  {
+    "front": "die Benachrichtigung",
+    "back": "notifikation",
+    "ipa": "nod̥ifiɡ̊æˈɕoˀn",
+    "example": "På låseskærmen dukkede en ny notifikation op.",
+    "exampleDE": "Auf dem Sperrbildschirm erschien eine neue Benachrichtigung."
+  },
+  {
+    "front": "der Flugmodus",
+    "back": "flytilstand",
+    "ipa": "ˈflyːˌtˢelˌsd̥ænˀ",
+    "example": "Under flyvningen skal alle telefoner sættes i flytilstand.",
+    "exampleDE": "Während des Fluges müssen alle Telefone in den Flugmodus geschaltet werden."
+  },
+  {
+    "front": "die Akkukapazität",
+    "back": "batterikapacitet",
+    "ipa": "b̥ætˢəˈʁiːkʰæb̥æsiˌtˢeˀd̥",
+    "example": "Efter intensiv brug faldt batterikapaciteten til tyve procent.",
+    "exampleDE": "Nach intensivem Gebrauch sank die Akkukapazität auf zwanzig Prozent."
+  },
+  {
+    "front": "das WLAN-Netzwerk",
+    "back": "wi-fi-netværk",
+    "ipa": "ˈvɑjfɑjˌnɛd̥ˌvɛɐ̯ɡ̊",
+    "example": "På hotellet logger vi på det gratis wi-fi-netværk.",
+    "exampleDE": "Im Hotel verbinden wir uns mit dem kostenlosen WLAN-Netzwerk."
+  },
+  {
+    "front": "die Internetverbindung",
+    "back": "internetforbindelse",
+    "ipa": "ˈend̥ɐnɛd̥fʌˌb̥enəlsə",
+    "example": "En stabil internetforbindelse er vigtig for problemfri videoopkald.",
+    "exampleDE": "Eine stabile Internetverbindung ist wichtig für flüssige Videoanrufe."
+  },
+  {
+    "front": "das Wochenende",
+    "back": "weekend",
+    "ipa": "ˈviɡ̊ˌɛnd̥",
+    "example": "I weekenden kan jeg godt lide at sove længe og spise morgenmad i fred.",
+    "exampleDE": "Am Wochenende schlafe ich gerne lange aus und frühstücke in Ruhe."
+  },
+  {
+    "front": "der Feiertag",
+    "back": "helligdag",
+    "ipa": "ˈhɛliˌd̥æˀ",
+    "example": "På officielle helligdage holder de fleste butikker lukket.",
+    "exampleDE": "An gesetzlichen Feiertagen bleiben die meisten Geschäfte geschlossen."
+  },
+  {
+    "front": "der Ausflug",
+    "back": "udflugt",
+    "ipa": "ˈuðˌflɔɡ̊d̥",
+    "example": "Om lørdagen tog familien på udflugt til dyreparken.",
+    "exampleDE": "Am Samstag unternahm die Familie einen Ausflug in den Tierpark."
+  },
+  {
+    "front": "das Picknick",
+    "back": "picnic",
+    "ipa": "ˈpʰiɡ̊neɡ̊",
+    "example": "Vi bredte et tæppe ud og holdt picnic i skyggen.",
+    "exampleDE": "Wir breiteten eine Decke aus und machten ein Picknick im Schatten."
+  },
+  {
+    "front": "die Hängematte",
+    "back": "hængekøje",
+    "ipa": "ˈhɛŋəˌkʰʌjə",
+    "example": "Mellem to skyggefulde træer spændte han en behagelig hængekøje op.",
+    "exampleDE": "Zwischen zwei schattigen Bäumen spannte er eine bequeme Hängematte auf."
+  },
+  {
+    "front": "das Gesellschaftsspiel",
+    "back": "brætspil",
+    "ipa": "ˈb̥ʁæd̥ˌsb̥iˀl",
+    "example": "Om aftenen spiller vi gerne et spændende brætspil ved bordet.",
+    "exampleDE": "Abends spielen wir gerne ein spannendes Gesellschaftsspiel am Tisch."
+  },
+  {
+    "front": "das Kartenspiel",
+    "back": "kortspil",
+    "ipa": "ˈkʰoɐ̯d̥ˌsb̥iˀl",
+    "example": "Fire personer spillede et underholdende spil kort sammen.",
+    "exampleDE": "Zu viert spielten sie eine unterhaltsame Runde Skat."
+  },
+  {
+    "front": "das Kreuzworträtsel",
+    "back": "krydsogtværs",
+    "ipa": "ˈkʰʁytsʌˈtˢvɛɐ̯ˀs",
+    "example": "Til søndagskaffen løser min bedstefar en krydsogtværs.",
+    "exampleDE": "Beim sonntäglichen Kaffee löst mein Großvater das Kreuzworträtsel."
+  },
+  {
+    "front": "die Fotografie",
+    "back": "fotografering",
+    "ipa": "fod̥oɡ̊ʁɑˈfeˀɐ̯eŋ",
+    "example": "Naturfotografering har i mange år været hans store hobby.",
+    "exampleDE": "Die Naturfotografie ist seit vielen Jahren sein leidenschaftliches Hobby."
+  },
+  {
+    "front": "das Gärtnern",
+    "back": "havearbejde",
+    "ipa": "ˈhæːwəʔɑːˌb̥ɑjˀdə",
+    "example": "Havearbejde i ens egen køkkenhave beroliger efter en anstrengende uge.",
+    "exampleDE": "Das Gärtnern im eigenen Gemüsegarten entspannt nach einer anstrengenden Woche."
+  },
+  {
+    "front": "das Stricken",
+    "back": "strikning",
+    "ipa": "ˈsd̥ʁæɡ̊neŋ",
+    "example": "Hun strikker farverige strømper af varm uld til sine børnebørn.",
+    "exampleDE": "Sie strickt aus warmer Wolle bunte Socken für ihre Enkelkinder."
+  },
+  {
+    "front": "das Häkeln",
+    "back": "hækling",
+    "ipa": "ˈhɛɡ̊leŋ",
+    "example": "Med en fin hæklenål hækler hun fine små duge.",
+    "exampleDE": "Mit einer feinen Häkelnadel häkelt sie zarte Deckchen."
+  },
+  {
+    "front": "die Nähmaschine",
+    "back": "symaskine",
+    "ipa": "ˈsyːmæˌsɡ̊iːnə",
+    "example": "Med den elektriske symaskine syr hun nye pudebetræk.",
+    "exampleDE": "Mit der elektrischen Nähmaschine näht sie neue Kissenbezüge."
+  },
+  {
+    "front": "das Heimwerken",
+    "back": "gør-det-selv-arbejde",
+    "ipa": "ˈɡ̊œɐ̯d̥əd̥ˈsɛlʔɑːˌb̥ɑjˀdə",
+    "example": "Om lørdagen helliger han sig fuldt ud til gør-det-selv-arbejde i kælderen.",
+    "exampleDE": "Am Samstag widmet er sich voll und ganz dem Heimwerken im Keller."
+  },
+  {
+    "front": "das Basteln",
+    "back": "kreativt håndarbejde",
+    "ipa": "kʰʁeæˈtˢiˀwd̥ ˈhʌnʔɑːˌb̥ɑjˀdə",
+    "example": "Før jul laver børnene festlig julepynt af papir.",
+    "exampleDE": "Vor Weihnachten basteln die Kinder festlichen Schmuck aus Papier."
+  },
+  {
+    "front": "der Bestseller",
+    "back": "bestseller",
+    "ipa": "ˈb̥ɛsd̥ˌsɛlɐ",
+    "example": "Den spændende krimi strøg direkte ind på bestsellerlisten.",
+    "exampleDE": "Der spannende Kriminalroman schaffte es sofort auf die Bestsellerliste."
+  },
+  {
+    "front": "das Taschenbuch",
+    "back": "paperback",
+    "ipa": "ˈpʰe̝jpʰɐˌb̥æɡ̊",
+    "example": "Til ferien pakker hun to lette paperbacks i kufferten.",
+    "exampleDE": "Für den Urlaub packt sie zwei leichte Taschenbücher in den Koffer."
+  },
+  {
+    "front": "das Lesezeichen",
+    "back": "bogmærke",
+    "ipa": "ˈb̥oːwˌmɛɐ̯ɡ̊ə",
+    "example": "Et flot bogmærke markerer den sidst læste side.",
+    "exampleDE": "Ein schönes Lesezeichen markiert die zuletzt gelesene Seite."
+  },
+  {
+    "front": "die Buchhandlung",
+    "back": "boghandel",
+    "ipa": "ˈb̥oːwˌhænˀl",
+    "example": "I den lille boghandel på hjørnet kigger han på bøger i timevis.",
+    "exampleDE": "In der kleinen Buchhandlung an der Ecke stöbert er stundenlang."
+  },
+  {
+    "front": "die Handlung",
+    "back": "handling",
+    "ipa": "ˈhænleŋ",
+    "example": "Romanens fængslende handling foregår i det victorianske London.",
+    "exampleDE": "Die fesselnde Handlung des Romans spielt im viktorianischen London."
+  },
+  {
+    "front": "die Hauptfigur",
+    "back": "hovedperson",
+    "ipa": "ˈhoːwəðpʰæɐ̯ˌsoˀn",
+    "example": "Den modige hovedperson klarer mange eventyr i løbet af bogen.",
+    "exampleDE": "Die mutige Hauptfigur meistert im Laufe des Buches viele Abenteuer."
+  },
+  {
+    "front": "das Kapitel",
+    "back": "kapitel",
+    "ipa": "kʰæˈpʰid̥əl",
+    "example": "Før jeg falder i søvn, læser jeg endnu et spændende kapitel færdigt.",
+    "exampleDE": "Vor dem Einschlafen lese ich noch ein spannendes Kapitel zu Ende."
+  },
+  {
+    "front": "der Autor",
+    "back": "forfatter",
+    "ipa": "fʌˈfætɐ",
+    "example": "Den anerkendte forfatter signerede mange eksemplarer efter oplæsningen.",
+    "exampleDE": "Der renommierte Autor signierte nach der Lesung viele Exemplare."
+  },
+  {
+    "front": "die Leinwand",
+    "back": "lærred",
+    "ipa": "ˈlɛːɐ̯əð",
+    "example": "På biografens kæmpemæssige lærred virker landskabsbillederne overvældende.",
+    "exampleDE": "Auf der riesigen Leinwand des Kinos wirken Landschaftsaufnahmen überwältigend."
+  },
+  {
+    "front": "der Dokumentarfilm",
+    "back": "dokumentarfilm",
+    "ipa": "d̥oɡ̊umɛnˈtˢɑˀˌfiˀlm",
+    "example": "Dokumentarfilmen belyser vilde dyrs fascinerende liv.",
+    "exampleDE": "Der Dokumentarfilm beleuchtet das faszinierende Leben wilder Tiere."
+  },
+  {
+    "front": "die Komödie",
+    "back": "komedie",
+    "ipa": "kʰoˈmeˀðjə",
+    "example": "En munter komedie vakte mange hjertelige grin i salen.",
+    "exampleDE": "Eine heitere Komödie sorgte für viele herzliche Lacher im Saal."
+  },
+  {
+    "front": "der Untertitel",
+    "back": "undertekst",
+    "ipa": "ˈonɐˌtˢɛɡ̊sd̥",
+    "example": "Fremmedsprogede film ser jeg helst med danske undertekster.",
+    "exampleDE": "Fremdsprachige Filme schaue ich am liebsten mit deutschen Untertiteln."
+  },
+  {
+    "front": "die Fernbedienung",
+    "back": "fjernbetjening",
+    "ipa": "ˈfjæɐ̯nb̥eˌtɕeˀneŋ",
+    "example": "Med fjernbetjeningen skruer han ned for lydstyrken på fjernsynet.",
+    "exampleDE": "Mit der Fernbedienung schaltet er die Lautstärke des Fernsehers leiser."
+  },
+  {
+    "front": "die Fernsehserie",
+    "back": "tv-serie",
+    "ipa": "ˈtˢeːveːˌseːʁiə",
+    "example": "Den nye sæson af den populære tv-serie udkommer i næste uge.",
+    "exampleDE": "Die neue Staffel der beliebten Fernsehserie erscheint nächste Woche."
+  },
+  {
+    "front": "der Schauspieler",
+    "back": "skuespiller",
+    "ipa": "ˈsɡ̊oːəˌsb̥elɐ",
+    "example": "Den talentfulde skuespiller fremstiller sin rolle meget troværdigt.",
+    "exampleDE": "Der talentierte Schauspieler verkörpert seine Rolle sehr glaubwürdig."
+  },
+  {
+    "front": "das Theaterstück",
+    "back": "teaterstykke",
+    "ipa": "tˢeˈæˀd̥ɐˌsd̥yɡ̊ə",
+    "example": "Det klassiske teaterstykke blev iscenesat på moderne vis.",
+    "exampleDE": "Das klassische Theaterstück von Schiller wurde modern inszeniert."
+  },
+  {
+    "front": "der Theatervorhang",
+    "back": "teatertæppe",
+    "ipa": "tˢeˈæˀd̥ɐˌtˢɛb̥ə",
+    "example": "Under stor applaus gik det tunge røde teatertæppe ned.",
+    "exampleDE": "Unter großem Applaus senkte sich der schwere rote Theatervorhang."
+  },
+  {
+    "front": "der Beifall",
+    "back": "bifald",
+    "ipa": "ˈb̥iːˌfælˀ",
+    "example": "Det begejstrede publikum gav skuespillerne et bragende bifald.",
+    "exampleDE": "Das begeisterte Publikum spendete den Darstellern tosenden Beifall."
+  },
+  {
+    "front": "das Bühnenbild",
+    "back": "scenografi",
+    "ipa": "se̝noɡ̊ʁɑˈfiˀ",
+    "example": "Den overdådige scenografi forestillede et historisk torv.",
+    "exampleDE": "Das aufwendige Bühnenbild stellte einen historischen Marktplatz dar."
+  },
+  {
+    "front": "die Garderobe",
+    "back": "garderobe",
+    "ipa": "ɡ̊ɑd̥əˈʁoːb̥ə",
+    "example": "Inden forestillingen begynder, afleverer man overtøjet i garderoben.",
+    "exampleDE": "Vor Beginn der Vorstellung gibt man Jacken an der Garderobe ab."
+  },
+  {
+    "front": "die Pause",
+    "back": "pause",
+    "ipa": "ˈpʰɒwsə",
+    "example": "I den tyve minutter lange pause drikker gæsterne et glas mousserende vin.",
+    "exampleDE": "In der zwanzigminütigen Pause trinken die Besucher ein Glas Sekt."
+  },
+  {
+    "front": "der Rang",
+    "back": "balkon",
+    "ipa": "b̥ælˈkʰʌŋ",
+    "example": "Fra pladserne på første balkon har man et fremragende overblik.",
+    "exampleDE": "Von den Plätzen im ersten Rang hat man einen ausgezeichneten Überblick."
+  },
+  {
+    "front": "die Generalprobe",
+    "back": "generalprøve",
+    "ipa": "ɕenəˈʁɑˀlˌpʰʁœːwə",
+    "example": "Den sidste prøve før den store premiere forløb fejlfrit.",
+    "exampleDE": "Die letzte Probe vor der großen Premiere verlief fehlerfrei."
+  },
+  {
+    "front": "die Kunstgalerie",
+    "back": "kunstgalleri",
+    "ipa": "ˈkʰɔnsd̥ɡ̊æləˌʁiˀ",
+    "example": "I byens kunstgalleri udstiller unge malere deres værker.",
+    "exampleDE": "In der städtischen Kunstgalerie stellen junge Maler ihre Werke aus."
+  },
+  {
+    "front": "das Ölgemälde",
+    "back": "oliemaleri",
+    "ipa": "ˈoːljəmæləˌʁiˀ",
+    "example": "Det værdifulde oliemaleri stammer fra det syttende århundrede.",
+    "exampleDE": "Das wertvolle Ölgemälde stammt aus dem siebzehnten Jahrhundert."
+  },
+  {
+    "front": "die Skulptur",
+    "back": "skulptur",
+    "ipa": "sɡ̊ulb̥ˈtˢuɐ̯ˀ",
+    "example": "I museumshaven står en skulptur i bronze i naturlig størrelse.",
+    "exampleDE": "Im Museumsgarten steht eine lebensgroße Skulptur aus Bronze."
+  },
+  {
+    "front": "der Museumsführer",
+    "back": "audioguide",
+    "ipa": "ˈɑwdiˌoˌɡ̊ɑjd̥",
+    "example": "Den elektroniske audioguide leder de besøgende informativt gennem rummene.",
+    "exampleDE": "Der elektronische Audioguide führt Besucher informativ durch die Räume."
+  },
+  {
+    "front": "der Eintritt",
+    "back": "entré",
+    "ipa": "ɑŋˈtˢʁeˀ",
+    "example": "For skoleelever og studerende er der rabat på entréen om søndagen.",
+    "exampleDE": "Für Schüler und Studierende ist der Eintritt sonntags ermäßigt."
+  },
+  {
+    "front": "die Sonderausstellung",
+    "back": "særudstilling",
+    "ipa": "ˈsɛːɐ̯uðˌsd̥eleŋ",
+    "example": "Særudstillingen om antikken tiltrækker mange besøgende.",
+    "exampleDE": "Die Sonderausstellung über die Antike lockt viele Besucher an."
+  },
+  {
+    "front": "das Meisterwerk",
+    "back": "mesterværk",
+    "ipa": "ˈmɛsd̥ɐˌvɛɐ̯ɡ̊",
+    "example": "Dette verdensberømte portræt regnes for malerens mesterværk.",
+    "exampleDE": "Dieses weltberühmte Porträt gilt als das Meisterwerk des Malers."
+  },
+  {
+    "front": "die Akustikgitarre",
+    "back": "akustisk guitar",
+    "ipa": "æˈkʰusd̥isɡ̊ ɡ̊iˈtˢɑˀ",
+    "example": "Ved lejrbålet akkompagnerer han sangene på den akustiske guitar.",
+    "exampleDE": "Am Lagerfeuer begleitet er die Lieder auf der Akustikgitarre."
+  },
+  {
+    "front": "das Klavier",
+    "back": "klaver",
+    "ipa": "klæˈveˀɐ̯",
+    "example": "Hun øver flittigt skalaer på klaveret hver eftermiddag.",
+    "exampleDE": "Sie übt jeden Nachmittag fleißig Tonleitern auf dem Klavier."
+  },
+  {
+    "front": "die Geige",
+    "back": "violin",
+    "ipa": "violiˀn",
+    "example": "Violinens klare klang bar strygekvartettens melodi.",
+    "exampleDE": "Der klare Klang der Geige trug die Melodie des Streichquartetts."
+  },
+  {
+    "front": "das Schlagzeug",
+    "back": "trommesæt",
+    "ipa": "ˈtˢʁʌməˌsɛd̥",
+    "example": "Trommeslageren angiver bandets fremadstormende rytme på trommesættet.",
+    "exampleDE": "Der Schlagzeuger gibt der Band den treibenden Rhythmus vor."
+  },
+  {
+    "front": "der Notenständer",
+    "back": "nodestativ",
+    "ipa": "ˈnoːðəsd̥æˌtˢiˀw",
+    "example": "Nodehæftet står opslået på det stabile nodestativ.",
+    "exampleDE": "Das Notenheft steht aufgeschlagen auf dem stabilen Notenständer."
+  },
+  {
+    "front": "der Kopfhörer",
+    "back": "høretelefoner",
+    "ipa": "ˈhøːɐ̯əd̥eləˌfoˀnɐ",
+    "example": "I toget lytter hun til sin yndlingsmusik via trådløse høretelefoner.",
+    "exampleDE": "In der Bahn hört sie ihre Lieblingsmusik über kabellose Kopfhörer."
+  },
+  {
+    "front": "der Songtext",
+    "back": "sangtekst",
+    "ipa": "ˈsɑŋˌtˢɛɡ̊sd̥",
+    "example": "Han kan den engelske sangtekst helt udenad.",
+    "exampleDE": "Er kennt den Songtext des englischen Liedes komplett auswendig."
+  },
+  {
+    "front": "der Chor",
+    "back": "kor",
+    "ipa": "kʰoɐ̯ˀ",
+    "example": "Kirkekoret øver hver uge op til den festlige julekoncert.",
+    "exampleDE": "Der Kirchenchor probt wöchentlich für das festliche Weihnachtskonzert."
+  },
+  {
+    "front": "die Laufschuhe",
+    "back": "løbesko",
+    "ipa": "ˈløːb̥əˌsɡ̊oˀ",
+    "example": "Gode løbesko dæmper hvert skridt ved løb på asfalt.",
+    "exampleDE": "Gute Laufschuhe dämpfen jeden Schritt beim Joggen auf Asphalt."
+  },
+  {
+    "front": "die Trinkflasche",
+    "back": "drikkedunk",
+    "ipa": "ˈd̥ʁæɡ̊əˌd̥ɔŋɡ̊",
+    "example": "Til sport har jeg altid en fyldt drikkedunk lige ved hånden.",
+    "exampleDE": "Beim Sport habe ich immer eine gefüllte Trinkflasche griffbereit."
+  },
+  {
+    "front": "das Fitnessstudio",
+    "back": "fitnesscenter",
+    "ipa": "ˈfed̥nəsˌsɛnˀd̥ɐ",
+    "example": "Tre gange om ugen træner han på maskinerne i fitnesscentret.",
+    "exampleDE": "Dreimal pro Woche trainiert er an den Geräten im Fitnessstudio."
+  },
+  {
+    "front": "die Gymnastikmatte",
+    "back": "træningsmåtte",
+    "ipa": "ˈtˢʁɛːneŋsˌmʌd̥ə",
+    "example": "Hun ruller sin skridsikre træningsmåtte ud til yoga.",
+    "exampleDE": "Sie rollt ihre rutschfeste Gymnastikmatte für das Yoga aus."
+  },
+  {
+    "front": "die Liegestütze",
+    "back": "armbøjning",
+    "ipa": "ˈɑːmˌb̥ʌjneŋ",
+    "example": "Ti perfekte armbøjninger hører til hans morgencirkeltræning.",
+    "exampleDE": "Zehn saubere Liegestütze gehören zu seinem morgendlichen Zirkeltraining."
+  },
+  {
+    "front": "das Seilspringen",
+    "back": "sjipping",
+    "ipa": "ˈɕeb̥eŋ",
+    "example": "Sjipping er en fremragende øvelse for koordination og kondition.",
+    "exampleDE": "Seilspringen ist eine hervorragende Übung für Koordination und Kondition."
+  },
+  {
+    "front": "der Marathon",
+    "back": "maraton",
+    "ipa": "ˈmɑːʁɑˌtˢʌn",
+    "example": "I månedsvis forberedte han sig samvittighedsfuldt på sit første maraton.",
+    "exampleDE": "Monatelang bereitete er sich gewissenhaft auf seinen ersten Marathon vor."
+  },
+  {
+    "front": "der Fußballplatz",
+    "back": "fodboldbane",
+    "ipa": "ˈfoðb̥ʌlˀd̥ˌb̥æːnə",
+    "example": "De unge mødes efter skole på fodboldbanen.",
+    "exampleDE": "Die Jugendlichen treffen sich nach der Schule auf dem Fußballplatz."
+  },
+  {
+    "front": "das Tor",
+    "back": "mål",
+    "ipa": "mɔˀl",
+    "example": "I det sidste spilleminut scorede angriberen det afgørende mål.",
+    "exampleDE": "In der letzten Spielminute schoss die Stürmerin das entscheidende Tor."
+  },
+  {
+    "front": "der Schiedsrichter",
+    "back": "dommer",
+    "ipa": "ˈd̥ʌmɐ",
+    "example": "Den upartiske dommer fløjtede den fair kamp i gang til tiden.",
+    "exampleDE": "Der unparteiische Schiedsrichter pfiff das faire Spiel pünktlich an."
+  },
+  {
+    "front": "die Halbzeitpause",
+    "back": "halvlegspause",
+    "ipa": "ˈhæwˌlɑjˀsˌpʰɒwsə",
+    "example": "I den femten minutter lange halvlegspause gennemgår spillerne taktikken.",
+    "exampleDE": "In der fünfzehnminütigen Halbzeitpause besprechen die Spieler die Taktik."
+  },
+  {
+    "front": "der Basketballkorb",
+    "back": "basketballkurv",
+    "ipa": "ˈb̥æːsɡ̊əd̥ˌb̥ɔˀlˌkʰuɐ̯w",
+    "example": "Med et præcist kast ramte han bolden direkte i basketballkurven.",
+    "exampleDE": "Mit einem gezielten Wurf traf er den Ball direkt in den Basketballkorb."
+  },
+  {
+    "front": "der Tennisschläger",
+    "back": "tennisketsjer",
+    "ipa": "ˈtˢɛnisˌkʰɛtɕɐ",
+    "example": "Hun strenger sin tennisketsjer op på ny før den store turnering.",
+    "exampleDE": "Sie bespannt ihren Tennisschläger vor dem großen Turnier neu."
+  },
+  {
+    "front": "die Tischtennisplatte",
+    "back": "bordtennisbord",
+    "ipa": "ˈb̥oɐ̯d̥ˌtˢɛnisˌb̥oɐ̯ˀ",
+    "example": "I haven står der et vejrbestandigt bordtennisbord af beton.",
+    "exampleDE": "Im Garten steht eine wetterfeste Tischtennisplatte aus Beton."
+  },
+  {
+    "front": "das Turnier",
+    "back": "turnering",
+    "ipa": "tˢuɐ̯ˈneˀɐ̯eŋ",
+    "example": "Over tyve hold deltager i den regionale sportsturnering.",
+    "exampleDE": "An dem regionalen Sportturnier nehmen über zwanzig Teams teil."
+  },
+  {
+    "front": "das Schwimmbad",
+    "back": "svømmehal",
+    "ipa": "ˈsvœməˌhæl",
+    "example": "I svømmehallen svømmer han tyve baner hver tirsdag morgen.",
+    "exampleDE": "Im Hallenbad schwimmt er jeden Dienstagmorgen zwanzig Bahnen."
+  },
+  {
+    "front": "die Schwimmbrille",
+    "back": "svømmebriller",
+    "ipa": "ˈsvœməˌb̥ʁilɐ",
+    "example": "Tætsluttende svømmebriller beskytter øjnene mod klorvand.",
+    "exampleDE": "Eine dicht sitzende Schwimmbrille schützt die Augen vor Chlorwasser."
+  },
+  {
+    "front": "der Sprungturm",
+    "back": "udspringstårn",
+    "ipa": "ˈuðsb̥ʁæŋsˌtˢoɐ̯ˀn",
+    "example": "Modigt sprang pigen fra det tre meter høje udspringstårn ned i bassinet.",
+    "exampleDE": "Mutig sprang das Mädchen vom Dreimeter-Sprungturm ins Becken."
+  },
+  {
+    "front": "das Segelboot",
+    "back": "sejlbåd",
+    "ipa": "ˈsɑjlˌb̥ɔˀð",
+    "example": "Med satte sejl glider den lille sejlbåd over søen.",
+    "exampleDE": "Mit gesetzten Segeln gleitet das kleine Segelboot über den See."
+  },
+  {
+    "front": "die Schwimmweste",
+    "back": "redningsvest",
+    "ipa": "ˈʁɛðneŋsˌvɛsd̥",
+    "example": "På åbent vand er det obligatorisk at bære en redningsvest.",
+    "exampleDE": "Auf dem offenen Wasser ist das Tragen einer Schwimmweste Pflicht."
+  },
+  {
+    "front": "das Paddel",
+    "back": "pagaj",
+    "ipa": "pʰæˈɡ̊ɑj",
+    "example": "Med rolige tag dypper han pagajen i det blikstille vand.",
+    "exampleDE": "Mit gleichmäßigen Zügen taucht er das Paddel ins ruhige Wasser."
+  }
+]

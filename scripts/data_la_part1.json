@@ -1,0 +1,1402 @@
+[
+  {
+    "front": "die Bettdecke",
+    "back": "lodix",
+    "ipa": "ˈloː.dɪks",
+    "example": "Lodix mollis tempore hiemis bene calefacit.",
+    "exampleDE": "Die weiche Bettdecke hält im Winter schön warm."
+  },
+  {
+    "front": "der Wecker",
+    "back": "horologium excitatorium",
+    "ipa": "ho.roˈlo.ɡɪ.ʊm ɛk.skɪ.taˈtoː.rɪ.ʊm",
+    "example": "Horologium excitatorium hora septima accurate sonat.",
+    "exampleDE": "Der Wecker klingelt pünktlich um sieben Uhr."
+  },
+  {
+    "front": "das Schlummern",
+    "back": "somniculus",
+    "ipa": "sɔmˈnɪ.kʊ.lʊs",
+    "example": "Post primum horologii sonum clavem ad dormitiunculam premit.",
+    "exampleDE": "Nach dem ersten Weckerklingeln drückt er auf die Schlummertaste."
+  },
+  {
+    "front": "das Zähneputzen",
+    "back": "dentium purgatio",
+    "ipa": "ˈdɛn.tɪ.ʊm pʊrˈɡaː.tɪ.oː",
+    "example": "Diligens dentium purgatio ad dentes sanos necessaria est.",
+    "exampleDE": "Gründliches Zähneputzen ist wichtig für gesunde Zähne."
+  },
+  {
+    "front": "sich anziehen",
+    "back": "vestem induere",
+    "ipa": "ˈwɛs.tɛm ɪnˈdʊ.ɛ.rɛ",
+    "example": "Indue celeriter vestem, nobis proficiscendum est.",
+    "exampleDE": "Zieh dich schnell an, wir müssen los."
+  },
+  {
+    "front": "die Haarbürste",
+    "back": "pecten",
+    "ipa": "ˈpɛk.tɛn",
+    "example": "Longos capillos pectine comit.",
+    "exampleDE": "Sie kämmt ihre langen Haare mit einer Haarbürste."
+  },
+  {
+    "front": "der Spiegel",
+    "back": "speculum",
+    "ipa": "ˈspɛ.kʊ.lʊm",
+    "example": "Paulisper in speculum in vestibulo inspicit.",
+    "exampleDE": "Er schaut kurz in den Spiegel im Flur."
+  },
+  {
+    "front": "die Routine",
+    "back": "consuetudo",
+    "ipa": "kɔn.sʊ.eːˈtuː.doː",
+    "example": "Certa matutina consuetudo multum temporis servat.",
+    "exampleDE": "Eine feste Morgenroutine spart viel Zeit."
+  },
+  {
+    "front": "der Mietvertrag",
+    "back": "pactum conductionis",
+    "ipa": "ˈpak.tʊm kɔn.dʊk.tɪˈoː.nɪs",
+    "example": "Heri novum pactum conductionis subscripsimus.",
+    "exampleDE": "Wir haben gestern den neuen Mietvertrag unterschrieben."
+  },
+  {
+    "front": "die Kaution",
+    "back": "cautio",
+    "ipa": "ˈkaʊ̯.tɪ.oː",
+    "example": "Cautio mercedem trium mensium efficit.",
+    "exampleDE": "Die Kaution beträgt drei Monatsmieten."
+  },
+  {
+    "front": "die Nebenkosten",
+    "back": "sumptus additi",
+    "ipa": "ˈsʊmp.tuːs ˈad.dɪ.tiː",
+    "example": "Calor et aqua in sumptibus additis continentur.",
+    "exampleDE": "Heizung und Wasser sind in den Nebenkosten enthalten."
+  },
+  {
+    "front": "der Vermieter",
+    "back": "locator",
+    "ipa": "lɔˈkaː.tɔr",
+    "example": "Locator instrumentum calefaciendi fractum reficit.",
+    "exampleDE": "Der Vermieter repariert die defekte Heizung."
+  },
+  {
+    "front": "der Mieter",
+    "back": "conductor",
+    "ipa": "kɔnˈdʊk.tɔr",
+    "example": "Conductor initio mensis mercedem solvit.",
+    "exampleDE": "Der Mieter bezahlt die Miete am Anfang des Monats."
+  },
+  {
+    "front": "die Kündigung",
+    "back": "denuntiatio",
+    "ipa": "deː.nʊn.tɪˈaː.tɪ.oː",
+    "example": "Denuntiatio veteris habitaculi scripto fieri debet.",
+    "exampleDE": "Die Kündigung der alten Wohnung muss schriftlich erfolgen."
+  },
+  {
+    "front": "die Wohnfläche",
+    "back": "spatium habitandi",
+    "ipa": "ˈspa.tɪ.ʊm ha.bɪˈtan.diː",
+    "example": "Habitaculum octoginta metra quadrata spatii habitandi continet.",
+    "exampleDE": "Die Wohnung hat eine Wohnfläche von achtzig Quadratmetern."
+  },
+  {
+    "front": "der Umzug",
+    "back": "migratio",
+    "ipa": "mɪˈɡraː.tɪ.oː",
+    "example": "Migratio in novam urbem sine impedimento evenit.",
+    "exampleDE": "Der Umzug in die neue Stadt verlief reibungslos."
+  },
+  {
+    "front": "das Bücherregal",
+    "back": "pluteus librorum",
+    "ipa": "ˈplʊ.tɛ.ʊs lɪˈbroː.rʊm",
+    "example": "Pluteus librorum ad parietem in conclavi operis stat.",
+    "exampleDE": "Das Bücherregal steht an der Wand im Arbeitszimmer."
+  },
+  {
+    "front": "der Kleiderschrank",
+    "back": "armarium vestiarium",
+    "ipa": "arˈmaː.rɪ.ʊm wɛs.tɪˈaː.rɪ.ʊm",
+    "example": "Subuculas suas diligenter in armarium vestiarium suspendit.",
+    "exampleDE": "Er hängt seine Hemden ordentlich in den Kleiderschrank."
+  },
+  {
+    "front": "der Schreibtischstuhl",
+    "back": "sella scriptoria",
+    "ipa": "ˈsɛl.la skrɪpˈtoː.rɪ.a",
+    "example": "Sella scriptoria commoda dorso parcit.",
+    "exampleDE": "Ein bequemer Schreibtischstuhl schont den Rücken."
+  },
+  {
+    "front": "die Stehlampe",
+    "back": "lucerna erecta",
+    "ipa": "lʊˈkɛr.na ɛˈrɛk.ta",
+    "example": "Lucerna erecta vespere lumen calidum praebet.",
+    "exampleDE": "Die Stehlampe spendet warmes Licht am Abend."
+  },
+  {
+    "front": "der Esstisch",
+    "back": "mensa cenatoria",
+    "ipa": "ˈmɛn.sa keː.naˈtoː.rɪ.a",
+    "example": "Tota familia vespere ad magnam mensam cenatoriam sedet.",
+    "exampleDE": "Die ganze Familie sitzt abends am großen Esstisch."
+  },
+  {
+    "front": "das Sofa",
+    "back": "lectulus",
+    "ipa": "ˈlɛk.tʊ.lʊs",
+    "example": "In lectulo commodo praeclare quiescere licet.",
+    "exampleDE": "Auf dem bequemen Sofa kann man herrlich entspannen."
+  },
+  {
+    "front": "der Vorhang",
+    "back": "velum",
+    "ipa": "ˈweː.lʊm",
+    "example": "Velum ducit, cum tenebrae fiunt.",
+    "exampleDE": "Sie zieht den Vorhang zu, wenn es dunkel wird."
+  },
+  {
+    "front": "der Staubsauger",
+    "back": "hauritor pulveris",
+    "ipa": "haʊ̯ˈriː.tɔr ˈpʊl.wɛ.rɪs",
+    "example": "Tapete novo hauritore pulveris purgat.",
+    "exampleDE": "Er saugt den Teppich mit dem neuen Staubsauger."
+  },
+  {
+    "front": "das Bügelbrett",
+    "back": "tabula complanandi",
+    "ipa": "ˈta.bʊ.la kɔm.plaːˈnan.diː",
+    "example": "Tabula complanandi complicata in armario stat.",
+    "exampleDE": "Das Bügelbrett steht zusammengeklappt im Schrank."
+  },
+  {
+    "front": "das Bügeleisen",
+    "back": "ferrum complanatorium",
+    "ipa": "ˈfɛr.rʊm kɔm.plaː.naˈtoː.rɪ.ʊm",
+    "example": "Ferrum complanatorium valde calidum fit.",
+    "exampleDE": "Das Bügeleisen wird sehr heiß."
+  },
+  {
+    "front": "der Wischmop",
+    "back": "peniculus",
+    "ipa": "pɛˈnɪ.kʊ.lʊs",
+    "example": "Solum culinae peniculo terget.",
+    "exampleDE": "Sie wischt den Küchenboden mit dem Wischmop."
+  },
+  {
+    "front": "das Spülmittel",
+    "back": "purgamentum vasorum",
+    "ipa": "pʊr.ɡaːˈmɛn.tʊm waˈsoː.rʊm",
+    "example": "Paucae guttae purgamenti vasis sufficiunt.",
+    "exampleDE": "Ein paar Tropfen Spülmittel genügen für das Geschirr."
+  },
+  {
+    "front": "die Mülltonne",
+    "back": "dolium ruderarium",
+    "ipa": "ˈdɔ.lɪ.ʊm rʊ.dɛˈraː.rɪ.ʊm",
+    "example": "Defer, quaeso, dolium ruderarium ad viam.",
+    "exampleDE": "Bring bitte die Mülltonne an die Straße."
+  },
+  {
+    "front": "der Wäscheständer",
+    "back": "fulcrum vestimentorum",
+    "ipa": "ˈfʊl.krʊm wɛs.tɪ.mɛnˈtoː.rʊm",
+    "example": "Lintea madida in fulcro vestimentorum siccantur.",
+    "exampleDE": "Die nasse Wäsche trocknet auf dem Wäscheständer."
+  },
+  {
+    "front": "die Glühbirne",
+    "back": "globulus electricus",
+    "ipa": "ˈɡlɔ.bʊ.lʊs ɛˈlɛk.trɪ.kʊs",
+    "example": "Globulum electricum fractum in vestibulo mutare debemus.",
+    "exampleDE": "Wir müssen die kaputte Glühbirne im Flur auswechseln."
+  },
+  {
+    "front": "der Schraubenzieher",
+    "back": "cochleitor",
+    "ipa": "kɔk.lɛˈiː.tɔr",
+    "example": "Cochleitore cochleam laxam astringit.",
+    "exampleDE": "Mit dem Schraubenzieher zieht er die lose Schraube fest."
+  },
+  {
+    "front": "die Zange",
+    "back": "forceps",
+    "ipa": "ˈfɔr.kɛps",
+    "example": "Filum metallicum forcipe retinet.",
+    "exampleDE": "Er hält den Draht mit einer Zange fest."
+  },
+  {
+    "front": "die Bohrmaschine",
+    "back": "terebra electrica",
+    "ipa": "ˈtɛ.rɛ.bra ɛˈlɛk.trɪ.ka",
+    "example": "Terebra electrica foramen in pariete efficit.",
+    "exampleDE": "Die Bohrmaschine bohrt ein Loch in die Wand."
+  },
+  {
+    "front": "der Handwerker",
+    "back": "artifex",
+    "ipa": "ˈar.tɪ.fɛks",
+    "example": "Artifex cras mane hora octava adveniet.",
+    "exampleDE": "Der Handwerker kommt morgen früh um acht."
+  },
+  {
+    "front": "der Pinsel",
+    "back": "penicillus",
+    "ipa": "pɛ.nɪˈkɪl.lʊs",
+    "example": "Scamnum ligneum lato penicillo linit.",
+    "exampleDE": "Sie streicht die Holzbank mit einem breiten Pinsel."
+  },
+  {
+    "front": "reparieren",
+    "back": "reficere",
+    "ipa": "rɛˈfɪ.kɛ.rɛ",
+    "example": "Potesne, quaeso, birotam fractam reficere?",
+    "exampleDE": "Kannst du das kaputte Fahrrad bitte reparieren?"
+  },
+  {
+    "front": "der Werkzeugkasten",
+    "back": "capsa instrumentorum",
+    "ipa": "ˈkap.sa ɪn.strʊ.mɛnˈtoː.rʊm",
+    "example": "Omnia instrumenta prompta in capsa instrumentorum iacent.",
+    "exampleDE": "Alle Werkzeuge liegen griffbereit im Werkzeugkasten."
+  },
+  {
+    "front": "das Schneidebrett",
+    "back": "tabula culinaria",
+    "ipa": "ˈta.bʊ.la kʊ.lɪˈnaː.rɪ.a",
+    "example": "Caepam, quaeso, in tabula culinaria seca.",
+    "exampleDE": "Schneide die Zwiebel bitte auf dem Schneidebrett."
+  },
+  {
+    "front": "der Kochtopf",
+    "back": "olla",
+    "ipa": "ˈɔl.la",
+    "example": "Ius in magna olla super focum coquitur.",
+    "exampleDE": "Die Suppe kocht im großen Kochtopf auf dem Herd."
+  },
+  {
+    "front": "die Bratpfanne",
+    "back": "sartago",
+    "ipa": "sarˈtaː.ɡoː",
+    "example": "Holera in sartagine calida friguntur.",
+    "exampleDE": "In der heißen Bratpfanne brät das Gemüse."
+  },
+  {
+    "front": "der Wasserkocher",
+    "back": "lebes electricus",
+    "ipa": "ˈlɛ.beːs ɛˈlɛk.trɪ.kʊs",
+    "example": "Lebes electricus aquam theae duobus minutis coquit.",
+    "exampleDE": "Der Wasserkocher kocht das Teewasser in zwei Minuten."
+  },
+  {
+    "front": "der Backofen",
+    "back": "clibanus",
+    "ipa": "ˈklɪ.ba.nʊs",
+    "example": "Placenta dimidia hora in clibano coquitur.",
+    "exampleDE": "Der Kuchen backt eine halbe Stunde im Backofen."
+  },
+  {
+    "front": "das Rezept",
+    "back": "praeceptum culinarium",
+    "ipa": "prae̯ˈkɛp.tʊm kʊ.lɪˈnaː.rɪ.ʊm",
+    "example": "Avia mea hoc praeceptum culinarium invenit.",
+    "exampleDE": "Dieses Rezept hat meine Großmutter erfunden."
+  },
+  {
+    "front": "die Zutat",
+    "back": "elementum condimenti",
+    "ipa": "ɛ.lɛˈmɛn.tʊm kɔn.dɪˈmɛn.tiː",
+    "example": "Herbae recentes gravissimum elementum condimenti iuris sunt.",
+    "exampleDE": "Frische Kräuter sind die wichtigste Zutat für die Soße."
+  },
+  {
+    "front": "fein hacken",
+    "back": "minutatim caedere",
+    "ipa": "mɪ.nuːˈtaː.tɪm ˈkae̯.dɛ.rɛ",
+    "example": "Caepas et petroselinum acuto cultro minutatim caedit.",
+    "exampleDE": "Sie hackt die Zwiebeln und Petersilie mit einem scharfen Messer fein."
+  },
+  {
+    "front": "das Meersalz",
+    "back": "sal marinum",
+    "ipa": "saːl maˈriː.nʊm",
+    "example": "Micula salis marini saporem iuris auget.",
+    "exampleDE": "Eine Prise Meersalz hebt den Geschmack der Suppe."
+  },
+  {
+    "front": "der schwarze Pfeffer",
+    "back": "piper nigrum",
+    "ipa": "ˈpɪ.pɛr ˈnɪ.ɡrʊm",
+    "example": "Piper nigrum recens molitum praeclare redolet.",
+    "exampleDE": "Frisch gemahlener schwarzer Pfeffer duftet herrlich."
+  },
+  {
+    "front": "das Olivenöl",
+    "back": "oleum olivarium",
+    "ipa": "ˈɔ.lɛ.ʊm ɔ.lɪˈwaː.rɪ.ʊm",
+    "example": "Oleum olivarium frigide expressum aceto holerum optime convenit.",
+    "exampleDE": "Kaltgepresstes Olivenöl passt hervorragend zum Salat."
+  },
+  {
+    "front": "der Knoblauch",
+    "back": "allium",
+    "ipa": "ˈal.lɪ.ʊm",
+    "example": "Duo spicae allii ferculo gratum saporem addunt.",
+    "exampleDE": "Zwei Zehen Knoblauch verleihen dem Gericht Aroma."
+  },
+  {
+    "front": "die Petersilie",
+    "back": "petroselinum",
+    "ipa": "pɛ.trɔ.sɛˈliː.nʊm",
+    "example": "Petroselinum recens minutatum ante cenam apponitur.",
+    "exampleDE": "Frisch gehackte Petersilie kommt vor dem Servieren darauf."
+  },
+  {
+    "front": "das Basilikum",
+    "back": "ocimum",
+    "ipa": "ˈɔ.kɪ.mʊm",
+    "example": "Ocimum recens malis aureis optime convenit.",
+    "exampleDE": "Frisches Basilikum passt perfekt zu Tomaten."
+  },
+  {
+    "front": "der Zimt",
+    "back": "cinnamum",
+    "ipa": "ˈkɪn.na.mʊm",
+    "example": "Tempore hiemis libenter theam cum micula cinnami bibimus.",
+    "exampleDE": "Im Winter trinken wir gerne Tee mit einer Prise Zimt."
+  },
+  {
+    "front": "das Vollkornbrot",
+    "back": "panis integer",
+    "ipa": "ˈpa.nɪs ˈɪn.tɛ.ɡɛr",
+    "example": "Panis integer recens vehementer sapit et famem diu sedat.",
+    "exampleDE": "Frisches Vollkornbrot schmeckt kräftig und hält lange satt."
+  },
+  {
+    "front": "das Brötchen",
+    "back": "panillus",
+    "ipa": "paˈnɪl.lʊs",
+    "example": "Diebus Solis calidos panillos a pistore petimus.",
+    "exampleDE": "Sonntags holen wir warme Brötchen beim Bäcker."
+  },
+  {
+    "front": "die Butter",
+    "back": "butyrum",
+    "ipa": "buːˈtyː.rʊm",
+    "example": "Illine, quaeso, paululum butyri laminae panis.",
+    "exampleDE": "Streich bitte etwas Butter auf die Scheibe Brot."
+  },
+  {
+    "front": "die Marmelade",
+    "back": "condimentum fructuum",
+    "ipa": "kɔn.dɪˈmɛn.tʊm ˈfrʊk.tʊ.ʊm",
+    "example": "Condimentum fragorum est dulcedo panis dilectissima mihi.",
+    "exampleDE": "Erdbeermarmelade ist mein liebster Brotaufstrich."
+  },
+  {
+    "front": "das Müsli",
+    "back": "mixtura granorum",
+    "ipa": "mɪksˈtuː.ra ɡraːˈnoː.rʊm",
+    "example": "Mane libenter mixturam granorum cum pomis recentibus edo.",
+    "exampleDE": "Morgens esse ich gerne Müsli mit frischem Obst."
+  },
+  {
+    "front": "der Joghurt",
+    "back": "oxygala",
+    "ipa": "ɔkˈsyː.ɡa.la",
+    "example": "Oxygala sincera cum melle maxime sapit.",
+    "exampleDE": "Naturjoghurt schmeckt besonders gut mit etwas Honig."
+  },
+  {
+    "front": "das gekochte Ei",
+    "back": "ovum coctum",
+    "ipa": "ˈoː.wʊm ˈkɔk.tʊm",
+    "example": "Ovum molliter coctum ad ientaculum diei Solis pertinet.",
+    "exampleDE": "Ein weich gekochtes Ei gehört zum Sonntagsfrühstück."
+  },
+  {
+    "front": "der Orangensaft",
+    "back": "sucus aurantiorum",
+    "ipa": "ˈsuː.kʊs aʊ̯.ran.tɪˈoː.rʊm",
+    "example": "Sucus aurantiorum recens expressus multas res salutares continet.",
+    "exampleDE": "Frisch gepresster Orangensaft enthält viele Vitamine."
+  },
+  {
+    "front": "die Reservierung",
+    "back": "servatio loci",
+    "ipa": "sɛrˈwaː.tɪ.oː ˈlɔ.kiː",
+    "example": "Locus mihi nomine Müller servatus est.",
+    "exampleDE": "Ich habe eine Reservierung auf den Namen Müller."
+  },
+  {
+    "front": "die Speisekarte",
+    "back": "index ciborum",
+    "ipa": "ˈɪn.dɛks kɪˈboː.rʊm",
+    "example": "Licetne nobis, quaeso, indicem ciborum inspicere?",
+    "exampleDE": "Dürfen wir bitte die Speisekarte sehen?"
+  },
+  {
+    "front": "die Vorspeise",
+    "back": "gustatio",
+    "ipa": "ɡʊsˈtaː.tɪ.oː",
+    "example": "Initio cenae parvam acetariam poscimus.",
+    "exampleDE": "Als Vorspeise bestellen wir einen kleinen Salat."
+  },
+  {
+    "front": "das Hauptgericht",
+    "back": "caput cenae",
+    "ipa": "ˈka.pʊt ˈkeː.nae̯",
+    "example": "Caput cenae calidum in magno catillo apponitur.",
+    "exampleDE": "Das Hauptgericht wird heiß auf einem großen Teller serviert."
+  },
+  {
+    "front": "die Nachspeise",
+    "back": "secunda mensa",
+    "ipa": "sɛˈkʊn.da ˈmɛn.sa",
+    "example": "Visne post cibum secundam mensam accipere?",
+    "exampleDE": "Möchten Sie nach dem Essen noch eine Nachspeise?"
+  },
+  {
+    "front": "die Rechnung",
+    "back": "libellus sumptuum",
+    "ipa": "lɪˈbɛl.lʊs ˈsʊmp.tʊ.ʊm",
+    "example": "Solvere volumus, quaeso, libellum sumptuum affer.",
+    "exampleDE": "Wir möchten bitte zahlen, bringen Sie uns die Rechnung."
+  },
+  {
+    "front": "das Trinkgeld",
+    "back": "corollarium",
+    "ipa": "kɔ.rɔlˈlaː.rɪ.ʊm",
+    "example": "Minister comis bonum corollarium meruit.",
+    "exampleDE": "Der freundliche Kellner hat ein gutes Trinkgeld verdient."
+  },
+  {
+    "front": "die Spezialität des Hauses",
+    "back": "cibus proprius tabernae",
+    "ipa": "ˈkɪ.bʊs ˈprɔ.prɪ.ʊs taˈbɛr.nae̯",
+    "example": "Minister pastam domi factam ut cibum proprium tabernae commendat.",
+    "exampleDE": "Der Kellner empfiehlt die hausgemachte Pasta als Spezialität des Hauses."
+  },
+  {
+    "front": "der Kaffee",
+    "back": "potio Arabica",
+    "ipa": "ˈpɔ.tɪ.oː aˈra.bɪ.ka",
+    "example": "Poculum potionis Arabicae calidae languorem fugat.",
+    "exampleDE": "Eine Tasse heißer Kaffee vertreibt die Müdigkeit."
+  },
+  {
+    "front": "der Cappuccino",
+    "back": "cappuccinus",
+    "ipa": "kap.pʊkˈkiː.nʊs",
+    "example": "Cappuccinus spumam mire spissam habet.",
+    "exampleDE": "Der Cappuccino hat einen wunderbar cremigen Schaum."
+  },
+  {
+    "front": "der Kräutertee",
+    "back": "infusum herbarum",
+    "ipa": "ɪnˈfuː.sʊm hɛrˈbaː.rʊm",
+    "example": "Vespere calicem calidi infusi herbarum libenter bibo.",
+    "exampleDE": "Abends trinke ich gerne eine Tasse warmen Kräutertee."
+  },
+  {
+    "front": "das Mineralwasser",
+    "back": "aqua mineralis",
+    "ipa": "ˈa.kʷa mɪ.nɛˈraː.lɪs",
+    "example": "Cyathus gelidae aquae mineralis reficit.",
+    "exampleDE": "Ein Glas kühles Mineralwasser mit Kohlensäure erfrischt."
+  },
+  {
+    "front": "das Stück Kuchen",
+    "back": "frustum placentae",
+    "ipa": "ˈfrʊs.tʊm plaˈkɛn.tae̯",
+    "example": "Postmeridie frustum placentae nobis indulgemus.",
+    "exampleDE": "Am Nachmittag gönnen wir uns ein Stück Kuchen."
+  },
+  {
+    "front": "die Barista",
+    "back": "cafetaria",
+    "ipa": "ka.fɛˈtaː.rɪ.a",
+    "example": "Cafetaria potiunculam artificiose parat.",
+    "exampleDE": "Die Barista bereitet den Espresso kunstvoll zu."
+  },
+  {
+    "front": "die Stammkundin",
+    "back": "assidua emptrix",
+    "ipa": "asˈsɪ.dʊ.a ˈeːmp.trɪks",
+    "example": "Illa assidua emptrix in hoc commodo thermopolio ad angulum est.",
+    "exampleDE": "Sie ist Stammkundin in diesem gemütlichen Café an der Ecke."
+  },
+  {
+    "front": "der Einkaufswagen",
+    "back": "carrus empticius",
+    "ipa": "ˈkar.rʊs eːmpˈtɪ.kɪ.ʊs",
+    "example": "Affer, quaeso, nummum ad carrum empticium aperiendum.",
+    "exampleDE": "Nimm bitte eine Münze für den Einkaufswagen mit."
+  },
+  {
+    "front": "der Einkaufszettel",
+    "back": "syngrapha emptoria",
+    "ipa": "ˈsyn.ɡra.pʰa eːmpˈtoː.rɪ.a",
+    "example": "Omnia gravia in syngrapha emptoria perscripsi.",
+    "exampleDE": "Ich habe alle wichtigen Dinge auf dem Einkaufszettel notiert."
+  },
+  {
+    "front": "das Sonderangebot",
+    "back": "venale vilissimum",
+    "ipa": "wɛˈnaː.lɛ wɪˈliːs.sɪ.mʊm",
+    "example": "Fraga recentia hodie venalia vilissima sunt.",
+    "exampleDE": "Frische Erdbeeren sind heute im Sonderangebot."
+  },
+  {
+    "front": "die Kasse",
+    "back": "argentaria",
+    "ipa": "ar.ɡɛnˈtaː.rɪ.a",
+    "example": "Ad argentariam longa emptorum series consistit.",
+    "exampleDE": "An der Kasse steht eine lange Schlange von Kunden."
+  },
+  {
+    "front": "der Kassenbon",
+    "back": "tessera argentaria",
+    "ipa": "ˈtɛs.sɛ.ra ar.ɡɛnˈtaː.rɪ.a",
+    "example": "Tesseram argentariam tamquam indicium bene custodi.",
+    "exampleDE": "Bewahren Sie den Kassenbon als Beleg gut auf."
+  },
+  {
+    "front": "die Stofftasche",
+    "back": "saccus linteus",
+    "ipa": "ˈsak.kʊs ˈlɪn.tɛ.ʊs",
+    "example": "Mercaturas nostras sacco linteo ferimus.",
+    "exampleDE": "Wir transportieren unsere Einkäufe in einer Stofftasche."
+  },
+  {
+    "front": "das Haltbarkeitsdatum",
+    "back": "dies finis usus",
+    "ipa": "ˈdɪ.eːs ˈfiː.nɪs ˈuː.suːs",
+    "example": "Semper diem finis usus in involucro inspice.",
+    "exampleDE": "Prüfen Sie immer das Haltbarkeitsdatum auf der Verpackung."
+  },
+  {
+    "front": "die Frischetheke",
+    "back": "mensa ciborum recentium",
+    "ipa": "ˈmɛn.sa kɪˈboː.rʊm rɛˈkɛn.tɪ.ʊm",
+    "example": "In mensa ciborum recentium caseus vicinus reperitur.",
+    "exampleDE": "An der Frischetheke gibt es regionalen Käse."
+  },
+  {
+    "front": "anprobieren",
+    "back": "vestem experiri",
+    "ipa": "ˈwɛs.tɛm ɛks.pɛˈriː.riː",
+    "example": "Hanc tunicam fusco-caeruleam experiri velim.",
+    "exampleDE": "Ich möchte diese dunkelblaue Jacke gerne anprobieren."
+  },
+  {
+    "front": "die Umkleidekabine",
+    "back": "conclave mutandi",
+    "ipa": "kɔnˈklaː.wɛ muːˈtan.diː",
+    "example": "Illic ad sinistram vacuum conclave mutandi patet.",
+    "exampleDE": "Dort drüben links ist eine freie Umkleidekabine."
+  },
+  {
+    "front": "die Konfektionsgröße",
+    "back": "magnitudo vestimenti",
+    "ipa": "maŋ.nɪˈtuː.doː wɛs.tɪˈmɛn.tiː",
+    "example": "Quam magnitudinem vestimenti solebas gerere?",
+    "exampleDE": "Welche Konfektionsgröße tragen Sie normalerweise?"
+  },
+  {
+    "front": "passen",
+    "back": "convenire",
+    "ipa": "kɔn.wɛˈniː.rɛ",
+    "example": "Bracae mihi optime conveniunt.",
+    "exampleDE": "Die Hose passt mir wie angegossen."
+  },
+  {
+    "front": "zu eng",
+    "back": "nimis artus",
+    "ipa": "ˈnɪ.mɪs ˈar.tʊs",
+    "example": "Haec lanula ad umeros mihi nimis arta est.",
+    "exampleDE": "Dieser Pullover ist mir an den Schultern leider zu eng."
+  },
+  {
+    "front": "zu weit",
+    "back": "nimis laxus",
+    "ipa": "ˈnɪ.mɪs ˈlak.sʊs",
+    "example": "Gunnella aliquantum nimis laxa est et ambulanti labitur.",
+    "exampleDE": "Der Rock ist etwas zu weit und rutscht beim Gehen."
+  },
+  {
+    "front": "der Schnitt",
+    "back": "forma vestimenti",
+    "ipa": "ˈfɔr.ma wɛs.tɪˈmɛn.tiː",
+    "example": "Forma moderna vestimenti mihi vehementer placet.",
+    "exampleDE": "Der moderne Schnitt gefällt mir besonders gut."
+  },
+  {
+    "front": "die Baumwolle",
+    "back": "gossypium",
+    "ipa": "ɡɔsˈsyː.pɪ.ʊm",
+    "example": "Haec subucula pura et molli gossypio constat.",
+    "exampleDE": "Dieses T-Shirt besteht aus reiner, weicher Baumwolle."
+  },
+  {
+    "front": "die Schurwolle",
+    "back": "lana tonsa",
+    "ipa": "ˈlaː.na ˈtɔn.sa",
+    "example": "Crassa lanula e lana tonsa hieme calefacit.",
+    "exampleDE": "Der dicke Pullover aus Schurwolle hält im Winter warm."
+  },
+  {
+    "front": "die Seide",
+    "back": "sericum",
+    "ipa": "ˈseː.rɪ.kʊm",
+    "example": "Sudarium sericum mire molle tactu est.",
+    "exampleDE": "Das Halstuch aus Seide fühlt sich herrlich weich an."
+  },
+  {
+    "front": "das Leder",
+    "back": "corium",
+    "ipa": "ˈkɔ.rɪ.ʊm",
+    "example": "Tunica valida ex vero corio facta est.",
+    "exampleDE": "Die robuste Jacke ist aus echtem Leder gefertigt."
+  },
+  {
+    "front": "gestreift",
+    "back": "virgatus",
+    "ipa": "wɪrˈɡaː.tʊs",
+    "example": "Hodie subuculam caeruleo et albo virgatam gerit.",
+    "exampleDE": "Er trägt heute ein blau-weiß gestreiftes Hemd."
+  },
+  {
+    "front": "kariert",
+    "back": "tessellatus",
+    "ipa": "tɛs.sɛlˈlaː.tʊs",
+    "example": "Figura tessellata subuculae lignatoris optime quadrat.",
+    "exampleDE": "Das karierte Muster passt hervorragend zum Holzfällerhemd."
+  },
+  {
+    "front": "einfarbig",
+    "back": "unicolor",
+    "ipa": "uːˈnɪ.kɔ.lɔr",
+    "example": "Vestis simplex et unicolor semper elegans videtur.",
+    "exampleDE": "Ein schlichtes, einfarbiges Kleid wirkt immer elegant."
+  },
+  {
+    "front": "der Reißverschluss",
+    "back": "clausura dentata",
+    "ipa": "klaʊ̯ˈsuː.ra dɛnˈtaː.ta",
+    "example": "Clausura dentata in tunica mea interdum haeret.",
+    "exampleDE": "Der Reißverschluss an meiner Jacke klemmt manchmal."
+  },
+  {
+    "front": "die Schnürsenkel",
+    "back": "ligulae",
+    "ipa": "ˈlɪ.ɡʊ.lae̯",
+    "example": "Lega ligulas calceorum, ne offendas.",
+    "exampleDE": "Binde dir die Schnürsenkel zu, damit du nicht stolperst."
+  },
+  {
+    "front": "die Lederschuhe",
+    "back": "calcei scortei",
+    "ipa": "ˈkal.kɛ.iː ˈskɔr.tɛ.iː",
+    "example": "Ad sollemnia tempora tersos calceos scorteos gerit.",
+    "exampleDE": "Zu festlichen Anlässen trägt er polierte Lederschuhe."
+  },
+  {
+    "front": "die Turnschuhe",
+    "back": "calcei cursorii",
+    "ipa": "ˈkal.kɛ.iː kʊrˈsoː.rɪ.iː",
+    "example": "Ad currendum in hortis calceis cursoriis commodis egeo.",
+    "exampleDE": "Zum Laufen im Park brauche ich bequeme Turnschuhe."
+  },
+  {
+    "front": "die Handtasche",
+    "back": "manticula",
+    "ipa": "manˈtɪ.kʊ.la",
+    "example": "Clavem in magna manticula requirit.",
+    "exampleDE": "Sie sucht ihren Schlüssel in der großen Handtasche."
+  },
+  {
+    "front": "der Ledergürtel",
+    "back": "cingulum scorteum",
+    "ipa": "ˈkɪŋ.ɡʊ.lʊm ˈskɔr.tɛ.ʊm",
+    "example": "Cingulum scorteum nigrum bracas continet.",
+    "exampleDE": "Ein schwarzer Ledergürtel hält die Hose fest."
+  },
+  {
+    "front": "der Regenschirm",
+    "back": "umbraculum",
+    "ipa": "ʊmˈbraː.kʊ.lʊm",
+    "example": "Affer umbraculum, caelum enim nubibus obducitur.",
+    "exampleDE": "Nimm einen Regenschirm mit, der Himmel zieht sich zu."
+  },
+  {
+    "front": "die Sonnenbrille",
+    "back": "conspicilia solaria",
+    "ipa": "kɔn.spɪˈkɪ.lɪ.a sɔˈlaː.rɪ.a",
+    "example": "Aestate bona conspicilia solaria oculos defendunt.",
+    "exampleDE": "Im Sommer schützt eine gute Sonnenbrille die Augen."
+  },
+  {
+    "front": "das Girokonto",
+    "back": "ratio currens",
+    "ipa": "ˈra.tɪ.oː ˈkʊr.reːns",
+    "example": "Merces mea menstrua in rationem currentem transcribitur.",
+    "exampleDE": "Mein Gehalt wird monatlich auf mein Girokonto überwiesen."
+  },
+  {
+    "front": "die Überweisung",
+    "back": "transcriptio pecuniae",
+    "ipa": "tran.skrɪpˈtɪ.oː pɛˈkuː.nɪ.ae̯",
+    "example": "Transcriptionem pecuniae commode per rete efficio.",
+    "exampleDE": "Ich mache die Überweisung bequem per Online-Banking."
+  },
+  {
+    "front": "der Dauerauftrag",
+    "back": "mandatum perpetuum",
+    "ipa": "manˈdaː.tʊm pɛrˈpɛ.tʊ.ʊm",
+    "example": "Mercedem habitaculi singulis mensibus mandato perpetuo solvo.",
+    "exampleDE": "Die Miete bezahle ich jeden Monat per Dauerauftrag."
+  },
+  {
+    "front": "der Geldautomat",
+    "back": "machina nummaria",
+    "ipa": "ˈma.kʰɪ.na nʊmˈmaː.rɪ.a",
+    "example": "Ex hac machina nummaria pecunia sine pretio depromi potest.",
+    "exampleDE": "An diesem Geldautomaten kann man gebührenfrei abheben."
+  },
+  {
+    "front": "die Geheimzahl",
+    "back": "numerus secretus",
+    "ipa": "ˈnʊ.mɛ.rʊs seːˈkreː.tʊs",
+    "example": "Numerum secretum quattuor notarum nemini alieno trade.",
+    "exampleDE": "Gib deine vierstellige Geheimzahl niemals an Fremde weiter."
+  },
+  {
+    "front": "der Kontoauszug",
+    "back": "tabula rationis",
+    "ipa": "ˈta.bʊ.la ra.tɪˈoː.nɪs",
+    "example": "In tabula rationis omnia accepta et expensa scripta sunt.",
+    "exampleDE": "Auf dem Kontoauszug stehen alle Einnahmen und Ausgaben."
+  },
+  {
+    "front": "das Sparguthaben",
+    "back": "pecunia condita",
+    "ipa": "pɛˈkuː.nɪ.a ˈkɔn.dɪ.ta",
+    "example": "Certam summam menstruam ut pecuniam conditam seponit.",
+    "exampleDE": "Sie legt jeden Monat einen festen Betrag als Sparguthaben an."
+  },
+  {
+    "front": "die Zinsen",
+    "back": "usurae",
+    "ipa": "uːˈsuː.rae̯",
+    "example": "Mensa nummaria nunc moderatas usuras pro pecunia deposita praestat.",
+    "exampleDE": "Die Bank zahlt derzeit moderate Zinsen auf das Festgeld."
+  },
+  {
+    "front": "das Bargeld",
+    "back": "pecunia praesens",
+    "ipa": "pɛˈkuː.nɪ.a ˈprae̯.seːns",
+    "example": "Habesne pecuniam praesentem an tessera solves?",
+    "exampleDE": "Haben Sie etwas Bargeld dabei oder zahlen Sie mit Karte?"
+  },
+  {
+    "front": "die Kreditkarte",
+    "back": "tessera fideiaria",
+    "ipa": "ˈtɛs.sɛ.ra fɪ.dɛ.iˈaː.rɪ.a",
+    "example": "In itineribus plerumque tessera fideiaria merces solvo.",
+    "exampleDE": "Auf Reisen bezahle ich Einkäufe meist mit Kreditkarte."
+  },
+  {
+    "front": "kontaktlos",
+    "back": "sine contactu",
+    "ipa": "ˈsɪ.nɛ kɔnˈtak.tuː",
+    "example": "Summas infra quinquaginta nummos sine contactu solvere licet.",
+    "exampleDE": "Beträge unter fünfzig Euro kann man kontaktlos bezahlen."
+  },
+  {
+    "front": "die Münze",
+    "back": "nummus",
+    "ipa": "ˈnʊm.mʊs",
+    "example": "Nummum duorum nummorum in machinam tesserarum conicit.",
+    "exampleDE": "Er wirft eine Zwei-Euro-Münze in den Parkscheinautomaten."
+  },
+  {
+    "front": "der Geldschein",
+    "back": "charta nummaria",
+    "ipa": "ˈkʰar.ta nʊmˈmaː.rɪ.a",
+    "example": "Chartam nummariam decem nummorum diligenter complicat.",
+    "exampleDE": "Sie faltet den Zehn-Euro-Geldschein sorgfältig zusammen."
+  },
+  {
+    "front": "das Wechselgeld",
+    "back": "pecunia residua",
+    "ipa": "pɛˈkuː.nɪ.a rɛˈsɪ.dʊ.a",
+    "example": "Noli, quaeso, pecuniam residuam ad argentariam relinquere.",
+    "exampleDE": "Vergessen Sie bitte nicht Ihr Wechselgeld an der Kasse."
+  },
+  {
+    "front": "der Wechselkurs",
+    "back": "pretium permutationis",
+    "ipa": "ˈprɛ.tɪ.ʊm pɛr.muː.taː.tɪˈoː.nɪs",
+    "example": "Ante iter externum pretium permutationis hodiernum inspicimus.",
+    "exampleDE": "Vor der Auslandsreise prüfen wir den aktuellen Wechselkurs."
+  },
+  {
+    "front": "das Paket",
+    "back": "fascis",
+    "ipa": "ˈfas.kɪs",
+    "example": "Tabellarius gravem fascem ad ianuam affert.",
+    "exampleDE": "Der Bote liefert das schwere Paket an die Haustür."
+  },
+  {
+    "front": "der Briefumschlag",
+    "back": "involucrum epistulae",
+    "ipa": "ɪn.wɔˈluː.krʊm ɛˈpɪs.tʊ.lae̯",
+    "example": "Epistulam in album involucrum inserit.",
+    "exampleDE": "Sie steckt den Brief in einen weißen Briefumschlag."
+  },
+  {
+    "front": "die Briefmarke",
+    "back": "pittacium cursuale",
+    "ipa": "pɪtˈta.kɪ.ʊm kʊr.sʊˈaː.lɛ",
+    "example": "Affige, quaeso, pittacium cursuale dextrae superiori parti epistulae.",
+    "exampleDE": "Kleb bitte eine Briefmarke oben rechts auf den Brief."
+  },
+  {
+    "front": "der Absender",
+    "back": "mittens",
+    "ipa": "ˈmɪt.teːns",
+    "example": "Supra ad sinistram in involucro inscriptio mittentis legitur.",
+    "exampleDE": "Oben links auf dem Kuvert steht die Adresse des Absenders."
+  },
+  {
+    "front": "der Empfänger",
+    "back": "accipiens",
+    "ipa": "akˈkɪ.pɪ.eːns",
+    "example": "Fasciculus accipienti designato destinatus est.",
+    "exampleDE": "Das Päckchen ist für den angegebenen Empfänger bestimmt."
+  },
+  {
+    "front": "die Packstation",
+    "back": "statio fasciculorum",
+    "ipa": "ˈsta.tɪ.oː fas.kɪ.kʊˈloː.rʊm",
+    "example": "Fascem meum post laborem ex statione fasciculorum recipio.",
+    "exampleDE": "Ich hole meine Sendung nach Feierabend an der Packstation ab."
+  },
+  {
+    "front": "das Einschreiben",
+    "back": "litterae commendatae",
+    "ipa": "ˈlɪt.tɛ.rae̯ kɔm.mɛnˈdaː.tae̯",
+    "example": "Res scriptae graves litteris commendatis tutissime mittuntur.",
+    "exampleDE": "Wichtige Dokumente versendet man am sichersten per Einschreiben."
+  },
+  {
+    "front": "die Postleitzahl",
+    "back": "nota cursualis",
+    "ipa": "ˈnɔ.ta kʊr.sʊˈaː.lɪs",
+    "example": "Edas, quaeso, notam cursualem tuam quinque notarum.",
+    "exampleDE": "Geben Sie bitte Ihre fünfstellige Postleitzahl an."
+  },
+  {
+    "front": "die Zahnpasta",
+    "back": "pasta dentifricia",
+    "ipa": "ˈpas.ta dɛn.tɪˈfrɪ.kɪ.a",
+    "example": "Haec pasta dentifricia efficaciter carie dentes defendit.",
+    "exampleDE": "Diese Zahnpasta schützt wirksam vor Karies."
+  },
+  {
+    "front": "das Duschgel",
+    "back": "gelatum lavatorium",
+    "ipa": "ɡɛˈlaː.tʊm la.waˈtoː.rɪ.ʊm",
+    "example": "Gelatum lavatorium gratum malorum Medicorum odorem spargit.",
+    "exampleDE": "Das Duschgel duftet angenehm nach frischen Zitronen."
+  },
+  {
+    "front": "das Shampoo",
+    "back": "capitilavium",
+    "ipa": "ka.pɪ.tɪˈla.wɪ.ʊm",
+    "example": "Capitilavium lene cutem capitis et capillos fovet.",
+    "exampleDE": "Ein mildes Shampoo pflegt die Kopfhaut und das Haar."
+  },
+  {
+    "front": "die Seife",
+    "back": "sapo",
+    "ipa": "ˈsa.poː",
+    "example": "Lava manus accurate calida aqua et sapone.",
+    "exampleDE": "Wasch dir die Hände gründlich mit warmem Wasser und Seife."
+  },
+  {
+    "front": "die Feuchtigkeitscreme",
+    "back": "unguentum umectans",
+    "ipa": "ʊŋˈɡʷɛn.tʊm ʊˈmɛk.tans",
+    "example": "Post lavationem unguentum umectans corpori illinit.",
+    "exampleDE": "Nach dem Duschen trägt sie eine feuchtigkeitsspendende Creme auf."
+  },
+  {
+    "front": "das Deodorant",
+    "back": "desodorans",
+    "ipa": "deː.sɔˈdɔː.rans",
+    "example": "Bonum desodorans totum diem recentiam servat.",
+    "exampleDE": "Ein gutes Deodorant sorgt den ganzen Tag für Frische."
+  },
+  {
+    "front": "das Taschentuch",
+    "back": "muccinium",
+    "ipa": "mʊkˈkiː.nɪ.ʊm",
+    "example": "Habesne muccinium chartaceum mihi?",
+    "exampleDE": "Hast du ein Papiertaschentuch für mich?"
+  },
+  {
+    "front": "der Rasierer",
+    "back": "novacula",
+    "ipa": "nɔˈwaː.kʊ.la",
+    "example": "Laminas novaculae suae assidue mutat.",
+    "exampleDE": "Er wechselt regelmäßig die Klingen an seinem Rasierer."
+  },
+  {
+    "front": "der Rasierschaum",
+    "back": "spuma tonsoria",
+    "ipa": "ˈspuː.ma tɔnˈsoː.rɪ.a",
+    "example": "Spargere, quaeso, spumam tonsoriam leniter in genas.",
+    "exampleDE": "Verteile den Rasierschaum sanft auf den Wangen."
+  },
+  {
+    "front": "die Nagelschere",
+    "back": "forficula unguicularis",
+    "ipa": "fɔrˈfɪ.kʊ.la ʊŋ.ɡʷɪ.kʊˈlaː.rɪs",
+    "example": "Parva forficula unguiculari ungues accurate resecantur.",
+    "exampleDE": "Mit einer kleinen Nagelschere schneidet man Fingernägel präzise."
+  },
+  {
+    "front": "die Nagelfeile",
+    "back": "lima unguium",
+    "ipa": "ˈliː.ma ˈʊŋ.ɡʷɪ.ʊm",
+    "example": "Ungues suos caute lima unguium polit.",
+    "exampleDE": "Sie glättet ihre Nägel vorsichtig mit einer Nagelfeile."
+  },
+  {
+    "front": "die Sonnencreme",
+    "back": "unguentum solare",
+    "ipa": "ʊŋˈɡʷɛn.tʊm sɔˈlaː.rɛ",
+    "example": "In feriis cutem assidue unguento solari obducimus.",
+    "exampleDE": "Im Urlaub cremen wir uns regelmäßig mit Sonnencreme ein."
+  },
+  {
+    "front": "der Lippenbalsam",
+    "back": "ceratum labiale",
+    "ipa": "kɛˈraː.tʊm la.bɪˈaː.lɛ",
+    "example": "Hieme ceratum labiale labra a fissuris tuetur.",
+    "exampleDE": "Im Winter schützt Lippenbalsam vor spröden Lippen."
+  },
+  {
+    "front": "das Wattepad",
+    "back": "orbiculus gossypinus",
+    "ipa": "ɔrˈbɪ.kʊ.lʊs ɡɔs.syˈpiː.nʊs",
+    "example": "Ad faciem purgandam orbiculo gossypino molli utitur.",
+    "exampleDE": "Zum Abschminken verwendet sie ein weiches Wattepad."
+  },
+  {
+    "front": "das Wattestäbchen",
+    "back": "bacillum gossypinum",
+    "ipa": "baˈkɪl.lʊm ɡɔs.syˈpiː.nʊm",
+    "example": "Bacilla gossypina in armarium balnei condenda sunt.",
+    "exampleDE": "Wattestäbchen gehören in den Badezimmerschrank."
+  },
+  {
+    "front": "der Umtausch",
+    "back": "permutatio",
+    "ipa": "pɛr.muːˈtaː.tɪ.oː",
+    "example": "Permutatio spatio quattuordecim dierum fieri potest.",
+    "exampleDE": "Ein Umtausch ist innerhalb von vierzehn Tagen möglich."
+  },
+  {
+    "front": "die Reklamation",
+    "back": "questus emptoris",
+    "ipa": "ˈkʷeːs.tʊs eːmpˈtoː.rɪs",
+    "example": "Propter vitium mercis emptor questum interposuit.",
+    "exampleDE": "Wegen eines Mangels reichte der Kunde eine Reklamation ein."
+  },
+  {
+    "front": "die Garantie",
+    "back": "praestatio fideiussoria",
+    "ipa": "prae̯sˈtaː.tɪ.oː fɪ.dɛ.iʊsˈsoː.rɪ.a",
+    "example": "Huic machinae duorum annorum fides spondetur.",
+    "exampleDE": "Auf dieses Elektrogerät gibt es zwei Jahre Herstellergarantie."
+  },
+  {
+    "front": "die Rückerstattung",
+    "back": "restitutio pecuniae",
+    "ipa": "rɛs.tɪˈtuː.tɪ.oː pɛˈkuː.nɪ.ae̯",
+    "example": "Pecuniae summa tibi ut restitutio adscribitur.",
+    "exampleDE": "Der Betrag wird Ihnen als Rückerstattung gutgeschrieben."
+  },
+  {
+    "front": "der Rabatt",
+    "back": "deminutio pretii",
+    "ipa": "deː.mɪˈnuː.tɪ.oː ˈprɛ.tɪ.iː",
+    "example": "Hac tessera emptoria decimam partem pretii deducis.",
+    "exampleDE": "Mit dieser Kundenkarte erhalten Sie zehn Prozent Rabatt."
+  },
+  {
+    "front": "das Schnäppchen",
+    "back": "emptio fausta",
+    "ipa": "ˈeːmp.tɪ.oː ˈfaʊ̯s.ta",
+    "example": "Hic pallium egregium vera emptio fausta fuit.",
+    "exampleDE": "Dieser hochwertige Mantel war ein echtes Schnäppchen."
+  },
+  {
+    "front": "die Beschwerde",
+    "back": "querela",
+    "ipa": "kʷɛˈreː.la",
+    "example": "Querela a moderatoribus tabernae examinata est.",
+    "exampleDE": "Die Beschwerde wurde von der Geschäftsleitung geprüft."
+  },
+  {
+    "front": "die Kopfschmerzen",
+    "back": "cephalea",
+    "ipa": "kɛ.pʰaˈlae̯.a",
+    "example": "Post longum diem laboris levem dolorem capitis sentio.",
+    "exampleDE": "Nach dem langen Arbeitstag habe ich leichte Kopfschmerzen."
+  },
+  {
+    "front": "die Halsschmerzen",
+    "back": "dolor gutturis",
+    "ipa": "ˈdɔ.lɔr ˈɡʊt.tʊ.rɪs",
+    "example": "Thea calida chamaemelina cum melle dolorem gutturis lenit.",
+    "exampleDE": "Warmer Kamillentee mit Honig lindert die Halsschmerzen."
+  },
+  {
+    "front": "die Magenschmerzen",
+    "back": "dolor stomachi",
+    "ipa": "ˈdɔ.lɔr ˈstɔ.ma.kʰiː",
+    "example": "Cibus pinguis saepe ei dolorem stomachi parit.",
+    "exampleDE": "Fettes Essen verursacht bei ihm oft Magenschmerzen."
+  },
+  {
+    "front": "der Schwindel",
+    "back": "vertigo",
+    "ipa": "wɛrˈtiː.ɡoː",
+    "example": "Celeriter exsurgenti levis vertigo ei oborta est.",
+    "exampleDE": "Beim schnellen Aufstehen überkam sie ein kurzer Schwindel."
+  },
+  {
+    "front": "die Übelkeit",
+    "back": "nausea",
+    "ipa": "ˈnaʊ̯.sɛ.a",
+    "example": "Aer recens contra subitam nauseam plerumque prodest.",
+    "exampleDE": "Frische Luft hilft meist gut gegen plötzliche Übelkeit."
+  },
+  {
+    "front": "der Husten",
+    "back": "tussis",
+    "ipa": "ˈtʊs.sɪs",
+    "example": "Iam tres dies sicca pertinacique tussi laborat.",
+    "exampleDE": "Er hat seit drei Tagen einen trockenen, hartnäckigen Husten."
+  },
+  {
+    "front": "der Schnupfen",
+    "back": "gravedo",
+    "ipa": "ɡraˈweː.doː",
+    "example": "Gravedine gravi per nares respirare difficile est.",
+    "exampleDE": "Bei starkem Schnupfen fällt das Atmen durch die Nase schwer."
+  },
+  {
+    "front": "die Heiserkeit",
+    "back": "raucitas",
+    "ipa": "raʊ̯ˈkɪ.taːs",
+    "example": "Post clarum concentum cantor raucitate vexatus est.",
+    "exampleDE": "Nach dem lauten Konzert litt der Sänger unter Heiserkeit."
+  },
+  {
+    "front": "das Fieberthermometer",
+    "back": "thermometrum",
+    "ipa": "tʰɛrˈmɔ.mɛ.trʊm",
+    "example": "Thermometrum calorem corporis paucis secundis metitur.",
+    "exampleDE": "Das digitale Fieberthermometer misst die Temperatur sekundenschnell."
+  },
+  {
+    "front": "die erhöhte Temperatur",
+    "back": "calor auctus",
+    "ipa": "ˈka.lɔr ˈaʊ̯k.tʊs",
+    "example": "Puer hoc vespere leviter calore aucto laborat.",
+    "exampleDE": "Das Kind hat heute Abend leicht erhöhte Temperatur."
+  },
+  {
+    "front": "der Schüttelfrost",
+    "back": "horror",
+    "ipa": "ˈhɔr.rɔr",
+    "example": "Subitus horror saepe primum indicium morbi est.",
+    "exampleDE": "Plötzlicher Schüttelfrost ist oft ein erstes Anzeichen einer Grippe."
+  },
+  {
+    "front": "die Entzündung",
+    "back": "inflammatio",
+    "ipa": "ɪn.flamˈmaː.tɪ.oː",
+    "example": "Medicus inflammationem unguento medenti curat.",
+    "exampleDE": "Der Arzt behandelt die Entzündung mit einer Heilsalbe."
+  },
+  {
+    "front": "die Infektion",
+    "back": "contagio",
+    "ipa": "kɔnˈtaː.ɡɪ.oː",
+    "example": "Manuum assidua lavatio a contagione certo defendit.",
+    "exampleDE": "Regelmäßiges Händewaschen schützt zuverlässig vor einer Infektion."
+  },
+  {
+    "front": "ansteckend",
+    "back": "contagiosus",
+    "ipa": "kɔn.taː.ɡɪˈoː.sʊs",
+    "example": "Quamdiu febre teneris, ceteris contagiosus es.",
+    "exampleDE": "Solange Sie Fieber haben, sind Sie für andere ansteckend."
+  },
+  {
+    "front": "sich schonen",
+    "back": "sibi parcere",
+    "ipa": "ˈsɪ.bɪ ˈpar.kɛ.rɛ",
+    "example": "Gravedine correptum in lecto manere et sibi parcere oportet.",
+    "exampleDE": "Bei einer Erkältung sollte man im Bett bleiben und sich schonen."
+  },
+  {
+    "front": "die Arztpraxis",
+    "back": "taberna medica",
+    "ipa": "taˈbɛr.na ˈmɛ.dɪ.ka",
+    "example": "Taberna medica diebus Lunae iam hora septima matutina aperitur.",
+    "exampleDE": "Die Arztpraxis öffnet montags bereits um sieben Uhr morgens."
+  },
+  {
+    "front": "das Wartezimmer",
+    "back": "conclave opperientium",
+    "ipa": "kɔnˈklaː.wɛ ɔp.pɛ.rɪˈɛn.tɪ.ʊm",
+    "example": "Aegroti patienter in lucido conclavi opperientium sedent.",
+    "exampleDE": "Die Patienten sitzen geduldig im hellen Wartezimmer."
+  },
+  {
+    "front": "die Versichertenkarte",
+    "back": "tessera securitatis",
+    "ipa": "ˈtɛs.sɛ.ra seː.kuː.rɪˈtaː.tɪs",
+    "example": "Tesseram securitatis tuam, quaeso, profer.",
+    "exampleDE": "Legen Sie bitte Ihre elektronische Versichertenkarte vor."
+  },
+  {
+    "front": "der Termin",
+    "back": "constitutio temporis",
+    "ipa": "kɔn.stɪˈtuː.tɪ.oː ˈtɛm.pɔ.rɪs",
+    "example": "In proximum diem Martis certum tempus constitui.",
+    "exampleDE": "Ich habe für kommenden Dienstag einen festen Termin vereinbart."
+  },
+  {
+    "front": "die Untersuchung",
+    "back": "exploratio medica",
+    "ipa": "ɛks.plɔˈraː.tɪ.oː ˈmɛ.dɪ.ka",
+    "example": "Diligens exploratio medica nihil insoliti detexit.",
+    "exampleDE": "Die gründliche Untersuchung ergab keine Auffälligkeiten."
+  },
+  {
+    "front": "der Blutdruck",
+    "back": "pressus sanguinis",
+    "ipa": "ˈprɛs.sʊs ˈsaŋ.ɡʷɪ.nɪs",
+    "example": "Ministra in sinistro lacerto pressum sanguinis metitur.",
+    "exampleDE": "Die Schwester misst den Blutdruck am linken Oberarm."
+  },
+  {
+    "front": "der Puls",
+    "back": "venarum pulsus",
+    "ipa": "wɛˈnaː.rʊm ˈpʊl.sʊs",
+    "example": "Post breve otium venarum pulsus iterum naturaliter agit.",
+    "exampleDE": "Nach der kurzen Ruhepause schlägt der Puls wieder normal."
+  },
+  {
+    "front": "das Stethoskop",
+    "back": "stethoscopium",
+    "ipa": "steː.tʰɔsˈkɔ.pɪ.ʊm",
+    "example": "Medica pulmones stethoscopio auscultat.",
+    "exampleDE": "Die Ärztin hört die Lunge mit dem Stethoskop ab."
+  },
+  {
+    "front": "das Rezept",
+    "back": "praescriptio medica",
+    "ipa": "prae̯ˈskrɪp.tɪ.oː ˈmɛ.dɪ.ka",
+    "example": "Medicus praescriptionem medicam tabularum tibi scribit.",
+    "exampleDE": "Der Arzt stellt Ihnen ein Rezept für die Tabletten aus."
+  },
+  {
+    "front": "die Apotheke",
+    "back": "pharmacopolium",
+    "ipa": "pʰar.ma.kɔˈpoː.lɪ.ʊm",
+    "example": "Pharmacopolium ad forum situm hodie nocturnum auxilium praestat.",
+    "exampleDE": "Die Apotheke am Markt hat heute Notdienst."
+  },
+  {
+    "front": "die Packungsbeilage",
+    "back": "schedula addita",
+    "ipa": "ˈskʰɛ.dʊ.la ˈad.dɪ.ta",
+    "example": "Ante sumptionem schedulam additam accurate perlege.",
+    "exampleDE": "Lesen Sie vor der Einnahme sorgfältig die Packungsbeilage."
+  },
+  {
+    "front": "die Nebenwirkung",
+    "back": "effectus secundarius",
+    "ipa": "ɛfˈfɛk.tʊs sɛ.kʊnˈdaː.rɪ.ʊs",
+    "example": "Hoc medicamentum lene vix ullos effectus secundarios notos habet.",
+    "exampleDE": "Dieses gut verträgliche Medikament hat kaum bekannte Nebenwirkungen."
+  },
+  {
+    "front": "die Dosierung",
+    "back": "dosis",
+    "ipa": "ˈdɔ.sɪs",
+    "example": "Dosin a medico imperatam accurate observa.",
+    "exampleDE": "Beachten Sie genau die vom Arzt verordnete Dosierung."
+  },
+  {
+    "front": "das Schmerzmittel",
+    "back": "remedium doloris",
+    "ipa": "rɛˈmɛ.dɪ.ʊm dɔˈloː.rɪs",
+    "example": "Remedium doloris plerumque intra dimidiam horam valet.",
+    "exampleDE": "Das Schmerzmittel wirkt meistens innerhalb einer halben Stunde."
+  },
+  {
+    "front": "der Hustensaft",
+    "back": "sucus tussicularis",
+    "ipa": "ˈsuː.kʊs tʊs.sɪ.kʊˈlaː.rɪs",
+    "example": "Vespere ante somnum coclear suci tussicularis cape.",
+    "exampleDE": "Nehmen Sie abends vor dem Schlafen einen Löffel Hustensaft."
+  },
+  {
+    "front": "das Heftpflaster",
+    "back": "emplastrum adhaesivum",
+    "ipa": "ɛmˈplas.trʊm ad.hae̯ˈsiː.wʊm",
+    "example": "Affige, quaeso, emplastrum adhaesivum parvo vulneri.",
+    "exampleDE": "Kleb bitte ein Heftpflaster auf die kleine Schnittwunde."
+  },
+  {
+    "front": "der Verband",
+    "back": "fascia",
+    "ipa": "ˈfas.kɪ.a",
+    "example": "Ministra mundam fasciam talo circumdat.",
+    "exampleDE": "Die Krankenschwester legt einen sauberen Verband um den Knöchel."
+  },
+  {
+    "front": "die Wundsalbe",
+    "back": "unguentum vulnerarium",
+    "ipa": "ʊŋˈɡʷɛn.tʊm wʊl.nɛˈraː.rɪ.ʊm",
+    "example": "Unguentum vulnerarium sanationem vulneris cutis maturat.",
+    "exampleDE": "Die Heilsalbe beschleunigt das Schließen der Hautwunde."
+  },
+  {
+    "front": "die Desinfektion",
+    "back": "lustratio",
+    "ipa": "lʊsˈtraː.tɪ.oː",
+    "example": "Antequam fascia imponitur, diligens lustratio necessaria est.",
+    "exampleDE": "Vor dem Verbinden ist eine gründliche Desinfektion wichtig."
+  },
+  {
+    "front": "der Verbandskasten",
+    "back": "theca medicamentaria",
+    "ipa": "ˈtʰeː.ka mɛ.dɪ.kaː.mɛnˈtaː.rɪ.a",
+    "example": "In curru semper integra theca medicamentaria inesse debet.",
+    "exampleDE": "Im Auto muss stets ein vollständiger Verbandskasten liegen."
+  },
+  {
+    "front": "der Notruf",
+    "back": "invocatio succursus",
+    "ipa": "ɪn.wɔˈkaː.tɪ.oː sʊkˈkʊr.suːs",
+    "example": "In necessitatibus gravibus invocationem succursus ubique mittunt.",
+    "exampleDE": "In dringenden Notfällen wählt man europaweit den Notruf 112."
+  },
+  {
+    "front": "die Erste Hilfe",
+    "back": "prima subventio",
+    "ipa": "ˈpriː.ma sʊbˈwɛn.tɪ.oː",
+    "example": "Quisque qui vehiculum regit primam subventionem ferre scire debet.",
+    "exampleDE": "Jeder Führerscheininhaber sollte Erste Hilfe leisten können."
+  },
+  {
+    "front": "bluten",
+    "back": "cruentari",
+    "ipa": "krʊ.ɛnˈtaː.riː",
+    "example": "Vulnus genus feliciter cruentari desiit.",
+    "exampleDE": "Die Schürfwunde am Knie hat zum Glück aufgehört zu bluten."
+  },
+  {
+    "front": "die Zahnarztpraxis",
+    "back": "taberna dentaria",
+    "ipa": "taˈbɛr.na dɛnˈtaː.rɪ.a",
+    "example": "Bis in anno inspectionis causa tabernam dentariam adeo.",
+    "exampleDE": "Zweimal im Jahr gehe ich zur Kontrolle in die Zahnarztpraxis."
+  },
+  {
+    "front": "die Zahnseide",
+    "back": "linum dentarium",
+    "ipa": "ˈliː.nʊm dɛnˈtaː.rɪ.ʊm",
+    "example": "Linum dentarium arta spatia inter dentes purgat.",
+    "exampleDE": "Zahnseide reinigt die engen Zwischenräume zwischen den Zähnen."
+  },
+  {
+    "front": "das Zahnfleisch",
+    "back": "gingiva",
+    "ipa": "ɡɪŋˈɡiː.wa",
+    "example": "Assidua cura gingivam diuturne roborat.",
+    "exampleDE": "Regelmäßige Pflege stärkt das Zahnfleisch dauerhaft."
+  },
+  {
+    "front": "die Zahnfüllung",
+    "back": "inductio dentaria",
+    "ipa": "ɪnˈdʊk.tɪ.oː dɛnˈtaː.rɪ.a",
+    "example": "Medicus dentarius parvam albam inductionem dentariam imposuit.",
+    "exampleDE": "Der Zahnarzt setzte eine kleine weiße Zahnfüllung ein."
+  },
+  {
+    "front": "der Backenzahn",
+    "back": "dens molaris",
+    "ipa": "deːns mɔˈlaː.rɪs",
+    "example": "Dens molaris in maxilla frigori vehementer dolet.",
+    "exampleDE": "Ein Backenzahn im Oberkiefer reagiert empfindlich auf Kälte."
+  },
+  {
+    "front": "die Mundspülung",
+    "back": "collutorium",
+    "ipa": "kɔl.lʊˈtoː.rɪ.ʊm",
+    "example": "Collutorium halitum recentem efficit.",
+    "exampleDE": "Eine antibakterielle Mundspülung sorgt für frischen Atem."
+  },
+  {
+    "front": "die Zahnschmerzen",
+    "back": "dolor dentium",
+    "ipa": "ˈdɔ.lɔr ˈdɛn.tɪ.ʊm",
+    "example": "Propter subitum dolorem dentium celeriter ad medicum dentarium eundum est.",
+    "exampleDE": "Gegen plötzliche Zahnschmerzen sollte man rasch zum Zahnarzt."
+  },
+  {
+    "front": "das Handgelenk",
+    "back": "articulus manus",
+    "ipa": "arˈtɪ.kʊ.lʊs ˈma.nuːs",
+    "example": "Horologium armillare elegans in articulo manus sinistrae gerit.",
+    "exampleDE": "Sie trägt eine elegante Armbanduhr am linken Handgelenk."
+  },
+  {
+    "front": "der Ellbogen",
+    "back": "cubitus",
+    "ipa": "ˈkʊ.bɪ.tʊs",
+    "example": "Cubitum ad marginem mensae graviter offendit.",
+    "exampleDE": "Er hat sich den Ellbogen schmerzhaft an der Tischkante gestoßen."
+  },
+  {
+    "front": "das Kniegelenk",
+    "back": "articulus genus",
+    "ipa": "arˈtɪ.kʊ.lʊs ˈɡɛ.nuːs",
+    "example": "Cursu articulus genus vehementer exercetur.",
+    "exampleDE": "Beim Joggen wird das Kniegelenk stark beansprucht."
+  },
+  {
+    "front": "der Knöchel",
+    "back": "talus",
+    "ipa": "ˈtaː.lʊs",
+    "example": "In iniquo tramite ambulans talum torsit.",
+    "exampleDE": "Beim Wandern auf unebenem Pfad ist er mit dem Knöchel umgeknickt."
+  }
+]

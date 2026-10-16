@@ -1,0 +1,1616 @@
+# -*- coding: utf-8 -*-
+"""
+Generator for scripts/data_el_part1.json (Items 0..199)
+"""
+import json
+
+part1_cards = [
+  # 0..49
+  {
+    "front": "die Bettdecke",
+    "back": "πάπλωμα",
+    "ipa": "ˈpaploma",
+    "roman": "páploma",
+    "example": "Το μαλακό πάπλωμα σε κρατάει ζεστό τον χειμώνα.",
+    "exampleDE": "Die weiche Bettdecke hält im Winter schön warm."
+  },
+  {
+    "front": "der Wecker",
+    "back": "ξυπνητήρι",
+    "ipa": "ksipniˈtiri",
+    "roman": "xypnitíri",
+    "example": "Το ξυπνητήρι χτυπάει ακριβώς στις επτά.",
+    "exampleDE": "Der Wecker klingelt pünktlich um sieben Uhr."
+  },
+  {
+    "front": "das Schlummern",
+    "back": "αναβολή αφύπνισης",
+    "ipa": "anavoˈli aˈfipnisis",
+    "roman": "anavolí afýpnisis",
+    "example": "Μετά το πρώτο χτύπημα του ξυπνητηριού πατάει το κουμπί της αναβολής.",
+    "exampleDE": "Nach dem ersten Weckerklingeln drückt er auf die Schlummertaste."
+  },
+  {
+    "front": "das Zähneputzen",
+    "back": "βούρτσισμα δοντιών",
+    "ipa": "ˈvurtsizma ðonˈdjon",
+    "roman": "voúrtsisma dontión",
+    "example": "Το σχολαστικό βούρτσισμα δοντιών είναι σημαντικό για υγιή δόντια.",
+    "exampleDE": "Gründliches Zähneputzen ist wichtig für gesunde Zähne."
+  },
+  {
+    "front": "sich anziehen",
+    "back": "ντύνομαι",
+    "ipa": "ˈdinome",
+    "roman": "ntýnomai",
+    "example": "Ντύσου γρήγορα, πρέπει να φύγουμε.",
+    "exampleDE": "Zieh dich schnell an, wir müssen los."
+  },
+  {
+    "front": "die Haarbürste",
+    "back": "βούρτσα μαλλιών",
+    "ipa": "ˈvurtsa maˈljon",
+    "roman": "voúrtsa mallión",
+    "example": "Χτενίζει τα μακριά μαλλιά της με μια βούρτσα μαλλιών.",
+    "exampleDE": "Sie kämmt ihre langen Haare mit einer Haarbürste."
+  },
+  {
+    "front": "der Spiegel",
+    "back": "καθρέφτης",
+    "ipa": "kaˈθreftis",
+    "roman": "kathréftis",
+    "example": "Κοιτάζει για λίγο στον καθρέφτη στον διάδρομο.",
+    "exampleDE": "Er schaut kurz in den Spiegel im Flur."
+  },
+  {
+    "front": "die Routine",
+    "back": "ρουτίνα",
+    "ipa": "ruˈtina",
+    "roman": "routína",
+    "example": "Μια σταθερή πρωινή ρουτίνα εξοικονομεί πολύ χρόνο.",
+    "exampleDE": "Eine feste Morgenroutine spart viel Zeit."
+  },
+  {
+    "front": "der Mietvertrag",
+    "back": "συμβόλαιο ενοικίασης",
+    "ipa": "simˈvoleo eniˈciasis",
+    "roman": "symvólaio enoikíasis",
+    "example": "Υπογράψαμε χθες το νέο συμβόλαιο ενοικίασης.",
+    "exampleDE": "Wir haben gestern den neuen Mietvertrag unterschrieben."
+  },
+  {
+    "front": "die Kaution",
+    "back": "εγγύηση",
+    "ipa": "eˈŋʝiisi",
+    "roman": "engýisi",
+    "example": "Η εγγύηση είναι ίση με τρία μηνιαία ενοίκια.",
+    "exampleDE": "Die Kaution beträgt drei Monatsmieten."
+  },
+  {
+    "front": "die Nebenkosten",
+    "back": "κοινόχρηστα",
+    "ipa": "ciˈnoxrista",
+    "roman": "koinóchrista",
+    "example": "Η θέρμανση και το νερό περιλαμβάνονται στα κοινόχρηστα.",
+    "exampleDE": "Heizung und Wasser sind in den Nebenkosten enthalten."
+  },
+  {
+    "front": "der Vermieter",
+    "back": "ιδιοκτήτης",
+    "ipa": "iðjokˈtitis",
+    "roman": "idioktítis",
+    "example": "Ο ιδιοκτήτης επισκευάζει τη χαλασμένη θέρμανση.",
+    "exampleDE": "Der Vermieter repariert die defekte Heizung."
+  },
+  {
+    "front": "der Mieter",
+    "back": "ενοικιαστής",
+    "ipa": "eniçaˈstis",
+    "roman": "enoikiastís",
+    "example": "Ο ενοικιαστής πληρώνει το ενοίκιο στις αρχές του μήνα.",
+    "exampleDE": "Der Mieter bezahlt die Miete am Anfang des Monats."
+  },
+  {
+    "front": "die Kündigung",
+    "back": "καταγγελία σύμβασης",
+    "ipa": "kataɲɟeˈlia ˈsimvasis",
+    "roman": "katangelía sýmvasis",
+    "example": "Η καταγγελία του παλιού διαμερίσματος πρέπει να γίνει γραπτώς.",
+    "exampleDE": "Die Kündigung der alten Wohnung muss schriftlich erfolgen."
+  },
+  {
+    "front": "die Wohnfläche",
+    "back": "επιφάνεια κατοικίας",
+    "ipa": "epiˈfania katiˈcias",
+    "roman": "epifáneia katoikías",
+    "example": "Το διαμέρισμα έχει επιφάνεια κατοικίας ογδόντα τετραγωνικών μέτρων.",
+    "exampleDE": "Die Wohnung hat eine Wohnfläche von achtzig Quadratmetern."
+  },
+  {
+    "front": "der Umzug",
+    "back": "μετακόμιση",
+    "ipa": "metaˈcimisi",
+    "roman": "metakómisi",
+    "example": "Η μετακόμιση στη νέα πόλη κύλησε ομαλά.",
+    "exampleDE": "Der Umzug in die neue Stadt verlief reibungslos."
+  },
+  {
+    "front": "das Bücherregal",
+    "back": "βιβλιοθήκη",
+    "ipa": "vivlioˈθici",
+    "roman": "vivliothíki",
+    "example": "Η βιβλιοθήκη βρίσκεται στον τοίχο του γραφείου.",
+    "exampleDE": "Das Bücherregal steht an der Wand im Arbeitszimmer."
+  },
+  {
+    "front": "der Kleiderschrank",
+    "back": "ντουλάπα",
+    "ipa": "duˈlapa",
+    "roman": "ntoulápa",
+    "example": "Κρεμάει τα πουκάμισά του τακτοποιημένα στην ντουλάπα.",
+    "exampleDE": "Er hängt seine Hemden ordentlich in den Kleiderschrank."
+  },
+  {
+    "front": "der Schreibtischstuhl",
+    "back": "καρέκλα γραφείου",
+    "ipa": "kaˈrekla ɣraˈfiu",
+    "roman": "karékla grafeíou",
+    "example": "Μια άνετη καρέκλα γραφείου προστατεύει την πλάτη.",
+    "exampleDE": "Ein bequemer Schreibtischstuhl schont den Rücken."
+  },
+  {
+    "front": "die Stehlampe",
+    "back": "φωτιστικό δαπέδου",
+    "ipa": "fotistiˈko ðaˈpeðu",
+    "roman": "fotistikó dapédou",
+    "example": "Το φωτιστικό δαπέδου προσφέρει ζεστό φως το βράδυ.",
+    "exampleDE": "Die Stehlampe spendet warmes Licht am Abend."
+  },
+  {
+    "front": "der Esstisch",
+    "back": "τραπέζι φαγητού",
+    "ipa": "traˈpezi faʝiˈtu",
+    "roman": "trapézi fagitoú",
+    "example": "Όλη η οικογένεια κάθεται το βράδυ στο μεγάλο τραπέζι φαγητού.",
+    "exampleDE": "Die ganze Familie sitzt abends am großen Esstisch."
+  },
+  {
+    "front": "das Sofa",
+    "back": "καναπές",
+    "ipa": "kanaˈpes",
+    "roman": "kanapés",
+    "example": "Στον άνετο καναπέ μπορεί κανείς να χαλαρώσει υπέροχα.",
+    "exampleDE": "Auf dem bequemen Sofa kann man herrlich entspannen."
+  },
+  {
+    "front": "der Vorhang",
+    "back": "κουρτίνα",
+    "ipa": "kurˈtina",
+    "roman": "kourtína",
+    "example": "Κλείνει την κουρτίνα όταν νυχτώνει.",
+    "exampleDE": "Sie zieht den Vorhang zu, wenn es dunkel wird."
+  },
+  {
+    "front": "der Staubsauger",
+    "back": "ηλεκτρική σκούπα",
+    "ipa": "ilektriˈci ˈskupa",
+    "roman": "ilektrikí skoúpa",
+    "example": "Σκουπίζει το χαλί με τη νέα ηλεκτρική σκούπα.",
+    "exampleDE": "Er saugt den Teppich mit dem neuen Staubsauger."
+  },
+  {
+    "front": "das Bügelbrett",
+    "back": "σιδερώστρα",
+    "ipa": "siðeˈrostra",
+    "roman": "sideróstra",
+    "example": "Η σιδερώστρα στέκεται διπλωμένη στην ντουλάπα.",
+    "exampleDE": "Das Bügelbrett steht zusammengeklappt im Schrank."
+  },
+  {
+    "front": "das Bügeleisen",
+    "back": "σίδερο",
+    "ipa": "ˈsiðero",
+    "roman": "sídero",
+    "example": "Το σίδερο ζεσταίνεται πάρα πολύ.",
+    "exampleDE": "Das Bügeleisen wird sehr heiß."
+  },
+  {
+    "front": "der Wischmop",
+    "back": "σφουγγαρίστρα",
+    "ipa": "sfuŋɡaˈristra",
+    "roman": "sfoungarístra",
+    "example": "Σφουγγαρίζει το πάτωμα της κουζίνας με τη σφουγγαρίστρα.",
+    "exampleDE": "Sie wischt den Küchenboden mit dem Wischmop."
+  },
+  {
+    "front": "das Spülmittel",
+    "back": "υγρό πιάτων",
+    "ipa": "iˈɣro ˈpjaton",
+    "roman": "ygró piáton",
+    "example": "Λίγες σταγόνες υγρού πιάτων αρκούν για τα πιάτα.",
+    "exampleDE": "Ein paar Tropfen Spülmittel genügen für das Geschirr."
+  },
+  {
+    "front": "die Mülltonne",
+    "back": "κάδος απορριμμάτων",
+    "ipa": "ˈkaðos aporiˈmaton",
+    "roman": "kádos aporrimmáton",
+    "example": "Πήγαινε σε παρακαλώ τον κάδο απορριμμάτων στον δρόμο.",
+    "exampleDE": "Bring bitte die Mülltonne an die Straße."
+  },
+  {
+    "front": "der Wäscheständer",
+    "back": "απλώστρα",
+    "ipa": "aˈplostra",
+    "roman": "aplóstra",
+    "example": "Τα βρεγμένα ρούχα στεγνώνουν στην απλώστρα.",
+    "exampleDE": "Die nasse Wäsche trocknet auf dem Wäscheständer."
+  },
+  {
+    "front": "die Glühbirne",
+    "back": "λάμπα",
+    "ipa": "ˈlamba",
+    "roman": "lámpa",
+    "example": "Πρέπει να αλλάξουμε την καμένη λάμπα στον διάδρομο.",
+    "exampleDE": "Wir müssen die kaputte Glühbirne im Flur auswechseln."
+  },
+  {
+    "front": "der Schraubenzieher",
+    "back": "κατσαβίδι",
+    "ipa": "katsaˈviði",
+    "roman": "katsavídi",
+    "example": "Με το κατσαβίδι σφίγγει τη χαλαρή βίδα.",
+    "exampleDE": "Mit dem Schraubenzieher zieht er die lose Schraube fest."
+  },
+  {
+    "front": "die Zange",
+    "back": "πένσα",
+    "ipa": "ˈpensa",
+    "roman": "pénsa",
+    "example": "Κρατάει το σύρμα σταθερά με μια πένσα.",
+    "exampleDE": "Er hält den Draht mit einer Zange fest."
+  },
+  {
+    "front": "die Bohrmaschine",
+    "back": "τρυπάνι",
+    "ipa": "triˈpani",
+    "roman": "trypáni",
+    "example": "Το τρυπάνι ανοίγει μια τρύπα στον τοίχο.",
+    "exampleDE": "Die Bohrmaschine bohrt ein Loch in die Wand."
+  },
+  {
+    "front": "der Handwerker",
+    "back": "τεχνίτης",
+    "ipa": "teˈxnitis",
+    "roman": "technítis",
+    "example": "Ο τεχνίτης έρχεται αύριο το πρωί στις οκτώ.",
+    "exampleDE": "Der Handwerker kommt morgen früh um acht."
+  },
+  {
+    "front": "der Pinsel",
+    "back": "πινέλο",
+    "ipa": "piˈnelo",
+    "roman": "pinélo",
+    "example": "Βάφει το ξύλινο παγκάκι με ένα φαρδύ πινέλο.",
+    "exampleDE": "Sie streicht die Holzbank mit einem breiten Pinsel."
+  },
+  {
+    "front": "reparieren",
+    "back": "επισκευάζω",
+    "ipa": "episkeˈvazo",
+    "roman": "episkeuázo",
+    "example": "Μπορείς σε παρακαλώ να επισκευάσεις το χαλασμένο ποδήλατο;",
+    "exampleDE": "Kannst du das kaputte Fahrrad bitte reparieren?"
+  },
+  {
+    "front": "der Werkzeugkasten",
+    "back": "εργαλειοθήκη",
+    "ipa": "erɣalioˈθici",
+    "roman": "ergaleiothíki",
+    "example": "Όλα τα εργαλεία βρίσκονται πρόχειρα στην εργαλειοθήκη.",
+    "exampleDE": "Alle Werkzeuge liegen griffbereit im Werkzeugkasten."
+  },
+  {
+    "front": "das Schneidebrett",
+    "back": "ξύλο κοπής",
+    "ipa": "ˈksilo koˈpis",
+    "roman": "xýlo kopís",
+    "example": "Κόψε το κρεμμύδι σε παρακαλώ πάνω στο ξύλο κοπής.",
+    "exampleDE": "Schneide die Zwiebel bitte auf dem Schneidebrett."
+  },
+  {
+    "front": "der Kochtopf",
+    "back": "κατσαρόλα",
+    "ipa": "katsaˈrola",
+    "roman": "katsaróla",
+    "example": "Η σούπα βράζει στη μεγάλη κατσαρόλα πάνω στην κουζίνα.",
+    "exampleDE": "Die Suppe kocht im großen Kochtopf auf dem Herd."
+  },
+  {
+    "front": "die Bratpfanne",
+    "back": "τηγάνι",
+    "ipa": "tiˈɣani",
+    "roman": "tigáni",
+    "example": "Στο καυτό τηγάνι τηγανίζονται τα λαχανικά.",
+    "exampleDE": "In der heißen Bratpfanne brät das Gemüse."
+  },
+  {
+    "front": "der Wasserkocher",
+    "back": "βραστήρας",
+    "ipa": "vraˈstiras",
+    "roman": "vrastíras",
+    "example": "Ο βραστήρας βράζει το νερό για το τσάι σε δύο λεπτά.",
+    "exampleDE": "Der Wasserkocher kocht das Teewasser in zwei Minuten."
+  },
+  {
+    "front": "der Backofen",
+    "back": "φούρνος",
+    "ipa": "ˈfurnos",
+    "roman": "foúrnos",
+    "example": "Το κέικ ψήνεται για μισή ώρα στον φούρνο.",
+    "exampleDE": "Der Kuchen backt eine halbe Stunde im Backofen."
+  },
+  {
+    "front": "das Rezept",
+    "back": "συνταγή",
+    "ipa": "sindaˈʝi",
+    "roman": "syntagí",
+    "example": "Αυτή τη συνταγή την επινόησε η γιαγιά μου.",
+    "exampleDE": "Dieses Rezept hat meine Großmutter erfunden."
+  },
+  {
+    "front": "die Zutat",
+    "back": "συστατικό",
+    "ipa": "sistatiˈko",
+    "roman": "systatikó",
+    "example": "Τα φρέσκα μυρωδικά είναι το σημαντικότερο συστατικό για τη σάλτσα.",
+    "exampleDE": "Frische Kräuter sind die wichtigste Zutat für die Soße."
+  },
+  {
+    "front": "fein hacken",
+    "back": "ψιλοκόβω",
+    "ipa": "psiloˈkovo",
+    "roman": "psilokóvo",
+    "example": "Ψιλοκόβει τα κρεμμύδια και τον μαϊντανό με ένα κοφτερό μαχαίρι.",
+    "exampleDE": "Sie hackt die Zwiebeln und Petersilie mit einem scharfen Messer fein."
+  },
+  {
+    "front": "das Meersalz",
+    "back": "θαλασσινό αλάτι",
+    "ipa": "θalasiˈno aˈlati",
+    "roman": "thalassinó aláti",
+    "example": "Μια πρέζα θαλασσινό αλάτι απογειώνει τη γεύση της σούπας.",
+    "exampleDE": "Eine Prise Meersalz hebt den Geschmack der Suppe."
+  },
+  {
+    "front": "der schwarze Pfeffer",
+    "back": "μαύρο πιπέρι",
+    "ipa": "ˈmavro piˈperi",
+    "roman": "mávro pipéri",
+    "example": "Το φρεσκοτριμμένο μαύρο πιπέρι μυρίζει υπέροχα.",
+    "exampleDE": "Frisch gemahlener schwarzer Pfeffer duftet herrlich."
+  },
+  {
+    "front": "das Olivenöl",
+    "back": "ελαιόλαδο",
+    "ipa": "eleˈolaðo",
+    "roman": "elaiólado",
+    "example": "Το εξαιρετικό παρθένο ελαιόλαδο ταιριάζει εξαιρετικά στη σαλάτα.",
+    "exampleDE": "Kaltgepresstes Olivenöl passt hervorragend zum Salat."
+  },
+  {
+    "front": "der Knoblauch",
+    "back": "σκόρδο",
+    "ipa": "ˈskorðo",
+    "roman": "skórdo",
+    "example": "Δύο σκελίδες σκόρδο δίνουν άρωμα στο φαγητό.",
+    "exampleDE": "Zwei Zehen Knoblauch verleihen dem Gericht Aroma."
+  },
+  # 50..99
+  {
+    "front": "die Petersilie",
+    "back": "μαϊντανός",
+    "ipa": "maidaˈnos",
+    "roman": "maïntanós",
+    "example": "Ο φρεσκοκομμένος μαϊντανός μπαίνει από πάνω πριν από το σερβίρισμα.",
+    "exampleDE": "Frisch gehackte Petersilie kommt vor dem Servieren darauf."
+  },
+  {
+    "front": "das Basilikum",
+    "back": "βασιλικός",
+    "ipa": "vasiliˈkos",
+    "roman": "vasilikós",
+    "example": "Ο φρέσκος βασιλικός ταιριάζει τέλεια με τις ντομάτες.",
+    "exampleDE": "Frisches Basilikum passt perfekt zu Tomaten."
+  },
+  {
+    "front": "der Zimt",
+    "back": "κανέλα",
+    "ipa": "kaˈnela",
+    "roman": "kanéla",
+    "example": "Τον χειμώνα πίνουμε ευχάριστα τσάι με μια πρέζα κανέλα.",
+    "exampleDE": "Im Winter trinken wir gerne Tee mit einer Prise Zimt."
+  },
+  {
+    "front": "das Vollkornbrot",
+    "back": "ψωμί ολικής άλεσης",
+    "ipa": "psoˈmi oliˈcis ˈalesis",
+    "roman": "psomí olikís álesis",
+    "example": "Το φρέσκο ψωμί ολικής άλεσης έχει γεμάτη γεύση και χορταίνει για ώρα.",
+    "exampleDE": "Frisches Vollkornbrot schmeckt kräftig und hält lange satt."
+  },
+  {
+    "front": "das Brötchen",
+    "back": "ψωμάκι",
+    "ipa": "psoˈmaci",
+    "roman": "psomáki",
+    "example": "Τις Κυριακές παίρνουμε ζεστά ψωμάκια από τον φούρνο.",
+    "exampleDE": "Sonntags holen wir warme Brötchen beim Bäcker."
+  },
+  {
+    "front": "die Butter",
+    "back": "βούτυρο",
+    "ipa": "ˈvutiro",
+    "roman": "voútyro",
+    "example": "Άλειψε σε παρακαλώ λίγο βούτυρο στη φέτα ψωμί.",
+    "exampleDE": "Streich bitte etwas Butter auf die Scheibe Brot."
+  },
+  {
+    "front": "die Marmelade",
+    "back": "μαρμελάδα",
+    "ipa": "marmeˈlaða",
+    "roman": "marmeláda",
+    "example": "Η μαρμελάδα φράουλα είναι το αγαπημένο μου επάλειμμα.",
+    "exampleDE": "Erdbeermarmelade ist mein liebster Brotaufstrich."
+  },
+  {
+    "front": "das Müsli",
+    "back": "μούσλι",
+    "ipa": "ˈmusli",
+    "roman": "moúsli",
+    "example": "Το πρωί μου αρέσει να τρώω μούσλι με φρέσκα φρούτα.",
+    "exampleDE": "Morgens esse ich gerne Müsli mit frischem Obst."
+  },
+  {
+    "front": "der Joghurt",
+    "back": "γιαούρτι",
+    "ipa": "jaˈurti",
+    "roman": "giaoúrti",
+    "example": "Το στραγγιστό γιαούρτι είναι ιδιαίτερα νόστιμο με λίγο μέλι.",
+    "exampleDE": "Naturjoghurt schmeckt besonders gut mit etwas Honig."
+  },
+  {
+    "front": "das gekochte Ei",
+    "back": "βραστό αυγό",
+    "ipa": "vraˈsto avˈɣo",
+    "roman": "vrastó avgó",
+    "example": "Ένα μελάτο βραστό αυγό ανήκει στο κυριακάτικο πρωινό.",
+    "exampleDE": "Ein weich gekochtes Ei gehört zum Sonntagsfrühstück."
+  },
+  {
+    "front": "der Orangensaft",
+    "back": "χυμός πορτοκάλι",
+    "ipa": "çiˈmos portoˈkali",
+    "roman": "chymós portokáli",
+    "example": "Ο φρεσκοστυμμένος χυμός πορτοκάλι περιέχει πολλές βιταμίνες.",
+    "exampleDE": "Frisch gepresster Orangensaft enthält viele Vitamine."
+  },
+  {
+    "front": "die Reservierung",
+    "back": "κράτηση",
+    "ipa": "ˈkratisi",
+    "roman": "krátisi",
+    "example": "Έχω μια κράτηση στο όνομα Μίλερ.",
+    "exampleDE": "Ich habe eine Reservierung auf den Namen Müller."
+  },
+  {
+    "front": "die Speisekarte",
+    "back": "κατάλογος",
+    "ipa": "kaˈtaloɣos",
+    "roman": "katálogos",
+    "example": "Μπορούμε να δούμε τον κατάλογο, παρακαλώ;",
+    "exampleDE": "Dürfen wir bitte die Speisekarte sehen?"
+  },
+  {
+    "front": "die Vorspeise",
+    "back": "ορεκτικό",
+    "ipa": "orektiˈko",
+    "roman": "orektikó",
+    "example": "Για ορεκτικό παραγγέλνουμε μια μικρή σαλάτα.",
+    "exampleDE": "Als Vorspeise bestellen wir einen kleinen Salat."
+  },
+  {
+    "front": "das Hauptgericht",
+    "back": "κυρίως πιάτο",
+    "ipa": "ciˈrios ˈpjato",
+    "roman": "kyríos piáto",
+    "example": "Το κυρίως πιάτο σερβίρεται ζεστό σε ένα μεγάλο πιάτο.",
+    "exampleDE": "Das Hauptgericht wird heiß auf einem großen Teller serviert."
+  },
+  {
+    "front": "die Nachspeise",
+    "back": "επιδόρπιο",
+    "ipa": "epiˈðorpio",
+    "roman": "epidórpio",
+    "example": "Θα θέλατε ένα επιδόρπιο μετά το φαγητό;",
+    "exampleDE": "Möchten Sie nach dem Essen noch eine Nachspeise?"
+  },
+  {
+    "front": "die Rechnung",
+    "back": "λογαριασμός",
+    "ipa": "loɣarjaˈzmos",
+    "roman": "logariazmós",
+    "example": "Θα θέλαμε να πληρώσουμε, φέρτε μας τον λογαριασμό παρακαλώ.",
+    "exampleDE": "Wir möchten bitte zahlen, bringen Sie uns die Rechnung."
+  },
+  {
+    "front": "das Trinkgeld",
+    "back": "φιλοδώρημα",
+    "ipa": "filoˈðorima",
+    "roman": "filodórima",
+    "example": "Ο ευγενικός σερβιτόρος άξιζε ένα καλό φιλοδώρημα.",
+    "exampleDE": "Der freundliche Kellner hat ein gutes Trinkgeld verdient."
+  },
+  {
+    "front": "die Spezialität des Hauses",
+    "back": "σπεσιαλιτέ του καταστήματος",
+    "ipa": "spesjaliˈte tu kataˈstimatos",
+    "roman": "spesialité tou katastímatos",
+    "example": "Ο σερβιτόρος προτείνει τα σπιτικά ζυμαρικά ως σπεσιαλιτέ του καταστήματος.",
+    "exampleDE": "Der Kellner empfiehlt die hausgemachte Pasta als Spezialität des Hauses."
+  },
+  {
+    "front": "der Kaffee",
+    "back": "καφές",
+    "ipa": "kaˈfes",
+    "roman": "kafés",
+    "example": "Ένα φλιτζάνι ζεστός καφές διώχνει την κούραση.",
+    "exampleDE": "Eine Tasse heißer Kaffee vertreibt die Müdigkeit."
+  },
+  {
+    "front": "der Cappuccino",
+    "back": "καπουτσίνο",
+    "ipa": "kapuˈtsino",
+    "roman": "kapoutsíno",
+    "example": "Ο καπουτσίνο έχει υπέροχο κρεμώδη αφρό.",
+    "exampleDE": "Der Cappuccino hat einen wunderbar cremigen Schaum."
+  },
+  {
+    "front": "der Kräutertee",
+    "back": "τσάι βοτάνων",
+    "ipa": "ˈtsai voˈtanon",
+    "roman": "tsái votánon",
+    "example": "Το βράδυ πίνω ευχάριστα ένα φλιτζάνι ζεστό τσάι βοτάνων.",
+    "exampleDE": "Abends trinke ich gerne eine Tasse warmen Kräutertee."
+  },
+  {
+    "front": "das Mineralwasser",
+    "back": "ανθρακούχο νερό",
+    "ipa": "anθraˈkuxo neˈro",
+    "roman": "anthrakoúcho neró",
+    "example": "Ένα ποτήρι δροσερό ανθρακούχο νερό αναζωογονεί.",
+    "exampleDE": "Ein Glas kühles Mineralwasser mit Kohlensäure erfrischt."
+  },
+  {
+    "front": "das Stück Kuchen",
+    "back": "κομμάτι κέικ",
+    "ipa": "koˈmati cec",
+    "roman": "kommáti kéik",
+    "example": "Το απόγευμα απολαμβάνουμε ένα κομμάτι κέικ.",
+    "exampleDE": "Am Nachmittag gönnen wir uns ein Stück Kuchen."
+  },
+  {
+    "front": "die Barista",
+    "back": "μπαρίστα",
+    "ipa": "baˈrista",
+    "roman": "barista",
+    "example": "Η μπαρίστα ετοιμάζει τον εσπρέσο με τέχνη.",
+    "exampleDE": "Die Barista bereitet den Espresso kunstvoll zu."
+  },
+  {
+    "front": "die Stammkundin",
+    "back": "τακτική πελάτισσα",
+    "ipa": "taktiˈci peˈlatisa",
+    "roman": "taktikí pelátissa",
+    "example": "Είναι τακτική πελάτισσα σε αυτό το ζεστό καφέ στη γωνία.",
+    "exampleDE": "Sie ist Stammkundin in diesem gemütlichen Café an der Ecke."
+  },
+  {
+    "front": "der Einkaufswagen",
+    "back": "καρότσι αγορών",
+    "ipa": "kaˈrotsi aɣoˈron",
+    "roman": "karótsi agorón",
+    "example": "Πάρε σε παρακαλώ ένα κέρμα για το καρότσι αγορών.",
+    "exampleDE": "Nimm bitte eine Münze für den Einkaufswagen mit."
+  },
+  {
+    "front": "der Einkaufszettel",
+    "back": "λίστα αγορών",
+    "ipa": "ˈlista aɣoˈron",
+    "roman": "lísta agorón",
+    "example": "Έχω σημειώσει όλα τα σημαντικά πράγματα στη λίστα αγορών.",
+    "exampleDE": "Ich habe alle wichtigen Dinge auf dem Einkaufszettel notiert."
+  },
+  {
+    "front": "das Sonderangebot",
+    "back": "ειδική προσφορά",
+    "ipa": "eðiˈci prosfoˈra",
+    "roman": "eidikí prosforá",
+    "example": "Οι φρέσκες φράουλες είναι σήμερα σε ειδική προσφορά.",
+    "exampleDE": "Frische Erdbeeren sind heute im Sonderangebot."
+  },
+  {
+    "front": "die Kasse",
+    "back": "ταμείο",
+    "ipa": "taˈmio",
+    "roman": "tameío",
+    "example": "Στο ταμείο υπάρχει μια μεγάλη ουρά πελατών.",
+    "exampleDE": "An der Kasse steht eine lange Schlange von Kunden."
+  },
+  {
+    "front": "der Kassenbon",
+    "back": "απόδειξη",
+    "ipa": "aˈpoðiksi",
+    "roman": "apódeixi",
+    "example": "Κρατήστε καλά την απόδειξη ως παραστατικό.",
+    "exampleDE": "Bewahren Sie den Kassenbon als Beleg gut auf."
+  },
+  {
+    "front": "die Stofftasche",
+    "back": "υφασμάτινη τσάντα",
+    "ipa": "ifaˈzmatini ˈtsanda",
+    "roman": "yfazmátini tsánta",
+    "example": "Μεταφέρουμε τα ψώνια μας σε μια υφασμάτινη τσάντα.",
+    "exampleDE": "Wir transportieren unsere Einkäufe in einer Stofftasche."
+  },
+  {
+    "front": "das Haltbarkeitsdatum",
+    "back": "ημερομηνία λήξης",
+    "ipa": "imeromiˈnia ˈliksis",
+    "roman": "imerominía líxis",
+    "example": "Ελέγχετε πάντα την ημερομηνία λήξης στη συσκευασία.",
+    "exampleDE": "Prüfen Sie immer das Haltbarkeitsdatum auf der Verpackung."
+  },
+  {
+    "front": "die Frischetheke",
+    "back": "πάγκος φρέσκων προϊόντων",
+    "ipa": "ˈpaɲɡos ˈfreskon proˈjondon",
+    "roman": "pángos fréskon proïónton",
+    "example": "Στον πάγκο φρέσκων προϊόντων υπάρχουν τοπικά τυριά.",
+    "exampleDE": "An der Frischetheke gibt es regionalen Käse."
+  },
+  {
+    "front": "anprobieren",
+    "back": "δοκιμάζω",
+    "ipa": "ðociˈmazo",
+    "roman": "dokimázo",
+    "example": "Θα ήθελα να δοκιμάσω αυτό το σκούρο μπλε μπουφάν.",
+    "exampleDE": "Ich möchte diese dunkelblaue Jacke gerne anprobieren."
+  },
+  {
+    "front": "die Umkleidekabine",
+    "back": "δοκιμαστήριο",
+    "ipa": "ðocimaˈstirio",
+    "roman": "dokimastírio",
+    "example": "Εκεί πέρα αριστερά υπάρχει ένα ελεύθερο δοκιμαστήριο.",
+    "exampleDE": "Dort drüben links ist eine freie Umkleidekabine."
+  },
+  {
+    "front": "die Konfektionsgröße",
+    "back": "μέγεθος ρούχου",
+    "ipa": "ˈmeʝeθos ˈruxu",
+    "roman": "mégethos roúchou",
+    "example": "Τι μέγεθος ρούχου φοράτε συνήθως;",
+    "exampleDE": "Welche Konfektionsgröße tragen Sie normalerweise?"
+  },
+  {
+    "front": "passen",
+    "back": "ταιριάζω",
+    "ipa": "terˈjazo",
+    "roman": "tairiázo",
+    "example": "Το παντελόνι μού ταιριάζει γάντι.",
+    "exampleDE": "Die Hose passt mir wie angegossen."
+  },
+  {
+    "front": "zu eng",
+    "back": "πολύ στενό",
+    "ipa": "poˈli steˈno",
+    "roman": "polý stenó",
+    "example": "Αυτό το πουλόβερ μού είναι δυστυχώς πολύ στενό στους ώμους.",
+    "exampleDE": "Dieser Pullover ist mir an den Schultern leider zu eng."
+  },
+  {
+    "front": "zu weit",
+    "back": "πολύ φαρδύ",
+    "ipa": "poˈli farˈði",
+    "roman": "polý fardý",
+    "example": "Η φούστα είναι κάπως πολύ φαρδιά και γλιστράει στο περπάτημα.",
+    "exampleDE": "Der Rock ist etwas zu weit und rutscht beim Gehen."
+  },
+  {
+    "front": "der Schnitt",
+    "back": "γραμμή",
+    "ipa": "ɣraˈmi",
+    "roman": "grammí",
+    "example": "Η μοντέρνα γραμμή μού αρέσει ιδιαίτερα.",
+    "exampleDE": "Der moderne Schnitt gefällt mir besonders gut."
+  },
+  {
+    "front": "die Baumwolle",
+    "back": "βαμβάκι",
+    "ipa": "vamˈvaci",
+    "roman": "vamváki",
+    "example": "Αυτό το μπλουζάκι αποτελείται από καθαρό, μαλακό βαμβάκι.",
+    "exampleDE": "Dieses T-Shirt besteht aus reiner, weicher Baumwolle."
+  },
+  {
+    "front": "die Schurwolle",
+    "back": "παρθένο μαλλί",
+    "ipa": "parˈθeno maˈli",
+    "roman": "parthéno mallí",
+    "example": "Το χοντρό πουλόβερ από παρθένο μαλλί κρατάει ζεστό τον χειμώνα.",
+    "exampleDE": "Der dicke Pullover aus Schurwolle hält im Winter warm."
+  },
+  {
+    "front": "die Seide",
+    "back": "μετάξι",
+    "ipa": "meˈtaksi",
+    "roman": "metáxi",
+    "example": "Το μεταξωτό μαντίλι έχει υπέροχα απαλή αίσθηση.",
+    "exampleDE": "Das Halstuch aus Seide fühlt sich herrlich weich an."
+  },
+  {
+    "front": "das Leder",
+    "back": "δέρμα",
+    "ipa": "ˈðerma",
+    "roman": "dérma",
+    "example": "Το ανθεκτικό μπουφάν είναι κατασκευασμένο από γνήσιο δέρμα.",
+    "exampleDE": "Die robuste Jacke ist aus echtem Leder gefertigt."
+  },
+  {
+    "front": "gestreift",
+    "back": "ριγέ",
+    "ipa": "riˈʝe",
+    "roman": "rigé",
+    "example": "Φοράει σήμερα ένα μπλε-άσπρο ριγέ πουκάμισο.",
+    "exampleDE": "Er trägt heute ein blau-weiß gestreiftes Hemd."
+  },
+  {
+    "front": "kariert",
+    "back": "καρό",
+    "ipa": "kaˈro",
+    "roman": "karó",
+    "example": "Το καρό σχέδιο ταιριάζει τέλεια με το πουκάμισο ξυλοκόπου.",
+    "exampleDE": "Das karierte Muster passt hervorragend zum Holzfällerhemd."
+  },
+  {
+    "front": "einfarbig",
+    "back": "μονόχρωμος",
+    "ipa": "moˈnoxromos",
+    "roman": "monóchromos",
+    "example": "Ένα απλό, μονόχρωμο φόρεμα δείχνει πάντα κομψό.",
+    "exampleDE": "Ein schlichtes, einfarbiges Kleid wirkt immer elegant."
+  },
+  {
+    "front": "der Reißverschluss",
+    "back": "φερμουάρ",
+    "ipa": "fermuˈar",
+    "roman": "fermouár",
+    "example": "Το φερμουάρ στο μπουφάν μου κολλάει μερικές φορές.",
+    "exampleDE": "Der Reißverschluss an meiner Jacke klemmt manchmal."
+  },
+  {
+    "front": "die Schnürsenkel",
+    "back": "κορδόνια",
+    "ipa": "korˈðonja",
+    "roman": "kordónia",
+    "example": "Δέσε τα κορδόνια σου για να μην σκοντάψεις.",
+    "exampleDE": "Binde dir die Schnürsenkel zu, damit du nicht stolperst."
+  },
+  # 100..199
+  {
+    "front": "die Lederschuhe",
+    "back": "δερμάτινα παπούτσια",
+    "ipa": "ðerˈmatina paˈputsja",
+    "roman": "dermátina papoútsia",
+    "example": "Σε γιορτινές περιστάσεις φοράει γυαλισμένα δερμάτινα παπούτσια.",
+    "exampleDE": "Zu festlichen Anlässen trägt er polierte Lederschuhe."
+  },
+  {
+    "front": "die Turnschuhe",
+    "back": "αθλητικά παπούτσια",
+    "ipa": "aθlitiˈka paˈputsja",
+    "roman": "athlitiká papoútsia",
+    "example": "Για τρέξιμο στο πάρκο χρειάζομαι άνετα αθλητικά παπούτσια.",
+    "exampleDE": "Zum Laufen im Park brauche ich bequeme Turnschuhe."
+  },
+  {
+    "front": "die Handtasche",
+    "back": "τσάντα χειρός",
+    "ipa": "ˈtsanda çiˈros",
+    "roman": "tsánta cheirós",
+    "example": "Ψάχνει το κλειδί της στη μεγάλη τσάντα χειρός.",
+    "exampleDE": "Sie sucht ihren Schlüssel in der großen Handtasche."
+  },
+  {
+    "front": "der Ledergürtel",
+    "back": "δερμάτινη ζώνη",
+    "ipa": "ðerˈmatini ˈzoni",
+    "roman": "dermátini zóni",
+    "example": "Μια μαύρη δερμάτινη ζώνη κρατάει σταθερό το παντελόνι.",
+    "exampleDE": "Ein schwarzer Ledergürtel hält die Hose fest."
+  },
+  {
+    "front": "der Regenschirm",
+    "back": "ομπρέλα",
+    "ipa": "omˈbrela",
+    "roman": "ompréla",
+    "example": "Πάρε μια ομπρέλα μαζί σου, ο ουρανός συννεφιάζει.",
+    "exampleDE": "Nimm einen Regenschirm mit, der Himmel zieht sich zu."
+  },
+  {
+    "front": "die Sonnenbrille",
+    "back": "γυαλιά ηλίου",
+    "ipa": "jaˈlja iˈliu",
+    "roman": "gialiá ilíou",
+    "example": "Το καλοκαίρι τα καλά γυαλιά ηλίου προστατεύουν τα μάτια.",
+    "exampleDE": "Im Sommer schützt eine gute Sonnenbrille die Augen."
+  },
+  {
+    "front": "das Girokonto",
+    "back": "τρεχούμενος λογαριασμός",
+    "ipa": "treˈxumenos loɣarjaˈzmos",
+    "roman": "trechoúmenos logariazmós",
+    "example": "Ο μισθός μου κατατίθεται μηνιαίως στον τρεχούμενο λογαριασμό μου.",
+    "exampleDE": "Mein Gehalt wird monatlich auf mein Girokonto überwiesen."
+  },
+  {
+    "front": "die Überweisung",
+    "back": "τραπεζική μεταφορά",
+    "ipa": "trapeziˈci metafoˈra",
+    "roman": "trapezikí metaforá",
+    "example": "Κάνω την τραπεζική μεταφορά εύκολα μέσω ηλεκτρονικής τραπεζικής.",
+    "exampleDE": "Ich mache die Überweisung bequem per Online-Banking."
+  },
+  {
+    "front": "der Dauerauftrag",
+    "back": "πάγια εντολή",
+    "ipa": "ˈpaʝia endoˈli",
+    "roman": "págia entolí",
+    "example": "Πληρώνω το ενοίκιο κάθε μήνα με πάγια εντολή.",
+    "exampleDE": "Die Miete bezahle ich jeden Monat per Dauerauftrag."
+  },
+  {
+    "front": "der Geldautomat",
+    "back": "ΑΤΜ",
+    "ipa": "a te ˈem",
+    "roman": "ATM",
+    "example": "Σε αυτό το ΑΤΜ μπορεί κανείς να κάνει ανάληψη χωρίς χρέωση.",
+    "exampleDE": "An diesem Geldautomaten kann man gebührenfrei abheben."
+  },
+  {
+    "front": "die Geheimzahl",
+    "back": "κωδικός PIN",
+    "ipa": "koðiˈkos pin",
+    "roman": "kodikós PIN",
+    "example": "Μη δίνεις ποτέ τον τετραψήφιο κωδικό PIN σου σε αγνώστους.",
+    "exampleDE": "Gib deine vierstellige Geheimzahl niemals an Fremde weiter."
+  },
+  {
+    "front": "der Kontoauszug",
+    "back": "αντίγραφο κίνησης λογαριασμού",
+    "ipa": "anˈdiɣrafo ˈcinisis loɣarjaˈzmu",
+    "roman": "antígrafo kínisis logariazmoú",
+    "example": "Στο αντίγραφο κίνησης λογαριασμού αναγράφονται όλα τα έσοδα και τα έξοδα.",
+    "exampleDE": "Auf dem Kontoauszug stehen alle Einnahmen und Ausgaben."
+  },
+  {
+    "front": "das Sparguthaben",
+    "back": "καταθέσεις ταμιευτηρίου",
+    "ipa": "kataˈθesis tamjeftiˈriu",
+    "roman": "katathéseis tamieftyríou",
+    "example": "Αποταμιεύει κάθε μήνα ένα σταθερό ποσό ως καταθέσεις ταμιευτηρίου.",
+    "exampleDE": "Sie legt jeden Monat einen festen Betrag als Sparguthaben an."
+  },
+  {
+    "front": "die Zinsen",
+    "back": "τόκοι",
+    "ipa": "ˈtoci",
+    "roman": "tókoi",
+    "example": "Η τράπεζα προσφέρει προς το παρόν μέτριους τόκους για τις προθεσμιακές καταθέσεις.",
+    "exampleDE": "Die Bank zahlt derzeit moderate Zinsen auf das Festgeld."
+  },
+  {
+    "front": "das Bargeld",
+    "back": "μετρητά",
+    "ipa": "metriˈta",
+    "roman": "metritá",
+    "example": "Έχετε καθόλου μετρητά μαζί σας ή πληρώνετε με κάρτα;",
+    "exampleDE": "Haben Sie etwas Bargeld dabei oder zahlen Sie mit Karte?"
+  },
+  {
+    "front": "die Kreditkarte",
+    "back": "πιστωτική κάρτα",
+    "ipa": "pistotiˈci ˈkarta",
+    "roman": "pistotikí kárta",
+    "example": "Στα ταξίδια πληρώνω τα ψώνια συνήθως με πιστωτική κάρτα.",
+    "exampleDE": "Auf Reisen bezahle ich Einkäufe meist mit Kreditkarte."
+  },
+  {
+    "front": "kontaktlos",
+    "back": "ανέπαφα",
+    "ipa": "aˈnepafa",
+    "roman": "anépafa",
+    "example": "Ποσά κάτω από πενήντα ευρώ μπορεί κανείς να τα πληρώσει ανέπαφα.",
+    "exampleDE": "Beträge unter fünfzig Euro kann man kontaktlos bezahlen."
+  },
+  {
+    "front": "die Münze",
+    "back": "κέρμα",
+    "ipa": "ˈcerma",
+    "roman": "kérma",
+    "example": "Ρίχνει ένα κέρμα δύο ευρώ στο αυτόματο μηχάνημα στάθμευσης.",
+    "exampleDE": "Er wirft eine Zwei-Euro-Münze in den Parkscheinautomaten."
+  },
+  {
+    "front": "der Geldschein",
+    "back": "χαρτονόμισμα",
+    "ipa": "xartoˈnomizma",
+    "roman": "chartonómisma",
+    "example": "Διπλώνει προσεκτικά το χαρτονόμισμα των δέκα ευρώ.",
+    "exampleDE": "Sie faltet den Zehn-Euro-Geldschein sorgfältig zusammen."
+  },
+  {
+    "front": "das Wechselgeld",
+    "back": "ρέστα",
+    "ipa": "ˈresta",
+    "roman": "résta",
+    "example": "Μην ξεχάσετε παρακαλώ τα ρέστα σας στο ταμείο.",
+    "exampleDE": "Vergessen Sie bitte nicht Ihr Wechselgeld an der Kasse."
+  },
+  {
+    "front": "der Wechselkurs",
+    "back": "συναλλαγματική ισοτιμία",
+    "ipa": "sinalaɣmatiˈci isotiˈmia",
+    "roman": "synallagmatikí isotimía",
+    "example": "Πριν από το ταξίδι στο εξωτερικό ελέγχουμε την τρέχουσα συναλλαγματική ισοτιμία.",
+    "exampleDE": "Vor der Auslandsreise prüfen wir den aktuellen Wechselkurs."
+  },
+  {
+    "front": "das Paket",
+    "back": "δέμα",
+    "ipa": "ˈðema",
+    "roman": "déma",
+    "example": "Ο ταχυμεταφορέας παραδίδει το βαρύ δέμα στην εξώπορτα.",
+    "exampleDE": "Der Bote liefert das schwere Paket an die Haustür."
+  },
+  {
+    "front": "der Briefumschlag",
+    "back": "φάκελος",
+    "ipa": "ˈfakelos",
+    "roman": "fákelos",
+    "example": "Βάζει το γράμμα σε έναν λευκό φάκελο.",
+    "exampleDE": "Sie steckt den Brief in einen weißen Briefumschlag."
+  },
+  {
+    "front": "die Briefmarke",
+    "back": "γραμματόσημο",
+    "ipa": "ɣramaˈtosimo",
+    "roman": "grammatósimo",
+    "example": "Κόλλησε σε παρακαλώ ένα γραμματόσημο επάνω δεξιά στο γράμμα.",
+    "exampleDE": "Kleb bitte eine Briefmarke oben rechts auf den Brief."
+  },
+  {
+    "front": "der Absender",
+    "back": "αποστολέας",
+    "ipa": "apostoˈleas",
+    "roman": "apostoléas",
+    "example": "Επάνω αριστερά στον φάκελο αναγράφεται η διεύθυνση του αποστολέα.",
+    "exampleDE": "Oben links auf dem Kuvert steht die Adresse des Absenders."
+  },
+  {
+    "front": "der Empfänger",
+    "back": "παραλήπτης",
+    "ipa": "paraˈliptis",
+    "roman": "paralíptis",
+    "example": "Το δεματάκι προορίζεται για τον αναγραφόμενο παραλήπτη.",
+    "exampleDE": "Das Päckchen ist für den angegebenen Empfänger bestimmt."
+  },
+  {
+    "front": "die Packstation",
+    "back": "θυρίδα δεμάτων",
+    "ipa": "θiˈriða ðeˈmaton",
+    "roman": "thyrída demáton",
+    "example": "Παραλαμβάνω το δέμα μου μετά τη δουλειά από τη θυρίδα δεμάτων.",
+    "exampleDE": "Ich hole meine Sendung nach Feierabend an der Packstation ab."
+  },
+  {
+    "front": "das Einschreiben",
+    "back": "συστημένο γράμμα",
+    "ipa": "sistiˈmeno ˈɣrama",
+    "roman": "systiméno grámma",
+    "example": "Τα σημαντικά έγγραφα στέλνονται με τη μεγαλύτερη ασφάλεια ως συστημένο γράμμα.",
+    "exampleDE": "Wichtige Dokumente versendet man am sichersten per Einschreiben."
+  },
+  {
+    "front": "die Postleitzahl",
+    "back": "ταχυδρομικός κώδικας",
+    "ipa": "taçiðromiˈkos ˈkoðikas",
+    "roman": "tachydromikós kódikas",
+    "example": "Δηλώστε παρακαλώ τον πενταψήφιο ταχυδρομικό σας κώδικα.",
+    "exampleDE": "Geben Sie bitte Ihre fünfstellige Postleitzahl an."
+  },
+  {
+    "front": "die Zahnpasta",
+    "back": "οδοντόκρεμα",
+    "ipa": "oðonˈdokrema",
+    "roman": "odontókrema",
+    "example": "Αυτή η οδοντόκρεμα προστατεύει αποτελεσματικά από την τερηδόνα.",
+    "exampleDE": "Diese Zahnpasta schützt wirksam vor Karies."
+  },
+  {
+    "front": "das Duschgel",
+    "back": "αφρόλουτρο",
+    "ipa": "aˈfrolutro",
+    "roman": "afróloutro",
+    "example": "Το αφρόλουτρο μυρίζει ευχάριστα φρέσκο λεμόνι.",
+    "exampleDE": "Das Duschgel duftet angenehm nach frischen Zitronen."
+  },
+  {
+    "front": "das Shampoo",
+    "back": "σαμπουάν",
+    "ipa": "sambuˈan",
+    "roman": "sampouán",
+    "example": "Ένα απαλό σαμπουάν περιποιείται το τριχωτό της κεφαλής και τα μαλλιά.",
+    "exampleDE": "Ein mildes Shampoo pflegt die Kopfhaut und das Haar."
+  },
+  {
+    "front": "die Seife",
+    "back": "σαπούνι",
+    "ipa": "saˈpuni",
+    "roman": "sapoúni",
+    "example": "Πλύνε τα χέρια σου καλά με ζεστό νερό και σαπούνι.",
+    "exampleDE": "Wasch dir die Hände gründlich mit warmem Wasser und Seife."
+  },
+  {
+    "front": "die Feuchtigkeitscreme",
+    "back": "ενυδατική κρέμα",
+    "ipa": "eniðatiˈci ˈkrema",
+    "roman": "enydatikí kréma",
+    "example": "Μετά το ντους απλώνει μια ενυδατική κρέμα.",
+    "exampleDE": "Nach dem Duschen trägt sie eine feuchtigkeitsspendende Creme auf."
+  },
+  {
+    "front": "das Deodorant",
+    "back": "αποσμητικό",
+    "ipa": "aposmitiˈko",
+    "roman": "aposmitikó",
+    "example": "Ένα καλό αποσμητικό προσφέρει φρεσκάδα όλη την ημέρα.",
+    "exampleDE": "Ein gutes Deodorant sorgt den ganzen Tag für Frische."
+  },
+  {
+    "front": "das Taschentuch",
+    "back": "χαρτομάντιλο",
+    "ipa": "xartoˈmandilo",
+    "roman": "chartomántilo",
+    "example": "Έχεις ένα χαρτομάντιλο για μένα;",
+    "exampleDE": "Hast du ein Papiertaschentuch für mich?"
+  },
+  {
+    "front": "der Rasierer",
+    "back": "ξυραφάκι",
+    "ipa": "ksiraˈfaci",
+    "roman": "xyrafáki",
+    "example": "Αλλάζει τακτικά τις λεπίδες στο ξυραφάκι του.",
+    "exampleDE": "Er wechselt regelmäßig die Klingen an seinem Rasierer."
+  },
+  {
+    "front": "der Rasierschaum",
+    "back": "αφρός ξυρίσματος",
+    "ipa": "aˈfros ksiˈrizmatos",
+    "roman": "afrós xyrízmatos",
+    "example": "Άπλωσε τον αφρό ξυρίσματος απαλά στα μάγουλα.",
+    "exampleDE": "Verteile den Rasierschaum sanft auf den Wangen."
+  },
+  {
+    "front": "die Nagelschere",
+    "back": "ψαλιδάκι νυχιών",
+    "ipa": "psaliˈðaci niˈxjon",
+    "roman": "psalidáki nychión",
+    "example": "Με ένα μικρό ψαλιδάκι νυχιών κόβει κανείς τα νύχια με ακρίβεια.",
+    "exampleDE": "Mit einer kleinen Nagelschere schneidet man Fingernägel präzise."
+  },
+  {
+    "front": "die Nagelfeile",
+    "back": "λίμα νυχιών",
+    "ipa": "ˈlima niˈxjon",
+    "roman": "líma nychión",
+    "example": "Λειαίνει τα νύχια της προσεκτικά με μια λίμα νυχιών.",
+    "exampleDE": "Sie glättet ihre Nägel vorsichtig mit einer Nagelfeile."
+  },
+  {
+    "front": "die Sonnencreme",
+    "back": "αντηλιακό",
+    "ipa": "andiljaˈko",
+    "roman": "antiliakó",
+    "example": "Στις διακοπές βάζουμε τακτικά αντηλιακό.",
+    "exampleDE": "Im Urlaub cremen wir uns regelmäßig mit Sonnencreme ein."
+  },
+  {
+    "front": "der Lippenbalsam",
+    "back": "βάλσαμο χειλιών",
+    "ipa": "ˈvalzamo çiˈljon",
+    "roman": "válsamo cheilión",
+    "example": "Τον χειμώνα το βάλσαμο χειλιών προστατεύει από τα σκασμένα χείλη.",
+    "exampleDE": "Im Winter schützt Lippenbalsam vor spröden Lippen."
+  },
+  {
+    "front": "das Wattepad",
+    "back": "δίσκος ντεμακιγιάζ",
+    "ipa": "ˈðiskos dəmaciˈjaz",
+    "roman": "dískos ntemakigiáz",
+    "example": "Για το ντεμακιγιάζ χρησιμοποιεί έναν μαλακό δίσκο βαμβακιού.",
+    "exampleDE": "Zum Abschminken verwendet sie ein weiches Wattepad."
+  },
+  {
+    "front": "das Wattestäbchen",
+    "back": "μπατονέτα",
+    "ipa": "batoˈneta",
+    "roman": "batonéta",
+    "example": "Οι μπατονέτες ανήκουν στο ντουλάπι του μπάνιου.",
+    "exampleDE": "Wattestäbchen gehören in den Badezimmerschrank."
+  },
+  {
+    "front": "der Umtausch",
+    "back": "αλλαγή",
+    "ipa": "alaˈʝi",
+    "roman": "allagí",
+    "example": "Η αλλαγή είναι δυνατή εντός δεκατεσσάρων ημερών.",
+    "exampleDE": "Ein Umtausch ist innerhalb von vierzehn Tagen möglich."
+  },
+  {
+    "front": "die Reklamation",
+    "back": "παράπονο",
+    "ipa": "paˈrapono",
+    "roman": "parápono",
+    "example": "Λόγω ενός ελαττώματος ο πελάτης υπέβαλε παράπονο.",
+    "exampleDE": "Wegen eines Mangels reichte der Kunde eine Reklamation ein."
+  },
+  {
+    "front": "die Garantie",
+    "back": "εγγύηση",
+    "ipa": "eˈŋʝiisi",
+    "roman": "engýisi",
+    "example": "Για αυτή την ηλεκτρική συσκευή υπάρχει διετής εγγύηση κατασκευαστή.",
+    "exampleDE": "Auf dieses Elektrogerät gibt es zwei Jahre Herstellergarantie."
+  },
+  {
+    "front": "die Rückerstattung",
+    "back": "επιστροφή χρημάτων",
+    "ipa": "epistroˈfi xriˈmaton",
+    "roman": "epistrofí chrimáton",
+    "example": "Το ποσό θα σας πιστωθεί ως επιστροφή χρημάτων.",
+    "exampleDE": "Der Betrag wird Ihnen als Rückerstattung gutgeschrieben."
+  },
+  {
+    "front": "der Rabatt",
+    "back": "έκπτωση",
+    "ipa": "ˈekptosi",
+    "roman": "ékptosi",
+    "example": "Με αυτή την κάρτα πελάτη παίρνετε δέκα τοις εκατό έκπτωση.",
+    "exampleDE": "Mit dieser Kundenkarte erhalten Sie zehn Prozent Rabatt."
+  },
+  {
+    "front": "das Schnäppchen",
+    "back": "ευκαιρία",
+    "ipa": "efceˈria",
+    "roman": "efkairía",
+    "example": "Αυτό το ποιοτικό παλτό ήταν μια πραγματική ευκαιρία.",
+    "exampleDE": "Dieser hochwertige Mantel war ein echtes Schnäppchen."
+  },
+  {
+    "front": "die Beschwerde",
+    "back": "παράπονο",
+    "ipa": "paˈrapono",
+    "roman": "parápono",
+    "example": "Το παράπονο εξετάστηκε από τη διεύθυνση.",
+    "exampleDE": "Die Beschwerde wurde von der Geschäftsleitung geprüft."
+  },
+  {
+    "front": "die Kopfschmerzen",
+    "back": "πονοκέφαλος",
+    "ipa": "ponoˈcefalos",
+    "roman": "ponokéfalos",
+    "example": "Μετά τη μεγάλη μέρα στη δουλειά έχω έναν ελαφρύ πονοκέφαλο.",
+    "exampleDE": "Nach dem langen Arbeitstag habe ich leichte Kopfschmerzen."
+  },
+  {
+    "front": "die Halsschmerzen",
+    "back": "πονόλαιμος",
+    "ipa": "poˈnolemos",
+    "roman": "ponólaimos",
+    "example": "Το ζεστό χαμομήλι με μέλι ανακουφίζει τον πονόλαιμο.",
+    "exampleDE": "Warmer Kamillentee mit Honig lindert die Halsschmerzen."
+  },
+  {
+    "front": "die Magenschmerzen",
+    "back": "στομαχόπονος",
+    "ipa": "stomaˈxoponos",
+    "roman": "stomachóponos",
+    "example": "Το λιπαρό φαγητό τού προκαλεί συχνά στομαχόπονο.",
+    "exampleDE": "Fettes Essen verursacht bei ihm oft Magenschmerzen."
+  },
+  {
+    "front": "der Schwindel",
+    "back": "ζάλη",
+    "ipa": "ˈzali",
+    "roman": "záli",
+    "example": "Όταν σηκώθηκε γρήγορα την έπιασε μια στιγμιαία ζάλη.",
+    "exampleDE": "Beim schnellen Aufstehen überkam sie ein kurzer Schwindel."
+  },
+  {
+    "front": "die Übelkeit",
+    "back": "ναυτία",
+    "ipa": "nafˈtia",
+    "roman": "naftía",
+    "example": "Ο καθαρός αέρας βοηθάει συνήθως στην ξαφνική ναυτία.",
+    "exampleDE": "Frische Luft hilft meist gut gegen plötzliche Übelkeit."
+  },
+  {
+    "front": "der Husten",
+    "back": "βήχας",
+    "ipa": "ˈvixas",
+    "roman": "víchas",
+    "example": "Έχει εδώ και τρεις μέρες έναν ξηρό, επίμονο βήχα.",
+    "exampleDE": "Er hat seit drei Tagen einen trockenen, hartnäckigen Husten."
+  },
+  {
+    "front": "der Schnupfen",
+    "back": "συνάχι",
+    "ipa": "siˈnaci",
+    "roman": "synáchi",
+    "example": "Στο έντονο συνάχι είναι δύσκολο να αναπνεύσεις από τη μύτη.",
+    "exampleDE": "Bei starkem Schnupfen fällt das Atmen durch die Nase schwer."
+  },
+  {
+    "front": "die Heiserkeit",
+    "back": "βραχνάδα",
+    "ipa": "vraˈxnaða",
+    "roman": "vrachnáda",
+    "example": "Μετά τη δυνατή συναυλία ο τραγουδιστής υπέφερε από βραχνάδα.",
+    "exampleDE": "Nach dem lauten Konzert litt der Sänger unter Heiserkeit."
+  },
+  {
+    "front": "das Fieberthermometer",
+    "back": "θερμόμετρο",
+    "ipa": "θerˈmometro",
+    "roman": "thermómetro",
+    "example": "Το ψηφιακό θερμόμετρο μετράει τη θερμοκρασία σε δευτερόλεπτα.",
+    "exampleDE": "Das digitale Fieberthermometer misst die Temperatur sekundenschnell."
+  },
+  {
+    "front": "die erhöhte Temperatur",
+    "back": "δέκατα",
+    "ipa": "ˈðekata",
+    "roman": "dékata",
+    "example": "Το παιδί έχει απόψε ελαφρά δέκατα.",
+    "exampleDE": "Das Kind hat heute Abend leicht erhöhte Temperatur."
+  },
+  {
+    "front": "der Schüttelfrost",
+    "back": "ρίγος",
+    "ipa": "ˈriɣos",
+    "roman": "rígos",
+    "example": "Το ξαφνικό ρίγος είναι συχνά το πρώτο σημάδι γρίπης.",
+    "exampleDE": "Plötzlicher Schüttelfrost ist oft ein erstes Anzeichen einer Grippe."
+  },
+  {
+    "front": "die Entzündung",
+    "back": "φλεγμονή",
+    "ipa": "fleɣmoˈni",
+    "roman": "flegmoní",
+    "example": "Ο γιατρός θεραπεύει τη φλεγμονή με μια επουλωτική αλοιφή.",
+    "exampleDE": "Der Arzt behandelt die Entzündung mit einer Heilsalbe."
+  },
+  {
+    "front": "die Infektion",
+    "back": "λοίμωξη",
+    "ipa": "ˈlimoksi",
+    "roman": "loímoxi",
+    "example": "Το τακτικό πλύσιμο των χεριών προστατεύει αξιόπιστα από μια λοίμωξη.",
+    "exampleDE": "Regelmäßiges Händewaschen schützt zuverlässig vor einer Infektion."
+  },
+  {
+    "front": "ansteckend",
+    "back": "κολλητικός",
+    "ipa": "kolitiˈkos",
+    "roman": "kollitikós",
+    "example": "Όσο έχετε πυρετό είστε κολλητικός για τους άλλους.",
+    "exampleDE": "Solange Sie Fieber haben, sind Sie für andere ansteckend."
+  },
+  {
+    "front": "sich schonen",
+    "back": "ξεκουράζομαι",
+    "ipa": "ksekuˈrazome",
+    "roman": "xekourázomai",
+    "example": "Στο κρυολόγημα πρέπει να μένει κανείς στο κρεβάτι και να ξεκουράζεται.",
+    "exampleDE": "Bei einer Erkältung sollte man im Bett bleiben und sich schonen."
+  },
+  {
+    "front": "die Arztpraxis",
+    "back": "ιατρείο",
+    "ipa": "jaˈtrio",
+    "roman": "iatreío",
+    "example": "Το ιατρείο ανοίγει τις Δευτέρες ήδη από τις επτά το πρωί.",
+    "exampleDE": "Die Arztpraxis öffnet montags bereits um sieben Uhr morgens."
+  },
+  {
+    "front": "das Wartezimmer",
+    "back": "αίθουσα αναμονής",
+    "ipa": "ˈeθusa anamoˈnis",
+    "roman": "aíthousa anamonís",
+    "example": "Οι ασθενείς κάθονται υπομονετικά στη φωτεινή αίθουσα αναμονής.",
+    "exampleDE": "Die Patienten sitzen geduldig im hellen Wartezimmer."
+  },
+  {
+    "front": "die Versichertenkarte",
+    "back": "κάρτα ασφάλισης",
+    "ipa": "ˈkarta aˈsfalisis",
+    "roman": "kárta asfálisis",
+    "example": "Επιδείξτε παρακαλώ την ηλεκτρονική κάρτα ασφάλισής σας.",
+    "exampleDE": "Legen Sie bitte Ihre elektronische Versichertenkarte vor."
+  },
+  {
+    "front": "der Termin",
+    "back": "ραντεβού",
+    "ipa": "randeˈvu",
+    "roman": "rantevoú",
+    "example": "Έχω κλείσει ένα καθορισμένο ραντεβού για την ερχόμενη Τρίτη.",
+    "exampleDE": "Ich habe für kommenden Dienstag einen festen Termin vereinbart."
+  },
+  {
+    "front": "die Untersuchung",
+    "back": "εξέταση",
+    "ipa": "eˈksetasi",
+    "roman": "exétasi",
+    "example": "Η λεπτομερής εξέταση δεν έδειξε τίποτα ανησυχητικό.",
+    "exampleDE": "Die gründliche Untersuchung ergab keine Auffälligkeiten."
+  },
+  {
+    "front": "der Blutdruck",
+    "back": "αρτηριακή πίεση",
+    "ipa": "artiriaˈci ˈpiesi",
+    "roman": "artiriakí píesi",
+    "example": "Η νοσοκόμα μετράει την αρτηριακή πίεση στον αριστερό βραχίονα.",
+    "exampleDE": "Die Schwester misst den Blutdruck am linken Oberarm."
+  },
+  {
+    "front": "der Puls",
+    "back": "σφυγμός",
+    "ipa": "sfiɣˈmos",
+    "roman": "sfygmós",
+    "example": "Μετά τη σύντομη ανάπαυση ο σφυγμός χτυπάει πάλι φυσιολογικά.",
+    "exampleDE": "Nach der kurzen Ruhepause schlägt der Puls wieder normal."
+  },
+  {
+    "front": "das Stethoskop",
+    "back": "στηθοσκόπιο",
+    "ipa": "stiθoˈskopio",
+    "roman": "stithoskópio",
+    "example": "Η γιατρός ακροάζεται τους πνεύμονες με το στηθοσκόπιο.",
+    "exampleDE": "Die Ärztin hört die Lunge mit dem Stethoskop ab."
+  },
+  {
+    "front": "das Rezept",
+    "back": "ιατρική συνταγή",
+    "ipa": "jatriˈci sindaˈʝi",
+    "roman": "iatrikí syntagí",
+    "example": "Ο γιατρός σάς γράφει μια συνταγή για τα χάπια.",
+    "exampleDE": "Der Arzt stellt Ihnen ein Rezept für die Tabletten aus."
+  },
+  {
+    "front": "die Apotheke",
+    "back": "φαρμακείο",
+    "ipa": "farmaˈcio",
+    "roman": "farmakeío",
+    "example": "Το φαρμακείο στην πλατεία διανυκτερεύει σήμερα.",
+    "exampleDE": "Die Apotheke am Markt hat heute Notdienst."
+  },
+  {
+    "front": "die Packungsbeilage",
+    "back": "φύλλο οδηγιών",
+    "ipa": "ˈfilo oðiˈʝon",
+    "roman": "fýllo odigión",
+    "example": "Διαβάστε προσεκτικά το φύλλο οδηγιών πριν από τη λήψη.",
+    "exampleDE": "Lesen Sie vor der Einnahme sorgfältig die Packungsbeilage."
+  },
+  {
+    "front": "die Nebenwirkung",
+    "back": "παρενέργεια",
+    "ipa": "pareˈnerʝia",
+    "roman": "parenérgeia",
+    "example": "Αυτό το καλά ανεκτό φάρμακο δεν έχει σχεδόν καθόλου γνωστές παρενέργειες.",
+    "exampleDE": "Dieses gut verträgliche Medikament hat kaum bekannte Nebenwirkungen."
+  },
+  {
+    "front": "die Dosierung",
+    "back": "δοσολογία",
+    "ipa": "ðosoloˈʝia",
+    "roman": "dosología",
+    "example": "Προσέξτε ακριβώς τη δοσολογία που συνέστησε ο γιατρός.",
+    "exampleDE": "Beachten Sie genau die vom Arzt verordnete Dosierung."
+  },
+  {
+    "front": "das Schmerzmittel",
+    "back": "παυσίπονο",
+    "ipa": "pafˈsipono",
+    "roman": "pafsípono",
+    "example": "Το παυσίπονο δρα συνήθως μέσα σε μισή ώρα.",
+    "exampleDE": "Das Schmerzmittel wirkt meistens innerhalb einer halben Stunde."
+  },
+  {
+    "front": "der Hustensaft",
+    "back": "σιρόπι για τον βήχα",
+    "ipa": "siˈropi ja tom ˈvixa",
+    "roman": "sirópi gia ton vícha",
+    "example": "Πάρτε το βράδυ πριν από τον ύπνο ένα κουτάλι σιρόπι για τον βήχα.",
+    "exampleDE": "Nehmen Sie abends vor dem Schlafen einen Löffel Hustensaft."
+  },
+  {
+    "front": "das Heftpflaster",
+    "back": "τσιρότο",
+    "ipa": "tsiˈroto",
+    "roman": "tsiróto",
+    "example": "Κόλλησε σε παρακαλώ ένα τσιρότο στη μικρή γρατζουνιά.",
+    "exampleDE": "Kleb bitte ein Heftpflaster auf die kleine Schnittwunde."
+  },
+  {
+    "front": "der Verband",
+    "back": "επίδεσμος",
+    "ipa": "eˈpiðezmos",
+    "roman": "epídezmos",
+    "example": "Η νοσοκόμα βάζει έναν καθαρό επίδεσμο γύρω από τον αστράγαλο.",
+    "exampleDE": "Die Krankenschwester legt einen sauberen Verband um den Knöchel."
+  },
+  {
+    "front": "die Wundsalbe",
+    "back": "επουλωτική αλοιφή",
+    "ipa": "epulotiˈci aliˈfi",
+    "roman": "epoulotikí aloifí",
+    "example": "Η επουλωτική αλοιφή επιταχύνει το κλείσιμο της πληγής στο δέρμα.",
+    "exampleDE": "Die Heilsalbe beschleunigt das Schließen der Hautwunde."
+  },
+  {
+    "front": "die Desinfektion",
+    "back": "απολύμανση",
+    "ipa": "apoˈlimansi",
+    "roman": "apolýmansi",
+    "example": "Πριν από την επίδεση είναι σημαντική μια σχολαστική απολύμανση.",
+    "exampleDE": "Vor dem Verbinden ist eine gründliche Desinfektion wichtig."
+  },
+  {
+    "front": "der Verbandskasten",
+    "back": "κουτί πρώτων βοηθειών",
+    "ipa": "kuˈti ˈproton voiˈθjon",
+    "roman": "koutí próton voitheión",
+    "example": "Στο αυτοκίνητο πρέπει να υπάρχει πάντα ένα πλήρες κουτί πρώτων βοηθειών.",
+    "exampleDE": "Im Auto muss stets ein vollständiger Verbandskasten liegen."
+  },
+  {
+    "front": "der Notruf",
+    "back": "αριθμός έκτακτης ανάγκης",
+    "ipa": "ariθˈmos ˈektaktis aˈnaɲɟis",
+    "roman": "arithmós éktaktis anángis",
+    "example": "Σε επείγοντα περιστατικά καλεί κανείς πανευρωπαϊκά τον αριθμό έκτακτης ανάγκης 112.",
+    "exampleDE": "In dringenden Notfällen wählt man europaweit den Notruf 112."
+  },
+  {
+    "front": "die Erste Hilfe",
+    "back": "πρώτες βοήθειες",
+    "ipa": "ˈprotes voiˈθjes",
+    "roman": "prótes voítheies",
+    "example": "Κάθε κάτοχος άδειας οδήγησης πρέπει να μπορεί να προσφέρει πρώτες βοήθειες.",
+    "exampleDE": "Jeder Führerscheininhaber sollte Erste Hilfe leisten können."
+  },
+  {
+    "front": "bluten",
+    "back": "αιμορραγώ",
+    "ipa": "emo-raˈɣo",
+    "roman": "aimorragó",
+    "example": "Η αμυχή στο γόνατο ευτυχώς σταμάτησε να αιμορραγεί.",
+    "exampleDE": "Die Schürfwunde am Knie hat zum Glück aufgehört zu bluten."
+  },
+  {
+    "front": "die Zahnarztpraxis",
+    "back": "οδοντιατρείο",
+    "ipa": "oðondjaˈtrio",
+    "roman": "odontiatreío",
+    "example": "Δύο φορές τον χρόνο πηγαίνω για έλεγχο στο οδοντιατρείο.",
+    "exampleDE": "Zweimal im Jahr gehe ich zur Kontrolle in die Zahnarztpraxis."
+  },
+  {
+    "front": "die Zahnseide",
+    "back": "οδοντικό νήμα",
+    "ipa": "oðondiˈko ˈnima",
+    "roman": "odontikó níma",
+    "example": "Το οδοντικό νήμα καθαρίζει τα στενά διαστήματα ανάμεσα στα δόντια.",
+    "exampleDE": "Zahnseide reinigt die engen Zwischenräume zwischen den Zähnen."
+  },
+  {
+    "front": "das Zahnfleisch",
+    "back": "ούλα",
+    "ipa": "ˈula",
+    "roman": "oúla",
+    "example": "Η τακτική φροντίδα ενδυναμώνει τα ούλα διαρκώς.",
+    "exampleDE": "Regelmäßige Pflege stärkt das Zahnfleisch dauerhaft."
+  },
+  {
+    "front": "die Zahnfüllung",
+    "back": "σφράγισμα",
+    "ipa": "ˈsfraʝizma",
+    "roman": "sfrágisma",
+    "example": "Ο οδοντίατρος έβαλε ένα μικρό λευκό σφράγισμα.",
+    "exampleDE": "Der Zahnarzt setzte eine kleine weiße Zahnfüllung ein."
+  },
+  {
+    "front": "der Backenzahn",
+    "back": "τραπεζίτης",
+    "ipa": "trapeˈzitis",
+    "roman": "trapezítis",
+    "example": "Ένας τραπεζίτης στην άνω γνάθο αντιδρά ευαίσθητα στο κρύο.",
+    "exampleDE": "Ein Backenzahn im Oberkiefer reagiert empfindlich auf Kälte."
+  },
+  {
+    "front": "die Mundspülung",
+    "back": "στοματικό διάλυμα",
+    "ipa": "stomatiˈko ˈðjalima",
+    "roman": "stomatikó diályma",
+    "example": "Ένα αντιβακτηριδιακό στοματικό διάλυμα χαρίζει δροσερή αναπνοή.",
+    "exampleDE": "Eine antibakterielle Mundspülung sorgt für frischen Atem."
+  },
+  {
+    "front": "die Zahnschmerzen",
+    "back": "πονόδοντος",
+    "ipa": "poˈnoðondos",
+    "roman": "ponódontos",
+    "example": "Για τον ξαφνικό πονόδοντο θα πρέπει να πάει κανείς γρήγορα στον οδοντίατρο.",
+    "exampleDE": "Gegen plötzliche Zahnschmerzen sollte man rasch zum Zahnarzt."
+  },
+  {
+    "front": "das Handgelenk",
+    "back": "καρπός",
+    "ipa": "karˈpos",
+    "roman": "karpós",
+    "example": "Φοράει ένα κομψό ρολόι χειρός στον αριστερό καρπό.",
+    "exampleDE": "Sie trägt eine elegante Armbanduhr am linken Handgelenk."
+  },
+  {
+    "front": "der Ellbogen",
+    "back": "αγκώνας",
+    "ipa": "aŋˈgonas",
+    "roman": "ankónas",
+    "example": "Χτύπησε επώδυνα τον αγκώνα του στην άκρη του τραπεζιού.",
+    "exampleDE": "Er hat sich den Ellbogen schmerzhaft an der Tischkante gestoßen."
+  },
+  {
+    "front": "das Kniegelenk",
+    "back": "άρθρωση του γονάτου",
+    "ipa": "ˈarθrosi tu ɣoˈnatu",
+    "roman": "árthrosi tou gonátou",
+    "example": "Στο τζόκινγκ η άρθρωση του γονάτου καταπονείται πολύ.",
+    "exampleDE": "Beim Joggen wird das Kniegelenk stark beansprucht."
+  },
+  {
+    "front": "der Knöchel",
+    "back": "αστράγαλος",
+    "ipa": "aˈstraɣalos",
+    "roman": "astrágalos",
+    "example": "Στην πεζοπορία σε ανώμαλο μονοπάτι γύρισε ο αστράγαλός του.",
+    "exampleDE": "Beim Wandern auf unebenem Pfad ist er mit dem Knöchel umgeknickt."
+  }
+]
+
+with open('scripts/data_el_part1.json', 'w', encoding='utf-8') as f:
+    json.dump(part1_cards, f, ensure_ascii=False, indent=2)
+print(f"Successfully wrote {len(part1_cards)} cards to scripts/data_el_part1.json")
+

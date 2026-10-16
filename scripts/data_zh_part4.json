@@ -1,0 +1,1346 @@
+[
+  {
+    "front": "der Wanderweg",
+    "back": "徒步小径",
+    "roman": "túbù xiǎojìng",
+    "example": "带有标记的徒步小径穿过阴凉的森林通往山顶。",
+    "exampleDE": "Der markierte Wanderweg führt durch schattige Wälder auf den Berg."
+  },
+  {
+    "front": "das Bürgeramt",
+    "back": "市民服务中心",
+    "roman": "shìmín fúwù zhōngxīn",
+    "example": "申领新证件需要本人亲自去市民服务中心办理。",
+    "exampleDE": "Einen neuen Ausweis beantragt man persönlich im Bürgeramt."
+  },
+  {
+    "front": "der Personalausweis",
+    "back": "身份证",
+    "roman": "shēnfènzhèng",
+    "example": "身份证在境内有十年的有效期。",
+    "exampleDE": "Der Personalausweis ist zehn Jahre lang im Inland gültig."
+  },
+  {
+    "front": "die Geburtsurkunde",
+    "back": "出生证明",
+    "roman": "chūshēng zhèngmíng",
+    "example": "许多行政申请都需要官方出生证明。",
+    "exampleDE": "Für viele behördliche Anträge benötigt man eine offizielle Geburtsurkunde."
+  },
+  {
+    "front": "die Meldebestätigung",
+    "back": "户口登记证明",
+    "roman": "hùkǒu dēngjì zhèngmíng",
+    "example": "搬家后可以在居民户籍管理局领取户口登记证明。",
+    "exampleDE": "Nach dem Umzug erhält man beim Einwohnermeldeamt die Meldebestätigung."
+  },
+  {
+    "front": "das Formular",
+    "back": "表格",
+    "roman": "biǎogé",
+    "example": "请用印刷体大写字母填写该官方表格。",
+    "exampleDE": "Füllen Sie das behördliche Formular bitte in Druckbuchstaben aus."
+  },
+  {
+    "front": "die Unterschrift",
+    "back": "签名",
+    "roman": "qiānmíng",
+    "example": "请在底部的横线上亲笔签名。",
+    "exampleDE": "Setzen Sie Ihre eigenhändige Unterschrift unten auf die Linie."
+  },
+  {
+    "front": "der Stempel",
+    "back": "印章",
+    "roman": "yìnzhāng",
+    "example": "官方印章证实了公函的真实性。",
+    "exampleDE": "Ein offizieller Stempel bestätigt die Echtheit des Schreibens."
+  },
+  {
+    "front": "die Beglaubigung",
+    "back": "公证认证",
+    "roman": "gōngzhèng rènzhèng",
+    "example": "上大学的成绩单往往需要官方公证认证。",
+    "exampleDE": "Zeugnisse für die Universität erfordern oft eine amtliche Beglaubigung."
+  },
+  {
+    "front": "die Vorschrift",
+    "back": "规定",
+    "roman": "guīdìng",
+    "example": "所有员工都必须严格遵守现行的安全规定。",
+    "exampleDE": "Alle Mitarbeiter müssen die geltenden Sicherheitsvorschriften strikt befolgen."
+  },
+  {
+    "front": "die Erlaubnis",
+    "back": "许可",
+    "roman": "xǔkě",
+    "example": "未经当局书面许可，此处不得施工。",
+    "exampleDE": "Ohne schriftliche Erlaubnis der Behörde darf hier nicht gebaut werden."
+  },
+  {
+    "front": "das Verbot",
+    "back": "禁令",
+    "roman": "jìnlìng",
+    "example": "整栋建筑内严禁吸烟。",
+    "exampleDE": "Im gesamten Gebäude gilt ein ausnahmsloses Rauchverbot."
+  },
+  {
+    "front": "die Strafe",
+    "back": "罚款",
+    "roman": "fákuǎn",
+    "example": "违规停车者须面临严厉的罚款。",
+    "exampleDE": "Falschparker müssen mit einer empfindlichen Geldstrafe rechnen."
+  },
+  {
+    "front": "das Fundbüro",
+    "back": "失物招领处",
+    "roman": "shīwù zhāolǐngchù",
+    "example": "丢失的钥匙经常被拾金不昧者送到失物招领处。",
+    "exampleDE": "Verlorene Schlüssel werden oft von ehrlichen Findern im Fundbüro abgegeben."
+  },
+  {
+    "front": "die Polizeiwache",
+    "back": "警察局",
+    "roman": "jǐngchájú",
+    "example": "他在当地警察局对未知嫌疑人报了案。",
+    "exampleDE": "Er erstattete auf der örtlichen Polizeiwache Anzeige gegen Unbekannt."
+  },
+  {
+    "front": "der Zeuge",
+    "back": "目击证人",
+    "roman": "mùjī zhèngrén",
+    "example": "警方询问了数名关于事故发生经过的目击证人。",
+    "exampleDE": "Die Polizei befragte mehrere Zeugen zum Hergang des Unfalls."
+  },
+  {
+    "front": "die Wahl",
+    "back": "选举",
+    "roman": "xuǎnjǔ",
+    "example": "议会的民主选举每四年举行一次。",
+    "exampleDE": "Alle vier Jahre findet die demokratische Wahl zum Parlament statt."
+  },
+  {
+    "front": "der Stimmzettel",
+    "back": "选票",
+    "roman": "xuǎnpiào",
+    "example": "请在选票上私密地打钩。",
+    "exampleDE": "Setzen Sie Ihr Kreuz bitte verdeckt auf dem Stimmzettel."
+  },
+  {
+    "front": "die Wahlurne",
+    "back": "投票箱",
+    "roman": "tóupiàoxiāng",
+    "example": "折叠好的选票被投进封好的投票箱中。",
+    "exampleDE": "Der gefaltete Stimmzettel wird in die versiegelte Wahlurne geworfen."
+  },
+  {
+    "front": "das Grundgesetz",
+    "back": "基本法",
+    "roman": "jīběnfǎ",
+    "example": "基本法保障所有公民不可剥夺的人权。",
+    "exampleDE": "Das Grundgesetz garantiert die unverletzlichen Menschenrechte aller Bürger."
+  },
+  {
+    "front": "die Meinungsfreiheit",
+    "back": "言论自由",
+    "roman": "yánlùn zìyóu",
+    "example": "言论自由是民主制度的重要支柱。",
+    "exampleDE": "Die freie Meinungsäußerung ist ein tragender Pfeiler der Demokratie."
+  },
+  {
+    "front": "die Bürgerbeteiligung",
+    "back": "公民参与",
+    "roman": "gōngmín cānyù",
+    "example": "通过公民参与，居民可以积极共同建设城市。",
+    "exampleDE": "Durch Bürgerbeteiligung können Einwohner ihre Stadt aktiv mitgestalten."
+  },
+  {
+    "front": "die Gleichberechtigung",
+    "back": "平等权利",
+    "roman": "píngděng quánlì",
+    "example": "各性别的平等权利已由法律牢固确立。",
+    "exampleDE": "Gleichberechtigung aller Geschlechter ist gesetzlich fest verankert."
+  },
+  {
+    "front": "das Ehrenamt",
+    "back": "志愿服务",
+    "roman": "zhìyuàn fúwù",
+    "example": "许多人在业余时间参与志愿服务。",
+    "exampleDE": "Viele Menschen engagieren sich in ihrer Freizeit in einem Ehrenamt."
+  },
+  {
+    "front": "das Silvester",
+    "back": "跨年夜",
+    "roman": "kuàniányè",
+    "example": "在跨年夜的午夜时分，我们举杯庆祝新年。",
+    "exampleDE": "An Silvester stoßen wir um Mitternacht auf das neue Jahr an."
+  },
+  {
+    "front": "das Feuerwerk",
+    "back": "烟花",
+    "roman": "yānhuā",
+    "example": "五彩缤纷的烟花照亮了夜空。",
+    "exampleDE": "Ein farbenfrohes Feuerwerk erhellt den nächtlichen Himmel."
+  },
+  {
+    "front": "das Neujahr",
+    "back": "元旦",
+    "roman": "yuándàn",
+    "example": "在元旦这天，邻居和朋友们互相祝贺新年好运。",
+    "exampleDE": "Am Neujahrstag wünschen sich Nachbarn und Freunde viel Glück."
+  },
+  {
+    "front": "die Weihnachtstage",
+    "back": "圣诞节期间",
+    "roman": "shèngdànjié qījiān",
+    "example": "全家人传统上一同在家度过圣诞节期间。",
+    "exampleDE": "Die Weihnachtstage verbringt die Familie traditionell gemeinsam zu Hause."
+  },
+  {
+    "front": "der Heiligabend",
+    "back": "平安夜",
+    "roman": "píng'ānyè",
+    "example": "在平安夜，大家在装饰好的树下拆开礼物。",
+    "exampleDE": "An Heiligabend werden unter dem geschmückten Baum Geschenke ausgepackt."
+  },
+  {
+    "front": "das Geschenkpapier",
+    "back": "包装纸",
+    "roman": "bāozhuāngzhǐ",
+    "example": "彩色包装纸和丝带装饰着小礼物。",
+    "exampleDE": "Buntes Geschenkpapier und Schleifen zieren die Päckchen."
+  },
+  {
+    "front": "die Glückwunschkarte",
+    "back": "贺卡",
+    "roman": "hèkǎ",
+    "example": "她在贺卡上写了几句贴心的话语。",
+    "exampleDE": "Auf die Glückwunschkarte schrieb sie ein paar persönliche Zeilen."
+  },
+  {
+    "front": "die Geburtstagstorte",
+    "back": "生日蛋糕",
+    "roman": "shēngrì dàngāo",
+    "example": "生日蛋糕上点着彩色的蜡烛等待吹灭。",
+    "exampleDE": "Auf der Geburtstagstorte brennen bunte Kerzen zum Auspusten."
+  },
+  {
+    "front": "die Überraschungsparty",
+    "back": "惊喜派对",
+    "roman": "jīngxǐ pàiduì",
+    "example": "朋友们悄悄为他筹办了一场精彩的惊喜派对。",
+    "exampleDE": "Freunde organisierten heimlich eine tolle Überraschungsparty für ihn."
+  },
+  {
+    "front": "der Luftballon",
+    "back": "气球",
+    "roman": "qìqiú",
+    "example": "五颜六色的气球装点着儿童派对的宴会厅。",
+    "exampleDE": "Bunte Luftballons schmücken den Festsaal für die Kinderparty."
+  },
+  {
+    "front": "die Einladungskarte",
+    "back": "邀请函",
+    "roman": "yāoqǐnghán",
+    "example": "在庆祝活动前两周他寄出了邀请函。",
+    "exampleDE": "Zwei Wochen vor dem Fest verschickte er die Einladungskarten."
+  },
+  {
+    "front": "anstoßen",
+    "back": "碰杯",
+    "roman": "pèngbēi",
+    "example": "我们端起清凉的饮料为寿星的健康碰杯。",
+    "exampleDE": "Wir stoßen mit einem kühlen Getränk auf das Wohl des Geburtstagskindes an."
+  },
+  {
+    "front": "der Ehrengast",
+    "back": "贵宾",
+    "roman": "guìbīn",
+    "example": "市长作为贵宾受到了热烈欢迎。",
+    "exampleDE": "Der Bürgermeister wurde als Ehrengast herzlich begrüßt."
+  },
+  {
+    "front": "die Festrede",
+    "back": "庆典致辞",
+    "roman": "qìngdiǎn zhìcí",
+    "example": "协会主席在庆典致辞中回顾了所取得的成就。",
+    "exampleDE": "In seiner Festrede blickte der Vereinsvorsitzende auf Erfolge zurück."
+  },
+  {
+    "front": "gratulieren",
+    "back": "祝贺",
+    "roman": "zhùhè",
+    "example": "所有同事都衷心祝贺他迎来整十数周年纪念。",
+    "exampleDE": "Alle Kollegen gratulieren ihm herzlich zum runden Jubiläum."
+  },
+  {
+    "front": "die Gegenwart",
+    "back": "现在",
+    "roman": "xiànzài",
+    "example": "专心处理眼下现在的任务。",
+    "exampleDE": "Konzentriere dich auf die Aufgaben in der Gegenwart."
+  },
+  {
+    "front": "die Vergangenheit",
+    "back": "过去",
+    "roman": "guòqù",
+    "example": "人可以从过去的错误中为未来学到很多。",
+    "exampleDE": "Aus den Fehlern der Vergangenheit kann man viel für die Zukunft lernen."
+  },
+  {
+    "front": "die Zukunft",
+    "back": "未来",
+    "roman": "wèilái",
+    "example": "年轻的家庭充满信心和勤奋地展望未来。",
+    "exampleDE": "Mit Zuversicht und Fleiß blickt die junge Familie in die Zukunft."
+  },
+  {
+    "front": "die Zeitspanne",
+    "back": "时段",
+    "roman": "shíduàn",
+    "example": "在短短几天的时段内，一切都改变了。",
+    "exampleDE": "In der kurzen Zeitspanne von wenigen Tagen änderte sich alles."
+  },
+  {
+    "front": "der Zeitraum",
+    "back": "时期",
+    "roman": "shíqī",
+    "example": "在较长的一段时期内，情况出现了明显的改善。",
+    "exampleDE": "Über einen längeren Zeitraum hinweg zeigte sich eine deutliche Besserung."
+  },
+  {
+    "front": "der Augenblick",
+    "back": "瞬间",
+    "roman": "shùnjiān",
+    "example": "有那么短短一瞬间，屋里所有人都屏住了呼吸。",
+    "exampleDE": "Für einen kurzen Augenblick hielten alle im Raum den Atem an."
+  },
+  {
+    "front": "die Ewigkeit",
+    "back": "漫长的时间",
+    "roman": "màncháng de shíjiān",
+    "example": "在晚点的站台上等待对他来说漫长得像过了几个世纪。",
+    "exampleDE": "Das Warten am verspäteten Bahnsteig kam ihm wie eine Ewigkeit vor."
+  },
+  {
+    "front": "gelegentlich",
+    "back": "偶尔",
+    "roman": "ǒu'ěr",
+    "example": "饭后他偶尔犒赏自己吃一块黑巧克力。",
+    "exampleDE": "Gelegentlich gönnt er sich nach dem Essen ein Stück dunkle Schokolade."
+  },
+  {
+    "front": "regelmäßig",
+    "back": "定期地",
+    "roman": "dìngqī de",
+    "example": "定期复习词汇的人能取得快速的学习成果。",
+    "exampleDE": "Wer regelmäßig Vokabeln wiederholt, erzielt schnelle Lernerfolge."
+  },
+  {
+    "front": "stetig",
+    "back": "稳步地",
+    "roman": "wěnbù de",
+    "example": "最近几个月她的语言理解能力稳步提高。",
+    "exampleDE": "Ihr Sprachverständnis verbesserte sich in den letzten Monaten stetig."
+  },
+  {
+    "front": "ununterbrochen",
+    "back": "持续不断地",
+    "roman": "chíxù bùduàn de",
+    "example": "从清晨开始外面就持续不断地下着雨。",
+    "exampleDE": "Seit dem frühen Morgen regnet es draußen ununterbrochen."
+  },
+  {
+    "front": "inzwischen",
+    "back": "如今",
+    "roman": "rújīn",
+    "example": "如今她说话流利，不再需要长时间思索。",
+    "exampleDE": "Inzwischen spricht sie fließend und ohne langes Nachdenken."
+  },
+  {
+    "front": "demnächst",
+    "back": "不久",
+    "roman": "bùjiǔ",
+    "example": "学习软件的新版本不久将在应用商店上线。",
+    "exampleDE": "Die neue Version der Lern-App erscheint demnächst im Store."
+  },
+  {
+    "front": "seinerzeit",
+    "back": "当年",
+    "roman": "dāngnián",
+    "example": "当年工匠们在没有现代机械的情况下建成了市政厅。",
+    "exampleDE": "Seinerzeit bauten die Handwerker das Rathaus ohne moderne Maschinen."
+  },
+  {
+    "front": "bisher",
+    "back": "迄今为止",
+    "roman": "qìjīn wéizhǐ",
+    "example": "迄今为止所有的测试和考核都毫无差错。",
+    "exampleDE": "Bisher sind alle Tests und Prüfungen absolut fehlerfrei verlaufen."
+  },
+  {
+    "front": "die Umgebung",
+    "back": "周边环境",
+    "roman": "zhōubiān huánjìng",
+    "example": "在酒店的周边环境中拥有极佳的徒步路线。",
+    "exampleDE": "In der näheren Umgebung des Hotels gibt es herrliche Wanderwege."
+  },
+  {
+    "front": "die Entfernung",
+    "back": "距离",
+    "roman": "jùlí",
+    "example": "两座城市之间的距离约为五十公里。",
+    "exampleDE": "Die Entfernung zwischen den beiden Städten beträgt rund fünfzig Kilometer."
+  },
+  {
+    "front": "die Zwischenzeit",
+    "back": "其间",
+    "roman": "qíjiān",
+    "example": "在其间我们可以先摆好餐桌准备吃饭。",
+    "exampleDE": "In der Zwischenzeit können wir schon den Tisch für das Essen decken."
+  },
+  {
+    "front": "gegenüber",
+    "back": "对面",
+    "roman": "duìmiàn",
+    "example": "药店正对着火车站正门。",
+    "exampleDE": "Die Apotheke liegt direkt gegenüber dem Haupteingang des Bahnhofs."
+  },
+  {
+    "front": "nebenan",
+    "back": "隔壁",
+    "roman": "gébì",
+    "example": "隔壁住着一户非常友善的家庭。",
+    "exampleDE": "In der Wohnung nebenan wohnt eine sehr freundliche Familie."
+  },
+  {
+    "front": "mittendrin",
+    "back": "正中央",
+    "roman": "zhèngzhōngyāng",
+    "example": "老城正中央坐落着当地最古老的喷泉。",
+    "exampleDE": "Mitten in der Altstadt steht der älteste Brunnen des Ortes."
+  },
+  {
+    "front": "außerhalb",
+    "back": "城外",
+    "roman": "chéngwài",
+    "example": "工业园区位于建成城镇之外。",
+    "exampleDE": "Das Gewerbegebiet liegt etwas außerhalb der geschlossenen Ortschaft."
+  },
+  {
+    "front": "einerseits",
+    "back": "一方面",
+    "roman": "yī fāngmiàn",
+    "example": "一方面他想出去旅游，另一方面他在攒钱买车。",
+    "exampleDE": "Einerseits möchte er verreisen, andererseits spart er auf ein Auto."
+  },
+  {
+    "front": "andererseits",
+    "back": "另一方面",
+    "roman": "lìng yī fāngmiàn",
+    "example": "另一方面新职位提供了好得多的晋升机会。",
+    "exampleDE": "Andererseits bietet die neue Stelle wesentlich bessere Aufstiegschancen."
+  },
+  {
+    "front": "infolgedessen",
+    "back": "因此",
+    "roman": "yīncǐ",
+    "example": "道路结冰了，因此造成了交通堵塞。",
+    "exampleDE": "Die Straßen waren vereist, infolgedessen kam es zu Staus."
+  },
+  {
+    "front": "dennoch",
+    "back": "尽管如此",
+    "roman": "jǐnguǎn rúcǐ",
+    "example": "外面大雨滂沱，尽管如此我们依然在森林里长途散步。",
+    "exampleDE": "Es regnete in Strömen, dennoch machten wir einen langen Waldspaziergang."
+  },
+  {
+    "front": "nichtsdestotrotz",
+    "back": "尽管如此",
+    "roman": "jǐnguǎn rúcǐ",
+    "example": "他非常疲倦，尽管如此他还是认真读完了该章节。",
+    "exampleDE": "Er war sehr müde, nichtsdestotrotz beendete er das Kapitel sorgfältig."
+  },
+  {
+    "front": "außerdem",
+    "back": "此外",
+    "roman": "cǐwài",
+    "example": "菜肴非常可口，此外服务态度也很亲切。",
+    "exampleDE": "Das Essen schmeckte hervorragend und die Bedienung war außerdem sehr nett."
+  },
+  {
+    "front": "aus diesem Grund",
+    "back": "出于这个原因",
+    "roman": "chūyú zhège yuányīn",
+    "example": "她学习很刻苦，出于这个原因她轻松通过了考试。",
+    "exampleDE": "Sie hatte fleißig gelernt und bestand aus diesem Grund die Prüfung spielend."
+  },
+  {
+    "front": "nämlich",
+    "back": "因为",
+    "roman": "yīnwèi",
+    "example": "我今天留在家里，因为我头痛得厉害。",
+    "exampleDE": "Ich bleibe heute daheim, ich habe nämlich starke Kopfschmerzen."
+  },
+  {
+    "front": "stattdessen",
+    "back": "取而代之",
+    "roman": "qǔ'érdàizhī",
+    "example": "我们没有开车，而是取而代之选择步行。",
+    "exampleDE": "Wir fuhren nicht mit dem Auto, sondern gingen stattdessen zu Fuß."
+  },
+  {
+    "front": "vorausgesetzt",
+    "back": "前提是",
+    "roman": "qiántí shì",
+    "example": "我们明天去徒步，前提是天气保持干燥。",
+    "exampleDE": "Wir wandern morgen, vorausgesetzt das Wetter bleibt trocken."
+  },
+  {
+    "front": "währenddessen",
+    "back": "与此同时",
+    "roman": "yǔcǐ tóngshí",
+    "example": "他在炒蔬菜，与此同时她悉心地摆放餐具。",
+    "exampleDE": "Er briet das Gemüse, währenddessen deckte sie liebevoll den Tisch."
+  },
+  {
+    "front": "sowohl ... als auch",
+    "back": "既……又……",
+    "roman": "jì ... yòu ...",
+    "example": "她既能说一口流利的西班牙语，又能讲商务英语。",
+    "exampleDE": "Sie spricht sowohl fließend Spanisch als auch verhandlungssicheres Englisch."
+  },
+  {
+    "front": "weder ... noch",
+    "back": "既不……也不……",
+    "roman": "jì bù ... yě bù ...",
+    "example": "他早晨既不喝咖啡也不喝红茶。",
+    "exampleDE": "Er trinkt weder Kaffee noch schwarzen Tee am Morgen."
+  },
+  {
+    "front": "je ... desto",
+    "back": "越……越……",
+    "roman": "yuè ... yuè ...",
+    "example": "练习得越多，自由表达就越容易。",
+    "exampleDE": "Je mehr man übt, desto leichter fällt das freie Sprechen."
+  },
+  {
+    "front": "obgleich",
+    "back": "尽管",
+    "roman": "jǐnguǎn",
+    "example": "尽管风浪很大，渔民们还是驾船出海了。",
+    "exampleDE": "Obgleich es stürmisch war, liefen die Fischer mit ihren Booten aus."
+  },
+  {
+    "front": "anpacken",
+    "back": "一起动手",
+    "roman": "yīqǐ dòngshǒu",
+    "example": "如果大家都一起动手，繁重的工作转眼就能完成。",
+    "exampleDE": "Wenn alle mit anpacken, ist die schwere Arbeit im Nu erledigt."
+  },
+  {
+    "front": "erledigen",
+    "back": "办完",
+    "roman": "bànwán",
+    "example": "今天上午我还必须办完重要的采购。",
+    "exampleDE": "Ich muss heute Vormittag noch wichtige Einkäufe erledigen."
+  },
+  {
+    "front": "vorbereiten",
+    "back": "准备",
+    "roman": "zhǔnbèi",
+    "example": "她为明天的会议认真准备演示文稿。",
+    "exampleDE": "Sie bereitet die Präsentation für das morgige Meeting gründlich vor."
+  },
+  {
+    "front": "aufräumen",
+    "back": "收拾整理",
+    "roman": "shōushi zhěnglǐ",
+    "example": "星期六孩子们一起收拾整理自己的房间。",
+    "exampleDE": "Samstags räumen die Kinder gemeinsam ihre Zimmer auf."
+  },
+  {
+    "front": "wegwerfen",
+    "back": "扔掉",
+    "roman": "rēngdiào",
+    "example": "废旧电池不能随手扔进生活垃圾里。",
+    "exampleDE": "Alte Batterien darf man nicht einfach in den Hausmüll wegwerfen."
+  },
+  {
+    "front": "behalten",
+    "back": "保留",
+    "roman": "bǎoliú",
+    "example": "这件美好的纪念品我想终生保留。",
+    "exampleDE": "Dieses schöne Erinnerungsstück möchte ich mein Leben lang behalten."
+  },
+  {
+    "front": "verschenken",
+    "back": "赠送",
+    "roman": "zèngsòng",
+    "example": "读过的书她喜欢赠送给朋友们。",
+    "exampleDE": "Bücher, die sie schon gelesen hat, verschenkt sie gerne an Freunde."
+  },
+  {
+    "front": "organisieren",
+    "back": "组织",
+    "roman": "zǔzhī",
+    "example": "他负责组织我们体育俱乐部的年度夏季庆典。",
+    "exampleDE": "Er organisiert das alljährliche Sommerfest unseres Sportvereins."
+  },
+  {
+    "front": "bemerken",
+    "back": "发觉",
+    "roman": "fājué",
+    "example": "很晚他才发觉自己忘了带房门钥匙。",
+    "exampleDE": "Erst spät bemerkte er, dass er seinen Hausschlüssel vergessen hatte."
+  },
+  {
+    "front": "begreifen",
+    "back": "理解",
+    "roman": "lǐjiě",
+    "example": "经过生动的解释后，他终于能够理解其中的联系了。",
+    "exampleDE": "Nach der anschaulichen Erklärung konnte er den Zusammenhang begreifen."
+  },
+  {
+    "front": "nachdenken",
+    "back": "深思",
+    "roman": "shēnsī",
+    "example": "对于这个重要的提议我必须先静心深思。",
+    "exampleDE": "Über dieses wichtige Angebot muss ich erst in Ruhe nachdenken."
+  },
+  {
+    "front": "feststellen",
+    "back": "查明",
+    "roman": "chámíng",
+    "example": "检查员查明所有安全标准均已符合。",
+    "exampleDE": "Die Prüfer stellten fest, dass alle Sicherheitskriterien erfüllt sind."
+  },
+  {
+    "front": "vermuten",
+    "back": "推测",
+    "roman": "tuīcè",
+    "example": "专家推测价格很快会再次回落。",
+    "exampleDE": "Die Experten vermuten, dass die Preise bald wieder sinken werden."
+  },
+  {
+    "front": "bezweifeln",
+    "back": "怀疑",
+    "roman": "huáiyí",
+    "example": "我非常怀疑这个老方案今天是否还能行得通。",
+    "exampleDE": "Ich bezweifle stark, dass dieser alte Plan heute noch funktioniert."
+  },
+  {
+    "front": "beurteilen",
+    "back": "判断",
+    "roman": "pànduàn",
+    "example": "从远处很难准确判断严峻的局势。",
+    "exampleDE": "Aus der Ferne lässt sich die schwierige Lage nur schwer beurteilen."
+  },
+  {
+    "front": "begründen",
+    "back": "说明理由",
+    "roman": "shuōmíng lǐyóu",
+    "example": "您能用具体的例子来说明您的观点理由吗？",
+    "exampleDE": "Können Sie Ihren Standpunkt bitte mit konkreten Beispielen begründen?"
+  },
+  {
+    "front": "bestätigen",
+    "back": "确认",
+    "roman": "quèrèn",
+    "example": "航空公司通过自动短信确认了预订。",
+    "exampleDE": "Die Fluggesellschaft bestätigte die Buchung per automatischer Nachricht."
+  },
+  {
+    "front": "vereinbaren",
+    "back": "约定",
+    "roman": "yuēdìng",
+    "example": "我们约定了下周的新时间。",
+    "exampleDE": "Wir vereinbarten einen neuen Termin für die kommende Woche."
+  },
+  {
+    "front": "anregen",
+    "back": "提议",
+    "roman": "tíyì",
+    "example": "他提议把会议推迟半个小时。",
+    "exampleDE": "Er regte an, die Besprechung um eine halbe Stunde zu verschieben."
+  },
+  {
+    "front": "zur Sprache bringen",
+    "back": "提出来讨论",
+    "roman": "tí chūlái tǎolùn",
+    "example": "她在会议上勇敢地提出了这个重要议题。",
+    "exampleDE": "Sie brachte das wichtige Thema in der Sitzung mutig zur Sprache."
+  },
+  {
+    "front": "zusammenfassen",
+    "back": "总结",
+    "roman": "zǒngjié",
+    "example": "发言人简明扼要地总结了核心要点。",
+    "exampleDE": "Der Sprecher fasste die wichtigsten Kernaussagen kurz zusammen."
+  },
+  {
+    "front": "berichten",
+    "back": "报道",
+    "roman": "bàodào",
+    "example": "记者从现场对当前事件进行实时报道。",
+    "exampleDE": "Die Korrespondentin berichtet live von den aktuellen Ereignissen."
+  },
+  {
+    "front": "mitteilen",
+    "back": "告知",
+    "roman": "gàozhī",
+    "example": "请尽快将您的新地址告知我们。",
+    "exampleDE": "Bitte teilen Sie uns Ihre neue Anschrift zeitnah mit."
+  },
+  {
+    "front": "verbessern",
+    "back": "提高",
+    "roman": "tígāo",
+    "example": "通过每日训练他能够提高自己的跑步成绩。",
+    "exampleDE": "Mit täglichem Training konnte er seine persönliche Laufzeit verbessern."
+  },
+  {
+    "front": "verschlechtern",
+    "back": "变差",
+    "roman": "biànchà",
+    "example": "突降大雨时能见度会迅速变差。",
+    "exampleDE": "Bei plötzlichem Regen verschlechtern sich die Sichtverhältnisse rasch."
+  },
+  {
+    "front": "zunehmen",
+    "back": "增长",
+    "roman": "zēngzhǎng",
+    "example": "近年来人们对健康饮食的关注度明显增长。",
+    "exampleDE": "In den letzten Jahren hat das Interesse an gesunder Ernährung zugenommen."
+  },
+  {
+    "front": "abnehmen",
+    "back": "减重",
+    "roman": "jiǎnzhòng",
+    "example": "通过多运动和少吃糖，他健康地减重了。",
+    "exampleDE": "Durch mehr Bewegung und weniger Zucker konnte er gesund abnehmen."
+  },
+  {
+    "front": "entwickeln",
+    "back": "研发",
+    "roman": "yánfā",
+    "example": "工程师团队正在研发一种新型节能动力系统。",
+    "exampleDE": "Das Ingenieurteam entwickelt ein neuartiges, sparsames Antriebssystem."
+  },
+  {
+    "front": "entstehen",
+    "back": "兴建",
+    "roman": "xīngjiàn",
+    "example": "空旷的草地上正在兴建一座现代化的幼儿园。",
+    "exampleDE": "Auf der freien Wiese entsteht ein moderner Kindergarten."
+  },
+  {
+    "front": "verschwinden",
+    "back": "消散",
+    "roman": "xiāosàn",
+    "example": "太阳一出来，浓密的雾气就消散了。",
+    "exampleDE": "Die dichten Nebelschwaden verschwinden, sobald die Sonne scheint."
+  },
+  {
+    "front": "überqueren",
+    "back": "穿过",
+    "roman": "chuānguò",
+    "example": "行人应只在安全的斑马线处穿过马路。",
+    "exampleDE": "Fußgänger sollten die Straße nur an gesicherten Überwegen überqueren."
+  },
+  {
+    "front": "eintreffen",
+    "back": "到达",
+    "roman": "dàodá",
+    "example": "准点的列车将按计划于十四点到达。",
+    "exampleDE": "Der pünktliche Zug wird planmäßig um vierzehn Uhr eintreffen."
+  },
+  {
+    "front": "abbiegen",
+    "back": "转弯",
+    "roman": "zhuǎnwān",
+    "example": "在红绿灯路口您必须左转进入步行街。",
+    "exampleDE": "An der Ampelkreuzung müssen Sie links in die Fußgängerzone abbiegen."
+  },
+  {
+    "front": "beschleunigen",
+    "back": "加速",
+    "roman": "jiāsù",
+    "example": "在匝道上汽车迅速加速至高速公路速度。",
+    "exampleDE": "Auf der Auffahrt beschleunigt der Wagen zügig auf Autobahntempo."
+  },
+  {
+    "front": "bremsen",
+    "back": "刹车",
+    "roman": "shāchē",
+    "example": "在急转弯前司机及时刹车减速。",
+    "exampleDE": "Vor der scharfen Kurve bremst der Fahrer rechtzeitig ab."
+  },
+  {
+    "front": "anhalten",
+    "back": "停车",
+    "roman": "tíngchē",
+    "example": "在停车标志前所有车辆必须停车三秒。",
+    "exampleDE": "Am Stoppschild muss jedes Fahrzeug für drei Sekunden anhalten."
+  },
+  {
+    "front": "vorbeifahren",
+    "back": "驶过",
+    "roman": "shǐguò",
+    "example": "特快列车不停靠地快速驶过省城小站。",
+    "exampleDE": "Der Expresszug fährt ohne Halt am kleinen Provinzbahnhof vorbei."
+  },
+  {
+    "front": "umkehren",
+    "back": "折返",
+    "roman": "zhéfǎn",
+    "example": "由于突如其来的暴风雪，登山者不得不折返。",
+    "exampleDE": "Wegen des plötzlichen Schneesturms mussten die Bergsteiger umkehren."
+  },
+  {
+    "front": "beruhigen",
+    "back": "安抚",
+    "roman": "ānfǔ",
+    "example": "母亲用温和的声音很快安抚了哭泣的孩子。",
+    "exampleDE": "Die Mutter konnte das weinende Kind mit sanfter Stimme rasch beruhigen."
+  },
+  {
+    "front": "beunruhigen",
+    "back": "使担忧",
+    "roman": "shǐ dānyōu",
+    "example": "天空密布的雷雨乌云让徒步者感到担忧。",
+    "exampleDE": "Die dunklen Gewitterwolken am Himmel beunruhigten die Wanderer."
+  },
+  {
+    "front": "überraschen",
+    "back": "给惊喜",
+    "roman": "gěi jīngxǐ",
+    "example": "他的朋友们用自制蛋糕给了他一个惊喜。",
+    "exampleDE": "Seine Freunde überraschten ihn mit einem selbstgebackenen Kuchen."
+  },
+  {
+    "front": "trösten",
+    "back": "安慰",
+    "roman": "ānwèi",
+    "example": "她试图用贴心的话语安慰伤心的朋友。",
+    "exampleDE": "Sie versuchte ihre traurige Freundin mit lieben Worten zu trösten."
+  },
+  {
+    "front": "bewundern",
+    "back": "赞叹",
+    "roman": "zàntàn",
+    "example": "来自世界各地的游客赞叹精湛的建筑技艺。",
+    "exampleDE": "Touristen aus aller Welt bewundern die meisterhafte Architektur."
+  },
+  {
+    "front": "respektieren",
+    "back": "尊重",
+    "roman": "zūnzhòng",
+    "example": "我们应当始终尊重他人的不同意见。",
+    "exampleDE": "Wir sollten die unterschiedlichen Meinungen anderer stets respektieren."
+  },
+  {
+    "front": "schätzen",
+    "back": "看重",
+    "roman": "kànzhòng",
+    "example": "我非常看重你诚恳坦率的行事风格。",
+    "exampleDE": "Ich schätze deine ehrliche und direkte Art sehr."
+  },
+  {
+    "front": "hervorragend",
+    "back": "杰出的",
+    "roman": "jiéchū de",
+    "example": "女演员展现了一场无可挑剔的杰出表演。",
+    "exampleDE": "Die Schauspielerin lieferte eine rundum hervorragende Leistung ab."
+  },
+  {
+    "front": "bemerkenswert",
+    "back": "引人注目的",
+    "roman": "yǐnrénzhùmù de",
+    "example": "她敏捷的理解能力实在引人注目。",
+    "exampleDE": "Ihre schnelle Auffassungsgabe ist wirklich bemerkenswert."
+  },
+  {
+    "front": "angemessen",
+    "back": "合理的",
+    "roman": "hélǐ de",
+    "example": "对应所提供的品质，价格绝对合理。",
+    "exampleDE": "Der Preis für die gebotene Qualität ist absolut angemessen."
+  },
+  {
+    "front": "überflüssig",
+    "back": "多余的",
+    "roman": "duōyú de",
+    "example": "线上预约让柜台前的漫长等待变得多余。",
+    "exampleDE": "Langes Warten am Schalter wird durch Online-Buchungen überflüssig."
+  },
+  {
+    "front": "wesentlich",
+    "back": "关键的",
+    "roman": "guānjiàn de",
+    "example": "充分的准备对项目的成功起着关键作用。",
+    "exampleDE": "Gute Vorbereitung trägt wesentlich zum Erfolg eines Vorhabens bei."
+  },
+  {
+    "front": "ausreichend",
+    "back": "充足的",
+    "roman": "chōngzú de",
+    "example": "冰箱里还有充足的存货供周末食用。",
+    "exampleDE": "Im Kühlschrank sind noch ausreichend Vorräte für das Wochenende."
+  },
+  {
+    "front": "wertvoll",
+    "back": "宝贵的",
+    "roman": "bǎoguì de",
+    "example": "您的实用建议对我们大家而言都非常宝贵。",
+    "exampleDE": "Ihre praktischen Ratschläge waren für uns alle sehr wertvoll."
+  },
+  {
+    "front": "wirkungsvoll",
+    "back": "有效的",
+    "roman": "yǒuxiào de",
+    "example": "定期开窗通风是防止发霉的有效措施。",
+    "exampleDE": "Regelmäßiges Lüften ist eine wirkungsvolle Maßnahme gegen Schimmel."
+  },
+  {
+    "front": "gepflegt",
+    "back": "整洁体面的",
+    "roman": "zhěngjié tǐmiàn de",
+    "example": "旧前院给人留下极其整洁体面的印象。",
+    "exampleDE": "Der alte Vorgarten macht einen überaus gepflegten Eindruck."
+  },
+  {
+    "front": "unordentlich",
+    "back": "凌乱的",
+    "roman": "língluàn de",
+    "example": "手工下午过后儿童房看起来相当凌乱。",
+    "exampleDE": "Nach dem Bastelnachmittag sah das Kinderzimmer recht unordentlich aus."
+  },
+  {
+    "front": "gemütlich",
+    "back": "舒适惬意的",
+    "roman": "shūshì qièyì de",
+    "example": "我们在温暖的壁炉火旁度过了一个舒适惬意的夜晚。",
+    "exampleDE": "Wir verbrachten einen gemütlichen Abend am warmen Kaminfeuer."
+  },
+  {
+    "front": "anstrengend",
+    "back": "费力的",
+    "roman": "fèilì de",
+    "example": "穿越陡峭碎石小径的漫长徒步非常费力。",
+    "exampleDE": "Die lange Wanderung über steile Geröllpfade war sehr anstrengend."
+  },
+  {
+    "front": "erträglich",
+    "back": "可以忍受的",
+    "roman": "kěyǐ rěnshòu de",
+    "example": "多亏了温和的海风，高温变得完全可以忍受。",
+    "exampleDE": "Dank des leichten Seewinds waren die hohen Temperaturen erträglich."
+  },
+  {
+    "front": "tadellos",
+    "back": "无可挑剔的",
+    "roman": "wúkětiāotì de",
+    "example": "重新装修的浴室使用起来运转良好无可挑剔。",
+    "exampleDE": "Das frisch renovierte Badezimmer funktioniert tadellos."
+  },
+  {
+    "front": "makellos",
+    "back": "完美无瑕的",
+    "roman": "wánměi wúxiá de",
+    "example": "刚抛光的表面在阳光下闪烁着完美无瑕的光泽。",
+    "exampleDE": "Die frisch polierte Oberfläche glänzt makellos im Sonnenlicht."
+  },
+  {
+    "front": "aufrichtig",
+    "back": "真诚的",
+    "roman": "zhēnchéng de",
+    "example": "她用真诚的话语对慷慨的帮助表示感谢。",
+    "exampleDE": "Sie bedankte sich mit aufrichtigen Worten für die großzügige Hilfe."
+  },
+  {
+    "front": "rücksichtsvoll",
+    "back": "体贴顾及他人的",
+    "roman": "tǐtiē gùjí tārén de",
+    "example": "在拥挤的公交车上他对老年人格外体贴礼让。",
+    "exampleDE": "Im vollen Bus verhält er sich rücksichtsvoll gegenüber älteren Menschen."
+  },
+  {
+    "front": "aufmerksam",
+    "back": "细心的",
+    "roman": "xìxīn de",
+    "example": "细心的服务员立刻注意到客人的杯子空了。",
+    "exampleDE": "Der aufmerksame Kellner bemerkte sofort, dass das Glas leer war."
+  },
+  {
+    "front": "willensstark",
+    "back": "意志坚强的",
+    "roman": "yìzhì jiānqiáng de",
+    "example": "凭借坚强的意志和付出，运动员达成了自己的运动目标。",
+    "exampleDE": "Mit willensstarkem Einsatz erreichte die Athletin ihr sportliches Ziel."
+  },
+  {
+    "front": "selbstständig",
+    "back": "独立自主的",
+    "roman": "dúlì zìzhǔ de",
+    "example": "女学生完全独立自主地解开了这道难题。",
+    "exampleDE": "Die Schülerin löste die anspruchsvolle Aufgabe völlig selbstständig."
+  },
+  {
+    "front": "verantwortungsbewusst",
+    "back": "有责任心的",
+    "roman": "yǒu zérènxīn de",
+    "example": "有责任心的司机时刻注意限速要求。",
+    "exampleDE": "Ein verantwortungsbewusster Fahrer achtet stets auf das Tempolimit."
+  },
+  {
+    "front": "friedlich",
+    "back": "和平的",
+    "roman": "hépíng de",
+    "example": "集会从头到尾进行得非常和平。",
+    "exampleDE": "Die Kundgebung verlief von Anfang bis Ende vollkommen friedlich."
+  },
+  {
+    "front": "hilfsbereit",
+    "back": "乐于助人的",
+    "roman": "lèyúzhùrén de",
+    "example": "新邻居乐于助人地提出在搬家时提供支援。",
+    "exampleDE": "Der neue Nachbar bot hilfsbereit seine Unterstützung beim Umzug an."
+  },
+  {
+    "front": "keine Ursache",
+    "back": "不用客气",
+    "roman": "búyòng kèqi",
+    "example": "“非常感谢你的帮助！”——“不用客气，很乐意帮忙！”",
+    "exampleDE": "„Vielen Dank für deine Hilfe!“ – „Keine Ursache, gern geschehen!“"
+  },
+  {
+    "front": "mach dir keine Sorgen",
+    "back": "别担心",
+    "roman": "bié dānxīn",
+    "example": "别担心，一切都会好起来的。",
+    "exampleDE": "Mach dir keine Sorgen, alles wird sich zum Guten wenden."
+  },
+  {
+    "front": "bis zum nächsten Mal",
+    "back": "下次见",
+    "roman": "xià cì jiàn",
+    "example": "今晚很愉快，再见，下次见！",
+    "exampleDE": "Es war ein schöner Abend, auf Wiedersehen und bis zum nächsten Mal!"
+  },
+  {
+    "front": "im Großen und Ganzen",
+    "back": "大体上",
+    "roman": "dàtǐshàng",
+    "example": "大体上我们对结果感到非常满意。",
+    "exampleDE": "Im Großen und Ganzen sind wir mit dem Ergebnis sehr zufrieden."
+  },
+  {
+    "front": "Schritt für Schritt",
+    "back": "循序渐进",
+    "roman": "xúnxù jiànjìn",
+    "example": "学习一门外语最好耐心循序渐进地进行。",
+    "exampleDE": "Man lernt eine fremde Sprache am besten geduldig Schritt für Schritt."
+  },
+  {
+    "front": "auf jeden Fall",
+    "back": "无论如何",
+    "roman": "wúlùn rúhé",
+    "example": "我们无论如何都应该去参观一下值得一看的老城区。",
+    "exampleDE": "Wir sollten die sehenswerte Altstadt auf jeden Fall besichtigen."
+  },
+  {
+    "front": "unter vier Augen",
+    "back": "私下一对一",
+    "roman": "sīxià yīduìyī",
+    "example": "我想私下一对一地讨论这件机密事务。",
+    "exampleDE": "Ich möchte diese vertrauliche Angelegenheit gerne unter vier Augen besprechen."
+  },
+  {
+    "front": "das Visum",
+    "back": "签证",
+    "roman": "qiānzhèng",
+    "example": "为了较长时间的逗留，她需要官方签证。",
+    "exampleDE": "Für den längeren Aufenthalt benötigte sie ein offizielles Visum."
+  },
+  {
+    "front": "die Zollkontrolle",
+    "back": "海关检查",
+    "roman": "hǎiguān jiǎnchá",
+    "example": "官员们在边境进行抽样海关检查。",
+    "exampleDE": "An der Grenze kontrollieren die Beamten stichprobenartig den Zoll."
+  },
+  {
+    "front": "die Einreisebestimmung",
+    "back": "入境规定",
+    "roman": "rùjìng guīdìng",
+    "example": "出发前应先查阅最新的入境规定。",
+    "exampleDE": "Vor der Abreise sollte man die aktuellen Einreisebestimmungen prüfen."
+  },
+  {
+    "front": "das Konsulat",
+    "back": "领事馆",
+    "roman": "lǐngshìguǎn",
+    "example": "在国外遗失护照时，相关领事馆可以提供协助。",
+    "exampleDE": "Bei Passverlust im Ausland hilft das zuständige Konsulat weiter."
+  },
+  {
+    "front": "der Grenzbeamte",
+    "back": "边检官员",
+    "roman": "biānjiǎn guānyuán",
+    "example": "和蔼的边检官员在护照上仔细盖了章。",
+    "exampleDE": "Der freundliche Grenzbeamte stempelte den Reisepass sorgfältig ab."
+  },
+  {
+    "front": "die Grenzkontrolle",
+    "back": "边境检查",
+    "roman": "biānjìng jiǎnchá",
+    "example": "由于边境检查，车辆排起了一条短队。",
+    "exampleDE": "Wegen der Grenzkontrolle bildete sich eine kurze Fahrzeugschlange."
+  },
+  {
+    "front": "die Aufenthaltsgenehmigung",
+    "back": "居留许可",
+    "roman": "jūliú xǔkě",
+    "example": "居留许可又延长了两年。",
+    "exampleDE": "Die Aufenthaltsgenehmigung wurde um weitere zwei Jahre verlängert."
+  },
+  {
+    "front": "der Auslandskrankenschutz",
+    "back": "境外医疗保险",
+    "roman": "jìngwài yīliáo bǎoxiǎn",
+    "example": "境外医疗保险能抵御不可预见的医疗费用。",
+    "exampleDE": "Ein Auslandskrankenschutz schützt vor unvorhersehbaren Behandlungskosten."
+  },
+  {
+    "front": "die Schlagzeile",
+    "back": "大字头条",
+    "roman": "dàzì tóutiáo",
+    "example": "头版上的大字头条引起了广泛关注。",
+    "exampleDE": "Die große Schlagzeile auf der Titelseite erregte viel Aufsehen."
+  },
+  {
+    "front": "die Pressekonferenz",
+    "back": "新闻发布会",
+    "roman": "xīnwén fābùhuì",
+    "example": "在新闻发布会上，记者们提出了许多尖锐的问题。",
+    "exampleDE": "Auf der Pressekonferenz stellten Journalisten viele kritische Fragen."
+  },
+  {
+    "front": "der Leitartikel",
+    "back": "社论",
+    "roman": "shèlùn",
+    "example": "主编撰写了一篇发人深省的社论。",
+    "exampleDE": "Der Chefredakteur verfasste einen nachdenklichen Leitartikel."
+  },
+  {
+    "front": "die Berichterstattung",
+    "back": "新闻报道",
+    "roman": "xīnwén bàodào",
+    "example": "客观的新闻报道提供了翔实的背景信息。",
+    "exampleDE": "Die objektive Berichterstattung lieferte fundierte Hintergründe."
+  },
+  {
+    "front": "die Sondersendung",
+    "back": "特别节目",
+    "roman": "tèbié jiémù",
+    "example": "因突发事态发展，电视台中断节目插播了一档特别节目。",
+    "exampleDE": "Wegen der aktuellen Entwicklung unterbrach der Sender das Programm für eine Sondersendung."
+  },
+  {
+    "front": "das Rundfunkprogramm",
+    "back": "广播节目",
+    "roman": "guǎngbō jiémù",
+    "example": "下午广播节目中播出古典音乐会。",
+    "exampleDE": "Im Rundfunkprogramm laufen am Nachmittag klassische Konzerte."
+  },
+  {
+    "front": "die Nachrichtenagentur",
+    "back": "通讯社",
+    "roman": "tōngxùnshè",
+    "example": "知名通讯社向全球播发了这则快讯。",
+    "exampleDE": "Die renommierte Nachrichtenagentur verbreitete die Eilmeldung weltweit."
+  },
+  {
+    "front": "die Nachbarschaftshilfe",
+    "back": "邻里互助",
+    "roman": "línlǐ hùzhù",
+    "example": "良好的邻里互助减轻了年长居民的日常生活负担。",
+    "exampleDE": "Funktionierende Nachbarschaftshilfe erleichtert älteren Bewohnern den Alltag."
+  },
+  {
+    "front": "das Wohnviertel",
+    "back": "居住小区",
+    "roman": "jūzhù xiǎoqū",
+    "example": "我们宁静的居住小区紧邻公园和学校。",
+    "exampleDE": "Unser ruhiges Wohnviertel liegt nahe an Parks und Schulen."
+  },
+  {
+    "front": "der Spielplatz",
+    "back": "儿童游乐场",
+    "roman": "értóng yóulèchǎng",
+    "example": "下午许多快乐的孩子在游乐场上玩耍。",
+    "exampleDE": "Auf dem Spielplatz toben am Nachmittag viele fröhliche Kinder."
+  },
+  {
+    "front": "das Treppenhaus",
+    "back": "楼梯间",
+    "roman": "lóutījiān",
+    "example": "楼梯间每周由住户轮流打扫。",
+    "exampleDE": "Das Treppenhaus wird wöchentlich abwechselnd von den Mietern geputzt."
+  },
+  {
+    "front": "die Hausordnung",
+    "back": "住户守则",
+    "roman": "zhùhù shǒuzé",
+    "example": "住户守则规定了中午和夜间的安静时间。",
+    "exampleDE": "Die Hausordnung regelt die Ruhezeiten in den Mittags- und Nachtstunden."
+  },
+  {
+    "front": "der Hausmeister",
+    "back": "物业管理员",
+    "roman": "wùyè guǎnlǐyuán",
+    "example": "热心的物业管理员负责楼内的小修小补。",
+    "exampleDE": "Der hilfsbereite Hausmeister kümmert sich um kleine Reparaturen im Haus."
+  },
+  {
+    "front": "die Wohnsiedlung",
+    "back": "住宅区",
+    "roman": "zhùzháiqū",
+    "example": "现代住宅区完全设计成了限速慢行区。",
+    "exampleDE": "Die moderne Wohnsiedlung wurde komplett verkehrsberuhigt angelegt."
+  },
+  {
+    "front": "die Grünanlage",
+    "back": "绿化带",
+    "roman": "lǜhuàdài",
+    "example": "楼前维护良好的绿化带里盛开着彩色的玫瑰。",
+    "exampleDE": "In der gepflegten Grünanlage vor dem Haus blühen bunte Rosen."
+  },
+  {
+    "front": "die Produktverpackung",
+    "back": "产品包装",
+    "roman": "chǎnpǐn bāozhuāng",
+    "example": "产品包装完全由可回收纸板制成。",
+    "exampleDE": "Die Produktverpackung besteht vollständig aus recycelbarem Karton."
+  },
+  {
+    "front": "der Markenartikel",
+    "back": "品牌商品",
+    "roman": "pǐnpái shāngpǐn",
+    "example": "品牌商品往往以可靠的品质著称。",
+    "exampleDE": "Markenartikel zeichnen sich oft durch verlässliche Qualität aus."
+  },
+  {
+    "front": "das Preisschild",
+    "back": "价格标签",
+    "roman": "jiàgé biāoqiān",
+    "example": "货架上贴着字迹清晰的价格标签。",
+    "exampleDE": "Am Regal war das gut lesbare Preisschild angebracht."
+  },
+  {
+    "front": "die Kundenkarte",
+    "back": "会员卡",
+    "roman": "huìyuánkǎ",
+    "example": "使用会员卡每次购物都可以积累积分。",
+    "exampleDE": "Mit der Kundenkarte sammelt man bei jedem Einkauf Bonuspunkte."
+  },
+  {
+    "front": "das Warensortiment",
+    "back": "商品品种",
+    "roman": "shāngpǐn pǐnzhǒng",
+    "example": "精品食品店提供来自当地的精选商品品种。",
+    "exampleDE": "Der Feinkostladen führt ein auserlesenes Warensortiment aus der Region."
+  },
+  {
+    "front": "die Werbeanzeige",
+    "back": "商业广告",
+    "roman": "shāngyè guǎnggào",
+    "example": "一则吸引人的商业广告让她注意到了这款产品。",
+    "exampleDE": "Eine ansprechende Werbeanzeige machte sie auf das Produkt aufmerksam."
+  },
+  {
+    "front": "die Einkaufsstraße",
+    "back": "商业街",
+    "roman": "shāngyèjiē",
+    "example": "周六许多人惬意地漫步在商业街上。",
+    "exampleDE": "Am Samstag schlendern viele Menschen gemütlich durch die Einkaufsstraße."
+  },
+  {
+    "front": "die Hypothese",
+    "back": "假说",
+    "roman": "jiǎshuō",
+    "example": "女科学家在一系列实验中检验了她的假说。",
+    "exampleDE": "Die Forscherin überprüfte ihre Hypothese in einer Versuchsreihe."
+  },
+  {
+    "front": "die Messung",
+    "back": "测量",
+    "roman": "cèliáng",
+    "example": "精确的测量显示与目标值仅有微小偏差。",
+    "exampleDE": "Die präzise Messung ergab eine minimale Abweichung vom Sollwert."
+  },
+  {
+    "front": "die Erkenntnis",
+    "back": "科学认知",
+    "roman": "kēxué rènzhī",
+    "example": "这一新的科学认知长久地彻底改变了现代医学。",
+    "exampleDE": "Diese neue Erkenntnis revolutionierte die moderne Medizin nachhaltig."
+  },
+  {
+    "front": "das Mikroskop",
+    "back": "显微镜",
+    "roman": "xiǎnwéijìng",
+    "example": "在显微镜下可以清晰地看到精细的细胞结构。",
+    "exampleDE": "Unter dem Mikroskop erkennt man die feine Zellstruktur deutlich."
+  },
+  {
+    "front": "die Gesetzmäßigkeit",
+    "back": "规律",
+    "roman": "guīlǜ",
+    "example": "物理规律在已知宇宙的各个角落皆适用。",
+    "exampleDE": "Die physikalische Gesetzmäßigkeit gilt überall im bekannten Kosmos."
+  },
+  {
+    "front": "das Phänomen",
+    "back": "现象",
+    "roman": "xiànxiàng",
+    "example": "极光是一种令人着迷的自然现象。",
+    "exampleDE": "Die Polarlichter sind ein faszinierendes natürliches Phänomen."
+  },
+  {
+    "front": "die Beobachtung",
+    "back": "观测",
+    "roman": "guāncè",
+    "example": "数月以来天文学家们一直在进行精确的观测。",
+    "exampleDE": "Über Monate hinweg führten die Astronomen genaue Beobachtungen durch."
+  },
+  {
+    "front": "die Schlussfolgerung",
+    "back": "结论推导",
+    "roman": "jiélùn tuīdǎo",
+    "example": "团队从数据中得出了一个合乎逻辑的结论。",
+    "exampleDE": "Aus den Daten zog das Team eine einleuchtende Schlussfolgerung."
+  },
+  {
+    "front": "die Tradition",
+    "back": "传统",
+    "roman": "chuántǒng",
+    "example": "这门古老手艺作为家族传统被传承了数代。",
+    "exampleDE": "Dieses alte Handwerk wird seit Generationen als Familientradition gepflegt."
+  },
+  {
+    "front": "das Kunsthandwerk",
+    "back": "传统手工艺",
+    "roman": "chuántǒng shǒugōngyì",
+    "example": "在市场上游客们对织工传统的精湛手工艺赞叹不已。",
+    "exampleDE": "Auf dem Markt bestaunten Besucher das traditionelle Kunsthandwerk der Weber."
+  },
+  {
+    "front": "die Tracht",
+    "back": "民族服饰",
+    "roman": "mínzú fúshì",
+    "example": "在节日游行中村民们身着节日传统民族服饰。",
+    "exampleDE": "Zum Festumzug tragen die Dorfbewohner ihre Festtagstrachten."
+  }
+]

@@ -1,0 +1,1346 @@
+[
+  {
+    "front": "der Wanderweg",
+    "back": "vandresti",
+    "ipa": "ˈvænˀd̥ʁəˌsd̥iˀ",
+    "example": "Den afmærkede vandresti fører gennem skyggefulde skove op på bjerget.",
+    "exampleDE": "Der markierte Wanderweg führt durch schattige Wälder auf den Berg."
+  },
+  {
+    "front": "das Bürgeramt",
+    "back": "borgerservice",
+    "ipa": "ˈb̥ɒːwɐˌsœːvis",
+    "example": "Man ansøger personligt om et nyt id-kort hos Borgerservice.",
+    "exampleDE": "Einen neuen Ausweis beantragt man persönlich im Bürgeramt."
+  },
+  {
+    "front": "der Personalausweis",
+    "back": "id-kort",
+    "ipa": "iˈd̥eːˌkʰoɐ̯d̥",
+    "example": "Id-kortet er gyldigt i ti år i hjemlandet.",
+    "exampleDE": "Der Personalausweis ist zehn Jahre lang im Inland gültig."
+  },
+  {
+    "front": "die Geburtsurkunde",
+    "back": "fødselsattest",
+    "ipa": "ˈføðsəlsæˌtˢɛsd̥",
+    "example": "Til mange officielle ansøgninger kræves der en officiel fødselsattest.",
+    "exampleDE": "Für viele behördliche Anträge benötigt man eine offizielle Geburtsurkunde."
+  },
+  {
+    "front": "die Meldebestätigung",
+    "back": "bopælsattest",
+    "ipa": "ˈb̥oːpʰɛˀlsæˌtˢɛsd̥",
+    "example": "Efter flytningen modtager man en bopælsattest fra folkeregistret.",
+    "exampleDE": "Nach dem Umzug erhält man beim Einwohnermeldeamt die Meldebestätigung."
+  },
+  {
+    "front": "das Formular",
+    "back": "blanket",
+    "ipa": "b̥lɑŋˈkʰɛd̥",
+    "example": "Udfyld venligst den officielle blanket med blokbogstaver.",
+    "exampleDE": "Füllen Sie das behördliche Formular bitte in Druckbuchstaben aus."
+  },
+  {
+    "front": "die Unterschrift",
+    "back": "underskrift",
+    "ipa": "ˈonɐˌsɡ̊ʁifd̥",
+    "example": "Sæt din personlige underskrift nederst på linjen.",
+    "exampleDE": "Setzen Sie Ihre eigenhändige Unterschrift unten auf die Linie."
+  },
+  {
+    "front": "der Stempel",
+    "back": "stempel",
+    "ipa": "ˈsd̥ɛmb̥əl",
+    "example": "Et officielt stempel bekræfter dokumentets ægthed.",
+    "exampleDE": "Ein offizieller Stempel bestätigt die Echtheit des Schreibens."
+  },
+  {
+    "front": "die Beglaubigung",
+    "back": "attestering",
+    "ipa": "æd̥æˈsd̥eˀɐ̯eŋ",
+    "example": "Eksamensbeviser til universitetet kræver ofte en officiel attestering.",
+    "exampleDE": "Zeugnisse für die Universität erfordern oft eine amtliche Beglaubigung."
+  },
+  {
+    "front": "die Vorschrift",
+    "back": "forskrift",
+    "ipa": "ˈfɒːˌsɡ̊ʁifd̥",
+    "example": "Alle medarbejdere skal nøje overholde de gældende sikkerhedsforskrifter.",
+    "exampleDE": "Alle Mitarbeiter müssen die geltenden Sicherheitsvorschriften strikt befolgen."
+  },
+  {
+    "front": "die Erlaubnis",
+    "back": "tilladelse",
+    "ipa": "ˈtˢelˌlæˀðəlsə",
+    "example": "Uden skriftlig tilladelse fra myndighederne må der ikke bygges her.",
+    "exampleDE": "Ohne schriftliche Erlaubnis der Behörde darf hier nicht gebaut werden."
+  },
+  {
+    "front": "das Verbot",
+    "back": "forbud",
+    "ipa": "ˈfɒːˌb̥uð",
+    "example": "I hele bygningen gælder der et ubetinget rygeforbud.",
+    "exampleDE": "Im gesamten Gebäude gilt ein ausnahmsloses Rauchverbot."
+  },
+  {
+    "front": "die Strafe",
+    "back": "bøde",
+    "ipa": "ˈb̥øːðə",
+    "example": "Fejlparkerede bilister må regne med en klækkelig bøde.",
+    "exampleDE": "Falschparker müssen mit einer empfindlichen Geldstrafe rechnen."
+  },
+  {
+    "front": "das Fundbüro",
+    "back": "hittegodskontor",
+    "ipa": "ˈhed̥əˌɡ̊ʌd̥skʰʌnˌtˢoɐ̯ˀ",
+    "example": "Tabte nøgler afleveres ofte af ærlige findere på hittegodskontoret.",
+    "exampleDE": "Verlorene Schlüssel werden oft von ehrlichen Findern im Fundbüro abgegeben."
+  },
+  {
+    "front": "die Polizeiwache",
+    "back": "politistation",
+    "ipa": "pʰoliˈtˢiːsd̥æˌɕoˀn",
+    "example": "Han indgav en anmeldelse mod ukendte gerningsmænd på den lokale politistation.",
+    "exampleDE": "Er erstattete auf der örtlichen Polizeiwache Anzeige gegen Unbekannt."
+  },
+  {
+    "front": "der Zeuge",
+    "back": "vidne",
+    "ipa": "ˈveðnə",
+    "example": "Politiet afhørte flere vidner om ulykkens forløb.",
+    "exampleDE": "Die Polizei befragte mehrere Zeugen zum Hergang des Unfalls."
+  },
+  {
+    "front": "die Wahl",
+    "back": "valg",
+    "ipa": "vælˀ",
+    "example": "Hvert fjerde år finder det demokratiske parlamentsvalg sted.",
+    "exampleDE": "Alle vier Jahre findet die demokratische Wahl zum Parlament statt."
+  },
+  {
+    "front": "der Stimmzettel",
+    "back": "stemmeseddel",
+    "ipa": "ˈsd̥ɛməˌseðəl",
+    "example": "Sæt venligst dit kryds i hemmelighed på stemmesedlen.",
+    "exampleDE": "Setzen Sie Ihr Kreuz bitte verdeckt auf dem Stimmzettel."
+  },
+  {
+    "front": "die Wahlurne",
+    "back": "stemmeurne",
+    "ipa": "ˈsd̥ɛməˌuɐ̯nə",
+    "example": "Den foldede stemmeseddel lægges ned i den forseglede stemmeurne.",
+    "exampleDE": "Der gefaltete Stimmzettel wird in die versiegelte Wahlurne geworfen."
+  },
+  {
+    "front": "das Grundgesetz",
+    "back": "grundlov",
+    "ipa": "ˈɡ̊ʁɔnˌlɒw",
+    "example": "Grundloven garanterer alle borgeres ukrænkelige menneskerettigheder.",
+    "exampleDE": "Das Grundgesetz garantiert die unverletzlichen Menschenrechte aller Bürger."
+  },
+  {
+    "front": "die Meinungsfreiheit",
+    "back": "ytringsfrihed",
+    "ipa": "ˈyd̥ʁeŋsˌfʁiˀˌheð",
+    "example": "Ytringsfriheden er en bærende søjle i demokratiet.",
+    "exampleDE": "Die freie Meinungsäußerung ist ein tragender Pfeiler der Demokratie."
+  },
+  {
+    "front": "die Bürgerbeteiligung",
+    "back": "borgerinddragelse",
+    "ipa": "ˈb̥ɒːwɐˌenˌd̥ʁæˀwəlsə",
+    "example": "Gennem borgerinddragelse kan indbyggerne aktivt præge deres by.",
+    "exampleDE": "Durch Bürgerbeteiligung können Einwohner ihre Stadt aktiv mitgestalten."
+  },
+  {
+    "front": "die Gleichberechtigung",
+    "back": "ligestilling",
+    "ipa": "ˈliːəˌsd̥eleŋ",
+    "example": "Ligestilling mellem kønnene er lovmæssigt forankret.",
+    "exampleDE": "Gleichberechtigung aller Geschlechter ist gesetzlich fest verankert."
+  },
+  {
+    "front": "das Ehrenamt",
+    "back": "frivilligt arbejde",
+    "ipa": "fʁiˈvilid̥ ˈɑːˌb̥ɑjˀdə",
+    "example": "Mange mennesker engagerer sig i frivilligt arbejde i deres fritid.",
+    "exampleDE": "Viele Menschen engagieren sich in ihrer Freizeit in einem Ehrenamt."
+  },
+  {
+    "front": "das Silvester",
+    "back": "nytårsaften",
+    "ipa": "ˈnyd̥ˌɒːsˌɑfd̥n̩",
+    "example": "Nytårsaften skåler vi for det nye år ved midnat.",
+    "exampleDE": "An Silvester stoßen wir um Mitternacht auf das neue Jahr an."
+  },
+  {
+    "front": "das Feuerwerk",
+    "back": "fyrværkeri",
+    "ipa": "fyɐ̯vɛɐ̯ɡ̊əˈʁiˀ",
+    "example": "Et farverigt fyrværkeri oplyser nattehimlen.",
+    "exampleDE": "Ein farbenfrohes Feuerwerk erhellt den nächtlichen Himmel."
+  },
+  {
+    "front": "das Neujahr",
+    "back": "nytår",
+    "ipa": "ˈnyd̥ˌɒˀ",
+    "example": "Nytårsdag ønsker naboer og venner hinanden held og lykke.",
+    "exampleDE": "Am Neujahrstag wünschen sich Nachbarn und Freunde viel Glück."
+  },
+  {
+    "front": "die Weihnachtstage",
+    "back": "juledage",
+    "ipa": "ˈjuːləˌd̥æːwə",
+    "example": "Juledagene tilbringer familien traditionelt sammen derhjemme.",
+    "exampleDE": "Die Weihnachtstage verbringt die Familie traditionell gemeinsam zu Hause."
+  },
+  {
+    "front": "der Heiligabend",
+    "back": "juleaften",
+    "ipa": "ˈjuːləˌɑfd̥n̩",
+    "example": "Juleaften pakkes gaverne op under det pyntede træ.",
+    "exampleDE": "An Heiligabend werden unter dem geschmückten Baum Geschenke ausgepackt."
+  },
+  {
+    "front": "das Geschenkpapier",
+    "back": "gavepapir",
+    "ipa": "ˈɡ̊æːwəpʰæˌpʰiɐ̯",
+    "example": "Farverigt gavepapir og bånd pryder pakkerne.",
+    "exampleDE": "Buntes Geschenkpapier und Schleifen zieren die Päckchen."
+  },
+  {
+    "front": "die Glückwunschkarte",
+    "back": "lykønskningskort",
+    "ipa": "lyˈkʰœnsɡ̊neŋsˌkʰoɐ̯d̥",
+    "example": "På lykønskningskortet skrev hun et par personlige linjer.",
+    "exampleDE": "Auf die Glückwunschkarte schrieb sie ein paar persönliche Zeilen."
+  },
+  {
+    "front": "die Geburtstagstorte",
+    "back": "fødselsdagskage",
+    "ipa": "ˈføðsəlsd̥æwsˌkʰæːjə",
+    "example": "På fødselsdagskagen brænder farverige lys, der skal pustes ud.",
+    "exampleDE": "Auf der Geburtstagstorte brennen bunte Kerzen zum Auspusten."
+  },
+  {
+    "front": "die Überraschungsparty",
+    "back": "overraskelsesfest",
+    "ipa": "ˈʌwɐˌʁɑsɡ̊əlsəsˌfɛsd̥",
+    "example": "Venner arrangerede hemmeligt en fantastisk overraskelsesfest for ham.",
+    "exampleDE": "Freunde organisierten heimlich eine tolle Überraschungsparty für ihn."
+  },
+  {
+    "front": "der Luftballon",
+    "back": "ballon",
+    "ipa": "b̥æˈlʌŋ",
+    "example": "Farverige balloner pynter festsalen til børnefødselsdagen.",
+    "exampleDE": "Bunte Luftballons schmücken den Festsaal für die Kinderparty."
+  },
+  {
+    "front": "die Einladungskarte",
+    "back": "indbydelseskort",
+    "ipa": "ˈenˌb̥yˀðəlsəsˌkʰoɐ̯d̥",
+    "example": "To uger før festen sendte han indbydelseskortene ud.",
+    "exampleDE": "Zwei Wochen vor dem Fest verschickte er die Einladungskarten."
+  },
+  {
+    "front": "anstoßen",
+    "back": "skåle",
+    "ipa": "ˈsɡ̊ɔːlə",
+    "example": "Vi skåler med en kold drink for fødselarens velbefindende.",
+    "exampleDE": "Wir stoßen mit einem kühlen Getränk auf das Wohl des Geburtstagskindes an."
+  },
+  {
+    "front": "der Ehrengast",
+    "back": "æresgæst",
+    "ipa": "ˈɛːɐ̯əsˌɡ̊ɛsd̥",
+    "example": "Borgmesteren blev hilst varmt velkommen som æresgæst.",
+    "exampleDE": "Der Bürgermeister wurde als Ehrengast herzlich begrüßt."
+  },
+  {
+    "front": "die Festrede",
+    "back": "festtale",
+    "ipa": "ˈfɛsd̥ˌtˢæːlə",
+    "example": "I sin festtale så formanden tilbage på foreningens succeser.",
+    "exampleDE": "In seiner Festrede blickte der Vereinsvorsitzende auf Erfolge zurück."
+  },
+  {
+    "front": "gratulieren",
+    "back": "lykønske",
+    "ipa": "lyˈkʰœnsɡ̊ə",
+    "example": "Alle kolleger lykønsker ham hjerteligt med det runde jubilæum.",
+    "exampleDE": "Alle Kollegen gratulieren ihm herzlich zum runden Jubiläum."
+  },
+  {
+    "front": "die Gegenwart",
+    "back": "nutid",
+    "ipa": "ˈnuˌtˢiðˀ",
+    "example": "Koncentrer dig om opgaverne i nutiden.",
+    "exampleDE": "Konzentriere dich auf die Aufgaben in der Gegenwart."
+  },
+  {
+    "front": "die Vergangenheit",
+    "back": "fortid",
+    "ipa": "ˈfɒːˌtˢiðˀ",
+    "example": "Af fortidens fejl kan man lære meget til fremtiden.",
+    "exampleDE": "Aus den Fehlern der Vergangenheit kann man viel für die Zukunft lernen."
+  },
+  {
+    "front": "die Zukunft",
+    "back": "fremtid",
+    "ipa": "ˈfʁæmˌtˢiðˀ",
+    "example": "Med tillid og flid ser den unge familie fremtiden i møde.",
+    "exampleDE": "Mit Zuversicht und Fleiß blickt die junge Familie in die Zukunft."
+  },
+  {
+    "front": "die Zeitspanne",
+    "back": "tidsrum",
+    "ipa": "ˈtˢiðsˌʁɔmˀ",
+    "example": "I det korte tidsrum på få dage ændrede alt sig.",
+    "exampleDE": "In der kurzen Zeitspanne von wenigen Tagen änderte sich alles."
+  },
+  {
+    "front": "der Zeitraum",
+    "back": "periode",
+    "ipa": "pʰæʁiˈoːðə",
+    "example": "Over en længere periode viste der sig en tydelig bedring.",
+    "exampleDE": "Über einen längeren Zeitraum hinweg zeigte sich eine deutliche Besserung."
+  },
+  {
+    "front": "der Augenblick",
+    "back": "øjeblik",
+    "ipa": "ˈʌjəˌb̥leɡ̊",
+    "example": "I et kort øjeblik holdt alle i lokalet vejret.",
+    "exampleDE": "Für einen kurzen Augenblick hielten alle im Raum den Atem an."
+  },
+  {
+    "front": "die Ewigkeit",
+    "back": "evighed",
+    "ipa": "ˈeːviˌheð",
+    "example": "Ventetiden på den forsinkede perron føltes som en evighed.",
+    "exampleDE": "Das Warten am verspäteten Bahnsteig kam ihm wie eine Ewigkeit vor."
+  },
+  {
+    "front": "gelegentlich",
+    "back": "lejlighedsvis",
+    "ipa": "ˈlɑjliˌheðsˌviˀs",
+    "example": "Lejlighedsvis under han sig et stykke mørk chokolade efter maden.",
+    "exampleDE": "Gelegentlich gönnt er sich nach dem Essen ein Stück dunkle Schokolade."
+  },
+  {
+    "front": "regelmäßig",
+    "back": "regelmæssigt",
+    "ipa": "ˈʁæɡ̊əlˌmɛːsi",
+    "example": "Den, der repeterer gloser regelmæssigt, opnår hurtige fremskridt.",
+    "exampleDE": "Wer regelmäßig Vokabeln wiederholt, erzielt schnelle Lernerfolge."
+  },
+  {
+    "front": "stetig",
+    "back": "stadigt",
+    "ipa": "ˈsd̥æːði",
+    "example": "Hendes sprogforståelse forbedrede sig stadigt i de seneste måneder.",
+    "exampleDE": "Ihr Sprachverständnis verbesserte sich in den letzten Monaten stetig."
+  },
+  {
+    "front": "ununterbrochen",
+    "back": "uafbrudt",
+    "ipa": "uˈæwˌb̥ʁɔd̥",
+    "example": "Siden tidlig morgen har det regnet uafbrudt udenfor.",
+    "exampleDE": "Seit dem frühen Morgen regnet es draußen ununterbrochen."
+  },
+  {
+    "front": "inzwischen",
+    "back": "efterhånden",
+    "ipa": "ɛfd̥ɐˈhʌnˀ",
+    "example": "Efterhånden taler hun flydende og uden lange tøven.",
+    "exampleDE": "Inzwischen spricht sie fließend und ohne langes Nachdenken."
+  },
+  {
+    "front": "demnächst",
+    "back": "snart",
+    "ipa": "snɑːˀd̥",
+    "example": "Den nye version af læringsappen udkommer snart i butikken.",
+    "exampleDE": "Die neue Version der Lern-App erscheint demnächst im Store."
+  },
+  {
+    "front": "seinerzeit",
+    "back": "i sin tid",
+    "ipa": "i ˈsiˀn ˈtˢiðˀ",
+    "example": "I sin tid byggede håndværkerne rådhuset uden moderne maskiner.",
+    "exampleDE": "Seinerzeit bauten die Handwerker das Rathaus ohne moderne Maschinen."
+  },
+  {
+    "front": "bisher",
+    "back": "hidtil",
+    "ipa": "ˈhiðˌtˢel",
+    "example": "Hidtil er alle test og prøver forløbet helt fejlfrit.",
+    "exampleDE": "Bisher sind alle Tests und Prüfungen absolut fehlerfrei verlaufen."
+  },
+  {
+    "front": "die Umgebung",
+    "back": "omgivelser",
+    "ipa": "ʌmˈɡ̊iˀwəlsɐ",
+    "example": "I hotellets nærmeste omgivelser er der dejlige vandrestier.",
+    "exampleDE": "In der näheren Umgebung des Hotels gibt es herrliche Wanderwege."
+  },
+  {
+    "front": "die Entfernung",
+    "back": "afstand",
+    "ipa": "ˈɑwˌsd̥ænˀ",
+    "example": "Afstanden mellem de to byer er cirka halvtreds kilometer.",
+    "exampleDE": "Die Entfernung zwischen den beiden Städten beträgt rund fünfzig Kilometer."
+  },
+  {
+    "front": "die Zwischenzeit",
+    "back": "mellemtid",
+    "ipa": "ˈmɛləmˌtˢiðˀ",
+    "example": "I mellemtiden kan vi allerede dække bordet til maden.",
+    "exampleDE": "In der Zwischenzeit können wir schon den Tisch für das Essen decken."
+  },
+  {
+    "front": "gegenüber",
+    "back": "overfor",
+    "ipa": "ˈʌwɐˌfɒː",
+    "example": "Apoteket ligger lige over for banegårdens hovedindgang.",
+    "exampleDE": "Die Apotheke liegt direkt gegenüber dem Haupteingang des Bahnhofs."
+  },
+  {
+    "front": "nebenan",
+    "back": "inde ved siden af",
+    "ipa": "ˈenə ve ˈsiːðn̩ ˈæ",
+    "example": "I lejligheden inde ved siden af bor en meget venlig familie.",
+    "exampleDE": "In der Wohnung nebenan wohnt eine sehr freundliche Familie."
+  },
+  {
+    "front": "mittendrin",
+    "back": "midt i",
+    "ipa": "med̥ ˈiˀ",
+    "example": "Midt i den gamle bydel står byens ældste brønd.",
+    "exampleDE": "Mitten in der Altstadt steht der älteste Brunnen des Ortes."
+  },
+  {
+    "front": "außerhalb",
+    "back": "uden for",
+    "ipa": "ˈuːðn̩ ˈfɒː",
+    "example": "Erhvervsområdet ligger lidt uden for bygrænsen.",
+    "exampleDE": "Das Gewerbegebiet liegt etwas außerhalb der geschlossenen Ortschaft."
+  },
+  {
+    "front": "einerseits",
+    "back": "på den ene side",
+    "ipa": "pʰɔ d̥ɛn ˈe̝ːnə ˈsiːðə",
+    "example": "På den ene side vil han gerne rejse, på den anden side sparer han op til en bil.",
+    "exampleDE": "Einerseits möchte er verreisen, andererseits spart er auf ein Auto."
+  },
+  {
+    "front": "andererseits",
+    "back": "på den anden side",
+    "ipa": "pʰɔ d̥ɛn ˈænˀn̩ ˈsiːðə",
+    "example": "På den anden side giver den nye stilling væsentligt bedre karrieremuligheder.",
+    "exampleDE": "Andererseits bietet die neue Stelle wesentlich bessere Aufstiegschancen."
+  },
+  {
+    "front": "infolgedessen",
+    "back": "som følge heraf",
+    "ipa": "sʌm ˈføljə heɐ̯ˈæw",
+    "example": "Vejene var glatte, og som følge heraf opstod der køer.",
+    "exampleDE": "Die Straßen waren vereist, infolgedessen kam es zu Staus."
+  },
+  {
+    "front": "dennoch",
+    "back": "alligevel",
+    "ipa": "æˈliːəvɛl",
+    "example": "Det øsede ned, men alligevel gik vi en lang tur i skoven.",
+    "exampleDE": "Es regnete in Strömen, dennoch machten wir einen langen Waldspaziergang."
+  },
+  {
+    "front": "nichtsdestotrotz",
+    "back": "ikke desto mindre",
+    "ipa": "ˈeɡ̊ə ˈd̥ɛsd̥o ˈmɛnd̥ʁə",
+    "example": "Han var meget træt, men ikke desto mindre afsluttede han kapitlet omhyggeligt.",
+    "exampleDE": "Er war sehr müde, nichtsdestotrotz beendete er das Kapitel sorgfältig."
+  },
+  {
+    "front": "außerdem",
+    "back": "desuden",
+    "ipa": "d̥eˈsuːðn̩",
+    "example": "Maden smagte fremragende, og betjeningen var desuden meget venlig.",
+    "exampleDE": "Das Essen schmeckte hervorragend und die Bedienung war außerdem sehr nett."
+  },
+  {
+    "front": "aus diesem Grund",
+    "back": "af den grund",
+    "ipa": "æ d̥ɛn ˈɡ̊ʁɔnˀ",
+    "example": "Hun havde læst flittigt og bestod af den grund eksamen legende let.",
+    "exampleDE": "Sie hatte fleißig gelernt und bestand aus diesem Grund die Prüfung spielend."
+  },
+  {
+    "front": "nämlich",
+    "back": "nemlig",
+    "ipa": "ˈnɛmli",
+    "example": "Jeg bliver hjemme i dag, jeg har nemlig stærk hovedpine.",
+    "exampleDE": "Ich bleibe heute daheim, ich habe nämlich starke Kopfschmerzen."
+  },
+  {
+    "front": "stattdessen",
+    "back": "i stedet",
+    "ipa": "i ˈsd̥ɛð",
+    "example": "Vi kørte ikke i bil, men gik i stedet til fods.",
+    "exampleDE": "Wir fuhren nicht mit dem Auto, sondern gingen stattdessen zu Fuß."
+  },
+  {
+    "front": "vorausgesetzt",
+    "back": "forudsat",
+    "ipa": "ˈfɒːuðˌsæd̥",
+    "example": "Vi vandrer i morgen, forudsat at vejret holder tørt.",
+    "exampleDE": "Wir wandern morgen, vorausgesetzt das Wetter bleibt trocken."
+  },
+  {
+    "front": "währenddessen",
+    "back": "imens",
+    "ipa": "iˈmɛnˀs",
+    "example": "Han stegte grøntsagerne, og imens dækkede hun kærligt bordet.",
+    "exampleDE": "Er briet das Gemüse, währenddessen deckte sie liebevoll den Tisch."
+  },
+  {
+    "front": "sowohl ... als auch",
+    "back": "både ... og",
+    "ipa": "ˈb̥ɔːðə ʌ",
+    "example": "Hun taler både flydende spansk og professionelt engelsk.",
+    "exampleDE": "Sie spricht sowohl fließend Spanisch als auch verhandlungssicheres Englisch."
+  },
+  {
+    "front": "weder ... noch",
+    "back": "hverken ... eller",
+    "ipa": "ˈvɛɐ̯ɡ̊n̩ ˈɛlɐ",
+    "example": "Han drikker hverken kaffe eller sort te om morgenen.",
+    "exampleDE": "Er trinkt weder Kaffee noch schwarzen Tee am Morgen."
+  },
+  {
+    "front": "je ... desto",
+    "back": "jo ... desto",
+    "ipa": "joː ˈd̥ɛsd̥o",
+    "example": "Jo mere man øver sig, desto nemmere falder det frie talesprog.",
+    "exampleDE": "Je mehr man übt, desto leichter fällt das freie Sprechen."
+  },
+  {
+    "front": "obgleich",
+    "back": "selvom",
+    "ipa": "sɛlˈʌm",
+    "example": "Selvom det var stormvejr, sejlede fiskerne ud med deres både.",
+    "exampleDE": "Obgleich es stürmisch war, liefen die Fischer mit ihren Booten aus."
+  },
+  {
+    "front": "anpacken",
+    "back": "tage fat",
+    "ipa": "tˢæ ˈfæt",
+    "example": "Når alle tager fat, er det tunge arbejde klaret på et øjeblik.",
+    "exampleDE": "Wenn alle mit anpacken, ist die schwere Arbeit im Nu erledigt."
+  },
+  {
+    "front": "erledigen",
+    "back": "klare",
+    "ipa": "ˈkʰlɑːʁɑ",
+    "example": "Jeg skal have klaret nogle vigtige indkøb her til formiddag.",
+    "exampleDE": "Ich muss heute Vormittag noch wichtige Einkäufe erledigen."
+  },
+  {
+    "front": "vorbereiten",
+    "back": "forberede",
+    "ipa": "fʌb̥əˈʁeˀðə",
+    "example": "Hun forbereder præsentationen til morgendagens møde grundigt.",
+    "exampleDE": "Sie bereitet die Präsentation für das morgige Meeting gründlich vor."
+  },
+  {
+    "front": "aufräumen",
+    "back": "rydde op",
+    "ipa": "ˈʁœðə ˈʌb̥",
+    "example": "Om lørdagen rydder børnene op på deres værelser sammen.",
+    "exampleDE": "Samstags räumen die Kinder gemeinsam ihre Zimmer auf."
+  },
+  {
+    "front": "wegwerfen",
+    "back": "smide ud",
+    "ipa": "ˈsmiːðə ˈuð",
+    "example": "Brugte batterier må man ikke bare smide ud med husholdningsaffaldet.",
+    "exampleDE": "Alte Batterien darf man nicht einfach in den Hausmüll wegwerfen."
+  },
+  {
+    "front": "behalten",
+    "back": "beholde",
+    "ipa": "b̥eˈhʌlˀdə",
+    "example": "Dette kære minde vil jeg gerne beholde hele mit liv.",
+    "exampleDE": "Dieses schöne Erinnerungsstück möchte ich mein Leben lang behalten."
+  },
+  {
+    "front": "verschenken",
+    "back": "forære væk",
+    "ipa": "fʌˈɛˀɐ̯ə ˈvɛɡ̊",
+    "example": "Bøger, som hun allerede har læst, forærer hun gerne væk til venner.",
+    "exampleDE": "Bücher, die sie schon gelesen hat, verschenkt sie gerne an Freunde."
+  },
+  {
+    "front": "organisieren",
+    "back": "organisere",
+    "ipa": "ɒːɡ̊æniˈseˀɐ",
+    "example": "Han organiserer vores idrætsforenings årlige sommerfest.",
+    "exampleDE": "Er organisiert das alljährliche Sommerfest unseres Sportvereins."
+  },
+  {
+    "front": "bemerken",
+    "back": "bemærke",
+    "ipa": "b̥eˈmɛɐ̯ɡ̊ə",
+    "example": "Først sent bemærkede han, at han havde glemt sin husnøgle.",
+    "exampleDE": "Erst spät bemerkte er, dass er seinen Hausschlüssel vergessen hatte."
+  },
+  {
+    "front": "begreifen",
+    "back": "begribe",
+    "ipa": "b̥eˈɡ̊ʁiˀb̥ə",
+    "example": "Efter den anskuelige forklaring kunne han begribe sammenhængen.",
+    "exampleDE": "Nach der anschaulichen Erklärung konnte er den Zusammenhang begreifen."
+  },
+  {
+    "front": "nachdenken",
+    "back": "tænke over",
+    "ipa": "ˈtˢɛŋɡ̊ə ˈʌwɐ",
+    "example": "Dette vigtige tilbud må jeg først tænke over i ro og mag.",
+    "exampleDE": "Über dieses wichtige Angebot muss ich erst in Ruhe nachdenken."
+  },
+  {
+    "front": "feststellen",
+    "back": "konstatere",
+    "ipa": "kʰʌnsd̥æˈtˢeˀɐ",
+    "example": "Kontrollørerne konstaterede, at alle sikkerhedskriterier er opfyldt.",
+    "exampleDE": "Die Prüfer stellten fest, dass alle Sicherheitskriterien erfüllt sind."
+  },
+  {
+    "front": "vermuten",
+    "back": "formode",
+    "ipa": "fʌˈmoˀðə",
+    "example": "Eksperterne formoder, at priserne snart vil falde igen.",
+    "exampleDE": "Die Experten vermuten, dass die Preise bald wieder sinken werden."
+  },
+  {
+    "front": "bezweifeln",
+    "back": "betvivle",
+    "ipa": "b̥eˈtˢviwˀlə",
+    "example": "Jeg betvivler stærkt, at den gamle plan stadig fungerer i dag.",
+    "exampleDE": "Ich bezweifle stark, dass dieser alte Plan heute noch funktioniert."
+  },
+  {
+    "front": "beurteilen",
+    "back": "bedømme",
+    "ipa": "b̥eˈd̥œmə",
+    "example": "På afstand er den vanskelige situation svær at bedømme.",
+    "exampleDE": "Aus der Ferne lässt sich die schwierige Lage nur schwer beurteilen."
+  },
+  {
+    "front": "begründen",
+    "back": "begrunde",
+    "ipa": "b̥eˈɡ̊ʁonˀə",
+    "example": "Kan De venligst begrunde Deres synspunkt med konkrete eksempler?",
+    "exampleDE": "Können Sie Ihren Standpunkt bitte mit konkreten Beispielen begründen?"
+  },
+  {
+    "front": "bestätigen",
+    "back": "bekræfte",
+    "ipa": "b̥eˈkʰʁɑfd̥e",
+    "example": "Flyselskabet bekræftede bookingen med en automatisk besked.",
+    "exampleDE": "Die Fluggesellschaft bestätigte die Buchung per automatischer Nachricht."
+  },
+  {
+    "front": "vereinbaren",
+    "back": "aftale",
+    "ipa": "ˈɑwˌtˢæːlə",
+    "example": "Vi aftalte en ny tid i den kommende uge.",
+    "exampleDE": "Wir vereinbarten einen neuen Termin für die kommende Woche."
+  },
+  {
+    "front": "anregen",
+    "back": "foreslå",
+    "ipa": "ˈfɒːˌslɔˀ",
+    "example": "Han foreslog at udskyde mødet en halv time.",
+    "exampleDE": "Er regte an, die Besprechung um eine halbe Stunde zu verschieben."
+  },
+  {
+    "front": "zur Sprache bringen",
+    "back": "bringe på bane",
+    "ipa": "ˈb̥ʁæŋə pʰɔ ˈb̥æːnə",
+    "example": "Hun bragte modigt det vigtige emne på bane under mødet.",
+    "exampleDE": "Sie brachte das wichtige Thema in der Sitzung mutig zur Sprache."
+  },
+  {
+    "front": "zusammenfassen",
+    "back": "opsummere",
+    "ipa": "ʌb̥soˈmeˀɐ",
+    "example": "Taleren opsummerede kort de vigtigste hovedbudskaber.",
+    "exampleDE": "Der Sprecher fasste die wichtigsten Kernaussagen kurz zusammen."
+  },
+  {
+    "front": "berichten",
+    "back": "rapportere",
+    "ipa": "ʁɑb̥oˈtˢeˀɐ",
+    "example": "Korrespondenten rapporterer direkte fra de aktuelle begivenheder.",
+    "exampleDE": "Die Korrespondentin berichtet live von den aktuellen Ereignissen."
+  },
+  {
+    "front": "mitteilen",
+    "back": "meddele",
+    "ipa": "ˈmɛðˌd̥eˀlə",
+    "example": "Giv os venligst besked om din nye adresse hurtigst muligt.",
+    "exampleDE": "Bitte teilen Sie uns Ihre neue Anschrift zeitnah mit."
+  },
+  {
+    "front": "verbessern",
+    "back": "forbedre",
+    "ipa": "fʌˈb̥ɛðʁɐ",
+    "example": "Med daglig træning kunne han forbedre sin personlige løbetid.",
+    "exampleDE": "Mit täglichem Training konnte er seine persönliche Laufzeit verbessern."
+  },
+  {
+    "front": "verschlechtern",
+    "back": "forværres",
+    "ipa": "fʌˈvɛɐ̯ˀɐs",
+    "example": "Ved pludselig regn forværres sigtbarheden hurtigt.",
+    "exampleDE": "Bei plötzlichem Regen verschlechtern sich die Sichtverhältnisse rasch."
+  },
+  {
+    "front": "zunehmen",
+    "back": "stige",
+    "ipa": "ˈsd̥iːə",
+    "example": "I de seneste år er interessen for sund kost steget.",
+    "exampleDE": "In den letzten Jahren hat das Interesse an gesunder Ernährung zugenommen."
+  },
+  {
+    "front": "abnehmen",
+    "back": "tabe sig",
+    "ipa": "ˈtˢæːb̥ə sɑj",
+    "example": "Gennem mere motion og mindre sukker lykkedes det ham at tabe sig sundt.",
+    "exampleDE": "Durch mehr Bewegung und weniger Zucker konnte er gesund abnehmen."
+  },
+  {
+    "front": "entwickeln",
+    "back": "udvikle",
+    "ipa": "ˈuðˌveɡ̊lə",
+    "example": "Ingeniørteamet udvikler et helt nyt og energibesparende drivsystem.",
+    "exampleDE": "Das Ingenieurteam entwickelt ein neuartiges, sparsames Antriebssystem."
+  },
+  {
+    "front": "entstehen",
+    "back": "opstå",
+    "ipa": "ˈʌb̥ˌsd̥ɔˀ",
+    "example": "På den åbne eng opstår der en moderne børnehave.",
+    "exampleDE": "Auf der freien Wiese entsteht ein moderner Kindergarten."
+  },
+  {
+    "front": "verschwinden",
+    "back": "forsvinde",
+    "ipa": "fʌˈsvenˀə",
+    "example": "De tætte tågebanker forsvinder, så snart solen skinner.",
+    "exampleDE": "Die dichten Nebelschwaden verschwinden, sobald die Sonne scheint."
+  },
+  {
+    "front": "überqueren",
+    "back": "krydse",
+    "ipa": "ˈkʰʁytsə",
+    "example": "Fodgængere bør kun krydse gaden ved sikrede overgange.",
+    "exampleDE": "Fußgänger sollten die Straße nur an gesicherten Überwegen überqueren."
+  },
+  {
+    "front": "eintreffen",
+    "back": "ankomme",
+    "ipa": "ˈænˌkʰʌmˀə",
+    "example": "Det rettidige tog ankommer planmæssigt klokken fjorten.",
+    "exampleDE": "Der pünktliche Zug wird planmäßig um vierzehn Uhr eintreffen."
+  },
+  {
+    "front": "abbiegen",
+    "back": "dreje",
+    "ipa": "ˈd̥ʁɑjə",
+    "example": "I lyskrydset skal du dreje til venstre ind i gågaden.",
+    "exampleDE": "An der Ampelkreuzung müssen Sie links in die Fußgängerzone abbiegen."
+  },
+  {
+    "front": "beschleunigen",
+    "back": "accelerere",
+    "ipa": "æɡ̊sələˈʁeˀɐ",
+    "example": "På tilkørslen accelererer bilen hurtigt op til motorvejshastighed.",
+    "exampleDE": "Auf der Auffahrt beschleunigt der Wagen zügig auf Autobahntempo."
+  },
+  {
+    "front": "bremsen",
+    "back": "bremse",
+    "ipa": "ˈb̥ʁɑmsə",
+    "example": "Før det skarpe sving bremser føreren i god tid.",
+    "exampleDE": "Vor der scharfen Kurve bremst der Fahrer rechtzeitig ab."
+  },
+  {
+    "front": "anhalten",
+    "back": "standse",
+    "ipa": "ˈsd̥ænsə",
+    "example": "Ved stopskiltet skal ethvert køretøj standse i tre sekunder.",
+    "exampleDE": "Am Stoppschild muss jedes Fahrzeug für drei Sekunden anhalten."
+  },
+  {
+    "front": "vorbeifahren",
+    "back": "køre forbi",
+    "ipa": "ˈkʰøːɐ̯ə fʌˈb̥iˀ",
+    "example": "Eksprestoget kører forbi den lille provinsstation uden at standse.",
+    "exampleDE": "Der Expresszug fährt ohne Halt am kleinen Provinzbahnhof vorbei."
+  },
+  {
+    "front": "umkehren",
+    "back": "vende om",
+    "ipa": "ˈvɛnə ˈʌmˀ",
+    "example": "På grund af den pludselige snestorm måtte bjergbestigerne vende om.",
+    "exampleDE": "Wegen des plötzlichen Schneesturms mussten die Bergsteiger umkehren."
+  },
+  {
+    "front": "beruhigen",
+    "back": "berolige",
+    "ipa": "b̥eˈʁoˀliə",
+    "example": "Moderen kunne hurtigt berolige det grædende barn med blid stemme.",
+    "exampleDE": "Die Mutter konnte das weinende Kind mit sanfter Stimme rasch beruhigen."
+  },
+  {
+    "front": "beunruhigen",
+    "back": "bekymre",
+    "ipa": "b̥eˈkʰœmˀʁɐ",
+    "example": "De mørke tordenskyer på himlen bekymrede vandrerne.",
+    "exampleDE": "Die dunklen Gewitterwolken am Himmel beunruhigten die Wanderer."
+  },
+  {
+    "front": "überraschen",
+    "back": "overraske",
+    "ipa": "ˈʌwɐˌʁɑsɡ̊ə",
+    "example": "Hans venner overraskede ham med en hjemmebagt kage.",
+    "exampleDE": "Seine Freunde überraschten ihn mit einem selbstgebackenen Kuchen."
+  },
+  {
+    "front": "trösten",
+    "back": "trøste",
+    "ipa": "ˈtˢʁœsd̥ə",
+    "example": "Hun forsøgte at trøste sin triste veninde med kære ord.",
+    "exampleDE": "Sie versuchte ihre traurige Freundin mit lieben Worten zu trösten."
+  },
+  {
+    "front": "bewundern",
+    "back": "beundre",
+    "ipa": "b̥eˈonˀd̥ʁɐ",
+    "example": "Turister fra hele verden beundrer den mesterlige arkitektur.",
+    "exampleDE": "Touristen aus aller Welt bewundern die meisterhafte Architektur."
+  },
+  {
+    "front": "respektieren",
+    "back": "respektere",
+    "ipa": "ʁæsb̥ɛɡ̊ˈtˢeˀɐ",
+    "example": "Vi bør altid respektere andres forskellige holdninger.",
+    "exampleDE": "Wir sollten die unterschiedlichen Meinungen anderer stets respektieren."
+  },
+  {
+    "front": "schätzen",
+    "back": "sætte pris på",
+    "ipa": "ˈsɛd̥ə ˈpʰʁiˀs ˈpʰɔˀ",
+    "example": "Jeg sætter stor pris på din ærlige og direkte måde at være på.",
+    "exampleDE": "Ich schätze deine ehrliche und direkte Art sehr."
+  },
+  {
+    "front": "hervorragend",
+    "back": "fremragende",
+    "ipa": "ˈfʁɑmˌʁɑˀwn̩ə",
+    "example": "Skuespilleren leverede en gennemført fremragende præstation.",
+    "exampleDE": "Die Schauspielerin lieferte eine rundum hervorragende Leistung ab."
+  },
+  {
+    "front": "bemerkenswert",
+    "back": "bemærkelsesværdig",
+    "ipa": "b̥eˈmɛɐ̯ɡ̊əlsəsvɛɐ̯ˀði",
+    "example": "Hendes hurtige opfattelsesevne er virkelig bemærkelsesværdig.",
+    "exampleDE": "Ihre schnelle Auffassungsgabe ist wirklich bemerkenswert."
+  },
+  {
+    "front": "angemessen",
+    "back": "rimelig",
+    "ipa": "ˈʁiːməli",
+    "example": "Prisen for den tilbudte kvalitet er absolut rimelig.",
+    "exampleDE": "Der Preis für die gebotene Qualität ist absolut angemessen."
+  },
+  {
+    "front": "überflüssig",
+    "back": "overflødig",
+    "ipa": "ˈʌwɐˌfløˀði",
+    "example": "Lang ventetid ved skranken bliver overflødig med online-booking.",
+    "exampleDE": "Langes Warten am Schalter wird durch Online-Buchungen überflüssig."
+  },
+  {
+    "front": "wesentlich",
+    "back": "væsentligt",
+    "ipa": "ˈvɛːsn̩d̥li",
+    "example": "God forberedelse bidrager væsentligt til et projekts succes.",
+    "exampleDE": "Gute Vorbereitung trägt wesentlich zum Erfolg eines Vorhabens bei."
+  },
+  {
+    "front": "ausreichend",
+    "back": "tilstrækkelig",
+    "ipa": "tˢelˈsd̥ʁæɡ̊əli",
+    "example": "I køleskabet er der stadig tilstrækkelige forsyninger til weekenden.",
+    "exampleDE": "Im Kühlschrank sind noch ausreichend Vorräte für das Wochenende."
+  },
+  {
+    "front": "wertvoll",
+    "back": "værdifuld",
+    "ipa": "ˈvɛɐ̯ˀðiˌfulˀ",
+    "example": "Hendes praktiske råd var meget værdifulde for os alle.",
+    "exampleDE": "Ihre praktischen Ratschläge waren für uns alle sehr wertvoll."
+  },
+  {
+    "front": "wirkungsvoll",
+    "back": "effektiv",
+    "ipa": "ɛfɛɡ̊ˈtˢiˀw",
+    "example": "Regelmæssig udluftning er en effektiv foranstaltning mod skimmelsvamp.",
+    "exampleDE": "Regelmäßiges Lüften ist eine wirkungsvolle Maßnahme gegen Schimmel."
+  },
+  {
+    "front": "gepflegt",
+    "back": "velplejet",
+    "ipa": "ˈvɛlˌpʰlɑjəð",
+    "example": "Den gamle forhave gør et overordentlig velplejet indtryk.",
+    "exampleDE": "Der alte Vorgarten macht einen überaus gepflegten Eindruck."
+  },
+  {
+    "front": "unordentlich",
+    "back": "rodet",
+    "ipa": "ˈʁoːðəð",
+    "example": "Efter eftermiddagens krea-aktivitet så børneværelset temmelig rodet ud.",
+    "exampleDE": "Nach dem Bastelnachmittag sah das Kinderzimmer recht unordentlich aus."
+  },
+  {
+    "front": "gemütlich",
+    "back": "hyggelig",
+    "ipa": "ˈhyɡ̊əli",
+    "example": "Vi tilbragte en hyggelig aften ved den varme pejs.",
+    "exampleDE": "Wir verbrachten einen gemütlichen Abend am warmen Kaminfeuer."
+  },
+  {
+    "front": "anstrengend",
+    "back": "anstrengende",
+    "ipa": "ˈænˌsd̥ʁæŋˀn̩ə",
+    "example": "Den lange vandretur over stejle stenede stier var meget anstrengende.",
+    "exampleDE": "Die lange Wanderung über steile Geröllpfade war sehr anstrengend."
+  },
+  {
+    "front": "erträglich",
+    "back": "udholdelig",
+    "ipa": "ˈuðˌhʌlˀdəli",
+    "example": "Takket være den lette havbrise var de høje temperaturer udholdelige.",
+    "exampleDE": "Dank des leichten Seewinds waren die hohen Temperaturen erträglich."
+  },
+  {
+    "front": "tadellos",
+    "back": "upåklagelig",
+    "ipa": "uˈpʰɔːˌkʰlɑˀwəli",
+    "example": "Det nyrenoverede badeværelse fungerer upåklageligt.",
+    "exampleDE": "Das frisch renovierte Badezimmer funktioniert tadellos."
+  },
+  {
+    "front": "makellos",
+    "back": "pletfri",
+    "ipa": "ˈpʰlɛd̥ˌfʁiˀ",
+    "example": "Den nypolerede overflade skinner pletfrit i sollyset.",
+    "exampleDE": "Die frisch polierte Oberfläche glänzt makellos im Sonnenlicht."
+  },
+  {
+    "front": "aufrichtig",
+    "back": "oprigtig",
+    "ipa": "ʌb̥ˈʁiɡ̊d̥i",
+    "example": "Hun takkede med oprigtige ord for den generøse hjælp.",
+    "exampleDE": "Sie bedankte sich mit aufrichtigen Worten für die großzügige Hilfe."
+  },
+  {
+    "front": "rücksichtsvoll",
+    "back": "hensynsfuld",
+    "ipa": "ˈhɛnˌsyˀnsˌfulˀ",
+    "example": "I den fyldte bus opfører han sig hensynsfuldt over for ældre mennesker.",
+    "exampleDE": "Im vollen Bus verhält er sich rücksichtsvoll gegenüber älteren Menschen."
+  },
+  {
+    "front": "aufmerksam",
+    "back": "opmærksom",
+    "ipa": "ʌb̥ˈmɛɐ̯ɡ̊sʌmˀ",
+    "example": "Den opmærksomme tjener bemærkede straks, at glasset var tomt.",
+    "exampleDE": "Der aufmerksame Kellner bemerkte sofort, dass das Glas leer war."
+  },
+  {
+    "front": "willensstark",
+    "back": "viljefast",
+    "ipa": "ˈviljəˌfæsd̥",
+    "example": "Med viljefast indsats nåede atleten sit sportslige mål.",
+    "exampleDE": "Mit willensstarkem Einsatz erreichte die Athletin ihr sportliches Ziel."
+  },
+  {
+    "front": "selbstständig",
+    "back": "selvstændig",
+    "ipa": "ˈsɛlˌsd̥ɛnˀdi",
+    "example": "Eleven løste den krævende opgave helt selvstændigt.",
+    "exampleDE": "Die Schülerin löste die anspruchsvolle Aufgabe völlig selbstständig."
+  },
+  {
+    "front": "verantwortungsbewusst",
+    "back": "ansvarsbevidst",
+    "ipa": "ˈænˌsvɑːsb̥eˌviˀsd̥",
+    "example": "En ansvarsbevidst chauffør overholder altid hastighedsgrænsen.",
+    "exampleDE": "Ein verantwortungsbewusster Fahrer achtet stets auf das Tempolimit."
+  },
+  {
+    "front": "friedlich",
+    "back": "fredelig",
+    "ipa": "ˈfʁæðəli",
+    "example": "Demonstrationen forløb helt fredeligt fra start til slut.",
+    "exampleDE": "Die Kundgebung verlief von Anfang bis Ende vollkommen friedlich."
+  },
+  {
+    "front": "hilfsbereit",
+    "back": "hjælpsom",
+    "ipa": "ˈhjɛlb̥sʌmˀ",
+    "example": "Den nye nabo tilbød hjælpsomt sin støtte ved flytningen.",
+    "exampleDE": "Der neue Nachbar bot hilfsbereit seine Unterstützung beim Umzug an."
+  },
+  {
+    "front": "keine Ursache",
+    "back": "det var så lidt",
+    "ipa": "d̥e vɑ sʌ ˈled̥",
+    "example": "»Mange tak for hjælpen!« – »Det var så lidt, det var en fornøjelse!«",
+    "exampleDE": "„Vielen Dank für deine Hilfe!“ – „Keine Ursache, gern geschehen!“"
+  },
+  {
+    "front": "mach dir keine Sorgen",
+    "back": "bare rolig",
+    "ipa": "b̥ɑː ˈʁoːli",
+    "example": "Bare rolig, alt skal nok vende sig til det bedste.",
+    "exampleDE": "Mach dir keine Sorgen, alles wird sich zum Guten wenden."
+  },
+  {
+    "front": "bis zum nächsten Mal",
+    "back": "vi ses næste gang",
+    "ipa": "vi ˈseˀs ˈnɛsd̥ə ˈɡ̊ɑŋˀ",
+    "example": "Det var en dejlig aften, farvel og vi ses næste gang!",
+    "exampleDE": "Es war ein schöner Abend, auf Wiedersehen und bis zum nächsten Mal!"
+  },
+  {
+    "front": "im Großen und Ganzen",
+    "back": "stort set",
+    "ipa": "ˈsd̥oɐ̯d̥ ˈsɛd̥",
+    "example": "Stort set er vi meget tilfredse med resultatet.",
+    "exampleDE": "Im Großen und Ganzen sind wir mit dem Ergebnis sehr zufrieden."
+  },
+  {
+    "front": "Schritt für Schritt",
+    "back": "skridt for skridt",
+    "ipa": "ˈsɡ̊ʁæd̥ fʌ ˈsɡ̊ʁæd̥",
+    "example": "Man lærer bedst et fremmedsprog tålmodigt skridt for skridt.",
+    "exampleDE": "Man lernt eine fremde Sprache am besten geduldig Schritt für Schritt."
+  },
+  {
+    "front": "auf jeden Fall",
+    "back": "i hvert fald",
+    "ipa": "i ˈvɛɐ̯d̥ ˈfælˀ",
+    "example": "Vi bør i hvert fald besøge den seværdige gamle bydel.",
+    "exampleDE": "Wir sollten die sehenswerte Altstadt auf jeden Fall besichtigen."
+  },
+  {
+    "front": "unter vier Augen",
+    "back": "under fire øjne",
+    "ipa": "ˈonɐ ˈfiːɐ̯ ˈʌjnə",
+    "example": "Jeg vil gerne drøfte denne fortrolige sag under fire øjne.",
+    "exampleDE": "Ich möchte diese vertrauliche Angelegenheit gerne unter vier Augen besprechen."
+  },
+  {
+    "front": "das Visum",
+    "back": "visum",
+    "ipa": "ˈviːsum",
+    "example": "Til det længere ophold havde hun brug for et officielt visum.",
+    "exampleDE": "Für den längeren Aufenthalt benötigte sie ein offizielles Visum."
+  },
+  {
+    "front": "die Zollkontrolle",
+    "back": "toldkontrol",
+    "ipa": "ˈtˢʌlkʰʌnˌtˢʁʌl",
+    "example": "Ved grænsen udfører tolderne stikprøvevis toldkontrol.",
+    "exampleDE": "An der Grenze kontrollieren die Beamten stichprobenartig den Zoll."
+  },
+  {
+    "front": "die Einreisebestimmung",
+    "back": "indrejsekrav",
+    "ipa": "ˈenˌʁɑjsəˌkʰʁɑwˀ",
+    "example": "Før afrejsen bør man undersøge de aktuelle indrejsekrav.",
+    "exampleDE": "Vor der Abreise sollte man die aktuellen Einreisebestimmungen prüfen."
+  },
+  {
+    "front": "das Konsulat",
+    "back": "konsulat",
+    "ipa": "kʰʌnsuˈlæˀd̥",
+    "example": "Ved tab af pas i udlandet hjælper det relevante konsulat en videre.",
+    "exampleDE": "Bei Passverlust im Ausland hilft das zuständige Konsulat weiter."
+  },
+  {
+    "front": "der Grenzbeamte",
+    "back": "grænsevagt",
+    "ipa": "ˈɡ̊ʁɛnsəˌvɑɡ̊d̥",
+    "example": "Den venlige grænsevagt stemplede passet omhyggeligt.",
+    "exampleDE": "Der freundliche Grenzbeamte stempelte den Reisepass sorgfältig ab."
+  },
+  {
+    "front": "die Grenzkontrolle",
+    "back": "grænsekontrol",
+    "ipa": "ˈɡ̊ʁɛnsəkʰʌnˌtˢʁʌl",
+    "example": "På grund af grænsekontrollen dannede der sig en kort bilkø.",
+    "exampleDE": "Wegen der Grenzkontrolle bildete sich eine kurze Fahrzeugschlange."
+  },
+  {
+    "front": "die Aufenthaltsgenehmigung",
+    "back": "opholdstilladelse",
+    "ipa": "ˈʌb̥hʌlsˌtˢelˌlæˀðəlsə",
+    "example": "Opholdstilladelsen blev forlænget med yderligere to år.",
+    "exampleDE": "Die Aufenthaltsgenehmigung wurde um weitere zwei Jahre verlängert."
+  },
+  {
+    "front": "der Auslandskrankenschutz",
+    "back": "rejseforsikring",
+    "ipa": "ˈʁɑjsəfʌˌseɡ̊ʁeŋ",
+    "example": "En rejseforsikring beskytter mod uforudsete behandlingsudgifter.",
+    "exampleDE": "Ein Auslandskrankenschutz schützt vor unvorhersehbaren Behandlungskosten."
+  },
+  {
+    "front": "die Schlagzeile",
+    "back": "overskrift",
+    "ipa": "ˈʌwɐˌsɡ̊ʁifd̥",
+    "example": "Den store overskrift på forsiden vakte stor opsigt.",
+    "exampleDE": "Die große Schlagzeile auf der Titelseite erregte viel Aufsehen."
+  },
+  {
+    "front": "die Pressekonferenz",
+    "back": "pressemøde",
+    "ipa": "ˈpʰʁɑsəˌmøːðə",
+    "example": "På pressemødet stillede journalisterne mange kritiske spørgsmål.",
+    "exampleDE": "Auf der Pressekonferenz stellten Journalisten viele kritische Fragen."
+  },
+  {
+    "front": "der Leitartikel",
+    "back": "leder",
+    "ipa": "ˈle̝ːðɐ",
+    "example": "Chefredaktøren forfattede en eftertænksom leder.",
+    "exampleDE": "Der Chefredakteur verfasste einen nachdenklichen Leitartikel."
+  },
+  {
+    "front": "die Berichterstattung",
+    "back": "nyhedsdækning",
+    "ipa": "ˈnyːheðsˌd̥ɛɡ̊neŋ",
+    "example": "Den objektive nyhedsdækning leverede velfunderet baggrundsviden.",
+    "exampleDE": "Die objektive Berichterstattung lieferte fundierte Hintergründe."
+  },
+  {
+    "front": "die Sondersendung",
+    "back": "ekstraudsendelse",
+    "ipa": "ˈɛɡ̊sd̥ʁæuðˌsɛnˀəlsə",
+    "example": "På grund af den aktuelle udvikling afbrød stationen programmet for en ekstraudsendelse.",
+    "exampleDE": "Wegen der aktuellen Entwicklung unterbrach der Sender das Programm für eine Sondersendung."
+  },
+  {
+    "front": "das Rundfunkprogramm",
+    "back": "radioprogram",
+    "ipa": "ˈʁɑːd̥io pʰʁoˌɡ̊ʁɑmˀ",
+    "example": "I radioprogrammet sendes der klassiske koncerter om eftermiddagen.",
+    "exampleDE": "Im Rundfunkprogramm laufen am Nachmittag klassische Konzerte."
+  },
+  {
+    "front": "die Nachrichtenagentur",
+    "back": "nyhedsbureau",
+    "ipa": "ˈnyːheðsbyˌʁoˀ",
+    "example": "Det anerkendte nyhedsbureau udsendte hastebeskeden over hele verden.",
+    "exampleDE": "Die renommierte Nachrichtenagentur verbreitete die Eilmeldung weltweit."
+  },
+  {
+    "front": "die Nachbarschaftshilfe",
+    "back": "nabohjælp",
+    "ipa": "ˈnæːboˌhjɛlˀb̥",
+    "example": "Velfungerende nabohjælp gør hverdagen nemmere for ældre beboere.",
+    "exampleDE": "Funktionierende Nachbarschaftshilfe erleichtert älteren Bewohnern den Alltag."
+  },
+  {
+    "front": "das Wohnviertel",
+    "back": "boligkvarter",
+    "ipa": "b̥oˈliˀkʰvɑːˌtˢeˀɐ̯",
+    "example": "Vores rolige boligkvarter ligger tæt på parker og skoler.",
+    "exampleDE": "Unser ruhiges Wohnviertel liegt nahe an Parks und Schulen."
+  },
+  {
+    "front": "der Spielplatz",
+    "back": "legeplads",
+    "ipa": "ˈlɑjəˌpʰlæs",
+    "example": "På legepladsen boltrer mange glade børn sig om eftermiddagen.",
+    "exampleDE": "Auf dem Spielplatz toben am Nachmittag viele fröhliche Kinder."
+  },
+  {
+    "front": "das Treppenhaus",
+    "back": "opgang",
+    "ipa": "ˈʌb̥ˌɡ̊ɑŋˀ",
+    "example": "Opgangen gøres ren ugentligt på skift af lejerne.",
+    "exampleDE": "Das Treppenhaus wird wöchentlich abwechselnd von den Mietern geputzt."
+  },
+  {
+    "front": "die Hausordnung",
+    "back": "husorden",
+    "ipa": "ˈhuːsˌoɐ̯ˀdn̩",
+    "example": "Husordenen fastsætter hviletiderne i middags- og nattetimerne.",
+    "exampleDE": "Die Hausordnung regelt die Ruhezeiten in den Mittags- und Nachtstunden."
+  },
+  {
+    "front": "der Hausmeister",
+    "back": "varmemester",
+    "ipa": "ˈvɑːməˌmɛsd̥ɐ",
+    "example": "Den hjælpsomme varmemester tager sig af småreparationer i ejendommen.",
+    "exampleDE": "Der hilfsbereite Hausmeister kümmert sich um kleine Reparaturen im Haus."
+  },
+  {
+    "front": "die Wohnsiedlung",
+    "back": "boligbebyggelse",
+    "ipa": "b̥oˈliˀb̥eˌb̥yɡ̊əlsə",
+    "example": "Den moderne boligbebyggelse blev anlagt helt uden gennemkørende trafik.",
+    "exampleDE": "Die moderne Wohnsiedlung wurde komplett verkehrsberuhigt angelegt."
+  },
+  {
+    "front": "die Grünanlage",
+    "back": "grønt område",
+    "ipa": "ˈɡ̊ʁɶnˀd̥ ʌmˈʁɔːðə",
+    "example": "I det velplejede grønne område foran huset blomstrer farverige roser.",
+    "exampleDE": "In der gepflegten Grünanlage vor dem Haus blühen bunte Rosen."
+  },
+  {
+    "front": "die Produktverpackung",
+    "back": "produktemballage",
+    "ipa": "pʰʁoˈd̥ɔɡ̊d̥ɛmb̥æˌlæːɕə",
+    "example": "Produktemballagen består udelukkende af genanvendeligt pap.",
+    "exampleDE": "Die Produktverpackung besteht vollständig aus recycelbarem Karton."
+  },
+  {
+    "front": "der Markenartikel",
+    "back": "mærkevare",
+    "ipa": "ˈmɛɐ̯ɡ̊əˌvæːɐ",
+    "example": "Mærkevarer udmærker sig ofte ved pålidelig kvalitet.",
+    "exampleDE": "Markenartikel zeichnen sich oft durch verlässliche Qualität aus."
+  },
+  {
+    "front": "das Preisschild",
+    "back": "prisskilt",
+    "ipa": "ˈpʰʁiːsˌsɡ̊elˀd̥",
+    "example": "På reolen var der anbragt et letlæseligt prisskilt.",
+    "exampleDE": "Am Regal war das gut lesbare Preisschild angebracht."
+  },
+  {
+    "front": "die Kundenkarte",
+    "back": "kundekort",
+    "ipa": "ˈkʰɔnəˌkʰoɐ̯d̥",
+    "example": "Med kundekortet optjener man bonuspoint ved hvert indkøb.",
+    "exampleDE": "Mit der Kundenkarte sammelt man bei jedem Einkauf Bonuspunkte."
+  },
+  {
+    "front": "das Warensortiment",
+    "back": "vareudvalg",
+    "ipa": "ˈvæːɐ̯əuðˌvælˀ",
+    "example": "Delikatessebutikken fører et udsøgt vareudvalg fra regionen.",
+    "exampleDE": "Der Feinkostladen führt ein auserlesenes Warensortiment aus der Region."
+  },
+  {
+    "front": "die Werbeanzeige",
+    "back": "reklame",
+    "ipa": "ʁæˈkʰlæːmə",
+    "example": "En tiltalende reklame gjorde hende opmærksom på produktet.",
+    "exampleDE": "Eine ansprechende Werbeanzeige machte sie auf das Produkt aufmerksam."
+  },
+  {
+    "front": "die Einkaufsstraße",
+    "back": "butiksgade",
+    "ipa": "b̥uˈtˢiɡ̊sˌɡ̊æːðə",
+    "example": "Om lørdagen slentrer mange mennesker hyggeligt gennem butiksgaden.",
+    "exampleDE": "Am Samstag schlendern viele Menschen gemütlich durch die Einkaufsstraße."
+  },
+  {
+    "front": "die Hypothese",
+    "back": "hypotese",
+    "ipa": "hypoˈtˢeːsə",
+    "example": "Forskeren efterprøvede sin hypotese i en forsøgsrække.",
+    "exampleDE": "Die Forscherin überprüfte ihre Hypothese in einer Versuchsreihe."
+  },
+  {
+    "front": "die Messung",
+    "back": "måling",
+    "ipa": "ˈmɔːleŋ",
+    "example": "Den præcise måling viste en minimal afvigelse fra målværdien.",
+    "exampleDE": "Die präzise Messung ergab eine minimale Abweichung vom Sollwert."
+  },
+  {
+    "front": "die Erkenntnis",
+    "back": "erkendelse",
+    "ipa": "æɐ̯ˈkʰɛnˀəlsə",
+    "example": "Denne nye erkendelse revolutionerede moderne medicin for altid.",
+    "exampleDE": "Diese neue Erkenntnis revolutionierte die moderne Medizin nachhaltig."
+  },
+  {
+    "front": "das Mikroskop",
+    "back": "mikroskop",
+    "ipa": "miɡ̊ʁoˈsɡ̊oˀb̥",
+    "example": "Under mikroskopet kan man tydeligt se den fine cellestruktur.",
+    "exampleDE": "Unter dem Mikroskop erkennt man die feine Zellstruktur deutlich."
+  },
+  {
+    "front": "die Gesetzmäßigkeit",
+    "back": "lovmæssighed",
+    "ipa": "ˈlɒwmɛːsiˌheð",
+    "example": "Den fysiske lovmæssighed gælder overalt i det kendte univers.",
+    "exampleDE": "Die physikalische Gesetzmäßigkeit gilt überall im bekannten Kosmos."
+  },
+  {
+    "front": "das Phänomen",
+    "back": "fænomen",
+    "ipa": "fɛnoˈmeˀn",
+    "example": "Nordlyset er et fascinerende naturfænomen.",
+    "exampleDE": "Die Polarlichter sind ein faszinierendes natürliches Phänomen."
+  },
+  {
+    "front": "die Beobachtung",
+    "back": "observation",
+    "ipa": "ʌb̥sæwæˈɕoˀn",
+    "example": "I månedsvis foretog astronomerne nøjagtige observationer.",
+    "exampleDE": "Über Monate hinweg führten die Astronomen genaue Beobachtungen durch."
+  },
+  {
+    "front": "die Schlussfolgerung",
+    "back": "konklusion",
+    "ipa": "kʰʌŋɡ̊luˈɕoˀn",
+    "example": "Ud fra dataene drog teamet en indlysende konklusion.",
+    "exampleDE": "Aus den Daten zog das Team eine einleuchtende Schlussfolgerung."
+  },
+  {
+    "front": "die Tradition",
+    "back": "tradition",
+    "ipa": "tˢʁɑd̥iˈɕoˀn",
+    "example": "Dette gamle håndværk er blevet videreført gennem generationer som en familietradition.",
+    "exampleDE": "Dieses alte Handwerk wird seit Generationen als Familientradition gepflegt."
+  },
+  {
+    "front": "das Kunsthandwerk",
+    "back": "kunsthåndværk",
+    "ipa": "ˈkʰɔnsd̥ˌhʌnˌvɛɐ̯ɡ̊",
+    "example": "På markedet beundrede de besøgende vævernes traditionelle kunsthåndværk.",
+    "exampleDE": "Auf dem Markt bestaunten Besucher das traditionelle Kunsthandwerk der Weber."
+  },
+  {
+    "front": "die Tracht",
+    "back": "folkedragt",
+    "ipa": "ˈfʌlɡ̊əˌd̥ʁɑɡ̊d̥",
+    "example": "Til festoptoget bærer landsbyboerne deres festdragter.",
+    "exampleDE": "Zum Festumzug tragen die Dorfbewohner ihre Festtagstrachten."
+  }
+]

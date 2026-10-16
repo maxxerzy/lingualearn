@@ -5,9 +5,10 @@
   "main": "index.html",
   "scripts": {
     "serve": "python3 -m http.server 4173",
-    "test": "node tests/unit.mjs && node tests/worker_sync.mjs",
+    "test": "node tests/unit.mjs && node tests/worker_sync.mjs && node scripts/validate_decks.mjs",
     "test:unit": "node tests/unit.mjs",
-    "test:sync": "node tests/worker_sync.mjs"
+    "test:sync": "node tests/worker_sync.mjs",
+    "test:decks": "node scripts/validate_decks.mjs"
   },
   "keywords": [
     "lingualearn",

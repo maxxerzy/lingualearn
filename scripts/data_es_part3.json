@@ -1,0 +1,1402 @@
+[
+  {
+    "front": "die Amsel",
+    "back": "mirlo",
+    "ipa": "ˈmiɾlo",
+    "example": "Temprano por la mañana el mirlo canta su melodiosa canción desde el tejado.",
+    "exampleDE": "Früh am Morgen singt die Amsel ihr melodisches Lied vom Hausdach."
+  },
+  {
+    "front": "die Schwalbe",
+    "back": "golondrina",
+    "ipa": "ɡolonˈdɾina",
+    "example": "Las golondrinas construyen sus primorosos nidos de barro bajo el alero del tejado.",
+    "exampleDE": "Schwalben bauen ihre kunstvollen Nester aus Lehm unter den Dachvorsprung."
+  },
+  {
+    "front": "der Storch",
+    "back": "cigüeña",
+    "ipa": "θiˈɣweɲa",
+    "example": "En la chimenea del viejo pajar anida una pareja de cigüeñas.",
+    "exampleDE": "Auf dem Schornstein der alten Scheune nistet ein Storchenpaar."
+  },
+  {
+    "front": "die Elster",
+    "back": "urraca",
+    "ipa": "uˈraka",
+    "example": "La urraca blanquinegra tiene fama popular de ser un pájaro ladrón.",
+    "exampleDE": "Die schwarz-weiße Elster gilt im Volksmund als diebischer Vogel."
+  },
+  {
+    "front": "der Specht",
+    "back": "pájaro carpintero",
+    "ipa": "ˈpaxaɾo kaɾpinˈteɾo",
+    "example": "Desde el bosque se oye el martilleo rítmico de un pájaro carpintero.",
+    "exampleDE": "Aus dem Wald hört man das rhythmische Hämmern eines Spechts."
+  },
+  {
+    "front": "der Zugvogel",
+    "back": "ave migratoria",
+    "ipa": "ˈaβe miɣɾaˈtoɾja",
+    "example": "En otoño las aves migratorias vuelan en formación de uve rumbo al sur.",
+    "exampleDE": "Im Herbst fliegen Zugvögel in V-Formation Richtung Süden."
+  },
+  {
+    "front": "die Forelle",
+    "back": "trucha",
+    "ipa": "ˈtɾutʃa",
+    "example": "En el arroyo fresco de montaña nada una trucha común plateada.",
+    "exampleDE": "Im kühlen Gebirgsbach schwimmt eine silbrige Bachforelle."
+  },
+  {
+    "front": "der Lachs",
+    "back": "salmón",
+    "ipa": "salˈmon",
+    "example": "En la época de desove el salmón remonta muchos kilómetros río arriba.",
+    "exampleDE": "Zur Laichzeit wandert der Lachs viele Kilometer flussaufwärts."
+  },
+  {
+    "front": "der Karpfen",
+    "back": "carpa",
+    "ipa": "ˈkaɾpa",
+    "example": "En el fondo del estanque tranquilo de la aldea pace una gran carpa.",
+    "exampleDE": "Am Grund des ruhigen Dorfteichs gründelt ein großer Karpfen."
+  },
+  {
+    "front": "die Kröte",
+    "back": "sapo",
+    "ipa": "ˈsapo",
+    "example": "En primavera muchos sapos peregrinan hacia sus charcas de desove.",
+    "exampleDE": "Im Frühjahr wandern viele Kröten zu ihren Laichgewässern."
+  },
+  {
+    "front": "der Salamander",
+    "back": "salamandra",
+    "ipa": "salaˈmandɾa",
+    "example": "La salamandra común de manchas amarillas y negras adora los bosques húmedos de hoja caduca.",
+    "exampleDE": "Der schwarz-gelbe Feuersalamander liebt feuchte Laubwälder."
+  },
+  {
+    "front": "die Kaulquappe",
+    "back": "renacuajo",
+    "ipa": "renaˈkwaxo",
+    "example": "De los diminutos renacuajos se van desarrollando poco a poco jóvenes ranas.",
+    "exampleDE": "Aus den winzigen Kaulquappen entwickeln sich nach und nach junge Frösche."
+  },
+  {
+    "front": "der Krebs",
+    "back": "cangrejo",
+    "ipa": "kaŋˈɡɾexo",
+    "example": "Bajo una piedra plana en el arroyo se esconde un cangrejo de río.",
+    "exampleDE": "Unter einem flachen Stein im Bach verbirgt sich ein Flusskrebs."
+  },
+  {
+    "front": "die Muschel",
+    "back": "concha",
+    "ipa": "ˈkontʃa",
+    "example": "En la playa de arena los niños recogieron conchas vacías.",
+    "exampleDE": "Am Sandstrand sammelten die Kinder leere Muschelschalen."
+  },
+  {
+    "front": "der Marienkäfer",
+    "back": "mariquita",
+    "ipa": "maɾiˈkita",
+    "example": "Una mariquita roja con siete puntos negros repta por el tallo.",
+    "exampleDE": "Ein roter Marienkäfer mit sieben schwarzen Punkten krabbelt am Halm."
+  },
+  {
+    "front": "die Libelle",
+    "back": "libélula",
+    "ipa": "liˈβelula",
+    "example": "Una brillante libélula revolotea a toda velocidad sobre la superficie del agua.",
+    "exampleDE": "Eine schillernde Libelle schwirrt blitzschnell über die Wasseroberfläche."
+  },
+  {
+    "front": "die Hummel",
+    "back": "abejorro",
+    "ipa": "aβeˈxoro",
+    "example": "Un abejorro gordo y peludo zumba afanoso de flor en flor.",
+    "exampleDE": "Eine dicke, pelzige Hummel summt emsig von Blüte zu Blüte."
+  },
+  {
+    "front": "die Wespe",
+    "back": "avispa",
+    "ipa": "aˈβispa",
+    "example": "Las comidas dulces al aire libre atraen a molestas avispas a finales de verano.",
+    "exampleDE": "Süße Speisen im Freien locken im Spätsommer lästige Wespen an."
+  },
+  {
+    "front": "die Heuschrecke",
+    "back": "saltamontes",
+    "ipa": "saltaˈmontes",
+    "example": "Con sus largas patas traseras el saltamontes verde salta muy lejos.",
+    "exampleDE": "Mit ihren langen Hinterbeinen springt die grüne Heuschrecke weit."
+  },
+  {
+    "front": "die Eidechse",
+    "back": "lagartija",
+    "ipa": "laɣaɾˈtixa",
+    "example": "Sobre el muro de piedra caldeado por el sol se calienta una pequeña lagartija.",
+    "exampleDE": "Auf der sonnenwarmen Steinmauer wärmt sich eine kleine Eidechse."
+  },
+  {
+    "front": "die Schnecke",
+    "back": "caracol",
+    "ipa": "kaɾaˈkol",
+    "example": "Tras la lluvia templada un caracol terrestre repta cruzando el camino.",
+    "exampleDE": "Nach dem warmen Regen kriecht eine Weinbergschnecke über den Weg."
+  },
+  {
+    "front": "die Wettervorhersage",
+    "back": "pronóstico del tiempo",
+    "ipa": "pɾoˈnostiko ðel ˈtjempo",
+    "example": "Según el pronóstico del tiempo el fin de semana será soleado y suave.",
+    "exampleDE": "Laut Wettervorhersage soll es am Wochenende sonnig und mild werden."
+  },
+  {
+    "front": "der Regenschauer",
+    "back": "chaparrón",
+    "ipa": "tʃapaˈron",
+    "example": "Un breve chaparrón sorprendió a los paseantes en el parque urbano.",
+    "exampleDE": "Ein kurzer Regenschauer überraschte die Spaziergänger im Stadtpark."
+  },
+  {
+    "front": "der Nieselregen",
+    "back": "llovizna",
+    "ipa": "ʎoˈβiθna",
+    "example": "Una llovizna fina y tupida enturbia la visibilidad durante la mañana.",
+    "exampleDE": "Dichter, feiner Nieselregen trübt die Sicht am Vormittag."
+  },
+  {
+    "front": "das Gewitter",
+    "back": "tormenta",
+    "ipa": "toɾˈmenta",
+    "example": "En el horizonte asoman nubes oscuras que anuncian una tormenta.",
+    "exampleDE": "Am Horizont ziehen dunkle Wolken auf, die ein Gewitter ankündigen."
+  },
+  {
+    "front": "der Donnerschlag",
+    "back": "trueno",
+    "ipa": "ˈtɾweno",
+    "example": "Un fuerte trueno hizo vibrar los cristales de las ventanas de la casa.",
+    "exampleDE": "Ein lauter Donnerschlag ließ die Fensterscheiben im Haus erzittern."
+  },
+  {
+    "front": "der Blitzschlag",
+    "back": "rayo",
+    "ipa": "ˈraʝo",
+    "example": "Un rayo alcanzó al viejo árbol al borde del campo de cultivo.",
+    "exampleDE": "Ein Blitzschlag traf den alten Baum am Feldrand."
+  },
+  {
+    "front": "die Windböe",
+    "back": "ráfaga de viento",
+    "ipa": "ˈrafaɣa ðe ˈβjento",
+    "example": "Una fuerte ráfaga de viento levantó arremolinadas las hojas secas de otoño.",
+    "exampleDE": "Eine heftige Windböe wirbelte trockenes Herbstlaub durch die Luft."
+  },
+  {
+    "front": "der Nebel",
+    "back": "niebla",
+    "ipa": "ˈnjeβla",
+    "example": "Una espesa niebla matinal cubre como un manto el valle del río.",
+    "exampleDE": "Dichter Frühnebel liegt wie eine Decke über dem Flusstal."
+  },
+  {
+    "front": "der Frost",
+    "back": "helada",
+    "ipa": "eˈlaða",
+    "example": "Durante la noche hubo una helada que tiñó la pradera de color plateado.",
+    "exampleDE": "In der Nacht gab es Bodenfrost, der die Wiese silbern färbte."
+  },
+  {
+    "front": "das Glatteis",
+    "back": "placas de hielo",
+    "ipa": "ˈplakas de ˈjelo",
+    "example": "Cuidado en las carreteras, con placas de hielo la distancia de frenado aumenta.",
+    "exampleDE": "Vorsicht auf den Straßen, bei Glatteis verlängert sich der Bremsweg."
+  },
+  {
+    "front": "die Schneeflocke",
+    "back": "copo de nieve",
+    "ipa": "ˈkopo ðe ˈnjeβe",
+    "example": "En silencio caen del cielo flotando gruesos copos de nieve blanca.",
+    "exampleDE": "Lautlos schweben dicke weiße Schneeflocken vom Himmel herab."
+  },
+  {
+    "front": "die Hitzewelle",
+    "back": "ola de calor",
+    "ipa": "ˈola ðe kaˈloɾ",
+    "example": "Durante la ola de calor del verano apenas refresca incluso de noche.",
+    "exampleDE": "Während der sommerlichen Hitzewelle kühlt es auch nachts kaum ab."
+  },
+  {
+    "front": "der Sonnenschein",
+    "back": "sol radiante",
+    "ipa": "ˈsol raˈðjante",
+    "example": "El sol radiante anima a muchas personas a ir a la piscina al aire libre.",
+    "exampleDE": "Warmer Sonnenschein lockt viele Menschen ins Freibad."
+  },
+  {
+    "front": "das Abendrot",
+    "back": "arrebol",
+    "ipa": "areˈβol",
+    "example": "Un arrebol encendido anuncia buen tiempo para el día siguiente.",
+    "exampleDE": "Ein feuriges Abendrot kündigt schönes Wetter für den nächsten Tag an."
+  },
+  {
+    "front": "die Dämmerung",
+    "back": "anochecer",
+    "ipa": "anotʃeˈθeɾ",
+    "example": "En el anochecer las farolas de la calle empiezan a encenderse.",
+    "exampleDE": "In der Abenddämmerung beginnen die Straßenlaternen zu leuchten."
+  },
+  {
+    "front": "die Mülltrennung",
+    "back": "separación de residuos",
+    "ipa": "sepaɾaˈθjon de resiˈðwos",
+    "example": "La cuidadosa separación de residuos facilita el reciclaje de valiosas materias primas.",
+    "exampleDE": "Sorgfältige Mülltrennung erleichtert die Wiederverwertung wertvoller Rohstoffe."
+  },
+  {
+    "front": "der Plastikmüll",
+    "back": "residuos plásticos",
+    "ipa": "resiˈðwos ˈplastikos",
+    "example": "Gracias a los envases reutilizables se puede evitar la generación de residuos plásticos innecesarios.",
+    "exampleDE": "Durch Mehrwegverpackungen lässt sich unnötiger Plastikmüll vermeiden."
+  },
+  {
+    "front": "das Recycling",
+    "back": "reciclaje",
+    "ipa": "resiˈklaxe",
+    "example": "Las instalaciones modernas destinan el vidrio usado y el papel al reciclaje.",
+    "exampleDE": "Moderne Anlagen führen Altglas und Papier dem Recycling zu."
+  },
+  {
+    "front": "der Umweltschutz",
+    "back": "protección del medio ambiente",
+    "ipa": "pɾotekˈsjon del ˈmeðjo amˈbjente",
+    "example": "La protección de hábitats amenazados es una tarea de toda la humanidad.",
+    "exampleDE": "Der Schutz bedrohter Lebensräume ist eine Aufgabe für alle Menschen."
+  },
+  {
+    "front": "die Nachhaltigkeit",
+    "back": "sostenibilidad",
+    "ipa": "sostenibiliˈðað",
+    "example": "La sostenibilidad consiste en conservar los recursos naturales para las generaciones futuras.",
+    "exampleDE": "Nachhaltigkeit bedeutet, Ressourcen für künftige Generationen zu bewahren."
+  },
+  {
+    "front": "die Mehrwegflasche",
+    "back": "botella retornable",
+    "ipa": "boˈteʎa retoɾˈnaβle",
+    "example": "Para el agua mineral preferimos utilizar botellas retornables rellenables.",
+    "exampleDE": "Für Mineralwasser nutzen wir bevorzugt wiederbefüllbare Mehrwegflaschen."
+  },
+  {
+    "front": "der Energiesparer",
+    "back": "ahorrador de energía",
+    "ipa": "aoɾaˈðoɾ ðe eneɾˈxia",
+    "example": "Las modernas bombillas led son auténticos ahorradores de energía en el hogar.",
+    "exampleDE": "Moderne LED-Lampen sind wahre Energiesparer im Haushalt."
+  },
+  {
+    "front": "schonen",
+    "back": "proteger",
+    "ipa": "pɾoteˈxeɾ",
+    "example": "Deberíamos proteger nuestros recursos naturales y nuestras masas de agua.",
+    "exampleDE": "Wir sollten unsere natürlichen Ressourcen und Gewässer schonen."
+  },
+  {
+    "front": "die Solarenergie",
+    "back": "energía solar",
+    "ipa": "eneɾˈxia soˈlaɾ",
+    "example": "La instalación solar del tejado genera electricidad respetuosa con el medio ambiente.",
+    "exampleDE": "Die Solaranlage auf dem Dach erzeugt umweltfreundlichen Strom."
+  },
+  {
+    "front": "die Windkraft",
+    "back": "energía eólica",
+    "ipa": "eneɾˈxia eˈolika",
+    "example": "Los aerogeneradores aprovechan la fuerza del viento para producir electricidad.",
+    "exampleDE": "Windkrafträder nutzen die Kraft des Windes zur Stromerzeugung."
+  },
+  {
+    "front": "das Wasserkraftwerk",
+    "back": "central hidroeléctrica",
+    "ipa": "θenˈtɾal iðɾoeˈlektɾika",
+    "example": "La central hidroeléctrica en el río produce energía limpia con regularidad.",
+    "exampleDE": "Das Wasserkraftwerk am Fluss produziert zuverlässig saubere Energie."
+  },
+  {
+    "front": "der Stromverbrauch",
+    "back": "consumo de electricidad",
+    "ipa": "konˈsumo ðe elektɾiθiˈðað",
+    "example": "Los aparatos en modo de espera incrementan sin necesidad el consumo de electricidad.",
+    "exampleDE": "Geräte im Standby-Modus erhöhen unnötig den Stromverbrauch."
+  },
+  {
+    "front": "die Wärmepumpe",
+    "back": "bomba de calor",
+    "ipa": "ˈbomba ðe kaˈloɾ",
+    "example": "Una bomba de calor moderna calienta la vivienda con gran eficiencia.",
+    "exampleDE": "Eine moderne Wärmepumpe heizt das Wohnhaus sehr effizient."
+  },
+  {
+    "front": "der CO2-Ausstoß",
+    "back": "emisiones de CO2",
+    "ipa": "emiˈsjones de θeoˈðos",
+    "example": "Los vehículos eléctricos contribuyen a reducir las emisiones locales de dióxido de carbono.",
+    "exampleDE": "Elektrofahrzeuge tragen zur Senkung des lokalen CO2-Ausstoßes bei."
+  },
+  {
+    "front": "die Ressource",
+    "back": "recurso",
+    "ipa": "reˈkuɾso",
+    "example": "El agua potable limpia es el recurso natural más valioso.",
+    "exampleDE": "Sauberes Trinkwasser ist die kostbarste natürliche Ressource."
+  },
+  {
+    "front": "der Stundenplan",
+    "back": "horario de clases",
+    "ipa": "oˈɾaɾjo ðe ˈklases",
+    "example": "Según el horario de clases los lunes tenemos dos horas de matemáticas.",
+    "exampleDE": "Laut Stundenplan haben wir montags zwei Stunden Mathematik."
+  },
+  {
+    "front": "das Klassenzimmer",
+    "back": "aula",
+    "ipa": "ˈawla",
+    "example": "Los alumnos decoraron su aula con dibujos de colores.",
+    "exampleDE": "Die Schüler schmückten ihr Klassenzimmer mit bunten Bildern."
+  },
+  {
+    "front": "die Schultasche",
+    "back": "mochila escolar",
+    "ipa": "moˈtʃila eskoˈlaɾ",
+    "example": "Él guarda con cuidado sus cuadernos y libros en la mochila escolar.",
+    "exampleDE": "Er packt seine Hefte und Bücher sorgfältig in die Schultasche."
+  },
+  {
+    "front": "das Federmäppchen",
+    "back": "estuche escolar",
+    "ipa": "esˈtutʃe eskoˈlaɾ",
+    "example": "En el estuche escolar hay lápices de colores, pluma estilográfica y una goma de borrar.",
+    "exampleDE": "Im Federmäppchen liegen Buntstifte, Füller und ein Radiergummi."
+  },
+  {
+    "front": "die Klassenarbeit",
+    "back": "examen",
+    "ipa": "ekˈsamen",
+    "example": "Estudió mucho para el difícil examen de biología.",
+    "exampleDE": "Für die schwere Klassenarbeit in Biologie hat sie viel gelernt."
+  },
+  {
+    "front": "das Zeugnis",
+    "back": "boletín de notas",
+    "ipa": "boleˈtin de ˈnotas",
+    "example": "El último día de clase antes de las vacaciones todos reciben su boletín de notas.",
+    "exampleDE": "Am letzten Schultag vor den Ferien erhalten alle ihr Zeugnis."
+  },
+  {
+    "front": "die Schulferien",
+    "back": "vacaciones escolares",
+    "ipa": "bakaˈθjones eskoˈlaɾes",
+    "example": "Los niños están ilusionadísimos con las vacaciones escolares de verano de seis semanas.",
+    "exampleDE": "Die Kinder freuen sich riesig auf die sechswöchigen Sommerferien."
+  },
+  {
+    "front": "der Pausenhof",
+    "back": "patio del recreo",
+    "ipa": "ˈpatjo ðel reˈkɾeo",
+    "example": "En el recreo largo los alumnos juegan fuera en el patio del colegio.",
+    "exampleDE": "In der großen Pause spielen die Schüler draußen auf dem Pausenhof."
+  },
+  {
+    "front": "die Geometrie",
+    "back": "geometría",
+    "ipa": "xeometˈɾia",
+    "example": "En clase de geometría dibujamos triángulos con el cartabón.",
+    "exampleDE": "Im Geometrieunterricht zeichnen wir Dreiecke mit dem Geodreieck."
+  },
+  {
+    "front": "die Grammatik",
+    "back": "gramática",
+    "ipa": "ɡɾaˈmatika",
+    "example": "Practicar con regularidad ayuda a asimilar las reglas de la gramática.",
+    "exampleDE": "Regelmäßiges Üben hilft, die Regeln der Grammatik zu verinnerlichen."
+  },
+  {
+    "front": "der Fremdsprachenunterricht",
+    "back": "clase de idiomas",
+    "ipa": "ˈklase ðe iˈðjomas",
+    "example": "En la clase de idiomas practicamos el habla espontánea mediante diálogos.",
+    "exampleDE": "Im Fremdsprachenunterricht üben wir das freie Sprechen in Dialogen."
+  },
+  {
+    "front": "das Experiment",
+    "back": "experimento",
+    "ipa": "ekspeɾiˈmento",
+    "example": "En el laboratorio de química la clase realiza un experimento apasionante.",
+    "exampleDE": "Im Chemielabor führt die Klasse ein spannendes Experiment durch."
+  },
+  {
+    "front": "das Referat",
+    "back": "exposición oral",
+    "ipa": "eksposiˈsjon oˈɾal",
+    "example": "Da una exposición oral amena sobre la protección de las ballenas en peligro.",
+    "exampleDE": "Er hält ein freies Referat über den Schutz bedrohter Wale."
+  },
+  {
+    "front": "die Hausaufgabe",
+    "back": "deberes",
+    "ipa": "deˈβeɾes",
+    "example": "Después de almorzar hace los deberes con total concentración.",
+    "exampleDE": "Nach dem Mittagessen erledigt sie konzentriert ihre Hausaufgaben."
+  },
+  {
+    "front": "die Nachhilfe",
+    "back": "clases particulares",
+    "ipa": "ˈklases paɾtikuˈlaɾes",
+    "example": "Dos veces por semana recibe clases particulares para mejorar sus notas.",
+    "exampleDE": "Zweimal wöchentlich nimmt er Nachhilfe, um seine Noten zu verbessern."
+  },
+  {
+    "front": "der Hörsaal",
+    "back": "aula magna",
+    "ipa": "ˈawla ˈmaɣna",
+    "example": "El aula magna está llena hasta el último asiento disponible.",
+    "exampleDE": "Der große Hörsaal ist bis auf den letzten Platz besetzt."
+  },
+  {
+    "front": "die Vorlesung",
+    "back": "clase magistral",
+    "ipa": "ˈklase maxisˈtɾal",
+    "example": "La catedrática imparte una clase magistral cautivadora sobre física moderna.",
+    "exampleDE": "Die Professorin hält eine fesselnde Vorlesung über moderne Physik."
+  },
+  {
+    "front": "das Seminar",
+    "back": "seminario",
+    "ipa": "semiˈnaɾjo",
+    "example": "En el seminario los universitarios debaten sobre textos científicos de actualidad.",
+    "exampleDE": "Im Seminar diskutieren die Studierenden aktuelle wissenschaftliche Texte."
+  },
+  {
+    "front": "die Universitätsbibliothek",
+    "back": "biblioteca universitaria",
+    "ipa": "biβljoˈteka uniβeɾsiˈtaɾja",
+    "example": "En la biblioteca universitaria reina un silencio absoluto propicio para el estudio.",
+    "exampleDE": "In der Universitätsbibliothek herrscht konzentrierte Stille zum Lernen."
+  },
+  {
+    "front": "das Semester",
+    "back": "semestre universitario",
+    "ipa": "seˈmestɾe uniβeɾsiˈtaɾjo",
+    "example": "El semestre de invierno comienza en la mayoría de las universidades en octubre.",
+    "exampleDE": "Das Wintersemester beginnt an den meisten Hochschulen im Oktober."
+  },
+  {
+    "front": "die Bachelorarbeit",
+    "back": "trabajo de fin de grado",
+    "ipa": "tɾaˈβaxo ðe ˈfin de ˈɡɾaðo",
+    "example": "Actualmente redacta con intensidad su trabajo de fin de grado.",
+    "exampleDE": "Sie schreibt zurzeit intensiv an ihrer Abschlussarbeit im Bachelor."
+  },
+  {
+    "front": "das Stipendium",
+    "back": "beca de estudios",
+    "ipa": "ˈbeka ðe esˈtuðjos",
+    "example": "Gracias a una beca de estudios por méritos puede dedicarse por entero a la carrera.",
+    "exampleDE": "Dank eines Begabtenstipendiums kann er sich voll auf das Studium konzentrieren."
+  },
+  {
+    "front": "der Campus",
+    "back": "campus",
+    "ipa": "ˈkampus",
+    "example": "En el verde campus los estudiantes se encuentran entre clase y clase.",
+    "exampleDE": "Auf dem grünen Campus treffen sich Studierende zwischen den Kursen."
+  },
+  {
+    "front": "die Stellenausschreibung",
+    "back": "oferta de empleo",
+    "ipa": "oˈfeɾta ðe emˈpleo",
+    "example": "Encontró una atractiva oferta de empleo en el periódico.",
+    "exampleDE": "In der Zeitung fand er eine interessante Stellenausschreibung."
+  },
+  {
+    "front": "das Anschreiben",
+    "back": "carta de motivación",
+    "ipa": "ˈkaɾta ðe motiβaˈθjon",
+    "example": "Una carta de motivación bien redactada despierta el interés de la empresa contratante.",
+    "exampleDE": "Ein aussagekräftiges Anschreiben weckt das Interesse des Arbeitgebers."
+  },
+  {
+    "front": "der Lebenslauf",
+    "back": "currículum",
+    "ipa": "kuˈrikulum",
+    "example": "El currículum cronológico detalla todas las etapas laborales cursadas hasta la fecha.",
+    "exampleDE": "Der tabellarische Lebenslauf listet alle bisherigen Berufsstationen auf."
+  },
+  {
+    "front": "das Vorstellungsgespräch",
+    "back": "entrevista de trabajo",
+    "ipa": "entɾeˈβista ðe tɾaˈβaxo",
+    "example": "Para la entrevista de trabajo viste de forma pulcra y profesional.",
+    "exampleDE": "Zum Vorstellungsgespräch kleidet er sich professionell und ordentlich."
+  },
+  {
+    "front": "die Berufserfahrung",
+    "back": "experiencia laboral",
+    "ipa": "ekspeˈɾjenθja laβoˈɾal",
+    "example": "Para este puesto de gran responsabilidad se requiere experiencia laboral de varios años.",
+    "exampleDE": "Für diese verantwortungsvolle Position ist mehrjährige Berufserfahrung erforderlich."
+  },
+  {
+    "front": "die Qualifikation",
+    "back": "cualificación",
+    "ipa": "kwalifikaˈθjon",
+    "example": "Su cualificación profesional se ajusta con exactitud al perfil solicitado.",
+    "exampleDE": "Ihre fachliche Qualifikation passt genau zum geforderten Profil."
+  },
+  {
+    "front": "das Zeugnis",
+    "back": "certificado laboral",
+    "ipa": "θeɾtifiˈkaðo laβoˈɾal",
+    "example": "Un certificado de trabajo favorable facilita el cambio de empleo.",
+    "exampleDE": "Ein positives Arbeitszeugnis erleichtert den beruflichen Wechsel."
+  },
+  {
+    "front": "der Arbeitsvertrag",
+    "back": "contrato de trabajo",
+    "ipa": "konˈtɾato ðe tɾaˈβaxo",
+    "example": "Tras negociar con éxito firmó el contrato de trabajo.",
+    "exampleDE": "Nach erfolgreichen Verhandlungen unterschrieb sie den Arbeitsvertrag."
+  },
+  {
+    "front": "die Probezeit",
+    "back": "período de prueba",
+    "ipa": "peˈɾjoðo ðe ˈpɾweβa",
+    "example": "Durante el período de prueba de seis meses ambas partes se van conociendo.",
+    "exampleDE": "Während der sechsmonatigen Probezeit lernen sich beide Seiten kennen."
+  },
+  {
+    "front": "das Gehalt",
+    "back": "salario",
+    "ipa": "saˈlaɾjo",
+    "example": "Un salario justo se abona puntualmente al concluir cada mes.",
+    "exampleDE": "Ein faires Gehalt wird jeweils zum Monatsende pünktlich überwiesen."
+  },
+  {
+    "front": "die Gleitzeit",
+    "back": "horario flexible",
+    "ipa": "oˈɾaɾjo fleɡˈsiβle",
+    "example": "Gracias al horario flexible puede distribuir cómodamente sus horas de trabajo.",
+    "exampleDE": "Dank flexibler Gleitzeit kann er seine Arbeitszeiten gut einteilen."
+  },
+  {
+    "front": "der Feierabend",
+    "back": "final de la jornada",
+    "ipa": "fiˈnal de la xoɾˈnaða",
+    "example": "Tras ocho horas de trabajo concentrado disfruta del final de la jornada.",
+    "exampleDE": "Nach acht Stunden konzentrierter Arbeit genießt er den Feierabend."
+  },
+  {
+    "front": "der Urlaubstag",
+    "back": "día de vacaciones",
+    "ipa": "ˈdia ðe βakaˈθjones",
+    "example": "Los trabajadores a tiempo completo tienen derecho a treinta días laborables de vacaciones pagadas.",
+    "exampleDE": "Vollzeitbeschäftigte haben Anspruch auf dreißig bezahlte Urlaubstage."
+  },
+  {
+    "front": "die Überstunden",
+    "back": "horas extraordinarias",
+    "ipa": "ˈoɾas ekstɾaoɾðiˈnaɾjas",
+    "example": "Las horas extraordinarias realizadas se pueden compensar con tiempo libre.",
+    "exampleDE": "Geleistete Überstunden können durch Freizeit ausgeglichen werden."
+  },
+  {
+    "front": "die Kaffeepause",
+    "back": "pausa para el café",
+    "ipa": "ˈpawsa ˈpaɾa el kaˈfe",
+    "example": "En la pausa para el café los compañeros comentan lo vivido durante el fin de semana.",
+    "exampleDE": "In der Kaffeepause tauschen sich die Kollegen über das Wochenende aus."
+  },
+  {
+    "front": "die Besprechung",
+    "back": "reunión",
+    "ipa": "rewˈnjon",
+    "example": "A las diez en punto tendrá lugar la reunión semanal en la sala de conferencias.",
+    "exampleDE": "Um zehn Uhr findet die wöchentliche Besprechung im Konferenzraum statt."
+  },
+  {
+    "front": "die Tagesordnung",
+    "back": "orden del día",
+    "ipa": "ˈoɾden del ˈdia",
+    "example": "Los puntos del orden del día se enviaron previamente por correo electrónico.",
+    "exampleDE": "Die Punkte der Tagesordnung wurden vorab per E-Mail verschickt."
+  },
+  {
+    "front": "das Protokoll",
+    "back": "acta",
+    "ipa": "ˈakta",
+    "example": "Redacta el acta de la reunión registrando todos los acuerdos alcanzados.",
+    "exampleDE": "Er schreibt das Protokoll und hält alle getroffenen Beschlüsse fest."
+  },
+  {
+    "front": "die Präsentation",
+    "back": "presentación",
+    "ipa": "pɾesentaˈθjon",
+    "example": "La presentación ilustra las conclusiones con gráficos muy esquemáticos.",
+    "exampleDE": "Die Präsentation veranschaulicht die Ergebnisse mit übersichtlichen Grafiken."
+  },
+  {
+    "front": "die Frist",
+    "back": "plazo",
+    "ipa": "ˈplaθo",
+    "example": "Debemos cumplir sin falta el plazo acordado antes de final de mes.",
+    "exampleDE": "Wir müssen die vereinbarte Frist bis Ende des Monats unbedingt einhalten."
+  },
+  {
+    "front": "die Teamarbeit",
+    "back": "trabajo en equipo",
+    "ipa": "tɾaˈβaxo en eˈkipo",
+    "example": "El buen trabajo en equipo precisa de comunicación transparente y respaldo mutuo.",
+    "exampleDE": "Erfolgreiche Teamarbeit erfordert offenen Austausch und gegenseitige Unterstützung."
+  },
+  {
+    "front": "die Zusammenarbeit",
+    "back": "colaboración",
+    "ipa": "kolaβoɾaˈθjon",
+    "example": "La colaboración entre los departamentos funciona con absoluta fluidez.",
+    "exampleDE": "Die Zusammenarbeit zwischen den Abteilungen klappt reibungslos."
+  },
+  {
+    "front": "der Aktenordner",
+    "back": "archivador",
+    "ipa": "aɾtʃiβaˈðoɾ",
+    "example": "Los contratos importantes se archivan cronológicamente en el archivador.",
+    "exampleDE": "Wichtige Verträge werden chronologisch im Aktenordner abgeheftet."
+  },
+  {
+    "front": "der Locher",
+    "back": "perforadora",
+    "ipa": "peɾfoɾaˈðoɾa",
+    "example": "Con la perforadora hace dos orificios limpios en el documento.",
+    "exampleDE": "Mit dem Locher stanzt er zwei saubere Löcher in das Dokument."
+  },
+  {
+    "front": "das Heftgerät",
+    "back": "grapadora",
+    "ipa": "ɡɾapaˈðoɾa",
+    "example": "Con la grapadora une firmemente las páginas que van juntas.",
+    "exampleDE": "Mit dem Heftgerät heftet sie die zusammengehörigen Seiten fest."
+  },
+  {
+    "front": "die Büroklammer",
+    "back": "clip",
+    "ipa": "klip",
+    "example": "Un clip de color sujeta de forma provisional los recibos.",
+    "exampleDE": "Eine bunte Büroklammer hält die Quittungen lose zusammen."
+  },
+  {
+    "front": "der Textmarker",
+    "back": "rotulador fluorescente",
+    "ipa": "rotulaˈðoɾ fwoɾeˈθente",
+    "example": "Resalta los pasajes más relevantes del texto con un rotulador fluorescente amarillo.",
+    "exampleDE": "Wichtige Textstellen hebt er mit einem gelben Textmarker hervor."
+  },
+  {
+    "front": "der Notizblock",
+    "back": "bloc de notas",
+    "ipa": "ˈblok de ˈnotas",
+    "example": "Al lado del teléfono siempre hay un pequeño bloc de notas para apuntes rápidos.",
+    "exampleDE": "Neben dem Telefon liegt immer ein kleiner Notizblock für Notizen."
+  },
+  {
+    "front": "der Reißwolf",
+    "back": "destructora de papel",
+    "ipa": "destɾukˈtoɾa ðe paˈpel",
+    "example": "Los documentos confidenciales se trituran en la destructora de papel antes de desecharlos.",
+    "exampleDE": "Vertrauliche Papiere werden vor dem Entsorgen im Reißwolf zerkleinert."
+  },
+  {
+    "front": "der Drehstuhl",
+    "back": "silla giratoria",
+    "ipa": "ˈsiʎa xiɾaˈtoɾja",
+    "example": "Una silla giratoria ergonómica favorece una postura saludable en el puesto de trabajo.",
+    "exampleDE": "Ein ergonomischer Drehstuhl unterstützt gesundes Sitzen am Arbeitsplatz."
+  },
+  {
+    "front": "der Bildschirm",
+    "back": "pantalla",
+    "ipa": "panˈtaʎa",
+    "example": "La pantalla de alta resolución muestra los textos con una nitidez impecable.",
+    "exampleDE": "Der hochauflösende Bildschirm zeigt Schriften gestochen scharf an."
+  },
+  {
+    "front": "die Tastatur",
+    "back": "teclado",
+    "ipa": "teˈklaðo",
+    "example": "Escribe en el teclado con fluidez y sin errores utilizando los diez dedos.",
+    "exampleDE": "Er tippt flüssig und fehlerfrei mit zehn Fingern auf der Tastatur."
+  },
+  {
+    "front": "die Computermaus",
+    "back": "ratón de ordenador",
+    "ipa": "raˈton de oɾdenaˈðoɾ",
+    "example": "Con un clic en el ratón de ordenador selecciona la opción deseada del menú.",
+    "exampleDE": "Mit einem Klick auf die Computermaus wählt er den Menüpunkt aus."
+  },
+  {
+    "front": "der Drucker",
+    "back": "impresora",
+    "ipa": "impɾeˈsoɾa",
+    "example": "La impresora de red imprime a doble cara a gran velocidad.",
+    "exampleDE": "Der Netzwerkdrucker druckt doppelseitig in hoher Geschwindigkeit."
+  },
+  {
+    "front": "das Ladekabel",
+    "back": "cable de carga",
+    "ipa": "ˈkaβle ðe ˈkaɾɣa",
+    "example": "No te olvides de meter en la maleta el cable de carga para el portátil.",
+    "exampleDE": "Vergiss nicht, das Ladekabel für das Notebook einzupacken."
+  },
+  {
+    "front": "der USB-Stick",
+    "back": "memoria USB",
+    "ipa": "meˈmoɾja uˈeseˈβe",
+    "example": "Guarda la copia de seguridad en una práctica memoria USB.",
+    "exampleDE": "Sie speichert die Sicherungskopie auf einem handlichen USB-Stick."
+  },
+  {
+    "front": "die Festplatte",
+    "back": "disco duro",
+    "ipa": "ˈdisko ˈðuɾo",
+    "example": "El disco duro externo ofrece amplio espacio de almacenamiento para fotografías.",
+    "exampleDE": "Die externe Festplatte bietet reichlich Speicherplatz für Fotos."
+  },
+  {
+    "front": "der Webbrowser",
+    "back": "navegador web",
+    "ipa": "naβeɣaˈðoɾ ˈweβ",
+    "example": "Abra la página web en un navegador web actualizado, por favor.",
+    "exampleDE": "Öffnen Sie die Webseite bitte in einem aktuellen Webbrowser."
+  },
+  {
+    "front": "das Benutzerkonto",
+    "back": "cuenta de usuario",
+    "ipa": "ˈkwenta ðe uˈswaɾjo",
+    "example": "Inicie sesión con su cuenta de usuario personal.",
+    "exampleDE": "Melden Sie sich mit Ihrem persönlichen Benutzerkonto an."
+  },
+  {
+    "front": "das sichere Passwort",
+    "back": "contraseña segura",
+    "ipa": "kontɾaˈseɲa seˈɣuɾa",
+    "example": "Una contraseña segura contiene letras, números y caracteres especiales.",
+    "exampleDE": "Ein sicheres Passwort enthält Buchstaben, Ziffern und Sonderzeichen."
+  },
+  {
+    "front": "die Suchmaschine",
+    "back": "motor de búsqueda",
+    "ipa": "moˈtoɾ ðe ˈbuskeða",
+    "example": "Introduzca los términos que desea localizar en el motor de búsqueda.",
+    "exampleDE": "Geben Sie die Suchbegriffe in die Suchmaschine ein."
+  },
+  {
+    "front": "die E-Mail-Adresse",
+    "back": "dirección de correo electrónico",
+    "ipa": "diɾeɡˈθjon de koˈreo eleɡˈtɾoniko",
+    "example": "Por favor, anote su dirección válida de correo electrónico en el formulario.",
+    "exampleDE": "Bitte tragen Sie Ihre gültige E-Mail-Adresse in das Formular ein."
+  },
+  {
+    "front": "der Anhang",
+    "back": "archivo adjunto",
+    "ipa": "aɾˈtʃiβo aðˈxunto",
+    "example": "En el archivo adjunto al mensaje encontrará el documento en formato PDF.",
+    "exampleDE": "Im Anhang der Nachricht finden Sie das Dokument im PDF-Format."
+  },
+  {
+    "front": "die Datensicherung",
+    "back": "copia de seguridad",
+    "ipa": "ˈkopja ðe seɣuɾiˈðað",
+    "example": "Una copia de seguridad automática previene una imprevista pérdida de datos.",
+    "exampleDE": "Eine automatische Datensicherung schützt vor überraschendem Datenverlust."
+  },
+  {
+    "front": "das Update",
+    "back": "actualización",
+    "ipa": "aktwaliθaˈθjon",
+    "example": "Instale periódicamente actualizaciones de software para subsanar posibles brechas de seguridad.",
+    "exampleDE": "Installieren Sie regelmäßige Software-Updates zur Schließung von Sicherheitslücken."
+  },
+  {
+    "front": "der Touchscreen",
+    "back": "pantalla táctil",
+    "ipa": "panˈtaʎa ˈtaɡtil",
+    "example": "La pantalla táctil responde de inmediato al toque de los dedos.",
+    "exampleDE": "Der berührungsempfindliche Touchscreen reagiert sofort auf Fingertippen."
+  },
+  {
+    "front": "die Sprachnachricht",
+    "back": "mensaje de voz",
+    "ipa": "menˈsaxe ðe ˈβoθ",
+    "example": "En vez de escribir un texto largo le envió un breve mensaje de voz.",
+    "exampleDE": "Statt lange zu tippen, schickte er ihr eine kurze Sprachnachricht."
+  },
+  {
+    "front": "die Benachrichtigung",
+    "back": "notificación",
+    "ipa": "notifikaˈθjon",
+    "example": "En la pantalla de bloqueo ha aparecido una nueva notificación.",
+    "exampleDE": "Auf dem Sperrbildschirm erschien eine neue Benachrichtigung."
+  },
+  {
+    "front": "der Flugmodus",
+    "back": "modo avión",
+    "ipa": "ˈmoðo aˈβjon",
+    "example": "Durante el vuelo todos los teléfonos deben permanecer en modo avión.",
+    "exampleDE": "Während des Fluges müssen alle Telefone in den Flugmodus geschaltet werden."
+  },
+  {
+    "front": "die Akkukapazität",
+    "back": "capacidad de la batería",
+    "ipa": "kapaθiˈðað ðe la βateˈɾia",
+    "example": "Tras un uso prolongado el nivel de batería descendió al veinte por ciento.",
+    "exampleDE": "Nach intensivem Gebrauch sank die Akkukapazität auf zwanzig Prozent."
+  },
+  {
+    "front": "das WLAN-Netzwerk",
+    "back": "red wifi",
+    "ipa": "ˈreð ˈwifi",
+    "example": "En el hotel nos conectamos a la red wifi gratuita.",
+    "exampleDE": "Im Hotel verbinden wir uns mit dem kostenlosen WLAN-Netzwerk."
+  },
+  {
+    "front": "die Internetverbindung",
+    "back": "conexión a internet",
+    "ipa": "konekˈsjon a inteɾˈnet",
+    "example": "Una conexión a internet estable es primordial para realizar videollamadas fluidas.",
+    "exampleDE": "Eine stabile Internetverbindung ist wichtig für flüssige Videoanrufe."
+  },
+  {
+    "front": "das Wochenende",
+    "back": "fin de semana",
+    "ipa": "ˈfin de seˈmana",
+    "example": "Los fines de semana me gusta dormir hasta tarde y desayunar con calma.",
+    "exampleDE": "Am Wochenende schlafe ich gerne lange aus und frühstücke in Ruhe."
+  },
+  {
+    "front": "der Feiertag",
+    "back": "día festivo",
+    "ipa": "ˈdia fesˈtiβo",
+    "example": "En los días festivos oficiales la gran mayoría de los comercios permanecen cerrados.",
+    "exampleDE": "An gesetzlichen Feiertagen bleiben die meisten Geschäfte geschlossen."
+  },
+  {
+    "front": "der Ausflug",
+    "back": "excursión",
+    "ipa": "ekskuɾˈsjon",
+    "example": "El sábado la familia realizó una excursión al parque zoológico.",
+    "exampleDE": "Am Samstag unternahm die Familie einen Ausflug in den Tierpark."
+  },
+  {
+    "front": "das Picknick",
+    "back": "pícnic",
+    "ipa": "ˈpiknik",
+    "example": "Extendimos un mantel e improvisamos un agradable pícnic a la sombra.",
+    "exampleDE": "Wir breiteten eine Decke aus und machten ein Picknick im Schatten."
+  },
+  {
+    "front": "die Hängematte",
+    "back": "hamaca",
+    "ipa": "aˈmaka",
+    "example": "Entre dos árboles frondosos colgó una cómoda hamaca.",
+    "exampleDE": "Zwischen zwei schattigen Bäumen spannte er eine bequeme Hängematte auf."
+  },
+  {
+    "front": "das Gesellschaftsspiel",
+    "back": "juego de mesa",
+    "ipa": "ˈxweɣo ðe ˈmesa",
+    "example": "Por las noches nos encanta sentarnos a la mesa para jugar a un entretenido juego de mesa.",
+    "exampleDE": "Abends spielen wir gerne ein spannendes Gesellschaftsspiel am Tisch."
+  },
+  {
+    "front": "das Kartenspiel",
+    "back": "juego de cartas",
+    "ipa": "ˈxweɣo ðe ˈkaɾtas",
+    "example": "Entre los cuatro jugaron una entretenida partida de cartas.",
+    "exampleDE": "Zu viert spielten sie eine unterhaltsame Runde Skat."
+  },
+  {
+    "front": "das Kreuzworträtsel",
+    "back": "crucigrama",
+    "ipa": "kɾusiˈɣɾama",
+    "example": "Mientras toma el café del domingo mi abuelo resuelve el crucigrama.",
+    "exampleDE": "Beim sonntäglichen Kaffee löst mein Großvater das Kreuzworträtsel."
+  },
+  {
+    "front": "die Fotografie",
+    "back": "fotografía",
+    "ipa": "fotoɣɾaˈfia",
+    "example": "La fotografía de la naturaleza es su gran afición desde hace muchos años.",
+    "exampleDE": "Die Naturfotografie ist seit vielen Jahren sein leidenschaftliches Hobby."
+  },
+  {
+    "front": "das Gärtnern",
+    "back": "jardinería",
+    "ipa": "xaɾðineˈɾia",
+    "example": "Dedicarse a la jardinería en el propio huerto relaja tras una semana agotadora.",
+    "exampleDE": "Das Gärtnern im eigenen Gemüsegarten entspannt nach einer anstrengenden Woche."
+  },
+  {
+    "front": "das Stricken",
+    "back": "tejer",
+    "ipa": "teˈxeɾ",
+    "example": "Con lana bien cálida teje calcetines de alegres colores para sus nietos.",
+    "exampleDE": "Sie strickt aus warmer Wolle bunte Socken für ihre Enkelkinder."
+  },
+  {
+    "front": "das Häkeln",
+    "back": "hacer ganchillo",
+    "ipa": "aˈθeɾ ɡanˈtʃiʎo",
+    "example": "Con una aguja fina de ganchillo confecciona delicados tapetes.",
+    "exampleDE": "Mit einer feinen Häkelnadel häkelt sie zarte Deckchen."
+  },
+  {
+    "front": "die Nähmaschine",
+    "back": "máquina de coser",
+    "ipa": "ˈmakina ðe koˈseɾ",
+    "example": "Con la máquina de coser eléctrica confecciona nuevas fundas para los cojines.",
+    "exampleDE": "Mit der elektrischen Nähmaschine näht sie neue Kissenbezüge."
+  },
+  {
+    "front": "das Heimwerken",
+    "back": "bricolaje",
+    "ipa": "bɾikoˈlaxe",
+    "example": "Los sábados se dedica por entero a hacer tareas de bricolaje en el sótano.",
+    "exampleDE": "Am Samstag widmet er sich voll und ganz dem Heimwerken im Keller."
+  },
+  {
+    "front": "das Basteln",
+    "back": "manualidades",
+    "ipa": "manwaliˈðaðes",
+    "example": "Antes de Navidad los niños elaboran adornos festivos de papel mediante manualidades.",
+    "exampleDE": "Vor Weihnachten basteln die Kinder festlichen Schmuck aus Papier."
+  },
+  {
+    "front": "der Bestseller",
+    "back": "superventas",
+    "ipa": "supeɾˈβentas",
+    "example": "La emocionante novela policíaca entró directamente en la lista de los libros más vendidos.",
+    "exampleDE": "Der spannende Kriminalroman schaffte es sofort auf die Bestsellerliste."
+  },
+  {
+    "front": "das Taschenbuch",
+    "back": "libro de bolsillo",
+    "ipa": "ˈliβɾo ðe βolˈsiʎo",
+    "example": "Para las vacaciones mete en la maleta dos ligeros libros de bolsillo.",
+    "exampleDE": "Für den Urlaub packt sie zwei leichte Taschenbücher in den Koffer."
+  },
+  {
+    "front": "das Lesezeichen",
+    "back": "marcapáginas",
+    "ipa": "maɾkaˈpaxinas",
+    "example": "Un bonito marcapáginas señala la última página que se ha leído.",
+    "exampleDE": "Ein schönes Lesezeichen markiert die zuletzt gelesene Seite."
+  },
+  {
+    "front": "die Buchhandlung",
+    "back": "librería",
+    "ipa": "liβɾeˈɾia",
+    "example": "Se pasa horas curioseando en la pequeña librería de la esquina.",
+    "exampleDE": "In der kleinen Buchhandlung an der Ecke stöbert er stundenlang."
+  },
+  {
+    "front": "die Handlung",
+    "back": "trama",
+    "ipa": "ˈtɾama",
+    "example": "La apasionante trama de la novela transcurre en el Londres victoriano.",
+    "exampleDE": "Die fesselnde Handlung des Romans spielt im viktorianischen London."
+  },
+  {
+    "front": "die Hauptfigur",
+    "back": "personaje principal",
+    "ipa": "peɾsoˈnaxe pɾinθiˈpal",
+    "example": "El valiente personaje principal sortea innumerables peripecias a lo largo de la obra.",
+    "exampleDE": "Die mutige Hauptfigur meistert im Laufe des Buches viele Abenteuer."
+  },
+  {
+    "front": "das Kapitel",
+    "back": "capítulo",
+    "ipa": "kaˈpitulo",
+    "example": "Antes de quedarme dormido me leo un capítulo emocionante hasta el final.",
+    "exampleDE": "Vor dem Einschlafen lese ich noch ein spannendes Kapitel zu Ende."
+  },
+  {
+    "front": "der Autor",
+    "back": "autor",
+    "ipa": "awˈtoɾ",
+    "example": "El prestigioso autor firmó multitud de ejemplares al concluir la lectura pública.",
+    "exampleDE": "Der renommierte Autor signierte nach der Lesung viele Exemplare."
+  },
+  {
+    "front": "die Leinwand",
+    "back": "pantalla de cine",
+    "ipa": "panˈtaʎa ðe ˈθine",
+    "example": "En la enorme pantalla de cine los paisajes causan un impacto impresionante.",
+    "exampleDE": "Auf der riesigen Leinwand des Kinos wirken Landschaftsaufnahmen überwältigend."
+  },
+  {
+    "front": "der Dokumentarfilm",
+    "back": "documental",
+    "ipa": "dokumenˈtal",
+    "example": "El documental analiza la fascinante vida de las especies salvajes.",
+    "exampleDE": "Der Dokumentarfilm beleuchtet das faszinierende Leben wilder Tiere."
+  },
+  {
+    "front": "die Komödie",
+    "back": "comedia",
+    "ipa": "koˈmeðja",
+    "example": "Una alegre comedia arrancó multitud de carcajadas en la sala.",
+    "exampleDE": "Eine heitere Komödie sorgte für viele herzliche Lacher im Saal."
+  },
+  {
+    "front": "der Untertitel",
+    "back": "subtítulos",
+    "ipa": "suβˈtitulos",
+    "example": "Prefiero ver las películas en versión original con subtítulos en alemán.",
+    "exampleDE": "Fremdsprachige Filme schaue ich am liebsten mit deutschen Untertiteln."
+  },
+  {
+    "front": "die Fernbedienung",
+    "back": "mando a distancia",
+    "ipa": "ˈmando a ðisˈtanθja",
+    "example": "Con el mando a distancia baja el volumen del televisor.",
+    "exampleDE": "Mit der Fernbedienung schaltet er die Lautstärke des Fernsehers leiser."
+  },
+  {
+    "front": "die Fernsehserie",
+    "back": "serie de televisión",
+    "ipa": "ˈseɾje ðe teleβiˈsjon",
+    "example": "La nueva temporada de la aclamada serie de televisión se estrena la próxima semana.",
+    "exampleDE": "Die neue Staffel der beliebten Fernsehserie erscheint nächste Woche."
+  },
+  {
+    "front": "der Schauspieler",
+    "back": "actor",
+    "ipa": "akˈtoɾ",
+    "example": "El talentoso actor interpreta su papel de un modo sumamente convincente.",
+    "exampleDE": "Der talentierte Schauspieler verkörpert seine Rolle sehr glaubwürdig."
+  },
+  {
+    "front": "das Theaterstück",
+    "back": "obra de teatro",
+    "ipa": "ˈoβɾa ðe teˈatɾo",
+    "example": "La obra de teatro clásica de Schiller contó con una puesta en escena contemporánea.",
+    "exampleDE": "Das klassische Theaterstück von Schiller wurde modern inszeniert."
+  },
+  {
+    "front": "der Theatervorhang",
+    "back": "telón de teatro",
+    "ipa": "teˈlon de teˈatɾo",
+    "example": "En medio de nutridos aplausos cayó el pesado telón rojo del teatro.",
+    "exampleDE": "Unter großem Applaus senkte sich der schwere rote Theatervorhang."
+  },
+  {
+    "front": "der Beifall",
+    "back": "aplausos",
+    "ipa": "aˈplawsos",
+    "example": "El público entusiasta dedicó a los intérpretes un sonoro y prolongado aplauso.",
+    "exampleDE": "Das begeisterte Publikum spendete den Darstellern tosenden Beifall."
+  },
+  {
+    "front": "das Bühnenbild",
+    "back": "escenografía",
+    "ipa": "esθenoɣɾaˈfia",
+    "example": "La elaborada escenografía recreaba una histórica plaza de mercado.",
+    "exampleDE": "Das aufwendige Bühnenbild stellte einen historischen Marktplatz dar."
+  },
+  {
+    "front": "die Garderobe",
+    "back": "guardarropa",
+    "ipa": "ɡwaɾðaˈropa",
+    "example": "Antes del comienzo de la función los abrigos se dejan en el guardarropa.",
+    "exampleDE": "Vor Beginn der Vorstellung gibt man Jacken an der Garderobe ab."
+  },
+  {
+    "front": "die Pause",
+    "back": "intermedio",
+    "ipa": "inteɾˈmeðjo",
+    "example": "En el intermedio de veinte minutos los espectadores toman una copa de vino espumoso.",
+    "exampleDE": "In der zwanzigminütigen Pause trinken die Besucher ein Glas Sekt."
+  },
+  {
+    "front": "der Rang",
+    "back": "anfiteatro",
+    "ipa": "anfiˈteatɾo",
+    "example": "Desde las butacas del primer anfiteatro se goza de una perspectiva inmejorable.",
+    "exampleDE": "Von den Plätzen im ersten Rang hat man einen ausgezeichneten Überblick."
+  },
+  {
+    "front": "die Generalprobe",
+    "back": "ensayo general",
+    "ipa": "enˈsaʝo xeneˈɾal",
+    "example": "El último ensayo antes del gran estreno se desarrolló sin fallo alguno.",
+    "exampleDE": "Die letzte Probe vor der großen Premiere verlief fehlerfrei."
+  },
+  {
+    "front": "die Kunstgalerie",
+    "back": "galería de arte",
+    "ipa": "ɡaleˈɾia ðe ˈaɾte",
+    "example": "En la galería de arte municipal jóvenes pintores exponen sus lienzos.",
+    "exampleDE": "In der städtischen Kunstgalerie stellen junge Maler ihre Werke aus."
+  },
+  {
+    "front": "das Ölgemälde",
+    "back": "óleo",
+    "ipa": "ˈoleo",
+    "example": "El valioso óleo data del siglo diecisiete.",
+    "exampleDE": "Das wertvolle Ölgemälde stammt aus dem siebzehnten Jahrhundert."
+  },
+  {
+    "front": "die Skulptur",
+    "back": "escultura",
+    "ipa": "eskulˈtuɾa",
+    "example": "En el jardín del museo se exhibe una escultura de bronce a tamaño natural.",
+    "exampleDE": "Im Museumsgarten steht eine lebensgroße Skulptur aus Bronze."
+  },
+  {
+    "front": "der Museumsführer",
+    "back": "audioguía",
+    "ipa": "awðjoˈɣia",
+    "example": "La audioguía electrónica acompaña a los visitantes ofreciendo datos de interés por las salas.",
+    "exampleDE": "Der elektronische Audioguide führt Besucher informativ durch die Räume."
+  },
+  {
+    "front": "der Eintritt",
+    "back": "entrada",
+    "ipa": "enˈtɾaða",
+    "example": "Para escolares y estudiantes universitarios el precio de la entrada es reducido los domingos.",
+    "exampleDE": "Für Schüler und Studierende ist der Eintritt sonntags ermäßigt."
+  },
+  {
+    "front": "die Sonderausstellung",
+    "back": "exposición temporal",
+    "ipa": "eksposiˈsjon tempoˈɾal",
+    "example": "La exposición temporal sobre la Antigüedad atrae a multitud de visitantes.",
+    "exampleDE": "Die Sonderausstellung über die Antike lockt viele Besucher an."
+  },
+  {
+    "front": "das Meisterwerk",
+    "back": "obra maestra",
+    "ipa": "ˈoβɾa maˈestɾa",
+    "example": "Este retrato de fama mundial está considerado la auténtica obra maestra del pintor.",
+    "exampleDE": "Dieses weltberühmte Porträt gilt als das Meisterwerk des Malers."
+  },
+  {
+    "front": "die Akustikgitarre",
+    "back": "guitarra acústica",
+    "ipa": "ɡiˈtara aˈkustika",
+    "example": "Junto a la fogata acompaña las canciones rasgueando la guitarra acústica.",
+    "exampleDE": "Am Lagerfeuer begleitet er die Lieder auf der Akustikgitarre."
+  },
+  {
+    "front": "das Klavier",
+    "back": "piano",
+    "ipa": "ˈpjano",
+    "example": "Practica diligentemente escalas en el piano todas las tardes.",
+    "exampleDE": "Sie übt jeden Nachmittag fleißig Tonleitern auf dem Klavier."
+  },
+  {
+    "front": "die Geige",
+    "back": "violín",
+    "ipa": "bjoˈlin",
+    "example": "El sonido nítido del violín guiaba la melodía del cuarteto de cuerda.",
+    "exampleDE": "Der klare Klang der Geige trug die Melodie des Streichquartetts."
+  },
+  {
+    "front": "das Schlagzeug",
+    "back": "batería",
+    "ipa": "bateˈɾia",
+    "example": "El batería marca el ritmo enérgico que guía a toda la banda.",
+    "exampleDE": "Der Schlagzeuger gibt der Band den treibenden Rhythmus vor."
+  },
+  {
+    "front": "der Notenständer",
+    "back": "atril",
+    "ipa": "aˈtɾil",
+    "example": "El cuaderno de partituras permanece abierto sobre el sólido atril.",
+    "exampleDE": "Das Notenheft steht aufgeschlagen auf dem stabilen Notenständer."
+  },
+  {
+    "front": "der Kopfhörer",
+    "back": "auriculares",
+    "ipa": "awɾikuˈlaɾes",
+    "example": "En el tren escucha sus canciones preferidas a través de auriculares inalámbricos.",
+    "exampleDE": "In der Bahn hört sie ihre Lieblingsmusik über kabellose Kopfhörer."
+  },
+  {
+    "front": "der Songtext",
+    "back": "letra de la canción",
+    "ipa": "ˈletɾa ðe la kanˈθjon",
+    "example": "Se sabe la letra de la canción en inglés íntegramente de memoria.",
+    "exampleDE": "Er kennt den Songtext des englischen Liedes komplett auswendig."
+  },
+  {
+    "front": "der Chor",
+    "back": "coro",
+    "ipa": "ˈkoɾo",
+    "example": "El coro parroquial ensaya semanalmente para el solemne concierto de Navidad.",
+    "exampleDE": "Der Kirchenchor probt wöchentlich für das festliche Weihnachtskonzert."
+  },
+  {
+    "front": "die Laufschuhe",
+    "back": "zapatillas de correr",
+    "ipa": "θapaˈtiʎas ðe koˈreɾ",
+    "example": "Unas buenas zapatillas de correr amortiguan cada zancada al correr sobre asfalto.",
+    "exampleDE": "Gute Laufschuhe dämpfen jeden Schritt beim Joggen auf Asphalt."
+  },
+  {
+    "front": "die Trinkflasche",
+    "back": "botella de agua",
+    "ipa": "boˈteʎa ðe ˈaɣwa",
+    "example": "Al hacer deporte siempre tengo a mano una botella para beber llena de agua.",
+    "exampleDE": "Beim Sport habe ich immer eine gefüllte Trinkflasche griffbereit."
+  },
+  {
+    "front": "das Fitnessstudio",
+    "back": "gimnasio",
+    "ipa": "ximˈnasjo",
+    "example": "Tres veces por semana entrena en las máquinas del gimnasio.",
+    "exampleDE": "Dreimal pro Woche trainiert er an den Geräten im Fitnessstudio."
+  },
+  {
+    "front": "die Gymnastikmatte",
+    "back": "esterilla de gimnasia",
+    "ipa": "esteˈɾiʎa ðe ximˈnasja",
+    "example": "Desenrolla su esterilla antideslizante para hacer la sesión de yoga.",
+    "exampleDE": "Sie rollt ihre rutschfeste Gymnastikmatte für das Yoga aus."
+  },
+  {
+    "front": "die Liegestütze",
+    "back": "flexiones",
+    "ipa": "fleɡˈsjones",
+    "example": "Diez flexiones bien hechas forman parte de su circuito de entrenamiento matutino.",
+    "exampleDE": "Zehn saubere Liegestütze gehören zu seinem morgendlichen Zirkeltraining."
+  },
+  {
+    "front": "das Seilspringen",
+    "back": "saltar a la cuerda",
+    "ipa": "salˈtaɾ a la ˈkweɾða",
+    "example": "Saltar a la cuerda es un ejercicio magnífico para mejorar la coordinación y la resistencia.",
+    "exampleDE": "Seilspringen ist eine hervorragende Übung für Koordination und Kondition."
+  },
+  {
+    "front": "der Marathon",
+    "back": "maratón",
+    "ipa": "maɾaˈton",
+    "example": "Durante meses se estuvo preparando a conciencia para correr su primer maratón.",
+    "exampleDE": "Monatelang bereitete er sich gewissenhaft auf seinen ersten Marathon vor."
+  },
+  {
+    "front": "der Fußballplatz",
+    "back": "campo de fútbol",
+    "ipa": "ˈkampo ðe ˈfuðβol",
+    "example": "Los jóvenes se reúnen en el campo de fútbol después de clase.",
+    "exampleDE": "Die Jugendlichen treffen sich nach der Schule auf dem Fußballplatz."
+  },
+  {
+    "front": "das Tor",
+    "back": "gol",
+    "ipa": "ɡol",
+    "example": "En el último minuto del partido la delantera marcó el gol definitivo.",
+    "exampleDE": "In der letzten Spielminute schoss die Stürmerin das entscheidende Tor."
+  },
+  {
+    "front": "der Schiedsrichter",
+    "back": "árbitro",
+    "ipa": "ˈaɾβitɾo",
+    "example": "El árbitro imparcial pitó el inicio del encuentro puntual.",
+    "exampleDE": "Der unparteiische Schiedsrichter pfiff das faire Spiel pünktlich an."
+  },
+  {
+    "front": "die Halbzeitpause",
+    "back": "descanso",
+    "ipa": "desˈkanso",
+    "example": "Durante los quince minutos del descanso los jugadores analizan la táctica.",
+    "exampleDE": "In der fünfzehnminütigen Halbzeitpause besprechen die Spieler die Taktik."
+  },
+  {
+    "front": "der Basketballkorb",
+    "back": "canasta de baloncesto",
+    "ipa": "kaˈnasta ðe βalonˈθesto",
+    "example": "Con un tiro muy preciso encestó el balón directamente en la canasta de baloncesto.",
+    "exampleDE": "Mit einem gezielten Wurf traf er den Ball direkt in den Basketballkorb."
+  },
+  {
+    "front": "der Tennisschläger",
+    "back": "raqueta de tenis",
+    "ipa": "raˈketa ðe ˈtenis",
+    "example": "Vuelve a encordar su raqueta de tenis antes del gran torneo.",
+    "exampleDE": "Sie bespannt ihren Tennisschläger vor dem großen Turnier neu."
+  },
+  {
+    "front": "die Tischtennisplatte",
+    "back": "mesa de ping-pong",
+    "ipa": "ˈmesa ðe piŋˈpoŋ",
+    "example": "En el jardín hay instalada una mesa de ping-pong de hormigón resistente a la intemperie.",
+    "exampleDE": "Im Garten steht eine wetterfeste Tischtennisplatte aus Beton."
+  },
+  {
+    "front": "das Turnier",
+    "back": "torneo",
+    "ipa": "toɾˈneo",
+    "example": "En el torneo deportivo regional participan más de veinte equipos.",
+    "exampleDE": "An dem regionalen Sportturnier nehmen über zwanzig Teams teil."
+  },
+  {
+    "front": "das Schwimmbad",
+    "back": "piscina",
+    "ipa": "piˈθina",
+    "example": "En la piscina cubierta nada veinte largos todos los martes por la mañana.",
+    "exampleDE": "Im Hallenbad schwimmt er jeden Dienstagmorgen zwanzig Bahnen."
+  },
+  {
+    "front": "die Schwimmbrille",
+    "back": "gafas de natación",
+    "ipa": "ˈɡafas de nataˈθjon",
+    "example": "Unas gafas de natación bien ajustadas protegen los ojos del agua con cloro.",
+    "exampleDE": "Eine dicht sitzende Schwimmbrille schützt die Augen vor Chlorwasser."
+  },
+  {
+    "front": "der Sprungturm",
+    "back": "trampolín",
+    "ipa": "trampoˈlin",
+    "example": "Valiente, la niña saltó al agua desde el trampolín de tres metros.",
+    "exampleDE": "Mutig sprang das Mädchen vom Dreimeter-Sprungturm ins Becken."
+  },
+  {
+    "front": "das Segelboot",
+    "back": "velero",
+    "ipa": "beˈleɾo",
+    "example": "Con las velas desplegadas el pequeño velero se desliza suavemente sobre el lago.",
+    "exampleDE": "Mit gesetzten Segeln gleitet das kleine Segelboot über den See."
+  },
+  {
+    "front": "die Schwimmweste",
+    "back": "chaleco salvavidas",
+    "ipa": "tʃaˈleko salβaˈβiðas",
+    "example": "En aguas abiertas llevar puesto un chaleco salvavidas es obligatorio.",
+    "exampleDE": "Auf dem offenen Wasser ist das Tragen einer Schwimmweste Pflicht."
+  },
+  {
+    "front": "das Paddel",
+    "back": "remo",
+    "ipa": "ˈremo",
+    "example": "Hundiendo el remo con paladas regulares avanza por el agua tranquila.",
+    "exampleDE": "Mit gleichmäßigen Zügen taucht er das Paddel ins ruhige Wasser."
+  }
+]
