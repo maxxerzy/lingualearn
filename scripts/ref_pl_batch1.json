@@ -1,0 +1,1252 @@
+[
+  {
+    "index": 0,
+    "front": "Willkommen",
+    "exampleDE": "Willkommen in unserem neuen Haus!"
+  },
+  {
+    "index": 1,
+    "front": "Einverstanden",
+    "exampleDE": "Einverstanden, treffen wir uns um sieben Uhr."
+  },
+  {
+    "index": 2,
+    "front": "Wie bitte?",
+    "exampleDE": "Wie bitte? Ich habe Sie nicht verstanden."
+  },
+  {
+    "index": 3,
+    "front": "Kein Problem",
+    "exampleDE": "Kein Problem, ich helfe dir morgen."
+  },
+  {
+    "index": 4,
+    "front": "Viel Glück",
+    "exampleDE": "Viel Glück bei der Prüfung morgen!"
+  },
+  {
+    "index": 5,
+    "front": "Gute Reise",
+    "exampleDE": "Gute Reise und ruf uns öfter an!"
+  },
+  {
+    "index": 6,
+    "front": "Es tut mir leid",
+    "exampleDE": "Es tut mir leid, dass ich zu spät zum Treffen gekommen bin."
+  },
+  {
+    "index": 7,
+    "front": "Herzlichen Glückwunsch",
+    "exampleDE": "Herzlichen Glückwunsch zum Geburtstag!"
+  },
+  {
+    "index": 8,
+    "front": "Bis bald",
+    "exampleDE": "Bis bald, wir sehen uns nächste Woche!"
+  },
+  {
+    "index": 9,
+    "front": "Guten Appetit",
+    "exampleDE": "Guten Appetit, die Suppe ist noch heiß!"
+  },
+  {
+    "index": 10,
+    "front": "ein",
+    "exampleDE": "Ich habe einen Bruder."
+  },
+  {
+    "index": 11,
+    "front": "zwei",
+    "exampleDE": "Ich sehe zwei Häuser auf der Straße."
+  },
+  {
+    "index": 12,
+    "front": "drei",
+    "exampleDE": "Auf dem Tisch stehen drei Tassen."
+  },
+  {
+    "index": 13,
+    "front": "vier",
+    "exampleDE": "Im Klassenzimmer gibt es vier Fenster."
+  },
+  {
+    "index": 14,
+    "front": "fünf",
+    "exampleDE": "Wir brauchen fünf Minuten."
+  },
+  {
+    "index": 15,
+    "front": "sechs",
+    "exampleDE": "Die Katze hat sechs Kätzchen."
+  },
+  {
+    "index": 16,
+    "front": "sieben",
+    "exampleDE": "Eine Woche hat sieben Tage."
+  },
+  {
+    "index": 17,
+    "front": "acht",
+    "exampleDE": "Ich schlafe acht Stunden am Tag."
+  },
+  {
+    "index": 18,
+    "front": "neun",
+    "exampleDE": "Der Zug kommt um neun Uhr morgens an."
+  },
+  {
+    "index": 19,
+    "front": "zehn",
+    "exampleDE": "An den Händen sind zehn Finger."
+  },
+  {
+    "index": 20,
+    "front": "elf",
+    "exampleDE": "Der Unterricht beginnt um elf Uhr."
+  },
+  {
+    "index": 21,
+    "front": "zwölf",
+    "exampleDE": "Ein Jahr hat zwölf Monate."
+  },
+  {
+    "index": 22,
+    "front": "dreizehn",
+    "exampleDE": "Er ist dreizehn Jahre alt geworden."
+  },
+  {
+    "index": 23,
+    "front": "vierzehn",
+    "exampleDE": "Im Haus gibt es vierzehn Zimmer."
+  },
+  {
+    "index": 24,
+    "front": "fünfzehn",
+    "exampleDE": "Wir müssen noch fünfzehn Minuten warten."
+  },
+  {
+    "index": 25,
+    "front": "sechzehn",
+    "exampleDE": "Sie ist sechzehn Jahre alt."
+  },
+  {
+    "index": 26,
+    "front": "siebzehn",
+    "exampleDE": "Auf der Party waren siebzehn Gäste."
+  },
+  {
+    "index": 27,
+    "front": "achtzehn",
+    "exampleDE": "Mit achtzehn Jahren hat er die Schule abgeschlossen."
+  },
+  {
+    "index": 28,
+    "front": "neunzehn",
+    "exampleDE": "Das Flugzeug wird um neunzehn Uhr abfliegen."
+  },
+  {
+    "index": 29,
+    "front": "zwanzig",
+    "exampleDE": "Im Geschäft gibt es zwanzig Käsesorten."
+  },
+  {
+    "index": 30,
+    "front": "Gewicht",
+    "exampleDE": "Welches Gewicht hat dieser Koffer?"
+  },
+  {
+    "index": 31,
+    "front": "rot",
+    "exampleDE": "Sie hat ein rotes Kleid für die Party gekauft."
+  },
+  {
+    "index": 32,
+    "front": "blau",
+    "exampleDE": "Der Himmel ist heute blau und klar."
+  },
+  {
+    "index": 33,
+    "front": "grün",
+    "exampleDE": "Das Gras im Park ist grün und weich."
+  },
+  {
+    "index": 34,
+    "front": "gelb",
+    "exampleDE": "Dieser gelbe Apfel ist sehr süß."
+  },
+  {
+    "index": 35,
+    "front": "schwarz",
+    "exampleDE": "Er trägt immer eine schwarze Jacke."
+  },
+  {
+    "index": 36,
+    "front": "weiß",
+    "exampleDE": "Der weiße Schnee bedeckte alle Straßen."
+  },
+  {
+    "index": 37,
+    "front": "grau",
+    "exampleDE": "Der graue Himmel kündigt Regen an."
+  },
+  {
+    "index": 38,
+    "front": "braun",
+    "exampleDE": "Er hat braune Augen und dunkle Haare."
+  },
+  {
+    "index": 39,
+    "front": "orange",
+    "exampleDE": "Der orange Sonnenuntergang war sehr schön."
+  },
+  {
+    "index": 40,
+    "front": "lila",
+    "exampleDE": "Die lila Blumen wachsen am Zaun."
+  },
+  {
+    "index": 41,
+    "front": "rosa",
+    "exampleDE": "Das Kind ist in ein rosa Hemd gekleidet."
+  },
+  {
+    "index": 42,
+    "front": "violett",
+    "exampleDE": "Die violetten Weintrauben sind sehr lecker."
+  },
+  {
+    "index": 43,
+    "front": "die Orange",
+    "exampleDE": "Die Orange ist reich an Vitamin C."
+  },
+  {
+    "index": 44,
+    "front": "Farbe",
+    "exampleDE": "Er braucht rote Farbe."
+  },
+  {
+    "index": 45,
+    "front": "Vater",
+    "exampleDE": "Mein Vater arbeitet als Arzt im Krankenhaus."
+  },
+  {
+    "index": 46,
+    "front": "Mutter",
+    "exampleDE": "Die Mutter kocht ein leckeres Abendessen für die ganze Familie."
+  },
+  {
+    "index": 47,
+    "front": "Bruder",
+    "exampleDE": "Mein Bruder studiert an der Universität."
+  },
+  {
+    "index": 48,
+    "front": "Schwester",
+    "exampleDE": "Meine Schwester wohnt in einer anderen Stadt."
+  },
+  {
+    "index": 49,
+    "front": "Sohn",
+    "exampleDE": "Ihr Sohn wurde an der medizinischen Universität aufgenommen."
+  },
+  {
+    "index": 50,
+    "front": "Tochter",
+    "exampleDE": "Ihre Tochter malt sehr gerne schöne Bilder."
+  },
+  {
+    "index": 51,
+    "front": "Großvater",
+    "exampleDE": "Der Großvater erzählt uns interessante Geschichten."
+  },
+  {
+    "index": 52,
+    "front": "Großmutter",
+    "exampleDE": "Die Großmutter backt sonntags leckere Kuchen."
+  },
+  {
+    "index": 53,
+    "front": "Onkel",
+    "exampleDE": "Mein Onkel wohnt in Sankt Petersburg."
+  },
+  {
+    "index": 54,
+    "front": "Tante",
+    "exampleDE": "Tante Mascha bringt uns immer Geschenke mit."
+  },
+  {
+    "index": 55,
+    "front": "Cousin",
+    "exampleDE": "Mein Cousin ist ein sehr fröhlicher Kerl."
+  },
+  {
+    "index": 56,
+    "front": "Cousine",
+    "exampleDE": "Die Cousine ist zu Besuch zu uns gekommen."
+  },
+  {
+    "index": 57,
+    "front": "Mann",
+    "exampleDE": "Ihr Mann arbeitet als Ingenieur in einer Fabrik."
+  },
+  {
+    "index": 58,
+    "front": "Frau",
+    "exampleDE": "Seine Frau ist eine sehr gütige und kluge Frau."
+  },
+  {
+    "index": 59,
+    "front": "Kind",
+    "exampleDE": "Das Kind spielt mit Freunden im Hof."
+  },
+  {
+    "index": 60,
+    "front": "Baby",
+    "exampleDE": "Das Baby schläft beim Spaziergang im Kinderwagen."
+  },
+  {
+    "index": 61,
+    "front": "Familie",
+    "exampleDE": "Unsere Familie verbringt das Wochenende zusammen."
+  },
+  {
+    "index": 62,
+    "front": "Beziehung",
+    "exampleDE": "Sie haben eine gute Beziehung."
+  },
+  {
+    "index": 63,
+    "front": "Freundschaft",
+    "exampleDE": "Ihre Freundschaft dauert schon viele Jahre."
+  },
+  {
+    "index": 64,
+    "front": "Kopf",
+    "exampleDE": "Ich habe nach der Arbeit Kopfschmerzen."
+  },
+  {
+    "index": 65,
+    "front": "Auge",
+    "exampleDE": "Sie hat schöne grüne Augen."
+  },
+  {
+    "index": 66,
+    "front": "Ohr",
+    "exampleDE": "Er hört auf dem rechten Ohr nicht gut."
+  },
+  {
+    "index": 67,
+    "front": "Nase",
+    "exampleDE": "Das Kind hat Schnupfen, die Nase ist verstopft."
+  },
+  {
+    "index": 68,
+    "front": "Mund",
+    "exampleDE": "Mach den Mund auf und sag \"a\"."
+  },
+  {
+    "index": 69,
+    "front": "Zahn",
+    "exampleDE": "Mir tut ein Zahn weh, ich muss zum Arzt."
+  },
+  {
+    "index": 70,
+    "front": "Hals",
+    "exampleDE": "Nach der langen Arbeit tut ihr der Hals weh."
+  },
+  {
+    "index": 71,
+    "front": "Schulter",
+    "exampleDE": "Er legte ihr die Hand auf die Schulter."
+  },
+  {
+    "index": 72,
+    "front": "Arm",
+    "exampleDE": "Er hat sich beim Fußballtraining den Arm gebrochen."
+  },
+  {
+    "index": 73,
+    "front": "Hand",
+    "exampleDE": "Sie hielt ihn an der Hand fest."
+  },
+  {
+    "index": 74,
+    "front": "Finger",
+    "exampleDE": "Er hat sich in der Küche mit dem Messer in den Finger geschnitten."
+  },
+  {
+    "index": 75,
+    "front": "Bauch",
+    "exampleDE": "Nach dem Mittagessen tut mir der Bauch weh."
+  },
+  {
+    "index": 76,
+    "front": "Bein",
+    "exampleDE": "Er hat sich beim Wandern in den Bergen das Bein gebrochen."
+  },
+  {
+    "index": 77,
+    "front": "Knie",
+    "exampleDE": "Das Kind fiel hin und stieß sich heftig das Knie."
+  },
+  {
+    "index": 78,
+    "front": "Fuß",
+    "exampleDE": "Ihr tut nach dem langen Gehen der Fuß weh."
+  },
+  {
+    "index": 79,
+    "front": "Rücken",
+    "exampleDE": "Nach langer Arbeit am Schreibtisch tut der Rücken weh."
+  },
+  {
+    "index": 80,
+    "front": "Herz",
+    "exampleDE": "Sein Herz schlägt nach dem Laufen sehr schnell."
+  },
+  {
+    "index": 81,
+    "front": "krank",
+    "exampleDE": "Das kranke Kind blieb bei seiner Mutter zu Hause."
+  },
+  {
+    "index": 82,
+    "front": "gesund",
+    "exampleDE": "Ein gesunder Lebensstil verlängert das Leben."
+  },
+  {
+    "index": 83,
+    "front": "Arzt",
+    "exampleDE": "Der Arzt hat mir geraten, mich mehr auszuruhen."
+  },
+  {
+    "index": 84,
+    "front": "Krankenschwester",
+    "exampleDE": "Die Krankenschwester gab dem Patienten eine Spritze."
+  },
+  {
+    "index": 85,
+    "front": "Krankenhaus",
+    "exampleDE": "Das Krankenhaus liegt nicht weit vom Bahnhof."
+  },
+  {
+    "index": 86,
+    "front": "Apotheke",
+    "exampleDE": "Die Apotheke ist bis neun Uhr abends geöffnet."
+  },
+  {
+    "index": 87,
+    "front": "Fieber",
+    "exampleDE": "Das Kind hat Fieber, rufen Sie einen Arzt."
+  },
+  {
+    "index": 88,
+    "front": "Husten",
+    "exampleDE": "Der starke Husten hindert ihn nachts am Schlafen."
+  },
+  {
+    "index": 89,
+    "front": "Schnupfen",
+    "exampleDE": "Ich habe schon den dritten Tag Schnupfen."
+  },
+  {
+    "index": 90,
+    "front": "Tablette",
+    "exampleDE": "Nimm eine Tablette gegen die Kopfschmerzen."
+  },
+  {
+    "index": 91,
+    "front": "Schmerz",
+    "exampleDE": "Der Schmerz im Rücken verschwand nach der Massage."
+  },
+  {
+    "index": 92,
+    "front": "Medikament",
+    "exampleDE": "Dieses Medikament muss man nach dem Essen einnehmen."
+  },
+  {
+    "index": 93,
+    "front": "Erkältung",
+    "exampleDE": "Wegen der Erkältung blieb er zu Hause."
+  },
+  {
+    "index": 94,
+    "front": "Grippe",
+    "exampleDE": "Im Winter erkranken viele an Grippe."
+  },
+  {
+    "index": 95,
+    "front": "Krankenwagen",
+    "exampleDE": "Der Krankenwagen kam nach fünf Minuten."
+  },
+  {
+    "index": 96,
+    "front": "Gehirn",
+    "exampleDE": "Das Gehirn steuert den ganzen Körper."
+  },
+  {
+    "index": 97,
+    "front": "Verletzung",
+    "exampleDE": "Der Fußballspieler erlitt eine schwere Verletzung."
+  },
+  {
+    "index": 98,
+    "front": "Operation",
+    "exampleDE": "Die Operation verlief erfolgreich."
+  },
+  {
+    "index": 99,
+    "front": "Impfung",
+    "exampleDE": "Der Arzt gab dem Kind eine Impfung."
+  },
+  {
+    "index": 100,
+    "front": "Allergie",
+    "exampleDE": "Ich habe eine Allergie gegen Katzen."
+  },
+  {
+    "index": 101,
+    "front": "Genesung",
+    "exampleDE": "Wir wünschen Ihnen gute Genesung."
+  },
+  {
+    "index": 102,
+    "front": "Verband",
+    "exampleDE": "Die Krankenschwester legte einen Verband an."
+  },
+  {
+    "index": 103,
+    "front": "Behandlung",
+    "exampleDE": "Die Behandlung wird zwei Wochen dauern."
+  },
+  {
+    "index": 104,
+    "front": "Diagnose",
+    "exampleDE": "Der Arzt stellte eine genaue Diagnose."
+  },
+  {
+    "index": 105,
+    "front": "Symptom",
+    "exampleDE": "Husten ist ein häufiges Symptom einer Erkältung."
+  },
+  {
+    "index": 106,
+    "front": "Gesundheit",
+    "exampleDE": "Gesundheit ist wichtiger als Geld."
+  },
+  {
+    "index": 107,
+    "front": "Knochen",
+    "exampleDE": "Er hat sich einen Knochen im Arm gebrochen."
+  },
+  {
+    "index": 108,
+    "front": "Muskel",
+    "exampleDE": "Nach dem Training schmerzt jeder Muskel."
+  },
+  {
+    "index": 109,
+    "front": "Haut",
+    "exampleDE": "Sie hat zarte Haut."
+  },
+  {
+    "index": 110,
+    "front": "Lunge",
+    "exampleDE": "Rauchen schadet der Lunge."
+  },
+  {
+    "index": 111,
+    "front": "Leber",
+    "exampleDE": "Alkohol ist schädlich für die Leber."
+  },
+  {
+    "index": 112,
+    "front": "Niere",
+    "exampleDE": "Ihm tut die rechte Niere weh."
+  },
+  {
+    "index": 113,
+    "front": "Magen",
+    "exampleDE": "Nach dem Essen tut der Magen weh."
+  },
+  {
+    "index": 114,
+    "front": "Ellbogen",
+    "exampleDE": "Er stieß sich den Ellbogen am Tisch."
+  },
+  {
+    "index": 115,
+    "front": "Atem",
+    "exampleDE": "Nach dem Laufen kam er außer Atem."
+  },
+  {
+    "index": 116,
+    "front": "Puls",
+    "exampleDE": "Der Arzt maß den Puls des Patienten."
+  },
+  {
+    "index": 117,
+    "front": "Hemd",
+    "exampleDE": "Er hat für das Vorstellungsgespräch ein weißes Hemd angezogen."
+  },
+  {
+    "index": 118,
+    "front": "Hose",
+    "exampleDE": "Diese blaue Hose passt mir sehr gut."
+  },
+  {
+    "index": 119,
+    "front": "Rock",
+    "exampleDE": "Sie hat einen langen roten Rock gekauft."
+  },
+  {
+    "index": 120,
+    "front": "Kleid",
+    "exampleDE": "Auf der Party trug sie ein schönes Kleid."
+  },
+  {
+    "index": 121,
+    "front": "Jacke",
+    "exampleDE": "Nimm eine Jacke mit, draußen ist es kühl."
+  },
+  {
+    "index": 122,
+    "front": "Mantel",
+    "exampleDE": "Im Winter trägt er einen warmen, langen Mantel."
+  },
+  {
+    "index": 123,
+    "front": "Schuhe",
+    "exampleDE": "Die neuen Schuhe drücken den Fuß ein wenig."
+  },
+  {
+    "index": 124,
+    "front": "Socken",
+    "exampleDE": "Ich suche ein Paar saubere Socken im Schrank."
+  },
+  {
+    "index": 125,
+    "front": "Hut",
+    "exampleDE": "Der Großvater trägt immer einen alten Hut."
+  },
+  {
+    "index": 126,
+    "front": "Mütze",
+    "exampleDE": "Setz eine Mütze auf, draußen ist es sehr kalt."
+  },
+  {
+    "index": 127,
+    "front": "Handschuhe",
+    "exampleDE": "Im Winter gehe ich nicht ohne warme Handschuhe hinaus."
+  },
+  {
+    "index": 128,
+    "front": "Gürtel",
+    "exampleDE": "Dieser Ledergürtel ist sehr stilvoll."
+  },
+  {
+    "index": 129,
+    "front": "Schal",
+    "exampleDE": "Sie hat sich einen Schal um den Hals gebunden."
+  },
+  {
+    "index": 130,
+    "front": "Schuh",
+    "exampleDE": "Ein Schuh ist nass geworden."
+  },
+  {
+    "index": 131,
+    "front": "Socke",
+    "exampleDE": "Ich kann die zweite Socke nicht finden."
+  },
+  {
+    "index": 132,
+    "front": "Handschuh",
+    "exampleDE": "Sie hat einen Handschuh verloren."
+  },
+  {
+    "index": 133,
+    "front": "Knopf",
+    "exampleDE": "Am Hemd ist ein Knopf abgerissen."
+  },
+  {
+    "index": 134,
+    "front": "Ärmel",
+    "exampleDE": "Er krempelte die Ärmel hoch."
+  },
+  {
+    "index": 135,
+    "front": "Anzug",
+    "exampleDE": "Er zog einen eleganten Anzug an."
+  },
+  {
+    "index": 136,
+    "front": "Stiefel",
+    "exampleDE": "Lederstiefel sind teuer."
+  },
+  {
+    "index": 137,
+    "front": "Brot",
+    "exampleDE": "Zum Frühstück esse ich Brot mit Butter."
+  },
+  {
+    "index": 138,
+    "front": "Butter",
+    "exampleDE": "Streich die Butter auf das frische Brot."
+  },
+  {
+    "index": 139,
+    "front": "Käse",
+    "exampleDE": "Dieser Käse ist sehr lecker und weich."
+  },
+  {
+    "index": 140,
+    "front": "Ei",
+    "exampleDE": "Ich koche jeden Tag ein Ei zum Frühstück."
+  },
+  {
+    "index": 141,
+    "front": "Fleisch",
+    "exampleDE": "Das Fleisch muss vor dem Essen gut durchgebraten werden."
+  },
+  {
+    "index": 142,
+    "front": "Fisch",
+    "exampleDE": "Wir haben zum Mittagessen Fisch mit Reis gegessen."
+  },
+  {
+    "index": 143,
+    "front": "Gemüse",
+    "exampleDE": "Gemüse ist gut für die Gesundheit der Kinder."
+  },
+  {
+    "index": 144,
+    "front": "Obst",
+    "exampleDE": "Im Sommer essen wir viel frisches Obst."
+  },
+  {
+    "index": 145,
+    "front": "Apfel",
+    "exampleDE": "Ein roter Apfel liegt auf dem Tisch."
+  },
+  {
+    "index": 146,
+    "front": "Banane",
+    "exampleDE": "Kinder essen gern Bananen als Zwischenmahlzeit."
+  },
+  {
+    "index": 147,
+    "front": "Tomate",
+    "exampleDE": "Ist die Tomate ein Gemüse oder eine Frucht?"
+  },
+  {
+    "index": 148,
+    "front": "Kartoffel",
+    "exampleDE": "Die Kartoffel ist ein Grundnahrungsmittel in Russland."
+  },
+  {
+    "index": 149,
+    "front": "Reis",
+    "exampleDE": "Reis passt gut zu Fisch und Gemüse."
+  },
+  {
+    "index": 150,
+    "front": "Suppe",
+    "exampleDE": "Mama hat eine leckere Suppe zum Mittagessen gekocht."
+  },
+  {
+    "index": 151,
+    "front": "Kuchen",
+    "exampleDE": "Zum Geburtstag hat sie einen großen Kuchen gebacken."
+  },
+  {
+    "index": 152,
+    "front": "Zucker",
+    "exampleDE": "Gib einen Löffel Zucker in den Tee."
+  },
+  {
+    "index": 153,
+    "front": "Salz",
+    "exampleDE": "Vergiss nicht, Salz in die Suppe zu geben."
+  },
+  {
+    "index": 154,
+    "front": "Schwein",
+    "exampleDE": "Auf dem Bauernhof lebt ein großes rosa Schwein."
+  },
+  {
+    "index": 155,
+    "front": "essen",
+    "exampleDE": "Wir essen gerne zusammen an einem großen Tisch."
+  },
+  {
+    "index": 156,
+    "front": "hungrig",
+    "exampleDE": "Ich bin sehr hungrig, lass uns etwas essen."
+  },
+  {
+    "index": 157,
+    "front": "Eis",
+    "exampleDE": "Auf den Straßen ist Eis, sei vorsichtig."
+  },
+  {
+    "index": 158,
+    "front": "Speisekarte",
+    "exampleDE": "Bringen Sie bitte die Speisekarte und ein Glas Wasser."
+  },
+  {
+    "index": 159,
+    "front": "Trinkgeld",
+    "exampleDE": "Wir haben dem Kellner ein gutes Trinkgeld dagelassen."
+  },
+  {
+    "index": 160,
+    "front": "Frühstück",
+    "exampleDE": "Zum Frühstück gibt es bei uns Brei und Kaffee."
+  },
+  {
+    "index": 161,
+    "front": "Mittagessen",
+    "exampleDE": "Das Mittagessen ist in einer halben Stunde fertig."
+  },
+  {
+    "index": 162,
+    "front": "Abendessen",
+    "exampleDE": "Die ganze Familie versammelte sich zum Abendessen."
+  },
+  {
+    "index": 163,
+    "front": "Rezept",
+    "exampleDE": "Gib mir das Rezept für diesen Kuchen."
+  },
+  {
+    "index": 164,
+    "front": "Zutat",
+    "exampleDE": "Eine Zutat fehlt."
+  },
+  {
+    "index": 165,
+    "front": "Geschmack",
+    "exampleDE": "Dieses Gericht hat einen angenehmen Geschmack."
+  },
+  {
+    "index": 166,
+    "front": "Mehl",
+    "exampleDE": "Für den Teig braucht man Mehl."
+  },
+  {
+    "index": 167,
+    "front": "Teig",
+    "exampleDE": "Der Teig muss eine Stunde ruhen."
+  },
+  {
+    "index": 168,
+    "front": "Gewürz",
+    "exampleDE": "Im Schrank gibt es viele verschiedene Gewürze."
+  },
+  {
+    "index": 169,
+    "front": "Pfeffer",
+    "exampleDE": "Gib etwas Pfeffer dazu."
+  },
+  {
+    "index": 170,
+    "front": "Sauce",
+    "exampleDE": "Die Sauce ist sehr lecker geworden."
+  },
+  {
+    "index": 171,
+    "front": "Brühe",
+    "exampleDE": "Mama kocht eine Hühnerbrühe."
+  },
+  {
+    "index": 172,
+    "front": "Nachtisch",
+    "exampleDE": "Zum Nachtisch gab es Eis."
+  },
+  {
+    "index": 173,
+    "front": "Milch",
+    "exampleDE": "Das Kind trinkt jeden Abend Milch."
+  },
+  {
+    "index": 174,
+    "front": "Wasser",
+    "exampleDE": "Trink bei heißem Wetter mehr Wasser."
+  },
+  {
+    "index": 175,
+    "front": "Tee",
+    "exampleDE": "Trink einen heißen Tee, dann geht es dir besser."
+  },
+  {
+    "index": 176,
+    "front": "Kaffee",
+    "exampleDE": "Morgens trinke ich immer eine Tasse Kaffee."
+  },
+  {
+    "index": 177,
+    "front": "Saft",
+    "exampleDE": "Orangensaft ist sehr gesund für den Körper."
+  },
+  {
+    "index": 178,
+    "front": "Bier",
+    "exampleDE": "Er hat mit Freunden ein Glas Bier getrunken."
+  },
+  {
+    "index": 179,
+    "front": "Wein",
+    "exampleDE": "Beim Abendessen wurde Rotwein zum Fleisch serviert."
+  },
+  {
+    "index": 180,
+    "front": "trinken",
+    "exampleDE": "Man muss jeden Tag viel Wasser trinken."
+  },
+  {
+    "index": 181,
+    "front": "Küche",
+    "exampleDE": "Mama kocht das Mittagessen in der Küche."
+  },
+  {
+    "index": 182,
+    "front": "kochen",
+    "exampleDE": "Am Wochenende kocht Papa gern das Abendessen."
+  },
+  {
+    "index": 183,
+    "front": "Gabel",
+    "exampleDE": "Gib mir bitte eine saubere Gabel."
+  },
+  {
+    "index": 184,
+    "front": "Messer",
+    "exampleDE": "Dieses Messer ist sehr scharf, sei vorsichtig."
+  },
+  {
+    "index": 185,
+    "front": "Löffel",
+    "exampleDE": "Ich brauche einen Löffel für die Suppe."
+  },
+  {
+    "index": 186,
+    "front": "Teller",
+    "exampleDE": "Auf dem Tisch stand ein Teller mit heißem Brei."
+  },
+  {
+    "index": 187,
+    "front": "Tasse",
+    "exampleDE": "Sie trank eine Tasse Tee mit Zitrone."
+  },
+  {
+    "index": 188,
+    "front": "Glas",
+    "exampleDE": "Vorsicht, auf dem Boden liegt zerbrochenes Glas."
+  },
+  {
+    "index": 189,
+    "front": "braten",
+    "exampleDE": "Mama wird zum Abendessen Fisch braten."
+  },
+  {
+    "index": 190,
+    "front": "backen",
+    "exampleDE": "Oma backt gern Kuchen."
+  },
+  {
+    "index": 191,
+    "front": "rühren",
+    "exampleDE": "Rühre die Suppe, damit sie nicht anbrennt."
+  },
+  {
+    "index": 192,
+    "front": "würzen",
+    "exampleDE": "Vergiss nicht, das Fleisch zu würzen."
+  },
+  {
+    "index": 193,
+    "front": "Ofen",
+    "exampleDE": "Stell den Kuchen in den Ofen."
+  },
+  {
+    "index": 194,
+    "front": "Pfanne",
+    "exampleDE": "In der Pfanne braten Eier."
+  },
+  {
+    "index": 195,
+    "front": "Topf",
+    "exampleDE": "Das Wasser im Topf kocht schon."
+  },
+  {
+    "index": 196,
+    "front": "mischen",
+    "exampleDE": "Mische Mehl und Zucker."
+  },
+  {
+    "index": 197,
+    "front": "gießen",
+    "exampleDE": "Gieß Wasser in das Glas."
+  },
+  {
+    "index": 198,
+    "front": "Haus",
+    "exampleDE": "Mein Haus liegt neben dem Park."
+  },
+  {
+    "index": 199,
+    "front": "Tür",
+    "exampleDE": "Bitte schließen Sie die Tür hinter sich."
+  },
+  {
+    "index": 200,
+    "front": "Fenster",
+    "exampleDE": "Öffne das Fenster, im Zimmer ist es heiß."
+  },
+  {
+    "index": 201,
+    "front": "Zimmer",
+    "exampleDE": "In diesem Zimmer gibt es zwei große Fenster."
+  },
+  {
+    "index": 202,
+    "front": "Bad",
+    "exampleDE": "Das Badezimmer ist klein in unserer Wohnung."
+  },
+  {
+    "index": 203,
+    "front": "Boden",
+    "exampleDE": "Der Boden im Zimmer ist aus Holz."
+  },
+  {
+    "index": 204,
+    "front": "Wand",
+    "exampleDE": "An der Wand hängt ein schönes Bild."
+  },
+  {
+    "index": 205,
+    "front": "Decke",
+    "exampleDE": "Die Decke im Saal ist sehr hoch."
+  },
+  {
+    "index": 206,
+    "front": "Schlüssel",
+    "exampleDE": "Ich kann meinen Hausschlüssel nicht finden."
+  },
+  {
+    "index": 207,
+    "front": "Keller",
+    "exampleDE": "Im Keller bewahren wir alte Sachen auf."
+  },
+  {
+    "index": 208,
+    "front": "Flur",
+    "exampleDE": "Im Flur hängt ein Spiegel und steht ein Schrank."
+  },
+  {
+    "index": 209,
+    "front": "Treppe",
+    "exampleDE": "Die Treppe führt in den zweiten Stock."
+  },
+  {
+    "index": 210,
+    "front": "Dach",
+    "exampleDE": "Nach dem Sturm muss das Dach repariert werden."
+  },
+  {
+    "index": 211,
+    "front": "Tisch",
+    "exampleDE": "Auf dem Tisch liegen Bücher und Hefte."
+  },
+  {
+    "index": 212,
+    "front": "Stuhl",
+    "exampleDE": "Nimm dir einen Stuhl und setz dich neben mich."
+  },
+  {
+    "index": 213,
+    "front": "Bett",
+    "exampleDE": "Er fiel aufs Bett und schlief ein."
+  },
+  {
+    "index": 214,
+    "front": "Lampe",
+    "exampleDE": "Die Lampe auf dem Tisch leuchtet hell."
+  },
+  {
+    "index": 215,
+    "front": "Regal",
+    "exampleDE": "Stell die Bücher zurück ins Regal."
+  },
+  {
+    "index": 216,
+    "front": "Spiegel",
+    "exampleDE": "Sie betrachtete sich im Spiegel."
+  },
+  {
+    "index": 217,
+    "front": "Teppich",
+    "exampleDE": "Auf dem Boden im Wohnzimmer liegt ein weicher Teppich."
+  },
+  {
+    "index": 218,
+    "front": "Vorhang",
+    "exampleDE": "Mama hat in der Küche einen neuen Vorhang aufgehängt."
+  },
+  {
+    "index": 219,
+    "front": "Schrank",
+    "exampleDE": "Die ganze Kleidung hängt im großen Schrank."
+  },
+  {
+    "index": 220,
+    "front": "Sofa",
+    "exampleDE": "Abends sitzen wir auf dem Sofa und schauen Filme."
+  },
+  {
+    "index": 221,
+    "front": "Hund",
+    "exampleDE": "Der Hund wedelt mit dem Schwanz, wenn er sein Herrchen sieht."
+  },
+  {
+    "index": 222,
+    "front": "Katze",
+    "exampleDE": "Die Katze schläft den ganzen Tag auf dem Sofa."
+  },
+  {
+    "index": 223,
+    "front": "Vogel",
+    "exampleDE": "Der Vogel singt schön auf dem Ast des Baumes."
+  },
+  {
+    "index": 224,
+    "front": "Pferd",
+    "exampleDE": "Das Pferd läuft sehr schnell über das Feld."
+  },
+  {
+    "index": 225,
+    "front": "Kuh",
+    "exampleDE": "Die Kuh gibt uns jeden Tag Milch."
+  },
+  {
+    "index": 226,
+    "front": "Schaf",
+    "exampleDE": "Das Schaf gibt uns Wolle für Kleidung."
+  },
+  {
+    "index": 227,
+    "front": "Hahn",
+    "exampleDE": "Der Hahn kräht jeden Tag früh am Morgen."
+  },
+  {
+    "index": 228,
+    "front": "Maus",
+    "exampleDE": "Die Maus hat ein Stück Käse vom Tisch gestohlen."
+  },
+  {
+    "index": 229,
+    "front": "Ratte",
+    "exampleDE": "Im Keller des Hauses lebt eine große Ratte."
+  },
+  {
+    "index": 230,
+    "front": "Bär",
+    "exampleDE": "Der Bär sucht im Sommer im Wald nach Honig."
+  },
+  {
+    "index": 231,
+    "front": "Wolf",
+    "exampleDE": "Der Wolf lebt im tiefen, dunklen Wald."
+  },
+  {
+    "index": 232,
+    "front": "Fuchs",
+    "exampleDE": "Der rote Fuchs schaut uns listig an."
+  },
+  {
+    "index": 233,
+    "front": "Hase",
+    "exampleDE": "Der weiße Hase versteckt sich im Winter im Schnee."
+  },
+  {
+    "index": 234,
+    "front": "Löwe",
+    "exampleDE": "Der Löwe ist der König der Tiere in der afrikanischen Savanne."
+  },
+  {
+    "index": 235,
+    "front": "Tiger",
+    "exampleDE": "Der Tiger jagt nachts im dichten Dschungel."
+  },
+  {
+    "index": 236,
+    "front": "Elefant",
+    "exampleDE": "Der Elefant ist das größte Tier an Land."
+  },
+  {
+    "index": 237,
+    "front": "Affe",
+    "exampleDE": "Der Affe springt von Ast zu Ast."
+  },
+  {
+    "index": 238,
+    "front": "Schlange",
+    "exampleDE": "Die Schlange kriecht über die warmen Steine."
+  },
+  {
+    "index": 239,
+    "front": "Baum",
+    "exampleDE": "Ein großer Baum wächst vor unserem Haus."
+  },
+  {
+    "index": 240,
+    "front": "Blume",
+    "exampleDE": "Sie hat eine Blume in eine Vase auf dem Fenster gestellt."
+  },
+  {
+    "index": 241,
+    "front": "Gras",
+    "exampleDE": "Die Kinder spielen im Park auf dem grünen Gras."
+  },
+  {
+    "index": 242,
+    "front": "Berg",
+    "exampleDE": "Wir sind bei Sonnenaufgang auf den hohen Berg gestiegen."
+  },
+  {
+    "index": 243,
+    "front": "Fluss",
+    "exampleDE": "Der Fluss fließt durch die ganze Stadt."
+  },
+  {
+    "index": 244,
+    "front": "See",
+    "exampleDE": "Wir haben den ganzen Sommer am Ufer des Sees verbracht."
+  },
+  {
+    "index": 245,
+    "front": "Meer",
+    "exampleDE": "Das Meer ist heute ruhig und schön."
+  },
+  {
+    "index": 246,
+    "front": "Wald",
+    "exampleDE": "Im Wald wachsen Pilze und Beeren."
+  },
+  {
+    "index": 247,
+    "front": "Feld",
+    "exampleDE": "Auf dem Feld wachsen Weizen und Mais."
+  },
+  {
+    "index": 248,
+    "front": "Sonne",
+    "exampleDE": "Heute scheint die Sonne sehr hell."
+  },
+  {
+    "index": 249,
+    "front": "Mond",
+    "exampleDE": "Der Vollmond erhellt den nächtlichen Himmel."
+  }
+]

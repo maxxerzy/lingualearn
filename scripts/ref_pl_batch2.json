@@ -1,0 +1,1252 @@
+[
+  {
+    "index": 250,
+    "front": "Stern",
+    "exampleDE": "Nachts sind am Himmel viele Sterne zu sehen."
+  },
+  {
+    "index": 251,
+    "front": "Himmel",
+    "exampleDE": "Der Himmel ist heute blau ohne eine einzige Wolke."
+  },
+  {
+    "index": 252,
+    "front": "Wolke",
+    "exampleDE": "Weiße Wolken ziehen über den blauen Himmel."
+  },
+  {
+    "index": 253,
+    "front": "Erde",
+    "exampleDE": "Die Erde ist nach dem starken Regen nass."
+  },
+  {
+    "index": 254,
+    "front": "Stein",
+    "exampleDE": "Die Kinder werfen Steine in den stillen See."
+  },
+  {
+    "index": 255,
+    "front": "Natur",
+    "exampleDE": "Ich gehe gern in der Natur spazieren."
+  },
+  {
+    "index": 256,
+    "front": "Ozean",
+    "exampleDE": "Der Ozean verbirgt viele Geheimnisse."
+  },
+  {
+    "index": 257,
+    "front": "Wüste",
+    "exampleDE": "In der Wüste gibt es sehr wenig Wasser."
+  },
+  {
+    "index": 258,
+    "front": "Dschungel",
+    "exampleDE": "Im Dschungel leben viele Tiere."
+  },
+  {
+    "index": 259,
+    "front": "Küste",
+    "exampleDE": "Wir erholten uns an der Küste des Meeres."
+  },
+  {
+    "index": 260,
+    "front": "Gebirge",
+    "exampleDE": "Im Sommer fahren wir ins Gebirge."
+  },
+  {
+    "index": 261,
+    "front": "Tal",
+    "exampleDE": "Im Tal floss ein Fluss."
+  },
+  {
+    "index": 262,
+    "front": "Höhle",
+    "exampleDE": "In der Höhle war es dunkel und kalt."
+  },
+  {
+    "index": 263,
+    "front": "See (Gewässer)",
+    "exampleDE": "Die Kinder badeten im See."
+  },
+  {
+    "index": 264,
+    "front": "Landschaft",
+    "exampleDE": "Vom Fenster aus bot sich eine schöne Landschaft."
+  },
+  {
+    "index": 265,
+    "front": "Sand",
+    "exampleDE": "Die Kinder spielten im Sand."
+  },
+  {
+    "index": 266,
+    "front": "Fels",
+    "exampleDE": "Das Schiff zerschellte an dem Felsen."
+  },
+  {
+    "index": 267,
+    "front": "Ast",
+    "exampleDE": "Der Vogel setzte sich auf den Ast."
+  },
+  {
+    "index": 268,
+    "front": "Wurzel",
+    "exampleDE": "Die Wurzel des Baumes reicht tief in die Erde."
+  },
+  {
+    "index": 269,
+    "front": "Blatt",
+    "exampleDE": "Im Herbst fällt das Blatt vom Baum."
+  },
+  {
+    "index": 270,
+    "front": "Regen",
+    "exampleDE": "Der Regen fällt den ganzen Morgen ohne Unterbrechung."
+  },
+  {
+    "index": 271,
+    "front": "Schnee",
+    "exampleDE": "Der erste Schnee fiel Anfang November."
+  },
+  {
+    "index": 272,
+    "front": "Wind",
+    "exampleDE": "Ein starker Wind riss die Blätter von den Bäumen."
+  },
+  {
+    "index": 273,
+    "front": "Gewitter",
+    "exampleDE": "In der Nacht zog ein starkes Gewitter über die Stadt."
+  },
+  {
+    "index": 274,
+    "front": "Nebel",
+    "exampleDE": "Am Morgen lag dichter Nebel über dem Fluss."
+  },
+  {
+    "index": 275,
+    "front": "Frost",
+    "exampleDE": "Für die Nacht ist starker Frost angesagt."
+  },
+  {
+    "index": 276,
+    "front": "Hitze",
+    "exampleDE": "Im Juli herrschte in der Stadt eine schreckliche Hitze."
+  },
+  {
+    "index": 277,
+    "front": "Regenbogen",
+    "exampleDE": "Nach dem Regen erschien ein Regenbogen über dem Feld."
+  },
+  {
+    "index": 278,
+    "front": "Temperatur",
+    "exampleDE": "Heute liegt die Temperatur unter null."
+  },
+  {
+    "index": 279,
+    "front": "Klima",
+    "exampleDE": "Das Klima im Süden ist warm."
+  },
+  {
+    "index": 280,
+    "front": "Feuer",
+    "exampleDE": "Das Feuer des Lagerfeuers wärmt uns in der kalten Nacht."
+  },
+  {
+    "index": 281,
+    "front": "Umwelt",
+    "exampleDE": "Wir müssen die Umwelt schützen."
+  },
+  {
+    "index": 282,
+    "front": "Energie",
+    "exampleDE": "Die Sonne gibt uns Energie."
+  },
+  {
+    "index": 283,
+    "front": "Erdbeben",
+    "exampleDE": "Das Erdbeben zerstörte die Stadt."
+  },
+  {
+    "index": 284,
+    "front": "Vulkan",
+    "exampleDE": "Der Vulkan begann auszubrechen."
+  },
+  {
+    "index": 285,
+    "front": "Wasserfall",
+    "exampleDE": "Der Wasserfall rauschte in der Ferne."
+  },
+  {
+    "index": 286,
+    "front": "Verschmutzung",
+    "exampleDE": "Die Verschmutzung der Luft ist ein großes Problem."
+  },
+  {
+    "index": 287,
+    "front": "Überschwemmung",
+    "exampleDE": "Die Überschwemmung überflutete die Häuser."
+  },
+  {
+    "index": 288,
+    "front": "Ernte",
+    "exampleDE": "Dieses Jahr war die Ernte reich."
+  },
+  {
+    "index": 289,
+    "front": "Montag",
+    "exampleDE": "Am Montag haben wir die erste Stunde."
+  },
+  {
+    "index": 290,
+    "front": "Dienstag",
+    "exampleDE": "Am Dienstag gehe ich einkaufen."
+  },
+  {
+    "index": 291,
+    "front": "Mittwoch",
+    "exampleDE": "Am Mittwoch gibt es eine Besprechung auf der Arbeit."
+  },
+  {
+    "index": 292,
+    "front": "Donnerstag",
+    "exampleDE": "Am Donnerstag haben wir eine Matheprüfung."
+  },
+  {
+    "index": 293,
+    "front": "Freitag",
+    "exampleDE": "Am Freitag gehen wir ins Kino."
+  },
+  {
+    "index": 294,
+    "front": "Samstag",
+    "exampleDE": "Am Samstag putze ich die Wohnung."
+  },
+  {
+    "index": 295,
+    "front": "Sonntag",
+    "exampleDE": "Am Sonntag ist die ganze Familie zu Hause."
+  },
+  {
+    "index": 296,
+    "front": "Januar",
+    "exampleDE": "Im Januar ist es sehr kalt und es gibt viel Schnee."
+  },
+  {
+    "index": 297,
+    "front": "Februar",
+    "exampleDE": "Der Februar ist der kürzeste Monat im Jahr."
+  },
+  {
+    "index": 298,
+    "front": "März",
+    "exampleDE": "Im März beginnt der Schnee zu schmelzen."
+  },
+  {
+    "index": 299,
+    "front": "April",
+    "exampleDE": "Im April blühen die ersten Blumen."
+  },
+  {
+    "index": 300,
+    "front": "Mai",
+    "exampleDE": "Im Mai feiern wir den Tag des Sieges."
+  },
+  {
+    "index": 301,
+    "front": "Juni",
+    "exampleDE": "Im Juni gehen die Kinder in die Ferien."
+  },
+  {
+    "index": 302,
+    "front": "Juli",
+    "exampleDE": "Der Juli ist der heißeste Monat des Sommers."
+  },
+  {
+    "index": 303,
+    "front": "August",
+    "exampleDE": "Im August fahren wir ans Meer."
+  },
+  {
+    "index": 304,
+    "front": "September",
+    "exampleDE": "Im September kehren die Kinder in die Schule zurück."
+  },
+  {
+    "index": 305,
+    "front": "Oktober",
+    "exampleDE": "Im Oktober werden die Blätter gelb."
+  },
+  {
+    "index": 306,
+    "front": "November",
+    "exampleDE": "Im November regnet es oft."
+  },
+  {
+    "index": 307,
+    "front": "Dezember",
+    "exampleDE": "Im Dezember bereiten wir uns auf das neue Jahr vor."
+  },
+  {
+    "index": 308,
+    "front": "früh",
+    "exampleDE": "Frühes Aufstehen hilft, an einem Tag viel zu schaffen."
+  },
+  {
+    "index": 309,
+    "front": "spät",
+    "exampleDE": "Die späte Ankunft der Gäste überraschte die ganze Familie."
+  },
+  {
+    "index": 310,
+    "front": "heute",
+    "exampleDE": "Heute ist das Wetter sehr gut für einen Spaziergang."
+  },
+  {
+    "index": 311,
+    "front": "morgen",
+    "exampleDE": "Morgen haben wir ein wichtiges Treffen mit Kunden."
+  },
+  {
+    "index": 312,
+    "front": "gestern",
+    "exampleDE": "Gestern sind wir mit der ganzen Familie ins Theater gegangen."
+  },
+  {
+    "index": 313,
+    "front": "jetzt",
+    "exampleDE": "Jetzt ist nicht der beste Zeitpunkt für ein ernstes Gespräch."
+  },
+  {
+    "index": 314,
+    "front": "später",
+    "exampleDE": "Ruf mich später an, ich bin gerade sehr beschäftigt."
+  },
+  {
+    "index": 315,
+    "front": "früher",
+    "exampleDE": "Früher war an dieser Stelle ein schöner Park."
+  },
+  {
+    "index": 316,
+    "front": "bald",
+    "exampleDE": "Bald kommt der Sommer und wir fahren in den Urlaub."
+  },
+  {
+    "index": 317,
+    "front": "Zeit",
+    "exampleDE": "Wir haben keine Zeit, länger als eine Stunde zu warten."
+  },
+  {
+    "index": 318,
+    "front": "Stunde",
+    "exampleDE": "Das Treffen dauerte mehr als zwei Stunden."
+  },
+  {
+    "index": 319,
+    "front": "Minute",
+    "exampleDE": "Warte eine Minute, ich bin gleich fertig."
+  },
+  {
+    "index": 320,
+    "front": "Sekunde",
+    "exampleDE": "Eine Sekunde kann dein ganzes Leben verändern."
+  },
+  {
+    "index": 321,
+    "front": "Tag",
+    "exampleDE": "Jeder neue Tag bringt neue Möglichkeiten."
+  },
+  {
+    "index": 322,
+    "front": "Woche",
+    "exampleDE": "Nächste Woche haben wir Ferien."
+  },
+  {
+    "index": 323,
+    "front": "Monat",
+    "exampleDE": "In diesem Monat habe ich sehr viel gearbeitet."
+  },
+  {
+    "index": 324,
+    "front": "Jahr",
+    "exampleDE": "Dieses Jahr sind wir in eine neue Wohnung umgezogen."
+  },
+  {
+    "index": 325,
+    "front": "Jahrhundert",
+    "exampleDE": "Im vergangenen Jahrhundert ereigneten sich viele wichtige Ereignisse."
+  },
+  {
+    "index": 326,
+    "front": "Termin",
+    "exampleDE": "Ich habe um drei Uhr einen Termin beim Arzt."
+  },
+  {
+    "index": 327,
+    "front": "Zukunft",
+    "exampleDE": "Niemand kennt seine Zukunft."
+  },
+  {
+    "index": 328,
+    "front": "Vergangenheit",
+    "exampleDE": "Man sollte nicht in der Vergangenheit leben."
+  },
+  {
+    "index": 329,
+    "front": "Gegenwart",
+    "exampleDE": "Lebe in der Gegenwart, nicht in Träumen."
+  },
+  {
+    "index": 330,
+    "front": "Jahrzehnt",
+    "exampleDE": "Im letzten Jahrzehnt hat sich vieles verändert."
+  },
+  {
+    "index": 331,
+    "front": "Augenblick",
+    "exampleDE": "Warte einen Augenblick."
+  },
+  {
+    "index": 332,
+    "front": "Zeitpunkt",
+    "exampleDE": "Zu diesem Zeitpunkt klingelte das Telefon."
+  },
+  {
+    "index": 333,
+    "front": "Datum",
+    "exampleDE": "Welches Datum ist heute?"
+  },
+  {
+    "index": 334,
+    "front": "Feiertag",
+    "exampleDE": "Morgen ist ein staatlicher Feiertag."
+  },
+  {
+    "index": 335,
+    "front": "Wochenende",
+    "exampleDE": "Am Wochenende fahren wir aufs Land."
+  },
+  {
+    "index": 336,
+    "front": "Zeitalter",
+    "exampleDE": "Ein neues Zeitalter begann."
+  },
+  {
+    "index": 337,
+    "front": "Frist",
+    "exampleDE": "Die Frist für die Abgabe läuft morgen ab."
+  },
+  {
+    "index": 338,
+    "front": "Auto",
+    "exampleDE": "Sein Auto steht vor dem Haus."
+  },
+  {
+    "index": 339,
+    "front": "Bus",
+    "exampleDE": "Der Bus kommt alle zehn Minuten."
+  },
+  {
+    "index": 340,
+    "front": "Zug",
+    "exampleDE": "Der Zug fährt von Gleis eins ab."
+  },
+  {
+    "index": 341,
+    "front": "Flugzeug",
+    "exampleDE": "Das Flugzeug fliegt hoch über den Wolken."
+  },
+  {
+    "index": 342,
+    "front": "Schiff",
+    "exampleDE": "Das große Schiff fährt über das Meer."
+  },
+  {
+    "index": 343,
+    "front": "Fahrrad",
+    "exampleDE": "Im Sommer fährt er mit dem Fahrrad zur Arbeit."
+  },
+  {
+    "index": 344,
+    "front": "Motorrad",
+    "exampleDE": "Er hat im Frühling ein neues Motorrad gekauft."
+  },
+  {
+    "index": 345,
+    "front": "Taxi",
+    "exampleDE": "Ruf ein Taxi, wir verpassen sonst das Flugzeug."
+  },
+  {
+    "index": 346,
+    "front": "U-Bahn",
+    "exampleDE": "In Moskau gibt es eine sehr bequeme und schöne U-Bahn."
+  },
+  {
+    "index": 347,
+    "front": "Straße",
+    "exampleDE": "In dieser Straße gibt es viele schöne Geschäfte."
+  },
+  {
+    "index": 348,
+    "front": "Bahnhof",
+    "exampleDE": "Wir treffen uns am Hauptbahnhof."
+  },
+  {
+    "index": 349,
+    "front": "Flughafen",
+    "exampleDE": "Der Flughafen liegt weit vom Stadtzentrum entfernt."
+  },
+  {
+    "index": 350,
+    "front": "Urlaub",
+    "exampleDE": "Im Juli fahre ich in den Urlaub ans Meer."
+  },
+  {
+    "index": 351,
+    "front": "Ampel",
+    "exampleDE": "An der Ampel muss man auf die andere Seite gehen."
+  },
+  {
+    "index": 352,
+    "front": "Kreuzung",
+    "exampleDE": "An der Kreuzung sind immer viele Autos."
+  },
+  {
+    "index": 353,
+    "front": "Brücke",
+    "exampleDE": "Die alte Brücke verbindet zwei Teile der Stadt."
+  },
+  {
+    "index": 354,
+    "front": "Gepäck",
+    "exampleDE": "Unser Gepäck ist schon im Auto."
+  },
+  {
+    "index": 355,
+    "front": "Pass",
+    "exampleDE": "Vergiss nicht, den Pass zum Flughafen mitzunehmen."
+  },
+  {
+    "index": 356,
+    "front": "Grenze",
+    "exampleDE": "Wir haben die Grenze früh am Morgen überquert."
+  },
+  {
+    "index": 357,
+    "front": "Ticket",
+    "exampleDE": "Ich habe ein Ticket für den Abendzug gekauft."
+  },
+  {
+    "index": 358,
+    "front": "Verspätung",
+    "exampleDE": "Der Zug kam mit einer Stunde Verspätung an."
+  },
+  {
+    "index": 359,
+    "front": "Koffer",
+    "exampleDE": "Mein Koffer ist zu schwer für die Ablage."
+  },
+  {
+    "index": 360,
+    "front": "Reise",
+    "exampleDE": "Das war eine unvergessliche Reise durch Russland."
+  },
+  {
+    "index": 361,
+    "front": "Tourist",
+    "exampleDE": "Im Sommer sind viele Touristen in der Stadt."
+  },
+  {
+    "index": 362,
+    "front": "Abfahrt",
+    "exampleDE": "Die Abfahrt des Zuges verzögert sich um zehn Minuten."
+  },
+  {
+    "index": 363,
+    "front": "Schule",
+    "exampleDE": "Die Schule beginnt um acht Uhr morgens."
+  },
+  {
+    "index": 364,
+    "front": "Büro",
+    "exampleDE": "Er arbeitet in einem großen Büro im Stadtzentrum."
+  },
+  {
+    "index": 365,
+    "front": "Ecke",
+    "exampleDE": "Das Café ist um die Ecke dieses Hauses."
+  },
+  {
+    "index": 366,
+    "front": "Platz",
+    "exampleDE": "Auf dem Hauptplatz der Stadt steht eine alte Kirche."
+  },
+  {
+    "index": 367,
+    "front": "Kirche",
+    "exampleDE": "Diese Kirche wurde vor zweihundert Jahren gebaut."
+  },
+  {
+    "index": 368,
+    "front": "Markt",
+    "exampleDE": "Samstags kaufen wir Gemüse auf dem Markt."
+  },
+  {
+    "index": 369,
+    "front": "Universität",
+    "exampleDE": "Sie studiert an der Universität."
+  },
+  {
+    "index": 370,
+    "front": "Geschäft",
+    "exampleDE": "Er hat sein eigenes Geschäft eröffnet."
+  },
+  {
+    "index": 371,
+    "front": "Bank",
+    "exampleDE": "Ich gehe zur Bank, um Geld zu holen."
+  },
+  {
+    "index": 372,
+    "front": "Ausstellung",
+    "exampleDE": "In der Galerie wurde eine neue Ausstellung eröffnet."
+  },
+  {
+    "index": 373,
+    "front": "Lehrer",
+    "exampleDE": "Unser Lehrer erklärt den Stoff sehr verständlich."
+  },
+  {
+    "index": 374,
+    "front": "Schüler",
+    "exampleDE": "Jeder Schüler hat die Prüfung mit Bestnote bestanden."
+  },
+  {
+    "index": 375,
+    "front": "Buch",
+    "exampleDE": "Dieses Buch ist sehr interessant und lehrreich."
+  },
+  {
+    "index": 376,
+    "front": "Heft",
+    "exampleDE": "Nimm das Heft und schreib die Hausaufgabe auf."
+  },
+  {
+    "index": 377,
+    "front": "Stift",
+    "exampleDE": "Gib mir einen Stift, ich möchte die Adresse aufschreiben."
+  },
+  {
+    "index": 378,
+    "front": "Tafel",
+    "exampleDE": "Der Lehrer schreibt die Aufgabe mit Kreide an die Tafel."
+  },
+  {
+    "index": 379,
+    "front": "Klasse",
+    "exampleDE": "In unserer Klasse sind dreißig Schüler."
+  },
+  {
+    "index": 380,
+    "front": "Hausaufgabe",
+    "exampleDE": "Ich habe alle Hausaufgaben rechtzeitig gemacht."
+  },
+  {
+    "index": 381,
+    "front": "Prüfung",
+    "exampleDE": "Morgen haben wir eine wichtige Prüfung in Physik."
+  },
+  {
+    "index": 382,
+    "front": "Papier",
+    "exampleDE": "Ich brauche Papier für den Drucker."
+  },
+  {
+    "index": 383,
+    "front": "Vorlesung",
+    "exampleDE": "Der Professor hält eine Vorlesung über Geschichte."
+  },
+  {
+    "index": 384,
+    "front": "Note (Schule)",
+    "exampleDE": "Er bekam eine gute Note für den Aufsatz."
+  },
+  {
+    "index": 385,
+    "front": "Bildung",
+    "exampleDE": "Eine gute Bildung öffnet Türen."
+  },
+  {
+    "index": 386,
+    "front": "Student",
+    "exampleDE": "Der Student bereitet sich auf die Prüfung vor."
+  },
+  {
+    "index": 387,
+    "front": "Professor",
+    "exampleDE": "Der Professor erklärte das neue Thema."
+  },
+  {
+    "index": 388,
+    "front": "Kapitel",
+    "exampleDE": "Ich habe das erste Kapitel des Buches gelesen."
+  },
+  {
+    "index": 389,
+    "front": "Note (Musik)",
+    "exampleDE": "Er kennt keine einzige Note."
+  },
+  {
+    "index": 390,
+    "front": "Wirklichkeit",
+    "exampleDE": "Seine Träume wurden zur Wirklichkeit."
+  },
+  {
+    "index": 391,
+    "front": "Wissenschaft",
+    "exampleDE": "Die Wissenschaft treibt die Welt voran."
+  },
+  {
+    "index": 392,
+    "front": "Forschung",
+    "exampleDE": "Diese Entdeckung ist das Ergebnis langer Forschung."
+  },
+  {
+    "index": 393,
+    "front": "Experiment",
+    "exampleDE": "Die Wissenschaftler führten ein wichtiges Experiment durch."
+  },
+  {
+    "index": 394,
+    "front": "Theorie",
+    "exampleDE": "Diese Theorie erklärt vieles."
+  },
+  {
+    "index": 395,
+    "front": "Beweis",
+    "exampleDE": "Wir haben keinen Beweis für seine Schuld."
+  },
+  {
+    "index": 396,
+    "front": "Formel",
+    "exampleDE": "Er schrieb die Formel an die Tafel."
+  },
+  {
+    "index": 397,
+    "front": "Physik",
+    "exampleDE": "Physik ist mein Lieblingsfach."
+  },
+  {
+    "index": 398,
+    "front": "Chemie",
+    "exampleDE": "Im Chemieunterricht machten wir Versuche."
+  },
+  {
+    "index": 399,
+    "front": "Biologie",
+    "exampleDE": "Die Biologie erforscht die lebenden Organismen."
+  },
+  {
+    "index": 400,
+    "front": "Mathematik",
+    "exampleDE": "Mathematik erfordert Logik."
+  },
+  {
+    "index": 401,
+    "front": "Geographie",
+    "exampleDE": "Im Geografieunterricht lernten wir Karten."
+  },
+  {
+    "index": 402,
+    "front": "Wissenschaftler",
+    "exampleDE": "Der Wissenschaftler machte eine wichtige Entdeckung."
+  },
+  {
+    "index": 403,
+    "front": "Entdeckung",
+    "exampleDE": "Diese Entdeckung veränderte die Medizin."
+  },
+  {
+    "index": 404,
+    "front": "Erfindung",
+    "exampleDE": "Das Rad ist eine alte Erfindung."
+  },
+  {
+    "index": 405,
+    "front": "Zelle",
+    "exampleDE": "Der Organismus besteht aus Zellen."
+  },
+  {
+    "index": 406,
+    "front": "Atom",
+    "exampleDE": "Das Atom besteht aus kleinen Teilchen."
+  },
+  {
+    "index": 407,
+    "front": "Schwerkraft",
+    "exampleDE": "Die Schwerkraft zieht Gegenstände zur Erde."
+  },
+  {
+    "index": 408,
+    "front": "malen",
+    "exampleDE": "Meine Tochter malt gern Tiere."
+  },
+  {
+    "index": 409,
+    "front": "Vorstellung",
+    "exampleDE": "Ich habe nicht die geringste Vorstellung."
+  },
+  {
+    "index": 410,
+    "front": "Gemälde",
+    "exampleDE": "Im Museum hängt ein altes Gemälde."
+  },
+  {
+    "index": 411,
+    "front": "Melodie",
+    "exampleDE": "Diese Melodie ist mir vertraut."
+  },
+  {
+    "index": 412,
+    "front": "Rhythmus",
+    "exampleDE": "Er schlug den Rhythmus mit dem Fuß."
+  },
+  {
+    "index": 413,
+    "front": "Bühne",
+    "exampleDE": "Der Schauspieler betrat die Bühne."
+  },
+  {
+    "index": 414,
+    "front": "Publikum",
+    "exampleDE": "Das Publikum applaudierte laut."
+  },
+  {
+    "index": 415,
+    "front": "Künstler",
+    "exampleDE": "Der Künstler malt ein Porträt."
+  },
+  {
+    "index": 416,
+    "front": "Zeichnung",
+    "exampleDE": "Ihre Zeichnung hängt an der Wand."
+  },
+  {
+    "index": 417,
+    "front": "Skulptur",
+    "exampleDE": "Im Park steht eine Skulptur aus Marmor."
+  },
+  {
+    "index": 418,
+    "front": "Orchester",
+    "exampleDE": "Das Orchester begann zu spielen."
+  },
+  {
+    "index": 419,
+    "front": "Sänger",
+    "exampleDE": "Der Sänger betrat die Bühne."
+  },
+  {
+    "index": 420,
+    "front": "Tänzer",
+    "exampleDE": "Der Tänzer bewegte sich anmutig."
+  },
+  {
+    "index": 421,
+    "front": "Schauspieler",
+    "exampleDE": "Der Schauspieler spielte die Hauptrolle."
+  },
+  {
+    "index": 422,
+    "front": "Roman",
+    "exampleDE": "Sie schreibt ihren ersten Roman."
+  },
+  {
+    "index": 423,
+    "front": "Pinsel",
+    "exampleDE": "Der Künstler wusch den Pinsel aus."
+  },
+  {
+    "index": 424,
+    "front": "Instrument",
+    "exampleDE": "Welches Instrument spielst du?"
+  },
+  {
+    "index": 425,
+    "front": "Arbeit",
+    "exampleDE": "Seine Arbeit erfordert viel Zeit und Kraft."
+  },
+  {
+    "index": 426,
+    "front": "Chef",
+    "exampleDE": "Der Chef ist mit den Ergebnissen unserer Arbeit zufrieden."
+  },
+  {
+    "index": 427,
+    "front": "Kollege",
+    "exampleDE": "Mein Kollege hilft mir bei schwierigen Aufgaben."
+  },
+  {
+    "index": 428,
+    "front": "Gehalt",
+    "exampleDE": "Er hat diesen Monat eine Gehaltserhöhung bekommen."
+  },
+  {
+    "index": 429,
+    "front": "Besprechung",
+    "exampleDE": "Die Besprechung beginnt um zehn Uhr morgens."
+  },
+  {
+    "index": 430,
+    "front": "Ingenieur",
+    "exampleDE": "Der Ingenieur prüfte den Plan der neuen Brücke."
+  },
+  {
+    "index": 431,
+    "front": "Verkäufer",
+    "exampleDE": "Der Verkäufer half mir, ein Geschenk auszuwählen."
+  },
+  {
+    "index": 432,
+    "front": "Koch",
+    "exampleDE": "Der Koch dieses Restaurants macht eine ausgezeichnete Suppe."
+  },
+  {
+    "index": 433,
+    "front": "Fahrer",
+    "exampleDE": "Der Busfahrer kündigte die nächste Haltestelle an."
+  },
+  {
+    "index": 434,
+    "front": "Polizist",
+    "exampleDE": "Der Polizist zeigte uns den Weg zum Bahnhof."
+  },
+  {
+    "index": 435,
+    "front": "Feuerwehrmann",
+    "exampleDE": "Der Feuerwehrmann löschte das Feuer im Haus schnell."
+  },
+  {
+    "index": 436,
+    "front": "Anwalt",
+    "exampleDE": "Der Anwalt bereitete alle Unterlagen für das Gericht vor."
+  },
+  {
+    "index": 437,
+    "front": "Friseur",
+    "exampleDE": "Der Friseur machte ihr einen schönen Haarschnitt."
+  },
+  {
+    "index": 438,
+    "front": "Kellner",
+    "exampleDE": "Der Kellner brachte uns die heiße Suppe."
+  },
+  {
+    "index": 439,
+    "front": "fotografieren",
+    "exampleDE": "Er fotografiert gern alte Gebäude."
+  },
+  {
+    "index": 440,
+    "front": "Aufgabe",
+    "exampleDE": "Diese Aufgabe ist zu schwer."
+  },
+  {
+    "index": 441,
+    "front": "Firma",
+    "exampleDE": "Sie arbeitet in einer großen Firma."
+  },
+  {
+    "index": 442,
+    "front": "Lohn",
+    "exampleDE": "Er bekommt einen guten Lohn."
+  },
+  {
+    "index": 443,
+    "front": "Arbeitslosigkeit",
+    "exampleDE": "Die Arbeitslosigkeit in der Stadt steigt."
+  },
+  {
+    "index": 444,
+    "front": "Unternehmen",
+    "exampleDE": "Das ist ein großes Industrieunternehmen."
+  },
+  {
+    "index": 445,
+    "front": "kaufen",
+    "exampleDE": "Morgen gehen wir neue Möbel kaufen."
+  },
+  {
+    "index": 446,
+    "front": "verkaufen",
+    "exampleDE": "Sie haben beschlossen, das Haus zu verkaufen und ins Ausland zu gehen."
+  },
+  {
+    "index": 447,
+    "front": "teuer",
+    "exampleDE": "Dieses Restaurant ist zu teuer für uns."
+  },
+  {
+    "index": 448,
+    "front": "reich",
+    "exampleDE": "Der reiche Mann spendete Geld für das Krankenhaus."
+  },
+  {
+    "index": 449,
+    "front": "billig",
+    "exampleDE": "Wir haben eine billige Fahrkarte für den Zug gefunden."
+  },
+  {
+    "index": 450,
+    "front": "Rechnung",
+    "exampleDE": "Bringen Sie bitte die Rechnung, wir haben es eilig."
+  },
+  {
+    "index": 451,
+    "front": "Zoll",
+    "exampleDE": "Am Zoll wurden unsere Koffer kontrolliert."
+  },
+  {
+    "index": 452,
+    "front": "Vorteil",
+    "exampleDE": "Sprachkenntnisse sind ein großer Vorteil."
+  },
+  {
+    "index": 453,
+    "front": "Nachteil",
+    "exampleDE": "Dieser Plan hat einen Nachteil."
+  },
+  {
+    "index": 454,
+    "front": "kosten (probieren)",
+    "exampleDE": "Probier diese Sauce."
+  },
+  {
+    "index": 455,
+    "front": "Wirtschaft",
+    "exampleDE": "Die Wirtschaft des Landes wächst."
+  },
+  {
+    "index": 456,
+    "front": "Gewinn",
+    "exampleDE": "Die Firma erzielte einen großen Gewinn."
+  },
+  {
+    "index": 457,
+    "front": "Verlust",
+    "exampleDE": "Die Firma erlitt einen großen Verlust."
+  },
+  {
+    "index": 458,
+    "front": "Steuer",
+    "exampleDE": "Jeder muss Steuer zahlen."
+  },
+  {
+    "index": 459,
+    "front": "Kunde",
+    "exampleDE": "Der Kunde hat immer recht."
+  },
+  {
+    "index": 460,
+    "front": "Ware",
+    "exampleDE": "Diese Ware ist sehr beliebt."
+  },
+  {
+    "index": 461,
+    "front": "Kredit",
+    "exampleDE": "Sie nahmen einen Kredit für das Haus auf."
+  },
+  {
+    "index": 462,
+    "front": "Schulden",
+    "exampleDE": "Er hat mir die Schulden zurückgezahlt."
+  },
+  {
+    "index": 463,
+    "front": "Zins",
+    "exampleDE": "Die Bank berechnet einen hohen Zins."
+  },
+  {
+    "index": 464,
+    "front": "Investition",
+    "exampleDE": "Das ist eine lohnende Investition."
+  },
+  {
+    "index": 465,
+    "front": "Aktie",
+    "exampleDE": "Der Preis der Aktie ist gestiegen."
+  },
+  {
+    "index": 466,
+    "front": "Währung",
+    "exampleDE": "Der Euro ist die europäische Währung."
+  },
+  {
+    "index": 467,
+    "front": "Rabatt",
+    "exampleDE": "Im Geschäft gibt es einen großen Rabatt."
+  },
+  {
+    "index": 468,
+    "front": "Angebot",
+    "exampleDE": "Das ist ein günstiges Angebot."
+  },
+  {
+    "index": 469,
+    "front": "Nachfrage",
+    "exampleDE": "Nach dieser Ware gibt es eine große Nachfrage."
+  },
+  {
+    "index": 470,
+    "front": "laufen",
+    "exampleDE": "Jeden Morgen läuft er gern im Park."
+  },
+  {
+    "index": 471,
+    "front": "schwimmen",
+    "exampleDE": "Im Sommer schwimmen wir oft im See."
+  },
+  {
+    "index": 472,
+    "front": "Fußball",
+    "exampleDE": "Die Jungen spielen jeden Abend Fußball."
+  },
+  {
+    "index": 473,
+    "front": "Schach",
+    "exampleDE": "Der Großvater hat mir das Schachspielen beigebracht."
+  },
+  {
+    "index": 474,
+    "front": "Mannschaft",
+    "exampleDE": "Unsere Mannschaft hat das wichtige Spiel gewonnen."
+  },
+  {
+    "index": 475,
+    "front": "Ball",
+    "exampleDE": "Die Kinder werfen sich den Ball zu."
+  },
+  {
+    "index": 476,
+    "front": "Training",
+    "exampleDE": "Das Training beginnt um sechs Uhr abends."
+  },
+  {
+    "index": 477,
+    "front": "Schwimmbad",
+    "exampleDE": "Dienstags gehe ich ins Schwimmbad."
+  },
+  {
+    "index": 478,
+    "front": "Konzert",
+    "exampleDE": "Gestern waren wir auf einem Konzert."
+  },
+  {
+    "index": 479,
+    "front": "E-Mail",
+    "exampleDE": "Schick mir die Dokumente per E-Mail."
+  },
+  {
+    "index": 480,
+    "front": "Passwort",
+    "exampleDE": "Ich habe das Passwort für mein Konto vergessen."
+  },
+  {
+    "index": 481,
+    "front": "Bildschirm",
+    "exampleDE": "Der Bildschirm meines Laptops ist zu dunkel."
+  },
+  {
+    "index": 482,
+    "front": "Tastatur",
+    "exampleDE": "Die neue Tastatur arbeitet sehr leise."
+  },
+  {
+    "index": 483,
+    "front": "Drucker",
+    "exampleDE": "Der Drucker im Büro funktioniert schon wieder nicht."
+  },
+  {
+    "index": 484,
+    "front": "Akku",
+    "exampleDE": "Der Akku des Handys ist sehr schnell leer."
+  },
+  {
+    "index": 485,
+    "front": "Handy",
+    "exampleDE": "Ich habe mein Handy zu Hause vergessen."
+  },
+  {
+    "index": 486,
+    "front": "Computer",
+    "exampleDE": "Er arbeitet den ganzen Tag am Computer."
+  },
+  {
+    "index": 487,
+    "front": "Internet",
+    "exampleDE": "Im Hotel gibt es kostenloses Internet."
+  },
+  {
+    "index": 488,
+    "front": "Datei",
+    "exampleDE": "Speichere diese Datei auf dem Desktop."
+  },
+  {
+    "index": 489,
+    "front": "Holz",
+    "exampleDE": "Diese Möbel sind aus gutem Holz gefertigt."
+  },
+  {
+    "index": 490,
+    "front": "Metall",
+    "exampleDE": "Das Tor ist aus festem Metall gemacht."
+  },
+  {
+    "index": 491,
+    "front": "Plastik",
+    "exampleDE": "Diese Becher sind aus Plastik."
+  },
+  {
+    "index": 492,
+    "front": "Leder",
+    "exampleDE": "Diese Tasche ist aus echtem Leder."
+  },
+  {
+    "index": 493,
+    "front": "Wolle",
+    "exampleDE": "Die Großmutter hat einen Pullover aus warmer Wolle gestrickt."
+  },
+  {
+    "index": 494,
+    "front": "Gold",
+    "exampleDE": "Dieser Ring ist aus reinem Gold."
+  },
+  {
+    "index": 495,
+    "front": "Ordnung",
+    "exampleDE": "Im Zimmer herrscht perfekte Ordnung."
+  },
+  {
+    "index": 496,
+    "front": "befehlen",
+    "exampleDE": "Der General begann, den Soldaten zu befehlen."
+  },
+  {
+    "index": 497,
+    "front": "erlauben",
+    "exampleDE": "Die Eltern erlauben ihm nicht, spät auszugehen."
+  },
+  {
+    "index": 498,
+    "front": "verbieten",
+    "exampleDE": "Hier ist es verboten zu rauchen."
+  },
+  {
+    "index": 499,
+    "front": "lieben",
+    "exampleDE": "Sie liebt ihn von ganzem Herzen."
+  }
+]

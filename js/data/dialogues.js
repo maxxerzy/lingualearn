@@ -4485,5 +4485,447 @@ export const DIALOGUES = {
         }
       ]
     }
+  ],
+  "pl": [
+    {
+      "id": "pl-cafe",
+      "language": "pl",
+      "category": "food",
+      "title": "W kawiarni w Krakowie",
+      "situation": "Du sitzt in einem gemütlichen Traditions-Café am Krakauer Marktplatz und möchtest Kaffee und Gebäck bestellen.",
+      "icon": "fa-mug-hot",
+      "npcName": "Michał",
+      "npcRole": "Barista",
+      "level": "A1",
+      "turns": [
+        {
+          "npc": "Dzień dobry! Zapraszam do stolika. Co dla Pana / Pani przygotować?",
+          "npcDe": "Guten Tag! Nehmen Sie gerne Platz. Was darf ich für Sie zubereiten?",
+          "hint": "„Co dla Pana/Pani...\" ist die typische, zuvorkommende Höflichkeitsformel in der Gastronomie.",
+          "prompt": "Bestelle bitte einen Kaffee mit Milch und ein Stück Apfelkuchen (Szarlotka).",
+          "expected": "Dzień dobry! Poproszę kawę z mlekiem i kawałek szarlotki.",
+          "expectedDe": "Guten Tag! Ich hätte gerne einen Kaffee mit Milch und ein Stück Apfelkuchen.",
+          "options": [
+            {
+              "text": "Dzień dobry! Poproszę kawę z mlekiem i kawałek szarlotki.",
+              "de": "Guten Tag! Ich hätte gerne einen Kaffee mit Milch und ein Stück Apfelkuchen.",
+              "correct": true
+            },
+            {
+              "text": "Gdzie jest najbliższa apteka?",
+              "de": "Wo ist die nächste Apotheke?",
+              "correct": false
+            },
+            {
+              "text": "Nie lubię czytać gazet w pociągu.",
+              "de": "Ich lese nicht gerne Zeitungen im Zug.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "npc": "Znakomity wybór, nasza szarlotka jest jeszcze ciepła! Czy podać do tego cukier?",
+          "npcDe": "Hervorragende Wahl, unsere Szarlotka ist noch warm! Soll ich Zucker dazu servieren?",
+          "hint": "„Cukier\" (Zucker) steht nach Präpositionen im Akkusativ oder Genitiv (bez cukru).",
+          "prompt": "Antworte, dass du den Kaffee ohne Zucker trinkst.",
+          "expected": "Bez cukru, dziękuję. Piję gorzką kawę.",
+          "expectedDe": "Ohne Zucker, danke. Ich trinke ungesüßten Kaffee.",
+          "options": [
+            {
+              "text": "Bez cukru, dziękuję. Piję gorzką kawę.",
+              "de": "Ohne Zucker, danke. Ich trinke ungesüßten Kaffee.",
+              "correct": true
+            },
+            {
+              "text": "Poproszę dwa bilety normalne do Warszawy.",
+              "de": "Ich hätte gerne zwei normale Fahrkarten nach Warschau.",
+              "correct": false
+            },
+            {
+              "text": "Mam rezerwację na trzy noce.",
+              "de": "Ich habe eine Reservierung für drei Nächte.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "npc": "Już się robi! Będzie to dwadzieścia osiem złotych. Płatność kartą czy gotówką?",
+          "npcDe": "Kommt sofort! Das macht achtundzwanzig Złoty. Kartenzahlung oder bar?",
+          "hint": "In Polen kann man fast überall kontaktlos mit Karte („kartą\") bezahlen.",
+          "prompt": "Sage, dass du mit Karte zahlen möchtest, und bedanke dich.",
+          "expected": "Zapłacę kartą, dziękuję bardzo.",
+          "expectedDe": "Ich zahle mit Karte, vielen Dank.",
+          "options": [
+            {
+              "text": "Zapłacę kartą, dziękuję bardzo.",
+              "de": "Ich zahle mit Karte, vielen Dank.",
+              "correct": true
+            },
+            {
+              "text": "Muszę natychmiast zadzwonić do lekarza.",
+              "de": "Ich muss sofort den Arzt anrufen.",
+              "correct": false
+            },
+            {
+              "text": "Gdzie mogę wypożyczyć rower?",
+              "de": "Wo kann ich ein Fahrrad leihen?",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pl-directions",
+      "language": "pl",
+      "category": "travel",
+      "title": "Droga na dworzec w Warszawie",
+      "situation": "Du bist in der Warschauer Innenstadt und musst zum Hauptbahnhof (Warszawa Centralna). Du fragst eine Passantin nach dem Weg.",
+      "icon": "fa-map-location-dot",
+      "npcName": "Ania",
+      "npcRole": "Passantin",
+      "level": "A1",
+      "turns": [
+        {
+          "npc": "Dzień dobry! W czym mogę Panu / Pani pomóc?",
+          "npcDe": "Guten Tag! Wie kann ich Ihnen helfen?",
+          "hint": "„Przepraszam, jak dojść do...\" ist die klassische Höflichkeitsform für Wegbeschreibungen.",
+          "prompt": "Entschuldige dich höflich und frage, wie du zum Hauptbahnhof kommst.",
+          "expected": "Przepraszam, czy może mi Pani powiedzieć, jak dojść na dworzec centralny?",
+          "expectedDe": "Entschuldigung, können Sie mir bitte sagen, wie ich zum Hauptbahnhof komme?",
+          "options": [
+            {
+              "text": "Przepraszam, czy może mi Pani powiedzieć, jak dojść na dworzec centralny?",
+              "de": "Entschuldigung, können Sie mir bitte sagen, wie ich zum Hauptbahnhof komme?",
+              "correct": true
+            },
+            {
+              "text": "Chciałbym kupić kilo jabłek i chleb.",
+              "de": "Ich möchte ein Kilo Äpfel und Brot kaufen.",
+              "correct": false
+            },
+            {
+              "text": "Mój pokój nie ma ciepłej wody.",
+              "de": "Mein Zimmer hat kein warmes Wasser.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "npc": "To całkiem blisko. Musi Pan / Pani iść prosto tą aleją, a przy Pałacu Kultury skręcić w prawo. To około dziesięć minut pieszo.",
+          "npcDe": "Das ist ganz in der Nähe. Sie müssen diese Allee geradeaus gehen und beim Kulturpalast nach rechts abbiegen. Das sind ungefähr zehn Minuten zu Fuß.",
+          "hint": "„Prosto\" heißt geradeaus, „w prawo\" nach rechts, „w lewo\" nach links.",
+          "prompt": "Frage nach, ob man auch mit der Straßenbahn (tramwaj) fahren kann.",
+          "expected": "Dziękuję! A czy jedzie tam stąd jakiś tramwaj?",
+          "expectedDe": "Danke! Fährt von hier aus auch eine Straßenbahn dorthin?",
+          "options": [
+            {
+              "text": "Dziękuję! A czy jedzie tam stąd jakiś tramwaj?",
+              "de": "Danke! Fährt von hier aus auch eine Straßenbahn dorthin?",
+              "correct": true
+            },
+            {
+              "text": "Poproszę rachunek za obiad.",
+              "de": "Die Rechnung für das Mittagessen, bitte.",
+              "correct": false
+            },
+            {
+              "text": "Czy ma Pani tabletki na ból głowy?",
+              "de": "Haben Sie Tabletten gegen Kopfschmerzen?",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "npc": "Tak, tramwaj numer 7 lub 9 zawiezie Pana / Panią w dwa przystanki. Przystanek jest tuż za rogiem!",
+          "npcDe": "Ja, die Straßenbahnlinie 7 oder 9 bringt Sie in zwei Haltestellen dorthin. Die Haltestelle ist gleich um die Ecke!",
+          "hint": "„Tuż za rogiem\" bedeutet „gleich um die Ecke\".",
+          "prompt": "Bedanke dich herzlich für die Hilfe und wünsche einen schönen Tag.",
+          "expected": "Bardzo Pani dziękuję za pomoc! Życzę miłego dnia.",
+          "expectedDe": "Vielen Dank für Ihre Hilfe! Ich wünsche Ihnen einen schönen Tag.",
+          "options": [
+            {
+              "text": "Bardzo Pani dziękuję za pomoc! Życzę miłego dnia.",
+              "de": "Vielen Dank für Ihre Hilfe! Ich wünsche Ihnen einen schönen Tag.",
+              "correct": true
+            },
+            {
+              "text": "Niestety zgubiłem klucze od domu.",
+              "de": "Leider habe ich meine Hausschlüssel verloren.",
+              "correct": false
+            },
+            {
+              "text": "O której zamykają muzeum?",
+              "de": "Um wie viel Uhr schließt das Museum?",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pl-hotel",
+      "language": "pl",
+      "category": "travel",
+      "title": "Zameldowanie w hotelu w Gdańsku",
+      "situation": "Du erreichst dein Hotel an der Mottlau in Danzig und möchtest einchecken.",
+      "icon": "fa-hotel",
+      "npcName": "Piotr",
+      "npcRole": "Recepcjonista",
+      "level": "A2",
+      "turns": [
+        {
+          "npc": "Dobry wieczór! Witamy w hotelu nad Motławą. Czy ma Pan / Pani rezerwację?",
+          "npcDe": "Guten Abend! Willkommen im Hotel an der Mottlau. Haben Sie eine Reservierung?",
+          "hint": "„Mam rezerwację na nazwisko...\" ist die Standardformel am Empfang.",
+          "prompt": "Begrüße ihn und sage, dass du eine Reservierung auf den Namen Weber für ein Doppelzimmer hast.",
+          "expected": "Dobry wieczór! Mam rezerwację na nazwisko Weber na pokój dwuosobowy.",
+          "expectedDe": "Guten Abend! Ich habe eine Reservierung auf den Namen Weber für ein Doppelzimmer.",
+          "options": [
+            {
+              "text": "Dobry wieczór! Mam rezerwację na nazwisko Weber na pokój dwuosobowy.",
+              "de": "Guten Abend! Ich habe eine Reservierung auf den Namen Weber für ein Doppelzimmer.",
+              "correct": true
+            },
+            {
+              "text": "Gdzie mogę kupić bilet ulgowy na pociąg?",
+              "de": "Wo kann ich eine ermäßigte Fahrkarte für den Zug kaufen?",
+              "correct": false
+            },
+            {
+              "text": "Boli mnie gardło i mam gorączkę.",
+              "de": "Ich habe Halsschmerzen und Fieber.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "npc": "Tak, wszystko się zgadza — trzy noce z widokiem na rzekę. Poproszę o dowód tożsamości lub paszport do zameldowania.",
+          "npcDe": "Ja, alles stimmt — drei Nächte mit Blick auf den Fluss. Ich bitte um Ihren Personalausweis oder Reisepass zum Einchecken.",
+          "hint": "„Oto...\" heißt „Hier ist... / Bitte schön...\".",
+          "prompt": "Reiche deinen Pass und frage, von wann bis wann es Frühstück gibt.",
+          "expected": "Oto mój paszport. W jakich godzinach serwowane jest śniadanie?",
+          "expectedDe": "Hier ist mein Pass. Zu welchen Zeiten wird das Frühstück serviert?",
+          "options": [
+            {
+              "text": "Oto mój paszport. W jakich godzinach serwowane jest śniadanie?",
+              "de": "Hier ist mein Pass. Zu welchen Zeiten wird das Frühstück serviert?",
+              "correct": true
+            },
+            {
+              "text": "Chciałbym zamówić dużą pizzę z pieczarkami.",
+              "de": "Ich möchte eine große Pizza mit Champignons bestellen.",
+              "correct": false
+            },
+            {
+              "text": "Który autobus jedzie na lotnisko?",
+              "de": "Welcher Bus fährt zum Flughafen?",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "npc": "Śniadanie podajemy od siódmej do dziesiątej w restauracji na parterze. Oto klucz do pokoju numer 304 na trzecim piętrze. Winda jest po lewej stronie.",
+          "npcDe": "Frühstück servieren wir von sieben bis zehn im Restaurant im Erdgeschoss. Hier ist der Schlüssel für Zimmer 304 im dritten Stock. Der Aufzug ist links.",
+          "hint": "„Winda\" ist der Aufzug, „parter\" das Erdgeschoss.",
+          "prompt": "Bedanke dich für die Informationen und wünsche einen schönen Abend.",
+          "expected": "Dziękuję bardzo za informacje. Życzę Panu miłego wieczoru!",
+          "expectedDe": "Vielen Dank für die Auskünfte. Ich wünsche Ihnen einen schönen Abend!",
+          "options": [
+            {
+              "text": "Dziękuję bardzo za informacje. Życzę Panu miłego wieczoru!",
+              "de": "Vielen Dank für die Auskünfte. Ich wünsche Ihnen einen schönen Abend!",
+              "correct": true
+            },
+            {
+              "text": "Nie mam przy sobie gotówki.",
+              "de": "Ich habe kein Bargeld dabei.",
+              "correct": false
+            },
+            {
+              "text": "Czy ten pociąg ma wagon restauracyjny?",
+              "de": "Hat dieser Zug einen Speisewagen?",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pl-pharmacy",
+      "language": "pl",
+      "category": "health",
+      "title": "W aptece — przeziębienie",
+      "situation": "Du fühlst dich unwohl und gehst in eine polnische Apotheke (Apteka), um etwas gegen Husten und Halsschmerzen zu besorgen.",
+      "icon": "fa-prescription-bottle-medical",
+      "npcName": "Kasia",
+      "npcRole": "Farmaceutka",
+      "level": "A2",
+      "turns": [
+        {
+          "npc": "Dzień dobry! W czym mogę pomóc? Źle Pan / Pani wygląda.",
+          "npcDe": "Guten Tag! Wie kann ich helfen? Sie sehen nicht gut aus.",
+          "hint": "„Boli mnie...\" (Mir tut ... weh) verlangt den Nominativ des Körperteils: boli mnie gardło.",
+          "prompt": "Erkläre, dass dir der Hals wehtut und du seit gestern starken Husten hast.",
+          "expected": "Dzień dobry. Boli mnie gardło i od wczoraj mam silny kaszel.",
+          "expectedDe": "Guten Tag. Mein Hals tut weh und seit gestern habe ich starken Husten.",
+          "options": [
+            {
+              "text": "Dzień dobry. Boli mnie gardło i od wczoraj mam silny kaszel.",
+              "de": "Guten Tag. Mein Hals tut weh und seit gestern habe ich starken Husten.",
+              "correct": true
+            },
+            {
+              "text": "Poproszę dwa bilety do teatru na jutro.",
+              "de": "Zwei Theaterkarten für morgen, bitte.",
+              "correct": false
+            },
+            {
+              "text": "Gdzie mogę nadać paczkę pocztową?",
+              "de": "Wo kann ich ein Postpaket aufgeben?",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "npc": "Rozumiem. Czy ma Pan / Pani również gorączkę albo katar?",
+          "npcDe": "Ich verstehe. Haben Sie auch Fieber oder Schnupfen?",
+          "hint": "„Gorączka\" = Fieber, „katar\" = Schnupfen, „lek bez recepty\" = rezeptfreies Medikament.",
+          "prompt": "Antworte, dass du nur leichten Schnupfen, aber kein Fieber hast, und frage nach Lutschtabletten.",
+          "expected": "Nie mam gorączki, tylko lekki katar. Czy ma Pani skuteczne tabletki do ssania na gardło?",
+          "expectedDe": "Ich habe kein Fieber, nur leichten Schnupfen. Haben Sie wirksame Halstabletten zum Lutschen?",
+          "options": [
+            {
+              "text": "Nie mam gorączki, tylko lekki katar. Czy ma Pani skuteczne tabletki do ssania na gardło?",
+              "de": "Ich habe kein Fieber, nur leichten Schnupfen. Haben Sie wirksame Halstabletten zum Lutschen?",
+              "correct": true
+            },
+            {
+              "text": "Chciałbym zarezerwować stolik dla czterech osób.",
+              "de": "Ich möchte einen Tisch für vier Personen reservieren.",
+              "correct": false
+            },
+            {
+              "text": "Czy w pobliżu jest stacja benzynowa?",
+              "de": "Gibt es in der Nähe eine Tankstelle?",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "npc": "Oczywiście, polecam te ziołowe pastylki z miodem i syrop na noc. Proszę ssać jedną tabletkę co cztery godziny. Razem trzydzieści pięć złotych.",
+          "npcDe": "Natürlich, ich empfehle diese Kräuterpastillen mit Honig und einen Hustensaft für die Nacht. Bitte alle vier Stunden eine Tablette lutschen. Zusammen fünfunddreißig Złoty.",
+          "hint": "„Życzę szybkiego powrotu do zdrowia!\" bedeutet „Gute Besserung!\".",
+          "prompt": "Bedanke dich für die Empfehlung, bezahle und wünsche einen schönen Tag.",
+          "expected": "Dziękuję za poradę, zapłacę gotówką. Miłego dnia!",
+          "expectedDe": "Danke für die Beratung, ich zahle bar. Einen schönen Tag!",
+          "options": [
+            {
+              "text": "Dziękuję za poradę, zapłacę gotówką. Miłego dnia!",
+              "de": "Danke für die Beratung, ich zahle bar. Einen schönen Tag!",
+              "correct": true
+            },
+            {
+              "text": "O której odjeżdża ostatni pociąg do Poznania?",
+              "de": "Wann fährt der letzte Zug nach Posen ab?",
+              "correct": false
+            },
+            {
+              "text": "Zgubiłem bilet parkingowy w garażu.",
+              "de": "Ich habe mein Parkticket in der Garage verloren.",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pl-station",
+      "language": "pl",
+      "category": "travel",
+      "title": "Na dworcu kolejowym",
+      "situation": "Du stehst am Fahrkartenschalter des Bahnhofs und möchtest eine Zugfahrkarte nach Breslau (Wrocław) kaufen.",
+      "icon": "fa-train",
+      "npcName": "Tomasz",
+      "npcRole": "Kasjer kolejowy",
+      "level": "A1",
+      "turns": [
+        {
+          "npc": "Dzień dobry! Słucham, dokąd chce Pan / Pani jechać?",
+          "npcDe": "Guten Tag! Bitte sehr, wohin möchten Sie reisen?",
+          "hint": "„Bilet do...\" verlangt den Genitiv des Zielorts: bilet do Wrocławia.",
+          "prompt": "Begrüße den Verkäufer und verlange eine Fahrkarte zweiter Klasse nach Breslau für den nächsten Zug.",
+          "expected": "Dzień dobry! Poproszę jeden bilet drugiej klasy do Wrocławia na najbliższy pociąg.",
+          "expectedDe": "Guten Tag! Ich hätte gerne eine Fahrkarte zweiter Klasse nach Breslau für den nächsten Zug.",
+          "options": [
+            {
+              "text": "Dzień dobry! Poproszę jeden bilet drugiej klasy do Wrocławia na najbliższy pociąg.",
+              "de": "Guten Tag! Ich hätte gerne eine Fahrkarte zweiter Klasse nach Breslau für den nächsten Zug.",
+              "correct": true
+            },
+            {
+              "text": "Czy mają Państwo wolny pokój jednoosobowy?",
+              "de": "Haben Sie ein freies Einzelzimmer?",
+              "correct": false
+            },
+            {
+              "text": "Poproszę dwa kilo truskawek i cytrynę.",
+              "de": "Ich hätte gerne zwei Kilo Erdbeeren und eine Zitrone.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "npc": "Najbliższy pociąg InterCity odjeżdża o godzinie czternastej dwadzieścia z peronu trzeciego. Czy życzy Pan / Pani sobie miejsce przy oknie czy przy korytarzu?",
+          "npcDe": "Der nächste InterCity-Zug fährt um 14:20 Uhr von Gleis drei ab. Wünschen Sie einen Platz am Fenster oder am Gang?",
+          "hint": "„Miejsce przy oknie\" = Fensterplatz, „przy korytarzu\" = Gangplatz, „peron\" = Bahnsteig.",
+          "prompt": "Antworte, dass du einen Platz am Fenster bevorzugst.",
+          "expected": "Poproszę miejsce przy oknie, jeśli to możliwe.",
+          "expectedDe": "Ich hätte gerne einen Platz am Fenster, wenn möglich.",
+          "options": [
+            {
+              "text": "Poproszę miejsce przy oknie, jeśli to możliwe.",
+              "de": "Ich hätte gerne einen Platz am Fenster, wenn möglich.",
+              "correct": true
+            },
+            {
+              "text": "Ten zamek powstał w czternastym wieku.",
+              "de": "Dieses Schloss entstand im vierzehnten Jahrhundert.",
+              "correct": false
+            },
+            {
+              "text": "Chciałbym zgłosić awarię klimatyzacji.",
+              "de": "Ich möchte einen Ausfall der Klimaanlage melden.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "npc": "Świetnie, wagon numer sześć, miejsce 45 przy oknie. Bilet kosztuje sześćdziesiąt pięć złotych. Życzę przyjemnej podróży!",
+          "npcDe": "Sehr schön, Wagen Nummer sześć, Platz 45 am Fenster. Die Fahrkarte kostet fünfundsechzig Złoty. Eine angenehme Reise!",
+          "hint": "„Życzę przyjemnej podróży!\" = Angenehme Reise / Gute Fahrt!",
+          "prompt": "Bedanke dich herzlich für das Ticket und wünsche einen schönen Arbeitstag.",
+          "expected": "Dziękuję bardzo i życzę Panu miłego dnia w pracy!",
+          "expectedDe": "Vielen Dank und ich wünsche Ihnen einen angenehmen Arbeitstag!",
+          "options": [
+            {
+              "text": "Dziękuję bardzo i życzę Panu miłego dnia w pracy!",
+              "de": "Vielen Dank und ich wünsche Ihnen einen angenehmen Arbeitstag!",
+              "correct": true
+            },
+            {
+              "text": "Proszę podać sól i pieprz.",
+              "de": "Bitte reichen Sie Salz und Pfeffer.",
+              "correct": false
+            },
+            {
+              "text": "Mam alergię na orzechy laskowe.",
+              "de": "Ich habe eine Allergie gegen Haselnüsse.",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    }
   ]
 };

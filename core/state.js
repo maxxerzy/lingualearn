@@ -42,6 +42,7 @@ function loadImportedDecks() {
 export const LANG_FLAG = {
   da: '🇩🇰', el: '🇬🇷', fr: '🇫🇷', es: '🇪🇸', la: '📜',
   ru: '🇷🇺', ja: '🇯🇵', zh: '🇨🇳', pt: '🇵🇹', ar: 'ع',
+  pl: '🇵🇱',
 };
 
 for (const [id, d] of Object.entries(loadImportedDecks())) {

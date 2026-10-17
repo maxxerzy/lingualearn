@@ -29,6 +29,7 @@ const SPEECH_LANG_CODES = {
   zh: 'zh-CN',
   pt: 'pt-PT',
   ar: 'ar-SA',
+  pl: 'pl-PL',
 };
 
 function getActiveLanguage() {

@@ -1,0 +1,1752 @@
+[
+  {
+    "front": "der Vorhang",
+    "back": "zasłona",
+    "ipa": "zaˈswɔna",
+    "example": "Ona zaciąga zasłonę, gdy robi się ciemno.",
+    "exampleDE": "Sie zieht den Vorhang zu, wenn es dunkel wird."
+  },
+  {
+    "front": "der Staubsauger",
+    "back": "odkurzacz",
+    "ipa": "ɔˈtkuʐat͡ʂ",
+    "example": "On odkurza dywan nowym odkurzaczem.",
+    "exampleDE": "Er saugt den Teppich mit dem neuen Staubsauger."
+  },
+  {
+    "front": "das Bügelbrett",
+    "back": "deska do prasowania",
+    "ipa": "ˈdɛska dɔ prasɔˈvaɲa",
+    "example": "Deska do prasowania stoi złożona w szafie.",
+    "exampleDE": "Das Bügelbrett steht zusammengeklappt im Schrank."
+  },
+  {
+    "front": "das Bügeleisen",
+    "back": "żelazko",
+    "ipa": "ʐɛˈlaskɔ",
+    "example": "Żelazko robi się bardzo gorące.",
+    "exampleDE": "Das Bügeleisen wird sehr heiß."
+  },
+  {
+    "front": "der Wischmop",
+    "back": "mop",
+    "ipa": "mɔp",
+    "example": "Ona myje podłogę w kuchni mopem.",
+    "exampleDE": "Sie wischt den Küchenboden mit dem Wischmop."
+  },
+  {
+    "front": "das Spülmittel",
+    "back": "płyn do mycia naczyń",
+    "ipa": "pwɨn dɔ ˈmɨt͡ɕa ˈnat͡ʂɨɲ",
+    "example": "Kilka kropel płynu do mycia naczyń wystarczy na naczynia.",
+    "exampleDE": "Ein paar Tropfen Spülmittel genügen für das Geschirr."
+  },
+  {
+    "front": "die Mülltonne",
+    "back": "kosz na śmieci",
+    "ipa": "kɔʂ na ˈɕmʲɛt͡ɕi",
+    "example": "Wystaw proszę kosz na śmieci na ulicę.",
+    "exampleDE": "Bring bitte die Mülltonne an die Straße."
+  },
+  {
+    "front": "der Wäscheständer",
+    "back": "suszarka na pranie",
+    "ipa": "suˈʂarka na ˈpraɲɛ",
+    "example": "Mokre pranie schnie na suszarce na pranie.",
+    "exampleDE": "Die nasse Wäsche trocknet auf dem Wäscheständer."
+  },
+  {
+    "front": "die Glühbirne",
+    "back": "żarówka",
+    "ipa": "ʐaˈrufka",
+    "example": "Musimy wymienić zepsutą żarówkę w korytarzu.",
+    "exampleDE": "Wir müssen die kaputte Glühbirne im Flur auswechseln."
+  },
+  {
+    "front": "der Schraubenzieher",
+    "back": "śrubokręt",
+    "ipa": "ɕruˈbɔkrɛnt",
+    "example": "Śrubokrętem dokręca luźną śrubę.",
+    "exampleDE": "Mit dem Schraubenzieher zieht er die lose Schraube fest."
+  },
+  {
+    "front": "die Zange",
+    "back": "szczypce",
+    "ipa": "ˈʂt͡ʂɨpt͡sɛ",
+    "example": "On mocno trzyma drut szczypcami.",
+    "exampleDE": "Er hält den Draht mit einer Zange fest."
+  },
+  {
+    "front": "die Bohrmaschine",
+    "back": "wiertarka",
+    "ipa": "vʲɛˈrtarka",
+    "example": "Wiertarka wierci dziurę w ścianie.",
+    "exampleDE": "Die Bohrmaschine bohrt ein Loch in die Wand."
+  },
+  {
+    "front": "der Handwerker",
+    "back": "fachowiec",
+    "ipa": "faˈxɔvʲɛt͡s",
+    "example": "Fachowiec przyjdzie jutro rano o ósmej.",
+    "exampleDE": "Der Handwerker kommt morgen früh um acht."
+  },
+  {
+    "front": "der Pinsel",
+    "back": "pędzel",
+    "ipa": "ˈpɛnd͡zɛl",
+    "example": "Ona maluje drewnianą ławkę szerokim pędzlem.",
+    "exampleDE": "Sie streicht die Holzbank mit einem breiten Pinsel."
+  },
+  {
+    "front": "reparieren",
+    "back": "naprawić",
+    "ipa": "naˈpravʲit͡ɕ",
+    "example": "Czy możesz proszę naprawić ten zepsuty rower?",
+    "exampleDE": "Kannst du das kaputte Fahrrad bitte reparieren?"
+  },
+  {
+    "front": "der Werkzeugkasten",
+    "back": "skrzynka z narzędziami",
+    "ipa": "ˈskʂɨnka s naʐɛnˈd͡ʑamʲi",
+    "example": "Wszystkie narzędzia leżą pod ręką w skrzynce z narzędziami.",
+    "exampleDE": "Alle Werkzeuge liegen griffbereit im Werkzeugkasten."
+  },
+  {
+    "front": "das Schneidebrett",
+    "back": "deska do krojenia",
+    "ipa": "ˈdɛska dɔ krɔˈjɛɲa",
+    "example": "Pokrój proszę cebulę na desce do krojenia.",
+    "exampleDE": "Schneide die Zwiebel bitte auf dem Schneidebrett."
+  },
+  {
+    "front": "der Kochtopf",
+    "back": "garnek",
+    "ipa": "ˈɡarnɛk",
+    "example": "Zupa gotuje się w dużym garnku na kuchence.",
+    "exampleDE": "Die Suppe kocht im großen Kochtopf auf dem Herd."
+  },
+  {
+    "front": "die Bratpfanne",
+    "back": "patelnia",
+    "ipa": "paˈtɛlɲa",
+    "example": "Na gorącej patelni smażą się warzywa.",
+    "exampleDE": "In der heißen Bratpfanne brät das Gemüse."
+  },
+  {
+    "front": "der Wasserkocher",
+    "back": "czajnik elektryczny",
+    "ipa": "ˈt͡ʂajɲik ɛlɛˈktrɨt͡ʂnɨ",
+    "example": "Czajnik elektryczny gotuje wodę na herbatę w dwie minuty.",
+    "exampleDE": "Der Wasserkocher kocht das Teewasser in zwei Minuten."
+  },
+  {
+    "front": "der Backofen",
+    "back": "piekarnik",
+    "ipa": "pʲɛˈkarɲik",
+    "example": "Ciasto piecze się pół godziny w piekarniku.",
+    "exampleDE": "Der Kuchen backt eine halbe Stunde im Backofen."
+  },
+  {
+    "front": "das Rezept (Küche)",
+    "back": "przepis",
+    "ipa": "ˈpʂɛpʲis",
+    "example": "Ten przepis wymyśliła moja babcia.",
+    "exampleDE": "Dieses Rezept hat meine Großmutter erfunden."
+  },
+  {
+    "front": "die Zutat",
+    "back": "składnik",
+    "ipa": "ˈskwadɲik",
+    "example": "Świeże zioła są najważniejszym składnikiem sosu.",
+    "exampleDE": "Frische Kräuter sind die wichtigste Zutat für die Soße."
+  },
+  {
+    "front": "fein hacken",
+    "back": "drobno siekać",
+    "ipa": "ˈdrɔbnɔ ˈɕɛkat͡ɕ",
+    "example": "Ona drobno sieka cebulę i pietruszkę ostrym nożem.",
+    "exampleDE": "Sie hackt die Zwiebeln und Petersilie mit einem scharfen Messer fein."
+  },
+  {
+    "front": "das Meersalz",
+    "back": "sól morska",
+    "ipa": "sul ˈmɔrska",
+    "example": "Szczypta soli morskiej podkreśla smak zupy.",
+    "exampleDE": "Eine Prise Meersalz hebt den Geschmack der Suppe."
+  },
+  {
+    "front": "der schwarze Pfeffer",
+    "back": "czarny pieprz",
+    "ipa": "ˈt͡ʂarnɨ pʲɛpʂ",
+    "example": "Świeżo mielony czarny pieprz pachnie wspaniale.",
+    "exampleDE": "Frisch gemahlener schwarzer Pfeffer duftet herrlich."
+  },
+  {
+    "front": "das Olivenöl",
+    "back": "oliwa z oliwek",
+    "ipa": "ɔˈliva s ɔˈlivɛk",
+    "example": "Tłoczona na zimno oliwa z oliwek doskonale pasuje do sałatki.",
+    "exampleDE": "Kaltgepresstes Olivenöl passt hervorragend zum Salat."
+  },
+  {
+    "front": "der Knoblauch",
+    "back": "czosnek",
+    "ipa": "ˈt͡ʂɔsnɛk",
+    "example": "Dwa ząbki czosnku nadają potrawie aromatu.",
+    "exampleDE": "Zwei Zehen Knoblauch verleihen dem Gericht Aroma."
+  },
+  {
+    "front": "die Petersilie",
+    "back": "pietruszka",
+    "ipa": "pʲɛˈtruʂka",
+    "example": "Świeżo posiekana pietruszka trafia na wierzch przed podaniem.",
+    "exampleDE": "Frisch gehackte Petersilie kommt vor dem Servieren darauf."
+  },
+  {
+    "front": "das Basilikum",
+    "back": "bazylia",
+    "ipa": "bazɨˈlia",
+    "example": "Świeża bazylia pasuje idealnie do pomidorów.",
+    "exampleDE": "Frisches Basilikum passt perfekt zu Tomaten."
+  },
+  {
+    "front": "der Zimt",
+    "back": "cynamon",
+    "ipa": "t͡sɨˈnamɔn",
+    "example": "Zimą chętnie pijemy herbatę ze szczyptą cynamonu.",
+    "exampleDE": "Im Winter trinken wir gerne Tee mit einer Prise Zimt."
+  },
+  {
+    "front": "das Vollkornbrot",
+    "back": "chleb pełnoziarnisty",
+    "ipa": "xlɛp pɛwnɔʑaˈrɲistɨ",
+    "example": "Świeży chleb pełnoziarnisty ma wyrazisty smak i syci na długo.",
+    "exampleDE": "Frisches Vollkornbrot schmeckt kräftig und hält lange satt."
+  },
+  {
+    "front": "das Brötchen",
+    "back": "bułka",
+    "ipa": "ˈbuwka",
+    "example": "W niedziele kupujemy ciepłe bułki w piekarni.",
+    "exampleDE": "Sonntags holen wir warme Brötchen beim Bäcker."
+  },
+  {
+    "front": "die Butter",
+    "back": "masło",
+    "ipa": "ˈmaswɔ",
+    "example": "Posmaruj proszę kromkę chleba masłem.",
+    "exampleDE": "Streich bitte etwas Butter auf die Scheibe Brot."
+  },
+  {
+    "front": "die Marmelade",
+    "back": "dżem",
+    "ipa": "d͡ʐɛm",
+    "example": "Dżem truskawkowy to moje ulubione smarowidło do chleba.",
+    "exampleDE": "Erdbeermarmelade ist mein liebster Brotaufstrich."
+  },
+  {
+    "front": "das Müsli",
+    "back": "musli",
+    "ipa": "ˈmusli",
+    "example": "Rano chętnie jem musli ze świeżymi owocami.",
+    "exampleDE": "Morgens esse ich gerne Müsli mit frischem Obst."
+  },
+  {
+    "front": "der Joghurt",
+    "back": "jogurt",
+    "ipa": "ˈjɔɡurt",
+    "example": "Jogurt naturalny smakuje szczególnie dobrze z odrobiną miodu.",
+    "exampleDE": "Naturjoghurt schmeckt besonders gut mit etwas Honig."
+  },
+  {
+    "front": "das gekochte Ei",
+    "back": "gotowane jajko",
+    "ipa": "ɡɔtɔˈvanɛ ˈjajkɔ",
+    "example": "Gotowane jajko na miękko to część niedzielnego śniadania.",
+    "exampleDE": "Ein weich gekochtes Ei gehört zum Sonntagsfrühstück."
+  },
+  {
+    "front": "der Orangensaft",
+    "back": "sok pomarańczowy",
+    "ipa": "sɔk pɔmaraˈɲt͡ʂɔvɨ",
+    "example": "Świeżo wyciskany sok pomarańczowy zawiera dużo witamin.",
+    "exampleDE": "Frisch gepresster Orangensaft enthält viele Vitamine."
+  },
+  {
+    "front": "die Reservierung",
+    "back": "rezerwacja",
+    "ipa": "rɛzɛˈrvat͡sja",
+    "example": "Mam rezerwację na nazwisko Müller.",
+    "exampleDE": "Ich habe eine Reservierung auf den Namen Müller."
+  },
+  {
+    "front": "die Speisekarte",
+    "back": "karta dań",
+    "ipa": "ˈkarta daɲ",
+    "example": "Czy możemy prosić o kartę dań?",
+    "exampleDE": "Dürfen wir bitte die Speisekarte sehen?"
+  },
+  {
+    "front": "die Vorspeise",
+    "back": "przystawka",
+    "ipa": "pʂɨˈstafka",
+    "example": "Jako przystawkę zamawiamy małą sałatkę.",
+    "exampleDE": "Als Vorspeise bestellen wir einen kleinen Salat."
+  },
+  {
+    "front": "das Hauptgericht",
+    "back": "danie główne",
+    "ipa": "ˈdaɲɛ ˈɡwuvnɛ",
+    "example": "Danie główne jest podawane gorące na dużym talerzu.",
+    "exampleDE": "Das Hauptgericht wird heiß auf einem großen Teller serviert."
+  },
+  {
+    "front": "die Nachspeise",
+    "back": "deser",
+    "ipa": "ˈdɛsɛr",
+    "example": "Czy chcieliby Państwo po jedzeniu jeszcze deser?",
+    "exampleDE": "Möchten Sie nach dem Essen noch eine Nachspeise?"
+  },
+  {
+    "front": "die Rechnung",
+    "back": "rachunek",
+    "ipa": "raˈxunɛk",
+    "example": "Chcielibyśmy zapłacić, prosimy o rachunek.",
+    "exampleDE": "Wir möchten bitte zahlen, bringen Sie uns die Rechnung."
+  },
+  {
+    "front": "das Trinkgeld",
+    "back": "napiwek",
+    "ipa": "naˈpʲivɛk",
+    "example": "Uprzejmy kelner zasłużył na dobry napiwek.",
+    "exampleDE": "Der freundliche Kellner hat ein gutes Trinkgeld verdient."
+  },
+  {
+    "front": "die Spezialität des Hauses",
+    "back": "specjalność lokalu",
+    "ipa": "spɛˈt͡sjalnɔɕt͡ɕ lɔˈkalu",
+    "example": "Kelner poleca domowy makaron jako specjalność lokalu.",
+    "exampleDE": "Der Kellner empfiehlt die hausgemachte Pasta als Spezialität des Hauses."
+  },
+  {
+    "front": "der Kaffee",
+    "back": "kawa",
+    "ipa": "ˈkava",
+    "example": "Filiżanka gorącej kawy przegania zmęczenie.",
+    "exampleDE": "Eine Tasse heißer Kaffee vertreibt die Müdigkeit."
+  },
+  {
+    "front": "der Cappuccino",
+    "back": "cappuccino",
+    "ipa": "t͡sappuˈt͡st͡ɕinɔ",
+    "example": "Cappuccino ma cudownie kremową piankę.",
+    "exampleDE": "Der Cappuccino hat einen wunderbar cremigen Schaum."
+  },
+  {
+    "front": "der Kräutertee",
+    "back": "herbata ziołowa",
+    "ipa": "xɛˈrbata ʑɔˈwɔva",
+    "example": "Wieczorem chętnie piję filiżankę ciepłej herbaty ziołowej.",
+    "exampleDE": "Abends trinke ich gerne eine Tasse warmen Kräutertee."
+  },
+  {
+    "front": "das Mineralwasser",
+    "back": "woda mineralna",
+    "ipa": "ˈvɔda mʲinɛˈralna",
+    "example": "Szklanka chłodnej wody mineralnej gazowanej orzeźwia.",
+    "exampleDE": "Ein Glas kühles Mineralwasser mit Kohlensäure erfrischt."
+  },
+  {
+    "front": "das Stück Kuchen",
+    "back": "kawałek ciasta",
+    "ipa": "kaˈvawɛk ˈt͡ɕasta",
+    "example": "Po południu pozwalamy sobie na kawałek ciasta.",
+    "exampleDE": "Am Nachmittag gönnen wir uns ein Stück Kuchen."
+  },
+  {
+    "front": "die Barista",
+    "back": "baristka",
+    "ipa": "baˈristka",
+    "example": "Baristka po mistrzowsku przygotowuje espresso.",
+    "exampleDE": "Die Barista bereitet den Espresso kunstvoll zu."
+  },
+  {
+    "front": "die Stammkundin",
+    "back": "stała klientka",
+    "ipa": "ˈstawa kliˈɛntka",
+    "example": "Ona jest stałą klientką w tej przytulnej kawiarni na rogu.",
+    "exampleDE": "Sie ist Stammkundin in diesem gemütlichen Café an der Ecke."
+  },
+  {
+    "front": "der Einkaufswagen",
+    "back": "wózek na zakupy",
+    "ipa": "ˈvuzɛk na zaˈkupɨ",
+    "example": "Weź proszę monetę do wózka na zakupy.",
+    "exampleDE": "Nimm bitte eine Münze für den Einkaufswagen mit."
+  },
+  {
+    "front": "der Einkaufszettel",
+    "back": "lista zakupów",
+    "ipa": "ˈlista zaˈkupuf",
+    "example": "Zapisałem wszystkie ważne rzeczy na liście zakupów.",
+    "exampleDE": "Ich habe alle wichtigen Dinge auf dem Einkaufszettel notiert."
+  },
+  {
+    "front": "das Sonderangebot",
+    "back": "oferta specjalna",
+    "ipa": "ɔˈfɛrta spɛˈt͡sjalna",
+    "example": "Świeże truskawki są dzisiaj w ofercie specjalnej.",
+    "exampleDE": "Frische Erdbeeren sind heute im Sonderangebot."
+  },
+  {
+    "front": "die Kasse",
+    "back": "kasa",
+    "ipa": "ˈkasa",
+    "example": "Przy kasie stoi długa kolejka klientów.",
+    "exampleDE": "An der Kasse steht eine lange Schlange von Kunden."
+  },
+  {
+    "front": "der Kassenbon",
+    "back": "paragon",
+    "ipa": "paˈraɡɔn",
+    "example": "Proszę dobrze zachować paragon jako dowód zakupu.",
+    "exampleDE": "Bewahren Sie den Kassenbon als Beleg gut auf."
+  },
+  {
+    "front": "die Stofftasche",
+    "back": "torba materiałowa",
+    "ipa": "ˈtɔrba matɛriaˈwɔva",
+    "example": "Nasze zakupy nosimy w torbie materiałowej.",
+    "exampleDE": "Wir transportieren unsere Einkäufe in einer Stofftasche."
+  },
+  {
+    "front": "das Haltbarkeitsdatum",
+    "back": "termin ważności",
+    "ipa": "ˈtɛrmʲin vaˈʐnɔɕt͡ɕi",
+    "example": "Zawsze sprawdzaj termin ważności na opakowaniu.",
+    "exampleDE": "Prüfen Sie immer das Haltbarkeitsdatum auf der Verpackung."
+  },
+  {
+    "front": "die Frischetheke",
+    "back": "stoisko ze świeżymi produktami",
+    "ipa": "stɔˈiskɔ zɛ ɕvʲɛˈʐɨmʲi prɔduˈktamʲi",
+    "example": "Na stoisku ze świeżymi produktami dostępny jest ser regionalny.",
+    "exampleDE": "An der Frischetheke gibt es regionalen Käse."
+  },
+  {
+    "front": "anprobieren",
+    "back": "przymierzyć",
+    "ipa": "pʂɨˈmʲɛʐɨt͡ɕ",
+    "example": "Chciałbym przymierzyć tę granatową kurtkę.",
+    "exampleDE": "Ich möchte diese dunkelblaue Jacke gerne anprobieren."
+  },
+  {
+    "front": "die Umkleidekabine",
+    "back": "przymierzalnia",
+    "ipa": "pʂɨmʲɛˈʐalɲa",
+    "example": "Tam po lewej stronie jest wolna przymierzalnia.",
+    "exampleDE": "Dort drüben links ist eine freie Umkleidekabine."
+  },
+  {
+    "front": "die Konfektionsgröße",
+    "back": "rozmiar ubrania",
+    "ipa": "ˈrɔzmʲar uˈbraɲa",
+    "example": "Jaki rozmiar ubrania nosi Pan zazwyczaj?",
+    "exampleDE": "Welche Konfektionsgröße tragen Sie normalerweise?"
+  },
+  {
+    "front": "passen",
+    "back": "pasować",
+    "ipa": "paˈsɔvat͡ɕ",
+    "example": "Spodnie pasują na mnie jak ulał.",
+    "exampleDE": "Die Hose passt mir wie angegossen."
+  },
+  {
+    "front": "zu eng",
+    "back": "za ciasny",
+    "ipa": "za ˈt͡ɕasnɨ",
+    "example": "Ten sweter jest na mnie niestety za ciasny w ramionach.",
+    "exampleDE": "Dieser Pullover ist mir an den Schultern leider zu eng."
+  },
+  {
+    "front": "zu weit",
+    "back": "za szeroki",
+    "ipa": "za ʂɛˈrɔkʲi",
+    "example": "Spódnica jest trochę za szeroka i zsuwa się podczas chodzenia.",
+    "exampleDE": "Der Rock ist etwas zu weit und rutscht beim Gehen."
+  },
+  {
+    "front": "der Schnitt",
+    "back": "krój",
+    "ipa": "kruj",
+    "example": "Nowoczesny krój podoba mi się szczególnie.",
+    "exampleDE": "Der moderne Schnitt gefällt mir besonders gut."
+  },
+  {
+    "front": "die Baumwolle",
+    "back": "bawełna",
+    "ipa": "baˈvɛwna",
+    "example": "Ta koszulka jest uszyta z czystej, miękkiej bawełny.",
+    "exampleDE": "Dieses T-Shirt besteht aus reiner, weicher Baumwolle."
+  },
+  {
+    "front": "die Schurwolle",
+    "back": "żywa wełna",
+    "ipa": "ˈʐɨva ˈvɛwna",
+    "example": "Gruby sweter z żywej wełny grzeje w zimie.",
+    "exampleDE": "Der dicke Pullover aus Schurwolle hält im Winter warm."
+  },
+  {
+    "front": "die Seide",
+    "back": "jedwab",
+    "ipa": "ˈjɛdvap",
+    "example": "Apaszka z jedwabiu jest cudownie miękka w dotyku.",
+    "exampleDE": "Das Halstuch aus Seide fühlt sich herrlich weich an."
+  },
+  {
+    "front": "das Leder",
+    "back": "skóra",
+    "ipa": "ˈskura",
+    "example": "Ta wytrzymała kurtka jest wykonana z prawdziwej skóry.",
+    "exampleDE": "Die robuste Jacke ist aus echtem Leder gefertigt."
+  },
+  {
+    "front": "gestreift",
+    "back": "w paski",
+    "ipa": "f ˈpaskʲi",
+    "example": "On ma dziś na sobie koszulę w niebiesko-białe paski.",
+    "exampleDE": "Er trägt heute ein blau-weiß gestreiftes Hemd."
+  },
+  {
+    "front": "kariert",
+    "back": "w kratkę",
+    "ipa": "f ˈkratkɛ",
+    "example": "Wzór w kratkę idealnie pasuje do koszuli drwala.",
+    "exampleDE": "Das karierte Muster passt hervorragend zum Holzfällerhemd."
+  },
+  {
+    "front": "einfarbig",
+    "back": "jednokolorowy",
+    "ipa": "jɛdnɔkɔlɔˈrɔvɨ",
+    "example": "Prosta, jednokolorowa sukienka zawsze wygląda elegancko.",
+    "exampleDE": "Ein schlichtes, einfarbiges Kleid wirkt immer elegant."
+  },
+  {
+    "front": "der Reißverschluss",
+    "back": "zamek błyskawiczny",
+    "ipa": "ˈzamɛk bwɨskaˈvʲit͡ʂnɨ",
+    "example": "Zamek błyskawiczny w mojej kurtce czasem się zacina.",
+    "exampleDE": "Der Reißverschluss an meiner Jacke klemmt manchmal."
+  },
+  {
+    "front": "die Schnürsenkel",
+    "back": "sznurowadła",
+    "ipa": "ʂnurɔˈvadwa",
+    "example": "Zawiąż sznurowadła, żeby się nie potknąć.",
+    "exampleDE": "Binde dir die Schnürsenkel zu, damit du nicht stolperst."
+  },
+  {
+    "front": "die Lederschuhe",
+    "back": "skórzane buty",
+    "ipa": "skuˈʐanɛ ˈbutɨ",
+    "example": "Na uroczyste okazje nosi wypolerowane skórzane buty.",
+    "exampleDE": "Zu festlichen Anlässen trägt er polierte Lederschuhe."
+  },
+  {
+    "front": "die Turnschuhe",
+    "back": "buty sportowe",
+    "ipa": "ˈbutɨ spɔˈrtɔvɛ",
+    "example": "Do biegania po parku potrzebuję wygodnych butów sportowych.",
+    "exampleDE": "Zum Laufen im Park brauche ich bequeme Turnschuhe."
+  },
+  {
+    "front": "die Handtasche",
+    "back": "torebka",
+    "ipa": "tɔˈrɛpka",
+    "example": "Ona szuka klucza w dużej torebce.",
+    "exampleDE": "Sie sucht ihren Schlüssel in der großen Handtasche."
+  },
+  {
+    "front": "der Ledergürtel",
+    "back": "skórzany pasek",
+    "ipa": "skuˈʐanɨ ˈpasɛk",
+    "example": "Czarny skórzany pasek podtrzymuje spodnie.",
+    "exampleDE": "Ein schwarzer Ledergürtel hält die Hose fest."
+  },
+  {
+    "front": "der Regenschirm",
+    "back": "parasol",
+    "ipa": "paˈrasɔl",
+    "example": "Weź parasol, niebo się zachmurza.",
+    "exampleDE": "Nimm einen Regenschirm mit, der Himmel zieht sich zu."
+  },
+  {
+    "front": "die Sonnenbrille",
+    "back": "okulary przeciwsłoneczne",
+    "ipa": "ɔkuˈlarɨ pʂɛt͡ɕifswɔˈnɛt͡ʂnɛ",
+    "example": "Latem dobre okulary przeciwsłoneczne chronią oczy.",
+    "exampleDE": "Im Sommer schützt eine gute Sonnenbrille die Augen."
+  },
+  {
+    "front": "das Girokonto",
+    "back": "konto osobiste",
+    "ipa": "ˈkɔntɔ ɔsɔˈbʲistɛ",
+    "example": "Moja pensja wpływa co miesiąc na moje konto osobiste.",
+    "exampleDE": "Mein Gehalt wird monatlich auf mein Girokonto überwiesen."
+  },
+  {
+    "front": "die Überweisung",
+    "back": "przelew",
+    "ipa": "ˈpʂɛlɛf",
+    "example": "Robię przelew wygodnie przez bankowość internetową.",
+    "exampleDE": "Ich mache die Überweisung bequem per Online-Banking."
+  },
+  {
+    "front": "der Dauerauftrag",
+    "back": "zlecenie stałe",
+    "ipa": "zlɛˈt͡sɛɲɛ ˈstawɛ",
+    "example": "Czynsz płacę co miesiąc zleceniem stałym.",
+    "exampleDE": "Die Miete bezahle ich jeden Monat per Dauerauftrag."
+  },
+  {
+    "front": "der Geldautomat",
+    "back": "bankomat",
+    "ipa": "baˈnkɔmat",
+    "example": "W tym bankomacie można wypłacać pieniądze bez prowizji.",
+    "exampleDE": "An diesem Geldautomaten kann man gebührenfrei abheben."
+  },
+  {
+    "front": "die Geheimzahl",
+    "back": "kod PIN",
+    "ipa": "kɔt pʲin",
+    "example": "Nigdy nie przekazuj swojego czterocyfrowego kodu PIN obcym.",
+    "exampleDE": "Gib deine vierstellige Geheimzahl niemals an Fremde weiter."
+  },
+  {
+    "front": "der Kontoauszug",
+    "back": "wyciąg z konta",
+    "ipa": "ˈvɨt͡ɕɔŋk s ˈkɔnta",
+    "example": "Na wyciągu z konta widnieją wszystkie przychody i wydatki.",
+    "exampleDE": "Auf dem Kontoauszug stehen alle Einnahmen und Ausgaben."
+  },
+  {
+    "front": "das Sparguthaben",
+    "back": "oszczędności na koncie",
+    "ipa": "ɔʂt͡ʂɛnˈdnɔɕt͡ɕi na ˈkɔnt͡ɕɛ",
+    "example": "Ona odkłada co miesiąc stałą kwotę jako oszczędności na koncie.",
+    "exampleDE": "Sie legt jeden Monat einen festen Betrag als Sparguthaben an."
+  },
+  {
+    "front": "die Zinsen",
+    "back": "odsetki",
+    "ipa": "ɔˈtsɛtkʲi",
+    "example": "Bank płaci obecnie umiarkowane odsetki od lokat.",
+    "exampleDE": "Die Bank zahlt derzeit moderate Zinsen auf das Festgeld."
+  },
+  {
+    "front": "das Bargeld",
+    "back": "gotówka",
+    "ipa": "ɡɔˈtufka",
+    "example": "Ma Pan przy sobie gotówkę czy płaci Pan kartą?",
+    "exampleDE": "Haben Sie etwas Bargeld dabei oder zahlen Sie mit Karte?"
+  },
+  {
+    "front": "die Kreditkarte",
+    "back": "karta kredytowa",
+    "ipa": "ˈkarta krɛdɨˈtɔva",
+    "example": "W podróży za zakupy płacę zazwyczaj kartą kredytową.",
+    "exampleDE": "Auf Reisen bezahle ich Einkäufe meist mit Kreditkarte."
+  },
+  {
+    "front": "kontaktlos",
+    "back": "zbliżeniowo",
+    "ipa": "zbliʐɛˈɲɔvɔ",
+    "example": "Kwoty poniżej pięćdziesięciu euro można płacić zbliżeniowo.",
+    "exampleDE": "Beträge unter fünfzig Euro kann man kontaktlos bezahlen."
+  },
+  {
+    "front": "die Münze",
+    "back": "moneta",
+    "ipa": "mɔˈnɛta",
+    "example": "On wrzuca monetę dwueurową do parkomatu.",
+    "exampleDE": "Er wirft eine Zwei-Euro-Münze in den Parkscheinautomaten."
+  },
+  {
+    "front": "der Geldschein",
+    "back": "banknot",
+    "ipa": "ˈbanknɔt",
+    "example": "Ona starannie składa banknot o nominale dziesięciu euro.",
+    "exampleDE": "Sie faltet den Zehn-Euro-Geldschein sorgfältig zusammen."
+  },
+  {
+    "front": "das Wechselgeld",
+    "back": "reszta",
+    "ipa": "ˈrɛʂta",
+    "example": "Proszę nie zapomnieć o swojej reszcie przy kasie.",
+    "exampleDE": "Vergessen Sie bitte nicht Ihr Wechselgeld an der Kasse."
+  },
+  {
+    "front": "der Wechselkurs",
+    "back": "kurs walutowy",
+    "ipa": "kurs valuˈtɔvɨ",
+    "example": "Przed podróżą za granicę sprawdzamy aktualny kurs walutowy.",
+    "exampleDE": "Vor der Auslandsreise prüfen wir den aktuellen Wechselkurs."
+  },
+  {
+    "front": "das Paket",
+    "back": "paczka",
+    "ipa": "ˈpat͡ʂka",
+    "example": "Kurier dostarcza ciężką paczkę pod drzwi domu.",
+    "exampleDE": "Der Bote liefert das schwere Paket an die Haustür."
+  },
+  {
+    "front": "der Briefumschlag",
+    "back": "koperta",
+    "ipa": "kɔˈpɛrta",
+    "example": "Ona wkłada list do białej koperty.",
+    "exampleDE": "Sie steckt den Brief in einen weißen Briefumschlag."
+  },
+  {
+    "front": "die Briefmarke",
+    "back": "znaczek pocztowy",
+    "ipa": "ˈznat͡ʂɛk pɔˈt͡ʂtɔvɨ",
+    "example": "Przyklej proszę znaczek pocztowy w prawym górnym rogu listu.",
+    "exampleDE": "Kleb bitte eine Briefmarke oben rechts auf den Brief."
+  },
+  {
+    "front": "der Absender",
+    "back": "nadawca",
+    "ipa": "naˈdaft͡sa",
+    "example": "W lewym górnym rogu koperty znajduje się adres nadawcy.",
+    "exampleDE": "Oben links auf dem Kuvert steht die Adresse des Absenders."
+  },
+  {
+    "front": "der Empfänger",
+    "back": "odbiorca",
+    "ipa": "ɔˈdbʲɔrt͡sa",
+    "example": "Paczka jest przeznaczona dla wskazanego odbiorcy.",
+    "exampleDE": "Das Päckchen ist für den angegebenen Empfänger bestimmt."
+  },
+  {
+    "front": "die Packstation",
+    "back": "paczkomat",
+    "ipa": "paˈt͡ʂkɔmat",
+    "example": "Odbieram swoją przesyłkę po pracy z paczkomatu.",
+    "exampleDE": "Ich hole meine Sendung nach Feierabend an der Packstation ab."
+  },
+  {
+    "front": "das Einschreiben",
+    "back": "list polecony",
+    "ipa": "list pɔlɛˈt͡sɔnɨ",
+    "example": "Ważne dokumenty najbezpieczniej wysyła się listem poleconym.",
+    "exampleDE": "Wichtige Dokumente versendet man am sichersten per Einschreiben."
+  },
+  {
+    "front": "die Postleitzahl",
+    "back": "kod pocztowy",
+    "ipa": "kɔt pɔˈt͡ʂtɔvɨ",
+    "example": "Proszę podać swój pięciocyfrowy kod pocztowy.",
+    "exampleDE": "Geben Sie bitte Ihre fünfstellige Postleitzahl an."
+  },
+  {
+    "front": "die Zahnpasta",
+    "back": "pasta do zębów",
+    "ipa": "ˈpasta dɔ ˈzɛmbuf",
+    "example": "Ta pasta do zębów skutecznie chroni przed próchnicą.",
+    "exampleDE": "Diese Zahnpasta schützt wirksam vor Karies."
+  },
+  {
+    "front": "das Duschgel",
+    "back": "żel pod prysznic",
+    "ipa": "ʐɛl pɔt ˈprɨʂɲit͡s",
+    "example": "Żel pod prysznic pachnie przyjemnie świeżymi cytrynami.",
+    "exampleDE": "Das Duschgel duftet angenehm nach frischen Zitronen."
+  },
+  {
+    "front": "das Shampoo",
+    "back": "szampon",
+    "ipa": "ˈʂampɔn",
+    "example": "Łagodny szampon pielęgnuje skórę głowy i włosy.",
+    "exampleDE": "Ein mildes Shampoo pflegt die Kopfhaut und das Haar."
+  },
+  {
+    "front": "die Seife",
+    "back": "mydło",
+    "ipa": "ˈmɨdwɔ",
+    "example": "Umyj dokładnie ręce ciepłą wodą i mydłem.",
+    "exampleDE": "Wasch dir die Hände gründlich mit warmem Wasser und Seife."
+  },
+  {
+    "front": "die Feuchtigkeitscreme",
+    "back": "krem nawilżający",
+    "ipa": "krɛm navʲilʐaˈjɔnt͡sɨ",
+    "example": "Po prysznicu nakłada krem nawilżający.",
+    "exampleDE": "Nach dem Duschen trägt sie eine feuchtigkeitsspendende Creme auf."
+  },
+  {
+    "front": "das Deodorant",
+    "back": "dezodorant",
+    "ipa": "dɛzɔˈdɔrant",
+    "example": "Dobry dezodorant zapewnia świeżość przez cały dzień.",
+    "exampleDE": "Ein gutes Deodorant sorgt den ganzen Tag für Frische."
+  },
+  {
+    "front": "das Taschentuch",
+    "back": "chusteczka higieniczna",
+    "ipa": "xuˈstɛt͡ʂka xiɡʲɛˈɲit͡ʂna",
+    "example": "Masz dla mnie chusteczkę higieniczną?",
+    "exampleDE": "Hast du ein Papiertaschentuch für mich?"
+  },
+  {
+    "front": "der Rasierer",
+    "back": "maszynka do golenia",
+    "ipa": "maˈʂɨnka dɔ ɡɔˈlɛɲa",
+    "example": "On regularnie wymienia ostrza w swojej maszynce do golenia.",
+    "exampleDE": "Er wechselt regelmäßig die Klingen an seinem Rasierer."
+  },
+  {
+    "front": "der Rasierschaum",
+    "back": "pianka do golenia",
+    "ipa": "ˈpʲanka dɔ ɡɔˈlɛɲa",
+    "example": "Rozprowadź łagodnie piankę do golenia na policzkach.",
+    "exampleDE": "Verteile den Rasierschaum sanft auf den Wangen."
+  },
+  {
+    "front": "die Nagelschere",
+    "back": "nożyczki do paznokci",
+    "ipa": "nɔˈʐɨt͡ʂkʲi dɔ paˈznɔkt͡ɕi",
+    "example": "Małymi nożyczkami do paznokci obcina się paznokcie precyzyjnie.",
+    "exampleDE": "Mit einer kleinen Nagelschere schneidet man Fingernägel präzise."
+  },
+  {
+    "front": "die Nagelfeile",
+    "back": "pilniczek do paznokci",
+    "ipa": "pʲiˈlɲit͡ʂɛk dɔ paˈznɔkt͡ɕi",
+    "example": "Ona ostrożnie wygładza paznokcie pilniczkiem do paznokci.",
+    "exampleDE": "Sie glättet ihre Nägel vorsichtig mit einer Nagelfeile."
+  },
+  {
+    "front": "die Sonnencreme",
+    "back": "krem do opalania",
+    "ipa": "krɛm dɔ ɔpaˈlaɲa",
+    "example": "Na urlopie regularnie smarujemy się kremem do opalania.",
+    "exampleDE": "Im Urlaub cremen wir uns regelmäßig mit Sonnencreme ein."
+  },
+  {
+    "front": "der Lippenbalsam",
+    "back": "balsam do ust",
+    "ipa": "ˈbalsam dɔ ust",
+    "example": "Zimą balsam do ust chroni przed spierzchniętymi wargami.",
+    "exampleDE": "Im Winter schützt Lippenbalsam vor spröden Lippen."
+  },
+  {
+    "front": "das Wattepad",
+    "back": "płatek kosmetyczny",
+    "ipa": "ˈpwatɛk kɔsmɛˈtɨt͡ʂnɨ",
+    "example": "Do demakijażu używa miękkiego płatka kosmetycznego.",
+    "exampleDE": "Zum Abschminken verwendet sie ein weiches Wattepad."
+  },
+  {
+    "front": "das Wattestäbchen",
+    "back": "patyczek higieniczny",
+    "ipa": "paˈtɨt͡ʂɛk xiɡʲɛˈɲit͡ʂnɨ",
+    "example": "Patyczki higieniczne powinny znaleźć się w szafce łazienkowej.",
+    "exampleDE": "Wattestäbchen gehören in den Badezimmerschrank."
+  },
+  {
+    "front": "der Umtausch",
+    "back": "wymiana towaru",
+    "ipa": "vɨˈmʲana tɔˈvaru",
+    "example": "Wymiana towaru jest możliwa w ciągu czternastu dni.",
+    "exampleDE": "Ein Umtausch ist innerhalb von vierzehn Tagen möglich."
+  },
+  {
+    "front": "die Reklamation",
+    "back": "reklamacja",
+    "ipa": "rɛklaˈmat͡sja",
+    "example": "Z powodu wady klient złożył reklamację.",
+    "exampleDE": "Wegen eines Mangels reichte der Kunde eine Reklamation ein."
+  },
+  {
+    "front": "die Garantie",
+    "back": "gwarancja",
+    "ipa": "ɡvaˈrant͡sja",
+    "example": "Na to urządzenie elektryczne obowiązują dwa lata gwarancji producenta.",
+    "exampleDE": "Auf dieses Elektrogerät gibt es zwei Jahre Herstellergarantie."
+  },
+  {
+    "front": "die Rückerstattung",
+    "back": "zwrot pieniędzy",
+    "ipa": "zvrɔt pʲɛˈɲɛnd͡zɨ",
+    "example": "Kwota zostanie zaksięgowana na Twoją korzyść jako zwrot pieniędzy.",
+    "exampleDE": "Der Betrag wird Ihnen als Rückerstattung gutgeschrieben."
+  },
+  {
+    "front": "der Rabatt",
+    "back": "rabat",
+    "ipa": "ˈrabat",
+    "example": "Z tą kartą klienta otrzymujesz dziesięć procent rabatu.",
+    "exampleDE": "Mit dieser Kundenkarte erhalten Sie zehn Prozent Rabatt."
+  },
+  {
+    "front": "das Schnäppchen",
+    "back": "okazja cenowa",
+    "ipa": "ɔˈkazja t͡sɛˈnɔva",
+    "example": "Ten wysokiej jakości płaszcz był prawdziwą okazją cenową.",
+    "exampleDE": "Dieser hochwertige Mantel war ein echtes Schnäppchen."
+  },
+  {
+    "front": "die Beschwerde",
+    "back": "skarga",
+    "ipa": "ˈskarɡa",
+    "example": "Skarga została rozpatrzona przez dyrekcję.",
+    "exampleDE": "Die Beschwerde wurde von der Geschäftsleitung geprüft."
+  },
+  {
+    "front": "die Kopfschmerzen",
+    "back": "ból głowy",
+    "ipa": "bul ˈɡwɔvɨ",
+    "example": "Po długim dniu pracy mam lekki ból głowy.",
+    "exampleDE": "Nach dem langen Arbeitstag habe ich leichte Kopfschmerzen."
+  },
+  {
+    "front": "die Halsschmerzen",
+    "back": "ból gardła",
+    "ipa": "bul ˈɡardwa",
+    "example": "Ciepła herbata rumiankowa z miodem łagodzi ból gardła.",
+    "exampleDE": "Warmer Kamillentee mit Honig lindert die Halsschmerzen."
+  },
+  {
+    "front": "die Magenschmerzen",
+    "back": "ból żołądka",
+    "ipa": "bul ʐɔˈwɔntka",
+    "example": "Tłuste jedzenie często powoduje u niego ból żołądka.",
+    "exampleDE": "Fettes Essen verursacht bei ihm oft Magenschmerzen."
+  },
+  {
+    "front": "der Schwindel",
+    "back": "zawroty głowy",
+    "ipa": "zaˈvrɔtɨ ˈɡwɔvɨ",
+    "example": "Przy szybkim wstawaniu dopadły ją krótkie zawroty głowy.",
+    "exampleDE": "Beim schnellen Aufstehen überkam sie ein kurzer Schwindel."
+  },
+  {
+    "front": "die Übelkeit",
+    "back": "nudności",
+    "ipa": "nuˈdnɔɕt͡ɕi",
+    "example": "Świeże powietrze zazwyczaj dobrze pomaga na nagłe nudności.",
+    "exampleDE": "Frische Luft hilft meist gut gegen plötzliche Übelkeit."
+  },
+  {
+    "front": "der Husten",
+    "back": "kaszel",
+    "ipa": "ˈkaʂɛl",
+    "example": "On od trzech dni ma suchy, uporczywy kaszel.",
+    "exampleDE": "Er hat seit drei Tagen einen trockenen, hartnäckigen Husten."
+  },
+  {
+    "front": "der Schnupfen",
+    "back": "katar",
+    "ipa": "ˈkatar",
+    "example": "Przy silnym katarze oddychanie przez nos przychodzi z trudem.",
+    "exampleDE": "Bei starkem Schnupfen fällt das Atmen durch die Nase schwer."
+  },
+  {
+    "front": "die Heiserkeit",
+    "back": "chrypka",
+    "ipa": "ˈxrɨpka",
+    "example": "Po głośnym koncercie wokalista cierpiał na chrypkę.",
+    "exampleDE": "Nach dem lauten Konzert litt der Sänger unter Heiserkeit."
+  },
+  {
+    "front": "das Fieberthermometer",
+    "back": "termometr lekarski",
+    "ipa": "tɛˈrmɔmɛtr lɛˈkarskʲi",
+    "example": "Cyfrowy termometr lekarski mierzy temperaturę w ułamku sekundy.",
+    "exampleDE": "Das digitale Fieberthermometer misst die Temperatur sekundenschnell."
+  },
+  {
+    "front": "die erhöhte Temperatur",
+    "back": "podwyższona temperatura",
+    "ipa": "pɔdvɨˈʂʂɔna tɛmpɛraˈtura",
+    "example": "Dziecko ma dziś wieczorem nieznacznie podwyższoną temperaturę.",
+    "exampleDE": "Das Kind hat heute Abend leicht erhöhte Temperatur."
+  },
+  {
+    "front": "der Schüttelfrost",
+    "back": "dreszcze",
+    "ipa": "ˈdrɛʂt͡ʂɛ",
+    "example": "Nagłe dreszcze są często pierwszą oznaką grypy.",
+    "exampleDE": "Plötzlicher Schüttelfrost ist oft ein erstes Anzeichen einer Grippe."
+  },
+  {
+    "front": "die Entzündung",
+    "back": "stan zapalny",
+    "ipa": "stan zaˈpalnɨ",
+    "example": "Lekarz leczy stan zapalny maścią leczniczą.",
+    "exampleDE": "Der Arzt behandelt die Entzündung mit einer Heilsalbe."
+  },
+  {
+    "front": "die Infektion",
+    "back": "infekcja",
+    "ipa": "iˈnfɛkt͡sja",
+    "example": "Regularne mycie rąk niezawodnie chroni przed infekcją.",
+    "exampleDE": "Regelmäßiges Händewaschen schützt zuverlässig vor einer Infektion."
+  },
+  {
+    "front": "ansteckend",
+    "back": "zakaźny",
+    "ipa": "zaˈkaʑnɨ",
+    "example": "Dopóki ma Pan gorączkę, jest Pan zakaźny dla otoczenia.",
+    "exampleDE": "Solange Sie Fieber haben, sind Sie für andere ansteckend."
+  },
+  {
+    "front": "sich schonen",
+    "back": "oszczędzać się",
+    "ipa": "ɔˈʂt͡ʂɛnd͡zat͡ɕ ɕɛ",
+    "example": "Podczas przeziębienia należy leżeć w łóżku i oszczędzać się.",
+    "exampleDE": "Bei einer Erkältung sollte man im Bett bleiben und sich schonen."
+  },
+  {
+    "front": "die Arztpraxis",
+    "back": "gabinet lekarski",
+    "ipa": "ɡaˈbʲinɛt lɛˈkarskʲi",
+    "example": "Gabinet lekarski jest otwierany w poniedziałki już o siódmej rano.",
+    "exampleDE": "Die Arztpraxis öffnet montags bereits um sieben Uhr morgens."
+  },
+  {
+    "front": "das Wartezimmer",
+    "back": "poczekalnia",
+    "ipa": "pɔt͡ʂɛˈkalɲa",
+    "example": "Pacjenci siedzą cierpliwie w jasnej poczekalni.",
+    "exampleDE": "Die Patienten sitzen geduldig im hellen Wartezimmer."
+  },
+  {
+    "front": "die Versichertenkarte",
+    "back": "karta ubezpieczenia",
+    "ipa": "ˈkarta ubɛzpʲɛˈt͡ʂɛɲa",
+    "example": "Proszę przedłożyć elektroniczną kartę ubezpieczenia.",
+    "exampleDE": "Legen Sie bitte Ihre elektronische Versichertenkarte vor."
+  },
+  {
+    "front": "der Termin",
+    "back": "termin wizyty",
+    "ipa": "ˈtɛrmʲin vʲiˈzɨtɨ",
+    "example": "Uzgodniłem stały termin wizyty na najbliższy wtorek.",
+    "exampleDE": "Ich habe für kommenden Dienstag einen festen Termin vereinbart."
+  },
+  {
+    "front": "die Untersuchung",
+    "back": "badanie",
+    "ipa": "baˈdaɲɛ",
+    "example": "Szczegółowe badanie nie wykazało niczego niepokojącego.",
+    "exampleDE": "Die gründliche Untersuchung ergab keine Auffälligkeiten."
+  },
+  {
+    "front": "der Blutdruck",
+    "back": "ciśnienie krwi",
+    "ipa": "t͡ɕiˈɕɲɛɲɛ krvʲi",
+    "example": "Pielęgniarka mierzy ciśnienie krwi na lewym ramieniu.",
+    "exampleDE": "Die Schwester misst den Blutdruck am linken Oberarm."
+  },
+  {
+    "front": "der Puls",
+    "back": "puls",
+    "ipa": "puls",
+    "example": "Po krótkiej chwili odpoczynku puls bije znowu normalnie.",
+    "exampleDE": "Nach der kurzen Ruhepause schlägt der Puls wieder normal."
+  },
+  {
+    "front": "das Stethoskop",
+    "back": "stetoskop",
+    "ipa": "stɛˈtɔskɔp",
+    "example": "Lekarka bada płuca stetoskopem.",
+    "exampleDE": "Die Ärztin hört die Lunge mit dem Stethoskop ab."
+  },
+  {
+    "front": "das Rezept (Medizin)",
+    "back": "recepta",
+    "ipa": "rɛˈt͡sɛpta",
+    "example": "Lekarz wystawia Panu receptę na tabletki.",
+    "exampleDE": "Der Arzt stellt Ihnen ein Rezept für die Tabletten aus."
+  },
+  {
+    "front": "die Apotheke",
+    "back": "apteka",
+    "ipa": "aˈptɛka",
+    "example": "Apteka przy rynku pełni dziś ostry dyżur.",
+    "exampleDE": "Die Apotheke am Markt hat heute Notdienst."
+  },
+  {
+    "front": "die Packungsbeilage",
+    "back": "ulotka dołączona do opakowania",
+    "ipa": "uˈlɔtka dɔwɔnˈt͡ʂɔna dɔ ɔpakɔˈvaɲa",
+    "example": "Przed zażyciem leku przeczytaj uważnie ulotkę dołączoną do opakowania.",
+    "exampleDE": "Lesen Sie vor der Einnahme sorgfältig die Packungsbeilage."
+  },
+  {
+    "front": "die Nebenwirkung",
+    "back": "skutek uboczny",
+    "ipa": "ˈskutɛk uˈbɔt͡ʂnɨ",
+    "example": "Ten dobrze tolerowany lek prawie nie ma znanych skutków ubocznych.",
+    "exampleDE": "Dieses gut verträgliche Medikament hat kaum bekannte Nebenwirkungen."
+  },
+  {
+    "front": "die Dosierung",
+    "back": "dawkowanie",
+    "ipa": "dafkɔˈvaɲɛ",
+    "example": "Stosuj się ściśle do dawkowania przepisanego przez lekarza.",
+    "exampleDE": "Beachten Sie genau die vom Arzt verordnete Dosierung."
+  },
+  {
+    "front": "das Schmerzmittel",
+    "back": "środek przeciwbólowy",
+    "ipa": "ˈɕrɔdɛk pʂɛt͡ɕivbuˈlɔvɨ",
+    "example": "Środek przeciwbólowy zaczyna działać zazwyczaj w ciągu pół godziny.",
+    "exampleDE": "Das Schmerzmittel wirkt meistens innerhalb einer halben Stunde."
+  },
+  {
+    "front": "der Hustensaft",
+    "back": "syrop na kaszel",
+    "ipa": "ˈsɨrɔp na ˈkaʂɛl",
+    "example": "Weź wieczorem przed snem łyżkę syropu na kaszel.",
+    "exampleDE": "Nehmen Sie abends vor dem Schlafen einen Löffel Hustensaft."
+  },
+  {
+    "front": "das Heftpflaster",
+    "back": "plaster opatrunkowy",
+    "ipa": "ˈplastɛr ɔpatruˈnkɔvɨ",
+    "example": "Przyklej proszę plaster opatrunkowy na małe skaleczenie.",
+    "exampleDE": "Kleb bitte ein Heftpflaster auf die kleine Schnittwunde."
+  },
+  {
+    "front": "der Verband",
+    "back": "opatrunek",
+    "ipa": "ɔpaˈtrunɛk",
+    "example": "Pielęgniarka zakłada czysty opatrunek na kostkę.",
+    "exampleDE": "Die Krankenschwester legt einen sauberen Verband um den Knöchel."
+  },
+  {
+    "front": "die Wundsalbe",
+    "back": "maść na rany",
+    "ipa": "maɕt͡ɕ na ˈranɨ",
+    "example": "Maść na rany przyspiesza gojenie się rany na skórze.",
+    "exampleDE": "Die Heilsalbe beschleunigt das Schließen der Hautwunde."
+  },
+  {
+    "front": "die Desinfektion",
+    "back": "dezynfekcja",
+    "ipa": "dɛzɨˈnfɛkt͡sja",
+    "example": "Przed założeniem opatrunku ważna jest staranna dezynfekcja.",
+    "exampleDE": "Vor dem Verbinden ist eine gründliche Desinfektion wichtig."
+  },
+  {
+    "front": "der Verbandskasten",
+    "back": "apteczka pierwszej pomocy",
+    "ipa": "aˈptɛt͡ʂka ˈpʲɛrfʂɛj pɔˈmɔt͡sɨ",
+    "example": "W aucie musi zawsze leżeć kompletna apteczka pierwszej pomocy.",
+    "exampleDE": "Im Auto muss stets ein vollständiger Verbandskasten liegen."
+  },
+  {
+    "front": "der Notruf",
+    "back": "numer alarmowy",
+    "ipa": "ˈnumɛr alaˈrmɔvɨ",
+    "example": "W nagłych wypadkach w całej Europie wybiera się numer alarmowy 112.",
+    "exampleDE": "In dringenden Notfällen wählt man europaweit den Notruf 112."
+  },
+  {
+    "front": "die Erste Hilfe",
+    "back": "pierwsza pomoc",
+    "ipa": "ˈpʲɛrfʂa ˈpɔmɔt͡s",
+    "example": "Każdy kierowca powinien potrafić udzielić pierwszej pomocy.",
+    "exampleDE": "Jeder Führerscheininhaber sollte Erste Hilfe leisten können."
+  },
+  {
+    "front": "bluten",
+    "back": "krwawić",
+    "ipa": "ˈkrvavʲit͡ɕ",
+    "example": "Otarcie na kolanie na szczęście przestało krwawić.",
+    "exampleDE": "Die Schürfwunde am Knie hat zum Glück aufgehört zu bluten."
+  },
+  {
+    "front": "die Zahnarztpraxis",
+    "back": "gabinet stomatologiczny",
+    "ipa": "ɡaˈbʲinɛt stɔmatɔlɔˈɡʲit͡ʂnɨ",
+    "example": "Dwa razy do roku chodzę na kontrolę do gabinetu stomatologicznego.",
+    "exampleDE": "Zweimal im Jahr gehe ich zur Kontrolle in die Zahnarztpraxis."
+  },
+  {
+    "front": "die Zahnseide",
+    "back": "nić dentystyczna",
+    "ipa": "ɲit͡ɕ dɛntɨˈstɨt͡ʂna",
+    "example": "Nić dentystyczna oczyszcza wąskie przestrzenie między zębami.",
+    "exampleDE": "Zahnseide reinigt die engen Zwischenräume zwischen den Zähnen."
+  },
+  {
+    "front": "das Zahnfleisch",
+    "back": "dziąsła",
+    "ipa": "ˈd͡ʑɔw̃swa",
+    "example": "Regularna pielęgnacja trwale wzmacnia dziąsła.",
+    "exampleDE": "Regelmäßige Pflege stärkt das Zahnfleisch dauerhaft."
+  },
+  {
+    "front": "die Zahnfüllung",
+    "back": "plomba",
+    "ipa": "ˈplɔmba",
+    "example": "Stomatolog założył małą białą plombę.",
+    "exampleDE": "Der Zahnarzt setzte eine kleine weiße Zahnfüllung ein."
+  },
+  {
+    "front": "der Backenzahn",
+    "back": "ząb trzonowy",
+    "ipa": "zɔmp tʂɔˈnɔvɨ",
+    "example": "Ząb trzonowy w górnej szczęce jest bardzo wrażliwy na zimno.",
+    "exampleDE": "Ein Backenzahn im Oberkiefer reagiert empfindlich auf Kälte."
+  },
+  {
+    "front": "die Mundspülung",
+    "back": "płyn do płukania ust",
+    "ipa": "pwɨn dɔ pwuˈkaɲa ust",
+    "example": "Płyn do płukania ust o działaniu przeciwbakteryjnym zapewnia świeży oddech.",
+    "exampleDE": "Eine antibakterielle Mundspülung sorgt für frischen Atem."
+  },
+  {
+    "front": "die Zahnschmerzen",
+    "back": "ból zęba",
+    "ipa": "bul ˈzɛmba",
+    "example": "Przy nagłym bólu zęba należy szybko udać się do stomatologa.",
+    "exampleDE": "Gegen plötzliche Zahnschmerzen sollte man rasch zum Zahnarzt."
+  },
+  {
+    "front": "das Handgelenk",
+    "back": "nadgarstek",
+    "ipa": "naˈdɡarstɛk",
+    "example": "Ona nosi elegancki zegarek na lewym nadgarstku.",
+    "exampleDE": "Sie trägt eine elegante Armbanduhr am linken Handgelenk."
+  },
+  {
+    "front": "der Ellbogen",
+    "back": "łokieć",
+    "ipa": "ˈwɔkʲɛt͡ɕ",
+    "example": "Uderzył się boleśnie w łokieć o kant stołu.",
+    "exampleDE": "Er hat sich den Ellbogen schmerzhaft an der Tischkante gestoßen."
+  },
+  {
+    "front": "das Kniegelenk",
+    "back": "staw kolanowy",
+    "ipa": "staf kɔlaˈnɔvɨ",
+    "example": "Podczas joggingu staw kolanowy jest mocno obciążony.",
+    "exampleDE": "Beim Joggen wird das Kniegelenk stark beansprucht."
+  },
+  {
+    "front": "der Knöchel",
+    "back": "kostka",
+    "ipa": "ˈkɔstka",
+    "example": "Wędrując po nierównej ścieżce, skręcił kostkę.",
+    "exampleDE": "Beim Wandern auf unebenem Pfad ist er mit dem Knöchel umgeknickt."
+  },
+  {
+    "front": "die Ferse",
+    "back": "pięta",
+    "ipa": "ˈpʲɛnta",
+    "example": "Nowe buty obcierają z tyłu na pięcie.",
+    "exampleDE": "Die neuen Schuhe drücken hinten an der Ferse."
+  },
+  {
+    "front": "die Wirbelsäule",
+    "back": "kręgosłup",
+    "ipa": "krɛŋˈɡɔswup",
+    "example": "Ukierunkowana gimnastyka wzmacnia mięśnie wzdłuż kręgosłupa.",
+    "exampleDE": "Gezielte Gymnastik stärkt die Muskeln entlang der Wirbelsäule."
+  },
+  {
+    "front": "das Schulterblatt",
+    "back": "łopatka",
+    "ipa": "wɔˈpatka",
+    "example": "On odczuwa lekkie napięcie pod prawą łopatką.",
+    "exampleDE": "Er spürt eine leichte Verspannung unter dem rechten Schulterblatt."
+  },
+  {
+    "front": "die Hüfte",
+    "back": "biodro",
+    "ipa": "ˈbʲɔdrɔ",
+    "example": "Stojąc, opiera swobodnie ręce na biodrach.",
+    "exampleDE": "Sie stützt die Hände beim Stehen locker in die Hüfte."
+  },
+  {
+    "front": "das Herz",
+    "back": "serce",
+    "ipa": "ˈsɛrt͡sɛ",
+    "example": "Ludzkie serce bije około siedemdziesięciu razy na minutę.",
+    "exampleDE": "Das menschliche Herz schlägt rund siebzig Mal pro Minute."
+  },
+  {
+    "front": "die Lunge",
+    "back": "płuca",
+    "ipa": "ˈpwut͡sa",
+    "example": "Głęboki wdech świeżego leśnego powietrza dobrze robi na płuca.",
+    "exampleDE": "Tiefes Einatmen frischer Waldluft tut der Lunge gut."
+  },
+  {
+    "front": "der Magen",
+    "back": "żołądek",
+    "ipa": "ʐɔˈwɔndɛk",
+    "example": "Po obfitej uczcie przepełniony żołądek się buntuje.",
+    "exampleDE": "Nach dem üppigen Festessen rebelliert der volle Magen."
+  },
+  {
+    "front": "die Leber",
+    "back": "wątroba",
+    "ipa": "vɔnˈtrɔba",
+    "example": "Wątroba jest najważniejszym organem odtruwającym organizm.",
+    "exampleDE": "Die Leber ist das wichtigste Entgiftungsorgan des Körpers."
+  },
+  {
+    "front": "die Nieren",
+    "back": "nerki",
+    "ipa": "ˈnɛrkʲi",
+    "example": "Picie dostatecznej ilości wody wspomaga nerki.",
+    "exampleDE": "Ausreichend Wasser zu trinken unterstützt die Nieren."
+  },
+  {
+    "front": "das Gehirn",
+    "back": "mózg",
+    "ipa": "musk",
+    "example": "Mózg potrzebuje dużo tlenu do intensywnej pracy.",
+    "exampleDE": "Das Gehirn benötigt viel Sauerstoff für konzentriertes Arbeiten."
+  },
+  {
+    "front": "die Blutgefäße",
+    "back": "naczynia krwionośne",
+    "ipa": "naˈt͡ʂɨɲa krvʲɔˈnɔɕnɛ",
+    "example": "Regularna aktywność ruchowa utrzymuje naczynia krwionośne w elastyczności.",
+    "exampleDE": "Regelmäßige Bewegung hält die Blutgefäße elastisch."
+  },
+  {
+    "front": "die Ausdauer",
+    "back": "wytrzymałość",
+    "ipa": "vɨtʂɨˈmawɔɕt͡ɕ",
+    "example": "Regularna jazda na rowerze zauważalnie zwiększa wytrzymałość.",
+    "exampleDE": "Regelmäßiges Radfahren steigert die persönliche Ausdauer spürbar."
+  },
+  {
+    "front": "der Muskelkater",
+    "back": "zakwasy",
+    "ipa": "zaˈkvasɨ",
+    "example": "Po pierwszym treningu miał zakwasy przez dwa dni.",
+    "exampleDE": "Nach dem ersten Training hatte er zwei Tage Muskelkater."
+  },
+  {
+    "front": "das Dehnen",
+    "back": "rozciąganie",
+    "ipa": "rɔst͡ɕɔŋˈɡaɲɛ",
+    "example": "Łagodne rozciąganie po biegu zapobiega przykurczom mięśni.",
+    "exampleDE": "Sanftes Dehnen nach dem Laufen beugt Muskelverkürzungen vor."
+  },
+  {
+    "front": "das Aufwärmen",
+    "back": "rozgrzewka",
+    "ipa": "rɔˈzɡʐɛfka",
+    "example": "Przed każdym sportem niezbędna jest pięciominutowa rozgrzewka.",
+    "exampleDE": "Vor jedem Sport gehört ein fünfminütiges Aufwärmen dazu."
+  },
+  {
+    "front": "die Entspannung",
+    "back": "odprężenie",
+    "ipa": "ɔtprɛw̃ˈʐɛɲɛ",
+    "example": "Ciepła kąpiel pod wieczór sprzyja głębokiemu odprężeniu.",
+    "exampleDE": "Ein warmes Bad am Abend fördert die tiefe Entspannung."
+  },
+  {
+    "front": "der Tiefschlaf",
+    "back": "głęboki sen",
+    "ipa": "ɡwɛmˈbɔkʲi sɛn",
+    "example": "Nieprzerwany głęboki sen jest konieczny do pełnej regeneracji.",
+    "exampleDE": "Ungestörter Tiefschlaf ist unverzichtbar für die Regeneration."
+  },
+  {
+    "front": "das Wohlbefinden",
+    "back": "dobre samopoczucie",
+    "ipa": "ˈdɔbrɛ samɔpɔˈt͡ʂut͡ɕɛ",
+    "example": "Zdrowe żywienie w kluczowy sposób wpływa na dobre samopoczucie.",
+    "exampleDE": "Gesunde Ernährung trägt entscheidend zum Wohlbefinden bei."
+  },
+  {
+    "front": "die frische Luft",
+    "back": "świeże powietrze",
+    "ipa": "ˈɕvʲɛʐɛ pɔˈvʲɛtʂɛ",
+    "example": "Żwawy spacer na świeżym powietrzu orzeźwia umysł.",
+    "exampleDE": "Ein zügiger Spaziergang an der frischen Luft belebt den Geist."
+  },
+  {
+    "front": "die Ballaststoffe",
+    "back": "błonnik",
+    "ipa": "ˈbwɔnɲik",
+    "example": "Produkty z pełnego ziarna i rośliny strączkowe zawierają cenny błonnik.",
+    "exampleDE": "Vollkornprodukte und Hülsenfrüchte enthalten wertvolle Ballaststoffe."
+  },
+  {
+    "front": "die Vitamine",
+    "back": "witaminy",
+    "ipa": "vʲitaˈmʲinɨ",
+    "example": "Świeże owoce dostarczają organizmowi życiodajnych witamin.",
+    "exampleDE": "Frisches Obst versorgt den Körper mit lebenswichtigen Vitaminen."
+  },
+  {
+    "front": "das Eiweiß",
+    "back": "białko",
+    "ipa": "ˈbʲawkɔ",
+    "example": "Twaróg, ryby i jajka dostarczają pełnowartościowego białka zwierzęcego.",
+    "exampleDE": "Quark, Fisch und Eier liefern hochwertiges tierisches Eiweiß."
+  },
+  {
+    "front": "die Kalorien",
+    "back": "kalorie",
+    "ipa": "kalɔˈriɛ",
+    "example": "Pływając, spala się zaskakująco wiele kalorii.",
+    "exampleDE": "Beim Schwimmen verbrennt man überraschend viele Kalorien."
+  },
+  {
+    "front": "der Blutzucker",
+    "back": "cukier we krwi",
+    "ipa": "ˈt͡sukʲɛr vɛ krvʲi",
+    "example": "Chleb razowy powoduje jedynie powolny wzrost cukru we krwi.",
+    "exampleDE": "Vollkornbrot lässt den Blutzucker nur langsam ansteigen."
+  },
+  {
+    "front": "das Übergewicht",
+    "back": "nadwaga",
+    "ipa": "naˈdvaɡa",
+    "example": "Częsty ruch to skuteczny sposób na nadwagę.",
+    "exampleDE": "Regelmäßige Bewegung hilft wirksam gegen Übergewicht."
+  },
+  {
+    "front": "die Flüssigkeitszufuhr",
+    "back": "nawodnienie",
+    "ipa": "navɔˈdɲɛɲɛ",
+    "example": "W gorące letnie dni odpowiednie nawodnienie jest kluczowe.",
+    "exampleDE": "An heißen Sommertagen ist ausreichende Flüssigkeitszufuhr wichtig."
+  },
+  {
+    "front": "die Schwiegereltern",
+    "back": "teściowie",
+    "ipa": "tɛˈɕt͡ɕɔvʲɛ",
+    "example": "W niedzielę jesteśmy zaproszeni do moich teściów na kawę.",
+    "exampleDE": "Am Sonntag sind wir bei meinen Schwiegereltern zum Kaffee eingeladen."
+  },
+  {
+    "front": "der Schwiegersohn",
+    "back": "zięć",
+    "ipa": "ʑɛɲt͡ɕ",
+    "example": "Jej zięć ma świetny kontakt z całą rodziną.",
+    "exampleDE": "Ihr Schwiegersohn versteht sich prächtig mit der ganzen Familie."
+  },
+  {
+    "front": "die Schwiegertochter",
+    "back": "synowa",
+    "ipa": "sɨˈnɔva",
+    "example": "Synowa przyniosła ze sobą własnoręcznie upieczoną szarlotkę.",
+    "exampleDE": "Die Schwiegertochter brachte einen selbstgebackenen Apfelkuchen mit."
+  },
+  {
+    "front": "die Urgroßmutter",
+    "back": "prababcia",
+    "ipa": "praˈbapt͡ɕa",
+    "example": "Moja prababcia obchodziła w tym roku swoje dziewięćdziesiąte urodziny.",
+    "exampleDE": "Meine Urgroßmutter feierte dieses Jahr ihren neunzigsten Geburtstag."
+  },
+  {
+    "front": "der Urgroßvater",
+    "back": "pradziadek",
+    "ipa": "praˈd͡ʑadɛk",
+    "example": "Pradziadek chętnie opowiada dzieciom dawne opowieści.",
+    "exampleDE": "Der Urgroßvater erzählt den Kindern gerne alte Geschichten."
+  },
+  {
+    "front": "die Patentante",
+    "back": "matka chrzestna",
+    "ipa": "ˈmatka ˈxʂɛstna",
+    "example": "Moja matka chrzestna podarowała mi wartościową książkę na ukończenie szkoły.",
+    "exampleDE": "Meine Patentante schenkte mir zum Schulabschluss ein gutes Buch."
+  },
+  {
+    "front": "der Patenonkel",
+    "back": "ojciec chrzestny",
+    "ipa": "ˈɔjt͡ɕɛt͡s ˈxʂɛstnɨ",
+    "example": "Jego ojciec chrzestny wspiera go przez całe studia.",
+    "exampleDE": "Sein Patenonkel unterstützt ihn während des gesamten Studiums."
+  },
+  {
+    "front": "die Großfamilie",
+    "back": "rodzina wielopokoleniowa",
+    "ipa": "rɔˈd͡ʑina vʲɛlɔpɔkɔlɛˈɲɔva",
+    "example": "Na Boże Narodzenie cała rodzina wielopokoleniowa zbiera się w pokoju dziennym.",
+    "exampleDE": "Zu Weihnachten versammelt sich die ganze Großfamilie im Wohnzimmer."
+  },
+  {
+    "front": "die Kindheit",
+    "back": "dzieciństwo",
+    "ipa": "d͡ʑɛˈt͡ɕiɲstvɔ",
+    "example": "Z sentymentem wspominam beztroskie dzieciństwo na wsi.",
+    "exampleDE": "Ich denke gerne an die unbeschwerte Kindheit auf dem Land zurück."
+  },
+  {
+    "front": "die Jugend",
+    "back": "młodość",
+    "ipa": "ˈmwɔdɔɕt͡ɕ",
+    "example": "W młodości testuje się wiele nowych zainteresowań i pasji.",
+    "exampleDE": "In der Jugend probiert man viele neue Hobbys und Interessen aus."
+  },
+  {
+    "front": "das Erwachsenenalter",
+    "back": "wiek dorosły",
+    "ipa": "vʲɛk dɔˈrɔswɨ",
+    "example": "W wieku dorosłym bierze się odpowiedzialność za własne życie.",
+    "exampleDE": "Im Erwachsenenalter übernimmt man Verantwortung für sein eigenes Leben."
+  },
+  {
+    "front": "der Ruhestand",
+    "back": "emerytura",
+    "ipa": "ɛmɛrɨˈtura",
+    "example": "Na zasłużonej emeryturze ta para dużo podróżuje po Europie.",
+    "exampleDE": "Im wohlverdienten Ruhestand reist das Ehepaar viel durch Europa."
+  },
+  {
+    "front": "der Geburtstag",
+    "back": "urodziny",
+    "ipa": "urɔˈd͡ʑinɨ",
+    "example": "Świętujemy jego trzydzieste urodziny wielką prywatką.",
+    "exampleDE": "Wir feiern seinen dreißigsten Geburtstag mit einer großen Party."
+  },
+  {
+    "front": "die Generation",
+    "back": "pokolenie",
+    "ipa": "pɔkɔˈlɛɲɛ",
+    "example": "Każde pokolenie ma odrębne wartości i zapatrywania.",
+    "exampleDE": "Jede Generation hat ihre eigenen Werte und Vorstellungen."
+  },
+  {
+    "front": "die Lebenserfahrung",
+    "back": "doświadczenie życiowe",
+    "ipa": "dɔɕvʲaˈtt͡ʂɛɲɛ ʐɨˈt͡ɕɔvɛ",
+    "example": "Wraz z wiekiem człowiek zdobywa cenne doświadczenie życiowe.",
+    "exampleDE": "Mit den Jahren sammelt man wertvolle Lebenserfahrung."
+  },
+  {
+    "front": "die Freundschaft",
+    "back": "przyjaźń",
+    "ipa": "ˈpʂɨjaʑɲ",
+    "example": "Prawdziwa przyjaźń przetrwa nawet na największe odległości.",
+    "exampleDE": "Eine echte Freundschaft hält auch über weite Entfernungen."
+  },
+  {
+    "front": "das Vertrauen",
+    "back": "zaufanie",
+    "ipa": "zauˈfaɲɛ",
+    "example": "Wzajemne zaufanie to fundament każdej udanej relacji.",
+    "exampleDE": "Gegenseitiges Vertrauen ist das Fundament jeder guten Beziehung."
+  },
+  {
+    "front": "sich verlassen auf",
+    "back": "polegać na",
+    "ipa": "pɔˈlɛɡat͡ɕ na",
+    "example": "Na mojej najlepszej przyjaciółce mogę bezgranicznie polegać.",
+    "exampleDE": "Auf meine beste Freundin kann ich mich immer voll verlassen."
+  },
+  {
+    "front": "die Ehrlichkeit",
+    "back": "uczciwość",
+    "ipa": "uˈt͡ʂt͡ɕivɔɕt͡ɕ",
+    "example": "Uczciwość popłaca najbardziej, zwłaszcza między przyjaciółmi.",
+    "exampleDE": "Ehrlichkeit währt am längsten, besonders unter Freunden."
+  },
+  {
+    "front": "die Hilfsbereitschaft",
+    "back": "uczynność",
+    "ipa": "uˈt͡ʂɨnnɔɕt͡ɕ",
+    "example": "Wszyscy sąsiedzi niezwykle cenią jej bezinteresowną uczynność.",
+    "exampleDE": "Ihre herzliche Hilfsbereitschaft schätzen alle Nachbarn sehr."
+  },
+  {
+    "front": "das Geheimnis",
+    "back": "tajemnica",
+    "ipa": "tajɛˈmɲit͡sa",
+    "example": "On nigdy nie zdradziłby powierzonej mu tajemnicy.",
+    "exampleDE": "Er würde ein ihm anvertrautes Geheimnis niemals verraten."
+  },
+  {
+    "front": "zusammenhalten",
+    "back": "trzymać się razem",
+    "ipa": "ˈtʂɨmat͡ɕ ɕɛ ˈrazɛm",
+    "example": "W trudnych chwilach przyjaciele powinni mocno trzymać się razem.",
+    "exampleDE": "In schwierigen Momenten müssen Freunde fest zusammenhalten."
+  },
+  {
+    "front": "kennenlernen",
+    "back": "poznać",
+    "ipa": "ˈpɔznat͡ɕ",
+    "example": "Poznaliśmy się pięć lat temu podczas studiów na uniwersytecie.",
+    "exampleDE": "Wir haben uns vor fünf Jahren an der Universität kennengelernt."
+  },
+  {
+    "front": "die Verliebtheit",
+    "back": "zakochanie",
+    "ipa": "zakɔˈxaɲɛ",
+    "example": "Na starcie nowego związku stan zakochania bywa wyjątkowo intensywny.",
+    "exampleDE": "Am Anfang einer Beziehung ist die Verliebtheit besonders intensiv."
+  },
+  {
+    "front": "die Zuneigung",
+    "back": "sympatia",
+    "ipa": "sɨmpaˈtia",
+    "example": "Okazywał swoją sympatię poprzez drobne, życzliwe gesty.",
+    "exampleDE": "Er zeigte seine Zuneigung durch kleine, aufmerksame Gesten."
+  },
+  {
+    "front": "die Verlobung",
+    "back": "zaręczyny",
+    "ipa": "zarɛnˈt͡ʂɨnɨ",
+    "example": "Podczas romantycznej kolacji we dwoje ogłosili swoje zaręczyny.",
+    "exampleDE": "Bei einem romantischen Abendessen gaben sie ihre Verlobung bekannt."
+  },
+  {
+    "front": "die Hochzeit",
+    "back": "ślub",
+    "ipa": "ɕlup",
+    "example": "Ślub odbył się w zabytkowym ratuszu na starym mieście.",
+    "exampleDE": "Die Hochzeit fand im historischen Rathaus der Altstadt statt."
+  },
+  {
+    "front": "der Ehepartner",
+    "back": "małżonek",
+    "ipa": "maˈwʐɔnɛk",
+    "example": "Ona w każdej sprawie szanuje zdanie swojego małżonka.",
+    "exampleDE": "Sie respektiert die Meinung ihres Ehepartners in allen Belangen."
+  },
+  {
+    "front": "der Hochzeitstag",
+    "back": "rocznica ślubu",
+    "ipa": "rɔˈt͡ʂɲit͡sa ˈɕlubu",
+    "example": "Z okazji dziesiątej rocznicy ślubu wybrali się na wspólny krótki wyjazd.",
+    "exampleDE": "Zum zehnten Hochzeitstag machten sie eine gemeinsame Kurzreise."
+  },
+  {
+    "front": "die Trennung",
+    "back": "rozstanie",
+    "ipa": "rɔˈsstaɲɛ",
+    "example": "Po długim namyśle oboje postanowili pójść na uczciwe rozstanie.",
+    "exampleDE": "Nach langer Überlegung entschieden sich beide für eine faire Trennung."
+  },
+  {
+    "front": "die Dankbarkeit",
+    "back": "wdzięczność",
+    "ipa": "ˈvd͡ʑɛnt͡ʂnɔɕt͡ɕ",
+    "example": "Czuję bezgraniczną wdzięczność za twoją nieocenioną pomoc.",
+    "exampleDE": "Ich empfinde tiefe Dankbarkeit für deine großartige Hilfe."
+  },
+  {
+    "front": "die Erleichterung",
+    "back": "ulga",
+    "ipa": "ˈulɡa",
+    "example": "Po zdanym egzaminie poczuła nieopisaną ulgę.",
+    "exampleDE": "Nach der bestandenen Prüfung spürte sie riesige Erleichterung."
+  },
+  {
+    "front": "die Vorfreude",
+    "back": "radość oczekiwania",
+    "ipa": "ˈradɔɕt͡ɕ ɔt͡ʂɛkʲiˈvaɲa",
+    "example": "Radość oczekiwania na letnie wakacje sprawia, że tydzień w pracy mija szybciej.",
+    "exampleDE": "Die Vorfreude auf den Sommerurlaub verkürzt die Arbeitswoche."
+  },
+  {
+    "front": "die Begeisterung",
+    "back": "zachwyt",
+    "ipa": "ˈzaxvɨt",
+    "example": "Publiczność nie kryła zachwytu i klaskała przez długie minuty po spektaklu.",
+    "exampleDE": "Das begeisterte Publikum klatschte nach der Vorstellung minutenlang."
+  },
+  {
+    "front": "die Zufriedenheit",
+    "back": "zadowolenie",
+    "ipa": "zadɔvɔˈlɛɲɛ",
+    "example": "Spokojny wieczór z wciągającą książką przynosi prawdziwe zadowolenie.",
+    "exampleDE": "Ein ruhiger Abend mit einem guten Buch schenkt Zufriedenheit."
+  },
+  {
+    "front": "die Hoffnung",
+    "back": "nadzieja",
+    "ipa": "naˈd͡ʑɛja",
+    "example": "Nigdy nie tracimy nadziei na szczęśliwy finał.",
+    "exampleDE": "Wir geben die Hoffnung auf ein gutes Ende niemals auf."
+  },
+  {
+    "front": "der Optimismus",
+    "back": "optymizm",
+    "ipa": "ɔˈptɨmʲizm",
+    "example": "Ze zdrowym optymizmem bez trudu pokonuje się wiele trudnych sytuacji.",
+    "exampleDE": "Mit gesundem Optimismus meistert man viele schwierige Situationen."
+  },
+  {
+    "front": "das Selbstvertrauen",
+    "back": "pewność siebie",
+    "ipa": "ˈpɛvnɔɕt͡ɕ ˈɕɛbʲɛ",
+    "example": "Kolejne sukcesy systematycznie budują pewność siebie.",
+    "exampleDE": "Erfolge stärken das persönliche Selbstvertrauen nachhaltig."
+  },
+  {
+    "front": "die Enttäuschung",
+    "back": "rozczarowanie",
+    "ipa": "rɔst͡ʂarɔˈvaɲɛ",
+    "example": "Przegrana w meczu finałowym była bolesnym rozczarowaniem dla całej drużyny.",
+    "exampleDE": "Die Niederlage im Finale war eine herbe Enttäuschung für das Team."
+  },
+  {
+    "front": "die Eifersucht",
+    "back": "zazdrość",
+    "ipa": "ˈzazdrɔɕt͡ɕ",
+    "example": "Bezpodstawna zazdrość potrafi zniszczyć nawet najlepszy związek.",
+    "exampleDE": "Unbegründete Eifersucht kann eine Partnerschaft schwer belasten."
+  },
+  {
+    "front": "der Neid",
+    "back": "zawiść",
+    "ipa": "ˈzavʲiɕt͡ɕ",
+    "example": "Zawiść o cudze osiągnięcia do niczego w życiu nie prowadzi.",
+    "exampleDE": "Neid auf den Erfolg anderer bringt einen selbst nicht weiter."
+  },
+  {
+    "front": "die Scham",
+    "back": "wstyd",
+    "ipa": "fstɨt",
+    "example": "Ze wstydu z powodu tej gafy oblał się rumieńcem.",
+    "exampleDE": "Vor Scham über das Missgeschick wurde er im Gesicht rot."
+  },
+  {
+    "front": "die Reue",
+    "back": "skrucha",
+    "ipa": "ˈskruxa",
+    "example": "Okazał szczerą skruchę i od razu za wszystko przeprosił.",
+    "exampleDE": "Er zeigte aufrichtige Reue und entschuldigte sich sofort."
+  },
+  {
+    "front": "die Verzweiflung",
+    "back": "rozpacz",
+    "ipa": "ˈrɔspat͡ʂ",
+    "example": "W głębokiej rozpaczy zwróciła się o pomoc do ośrodka poradnictwa.",
+    "exampleDE": "In ihrer Verzweiflung bat sie eine Beratungsstelle um Hilfe."
+  },
+  {
+    "front": "die Ungeduld",
+    "back": "niecierpliwość",
+    "ipa": "ɲɛt͡ɕɛˈrplivɔɕt͡ɕ",
+    "example": "Z niecierpliwości krążył nerwowo po pokoju z kąta w kąt.",
+    "exampleDE": "Vor lauter Ungeduld lief er im Zimmer unruhig auf und ab."
+  },
+  {
+    "front": "zuverlässig",
+    "back": "niezawodny",
+    "ipa": "ɲɛzaˈvɔdnɨ",
+    "example": "Ona jest niezwykle niezawodną współpracowniczką w biurze.",
+    "exampleDE": "Sie ist eine äußerst zuverlässige Kollegin im Büro."
+  }
+]

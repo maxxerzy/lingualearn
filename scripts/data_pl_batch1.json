@@ -1,0 +1,1752 @@
+[
+  {
+    "front": "Willkommen",
+    "back": "witamy",
+    "ipa": "vʲiˈtamɨ",
+    "example": "Witamy w naszym nowym domu!",
+    "exampleDE": "Willkommen in unserem neuen Haus!"
+  },
+  {
+    "front": "Einverstanden",
+    "back": "zgoda",
+    "ipa": "ˈzɡɔda",
+    "example": "Zgoda, spotkajmy się o godzinie siódmej.",
+    "exampleDE": "Einverstanden, treffen wir uns um sieben Uhr."
+  },
+  {
+    "front": "Wie bitte?",
+    "back": "słucham?",
+    "ipa": "ˈswuxam",
+    "example": "Słucham? Nie zrozumiałem pana.",
+    "exampleDE": "Wie bitte? Ich habe Sie nicht verstanden."
+  },
+  {
+    "front": "Kein Problem",
+    "back": "nie ma problemu",
+    "ipa": "ɲɛ ma prɔˈblɛmu",
+    "example": "Nie ma problemu, pomogę ci jutro.",
+    "exampleDE": "Kein Problem, ich helfe dir morgen."
+  },
+  {
+    "front": "Viel Glück",
+    "back": "powodzenia",
+    "ipa": "pɔvɔˈd͡zɛɲa",
+    "example": "Powodzenia na jutrzejszym egzaminie!",
+    "exampleDE": "Viel Glück bei der Prüfung morgen!"
+  },
+  {
+    "front": "Gute Reise",
+    "back": "szczęśliwej podróży",
+    "ipa": "ʂt͡ʂɛw̃ˈɕlivɛj pɔˈdruʐɨ",
+    "example": "Szczęśliwej podróży i dzwoń do nas częściej!",
+    "exampleDE": "Gute Reise und ruf uns öfter an!"
+  },
+  {
+    "front": "Es tut mir leid",
+    "back": "przykro mi",
+    "ipa": "ˈpʂɨkrɔ mʲi",
+    "example": "Przykro mi, że spóźniłem się na spotkanie.",
+    "exampleDE": "Es tut mir leid, dass ich zu spät zum Treffen gekommen bin."
+  },
+  {
+    "front": "Herzlichen Glückwunsch",
+    "back": "wszystkiego najlepszego",
+    "ipa": "fʂɨˈstkʲɛɡɔ najlɛˈpʂɛɡɔ",
+    "example": "Wszystkiego najlepszego z okazji urodzin!",
+    "exampleDE": "Herzlichen Glückwunsch zum Geburtstag!"
+  },
+  {
+    "front": "Bis bald",
+    "back": "do zobaczenia wkrótce",
+    "ipa": "dɔ zɔbaˈt͡ʂɛɲa ˈfkrutt͡sɛ",
+    "example": "Do zobaczenia wkrótce, widzimy się w przyszłym tygodniu!",
+    "exampleDE": "Bis bald, wir sehen uns nächste Woche!"
+  },
+  {
+    "front": "Guten Appetit",
+    "back": "smacznego",
+    "ipa": "smaˈt͡ʂnɛɡɔ",
+    "example": "Smacznego, zupa jest jeszcze gorąca!",
+    "exampleDE": "Guten Appetit, die Suppe ist noch heiß!"
+  },
+  {
+    "front": "ein",
+    "back": "jeden",
+    "ipa": "ˈjɛdɛn",
+    "example": "Mam jednego brata.",
+    "exampleDE": "Ich habe einen Bruder."
+  },
+  {
+    "front": "zwei",
+    "back": "dwa",
+    "ipa": "dva",
+    "example": "Widzę dwa domy na ulicy.",
+    "exampleDE": "Ich sehe zwei Häuser auf der Straße."
+  },
+  {
+    "front": "drei",
+    "back": "trzy",
+    "ipa": "tʂɨ",
+    "example": "Na stole stoją trzy filiżanki.",
+    "exampleDE": "Auf dem Tisch stehen drei Tassen."
+  },
+  {
+    "front": "vier",
+    "back": "cztery",
+    "ipa": "ˈt͡ʂtɛrɨ",
+    "example": "W klasie są cztery okna.",
+    "exampleDE": "Im Klassenzimmer gibt es vier Fenster."
+  },
+  {
+    "front": "fünf",
+    "back": "pięć",
+    "ipa": "pʲɛɲt͡ɕ",
+    "example": "Potrzebujemy pięciu minut.",
+    "exampleDE": "Wir brauchen fünf Minuten."
+  },
+  {
+    "front": "sechs",
+    "back": "sześć",
+    "ipa": "ʂɛɕt͡ɕ",
+    "example": "Kotka ma sześć kociąt.",
+    "exampleDE": "Die Katze hat sechs Kätzchen."
+  },
+  {
+    "front": "sieben",
+    "back": "siedem",
+    "ipa": "ˈɕɛdɛm",
+    "example": "Tydzień ma siedem dni.",
+    "exampleDE": "Eine Woche hat sieben Tage."
+  },
+  {
+    "front": "acht",
+    "back": "osiem",
+    "ipa": "ˈɔɕɛm",
+    "example": "Śpię osiem godzin na dobę.",
+    "exampleDE": "Ich schlafe acht Stunden am Tag."
+  },
+  {
+    "front": "neun",
+    "back": "dziewięć",
+    "ipa": "ˈd͡ʑɛvʲɛɲt͡ɕ",
+    "example": "Pociąg przyjeżdża o dziewiątej rano.",
+    "exampleDE": "Der Zug kommt um neun Uhr morgens an."
+  },
+  {
+    "front": "zehn",
+    "back": "dziesięć",
+    "ipa": "ˈd͡ʑɛɕɛɲt͡ɕ",
+    "example": "U rąk jest dziesięć palców.",
+    "exampleDE": "An den Händen sind zehn Finger."
+  },
+  {
+    "front": "elf",
+    "back": "jedenaście",
+    "ipa": "jɛdɛˈnaɕt͡ɕɛ",
+    "example": "Lekcja zaczyna się o godzinie jedenastej.",
+    "exampleDE": "Der Unterricht beginnt um elf Uhr."
+  },
+  {
+    "front": "zwölf",
+    "back": "dwanaście",
+    "ipa": "dvaˈnaɕt͡ɕɛ",
+    "example": "Rok ma dwanaście miesięcy.",
+    "exampleDE": "Ein Jahr hat zwölf Monate."
+  },
+  {
+    "front": "dreizehn",
+    "back": "trzynaście",
+    "ipa": "tʂɨˈnaɕt͡ɕɛ",
+    "example": "Skończył trzynaście lat.",
+    "exampleDE": "Er ist dreizehn Jahre alt geworden."
+  },
+  {
+    "front": "vierzehn",
+    "back": "czternaście",
+    "ipa": "t͡ʂtɛˈrnaɕt͡ɕɛ",
+    "example": "W domu jest czternaście pokoi.",
+    "exampleDE": "Im Haus gibt es vierzehn Zimmer."
+  },
+  {
+    "front": "fünfzehn",
+    "back": "piętnaście",
+    "ipa": "pʲɛnˈtnaɕt͡ɕɛ",
+    "example": "Musimy poczekać jeszcze piętnaście minut.",
+    "exampleDE": "Wir müssen noch fünfzehn Minuten warten."
+  },
+  {
+    "front": "sechzehn",
+    "back": "szesnaście",
+    "ipa": "ʂɛˈsnaɕt͡ɕɛ",
+    "example": "Ona ma szesnaście lat.",
+    "exampleDE": "Sie ist sechzehn Jahre alt."
+  },
+  {
+    "front": "siebzehn",
+    "back": "siedemnaście",
+    "ipa": "ɕɛdɛˈmnaɕt͡ɕɛ",
+    "example": "Na imprezie było siedemnastu gości.",
+    "exampleDE": "Auf der Party waren siebzehn Gäste."
+  },
+  {
+    "front": "achtzehn",
+    "back": "osiemnaście",
+    "ipa": "ɔɕɛˈmnaɕt͡ɕɛ",
+    "example": "Mając osiemnaście lat, ukończył szkołę.",
+    "exampleDE": "Mit achtzehn Jahren hat er die Schule abgeschlossen."
+  },
+  {
+    "front": "neunzehn",
+    "back": "dziewiętnaście",
+    "ipa": "d͡ʑɛvʲɛnˈtnaɕt͡ɕɛ",
+    "example": "Samolot odleci o godzinie dziewiętnastej.",
+    "exampleDE": "Das Flugzeug wird um neunzehn Uhr abfliegen."
+  },
+  {
+    "front": "zwanzig",
+    "back": "dwadzieścia",
+    "ipa": "dvaˈd͡ʑɛɕt͡ɕa",
+    "example": "W sklepie jest dwadzieścia rodzajów sera.",
+    "exampleDE": "Im Geschäft gibt es zwanzig Käsesorten."
+  },
+  {
+    "front": "Gewicht",
+    "back": "waga",
+    "ipa": "ˈvaɡa",
+    "example": "Jaka jest waga tej walizki?",
+    "exampleDE": "Welches Gewicht hat dieser Koffer?"
+  },
+  {
+    "front": "rot",
+    "back": "czerwony",
+    "ipa": "t͡ʂɛˈrvɔnɨ",
+    "example": "Kupiła czerwoną sukienkę na imprezę.",
+    "exampleDE": "Sie hat ein rotes Kleid für die Party gekauft."
+  },
+  {
+    "front": "blau",
+    "back": "niebieski",
+    "ipa": "ɲɛˈbʲɛskʲi",
+    "example": "Niebo jest dzisiaj niebieskie i czyste.",
+    "exampleDE": "Der Himmel ist heute blau und klar."
+  },
+  {
+    "front": "grün",
+    "back": "zielony",
+    "ipa": "ʑɛˈlɔnɨ",
+    "example": "Trawa w parku jest zielona i miękka.",
+    "exampleDE": "Das Gras im Park ist grün und weich."
+  },
+  {
+    "front": "gelb",
+    "back": "żółty",
+    "ipa": "ˈʐuwtɨ",
+    "example": "To żółte jabłko jest bardzo słodkie.",
+    "exampleDE": "Dieser gelbe Apfel ist sehr süß."
+  },
+  {
+    "front": "schwarz",
+    "back": "czarny",
+    "ipa": "ˈt͡ʂarnɨ",
+    "example": "On zawsze nosi czarną kurtkę.",
+    "exampleDE": "Er trägt immer eine schwarze Jacke."
+  },
+  {
+    "front": "weiß",
+    "back": "biały",
+    "ipa": "ˈbʲawɨ",
+    "example": "Biały śnieg pokrył wszystkie ulice.",
+    "exampleDE": "Der weiße Schnee bedeckte alle Straßen."
+  },
+  {
+    "front": "grau",
+    "back": "szary",
+    "ipa": "ˈʂarɨ",
+    "example": "Szare niebo zapowiada deszcz.",
+    "exampleDE": "Der graue Himmel kündigt Regen an."
+  },
+  {
+    "front": "braun",
+    "back": "brązowy",
+    "ipa": "brɔw̃ˈzɔvɨ",
+    "example": "Ma brązowe oczy i ciemne włosy.",
+    "exampleDE": "Er hat braune Augen und dunkle Haare."
+  },
+  {
+    "front": "orange",
+    "back": "pomarańczowy",
+    "ipa": "pɔmaraˈɲt͡ʂɔvɨ",
+    "example": "Pomarańczowy zachód słońca był bardzo piękny.",
+    "exampleDE": "Der orange Sonnenuntergang war sehr schön."
+  },
+  {
+    "front": "lila",
+    "back": "liliowy",
+    "ipa": "liliˈɔvɨ",
+    "example": "Liliowe kwiaty rosną przy płocie.",
+    "exampleDE": "Die lila Blumen wachsen am Zaun."
+  },
+  {
+    "front": "rosa",
+    "back": "różowy",
+    "ipa": "ruˈʐɔvɨ",
+    "example": "Dziecko jest ubrane w różową koszulę.",
+    "exampleDE": "Das Kind ist in ein rosa Hemd gekleidet."
+  },
+  {
+    "front": "violett",
+    "back": "fioletowy",
+    "ipa": "fʲɔlɛˈtɔvɨ",
+    "example": "Fioletowe winogrona są bardzo smaczne.",
+    "exampleDE": "Die violetten Weintrauben sind sehr lecker."
+  },
+  {
+    "front": "die Orange",
+    "back": "pomarańcza",
+    "ipa": "pɔmaˈraɲt͡ʂa",
+    "example": "Pomarańcza jest bogata w witaminę C.",
+    "exampleDE": "Die Orange ist reich an Vitamin C."
+  },
+  {
+    "front": "Farbe",
+    "back": "farba",
+    "ipa": "ˈfarba",
+    "example": "On potrzebuje czerwonej farby.",
+    "exampleDE": "Er braucht rote Farbe."
+  },
+  {
+    "front": "Vater",
+    "back": "ojciec",
+    "ipa": "ˈɔjt͡ɕɛt͡s",
+    "example": "Mój ojciec pracuje jako lekarz w szpitalu.",
+    "exampleDE": "Mein Vater arbeitet als Arzt im Krankenhaus."
+  },
+  {
+    "front": "Mutter",
+    "back": "matka",
+    "ipa": "ˈmatka",
+    "example": "Matka gotuje pyszny obiad dla całej rodziny.",
+    "exampleDE": "Die Mutter kocht ein leckeres Abendessen für die ganze Familie."
+  },
+  {
+    "front": "Bruder",
+    "back": "brat",
+    "ipa": "brat",
+    "example": "Mój brat studiuje na uniwersytecie.",
+    "exampleDE": "Mein Bruder studiert an der Universität."
+  },
+  {
+    "front": "Schwester",
+    "back": "siostra",
+    "ipa": "ˈɕɔstra",
+    "example": "Moja siostra mieszka w innym mieście.",
+    "exampleDE": "Meine Schwester wohnt in einer anderen Stadt."
+  },
+  {
+    "front": "Sohn",
+    "back": "syn",
+    "ipa": "sɨn",
+    "example": "Jej syn został przyjęty na uniwersytet medyczny.",
+    "exampleDE": "Ihr Sohn wurde an der medizinischen Universität aufgenommen."
+  },
+  {
+    "front": "Tochter",
+    "back": "córka",
+    "ipa": "ˈt͡surka",
+    "example": "Ich córka bardzo chętnie maluje ładne obrazy.",
+    "exampleDE": "Ihre Tochter malt sehr gerne schöne Bilder."
+  },
+  {
+    "front": "Großvater",
+    "back": "dziadek",
+    "ipa": "ˈd͡ʑadɛk",
+    "example": "Dziadek opowiada nam ciekawe historie.",
+    "exampleDE": "Der Großvater erzählt uns interessante Geschichten."
+  },
+  {
+    "front": "Großmutter",
+    "back": "babcia",
+    "ipa": "ˈbapt͡ɕa",
+    "example": "Babcia piecze w niedziele pyszne ciasta.",
+    "exampleDE": "Die Großmutter backt sonntags leckere Kuchen."
+  },
+  {
+    "front": "Onkel",
+    "back": "wujek",
+    "ipa": "ˈvujɛk",
+    "example": "Mój wujek mieszka w Petersburgu.",
+    "exampleDE": "Mein Onkel wohnt in Sankt Petersburg."
+  },
+  {
+    "front": "Tante",
+    "back": "ciocia",
+    "ipa": "ˈt͡ɕɔt͡ɕa",
+    "example": "Ciocia Masza zawsze przywozi nam prezenty.",
+    "exampleDE": "Tante Mascha bringt uns immer Geschenke mit."
+  },
+  {
+    "front": "Cousin",
+    "back": "kuzyn",
+    "ipa": "ˈkuzɨn",
+    "example": "Mój kuzyn to bardzo wesoły chłopak.",
+    "exampleDE": "Mein Cousin ist ein sehr fröhlicher Kerl."
+  },
+  {
+    "front": "Cousine",
+    "back": "kuzynka",
+    "ipa": "kuˈzɨnka",
+    "example": "Kuzynka przyszła do nas w odwiedziny.",
+    "exampleDE": "Die Cousine ist zu Besuch zu uns gekommen."
+  },
+  {
+    "front": "Mann",
+    "back": "mąż",
+    "ipa": "mɔw̃ʂ",
+    "example": "Jej mąż pracuje jako inżynier w fabryce.",
+    "exampleDE": "Ihr Mann arbeitet als Ingenieur in einer Fabrik."
+  },
+  {
+    "front": "Frau",
+    "back": "żona",
+    "ipa": "ˈʐɔna",
+    "example": "Jego żona jest bardzo dobrą i mądrą kobietą.",
+    "exampleDE": "Seine Frau ist eine sehr gütige und kluge Frau."
+  },
+  {
+    "front": "Kind",
+    "back": "dziecko",
+    "ipa": "ˈd͡ʑɛt͡skɔ",
+    "example": "Dziecko bawi się z przyjaciółmi na podwórku.",
+    "exampleDE": "Das Kind spielt mit Freunden im Hof."
+  },
+  {
+    "front": "Baby",
+    "back": "niemowlę",
+    "ipa": "ɲɛˈmɔvlɛ",
+    "example": "Niemowlę śpi w wózku podczas spaceru.",
+    "exampleDE": "Das Baby schläft beim Spaziergang im Kinderwagen."
+  },
+  {
+    "front": "Familie",
+    "back": "rodzina",
+    "ipa": "rɔˈd͡ʑina",
+    "example": "Nasza rodzina spędza weekend razem.",
+    "exampleDE": "Unsere Familie verbringt das Wochenende zusammen."
+  },
+  {
+    "front": "Beziehung",
+    "back": "związek",
+    "ipa": "ˈzvʲɔw̃zɛk",
+    "example": "Oni mają dobry związek.",
+    "exampleDE": "Sie haben eine gute Beziehung."
+  },
+  {
+    "front": "Freundschaft",
+    "back": "przyjaźń",
+    "ipa": "ˈpʂɨjaʑɲ",
+    "example": "Ich przyjaźń trwa już wiele lat.",
+    "exampleDE": "Ihre Freundschaft dauert schon viele Jahre."
+  },
+  {
+    "front": "Kopf",
+    "back": "głowa",
+    "ipa": "ˈɡwɔva",
+    "example": "Po pracy boli mnie głowa.",
+    "exampleDE": "Ich habe nach der Arbeit Kopfschmerzen."
+  },
+  {
+    "front": "Auge",
+    "back": "oko",
+    "ipa": "ˈɔkɔ",
+    "example": "Ona ma piękne zielone oczy.",
+    "exampleDE": "Sie hat schöne grüne Augen."
+  },
+  {
+    "front": "Ohr",
+    "back": "ucho",
+    "ipa": "ˈuxɔ",
+    "example": "On słabo słyszy na prawe ucho.",
+    "exampleDE": "Er hört auf dem rechten Ohr nicht gut."
+  },
+  {
+    "front": "Nase",
+    "back": "nos",
+    "ipa": "nɔs",
+    "example": "Dziecko ma katar, a nos jest zatkany.",
+    "exampleDE": "Das Kind hat Schnupfen, die Nase ist verstopft."
+  },
+  {
+    "front": "Mund",
+    "back": "usta",
+    "ipa": "ˈusta",
+    "example": "Otwórz usta i powiedz „a”.",
+    "exampleDE": "Mach den Mund auf und sag \"a\"."
+  },
+  {
+    "front": "Zahn",
+    "back": "ząb",
+    "ipa": "zɔmp",
+    "example": "Boli mnie ząb, muszę iść do lekarza.",
+    "exampleDE": "Mir tut ein Zahn weh, ich muss zum Arzt."
+  },
+  {
+    "front": "Hals",
+    "back": "gardło",
+    "ipa": "ˈɡardwɔ",
+    "example": "Po długiej pracy boli ją gardło.",
+    "exampleDE": "Nach der langen Arbeit tut ihr der Hals weh."
+  },
+  {
+    "front": "Schulter",
+    "back": "ramię",
+    "ipa": "ˈramʲɛ",
+    "example": "Położył jej dłoń na ramieniu.",
+    "exampleDE": "Er legte ihr die Hand auf die Schulter."
+  },
+  {
+    "front": "Arm",
+    "back": "ręka",
+    "ipa": "ˈrɛŋka",
+    "example": "Złamał rękę na treningu piłki nożnej.",
+    "exampleDE": "Er hat sich beim Fußballtraining den Arm gebrochen."
+  },
+  {
+    "front": "Hand",
+    "back": "dłoń",
+    "ipa": "dwɔɲ",
+    "example": "Mocno trzymała go za dłoń.",
+    "exampleDE": "Sie hielt ihn an der Hand fest."
+  },
+  {
+    "front": "Finger",
+    "back": "palec",
+    "ipa": "ˈpalɛt͡s",
+    "example": "W kuchni skaleczył się nożem w palec.",
+    "exampleDE": "Er hat sich in der Küche mit dem Messer in den Finger geschnitten."
+  },
+  {
+    "front": "Bauch",
+    "back": "brzuch",
+    "ipa": "bʐux",
+    "example": "Po obiedzie boli mnie brzuch.",
+    "exampleDE": "Nach dem Mittagessen tut mir der Bauch weh."
+  },
+  {
+    "front": "Bein",
+    "back": "noga",
+    "ipa": "ˈnɔɡa",
+    "example": "Złamał nogę podczas wędrówki po górach.",
+    "exampleDE": "Er hat sich beim Wandern in den Bergen das Bein gebrochen."
+  },
+  {
+    "front": "Knie",
+    "back": "kolano",
+    "ipa": "kɔˈlanɔ",
+    "example": "Dziecko upadło i mocno stłukło kolano.",
+    "exampleDE": "Das Kind fiel hin und stieß sich heftig das Knie."
+  },
+  {
+    "front": "Fuß",
+    "back": "stopa",
+    "ipa": "ˈstɔpa",
+    "example": "Po długim chodzeniu boli ją stopa.",
+    "exampleDE": "Ihr tut nach dem langen Gehen der Fuß weh."
+  },
+  {
+    "front": "Rücken",
+    "back": "plecy",
+    "ipa": "ˈplɛt͡sɨ",
+    "example": "Po długiej pracy przy biurku bolą plecy.",
+    "exampleDE": "Nach langer Arbeit am Schreibtisch tut der Rücken weh."
+  },
+  {
+    "front": "Herz",
+    "back": "serce",
+    "ipa": "ˈsɛrt͡sɛ",
+    "example": "Jego serce bije bardzo szybko po bieganiu.",
+    "exampleDE": "Sein Herz schlägt nach dem Laufen sehr schnell."
+  },
+  {
+    "front": "krank",
+    "back": "chory",
+    "ipa": "ˈxɔrɨ",
+    "example": "Chore dziecko zostało w domu z mamą.",
+    "exampleDE": "Das kranke Kind blieb bei seiner Mutter zu Hause."
+  },
+  {
+    "front": "gesund",
+    "back": "zdrowy",
+    "ipa": "ˈzdrɔvɨ",
+    "example": "Zdrowy tryb życia wydłuża życie.",
+    "exampleDE": "Ein gesunder Lebensstil verlängert das Leben."
+  },
+  {
+    "front": "Arzt",
+    "back": "lekarz",
+    "ipa": "ˈlɛkaʂ",
+    "example": "Lekarz poradził mi, abym więcej odpoczywał.",
+    "exampleDE": "Der Arzt hat mir geraten, mich mehr auszuruhen."
+  },
+  {
+    "front": "Krankenschwester",
+    "back": "pielęgniarka",
+    "ipa": "pʲɛlɛŋˈɡɲarka",
+    "example": "Pielęgniarka zrobiła pacjentowi zastrzyk.",
+    "exampleDE": "Die Krankenschwester gab dem Patienten eine Spritze."
+  },
+  {
+    "front": "Krankenhaus",
+    "back": "szpital",
+    "ipa": "ˈʂpʲital",
+    "example": "Szpital znajduje się niedaleko dworca.",
+    "exampleDE": "Das Krankenhaus liegt nicht weit vom Bahnhof."
+  },
+  {
+    "front": "Apotheke",
+    "back": "apteka",
+    "ipa": "aˈptɛka",
+    "example": "Apteka jest otwarta do dziewiątej wieczorem.",
+    "exampleDE": "Die Apotheke ist bis neun Uhr abends geöffnet."
+  },
+  {
+    "front": "Fieber",
+    "back": "gorączka",
+    "ipa": "ɡɔˈrɔnt͡ʂka",
+    "example": "Dziecko ma gorączkę, proszę wezwać lekarza.",
+    "exampleDE": "Das Kind hat Fieber, rufen Sie einen Arzt."
+  },
+  {
+    "front": "Husten",
+    "back": "kaszel",
+    "ipa": "ˈkaʂɛl",
+    "example": "Silny kaszel przeszkadza mu spać w nocy.",
+    "exampleDE": "Der starke Husten hindert ihn nachts am Schlafen."
+  },
+  {
+    "front": "Schnupfen",
+    "back": "katar",
+    "ipa": "ˈkatar",
+    "example": "Mam katar już trzeci dzień.",
+    "exampleDE": "Ich habe schon den dritten Tag Schnupfen."
+  },
+  {
+    "front": "Tablette",
+    "back": "tabletka",
+    "ipa": "taˈblɛtka",
+    "example": "Weź tabletkę na ból głowy.",
+    "exampleDE": "Nimm eine Tablette gegen die Kopfschmerzen."
+  },
+  {
+    "front": "Schmerz",
+    "back": "ból",
+    "ipa": "bul",
+    "example": "Ból pleców minął po masażu.",
+    "exampleDE": "Der Schmerz im Rücken verschwand nach der Massage."
+  },
+  {
+    "front": "Medikament",
+    "back": "lek",
+    "ipa": "lɛk",
+    "example": "Ten lek należy zażywać po jedzeniu.",
+    "exampleDE": "Dieses Medikament muss man nach dem Essen einnehmen."
+  },
+  {
+    "front": "Erkältung",
+    "back": "przeziębienie",
+    "ipa": "pʂɛʑɛmˈbʲɛɲɛ",
+    "example": "Z powodu przeziębienia został w domu.",
+    "exampleDE": "Wegen der Erkältung blieb er zu Hause."
+  },
+  {
+    "front": "Grippe",
+    "back": "grypa",
+    "ipa": "ˈɡrɨpa",
+    "example": "Zimą wiele osób choruje na grypę.",
+    "exampleDE": "Im Winter erkranken viele an Grippe."
+  },
+  {
+    "front": "Krankenwagen",
+    "back": "karetka",
+    "ipa": "kaˈrɛtka",
+    "example": "Karetka pogotowia przyjechała po pięciu minutach.",
+    "exampleDE": "Der Krankenwagen kam nach fünf Minuten."
+  },
+  {
+    "front": "Gehirn",
+    "back": "mózg",
+    "ipa": "musk",
+    "example": "Mózg kontroluje całe ciało.",
+    "exampleDE": "Das Gehirn steuert den ganzen Körper."
+  },
+  {
+    "front": "Verletzung",
+    "back": "kontuzja",
+    "ipa": "kɔˈntuzja",
+    "example": "Piłkarz doznał poważnej kontuzji.",
+    "exampleDE": "Der Fußballspieler erlitt eine schwere Verletzung."
+  },
+  {
+    "front": "Operation",
+    "back": "operacja",
+    "ipa": "ɔpɛˈrat͡sja",
+    "example": "Operacja przebiegła pomyślnie.",
+    "exampleDE": "Die Operation verlief erfolgreich."
+  },
+  {
+    "front": "Impfung",
+    "back": "szczepienie",
+    "ipa": "ʂt͡ʂɛˈpʲɛɲɛ",
+    "example": "Lekarz wykonał szczepienie u dziecka.",
+    "exampleDE": "Der Arzt gab dem Kind eine Impfung."
+  },
+  {
+    "front": "Allergie",
+    "back": "alergia",
+    "ipa": "aˈlɛrɡʲa",
+    "example": "Mam alergię na koty.",
+    "exampleDE": "Ich habe eine Allergie gegen Katzen."
+  },
+  {
+    "front": "Genesung",
+    "back": "powrót do zdrowia",
+    "ipa": "ˈpɔvrut dɔ ˈzdrɔvʲa",
+    "example": "Życzymy panu szybkiego powrotu do zdrowia.",
+    "exampleDE": "Wir wünschen Ihnen gute Genesung."
+  },
+  {
+    "front": "Verband",
+    "back": "opatrunek",
+    "ipa": "ɔpaˈtrunɛk",
+    "example": "Pielęgniarka założyła opatrunek.",
+    "exampleDE": "Die Krankenschwester legte einen Verband an."
+  },
+  {
+    "front": "Behandlung",
+    "back": "leczenie",
+    "ipa": "lɛˈt͡ʂɛɲɛ",
+    "example": "Leczenie potrwa dwa tygodnie.",
+    "exampleDE": "Die Behandlung wird zwei Wochen dauern."
+  },
+  {
+    "front": "Diagnose",
+    "back": "diagnoza",
+    "ipa": "diaˈɡnɔza",
+    "example": "Lekarz postawił dokładną diagnozę.",
+    "exampleDE": "Der Arzt stellte eine genaue Diagnose."
+  },
+  {
+    "front": "Symptom",
+    "back": "objaw",
+    "ipa": "ˈɔbjaf",
+    "example": "Kaszel to częsty objaw przeziębienia.",
+    "exampleDE": "Husten ist ein häufiges Symptom einer Erkältung."
+  },
+  {
+    "front": "Gesundheit",
+    "back": "zdrowie",
+    "ipa": "ˈzdrɔvʲɛ",
+    "example": "Zdrowie jest ważniejsze od pieniędzy.",
+    "exampleDE": "Gesundheit ist wichtiger als Geld."
+  },
+  {
+    "front": "Knochen",
+    "back": "kość",
+    "ipa": "kɔɕt͡ɕ",
+    "example": "Złamał kość w ręce.",
+    "exampleDE": "Er hat sich einen Knochen im Arm gebrochen."
+  },
+  {
+    "front": "Muskel",
+    "back": "mięsień",
+    "ipa": "ˈmʲɛw̃ɕɛɲ",
+    "example": "Po treningu boli każdy mięsień.",
+    "exampleDE": "Nach dem Training schmerzt jeder Muskel."
+  },
+  {
+    "front": "Haut",
+    "back": "skóra",
+    "ipa": "ˈskura",
+    "example": "Ona ma delikatną skórę.",
+    "exampleDE": "Sie hat zarte Haut."
+  },
+  {
+    "front": "Lunge",
+    "back": "płuca",
+    "ipa": "ˈpwut͡sa",
+    "example": "Palenie szkodzi płucom.",
+    "exampleDE": "Rauchen schadet der Lunge."
+  },
+  {
+    "front": "Leber",
+    "back": "wątroba",
+    "ipa": "vɔnˈtrɔba",
+    "example": "Alkohol jest szkodliwy dla wątroby.",
+    "exampleDE": "Alkohol ist schädlich für die Leber."
+  },
+  {
+    "front": "Niere",
+    "back": "nerka",
+    "ipa": "ˈnɛrka",
+    "example": "Boli go prawa nerka.",
+    "exampleDE": "Ihm tut die rechte Niere weh."
+  },
+  {
+    "front": "Magen",
+    "back": "żołądek",
+    "ipa": "ʐɔˈwɔndɛk",
+    "example": "Po jedzeniu boli żołądek.",
+    "exampleDE": "Nach dem Essen tut der Magen weh."
+  },
+  {
+    "front": "Ellbogen",
+    "back": "łokieć",
+    "ipa": "ˈwɔkʲɛt͡ɕ",
+    "example": "Uderzył się łokciem o stół.",
+    "exampleDE": "Er stieß sich den Ellbogen am Tisch."
+  },
+  {
+    "front": "Atem",
+    "back": "oddech",
+    "ipa": "ˈɔddɛx",
+    "example": "Po bieganiu stracił oddech.",
+    "exampleDE": "Nach dem Laufen kam er außer Atem."
+  },
+  {
+    "front": "Puls",
+    "back": "puls",
+    "ipa": "puls",
+    "example": "Lekarz zmierzył puls pacjenta.",
+    "exampleDE": "Der Arzt maß den Puls des Patienten."
+  },
+  {
+    "front": "Hemd",
+    "back": "koszula",
+    "ipa": "kɔˈʂula",
+    "example": "Założył białą koszulę na rozmowę rekrutacyjną.",
+    "exampleDE": "Er hat für das Vorstellungsgespräch ein weißes Hemd angezogen."
+  },
+  {
+    "front": "Hose",
+    "back": "spodnie",
+    "ipa": "ˈspɔdɲɛ",
+    "example": "Te niebieskie spodnie bardzo dobrze na mnie leżą.",
+    "exampleDE": "Diese blaue Hose passt mir sehr gut."
+  },
+  {
+    "front": "Rock",
+    "back": "spódnica",
+    "ipa": "spuˈdɲit͡sa",
+    "example": "Kupiła długą czerwoną spódnicę.",
+    "exampleDE": "Sie hat einen langen roten Rock gekauft."
+  },
+  {
+    "front": "Kleid",
+    "back": "sukienka",
+    "ipa": "suˈkʲɛnka",
+    "example": "Na przyjęciu miała na sobie piękną sukienkę.",
+    "exampleDE": "Auf der Party trug sie ein schönes Kleid."
+  },
+  {
+    "front": "Jacke",
+    "back": "kurtka",
+    "ipa": "ˈkurtka",
+    "example": "Weź kurtkę, na dworze jest chłodno.",
+    "exampleDE": "Nimm eine Jacke mit, draußen ist es kühl."
+  },
+  {
+    "front": "Mantel",
+    "back": "płaszcz",
+    "ipa": "pwaʂt͡ʂ",
+    "example": "Zimą nosi ciepły, długi płaszcz.",
+    "exampleDE": "Im Winter trägt er einen warmen, langen Mantel."
+  },
+  {
+    "front": "Schuhe",
+    "back": "buty",
+    "ipa": "ˈbutɨ",
+    "example": "Nowe buty trochę uciskają stopę.",
+    "exampleDE": "Die neuen Schuhe drücken den Fuß ein wenig."
+  },
+  {
+    "front": "Socken",
+    "back": "skarpetki",
+    "ipa": "skaˈrpɛtkʲi",
+    "example": "Szukam pary czystych skarpetek w szafie.",
+    "exampleDE": "Ich suche ein Paar saubere Socken im Schrank."
+  },
+  {
+    "front": "Hut",
+    "back": "kapelusz",
+    "ipa": "kaˈpɛluʂ",
+    "example": "Dziadek zawsze nosi stary kapelusz.",
+    "exampleDE": "Der Großvater trägt immer einen alten Hut."
+  },
+  {
+    "front": "Mütze",
+    "back": "czapka",
+    "ipa": "ˈt͡ʂapka",
+    "example": "Załóż czapkę, na zewnątrz jest bardzo zimno.",
+    "exampleDE": "Setz eine Mütze auf, draußen ist es sehr kalt."
+  },
+  {
+    "front": "Handschuhe",
+    "back": "rękawiczki",
+    "ipa": "rɛŋkaˈvʲit͡ʂkʲi",
+    "example": "Zimą nie wychodzę bez ciepłych rękawiczek.",
+    "exampleDE": "Im Winter gehe ich nicht ohne warme Handschuhe hinaus."
+  },
+  {
+    "front": "Gürtel",
+    "back": "pasek",
+    "ipa": "ˈpasɛk",
+    "example": "Ten skórzany pasek jest bardzo elegancki.",
+    "exampleDE": "Dieser Ledergürtel ist sehr stilvoll."
+  },
+  {
+    "front": "Schal",
+    "back": "szalik",
+    "ipa": "ˈʂalik",
+    "example": "Zawiązała szalik wokół szyi.",
+    "exampleDE": "Sie hat sich einen Schal um den Hals gebunden."
+  },
+  {
+    "front": "Schuh",
+    "back": "but",
+    "ipa": "but",
+    "example": "Jeden but przemókł.",
+    "exampleDE": "Ein Schuh ist nass geworden."
+  },
+  {
+    "front": "Socke",
+    "back": "skarpetka",
+    "ipa": "skaˈrpɛtka",
+    "example": "Nie mogę znaleźć drugiej skarpetki.",
+    "exampleDE": "Ich kann die zweite Socke nicht finden."
+  },
+  {
+    "front": "Handschuh",
+    "back": "rękawiczka",
+    "ipa": "rɛŋkaˈvʲit͡ʂka",
+    "example": "Zgubiła jedną rękawiczkę.",
+    "exampleDE": "Sie hat einen Handschuh verloren."
+  },
+  {
+    "front": "Knopf",
+    "back": "guzik",
+    "ipa": "ˈɡuʑik",
+    "example": "Przy koszuli urwał się guzik.",
+    "exampleDE": "Am Hemd ist ein Knopf abgerissen."
+  },
+  {
+    "front": "Ärmel",
+    "back": "rękaw",
+    "ipa": "ˈrɛŋkaf",
+    "example": "Podwinął rękawy.",
+    "exampleDE": "Er krempelte die Ärmel hoch."
+  },
+  {
+    "front": "Anzug",
+    "back": "garnitur",
+    "ipa": "ɡaˈrɲitur",
+    "example": "Założył elegancki garnitur.",
+    "exampleDE": "Er zog einen eleganten Anzug an."
+  },
+  {
+    "front": "Stiefel",
+    "back": "kozaki",
+    "ipa": "kɔˈzakʲi",
+    "example": "Skórzane kozaki są drogie.",
+    "exampleDE": "Lederstiefel sind teuer."
+  },
+  {
+    "front": "Brot",
+    "back": "chleb",
+    "ipa": "xlɛp",
+    "example": "Na śniadanie jem chleb z masłem.",
+    "exampleDE": "Zum Frühstück esse ich Brot mit Butter."
+  },
+  {
+    "front": "Butter",
+    "back": "masło",
+    "ipa": "ˈmaswɔ",
+    "example": "Posmaruj świeży chleb masłem.",
+    "exampleDE": "Streich die Butter auf das frische Brot."
+  },
+  {
+    "front": "Käse",
+    "back": "ser",
+    "ipa": "sɛr",
+    "example": "Ten ser jest bardzo smaczny i miękki.",
+    "exampleDE": "Dieser Käse ist sehr lecker und weich."
+  },
+  {
+    "front": "Ei",
+    "back": "jajko",
+    "ipa": "ˈjajkɔ",
+    "example": "Codziennie gotuję jajko na śniadanie.",
+    "exampleDE": "Ich koche jeden Tag ein Ei zum Frühstück."
+  },
+  {
+    "front": "Fleisch",
+    "back": "mięso",
+    "ipa": "ˈmʲɛw̃sɔ",
+    "example": "Mięso musi być dobrze wysmażone przed jedzeniem.",
+    "exampleDE": "Das Fleisch muss vor dem Essen gut durchgebraten werden."
+  },
+  {
+    "front": "Fisch",
+    "back": "ryba",
+    "ipa": "ˈrɨba",
+    "example": "Na obiad zjedliśmy rybę z ryżem.",
+    "exampleDE": "Wir haben zum Mittagessen Fisch mit Reis gegessen."
+  },
+  {
+    "front": "Gemüse",
+    "back": "warzywa",
+    "ipa": "vaˈʐɨva",
+    "example": "Warzywa są dobre dla zdrowia dzieci.",
+    "exampleDE": "Gemüse ist gut für die Gesundheit der Kinder."
+  },
+  {
+    "front": "Obst",
+    "back": "owoce",
+    "ipa": "ɔˈvɔt͡sɛ",
+    "example": "Latem jemy dużo świeżych owoców.",
+    "exampleDE": "Im Sommer essen wir viel frisches Obst."
+  },
+  {
+    "front": "Apfel",
+    "back": "jabłko",
+    "ipa": "ˈjabwkɔ",
+    "example": "Czerwone jabłko leży na stole.",
+    "exampleDE": "Ein roter Apfel liegt auf dem Tisch."
+  },
+  {
+    "front": "Banane",
+    "back": "banan",
+    "ipa": "ˈbanan",
+    "example": "Dzieci chętnie jedzą banany jako przekąskę.",
+    "exampleDE": "Kinder essen gern Bananen als Zwischenmahlzeit."
+  },
+  {
+    "front": "Tomate",
+    "back": "pomidor",
+    "ipa": "pɔˈmʲidɔr",
+    "example": "Czy pomidor to warzywo czy owoc?",
+    "exampleDE": "Ist die Tomate ein Gemüse oder eine Frucht?"
+  },
+  {
+    "front": "Kartoffel",
+    "back": "ziemniak",
+    "ipa": "ˈʑɛmɲak",
+    "example": "Ziemniak to podstawowy produkt żywnościowy w Rosji.",
+    "exampleDE": "Die Kartoffel ist ein Grundnahrungsmittel in Russland."
+  },
+  {
+    "front": "Reis",
+    "back": "ryż",
+    "ipa": "rɨʂ",
+    "example": "Ryż dobrze pasuje do ryb i warzyw.",
+    "exampleDE": "Reis passt gut zu Fisch und Gemüse."
+  },
+  {
+    "front": "Suppe",
+    "back": "zupa",
+    "ipa": "ˈzupa",
+    "example": "Mama ugotowała na obiad pyszną zupę.",
+    "exampleDE": "Mama hat eine leckere Suppe zum Mittagessen gekocht."
+  },
+  {
+    "front": "Kuchen",
+    "back": "ciasto",
+    "ipa": "ˈt͡ɕastɔ",
+    "example": "Na urodziny upiekła duże ciasto.",
+    "exampleDE": "Zum Geburtstag hat sie einen großen Kuchen gebacken."
+  },
+  {
+    "front": "Zucker",
+    "back": "cukier",
+    "ipa": "ˈt͡sukʲɛr",
+    "example": "Wsyp łyżkę cukru do herbaty.",
+    "exampleDE": "Gib einen Löffel Zucker in den Tee."
+  },
+  {
+    "front": "Salz",
+    "back": "sól",
+    "ipa": "sul",
+    "example": "Nie zapomnij wsypać soli do zupy.",
+    "exampleDE": "Vergiss nicht, Salz in die Suppe zu geben."
+  },
+  {
+    "front": "Schwein",
+    "back": "świnia",
+    "ipa": "ˈɕvʲiɲa",
+    "example": "W gospodarstwie mieszka duża różowa świnia.",
+    "exampleDE": "Auf dem Bauernhof lebt ein großes rosa Schwein."
+  },
+  {
+    "front": "essen",
+    "back": "jeść",
+    "ipa": "jɛɕt͡ɕ",
+    "example": "Chętnie jemy razem przy dużym stole.",
+    "exampleDE": "Wir essen gerne zusammen an einem großen Tisch."
+  },
+  {
+    "front": "hungrig",
+    "back": "głodny",
+    "ipa": "ˈɡwɔdnɨ",
+    "example": "Jestem bardzo głodny, zjedzmy coś.",
+    "exampleDE": "Ich bin sehr hungrig, lass uns etwas essen."
+  },
+  {
+    "front": "Eis",
+    "back": "lód",
+    "ipa": "lut",
+    "example": "Na ulicach jest lód, uważaj.",
+    "exampleDE": "Auf den Straßen ist Eis, sei vorsichtig."
+  },
+  {
+    "front": "Speisekarte",
+    "back": "menu",
+    "ipa": "ˈmɛnu",
+    "example": "Proszę przynieść menu i szklankę wody.",
+    "exampleDE": "Bringen Sie bitte die Speisekarte und ein Glas Wasser."
+  },
+  {
+    "front": "Trinkgeld",
+    "back": "napiwek",
+    "ipa": "naˈpʲivɛk",
+    "example": "Zostawiliśmy kelnerowi dobry napiwek.",
+    "exampleDE": "Wir haben dem Kellner ein gutes Trinkgeld dagelassen."
+  },
+  {
+    "front": "Frühstück",
+    "back": "śniadanie",
+    "ipa": "ɕɲaˈdaɲɛ",
+    "example": "Na śniadanie jemy kaszę i pijemy kawę.",
+    "exampleDE": "Zum Frühstück gibt es bei uns Brei und Kaffee."
+  },
+  {
+    "front": "Mittagessen",
+    "back": "obiad",
+    "ipa": "ˈɔbʲat",
+    "example": "Obiad będzie gotowy za pół godziny.",
+    "exampleDE": "Das Mittagessen ist in einer halben Stunde fertig."
+  },
+  {
+    "front": "Abendessen",
+    "back": "kolacja",
+    "ipa": "kɔˈlat͡sja",
+    "example": "Cała rodzina zebrała się na kolację.",
+    "exampleDE": "Die ganze Familie versammelte sich zum Abendessen."
+  },
+  {
+    "front": "Rezept",
+    "back": "przepis",
+    "ipa": "ˈpʂɛpʲis",
+    "example": "Daj mi przepis na to ciasto.",
+    "exampleDE": "Gib mir das Rezept für diesen Kuchen."
+  },
+  {
+    "front": "Zutat",
+    "back": "składnik",
+    "ipa": "ˈskwadɲik",
+    "example": "Brakuje jednego składnika.",
+    "exampleDE": "Eine Zutat fehlt."
+  },
+  {
+    "front": "Geschmack",
+    "back": "smak",
+    "ipa": "smak",
+    "example": "To danie ma przyjemny smak.",
+    "exampleDE": "Dieses Gericht hat einen angenehmen Geschmack."
+  },
+  {
+    "front": "Mehl",
+    "back": "mąka",
+    "ipa": "ˈmɔŋka",
+    "example": "Do ciasta potrzeba mąki.",
+    "exampleDE": "Für den Teig braucht man Mehl."
+  },
+  {
+    "front": "Teig",
+    "back": "ciasto",
+    "ipa": "ˈt͡ɕastɔ",
+    "example": "Ciasto musi odpocząć przez godzinę.",
+    "exampleDE": "Der Teig muss eine Stunde ruhen."
+  },
+  {
+    "front": "Gewürz",
+    "back": "przyprawa",
+    "ipa": "pʂɨˈprava",
+    "example": "W szafce jest wiele różnych przypraw.",
+    "exampleDE": "Im Schrank gibt es viele verschiedene Gewürze."
+  },
+  {
+    "front": "Pfeffer",
+    "back": "pieprz",
+    "ipa": "pʲɛpʂ",
+    "example": "Dodaj trochę pieprzu.",
+    "exampleDE": "Gib etwas Pfeffer dazu."
+  },
+  {
+    "front": "Sauce",
+    "back": "sos",
+    "ipa": "sɔs",
+    "example": "Sos wyszedł bardzo smaczny.",
+    "exampleDE": "Die Sauce ist sehr lecker geworden."
+  },
+  {
+    "front": "Brühe",
+    "back": "rosół",
+    "ipa": "ˈrɔsuw",
+    "example": "Mama gotuje rosół z kury.",
+    "exampleDE": "Mama kocht eine Hühnerbrühe."
+  },
+  {
+    "front": "Nachtisch",
+    "back": "deser",
+    "ipa": "ˈdɛsɛr",
+    "example": "Na deser były lody.",
+    "exampleDE": "Zum Nachtisch gab es Eis."
+  },
+  {
+    "front": "Milch",
+    "back": "mleko",
+    "ipa": "ˈmlɛkɔ",
+    "example": "Dziecko pije mleko każdego wieczoru.",
+    "exampleDE": "Das Kind trinkt jeden Abend Milch."
+  },
+  {
+    "front": "Wasser",
+    "back": "woda",
+    "ipa": "ˈvɔda",
+    "example": "W upale pij więcej wody.",
+    "exampleDE": "Trink bei heißem Wetter mehr Wasser."
+  },
+  {
+    "front": "Tee",
+    "back": "herbata",
+    "ipa": "xɛˈrbata",
+    "example": "Wypij gorącą herbatę, a poczujesz się lepiej.",
+    "exampleDE": "Trink einen heißen Tee, dann geht es dir besser."
+  },
+  {
+    "front": "Kaffee",
+    "back": "kawa",
+    "ipa": "ˈkava",
+    "example": "Rano zawsze piję filiżankę kawy.",
+    "exampleDE": "Morgens trinke ich immer eine Tasse Kaffee."
+  },
+  {
+    "front": "Saft",
+    "back": "sok",
+    "ipa": "sɔk",
+    "example": "Sok pomarańczowy jest bardzo zdrowy dla organizmu.",
+    "exampleDE": "Orangensaft ist sehr gesund für den Körper."
+  },
+  {
+    "front": "Bier",
+    "back": "piwo",
+    "ipa": "ˈpʲivɔ",
+    "example": "Wypił ze znajomymi szklankę piwa.",
+    "exampleDE": "Er hat mit Freunden ein Glas Bier getrunken."
+  },
+  {
+    "front": "Wein",
+    "back": "wino",
+    "ipa": "ˈvʲinɔ",
+    "example": "Do kolacji podano czerwone wino do mięsa.",
+    "exampleDE": "Beim Abendessen wurde Rotwein zum Fleisch serviert."
+  },
+  {
+    "front": "trinken",
+    "back": "pić",
+    "ipa": "pʲit͡ɕ",
+    "example": "Każdego dnia trzeba pić dużo wody.",
+    "exampleDE": "Man muss jeden Tag viel Wasser trinken."
+  },
+  {
+    "front": "Küche",
+    "back": "kuchnia",
+    "ipa": "ˈkuxɲa",
+    "example": "Mama gotuje obiad w kuchni.",
+    "exampleDE": "Mama kocht das Mittagessen in der Küche."
+  },
+  {
+    "front": "kochen",
+    "back": "gotować",
+    "ipa": "ɡɔˈtɔvat͡ɕ",
+    "example": "W weekend tata chętnie gotuje kolację.",
+    "exampleDE": "Am Wochenende kocht Papa gern das Abendessen."
+  },
+  {
+    "front": "Gabel",
+    "back": "widelec",
+    "ipa": "vʲiˈdɛlɛt͡s",
+    "example": "Podaj mi proszę czysty widelec.",
+    "exampleDE": "Gib mir bitte eine saubere Gabel."
+  },
+  {
+    "front": "Messer",
+    "back": "nóż",
+    "ipa": "nuʂ",
+    "example": "Ten nóż jest bardzo ostry, bądź ostrożny.",
+    "exampleDE": "Dieses Messer ist sehr scharf, sei vorsichtig."
+  },
+  {
+    "front": "Löffel",
+    "back": "łyżka",
+    "ipa": "ˈwɨʂka",
+    "example": "Potrzebuję łyżki do zupy.",
+    "exampleDE": "Ich brauche einen Löffel für die Suppe."
+  },
+  {
+    "front": "Teller",
+    "back": "talerz",
+    "ipa": "ˈtalɛʂ",
+    "example": "Na stole stał talerz z gorącą kaszą.",
+    "exampleDE": "Auf dem Tisch stand ein Teller mit heißem Brei."
+  },
+  {
+    "front": "Tasse",
+    "back": "filiżanka",
+    "ipa": "fʲiliˈʐanka",
+    "example": "Wypiła filiżankę herbaty z cytryną.",
+    "exampleDE": "Sie trank eine Tasse Tee mit Zitrone."
+  },
+  {
+    "front": "Glas",
+    "back": "szkło",
+    "ipa": "ʂkwɔ",
+    "example": "Ostrożnie, na podłodze leży potłuczone szkło.",
+    "exampleDE": "Vorsicht, auf dem Boden liegt zerbrochenes Glas."
+  },
+  {
+    "front": "braten",
+    "back": "smażyć",
+    "ipa": "ˈsmaʐɨt͡ɕ",
+    "example": "Mama usmaży rybę na kolację.",
+    "exampleDE": "Mama wird zum Abendessen Fisch braten."
+  },
+  {
+    "front": "backen",
+    "back": "piec",
+    "ipa": "pʲɛt͡s",
+    "example": "Babcia lubi piec ciasta.",
+    "exampleDE": "Oma backt gern Kuchen."
+  },
+  {
+    "front": "rühren",
+    "back": "mieszać",
+    "ipa": "ˈmʲɛʂat͡ɕ",
+    "example": "Mieszaj zupę, żeby się nie przypaliła.",
+    "exampleDE": "Rühre die Suppe, damit sie nicht anbrennt."
+  },
+  {
+    "front": "würzen",
+    "back": "przyprawić",
+    "ipa": "pʂɨˈpravʲit͡ɕ",
+    "example": "Nie zapomnij przyprawić mięsa.",
+    "exampleDE": "Vergiss nicht, das Fleisch zu würzen."
+  },
+  {
+    "front": "Ofen",
+    "back": "piekarnik",
+    "ipa": "pʲɛˈkarɲik",
+    "example": "Wstaw ciasto do piekarnika.",
+    "exampleDE": "Stell den Kuchen in den Ofen."
+  },
+  {
+    "front": "Pfanne",
+    "back": "patelnia",
+    "ipa": "paˈtɛlɲa",
+    "example": "Na patelni smażą się jajka.",
+    "exampleDE": "In der Pfanne braten Eier."
+  },
+  {
+    "front": "Topf",
+    "back": "garnek",
+    "ipa": "ˈɡarnɛk",
+    "example": "Woda w garnku już wrze.",
+    "exampleDE": "Das Wasser im Topf kocht schon."
+  },
+  {
+    "front": "mischen",
+    "back": "wymieszać",
+    "ipa": "vɨˈmʲɛʂat͡ɕ",
+    "example": "Wymieszaj mąkę z cukrem.",
+    "exampleDE": "Mische Mehl und Zucker."
+  },
+  {
+    "front": "gießen",
+    "back": "wlać",
+    "ipa": "vlat͡ɕ",
+    "example": "Wlej wodę do szklanki.",
+    "exampleDE": "Gieß Wasser in das Glas."
+  },
+  {
+    "front": "Haus",
+    "back": "dom",
+    "ipa": "dɔm",
+    "example": "Mój dom znajduje się obok parku.",
+    "exampleDE": "Mein Haus liegt neben dem Park."
+  },
+  {
+    "front": "Tür",
+    "back": "drzwi",
+    "ipa": "dʐvʲi",
+    "example": "Proszę zamknąć za sobą drzwi.",
+    "exampleDE": "Bitte schließen Sie die Tür hinter sich."
+  },
+  {
+    "front": "Fenster",
+    "back": "okno",
+    "ipa": "ˈɔknɔ",
+    "example": "Otwórz okno, w pokoju jest gorąco.",
+    "exampleDE": "Öffne das Fenster, im Zimmer ist es heiß."
+  },
+  {
+    "front": "Zimmer",
+    "back": "pokój",
+    "ipa": "ˈpɔkuj",
+    "example": "W tym pokoju są dwa duże okna.",
+    "exampleDE": "In diesem Zimmer gibt es zwei große Fenster."
+  },
+  {
+    "front": "Bad",
+    "back": "łazienka",
+    "ipa": "waˈʑɛnka",
+    "example": "Łazienka w naszym mieszkaniu jest mała.",
+    "exampleDE": "Das Badezimmer ist klein in unserer Wohnung."
+  },
+  {
+    "front": "Boden",
+    "back": "podłoga",
+    "ipa": "pɔˈdwɔɡa",
+    "example": "Podłoga w pokoju jest drewniana.",
+    "exampleDE": "Der Boden im Zimmer ist aus Holz."
+  },
+  {
+    "front": "Wand",
+    "back": "ściana",
+    "ipa": "ˈɕt͡ɕana",
+    "example": "Na ścianie wisi ładny obraz.",
+    "exampleDE": "An der Wand hängt ein schönes Bild."
+  },
+  {
+    "front": "Decke",
+    "back": "sufit",
+    "ipa": "ˈsufʲit",
+    "example": "Sufit na sali jest bardzo wysoki.",
+    "exampleDE": "Die Decke im Saal ist sehr hoch."
+  },
+  {
+    "front": "Schlüssel",
+    "back": "klucz",
+    "ipa": "klut͡ʂ",
+    "example": "Nie mogę znaleźć klucza do domu.",
+    "exampleDE": "Ich kann meinen Hausschlüssel nicht finden."
+  },
+  {
+    "front": "Keller",
+    "back": "piwnica",
+    "ipa": "pʲiˈvɲit͡sa",
+    "example": "W piwnicy przechowujemy stare rzeczy.",
+    "exampleDE": "Im Keller bewahren wir alte Sachen auf."
+  },
+  {
+    "front": "Flur",
+    "back": "korytarz",
+    "ipa": "kɔˈrɨtaʂ",
+    "example": "Na korytarzu wisi lustro i stoi szafa.",
+    "exampleDE": "Im Flur hängt ein Spiegel und steht ein Schrank."
+  },
+  {
+    "front": "Treppe",
+    "back": "schody",
+    "ipa": "ˈsxɔdɨ",
+    "example": "Schody prowadzą na drugie piętro.",
+    "exampleDE": "Die Treppe führt in den zweiten Stock."
+  },
+  {
+    "front": "Dach",
+    "back": "dach",
+    "ipa": "dax",
+    "example": "Po burzy trzeba naprawić dach.",
+    "exampleDE": "Nach dem Sturm muss das Dach repariert werden."
+  },
+  {
+    "front": "Tisch",
+    "back": "stół",
+    "ipa": "stuw",
+    "example": "Na stole leżą książki i zeszyty.",
+    "exampleDE": "Auf dem Tisch liegen Bücher und Hefte."
+  },
+  {
+    "front": "Stuhl",
+    "back": "krzesło",
+    "ipa": "ˈkʂɛswɔ",
+    "example": "Weź krzesło i usiądź obok mnie.",
+    "exampleDE": "Nimm dir einen Stuhl und setz dich neben mich."
+  },
+  {
+    "front": "Bett",
+    "back": "łóżko",
+    "ipa": "ˈwuʂkɔ",
+    "example": "Rzucił się na łóżko i zasnął.",
+    "exampleDE": "Er fiel aufs Bett und schlief ein."
+  },
+  {
+    "front": "Lampe",
+    "back": "lampa",
+    "ipa": "ˈlampa",
+    "example": "Lampa na stole świeci jasno.",
+    "exampleDE": "Die Lampe auf dem Tisch leuchtet hell."
+  },
+  {
+    "front": "Regal",
+    "back": "regał",
+    "ipa": "ˈrɛɡaw",
+    "example": "Odłóż książki z powrotem na regał.",
+    "exampleDE": "Stell die Bücher zurück ins Regal."
+  },
+  {
+    "front": "Spiegel",
+    "back": "lustro",
+    "ipa": "ˈlustrɔ",
+    "example": "Przyglądała się sobie w lustrze.",
+    "exampleDE": "Sie betrachtete sich im Spiegel."
+  },
+  {
+    "front": "Teppich",
+    "back": "dywan",
+    "ipa": "ˈdɨvan",
+    "example": "Na podłodze w salonie leży miękki dywan.",
+    "exampleDE": "Auf dem Boden im Wohnzimmer liegt ein weicher Teppich."
+  },
+  {
+    "front": "Vorhang",
+    "back": "zasłona",
+    "ipa": "zaˈswɔna",
+    "example": "Mama powiesiła nową zasłonę w kuchni.",
+    "exampleDE": "Mama hat in der Küche einen neuen Vorhang aufgehängt."
+  },
+  {
+    "front": "Schrank",
+    "back": "szafa",
+    "ipa": "ˈʂafa",
+    "example": "Wszystkie ubrania wiszą w dużej szafie.",
+    "exampleDE": "Die ganze Kleidung hängt im großen Schrank."
+  },
+  {
+    "front": "Sofa",
+    "back": "sofa",
+    "ipa": "ˈsɔfa",
+    "example": "Wieczorami siedzimy na sofie i oglądamy filmy.",
+    "exampleDE": "Abends sitzen wir auf dem Sofa und schauen Filme."
+  },
+  {
+    "front": "Hund",
+    "back": "pies",
+    "ipa": "pʲɛs",
+    "example": "Pies merda ogonem, gdy widzi swojego pana.",
+    "exampleDE": "Der Hund wedelt mit dem Schwanz, wenn er sein Herrchen sieht."
+  },
+  {
+    "front": "Katze",
+    "back": "kot",
+    "ipa": "kɔt",
+    "example": "Kot śpi cały dzień na kanapie.",
+    "exampleDE": "Die Katze schläft den ganzen Tag auf dem Sofa."
+  },
+  {
+    "front": "Vogel",
+    "back": "ptak",
+    "ipa": "ptak",
+    "example": "Ptak pięknie śpiewa na gałęzi drzewa.",
+    "exampleDE": "Der Vogel singt schön auf dem Ast des Baumes."
+  },
+  {
+    "front": "Pferd",
+    "back": "koń",
+    "ipa": "kɔɲ",
+    "example": "Koń bardzo szybko biegnie przez pole.",
+    "exampleDE": "Das Pferd läuft sehr schnell über das Feld."
+  },
+  {
+    "front": "Kuh",
+    "back": "krowa",
+    "ipa": "ˈkrɔva",
+    "example": "Krowa daje nam mleko każdego dnia.",
+    "exampleDE": "Die Kuh gibt uns jeden Tag Milch."
+  },
+  {
+    "front": "Schaf",
+    "back": "owca",
+    "ipa": "ˈɔft͡sa",
+    "example": "Owca daje nam wełnę na ubrania.",
+    "exampleDE": "Das Schaf gibt uns Wolle für Kleidung."
+  },
+  {
+    "front": "Hahn",
+    "back": "kogut",
+    "ipa": "ˈkɔɡut",
+    "example": "Kogut pieje każdego ranka wcześnie rano.",
+    "exampleDE": "Der Hahn kräht jeden Tag früh am Morgen."
+  },
+  {
+    "front": "Maus",
+    "back": "mysz",
+    "ipa": "mɨʂ",
+    "example": "Mysz ukradła ze stołu kawałek sera.",
+    "exampleDE": "Die Maus hat ein Stück Käse vom Tisch gestohlen."
+  },
+  {
+    "front": "Ratte",
+    "back": "szczur",
+    "ipa": "ʂt͡ʂur",
+    "example": "W piwnicy domu mieszka duży szczur.",
+    "exampleDE": "Im Keller des Hauses lebt eine große Ratte."
+  },
+  {
+    "front": "Bär",
+    "back": "niedźwiedź",
+    "ipa": "ˈɲɛd͡ʑvʲɛt͡ɕ",
+    "example": "Latem niedźwiedź szuka miodu w lesie.",
+    "exampleDE": "Der Bär sucht im Sommer im Wald nach Honig."
+  },
+  {
+    "front": "Wolf",
+    "back": "wilk",
+    "ipa": "vʲilk",
+    "example": "Wilk żyje w głębokim, ciemnym lesie.",
+    "exampleDE": "Der Wolf lebt im tiefen, dunklen Wald."
+  },
+  {
+    "front": "Fuchs",
+    "back": "lis",
+    "ipa": "lis",
+    "example": "Rudy lis patrzy na nas chytrym wzrokiem.",
+    "exampleDE": "Der rote Fuchs schaut uns listig an."
+  },
+  {
+    "front": "Hase",
+    "back": "zając",
+    "ipa": "ˈzajɔnt͡s",
+    "example": "Biały zając chowa się w śniegu w czasie zimy.",
+    "exampleDE": "Der weiße Hase versteckt sich im Winter im Schnee."
+  },
+  {
+    "front": "Löwe",
+    "back": "lew",
+    "ipa": "lɛf",
+    "example": "Lew jest królem zwierząt na afrykańskiej sawannie.",
+    "exampleDE": "Der Löwe ist der König der Tiere in der afrikanischen Savanne."
+  },
+  {
+    "front": "Tiger",
+    "back": "tygrys",
+    "ipa": "ˈtɨɡrɨs",
+    "example": "Tygrys poluje nocą w gęstej dżungli.",
+    "exampleDE": "Der Tiger jagt nachts im dichten Dschungel."
+  },
+  {
+    "front": "Elefant",
+    "back": "słoń",
+    "ipa": "swɔɲ",
+    "example": "Słoń to największe zwierzę na lądzie.",
+    "exampleDE": "Der Elefant ist das größte Tier an Land."
+  },
+  {
+    "front": "Affe",
+    "back": "małpa",
+    "ipa": "ˈmawpa",
+    "example": "Małpa skacze z gałęzi na gałąź.",
+    "exampleDE": "Der Affe springt von Ast zu Ast."
+  },
+  {
+    "front": "Schlange",
+    "back": "wąż",
+    "ipa": "vɔw̃ʂ",
+    "example": "Wąż czołga się po ciepłych kamieniach.",
+    "exampleDE": "Die Schlange kriecht über die warmen Steine."
+  },
+  {
+    "front": "Baum",
+    "back": "drzewo",
+    "ipa": "ˈdʐɛvɔ",
+    "example": "Przed naszym domem rośnie duże drzewo.",
+    "exampleDE": "Ein großer Baum wächst vor unserem Haus."
+  },
+  {
+    "front": "Blume",
+    "back": "kwiat",
+    "ipa": "kvʲat",
+    "example": "Postawiła kwiatek w wazonie na parapecie.",
+    "exampleDE": "Sie hat eine Blume in eine Vase auf dem Fenster gestellt."
+  },
+  {
+    "front": "Gras",
+    "back": "trawa",
+    "ipa": "ˈtrava",
+    "example": "Dzieci bawią się w parku na zielonej trawie.",
+    "exampleDE": "Die Kinder spielen im Park auf dem grünen Gras."
+  },
+  {
+    "front": "Berg",
+    "back": "góra",
+    "ipa": "ˈɡura",
+    "example": "Weszliśmy na wysoką górę o wschodzie słońca.",
+    "exampleDE": "Wir sind bei Sonnenaufgang auf den hohen Berg gestiegen."
+  },
+  {
+    "front": "Fluss",
+    "back": "rzeka",
+    "ipa": "ˈʐɛka",
+    "example": "Rzeka płynie przez całe miasto.",
+    "exampleDE": "Der Fluss fließt durch die ganze Stadt."
+  },
+  {
+    "front": "See",
+    "back": "jezioro",
+    "ipa": "jɛˈʑɔrɔ",
+    "example": "Spędziliśmy całe lato nad brzegiem jeziora.",
+    "exampleDE": "Wir haben den ganzen Sommer am Ufer des Sees verbracht."
+  },
+  {
+    "front": "Meer",
+    "back": "morze",
+    "ipa": "ˈmɔʐɛ",
+    "example": "Morze jest dzisiaj spokojne i piękne.",
+    "exampleDE": "Das Meer ist heute ruhig und schön."
+  },
+  {
+    "front": "Wald",
+    "back": "las",
+    "ipa": "las",
+    "example": "W lesie rosną grzyby i jagody.",
+    "exampleDE": "Im Wald wachsen Pilze und Beeren."
+  },
+  {
+    "front": "Feld",
+    "back": "pole",
+    "ipa": "ˈpɔlɛ",
+    "example": "Na polu rosną pszenica i kukurydza.",
+    "exampleDE": "Auf dem Feld wachsen Weizen und Mais."
+  },
+  {
+    "front": "Sonne",
+    "back": "słońce",
+    "ipa": "ˈswɔɲt͡sɛ",
+    "example": "Dzisiaj słońce świeci bardzo jasno.",
+    "exampleDE": "Heute scheint die Sonne sehr hell."
+  },
+  {
+    "front": "Mond",
+    "back": "księżyc",
+    "ipa": "ˈkɕɛw̃ʐɨt͡s",
+    "example": "Księżyc w pełni rozświetla nocne niebo.",
+    "exampleDE": "Der Vollmond erhellt den nächtlichen Himmel."
+  }
+]

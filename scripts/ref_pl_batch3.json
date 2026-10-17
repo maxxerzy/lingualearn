@@ -1,0 +1,1252 @@
+[
+  {
+    "index": 500,
+    "front": "glücklich",
+    "exampleDE": "Sie sieht nach den guten Nachrichten glücklich aus."
+  },
+  {
+    "index": 501,
+    "front": "traurig",
+    "exampleDE": "Er sah nach der Trennung sehr traurig aus."
+  },
+  {
+    "index": 502,
+    "front": "Angst",
+    "exampleDE": "Er hat seine Angst vor dem Fliegen überwunden."
+  },
+  {
+    "index": 503,
+    "front": "Freude",
+    "exampleDE": "Die Kinder nahmen die Nachricht mit großer Freude auf."
+  },
+  {
+    "index": 504,
+    "front": "Wut",
+    "exampleDE": "Er konnte seine Wut nur mit Mühe zurückhalten."
+  },
+  {
+    "index": 505,
+    "front": "Überraschung",
+    "exampleDE": "Sie konnte ihre Überraschung nicht verbergen."
+  },
+  {
+    "index": 506,
+    "front": "stolz",
+    "exampleDE": "Der Vater ist sehr stolz auf die Erfolge seines Sohnes."
+  },
+  {
+    "index": 507,
+    "front": "nervös",
+    "exampleDE": "Vor der Prüfung war er sehr nervös."
+  },
+  {
+    "index": 508,
+    "front": "ruhig",
+    "exampleDE": "Sie hat einen ruhigen Charakter, sie ärgert sich selten."
+  },
+  {
+    "index": 509,
+    "front": "Hoffnung",
+    "exampleDE": "Wir haben Hoffnung auf eine bessere Zukunft."
+  },
+  {
+    "index": 510,
+    "front": "Geduld",
+    "exampleDE": "Für diese Arbeit braucht man Geduld."
+  },
+  {
+    "index": 511,
+    "front": "Vertrauen",
+    "exampleDE": "Vertrauen muss man sich verdienen."
+  },
+  {
+    "index": 512,
+    "front": "Wunsch",
+    "exampleDE": "Äußere einen Wunsch."
+  },
+  {
+    "index": 513,
+    "front": "Traum",
+    "exampleDE": "Sein Traum ist es, Arzt zu werden."
+  },
+  {
+    "index": 514,
+    "front": "Aufmerksamkeit",
+    "exampleDE": "Danke für Ihre Aufmerksamkeit."
+  },
+  {
+    "index": 515,
+    "front": "Gewissen",
+    "exampleDE": "Sein Gewissen quält ihn."
+  },
+  {
+    "index": 516,
+    "front": "Eifersucht",
+    "exampleDE": "Eifersucht zerstört die Liebe."
+  },
+  {
+    "index": 517,
+    "front": "Mitleid",
+    "exampleDE": "Sie empfand Mitleid mit den Armen."
+  },
+  {
+    "index": 518,
+    "front": "Dankbarkeit",
+    "exampleDE": "Er sah sie mit Dankbarkeit an."
+  },
+  {
+    "index": 519,
+    "front": "Enttäuschung",
+    "exampleDE": "In seiner Stimme lag Enttäuschung."
+  },
+  {
+    "index": 520,
+    "front": "Erleichterung",
+    "exampleDE": "Ich atmete mit Erleichterung auf."
+  },
+  {
+    "index": 521,
+    "front": "Sehnsucht",
+    "exampleDE": "Ihn überkam die Sehnsucht nach der Heimat."
+  },
+  {
+    "index": 522,
+    "front": "Neid",
+    "exampleDE": "Neid ist ein schlechtes Gefühl."
+  },
+  {
+    "index": 523,
+    "front": "Scham",
+    "exampleDE": "Sie wurde rot vor Scham."
+  },
+  {
+    "index": 524,
+    "front": "der Stolz",
+    "exampleDE": "Er sah seinen Sohn mit Stolz an."
+  },
+  {
+    "index": 525,
+    "front": "Verzweiflung",
+    "exampleDE": "In der Verzweiflung fing sie an zu weinen."
+  },
+  {
+    "index": 526,
+    "front": "Begeisterung",
+    "exampleDE": "Die Kinder schrien vor Begeisterung."
+  },
+  {
+    "index": 527,
+    "front": "Zuneigung",
+    "exampleDE": "Er empfand Zuneigung zu ihr."
+  },
+  {
+    "index": 528,
+    "front": "Zorn",
+    "exampleDE": "Sein Gesicht wurde rot vor Zorn."
+  },
+  {
+    "index": 529,
+    "front": "Langeweile",
+    "exampleDE": "Aus Langeweile begann er zu zeichnen."
+  },
+  {
+    "index": 530,
+    "front": "Einsamkeit",
+    "exampleDE": "Die Einsamkeit bedrückte den alten Mann."
+  },
+  {
+    "index": 531,
+    "front": "Zärtlichkeit",
+    "exampleDE": "Sie streichelte das Kind mit Zärtlichkeit."
+  },
+  {
+    "index": 532,
+    "front": "gefährlich",
+    "exampleDE": "Bei Rot über die Straße zu gehen ist sehr gefährlich."
+  },
+  {
+    "index": 533,
+    "front": "sicher",
+    "exampleDE": "Dieses Viertel gilt als sicher für Kinder."
+  },
+  {
+    "index": 534,
+    "front": "Gerechtigkeit",
+    "exampleDE": "Die Menschen kämpfen für Gerechtigkeit."
+  },
+  {
+    "index": 535,
+    "front": "Meinung",
+    "exampleDE": "Jeder hat seine eigene Meinung zu dieser Frage."
+  },
+  {
+    "index": 536,
+    "front": "Erfahrung",
+    "exampleDE": "Sie hat viel Erfahrung in dieser Arbeit."
+  },
+  {
+    "index": 537,
+    "front": "Erinnerung",
+    "exampleDE": "Das ist eine schöne Erinnerung aus der Kindheit."
+  },
+  {
+    "index": 538,
+    "front": "Gewohnheit",
+    "exampleDE": "Vor dem Schlafen zu lesen ist seine Gewohnheit."
+  },
+  {
+    "index": 539,
+    "front": "Absicht",
+    "exampleDE": "Ich hatte nicht die Absicht, dich zu verletzen."
+  },
+  {
+    "index": 540,
+    "front": "Grund",
+    "exampleDE": "Nenne mir den Grund für deine Verspätung."
+  },
+  {
+    "index": 541,
+    "front": "Folge",
+    "exampleDE": "Das ist eine ernste Folge seiner Entscheidung."
+  },
+  {
+    "index": 542,
+    "front": "Zweck",
+    "exampleDE": "Was ist der Zweck deines Besuchs?"
+  },
+  {
+    "index": 543,
+    "front": "Bedeutung",
+    "exampleDE": "Dieses Wort hat mehrere Bedeutungen."
+  },
+  {
+    "index": 544,
+    "front": "Möglichkeit",
+    "exampleDE": "Wir haben die Möglichkeit, alles zu ändern."
+  },
+  {
+    "index": 545,
+    "front": "Verantwortung",
+    "exampleDE": "Er übernimmt die Verantwortung für das Team."
+  },
+  {
+    "index": 546,
+    "front": "Erfolg",
+    "exampleDE": "Ihr Konzert war ein großer Erfolg."
+  },
+  {
+    "index": 547,
+    "front": "Misserfolg",
+    "exampleDE": "Ein Misserfolg ist noch nicht das Ende."
+  },
+  {
+    "index": 548,
+    "front": "Fähigkeit",
+    "exampleDE": "Er hat eine Fähigkeit für Musik."
+  },
+  {
+    "index": 549,
+    "front": "Gedanke",
+    "exampleDE": "Dieser Gedanke lässt mir keine Ruhe."
+  },
+  {
+    "index": 550,
+    "front": "Wille",
+    "exampleDE": "Sie hat einen starken Willen."
+  },
+  {
+    "index": 551,
+    "front": "Zweifel",
+    "exampleDE": "Ich habe Zweifel an seinen Worten."
+  },
+  {
+    "index": 552,
+    "front": "Gefahr",
+    "exampleDE": "Hier gibt es keine Gefahr."
+  },
+  {
+    "index": 553,
+    "front": "Sicherheit",
+    "exampleDE": "Die Sicherheit der Kinder ist am wichtigsten."
+  },
+  {
+    "index": 554,
+    "front": "Unterschied",
+    "exampleDE": "Was ist der Unterschied zwischen diesen Wörtern?"
+  },
+  {
+    "index": 555,
+    "front": "Kenntnis",
+    "exampleDE": "Seine Kenntnis der Sprache beeindruckt."
+  },
+  {
+    "index": 556,
+    "front": "groß",
+    "exampleDE": "Sie haben ein großes Haus mit einem schönen Garten."
+  },
+  {
+    "index": 557,
+    "front": "klein",
+    "exampleDE": "Das kleine Kind schläft im Bettchen."
+  },
+  {
+    "index": 558,
+    "front": "lang",
+    "exampleDE": "Es war ein sehr langer und schwerer Tag."
+  },
+  {
+    "index": 559,
+    "front": "kurz",
+    "exampleDE": "Schreib bitte eine kurze Nachricht."
+  },
+  {
+    "index": 560,
+    "front": "alt",
+    "exampleDE": "Das alte Haus muss grundlegend renoviert werden."
+  },
+  {
+    "index": 561,
+    "front": "jung",
+    "exampleDE": "Der junge Fachmann hat sich schnell in die neue Arbeit eingearbeitet."
+  },
+  {
+    "index": 562,
+    "front": "neu",
+    "exampleDE": "Wir sind letzte Woche in ein neues Haus umgezogen."
+  },
+  {
+    "index": 563,
+    "front": "gut",
+    "exampleDE": "Er hat einen guten Charakter und eine gütige Seele."
+  },
+  {
+    "index": 564,
+    "front": "schlecht",
+    "exampleDE": "Das schlechte Wetter hat unser Picknick im Park verdorben."
+  },
+  {
+    "index": 565,
+    "front": "schön",
+    "exampleDE": "Was für ein schöner Sonnenuntergang über dem Meer heute!"
+  },
+  {
+    "index": 566,
+    "front": "schnell",
+    "exampleDE": "Der schnelle Zug kam früher als planmäßig an."
+  },
+  {
+    "index": 567,
+    "front": "stark",
+    "exampleDE": "Der starke Wind hat in der Nacht mehrere Bäume gebrochen."
+  },
+  {
+    "index": 568,
+    "front": "warm",
+    "exampleDE": "Der warme Pullover wird dich an einem kalten Tag wärmen."
+  },
+  {
+    "index": 569,
+    "front": "kalt",
+    "exampleDE": "Kaltes Wasser erfrischt an einem heißen Sommertag."
+  },
+  {
+    "index": 570,
+    "front": "heiß",
+    "exampleDE": "Vorsicht, die Suppe ist noch sehr heiß!"
+  },
+  {
+    "index": 571,
+    "front": "schwer",
+    "exampleDE": "Der schwere Koffer lässt sich schwer die Treppe hochtragen."
+  },
+  {
+    "index": 572,
+    "front": "müde",
+    "exampleDE": "Nach dem langen Spaziergang waren alle müde."
+  },
+  {
+    "index": 573,
+    "front": "laut",
+    "exampleDE": "Laute Musik hindert die Nachbarn nachts am Schlafen."
+  },
+  {
+    "index": 574,
+    "front": "leise",
+    "exampleDE": "Sprecht leise, das Kind schläft schon."
+  },
+  {
+    "index": 575,
+    "front": "schwierig",
+    "exampleDE": "Diese Prüfung ist für alle Studenten sehr schwierig."
+  },
+  {
+    "index": 576,
+    "front": "interessant",
+    "exampleDE": "Das ist ein sehr interessanter Film über Reisen."
+  },
+  {
+    "index": 577,
+    "front": "langweilig",
+    "exampleDE": "Diese Unterrichtsstunde war für die Kinder zu langweilig."
+  },
+  {
+    "index": 578,
+    "front": "selten",
+    "exampleDE": "Sie isst abends selten Süßigkeiten."
+  },
+  {
+    "index": 579,
+    "front": "wichtig",
+    "exampleDE": "Das ist eine sehr wichtige Frage für die ganze Familie."
+  },
+  {
+    "index": 580,
+    "front": "möglich",
+    "exampleDE": "Wir haben alle möglichen Lösungsvarianten besprochen."
+  },
+  {
+    "index": 581,
+    "front": "einfach",
+    "exampleDE": "Das ist ein einfaches Rezept, man kann es sich leicht merken."
+  },
+  {
+    "index": 582,
+    "front": "sauber",
+    "exampleDE": "In der Küche muss das Geschirr immer sauber sein."
+  },
+  {
+    "index": 583,
+    "front": "schmutzig",
+    "exampleDE": "Nach dem Fußball war seine Kleidung ganz schmutzig."
+  },
+  {
+    "index": 584,
+    "front": "nass",
+    "exampleDE": "Nach dem Regen war das ganze Gras nass."
+  },
+  {
+    "index": 585,
+    "front": "trocken",
+    "exampleDE": "Im Sommer ist die Luft hier sehr trocken und warm."
+  },
+  {
+    "index": 586,
+    "front": "hell",
+    "exampleDE": "Wir haben ein helles Zimmer mit großen Fenstern gewählt."
+  },
+  {
+    "index": 587,
+    "front": "dunkel",
+    "exampleDE": "Im Winter sind die Abende hier lang und dunkel."
+  },
+  {
+    "index": 588,
+    "front": "leer",
+    "exampleDE": "Am Morgen sind die Straßen der Stadt noch leer."
+  },
+  {
+    "index": 589,
+    "front": "voll",
+    "exampleDE": "Der Bus war voll, und wir sind mit dem Taxi gefahren."
+  },
+  {
+    "index": 590,
+    "front": "breit",
+    "exampleDE": "Über den Fluss wurde eine breite neue Brücke gebaut."
+  },
+  {
+    "index": 591,
+    "front": "hoch",
+    "exampleDE": "Im Stadtzentrum steht ein hohes modernes Haus."
+  },
+  {
+    "index": 592,
+    "front": "weich",
+    "exampleDE": "Dieses Sofa ist sehr weich und bequem."
+  },
+  {
+    "index": 593,
+    "front": "richtig",
+    "exampleDE": "Du hast die richtige Antwort auf die schwierige Frage gegeben."
+  },
+  {
+    "index": 594,
+    "front": "falsch",
+    "exampleDE": "Er hat die falsche Telefonnummer gewählt."
+  },
+  {
+    "index": 595,
+    "front": "halb",
+    "exampleDE": "Die Hälfte des Kuchens ist schon gegessen."
+  },
+  {
+    "index": 596,
+    "front": "ganz",
+    "exampleDE": "Wir haben eine ganze Stunde an der Haltestelle auf ihn gewartet."
+  },
+  {
+    "index": 597,
+    "front": "Geschwindigkeit",
+    "exampleDE": "Das Auto fuhr mit hoher Geschwindigkeit."
+  },
+  {
+    "index": 598,
+    "front": "sein",
+    "exampleDE": "Er möchte in Zukunft Arzt sein."
+  },
+  {
+    "index": 599,
+    "front": "haben",
+    "exampleDE": "Ich möchte ein großes Haus mit Garten haben."
+  },
+  {
+    "index": 600,
+    "front": "machen",
+    "exampleDE": "Was möchtest du am Wochenende machen?"
+  },
+  {
+    "index": 601,
+    "front": "lesen",
+    "exampleDE": "Ich lese gerne Bücher vor dem Schlafengehen."
+  },
+  {
+    "index": 602,
+    "front": "schreiben",
+    "exampleDE": "Sie kann sehr schön schreiben."
+  },
+  {
+    "index": 603,
+    "front": "schlafen",
+    "exampleDE": "Kinder sollten mindestens acht Stunden schlafen."
+  },
+  {
+    "index": 604,
+    "front": "aufwachen",
+    "exampleDE": "Ich wache jeden Tag früh am Morgen auf."
+  },
+  {
+    "index": 605,
+    "front": "arbeiten",
+    "exampleDE": "Er arbeitet schon seit zehn Jahren als Ingenieur."
+  },
+  {
+    "index": 606,
+    "front": "lernen",
+    "exampleDE": "Sie möchte an der Moskauer Universität studieren."
+  },
+  {
+    "index": 607,
+    "front": "spielen",
+    "exampleDE": "Die Kinder spielen gern im Hof Fußball."
+  },
+  {
+    "index": 608,
+    "front": "geben",
+    "exampleDE": "Mama ist immer bereit, uns gute Ratschläge zu geben."
+  },
+  {
+    "index": 609,
+    "front": "nehmen",
+    "exampleDE": "Darf ich mir dein Buch für eine Weile ausleihen?"
+  },
+  {
+    "index": 610,
+    "front": "brauchen",
+    "exampleDE": "Ich brauche deine Hilfe bei dieser Sache."
+  },
+  {
+    "index": 611,
+    "front": "öffnen",
+    "exampleDE": "Bitte öffne die Tür nachts leise."
+  },
+  {
+    "index": 612,
+    "front": "schließen",
+    "exampleDE": "Vergiss nicht, vor dem Weggehen die Fenster zu schließen."
+  },
+  {
+    "index": 613,
+    "front": "helfen",
+    "exampleDE": "Sie ist immer bereit, ihren Angehörigen zu helfen."
+  },
+  {
+    "index": 614,
+    "front": "suchen",
+    "exampleDE": "Ich habe lange nach meinem verlorenen Schlüssel gesucht."
+  },
+  {
+    "index": 615,
+    "front": "finden",
+    "exampleDE": "Es ist mir gelungen, die nötige Information schnell zu finden."
+  },
+  {
+    "index": 616,
+    "front": "tragen",
+    "exampleDE": "Sie trägt im Sommer gern bunte Kleider."
+  },
+  {
+    "index": 617,
+    "front": "legen",
+    "exampleDE": "Man soll das Handy nicht an den Tischrand legen."
+  },
+  {
+    "index": 618,
+    "front": "stellen",
+    "exampleDE": "Die Tasche kann man auf das Regal am Eingang stellen."
+  },
+  {
+    "index": 619,
+    "front": "wachsen",
+    "exampleDE": "In unserem Garten wachsen alte Apfelbäume."
+  },
+  {
+    "index": 620,
+    "front": "sterben",
+    "exampleDE": "Alte Traditionen dürfen nicht sterben."
+  },
+  {
+    "index": 621,
+    "front": "leben",
+    "exampleDE": "Wir leben schon seit fünf Jahren in dieser Stadt."
+  },
+  {
+    "index": 622,
+    "front": "versuchen",
+    "exampleDE": "Er wird versuchen, die Prüfung noch einmal zu bestehen."
+  },
+  {
+    "index": 623,
+    "front": "bekommen",
+    "exampleDE": "Es ist schön, Briefe von alten Freunden zu bekommen."
+  },
+  {
+    "index": 624,
+    "front": "verlieren",
+    "exampleDE": "Ich will keine Zeit umsonst verlieren."
+  },
+  {
+    "index": 625,
+    "front": "gewinnen",
+    "exampleDE": "Unsere Mannschaft ist es gewohnt, wichtige Spiele zu gewinnen."
+  },
+  {
+    "index": 626,
+    "front": "besuchen",
+    "exampleDE": "Wir versuchen, die Großmutter jede Woche zu besuchen."
+  },
+  {
+    "index": 627,
+    "front": "einladen",
+    "exampleDE": "Sie laden gern Gäste zum Abendessen ein."
+  },
+  {
+    "index": 628,
+    "front": "feiern",
+    "exampleDE": "Wir werden am Samstag den Geburtstag feiern."
+  },
+  {
+    "index": 629,
+    "front": "bezahlen",
+    "exampleDE": "Ich bezahle lieber mit Karte als bar."
+  },
+  {
+    "index": 630,
+    "front": "schneiden",
+    "exampleDE": "Schneide das Brot vorsichtig."
+  },
+  {
+    "index": 631,
+    "front": "zustimmen",
+    "exampleDE": "Er will nicht zustimmen."
+  },
+  {
+    "index": 632,
+    "front": "warnen",
+    "exampleDE": "Die Schilder warnen vor der Gefahr."
+  },
+  {
+    "index": 633,
+    "front": "gehen",
+    "exampleDE": "Morgen möchte ich in den Park gehen, um spazieren zu gehen."
+  },
+  {
+    "index": 634,
+    "front": "kommen",
+    "exampleDE": "Wann planst du, zum Treffen zu kommen?"
+  },
+  {
+    "index": 635,
+    "front": "bringen",
+    "exampleDE": "Er versprach, jeden Freitag Blumen zu bringen."
+  },
+  {
+    "index": 636,
+    "front": "fahren",
+    "exampleDE": "Wir haben vor, mit dem Zug nach Moskau zu fahren."
+  },
+  {
+    "index": 637,
+    "front": "fliegen",
+    "exampleDE": "Morgen werden wir nach Berlin fliegen."
+  },
+  {
+    "index": 638,
+    "front": "sitzen",
+    "exampleDE": "Langes Sitzen am Computer ist schlecht für den Rücken."
+  },
+  {
+    "index": 639,
+    "front": "stehen",
+    "exampleDE": "Lange in der Schlange zu stehen ist sehr ermüdend."
+  },
+  {
+    "index": 640,
+    "front": "beginnen",
+    "exampleDE": "Es ist Zeit, mit der Arbeit am neuen Projekt zu beginnen."
+  },
+  {
+    "index": 641,
+    "front": "enden",
+    "exampleDE": "Das Konzert soll um zehn Uhr abends enden."
+  },
+  {
+    "index": 642,
+    "front": "warten",
+    "exampleDE": "Ich musste lange an der Haltestelle auf den Bus warten."
+  },
+  {
+    "index": 643,
+    "front": "ziehen",
+    "exampleDE": "Diese Tür muss man ziehen, nicht drücken."
+  },
+  {
+    "index": 644,
+    "front": "drücken",
+    "exampleDE": "Um das Licht einzuschalten, muss man diesen Knopf drücken."
+  },
+  {
+    "index": 645,
+    "front": "werfen",
+    "exampleDE": "Man darf keinen Müll auf die Straße werfen."
+  },
+  {
+    "index": 646,
+    "front": "fallen",
+    "exampleDE": "Im Herbst beginnen die Blätter von den Bäumen zu fallen."
+  },
+  {
+    "index": 647,
+    "front": "steigen",
+    "exampleDE": "Jeden Morgen steigen wir die Treppe zu Fuß hinauf."
+  },
+  {
+    "index": 648,
+    "front": "bleiben",
+    "exampleDE": "Heute möchte ich den ganzen Tag zu Hause bleiben."
+  },
+  {
+    "index": 649,
+    "front": "ändern",
+    "exampleDE": "Manchmal ist es nützlich, seine Pläne zu ändern."
+  },
+  {
+    "index": 650,
+    "front": "treffen",
+    "exampleDE": "Ich freue mich, Freunde am Flughafen zu treffen."
+  },
+  {
+    "index": 651,
+    "front": "sehen",
+    "exampleDE": "Ohne Brille kann ich entfernte Gegenstände nicht sehen."
+  },
+  {
+    "index": 652,
+    "front": "hören",
+    "exampleDE": "Kannst du diese schöne Musik hören?"
+  },
+  {
+    "index": 653,
+    "front": "sprechen",
+    "exampleDE": "Er kann fünf Sprachen sprechen."
+  },
+  {
+    "index": 654,
+    "front": "fragen",
+    "exampleDE": "Zögere nicht zu fragen, wenn du etwas nicht verstehst."
+  },
+  {
+    "index": 655,
+    "front": "antworten",
+    "exampleDE": "Der Schüler kann schwierige Fragen beantworten."
+  },
+  {
+    "index": 656,
+    "front": "wissen",
+    "exampleDE": "Weißt du, wo die nächste Apotheke ist?"
+  },
+  {
+    "index": 657,
+    "front": "kennen",
+    "exampleDE": "Ich möchte diesen interessanten Menschen besser kennen."
+  },
+  {
+    "index": 658,
+    "front": "mögen",
+    "exampleDE": "Mir gefällt diese ruhige, schöne Musik."
+  },
+  {
+    "index": 659,
+    "front": "wollen",
+    "exampleDE": "Ich möchte diesen Sommer nach Moskau fahren."
+  },
+  {
+    "index": 660,
+    "front": "können",
+    "exampleDE": "Kannst du mir bei dieser Aufgabe helfen?"
+  },
+  {
+    "index": 661,
+    "front": "müssen",
+    "exampleDE": "Ich muss das Projekt bis Freitag abgeben."
+  },
+  {
+    "index": 662,
+    "front": "dürfen",
+    "exampleDE": "Hier darf nach den Regeln des Lokals nicht geraucht werden."
+  },
+  {
+    "index": 663,
+    "front": "sollen",
+    "exampleDE": "Du solltest dieses wichtige Buch lesen."
+  },
+  {
+    "index": 664,
+    "front": "verstehen",
+    "exampleDE": "Ich beginne, die russische Sprache besser zu verstehen."
+  },
+  {
+    "index": 665,
+    "front": "denken",
+    "exampleDE": "Man muss nachdenken, bevor man spricht."
+  },
+  {
+    "index": 666,
+    "front": "glauben",
+    "exampleDE": "An sich selbst zu glauben ist im Leben sehr wichtig."
+  },
+  {
+    "index": 667,
+    "front": "zeigen",
+    "exampleDE": "Er zeigt gern Fotos aus dem Urlaub."
+  },
+  {
+    "index": 668,
+    "front": "erklären",
+    "exampleDE": "Der Lehrer kann schwierige Themen einfach erklären."
+  },
+  {
+    "index": 669,
+    "front": "erzählen",
+    "exampleDE": "Der Großvater erzählt gern Geschichten aus seiner Jugend."
+  },
+  {
+    "index": 670,
+    "front": "vergessen",
+    "exampleDE": "Vergiss nicht, vor dem Weggehen das Licht auszuschalten."
+  },
+  {
+    "index": 671,
+    "front": "lachen",
+    "exampleDE": "Die Kinder lachen laut im Hof."
+  },
+  {
+    "index": 672,
+    "front": "Entscheidung",
+    "exampleDE": "Das war eine schwere Entscheidung."
+  },
+  {
+    "index": 673,
+    "front": "Eindruck",
+    "exampleDE": "Der Film hat einen starken Eindruck auf mich gemacht."
+  },
+  {
+    "index": 674,
+    "front": "behaupten",
+    "exampleDE": "Er behauptet, die Wahrheit zu sagen."
+  },
+  {
+    "index": 675,
+    "front": "überzeugen",
+    "exampleDE": "Sie kann die Menschen überzeugen."
+  },
+  {
+    "index": 676,
+    "front": "widersprechen",
+    "exampleDE": "Niemand wagte zu widersprechen."
+  },
+  {
+    "index": 677,
+    "front": "betonen",
+    "exampleDE": "Der Lehrer betont die Bedeutung der Praxis."
+  },
+  {
+    "index": 678,
+    "front": "flüstern",
+    "exampleDE": "Sie begann, mir ins Ohr zu flüstern."
+  },
+  {
+    "index": 679,
+    "front": "schreien",
+    "exampleDE": "Du musst nicht so schreien."
+  },
+  {
+    "index": 680,
+    "front": "erwähnen",
+    "exampleDE": "Er vergaß, das zu erwähnen."
+  },
+  {
+    "index": 681,
+    "front": "wiederholen",
+    "exampleDE": "Bitte wiederhole nach mir."
+  },
+  {
+    "index": 682,
+    "front": "versprechen",
+    "exampleDE": "Ich kann das nicht versprechen."
+  },
+  {
+    "index": 683,
+    "front": "beschreiben",
+    "exampleDE": "Beschreibe, was du gesehen hast."
+  },
+  {
+    "index": 684,
+    "front": "vorschlagen",
+    "exampleDE": "Er schlägt gern neue Ideen vor."
+  },
+  {
+    "index": 685,
+    "front": "sich beschweren",
+    "exampleDE": "Sie beschwert sich gern über das Wetter."
+  },
+  {
+    "index": 686,
+    "front": "danken",
+    "exampleDE": "Vergiss nicht, den Gastgebern zu danken."
+  },
+  {
+    "index": 687,
+    "front": "bitten",
+    "exampleDE": "Sie bittet nicht gern um Hilfe."
+  },
+  {
+    "index": 688,
+    "front": "lügen",
+    "exampleDE": "Er kann nicht lügen."
+  },
+  {
+    "index": 689,
+    "front": "diskutieren",
+    "exampleDE": "Wir werden diese Frage morgen diskutieren."
+  },
+  {
+    "index": 690,
+    "front": "grüßen",
+    "exampleDE": "Er grüßt immer die Nachbarn."
+  },
+  {
+    "index": 691,
+    "front": "schweigen",
+    "exampleDE": "Manchmal ist es besser zu schweigen."
+  },
+  {
+    "index": 692,
+    "front": "nah",
+    "exampleDE": "Der Laden befindet sich nahe bei unserem Haus."
+  },
+  {
+    "index": 693,
+    "front": "links",
+    "exampleDE": "Biegen Sie an der Kreuzung links ab."
+  },
+  {
+    "index": 694,
+    "front": "rechts",
+    "exampleDE": "Biegen Sie nach der Brücke rechts ab."
+  },
+  {
+    "index": 695,
+    "front": "geradeaus",
+    "exampleDE": "Gehen Sie geradeaus bis zum großen Platz."
+  },
+  {
+    "index": 696,
+    "front": "wohin",
+    "exampleDE": "Wohin fahrt ihr im Sommer in den Urlaub?"
+  },
+  {
+    "index": 697,
+    "front": "immer",
+    "exampleDE": "Er kommt immer pünktlich zur Arbeit."
+  },
+  {
+    "index": 698,
+    "front": "nie",
+    "exampleDE": "Ich war noch nie im fernen Japan."
+  },
+  {
+    "index": 699,
+    "front": "manchmal",
+    "exampleDE": "Manchmal koche ich selbst das Abendessen für die ganze Familie."
+  },
+  {
+    "index": 700,
+    "front": "oft",
+    "exampleDE": "Wir gehen abends oft im Park spazieren."
+  },
+  {
+    "index": 701,
+    "front": "schon",
+    "exampleDE": "Er ist schon von der Arbeit nach Hause gekommen."
+  },
+  {
+    "index": 702,
+    "front": "noch",
+    "exampleDE": "Hast du deine Hausaufgaben noch nicht fertig gemacht?"
+  },
+  {
+    "index": 703,
+    "front": "aber",
+    "exampleDE": "Ich möchte spazieren gehen, aber es regnet."
+  },
+  {
+    "index": 704,
+    "front": "oder",
+    "exampleDE": "Möchtest du Tee oder Kaffee?"
+  },
+  {
+    "index": 705,
+    "front": "weil",
+    "exampleDE": "Ich bin zu Hause geblieben, weil ich krank war."
+  },
+  {
+    "index": 706,
+    "front": "wenn",
+    "exampleDE": "Wenn morgen die Sonne scheint, fahren wir an den See."
+  },
+  {
+    "index": 707,
+    "front": "dass",
+    "exampleDE": "Ich weiß, dass du die Wahrheit sagst."
+  },
+  {
+    "index": 708,
+    "front": "obwohl",
+    "exampleDE": "Er ging zur Arbeit, obwohl er sich schlecht fühlte."
+  },
+  {
+    "index": 709,
+    "front": "deshalb",
+    "exampleDE": "Es war spät, deshalb haben wir ein Taxi gerufen."
+  },
+  {
+    "index": 710,
+    "front": "trotzdem",
+    "exampleDE": "Es regnete, aber wir gingen trotzdem spazieren."
+  },
+  {
+    "index": 711,
+    "front": "vielleicht",
+    "exampleDE": "Vielleicht sehen wir uns schon morgen."
+  },
+  {
+    "index": 712,
+    "front": "natürlich",
+    "exampleDE": "Natürlich helfe ich dir beim Umzug."
+  },
+  {
+    "index": 713,
+    "front": "viel",
+    "exampleDE": "Er hat viele Freunde in dieser Stadt."
+  },
+  {
+    "index": 714,
+    "front": "wenig",
+    "exampleDE": "Wir haben nur noch wenig Zeit bis zur Abreise."
+  },
+  {
+    "index": 715,
+    "front": "mehr",
+    "exampleDE": "Ich brauche mehr Informationen über dieses Projekt."
+  },
+  {
+    "index": 716,
+    "front": "weniger",
+    "exampleDE": "Versuche, weniger Süßes zu essen."
+  },
+  {
+    "index": 717,
+    "front": "alle",
+    "exampleDE": "Alle Gäste kamen pünktlich zum Fest."
+  },
+  {
+    "index": 718,
+    "front": "einige",
+    "exampleDE": "Einige Studenten haben die Prüfung schon bestanden."
+  },
+  {
+    "index": 719,
+    "front": "nichts",
+    "exampleDE": "Ich habe nichts von dieser Nachricht gehört."
+  },
+  {
+    "index": 720,
+    "front": "etwas",
+    "exampleDE": "Ich möchte dir etwas erzählen."
+  },
+  {
+    "index": 721,
+    "front": "wer",
+    "exampleDE": "Wer hat das Fenster offen gelassen?"
+  },
+  {
+    "index": 722,
+    "front": "was",
+    "exampleDE": "Was machst du heute Abend?"
+  },
+  {
+    "index": 723,
+    "front": "wo",
+    "exampleDE": "Wo ist die nächste Bushaltestelle?"
+  },
+  {
+    "index": 724,
+    "front": "wann",
+    "exampleDE": "Wann beginnt das Konzert im Park?"
+  },
+  {
+    "index": 725,
+    "front": "warum",
+    "exampleDE": "Warum bist du gestern nicht zum Treffen gekommen?"
+  },
+  {
+    "index": 726,
+    "front": "wie",
+    "exampleDE": "Wie bist du gestern nach Hause gekommen?"
+  },
+  {
+    "index": 727,
+    "front": "wie viel",
+    "exampleDE": "Wie viel kostet dieser rote Pullover?"
+  },
+  {
+    "index": 728,
+    "front": "die Bettdecke",
+    "exampleDE": "Die weiche Bettdecke hält im Winter schön warm."
+  },
+  {
+    "index": 729,
+    "front": "der Wecker",
+    "exampleDE": "Der Wecker klingelt pünktlich um sieben Uhr."
+  },
+  {
+    "index": 730,
+    "front": "das Schlummern",
+    "exampleDE": "Nach dem ersten Weckerklingeln drückt er auf die Schlummertaste."
+  },
+  {
+    "index": 731,
+    "front": "das Zähneputzen",
+    "exampleDE": "Gründliches Zähneputzen ist wichtig für gesunde Zähne."
+  },
+  {
+    "index": 732,
+    "front": "sich anziehen",
+    "exampleDE": "Zieh dich schnell an, wir müssen los."
+  },
+  {
+    "index": 733,
+    "front": "die Haarbürste",
+    "exampleDE": "Sie kämmt ihre langen Haare mit einer Haarbürste."
+  },
+  {
+    "index": 734,
+    "front": "der Spiegel",
+    "exampleDE": "Er schaut kurz in den Spiegel im Flur."
+  },
+  {
+    "index": 735,
+    "front": "die Routine",
+    "exampleDE": "Eine feste Morgenroutine spart viel Zeit."
+  },
+  {
+    "index": 736,
+    "front": "der Mietvertrag",
+    "exampleDE": "Wir haben gestern den neuen Mietvertrag unterschrieben."
+  },
+  {
+    "index": 737,
+    "front": "die Kaution",
+    "exampleDE": "Die Kaution beträgt drei Monatsmieten."
+  },
+  {
+    "index": 738,
+    "front": "die Nebenkosten",
+    "exampleDE": "Heizung und Wasser sind in den Nebenkosten enthalten."
+  },
+  {
+    "index": 739,
+    "front": "der Vermieter",
+    "exampleDE": "Der Vermieter repariert die defekte Heizung."
+  },
+  {
+    "index": 740,
+    "front": "der Mieter",
+    "exampleDE": "Der Mieter bezahlt die Miete am Anfang des Monats."
+  },
+  {
+    "index": 741,
+    "front": "die Kündigung",
+    "exampleDE": "Die Kündigung der alten Wohnung muss schriftlich erfolgen."
+  },
+  {
+    "index": 742,
+    "front": "die Wohnfläche",
+    "exampleDE": "Die Wohnung hat eine Wohnfläche von achtzig Quadratmetern."
+  },
+  {
+    "index": 743,
+    "front": "der Umzug",
+    "exampleDE": "Der Umzug in die neue Stadt verlief reibungslos."
+  },
+  {
+    "index": 744,
+    "front": "das Bücherregal",
+    "exampleDE": "Das Bücherregal steht an der Wand im Arbeitszimmer."
+  },
+  {
+    "index": 745,
+    "front": "der Kleiderschrank",
+    "exampleDE": "Er hängt seine Hemden ordentlich in den Kleiderschrank."
+  },
+  {
+    "index": 746,
+    "front": "der Schreibtischstuhl",
+    "exampleDE": "Ein bequemer Schreibtischstuhl schont den Rücken."
+  },
+  {
+    "index": 747,
+    "front": "die Stehlampe",
+    "exampleDE": "Die Stehlampe spendet warmes Licht am Abend."
+  },
+  {
+    "index": 748,
+    "front": "der Esstisch",
+    "exampleDE": "Die ganze Familie sitzt abends am großen Esstisch."
+  },
+  {
+    "index": 749,
+    "front": "das Sofa",
+    "exampleDE": "Auf dem bequemen Sofa kann man herrlich entspannen."
+  }
+]

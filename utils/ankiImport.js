@@ -46,10 +46,14 @@ export function detectLanguageFromCards(cards) {
   if (/[¿¡ñ]/i.test(sample)) return 'es';
   // Dänisch: æ, ø, å
   if (/[æøå]/i.test(sample)) return 'da';
+  // Polnisch: ą, ć, ę, ł, ń, ś, ź, ż
+  if (/[ąćęłńśźż]/i.test(sample)) return 'pl';
   // Französisch: œ
   if (/[œ]/i.test(sample)) return 'fr';
 
   // Akzente & typische Funktionswörter:
+  // Polnisch
+  if (/\b(i|w|z|na|do|nie|się|jest|to|jak|ale|tak|dla|od|po|co|ze|za|bardzo|dzień|proszę|dziękuję)\b/i.test(sample)) return 'pl';
   // Spanisch
   if (/[áéíóú]/.test(sample) || /\b(el|la|los|las|un|una|del|al|es|con|por|para|en|hola|adiós|gracias|cielo|sol|mar)\b/i.test(sample)) return 'es';
   // Französisch

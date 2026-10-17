@@ -462,10 +462,10 @@ console.log('\n── Alltagsdialoge (core/dialogues.js & js/data/dialogues.js) 
   const dia = await import('../core/dialogues.js');
 
   const langs = Object.keys(DIALOGUES);
-  check('Dialoge für alle 10 Zielsprachen definiert', langs.length === 10, `Gefunden: ${langs.join(', ')}`);
+  check('Dialoge für alle 11 Zielsprachen definiert', langs.length === 11, `Gefunden: ${langs.join(', ')}`);
 
   const allScens = Object.values(DIALOGUES).flat();
-  check('Mindestens 45 Szenarien vorhanden (Schnitt ≥ 4 pro Sprache)', allScens.length >= 45, `Gesamt: ${allScens.length}`);
+  check('Mindestens 50 Szenarien vorhanden (Schnitt ≥ 4 pro Sprache)', allScens.length >= 50, `Gesamt: ${allScens.length}`);
   check('Alle Szenarien besitzen Kategorie food, travel oder health',
     allScens.every(s => ['food', 'travel', 'health'].includes(s.category)),
     `Kategorien: ${[...new Set(allScens.map(s => s.category))].join(', ')}`);
@@ -536,6 +536,8 @@ console.log('\n── Anki & Deck-Import (utils/ankiImport.js) ──');
     anki.detectLanguageFromCards([{ front: 'Insel', back: 'ø' }]), 'da');
   eq('detectLanguage erkennt Portugiesisch',
     anki.detectLanguageFromCards([{ front: 'Herz', back: 'coração' }]), 'pt');
+  eq('detectLanguage erkennt Polnisch',
+    anki.detectLanguageFromCards([{ front: 'Apfel', back: 'jabłko' }]), 'pl');
 
   // 9c: parseDelimitedText (TSV)
   const tsvInput = `# Anki Export TSV

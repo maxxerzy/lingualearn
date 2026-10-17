@@ -1,0 +1,1752 @@
+[
+  {
+    "front": "pünktlich",
+    "back": "punktualny",
+    "ipa": "punktuˈalnɨ",
+    "example": "On przychodzi na każde spotkanie punktualnie co do minuty.",
+    "exampleDE": "Er erscheint zu jeder Besprechung auf die Minute pünktlich."
+  },
+  {
+    "front": "ehrgeizig",
+    "back": "ambitny",
+    "ipa": "aˈmbʲitnɨ",
+    "example": "Jako ambitna sportsmenka trenuje z dyscypliną każdego dnia.",
+    "exampleDE": "Als ehrgeizige Sportlerin trainiert sie diszipliniert jeden Tag."
+  },
+  {
+    "front": "großzügig",
+    "back": "hojny",
+    "ipa": "ˈxɔjnɨ",
+    "example": "Mój cioteczny dziadek był zawsze bardzo hojnym człowiekiem.",
+    "exampleDE": "Mein Großonkel war schon immer ein sehr großzügiger Mensch."
+  },
+  {
+    "front": "bescheiden",
+    "back": "skromny",
+    "ipa": "ˈskrɔmnɨ",
+    "example": "Mimo swoich wielkich sukcesów zawsze pozostał skromny.",
+    "exampleDE": "Trotz seiner großen Erfolge ist er stets bescheiden geblieben."
+  },
+  {
+    "front": "nachdenklich",
+    "back": "zamyślony",
+    "ipa": "zamɨˈɕlɔnɨ",
+    "example": "Spojrzała zamyślona przez okno na deszcz.",
+    "exampleDE": "Sie blickte nachdenklich aus dem Fenster in den Regen."
+  },
+  {
+    "front": "geduldig",
+    "back": "cierpliwy",
+    "ipa": "t͡ɕɛˈrplivɨ",
+    "example": "Nauczyciel wyjaśnia trudne zadanie cierpliwym głosem.",
+    "exampleDE": "Der Lehrer erklärt die schwierige Aufgabe mit geduldiger Stimme."
+  },
+  {
+    "front": "humorvoll",
+    "back": "dowcipny",
+    "ipa": "dɔˈft͡ɕipnɨ",
+    "example": "Swoim dowcipnym sposobem bycia rozśmiesza całe towarzystwo.",
+    "exampleDE": "Mit seiner humorvollen Art bringt er die ganze Runde zum Lachen."
+  },
+  {
+    "front": "das Missverständnis",
+    "back": "nieporozumienie",
+    "ipa": "ɲɛpɔrɔzuˈmʲɛɲɛ",
+    "example": "Krótka rozmowa telefoniczna wyjaśniła to nieporozumienie.",
+    "exampleDE": "Durch ein kurzes Telefongespräch klärte sich das Missverständnis auf."
+  },
+  {
+    "front": "der Streit",
+    "back": "kłótnia",
+    "ipa": "ˈkwutɲa",
+    "example": "Po zażartej kłótni oboje porozmawiali ze sobą w spokoju.",
+    "exampleDE": "Nach dem hitzigen Streit sprachen beide in Ruhe miteinander."
+  },
+  {
+    "front": "die Versöhnung",
+    "back": "pojednanie",
+    "ipa": "pɔjɛˈdnaɲɛ",
+    "example": "Szczere przeprosiny otworzyły drogę do pojednania.",
+    "exampleDE": "Eine ehrliche Entschuldigung ebnete den Weg zur Versöhnung."
+  },
+  {
+    "front": "der Kompromiss",
+    "back": "kompromis",
+    "ipa": "kɔˈmprɔmʲis",
+    "example": "Obie strony negocjacji uzgodniły sprawiedliwy kompromis.",
+    "exampleDE": "Beide Verhandlungsparteien einigten sich auf einen fairen Kompromiss."
+  },
+  {
+    "front": "zuhören",
+    "back": "słuchać",
+    "ipa": "ˈswuxat͡ɕ",
+    "example": "Uważne słuchanie jest często ważniejsze niż samodzielne mówienie.",
+    "exampleDE": "Gutes Zuhören ist oft wichtiger als selbst viel zu reden."
+  },
+  {
+    "front": "unterbrechen",
+    "back": "przerywać",
+    "ipa": "pʂɛˈrɨvat͡ɕ",
+    "example": "Proszę, pozwól mi dokończyć zdanie i mi nie przerywaj.",
+    "exampleDE": "Bitte lass mich meinen Satz beenden und unterbrich mich nicht."
+  },
+  {
+    "front": "kritisieren",
+    "back": "krytykować",
+    "ipa": "krɨtɨˈkɔvat͡ɕ",
+    "example": "Należy krytykować zawsze w sposób rzeczowy i konstruktywny.",
+    "exampleDE": "Man sollte Kritik stets sachlich und konstruktiv formulieren."
+  },
+  {
+    "front": "die Meinung",
+    "back": "opinia",
+    "ipa": "ɔˈpʲiɲa",
+    "example": "W mojej opinii powinniśmy jeszcze raz przemyśleć te plany.",
+    "exampleDE": "Meiner Meinung nach sollten wir die Pläne noch einmal überdenken."
+  },
+  {
+    "front": "der Standpunkt",
+    "back": "stanowisko",
+    "ipa": "stanɔˈvʲiskɔ",
+    "example": "Broniła swojego stanowiska jasnymi i przekonującymi argumentami.",
+    "exampleDE": "Sie vertrat ihren Standpunkt mit klaren und überzeugenden Argumenten."
+  },
+  {
+    "front": "das Argument",
+    "back": "argument",
+    "ipa": "aˈrɡumɛnt",
+    "example": "Silny argument przekonał nawet sceptycznych słuchaczy.",
+    "exampleDE": "Ein starkes Argument überzeugte auch die skeptischen Zuhörer."
+  },
+  {
+    "front": "beipflichten",
+    "back": "przyznawać rację",
+    "ipa": "pʂɨˈznavat͡ɕ ˈrat͡sjɛ",
+    "example": "W tej ocenie muszę panu całkowicie przyznać rację.",
+    "exampleDE": "In dieser Einschätzung muss ich Ihnen vollkommen beipflichten."
+  },
+  {
+    "front": "Einwand erheben",
+    "back": "zgłaszać sprzeciw",
+    "ipa": "ˈzɡwaʂat͡ɕ ˈspʂɛt͡ɕif",
+    "example": "Zgłosił rzeczowy sprzeciw wobec nowej propozycji.",
+    "exampleDE": "Er erhob einen sachlichen Einwand gegen den neuen Vorschlag."
+  },
+  {
+    "front": "die Überzeugungskraft",
+    "back": "siła przekonywania",
+    "ipa": "ˈɕiwa pʂɛkɔnɨˈvaɲa",
+    "example": "Dzięki wielkiej sile przekonywania zjednała sobie słuchaczy.",
+    "exampleDE": "Mit großer Überzeugungskraft gewann sie die Zuhörer für sich."
+  },
+  {
+    "front": "die Diskussion",
+    "back": "dyskusja",
+    "ipa": "dɨˈskusja",
+    "example": "Ożywiona dyskusja trwała do późnego wieczora.",
+    "exampleDE": "Die lebhafte Diskussion dauerte bis spät in den Abend."
+  },
+  {
+    "front": "das Fazit",
+    "back": "podsumowanie",
+    "ipa": "pɔtsumɔˈvaɲɛ",
+    "example": "Jako podsumowanie można stwierdzić, że projekt się udał.",
+    "exampleDE": "Als Fazit lässt sich festhalten, dass das Projekt gelungen ist."
+  },
+  {
+    "front": "die Höflichkeit",
+    "back": "uprzejmość",
+    "ipa": "uˈpʂɛjmɔɕt͡ɕ",
+    "example": "Uprzejmość otwiera wiele drzwi w życiu prywatnym i zawodowym.",
+    "exampleDE": "Höflichkeit öffnet viele Türen im privaten und beruflichen Leben."
+  },
+  {
+    "front": "der Respekt",
+    "back": "szacunek",
+    "ipa": "ʂaˈt͡sunɛk",
+    "example": "Wzajemny szacunek jest podstawą pokojowego współistnienia.",
+    "exampleDE": "Gegenseitiger Respekt ist die Grundlage für ein friedliches Miteinander."
+  },
+  {
+    "front": "die Entschuldigung",
+    "back": "przeprosiny",
+    "ipa": "pʂɛprɔˈɕinɨ",
+    "example": "Przyjął szczere przeprosiny bez wahania.",
+    "exampleDE": "Er nahm die aufrichtige Entschuldigung ohne Zögern an."
+  },
+  {
+    "front": "die Einladung",
+    "back": "zaproszenie",
+    "ipa": "zaprɔˈʂɛɲɛ",
+    "example": "Bardzo serdecznie dziękuję za miłe zaproszenie na kolację.",
+    "exampleDE": "Vielen herzlichen Dank für die freundliche Einladung zum Abendessen."
+  },
+  {
+    "front": "der Dank",
+    "back": "podziękowanie",
+    "ipa": "pɔd͡ʑɛŋkɔˈvaɲɛ",
+    "example": "Chciałbym złożyć panu serdeczne podziękowanie za wsparcie.",
+    "exampleDE": "Ich möchte Ihnen meinen herzlichen Dank für die Unterstützung aussprechen."
+  },
+  {
+    "front": "die Gastfreundschaft",
+    "back": "gościnność",
+    "ipa": "ɡɔˈɕt͡ɕinnɔɕt͡ɕ",
+    "example": "Serdeczna gościnność rodziny wywarła na nas głębokie wrażenie.",
+    "exampleDE": "Die herzliche Gastfreundschaft der Familie hat uns tief beeindruckt."
+  },
+  {
+    "front": "das Kompliment",
+    "back": "komplement",
+    "ipa": "kɔˈmplɛmɛnt",
+    "example": "Bardzo ucieszyła się z miłego komplementu dotyczącego jej wystąpienia.",
+    "exampleDE": "Sie freute sich sehr über das nette Kompliment zu ihrem Vortrag."
+  },
+  {
+    "front": "die Fußgängerzone",
+    "back": "strefa dla pieszych",
+    "ipa": "ˈstrɛfa dla ˈpʲɛʂɨx",
+    "example": "W ruchliwej strefie dla pieszych jeden sklep sąsiaduje z drugim.",
+    "exampleDE": "In der belebten Fußgängerzone reiht sich ein Geschäft an das andere."
+  },
+  {
+    "front": "der Zebrastreifen",
+    "back": "przejście dla pieszych",
+    "ipa": "ˈpʂɛjɕt͡ɕɛ dla ˈpʲɛʂɨx",
+    "example": "Przed przejściem dla pieszych samochody zatrzymują się, by przepuścić pieszych.",
+    "exampleDE": "Am Zebrastreifen halten die Autos an, um Fußgänger queren zu lassen."
+  },
+  {
+    "front": "der Bürgersteig",
+    "back": "chodnik",
+    "ipa": "ˈxɔdɲik",
+    "example": "Dzieci jeżdżą bezpiecznie na hulajnogach po szerokim chodniku.",
+    "exampleDE": "Die Kinder fahren mit ihren Rollern sicher auf dem breiten Bürgersteig."
+  },
+  {
+    "front": "die Ampel",
+    "back": "sygnalizacja świetlna",
+    "ipa": "sɨɡnaliˈzat͡sja ˈɕvʲɛtlna",
+    "example": "Gdy sygnalizacja świetlna zmienia się na czerwone, wszystkie pojazdy muszą się zatrzymać.",
+    "exampleDE": "Wenn die Ampel auf Rot schaltet, müssen alle Fahrzeuge anhalten."
+  },
+  {
+    "front": "die Kreuzung",
+    "back": "skrzyżowanie",
+    "ipa": "skʂɨʐɔˈvaɲɛ",
+    "example": "Na najbliższym dużym skrzyżowaniu proszę skręcić w prawo.",
+    "exampleDE": "An der nächsten großen Kreuzung biegen Sie bitte rechts ab."
+  },
+  {
+    "front": "die Einbahnstraße",
+    "back": "ulica jednokierunkowa",
+    "ipa": "uˈlit͡sa jɛdnɔkʲɛruˈnkɔva",
+    "example": "Proszę zwrócić uwagę na znak, ta wąska uliczka to ulica jednokierunkowa.",
+    "exampleDE": "Achten Sie auf das Schild, diese schmale Gasse ist eine Einbahnstraße."
+  },
+  {
+    "front": "der Marktplatz",
+    "back": "rynek",
+    "ipa": "ˈrɨnɛk",
+    "example": "W środy i soboty na rynku odbywa się cotygodniowy targ.",
+    "exampleDE": "Mittwochs und samstags findet auf dem Marktplatz der Wochenmarkt statt."
+  },
+  {
+    "front": "das Rathaus",
+    "back": "ratusz",
+    "ipa": "ˈratuʂ",
+    "example": "Zabytkowy ratusz ze swoją charakterystyczną wieżą stoi w centrum.",
+    "exampleDE": "Das historische Rathaus mit seinem markanten Turm steht im Zentrum."
+  },
+  {
+    "front": "der Fahrplan",
+    "back": "rozkład jazdy",
+    "ipa": "ˈrɔskwat ˈjazdɨ",
+    "example": "Na rozkładzie jazdy na przystanku podane są wszystkie godziny odjazdów.",
+    "exampleDE": "Auf dem Fahrplan an der Haltestelle stehen alle Abfahrtszeiten."
+  },
+  {
+    "front": "die Haltestelle",
+    "back": "przystanek",
+    "ipa": "pʂɨˈstanɛk",
+    "example": "Tramwaj zatrzymuje się bezpośrednio na przystanku przed muzeum.",
+    "exampleDE": "Die Straßenbahn hält direkt an der Haltestelle vor dem Museum."
+  },
+  {
+    "front": "die Fahrkarte",
+    "back": "bilet",
+    "ipa": "ˈbʲilɛt",
+    "example": "Proszę kupić bilet w automacie przed wejściem do pojazdu.",
+    "exampleDE": "Kaufen Sie die Fahrkarte bitte vor dem Einsteigen am Automaten."
+  },
+  {
+    "front": "der Entwerter",
+    "back": "kasownik",
+    "ipa": "kaˈsɔvɲik",
+    "example": "Włóż bilet do kasownika, aby go skasować.",
+    "exampleDE": "Stecken Sie das Ticket in den Entwerter, um es gültig zu machen."
+  },
+  {
+    "front": "umsteigen",
+    "back": "przesiadać się",
+    "ipa": "pʂɛˈɕadat͡ɕ ɕɛ",
+    "example": "Na dworcu głównym musimy przesiąść się do drugiej linii metra.",
+    "exampleDE": "Am Hauptbahnhof müssen wir in die U-Bahn-Linie 2 umsteigen."
+  },
+  {
+    "front": "die Verspätung",
+    "back": "opóźnienie",
+    "ipa": "ɔpuˈʑɲɛɲɛ",
+    "example": "Z powodu awarii zwrotnicy autobus ma dziesięć minut opóźnienia.",
+    "exampleDE": "Wegen einer Weichenstörung hat der Bus zehn Minuten Verspätung."
+  },
+  {
+    "front": "die Monatskarte",
+    "back": "bilet miesięczny",
+    "ipa": "ˈbʲilɛt mʲɛˈɕɛnt͡ʂnɨ",
+    "example": "Dla osób dojeżdżających do pracy opłaca się imienny bilet miesięczny.",
+    "exampleDE": "Für Berufspendler lohnt sich eine persönliche Monatskarte."
+  },
+  {
+    "front": "der Führerschein",
+    "back": "prawo jazdy",
+    "ipa": "ˈpravɔ ˈjazdɨ",
+    "example": "W wieku osiemnastu lat zdała egzamin na prawo jazdy.",
+    "exampleDE": "Mit achtzehn Jahren bestand sie die Prüfung für den Führerschein."
+  },
+  {
+    "front": "der Sicherheitsgurt",
+    "back": "pas bezpieczeństwa",
+    "ipa": "pas bɛzpʲɛˈt͡ʂɛɲstva",
+    "example": "Proszę zapiąć pasy i założyć pas bezpieczeństwa.",
+    "exampleDE": "Bitte schnallen Sie sich an und legen Sie den Sicherheitsgurt an."
+  },
+  {
+    "front": "die Tankstelle",
+    "back": "stacja benzynowa",
+    "ipa": "ˈstat͡sja bɛnzɨˈnɔva",
+    "example": "Na najbliższej stacji benzynowej musimy zatankować benzynę i uzupełnić płyn do spryskiwaczy.",
+    "exampleDE": "An der nächsten Tankstelle müssen wir Benzin und Wischwasser nachfüllen."
+  },
+  {
+    "front": "der Kofferraum",
+    "back": "bagażnik",
+    "ipa": "baˈɡaʐɲik",
+    "example": "W przestronnym bagażniku jest wystarczająco dużo miejsca na trzy duże walizki.",
+    "exampleDE": "Im geräumigen Kofferraum ist genug Platz für drei große Koffer."
+  },
+  {
+    "front": "der Rückspiegel",
+    "back": "lusterko wsteczne",
+    "ipa": "luˈstɛrkɔ ˈfstɛt͡ʂnɛ",
+    "example": "Przed zmianą pasa kierowca uważnie patrzy w lusterko wsteczne.",
+    "exampleDE": "Vor dem Spurwechsel schaut der Fahrer aufmerksam in den Rückspiegel."
+  },
+  {
+    "front": "der Blinker",
+    "back": "kierunkowskaz",
+    "ipa": "kʲɛruˈnkɔfskas",
+    "example": "Nie zapomnij włączyć w porę kierunkowskazu przy skręcaniu.",
+    "exampleDE": "Vergessen Sie beim Abbiegen nicht, rechtzeitig den Blinker zu setzen."
+  },
+  {
+    "front": "der Scheibenwischer",
+    "back": "wycieraczka",
+    "ipa": "vɨt͡ɕɛˈrat͡ʂka",
+    "example": "Podczas ulewnego deszczu wycieraczki pracują na najwyższym biegu.",
+    "exampleDE": "Bei starkem Regen laufen die Scheibenwischer auf höchster Stufe."
+  },
+  {
+    "front": "der Stau",
+    "back": "korek",
+    "ipa": "ˈkɔrɛk",
+    "example": "Z powodu robót drogowych samochody stoją w korku na autostradzie.",
+    "exampleDE": "Wegen einer Baustelle stehen die Autos auf der Autobahn im Stau."
+  },
+  {
+    "front": "der Fahrradhelm",
+    "back": "kask rowerowy",
+    "ipa": "kask rɔvɛˈrɔvɨ",
+    "example": "Dobrze dopasowany kask rowerowy chroni głowę w razie upadku.",
+    "exampleDE": "Ein gut sitzender Fahrradhelm schützt den Kopf bei einem Sturz."
+  },
+  {
+    "front": "der Fahrradweg",
+    "back": "ścieżka rowerowa",
+    "ipa": "ˈɕt͡ɕɛʂka rɔvɛˈrɔva",
+    "example": "Wzdłuż rzeki biegnie szeroka i asfaltowa ścieżka rowerowa.",
+    "exampleDE": "Entlang des Flusses verläuft ein breiter und asphaltierter Fahrradweg."
+  },
+  {
+    "front": "das Fahrradschloss",
+    "back": "zapięcie rowerowe",
+    "ipa": "zaˈpʲɛnt͡ɕɛ rɔvɛˈrɔvɛ",
+    "example": "Zawsze przypinaj swój rower solidnym zapięciem rowerowym.",
+    "exampleDE": "Schließen Sie Ihr Rad immer mit einem stabilen Fahrradschloss an."
+  },
+  {
+    "front": "die Klingel",
+    "back": "dzwonek",
+    "ipa": "ˈd͡zvɔnɛk",
+    "example": "Krótkim zadzwonieniem dzwonka ostrzega pieszych.",
+    "exampleDE": "Mit einer kurzen Betätigung der Klingel warnt sie Fußgänger vor."
+  },
+  {
+    "front": "die Luftpumpe",
+    "back": "pompka",
+    "ipa": "ˈpɔmpka",
+    "example": "Ręczną pompką doprowadza ciśnienie w oponach do optymalnego poziomu.",
+    "exampleDE": "Mit der Handluftpumpe bringt er den Reifendruck auf das Optimum."
+  },
+  {
+    "front": "der E-Scooter",
+    "back": "hulajnoga elektryczna",
+    "ipa": "xulaˈjnɔɡa ɛlɛˈktrɨt͡ʂna",
+    "example": "W centrum miasta wielu dojeżdżających wypożycza hulajnogę elektryczną.",
+    "exampleDE": "In der Innenstadt leihen sich viele Pendler einen E-Scooter."
+  },
+  {
+    "front": "die Pedale",
+    "back": "pedał",
+    "ipa": "ˈpɛdaw",
+    "example": "Mocno naciska na pedały, aby wjechać na strome wzgórze.",
+    "exampleDE": "Er tritt kräftig in die Pedale, um den steilen Hügel hinaufzufahren."
+  },
+  {
+    "front": "der Hauptbahnhof",
+    "back": "dworzec główny",
+    "ipa": "ˈdvɔʐɛt͡s ˈɡwuvnɨ",
+    "example": "Z dworca głównego odjeżdżają pociągi do wszystkich europejskich metropolii.",
+    "exampleDE": "Vom Hauptbahnhof aus fahren Züge in alle europäischen Metropolen."
+  },
+  {
+    "front": "der Bahnsteig",
+    "back": "peron",
+    "ipa": "ˈpɛrɔn",
+    "example": "Pasażerowie czekają na peronie czwartym na wjeżdżający pociąg.",
+    "exampleDE": "Die Fahrgäste warten auf Bahnsteig vier auf den einfahrenden Zug."
+  },
+  {
+    "front": "das Gleis",
+    "back": "tor",
+    "ipa": "tɔr",
+    "example": "Pociąg pośpieszny do Berlina odjeżdża dziś wyjątkowo z toru dziewiątego.",
+    "exampleDE": "Der Schnellzug nach Berlin fährt heute abweichend von Gleis neun."
+  },
+  {
+    "front": "die Sitzplatzreservierung",
+    "back": "rezerwacja miejsca",
+    "ipa": "rɛzɛˈrvat͡sja ˈmʲɛjst͡sa",
+    "example": "Rezerwacja miejsca pozwala uniknąć długiego szukania w pełnym pociągu.",
+    "exampleDE": "Eine Sitzplatzreservierung erspart langes Suchen im vollen Zug."
+  },
+  {
+    "front": "der Schaffner",
+    "back": "konduktor",
+    "ipa": "kɔˈnduktɔr",
+    "example": "Uprzejmy konduktor sprawdza bilety pasażerów.",
+    "exampleDE": "Der freundliche Schaffner kontrolliert die Tickets der Fahrgäste."
+  },
+  {
+    "front": "der Speisewagen",
+    "back": "wagon restauracyjny",
+    "ipa": "ˈvaɡɔn rɛstauraˈt͡sɨjnɨ",
+    "example": "W wagonie restauracyjnym można podczas podróży delektować się kawą i przekąskami.",
+    "exampleDE": "Im Speisewagen kann man während der Fahrt Kaffee und Snacks genießen."
+  },
+  {
+    "front": "der Anschlusszug",
+    "back": "pociąg skomunikowany",
+    "ipa": "ˈpɔt͡ɕɔŋk skɔmuɲikɔˈvanɨ",
+    "example": "Mimo niewielkiego opóźnienia wszyscy podróżni zdążyli na swój pociąg skomunikowany.",
+    "exampleDE": "Trotz kurzer Verspätung erreichten alle Reisenden ihren Anschlusszug."
+  },
+  {
+    "front": "das Gepäckfach",
+    "back": "półka bagażowa",
+    "ipa": "ˈpuwka baɡaˈʐɔva",
+    "example": "Ciężkie torby podróżne bezpiecznie chowa się na górnej półce bagażowej.",
+    "exampleDE": "Schwere Reisetaschen verstaut man sicher im oberen Gepäckfach."
+  },
+  {
+    "front": "der Flughafen",
+    "back": "lotnisko",
+    "ipa": "lɔˈtɲiskɔ",
+    "example": "Dwie godziny przed odlotem jedziemy pociągiem na lotnisko.",
+    "exampleDE": "Wir fahren zwei Stunden vor dem Abflug mit dem Zug zum Flughafen."
+  },
+  {
+    "front": "die Bordkarte",
+    "back": "karta pokładowa",
+    "ipa": "ˈkarta pɔkwaˈdɔva",
+    "example": "Przy wejściu na pokład proszę pokazać kartę pokładową i dowód tożsamości.",
+    "exampleDE": "Zeigen Sie beim Einsteigen bitte Ihre Bordkarte und den Ausweis vor."
+  },
+  {
+    "front": "die Sicherheitskontrolle",
+    "back": "kontrola bezpieczeństwa",
+    "ipa": "kɔˈntrɔla bɛzpʲɛˈt͡ʂɛɲstva",
+    "example": "Podczas kontroli bezpieczeństwa laptopy muszą być okazane osobno.",
+    "exampleDE": "An der Sicherheitskontrolle müssen Laptops separat vorgezeigt werden."
+  },
+  {
+    "front": "das Abfluggos",
+    "back": "bramka odlotów",
+    "ipa": "ˈbramka ɔˈdlɔtuf",
+    "example": "Samolot do Rzymu startuje punktualnie przy bramce odlotów B dwanaście.",
+    "exampleDE": "Das Flugzeug nach Rom startet pünktlich an Abfluggate B zwölf."
+  },
+  {
+    "front": "das Handgepäck",
+    "back": "bagaż podręczny",
+    "ipa": "ˈbaɡaʂ pɔˈdrɛnt͡ʂnɨ",
+    "example": "Płyny w bagażu podręcznym mogą mieć maksymalnie sto mililitrów.",
+    "exampleDE": "Flüssigkeiten im Handgepäck dürfen maximal hundert Milliliter fassen."
+  },
+  {
+    "front": "die Gepäckausgabe",
+    "back": "odbiór bagażu",
+    "ipa": "ˈɔdbʲur baˈɡaʐu",
+    "example": "Po lądowaniu odbiera się walizki przy punkcie odbioru bagażu.",
+    "exampleDE": "Nach der Landung holt man die Koffer an der Gepäckausgabe ab."
+  },
+  {
+    "front": "der Reisepass",
+    "back": "paszport",
+    "ipa": "ˈpaʂpɔrt",
+    "example": "Do podróży poza Unię Europejską potrzebny jest paszport.",
+    "exampleDE": "Für Reisen außerhalb der Europäischen Union benötigt man einen Reisepass."
+  },
+  {
+    "front": "die Rezeption",
+    "back": "recepcja",
+    "ipa": "rɛˈt͡sɛpt͡sja",
+    "example": "Recepcja hotelowa jest obsadzona przez całą dobę.",
+    "exampleDE": "Die Rezeption des Hotels ist rund um die Uhr mit Personal besetzt."
+  },
+  {
+    "front": "die Schlüsselkarte",
+    "back": "pełne wyżywienie",
+    "ipa": "ˈpɛwnɛ vɨʐɨˈvʲɛɲɛ",
+    "example": "Zarezerwowaliśmy pokój z pełnym wyżywieniem, łącznie ze śniadaniem, obiadem i kolacją.",
+    "exampleDE": "Mit der elektronischen Schlüsselkarte öffnet sich die Zimmertür."
+  },
+  {
+    "front": "das Einzelzimmer",
+    "back": "częściowe wyżywienie",
+    "ipa": "t͡ʂɛw̃ˈɕt͡ɕɔvɛ vɨʐɨˈvʲɛɲɛ",
+    "example": "Częściowe wyżywienie obejmuje obfite śniadanie i ciepłą kolację.",
+    "exampleDE": "Für die Geschäftsreise bucht er ein ruhiges Einzelzimmer."
+  },
+  {
+    "front": "das Doppelzimmer",
+    "back": "pokój dwuosobowy",
+    "ipa": "ˈpɔkuj dvuɔsɔˈbɔvɨ",
+    "example": "Jasny pokój dwuosobowy ma słoneczny balkon z widokiem na morze.",
+    "exampleDE": "Das Doppelzimmer bietet einen herrlichen Ausblick auf das Meer."
+  },
+  {
+    "front": "das Frühstücksbuffet",
+    "back": "pokój jednoosobowy",
+    "ipa": "ˈpɔkuj jɛdnɔɔsɔˈbɔvɨ",
+    "example": "Dla osoby podróżującej samotnie wystarczy przytulny pokój jednoosobowy z własną łazienką.",
+    "exampleDE": "Das reichhaltige Frühstücksbuffet lässt keine kulinarischen Wünsche offen."
+  },
+  {
+    "front": "der Zimmerservice",
+    "back": "anulować",
+    "ipa": "anuˈlɔvat͡ɕ",
+    "example": "Do jutra możemy jeszcze bezpłatnie anulować rezerwację hotelową.",
+    "exampleDE": "Man kann sich das Abendessen bequem über den Zimmerservice bestellen."
+  },
+  {
+    "front": "auschecken",
+    "back": "rezerwacja",
+    "ipa": "rɛzɛˈrvat͡sja",
+    "example": "Potwierdzenie rezerwacji nadeszło pocztą elektroniczną krótko po dokonaniu płatności.",
+    "exampleDE": "Die Hotelgäste müssen bis spätestens elf Uhr vormittags auschecken."
+  },
+  {
+    "front": "die Jugendherberge",
+    "back": "schronisko młodzieżowe",
+    "ipa": "sxrɔˈɲiskɔ mwɔd͡ʑɛˈʐɔvɛ",
+    "example": "Wielu uczniów i studentów nocuje niedrogo w schronisku młodzieżowym.",
+    "exampleDE": "Für Rucksackreisende ist die Jugendherberge eine günstige Übernachtungsmöglichkeit."
+  },
+  {
+    "front": "die Ferienwohnung",
+    "back": "mieszkanie wakacyjne",
+    "ipa": "mʲɛˈʂkaɲɛ vakaˈt͡sɨjnɛ",
+    "example": "W mieszkaniu wakacyjnym rodzina ma dużo miejsca i własną kuchnię.",
+    "exampleDE": "Für den Familienurlaub mieten wir eine gemütliche Ferienwohnung."
+  },
+  {
+    "front": "das Reiseziel",
+    "back": "spacer po mieście",
+    "ipa": "ˈspat͡sɛr pɔ ˈmʲɛɕt͡ɕɛ",
+    "example": "Podczas spaceru po mieście z przewodnikiem zwiedziliśmy zabytkową starówkę.",
+    "exampleDE": "Italien ist seit vielen Jahren ihr liebstes Reiseziel im Sommer."
+  },
+  {
+    "front": "die Sehenswürdigkeit",
+    "back": "atrakcja turystyczna",
+    "ipa": "aˈtrakt͡sja turɨˈstɨt͡ʂna",
+    "example": "Zabytkowa katedra jest najbardziej znaną atrakcją turystyczną miasta.",
+    "exampleDE": "Die historische Kathedrale ist die bekannteste Sehenswürdigkeit der Stadt."
+  },
+  {
+    "front": "der Reiseleiter",
+    "back": "przewodnik turystyczny",
+    "ipa": "pʂɛˈvɔdɲik turɨˈstɨt͡ʂnɨ",
+    "example": "Doświadczony przewodnik turystyczny wyjaśnia fascynującą historię tej budowli.",
+    "exampleDE": "Der kundige Reiseleiter erklärt die spannende Geschichte des Bauwerks."
+  },
+  {
+    "front": "das Souvenir",
+    "back": "pamiątka",
+    "ipa": "paˈmʲɔntka",
+    "example": "Jako piękną pamiątkę kupiła ręcznie malowaną miskę ceramiczną.",
+    "exampleDE": "Als schönes Souvenir kaufte sie eine handbemalte Keramikschale."
+  },
+  {
+    "front": "die Ansichtskarte",
+    "back": "pocztówka",
+    "ipa": "pɔˈt͡ʂtufka",
+    "example": "Pisze pocztówkę z pozdrowieniami do swoich dziadków.",
+    "exampleDE": "Er schreibt eine Ansichtskarte mit Grüßen an seine Großeltern."
+  },
+  {
+    "front": "der Sonnenbrand",
+    "back": "oparzenie słoneczne",
+    "ipa": "ɔpaˈʐɛɲɛ swɔˈnɛt͡ʂnɛ",
+    "example": "Bez kremu z filtrem przeciwsłonecznym ryzykuje się oparzenie słoneczne na plaży.",
+    "exampleDE": "Ohne schützende Sonnencreme riskiert man am Strand einen Sonnenbrand."
+  },
+  {
+    "front": "der Campingplatz",
+    "back": "kemping",
+    "ipa": "ˈkɛmpʲink",
+    "example": "Kemping leży idyllicznie bezpośrednio nad czystym jeziorem kąpielowym.",
+    "exampleDE": "Der Campingplatz liegt idyllisch direkt an einem klaren Badesee."
+  },
+  {
+    "front": "das Zelt",
+    "back": "namiot",
+    "ipa": "ˈnamʲɔt",
+    "example": "Wspólnie rozbili namiot na równej łące.",
+    "exampleDE": "Gemeinsam bauten sie das Zelt auf einer ebenen Wiese auf."
+  },
+  {
+    "front": "der Schlafsack",
+    "back": "śpiwór",
+    "ipa": "ˈɕpʲivur",
+    "example": "Ciepły śpiwór niezawodnie chroni przed nocnym chłodem.",
+    "exampleDE": "Ein warmer Schlafsack schützt zuverlässig vor der nächtlichen Kälte."
+  },
+  {
+    "front": "die Isomatte",
+    "back": "karimata",
+    "ipa": "kariˈmata",
+    "example": "Miękka karimata izoluje od wilgoci podłoża.",
+    "exampleDE": "Die weiche Isomatte isoliert gegen die Feuchtigkeit des Bodens."
+  },
+  {
+    "front": "die Taschenlampe",
+    "back": "latarka",
+    "ipa": "laˈtarka",
+    "example": "W ciemności oświetla sobie drogę latarką.",
+    "exampleDE": "Im Dunkeln leuchtet er sich den Weg mit der Taschenlampe."
+  },
+  {
+    "front": "der Gaskocher",
+    "back": "kuchenka gazowa",
+    "ipa": "kuˈxɛnka ɡaˈzɔva",
+    "example": "Na małej kuchence gazowej gotują rano świeżą kawę.",
+    "exampleDE": "Auf dem kleinen Gaskocher kochen sie morgens frischen Kaffee."
+  },
+  {
+    "front": "das Lagerfeuer",
+    "back": "ognisko",
+    "ipa": "ɔˈɡɲiskɔ",
+    "example": "Wieczorem wszyscy siedzieli przytulnie wokół trzaskającego ogniska.",
+    "exampleDE": "Am Abend saßen alle gemütlich um das knisternde Lagerfeuer."
+  },
+  {
+    "front": "das Mückenspray",
+    "back": "spray na komary",
+    "ipa": "ˈspraɨ na kɔˈmarɨ",
+    "example": "W pobliżu zbiorników wodnych zaleca się skuteczny spray na komary.",
+    "exampleDE": "In Gewässernähe empfiehlt sich ein wirksames Mückenspray."
+  },
+  {
+    "front": "der Berggipfel",
+    "back": "szczyt górski",
+    "ipa": "ʂt͡ʂɨt ˈɡurskʲi",
+    "example": "Ze ośnieżonego szczytu górskiego roztacza się fantastyczny widok w dal.",
+    "exampleDE": "Vom schneebedeckten Berggipfel hat man eine fantastische Fernsicht."
+  },
+  {
+    "front": "der Gebirgsbach",
+    "back": "potok górski",
+    "ipa": "ˈpɔtɔk ˈɡurskʲi",
+    "example": "Czysta, lodowata woda pluszcze przez potok górski.",
+    "exampleDE": "Klares, eiskaltes Wasser plätschert durch den Gebirgsbach."
+  },
+  {
+    "front": "die Klippe",
+    "back": "klif",
+    "ipa": "klif",
+    "example": "Fale rozbijają się z głośnym szumem o stromy skalisty klif.",
+    "exampleDE": "Wellen brechen mit lautem Tosen an der steilen Felsklippe."
+  },
+  {
+    "front": "die Sanddüne",
+    "back": "wydma",
+    "ipa": "ˈvɨdma",
+    "example": "Nieustanny wiatr formuje drobne wydmy piaszczyste na wybrzeżu.",
+    "exampleDE": "Der stetige Wind formt die feinen Sanddünen an der Küste."
+  },
+  {
+    "front": "der Wasserfall",
+    "back": "wodospad",
+    "ipa": "vɔˈdɔspat",
+    "example": "Woda spada z hukiem przez dwudziestometrowy wodospad.",
+    "exampleDE": "Das Wasser stürzt tosend über den zwanzig Meter hohen Wasserfall."
+  },
+  {
+    "front": "die Halbinsel",
+    "back": "półwysep",
+    "ipa": "puˈwvɨsɛp",
+    "example": "Malowniczy półwysep sięga daleko w lazurowe morze.",
+    "exampleDE": "Die malerische Halbinsel ragt weit in das azurblaue Meer hinein."
+  },
+  {
+    "front": "das Flussufer",
+    "back": "brzeg rzeki",
+    "ipa": "bʐɛk ˈʐɛkʲi",
+    "example": "Na zielonej łące na brzegu rzeki można wspaniale urządzić piknik.",
+    "exampleDE": "Auf der grünen Wiese am Flussufer kann man wunderbar picknicken."
+  },
+  {
+    "front": "der Laubwald",
+    "back": "las liściasty",
+    "ipa": "las liˈɕt͡ɕastɨ",
+    "example": "Jesienią w lesie liściastym mienią się kolorowe liście.",
+    "exampleDE": "Im Herbst leuchtet das bunte Blätterkleid im Laubwald."
+  },
+  {
+    "front": "der Nadelwald",
+    "back": "las iglasty",
+    "ipa": "las iˈɡlastɨ",
+    "example": "W lesie iglastym świeże powietrze pachnie żywicą i mchem.",
+    "exampleDE": "Im Nadelwald duftet die frische Luft nach Harz und Moos."
+  },
+  {
+    "front": "die Eiche",
+    "back": "dąb",
+    "ipa": "dɔmp",
+    "example": "Odwieczny dąb daje chłodny cień w upalne letnie dni.",
+    "exampleDE": "Die uralte Eiche spendet an heißen Sommertagen kühlen Schatten."
+  },
+  {
+    "front": "die Tanne",
+    "back": "jodła",
+    "ipa": "ˈjɔdwa",
+    "example": "Zimą zieloną jodłę ubiera się jako choinkę bożonarodzeniową.",
+    "exampleDE": "Im Winter schmückt man die grüne Tanne als Weihnachtsbaum."
+  },
+  {
+    "front": "die Baumkrone",
+    "back": "korona drzewa",
+    "ipa": "kɔˈrɔna ˈdʐɛva",
+    "example": "Ptaki ćwierkają ukryte w gęstej koronie drzewa.",
+    "exampleDE": "Vögel zwitschern versteckt in der dichten Baumkrone."
+  },
+  {
+    "front": "der Baumstamm",
+    "back": "pień drzewa",
+    "ipa": "pʲɛɲ ˈdʐɛva",
+    "example": "Potężny pień drzewa ma ponad dwa metry obwodu.",
+    "exampleDE": "Der mächtige Baumstamm hat einen Umfang von über zwei Metern."
+  },
+  {
+    "front": "der Zapfen",
+    "back": "szyszka",
+    "ipa": "ˈʂɨʂka",
+    "example": "Dzieci zbierają brązowe szyszki sosnowe do prac ręcznych.",
+    "exampleDE": "Die Kinder sammeln braune Kiefernzapfen zum Basteln."
+  },
+  {
+    "front": "das Moos",
+    "back": "mech",
+    "ipa": "mɛx",
+    "example": "Na zacienionych kamieniach rośnie gruby dywan zielonego mchu.",
+    "exampleDE": "Auf den schattigen Steinen wächst ein dicker Teppich aus grünem Moos."
+  },
+  {
+    "front": "die Sonnenblume",
+    "back": "słonecznik",
+    "ipa": "swɔˈnɛt͡ʂɲik",
+    "example": "Jaskrawożółty słonecznik zawsze zwraca się ku światłu.",
+    "exampleDE": "Die leuchtend gelbe Sonnenblume wendet sich stets dem Licht zu."
+  },
+  {
+    "front": "der Löwenzahn",
+    "back": "mniszek lekarski",
+    "ipa": "ˈmɲiʂɛk lɛˈkarskʲi",
+    "example": "Wiosną mniszek lekarski zamienia łąkę w żółte morze.",
+    "exampleDE": "Im Frühling verwandelt der Löwenzahn die Wiese in ein gelbes Meer."
+  },
+  {
+    "front": "das Gänseblümchen",
+    "back": "stokrotka",
+    "ipa": "stɔˈkrɔtka",
+    "example": "Małe białe stokrotki rosną wszędzie na krótko skoszonym trawniku.",
+    "exampleDE": "Kleine weiße Gänseblümchen wachsen überall im kurz gemähten Rasen."
+  },
+  {
+    "front": "die Lilie",
+    "back": "lilia",
+    "ipa": "liˈlia",
+    "example": "Białe lilie roztaczają intensywny, szlachetny zapach.",
+    "exampleDE": "Weiße Lilien verströmen einen intensiven, edlen Duft."
+  },
+  {
+    "front": "die Orchidee",
+    "back": "storczyk",
+    "ipa": "ˈstɔrt͡ʂɨk",
+    "example": "Na słonecznym parapecie kwitnie wspaniały storczyk.",
+    "exampleDE": "Auf der sonnigen Fensterbank blüht eine prächtige Orchidee."
+  },
+  {
+    "front": "das Blütenblatt",
+    "back": "płatek kwiatu",
+    "ipa": "ˈpwatɛk ˈkvʲatu",
+    "example": "Łagodny powiew wiatru niesie delikatne płatki kwiatów przez ogród.",
+    "exampleDE": "Ein sanfter Windstoß weht zarte Blütenblätter durch den Garten."
+  },
+  {
+    "front": "verblühen",
+    "back": "przekwitać",
+    "ipa": "pʂɛˈkvʲitat͡ɕ",
+    "example": "Po kilku słonecznych tygodniach wiosenne kwiaty zaczynają przekwitać.",
+    "exampleDE": "Nach einigen sonnigen Wochen beginnen die Frühlingsblumen zu verblühen."
+  },
+  {
+    "front": "das Wildschwein",
+    "back": "dzik",
+    "ipa": "d͡ʑik",
+    "example": "Wataha dzików przemierza nocą gęsty las.",
+    "exampleDE": "Eine Rotte Wildschweine durchstreift nachts den dichten Wald."
+  },
+  {
+    "front": "das Reh",
+    "back": "sarna",
+    "ipa": "ˈsarna",
+    "example": "O świcie płochliwa sarna pasie się na skraju lasu.",
+    "exampleDE": "In der Morgendämmerung äst ein scheues Reh am Waldrand."
+  },
+  {
+    "front": "das Eichhörnchen",
+    "back": "wiewiórka",
+    "ipa": "vʲɛˈvʲurka",
+    "example": "Zwinna wiewiórka chowa orzechy na zimowe miesiące.",
+    "exampleDE": "Das flinke Eichhörnchen versteckt Nüsse für die Wintermonate."
+  },
+  {
+    "front": "der Igel",
+    "back": "jeż",
+    "ipa": "jɛʂ",
+    "example": "W razie zagrożenia jeż zwija się w kolczastą kulkę.",
+    "exampleDE": "Bei Gefahr rollt sich der Igel zu einer stacheligen Kugel zusammen."
+  },
+  {
+    "front": "der Dachs",
+    "back": "borsuk",
+    "ipa": "ˈbɔrsuk",
+    "example": "Płochliwy borsuk zamieszkuje rozgałęzioną norę pod starymi drzewami.",
+    "exampleDE": "Der scheue Dachs bewohnt einen verzweigten Erdbau unter alten Bäumen."
+  },
+  {
+    "front": "der Biber",
+    "back": "bóbr",
+    "ipa": "bubr",
+    "example": "Ostrymi zębami bóbr ścina młode wierzby przy biegu potoku.",
+    "exampleDE": "Mit scharfen Zähnen fällt der Biber junge Weiden am Bachlauf."
+  },
+  {
+    "front": "die Fledermaus",
+    "back": "nietoperz",
+    "ipa": "ɲɛˈtɔpɛʂ",
+    "example": "O zmierzchu bezszelestny nietoperz poluje na ćmy.",
+    "exampleDE": "In der Abenddämmerung jagt die lautlose Fledermaus nach Nachtfaltern."
+  },
+  {
+    "front": "der Feldhase",
+    "back": "zając",
+    "ipa": "ˈzajɔnt͡s",
+    "example": "Długimi susami czujny zając ucieka przez pole.",
+    "exampleDE": "Mit weiten Sprüngen flieht der wachsame Feldhase über den Acker."
+  },
+  {
+    "front": "der Spatz",
+    "back": "wróbel",
+    "ipa": "ˈvrubɛl",
+    "example": "Mały wróbel podskakuje ciekawie w poszukiwaniu okruszków.",
+    "exampleDE": "Ein kleiner Spatz hüpft neugierig auf der Suche nach Krümeln heran."
+  },
+  {
+    "front": "die Amsel",
+    "back": "kos",
+    "ipa": "kɔs",
+    "example": "Wcześnie rano kos śpiewa swoją melodyjną pieśń z dachu domu.",
+    "exampleDE": "Früh am Morgen singt die Amsel ihr melodisches Lied vom Hausdach."
+  },
+  {
+    "front": "die Schwalbe",
+    "back": "jaskółka",
+    "ipa": "jaˈskuwka",
+    "example": "Jaskółki budują swoje kunsztowne gniazda z gliny pod okapem dachu.",
+    "exampleDE": "Schwalben bauen ihre kunstvollen Nester aus Lehm unter den Dachvorsprung."
+  },
+  {
+    "front": "der Storch",
+    "back": "bocian",
+    "ipa": "ˈbɔt͡ɕan",
+    "example": "Na kominie starej stodoły gniazduje para bocianów.",
+    "exampleDE": "Auf dem Schornstein der alten Scheune nistet ein Storchenpaar."
+  },
+  {
+    "front": "die Elster",
+    "back": "sroka",
+    "ipa": "ˈsrɔka",
+    "example": "Czarno-biała sroka uchodzi w wierzeniach ludowych za ptaka złodziejaszka.",
+    "exampleDE": "Die schwarz-weiße Elster gilt im Volksmund als diebischer Vogel."
+  },
+  {
+    "front": "der Specht",
+    "back": "dzięcioł",
+    "ipa": "ˈd͡ʑɛnt͡ɕɔw",
+    "example": "Z lasu słychać rytmiczne stukanie dzięcioła.",
+    "exampleDE": "Aus dem Wald hört man das rhythmische Hämmern eines Spechts."
+  },
+  {
+    "front": "der Zugvogel",
+    "back": "ptak wędrowny",
+    "ipa": "ptak vɛnˈdrɔvnɨ",
+    "example": "Jesienią ptaki wędrowne lecą kluczem na południe.",
+    "exampleDE": "Im Herbst fliegen Zugvögel in V-Formation Richtung Süden."
+  },
+  {
+    "front": "die Forelle",
+    "back": "pstrąg",
+    "ipa": "pstrɔŋk",
+    "example": "W chłodnym potoku górskim pływa srebrzysty pstrąg potokowy.",
+    "exampleDE": "Im kühlen Gebirgsbach schwimmt eine silbrige Bachforelle."
+  },
+  {
+    "front": "der Lachs",
+    "back": "łosoś",
+    "ipa": "ˈwɔsɔɕ",
+    "example": "W okresie tarła łosoś wędruje wiele kilometrów w górę rzeki.",
+    "exampleDE": "Zur Laichzeit wandert der Lachs viele Kilometer flussaufwärts."
+  },
+  {
+    "front": "der Karpfen",
+    "back": "karp",
+    "ipa": "karp",
+    "example": "Na dnie spokojnego wiejskiego stawu żeruje duży karp.",
+    "exampleDE": "Am Grund des ruhigen Dorfteichs gründelt ein großer Karpfen."
+  },
+  {
+    "front": "die Kröte",
+    "back": "ropucha",
+    "ipa": "rɔˈpuxa",
+    "example": "Wiosną wiele ropuch wędruje do swoich wód godowych.",
+    "exampleDE": "Im Frühjahr wandern viele Kröten zu ihren Laichgewässern."
+  },
+  {
+    "front": "der Salamander",
+    "back": "salamandra",
+    "ipa": "salaˈmandra",
+    "example": "Czarno-żółta salamandra plamista uwielbia wilgotne lasy liściaste.",
+    "exampleDE": "Der schwarz-gelbe Feuersalamander liebt feuchte Laubwälder."
+  },
+  {
+    "front": "die Kaulquappe",
+    "back": "kijanka",
+    "ipa": "kʲiˈjanka",
+    "example": "Z drobnych kijanek rozwijają się stopniowo młode żaby.",
+    "exampleDE": "Aus den winzigen Kaulquappen entwickeln sich nach und nach junge Frösche."
+  },
+  {
+    "front": "der Krebs",
+    "back": "rak",
+    "ipa": "rak",
+    "example": "Pod płaskim kamieniem w potoku ukrywa się rak rzeczny.",
+    "exampleDE": "Unter einem flachen Stein im Bach verbirgt sich ein Flusskrebs."
+  },
+  {
+    "front": "die Muschel",
+    "back": "muszla",
+    "ipa": "ˈmuʂla",
+    "example": "Na piaszczystej plaży dzieci zbierały puste muszle.",
+    "exampleDE": "Am Sandstrand sammelten die Kinder leere Muschelschalen."
+  },
+  {
+    "front": "der Marienkäfer",
+    "back": "biedronka",
+    "ipa": "bʲɛˈdrɔnka",
+    "example": "Czerwona biedronka z siedmioma czarnymi kropkami chodzi po źdźble.",
+    "exampleDE": "Ein roter Marienkäfer mit sieben schwarzen Punkten krabbelt am Halm."
+  },
+  {
+    "front": "die Libelle",
+    "back": "ważka",
+    "ipa": "ˈvaʂka",
+    "example": "Mieniąca się barwami ważka śmiga błyskawicznie nad powierzchnią wody.",
+    "exampleDE": "Eine schillernde Libelle schwirrt blitzschnell über die Wasseroberfläche."
+  },
+  {
+    "front": "die Hummel",
+    "back": "trzmiel",
+    "ipa": "tʂmʲɛl",
+    "example": "Gruby, puszysty trzmiel brzęczy pracowicie od kwiatka do kwiatka.",
+    "exampleDE": "Eine dicke, pelzige Hummel summt emsig von Blüte zu Blüte."
+  },
+  {
+    "front": "die Wespe",
+    "back": "osa",
+    "ipa": "ˈɔsa",
+    "example": "Słodkie jedzenie na świeżym powietrzu przyciąga późnym latem uciążliwe osy.",
+    "exampleDE": "Süße Speisen im Freien locken im Spätsommer lästige Wespen an."
+  },
+  {
+    "front": "die Heuschrecke",
+    "back": "konik polny",
+    "ipa": "ˈkɔɲik ˈpɔlnɨ",
+    "example": "Swoimi długimi tylnymi odnóżami zielony konik polny skacze daleko.",
+    "exampleDE": "Mit ihren langen Hinterbeinen springt die grüne Heuschrecke weit."
+  },
+  {
+    "front": "die Eidechse",
+    "back": "jaszczurka",
+    "ipa": "jaˈʂt͡ʂurka",
+    "example": "Na nagrzanym słońcem kamiennym murze wygrzewa się mała jaszczurka.",
+    "exampleDE": "Auf der sonnenwarmen Steinmauer wärmt sich eine kleine Eidechse."
+  },
+  {
+    "front": "die Schnecke",
+    "back": "ślimak",
+    "ipa": "ˈɕlimak",
+    "example": "Po ciepłym deszczu ślimak winniczek pełznie przez ścieżkę.",
+    "exampleDE": "Nach dem warmen Regen kriecht eine Weinbergschnecke über den Weg."
+  },
+  {
+    "front": "die Wettervorhersage",
+    "back": "prognoza pogody",
+    "ipa": "prɔˈɡnɔza pɔˈɡɔdɨ",
+    "example": "Według prognozy pogody w weekend ma być słonecznie i łagodnie.",
+    "exampleDE": "Laut Wettervorhersage soll es am Wochenende sonnig und mild werden."
+  },
+  {
+    "front": "der Regenschauer",
+    "back": "przelotny deszcz",
+    "ipa": "pʂɛˈlɔtnɨ dɛʂt͡ʂ",
+    "example": "Krótki przelotny deszcz zaskoczył spacerowiczów w parku miejskim.",
+    "exampleDE": "Ein kurzer Regenschauer überraschte die Spaziergänger im Stadtpark."
+  },
+  {
+    "front": "der Nieselregen",
+    "back": "mżawka",
+    "ipa": "ˈmʐafka",
+    "example": "Gęsta, drobna mżawka ogranicza widoczność przed południem.",
+    "exampleDE": "Dichter, feiner Nieselregen trübt die Sicht am Vormittag."
+  },
+  {
+    "front": "das Gewitter",
+    "back": "burza",
+    "ipa": "ˈbuʐa",
+    "example": "Na horyzoncie zbierają się ciemne chmury zwiastujące burzę.",
+    "exampleDE": "Am Horizont ziehen dunkle Wolken auf, die ein Gewitter ankündigen."
+  },
+  {
+    "front": "der Donnerschlag",
+    "back": "grzmot",
+    "ipa": "ɡʐmɔt",
+    "example": "Głośny grzmot sprawił, że zatrzęsły się szyby w oknach domu.",
+    "exampleDE": "Ein lauter Donnerschlag ließ die Fensterscheiben im Haus erzittern."
+  },
+  {
+    "front": "der Blitzschlag",
+    "back": "uderzenie pioruna",
+    "ipa": "udɛˈʐɛɲɛ pʲɔˈruna",
+    "example": "Uderzenie pioruna trafiło w stare drzewo na skraju pola.",
+    "exampleDE": "Ein Blitzschlag traf den alten Baum am Feldrand."
+  },
+  {
+    "front": "die Windböe",
+    "back": "poryw wiatru",
+    "ipa": "ˈpɔrɨf ˈvʲatru",
+    "example": "Gwałtowny poryw wiatru poderwał w powietrze suche jesienne liście.",
+    "exampleDE": "Eine heftige Windböe wirbelte trockenes Herbstlaub durch die Luft."
+  },
+  {
+    "front": "der Nebel",
+    "back": "mgła",
+    "ipa": "mɡwa",
+    "example": "Gęsta poranna mgła leży niczym koc nad doliną rzeki.",
+    "exampleDE": "Dichter Frühnebel liegt wie eine Decke über dem Flusstal."
+  },
+  {
+    "front": "der Frost",
+    "back": "przymrozek",
+    "ipa": "pʂɨˈmrɔzɛk",
+    "example": "W nocy pojawił się przymrozek, który zabarwił łąkę na srebrno.",
+    "exampleDE": "In der Nacht gab es Bodenfrost, der die Wiese silbern färbte."
+  },
+  {
+    "front": "das Glatteis",
+    "back": "gołoledź",
+    "ipa": "ɡɔˈwɔlɛt͡ɕ",
+    "example": "Ostrożnie na drogach, przy gołoledzi wydłuża się droga hamowania.",
+    "exampleDE": "Vorsicht auf den Straßen, bei Glatteis verlängert sich der Bremsweg."
+  },
+  {
+    "front": "die Schneeflocke",
+    "back": "płatek śniegu",
+    "ipa": "ˈpwatɛk ˈɕɲɛɡu",
+    "example": "Bezszelestnie opadają z nieba grube białe płatki śniegu.",
+    "exampleDE": "Lautlos schweben dicke weiße Schneeflocken vom Himmel herab."
+  },
+  {
+    "front": "die Hitzewelle",
+    "back": "fala upałów",
+    "ipa": "ˈfala uˈpawuf",
+    "example": "Podczas letniej fali upałów nocą prawie się nie ochładza.",
+    "exampleDE": "Während der sommerlichen Hitzewelle kühlt es auch nachts kaum ab."
+  },
+  {
+    "front": "der Sonnenschein",
+    "back": "promienie słońca",
+    "ipa": "prɔˈmʲɛɲɛ ˈswɔɲt͡sa",
+    "example": "Ciepłe promienie słońca przyciągają wielu ludzi na basen na wolnym powietrzu.",
+    "exampleDE": "Warmer Sonnenschein lockt viele Menschen ins Freibad."
+  },
+  {
+    "front": "das Abendrot",
+    "back": "zorza wieczorna",
+    "ipa": "ˈzɔʐa vʲɛˈt͡ʂɔrna",
+    "example": "Ognista zorza wieczorna zwiastuje piękną pogodę na kolejny dzień.",
+    "exampleDE": "Ein feuriges Abendrot kündigt schönes Wetter für den nächsten Tag an."
+  },
+  {
+    "front": "die Dämmerung",
+    "back": "zmierzch",
+    "ipa": "zmʲɛʂx",
+    "example": "O zmierzchu uliczne latarnie zaczynają świecić.",
+    "exampleDE": "In der Abenddämmerung beginnen die Straßenlaternen zu leuchten."
+  },
+  {
+    "front": "die Mülltrennung",
+    "back": "segregacja śmieci",
+    "ipa": "sɛɡrɛˈɡat͡sja ˈɕmʲɛt͡ɕi",
+    "example": "Staranna segregacja śmieci ułatwia odzysk cennych surowców.",
+    "exampleDE": "Sorgfältige Mülltrennung erleichtert die Wiederverwertung wertvoller Rohstoffe."
+  },
+  {
+    "front": "der Plastikmüll",
+    "back": "odpady plastikowe",
+    "ipa": "ɔˈtpadɨ plastiˈkɔvɛ",
+    "example": "Dzięki opakowaniom wielokrotnego użytku można uniknąć zbędnych odpadów plastikowych.",
+    "exampleDE": "Durch Mehrwegverpackungen lässt sich unnötiger Plastikmüll vermeiden."
+  },
+  {
+    "front": "das Recycling",
+    "back": "recykling",
+    "ipa": "rɛˈt͡sɨklink",
+    "example": "Nowoczesne zakłady kierują zużyte szkło i papier do recyklingu.",
+    "exampleDE": "Moderne Anlagen führen Altglas und Papier dem Recycling zu."
+  },
+  {
+    "front": "der Umweltschutz",
+    "back": "ochrona środowiska",
+    "ipa": "ɔˈxrɔna ɕrɔdɔˈvʲiska",
+    "example": "Ochrona środowiska i zagrożonych siedlisk to zadanie dla wszystkich ludzi.",
+    "exampleDE": "Der Schutz bedrohter Lebensräume ist eine Aufgabe für alle Menschen."
+  },
+  {
+    "front": "die Nachhaltigkeit",
+    "back": "zrównoważony rozwój",
+    "ipa": "zruvnɔvaˈʐɔnɨ ˈrɔzvuj",
+    "example": "Zrównoważony rozwój oznacza zachowanie zasobów dla przyszłych pokoleń.",
+    "exampleDE": "Nachhaltigkeit bedeutet, Ressourcen für künftige Generationen zu bewahren."
+  },
+  {
+    "front": "die Mehrwegflasche",
+    "back": "butelka zwrotna",
+    "ipa": "buˈtɛlka ˈzvrɔtna",
+    "example": "Do wody mineralnej najchętniej używamy butelek zwrotnych wielokrotnego napełniania.",
+    "exampleDE": "Für Mineralwasser nutzen wir bevorzugt wiederbefüllbare Mehrwegflaschen."
+  },
+  {
+    "front": "der Energiesparer",
+    "back": "urządzenie energooszczędne",
+    "ipa": "uʐɔnˈd͡zɛɲɛ ɛnɛrɡɔɔˈʂt͡ʂɛndnɛ",
+    "example": "Nowoczesne lampy LED to prawdziwe urządzenia energooszczędne w gospodarstwie domowym.",
+    "exampleDE": "Moderne LED-Lampen sind wahre Energiesparer im Haushalt."
+  },
+  {
+    "front": "schonen",
+    "back": "oszczędzać",
+    "ipa": "ɔˈʂt͡ʂɛnd͡zat͡ɕ",
+    "example": "Powinniśmy oszczędzać nasze zasoby naturalne i zbiorniki wodne.",
+    "exampleDE": "Wir sollten unsere natürlichen Ressourcen und Gewässer schonen."
+  },
+  {
+    "front": "die Solarenergie",
+    "back": "energia słoneczna",
+    "ipa": "ɛˈnɛrɡʲa swɔˈnɛt͡ʂna",
+    "example": "Instalacja solarna na dachu wytwarza przyjazną dla środowiska energię słoneczną.",
+    "exampleDE": "Die Solaranlage auf dem Dach erzeugt umweltfreundlichen Strom."
+  },
+  {
+    "front": "die Windkraft",
+    "back": "energia wiatrowa",
+    "ipa": "ɛˈnɛrɡʲa vʲaˈtrɔva",
+    "example": "Turbiny wiatrowe wykorzystują energię wiatrową do wytwarzania prądu.",
+    "exampleDE": "Windkrafträder nutzen die Kraft des Windes zur Stromerzeugung."
+  },
+  {
+    "front": "das Wasserkraftwerk",
+    "back": "elektrownia wodna",
+    "ipa": "ɛlɛˈktrɔvɲa ˈvɔdna",
+    "example": "Elektrownia wodna na rzece niezawodnie produkuje czystą energię.",
+    "exampleDE": "Das Wasserkraftwerk am Fluss produziert zuverlässig saubere Energie."
+  },
+  {
+    "front": "der Stromverbrauch",
+    "back": "zużycie prądu",
+    "ipa": "zuˈʐɨt͡ɕɛ ˈprɔndu",
+    "example": "Urządzenia w trybie czuwania niepotrzebnie zwiększają zużycie prądu.",
+    "exampleDE": "Geräte im Standby-Modus erhöhen unnötig den Stromverbrauch."
+  },
+  {
+    "front": "die Wärmepumpe",
+    "back": "pompa ciepła",
+    "ipa": "ˈpɔmpa ˈt͡ɕɛpwa",
+    "example": "Nowoczesna pompa ciepła bardzo wydajnie ogrzewa dom mieszkalny.",
+    "exampleDE": "Eine moderne Wärmepumpe heizt das Wohnhaus sehr effizient."
+  },
+  {
+    "front": "der CO2-Ausstoß",
+    "back": "emisja CO2",
+    "ipa": "ɛˈmʲisja t͡sɔ2",
+    "example": "Pojazdy elektryczne przyczyniają się do obniżenia lokalnej emisji CO2.",
+    "exampleDE": "Elektrofahrzeuge tragen zur Senkung des lokalen CO2-Ausstoßes bei."
+  },
+  {
+    "front": "die Ressource",
+    "back": "zasób",
+    "ipa": "ˈzasup",
+    "example": "Czysta woda pitna jest najcenniejszym zasobem naturalnym.",
+    "exampleDE": "Sauberes Trinkwasser ist die kostbarste natürliche Ressource."
+  },
+  {
+    "front": "der Stundenplan",
+    "back": "plan lekcji",
+    "ipa": "plan ˈlɛkt͡sji",
+    "example": "Zgodnie z planem lekcji w poniedziałki mamy dwie godziny matematyki.",
+    "exampleDE": "Laut Stundenplan haben wir montags zwei Stunden Mathematik."
+  },
+  {
+    "front": "das Klassenzimmer",
+    "back": "sala lekcyjna",
+    "ipa": "ˈsala lɛˈkt͡sɨjna",
+    "example": "Uczniowie udekorowali swoją salę lekcyjną kolorowymi obrazkami.",
+    "exampleDE": "Die Schüler schmückten ihr Klassenzimmer mit bunten Bildern."
+  },
+  {
+    "front": "die Schultasche",
+    "back": "torba szkolna",
+    "ipa": "ˈtɔrba ˈʂkɔlna",
+    "example": "Starannie pakuje zeszyty i książki do torby szkolnej.",
+    "exampleDE": "Er packt seine Hefte und Bücher sorgfältig in die Schultasche."
+  },
+  {
+    "front": "das Federmäppchen",
+    "back": "piórnik",
+    "ipa": "ˈpʲurɲik",
+    "example": "W piórniku leżą kredki, pióro i gumka do ścierania.",
+    "exampleDE": "Im Federmäppchen liegen Buntstifte, Füller und ein Radiergummi."
+  },
+  {
+    "front": "die Klassenarbeit",
+    "back": "sprawdzian",
+    "ipa": "ˈspravd͡ʑan",
+    "example": "Uczyła się bardzo dużo do trudnego sprawdzianu z biologii.",
+    "exampleDE": "Für die schwere Klassenarbeit in Biologie hat sie viel gelernt."
+  },
+  {
+    "front": "das Schulzeugnis",
+    "back": "świadectwo szkolne",
+    "ipa": "ɕvʲaˈdɛt͡stvɔ ˈʂkɔlnɛ",
+    "example": "W ostatni dzień szkoły przed feriami wszyscy otrzymują swoje świadectwo szkolne.",
+    "exampleDE": "Am letzten Schultag vor den Ferien erhalten alle ihr Zeugnis."
+  },
+  {
+    "front": "die Schulferien",
+    "back": "wakacje szkolne",
+    "ipa": "vaˈkat͡sjɛ ˈʂkɔlnɛ",
+    "example": "Dzieci niesamowicie cieszą się na sześciotygodniowe wakacje szkolne.",
+    "exampleDE": "Die Kinder freuen sich riesig auf die sechswöchigen Sommerferien."
+  },
+  {
+    "front": "der Pausenhof",
+    "back": "boisko szkolne",
+    "ipa": "bɔˈiskɔ ˈʂkɔlnɛ",
+    "example": "Podczas długiej przerwy uczniowie bawią się na zewnątrz na boisku szkolnym.",
+    "exampleDE": "In der großen Pause spielen die Schüler draußen auf dem Pausenhof."
+  },
+  {
+    "front": "die Geometrie",
+    "back": "geometria",
+    "ipa": "ɡɛɔmɛˈtria",
+    "example": "Na lekcji geometrii rysujemy trójkąty za pomocą ekierki.",
+    "exampleDE": "Im Geometrieunterricht zeichnen wir Dreiecke mit dem Geodreieck."
+  },
+  {
+    "front": "die Grammatik",
+    "back": "gramatyka",
+    "ipa": "ɡramaˈtɨka",
+    "example": "Regularne ćwiczenie pomaga przyswoić zasady gramatyki.",
+    "exampleDE": "Regelmäßiges Üben hilft, die Regeln der Grammatik zu verinnerlichen."
+  },
+  {
+    "front": "der Fremdsprachenunterricht",
+    "back": "lekcja języka obcego",
+    "ipa": "ˈlɛkt͡sja jɛw̃ˈzɨka ɔˈpt͡sɛɡɔ",
+    "example": "Na lekcji języka obcego ćwiczymy swobodne mówienie w dialogach.",
+    "exampleDE": "Im Fremdsprachenunterricht üben wir das freie Sprechen in Dialogen."
+  },
+  {
+    "front": "das Experiment",
+    "back": "eksperyment",
+    "ipa": "ɛkspɛˈrɨmɛnt",
+    "example": "W laboratorium chemicznym klasa przeprowadza pasjonujący eksperyment.",
+    "exampleDE": "Im Chemielabor führt die Klasse ein spannendes Experiment durch."
+  },
+  {
+    "front": "das Referat",
+    "back": "referat",
+    "ipa": "rɛˈfɛrat",
+    "example": "Wygłasza swobodny referat na temat ochrony zagrożonych wielorybów.",
+    "exampleDE": "Er hält ein freies Referat über den Schutz bedrohter Wale."
+  },
+  {
+    "front": "die Hausaufgabe",
+    "back": "zadanie domowe",
+    "ipa": "zaˈdaɲɛ dɔˈmɔvɛ",
+    "example": "Po obiedzie odrabia w skupieniu swoje zadanie domowe.",
+    "exampleDE": "Nach dem Mittagessen erledigt sie konzentriert ihre Hausaufgaben."
+  },
+  {
+    "front": "die Nachhilfe",
+    "back": "korepetycje",
+    "ipa": "kɔrɛpɛˈtɨt͡sjɛ",
+    "example": "Dwa razy w tygodniu bierze korepetycje, aby poprawić swoje oceny.",
+    "exampleDE": "Zweimal wöchentlich nimmt er Nachhilfe, um seine Noten zu verbessern."
+  },
+  {
+    "front": "der Hörsaal",
+    "back": "sala wykładowa",
+    "ipa": "ˈsala vɨkwaˈdɔva",
+    "example": "Wielka sala wykładowa jest zapełniona do ostatniego miejsca.",
+    "exampleDE": "Der große Hörsaal ist bis auf den letzten Platz besetzt."
+  },
+  {
+    "front": "die Vorlesung",
+    "back": "wykład",
+    "ipa": "ˈvɨkwat",
+    "example": "Pani profesor prowadzi porywający wykład o współczesnej fizyce.",
+    "exampleDE": "Die Professorin hält eine fesselnde Vorlesung über moderne Physik."
+  },
+  {
+    "front": "das Seminar",
+    "back": "seminarium",
+    "ipa": "sɛmʲinaˈrium",
+    "example": "Na seminarium studenci dyskutują o aktualnych tekstach naukowych.",
+    "exampleDE": "Im Seminar diskutieren die Studierenden aktuelle wissenschaftliche Texte."
+  },
+  {
+    "front": "die Universitätsbibliothek",
+    "back": "biblioteka uniwersytecka",
+    "ipa": "bʲibliɔˈtɛka uɲivɛrsɨˈtɛt͡ska",
+    "example": "W bibliotece uniwersyteckiej panuje sprzyjająca nauce, skupiona cisza.",
+    "exampleDE": "In der Universitätsbibliothek herrscht konzentrierte Stille zum Lernen."
+  },
+  {
+    "front": "das Semester",
+    "back": "semestr",
+    "ipa": "ˈsɛmɛstr",
+    "example": "Semestr zimowy na większości uczelni rozpoczyna się w październiku.",
+    "exampleDE": "Das Wintersemester beginnt an den meisten Hochschulen im Oktober."
+  },
+  {
+    "front": "die Bachelorarbeit",
+    "back": "praca licencjacka",
+    "ipa": "ˈprat͡sa lit͡sɛˈnt͡sjat͡ska",
+    "example": "Obecnie pisze intensywnie swoją pracę licencjacką.",
+    "exampleDE": "Sie schreibt zurzeit intensiv an ihrer Abschlussarbeit im Bachelor."
+  },
+  {
+    "front": "das Stipendium",
+    "back": "stypendium",
+    "ipa": "stɨpɛˈndium",
+    "example": "Dzięki stypendium dla uzdolnionych może w pełni skupić się na studiach.",
+    "exampleDE": "Dank eines Begabtenstipendiums kann er sich voll auf das Studium konzentrieren."
+  },
+  {
+    "front": "der Campus",
+    "back": "kampus",
+    "ipa": "ˈkampus",
+    "example": "Na zielonym kampusie studenci spotykają się między zajęciami.",
+    "exampleDE": "Auf dem grünen Campus treffen sich Studierende zwischen den Kursen."
+  },
+  {
+    "front": "die Stellenausschreibung",
+    "back": "ogłoszenie o pracę",
+    "ipa": "ɔɡwɔˈʂɛɲɛ ɔ ˈprat͡sɛ",
+    "example": "W gazecie znalazł interesujące ogłoszenie o pracę.",
+    "exampleDE": "In der Zeitung fand er eine interessante Stellenausschreibung."
+  },
+  {
+    "front": "das Anschreiben",
+    "back": "list motywacyjny",
+    "ipa": "list mɔtɨvaˈt͡sɨjnɨ",
+    "example": "Przekonujący list motywacyjny wzbudza zainteresowanie pracodawcy.",
+    "exampleDE": "Ein aussagekräftiges Anschreiben weckt das Interesse des Arbeitgebers."
+  },
+  {
+    "front": "der Lebenslauf",
+    "back": "życiorys",
+    "ipa": "ʐɨˈt͡ɕɔrɨs",
+    "example": "Życiorys w układzie tabelarycznym wymienia wszystkie dotychczasowe etapy kariery.",
+    "exampleDE": "Der tabellarische Lebenslauf listet alle bisherigen Berufsstationen auf."
+  },
+  {
+    "front": "das Vorstellungsgespräch",
+    "back": "rozmowa kwalifikacyjna",
+    "ipa": "rɔˈzmɔva kvalifʲikaˈt͡sɨjna",
+    "example": "Na rozmowę kwalifikacyjną ubiera się profesjonalnie i schludnie.",
+    "exampleDE": "Zum Vorstellungsgespräch kleidet er sich professionell und ordentlich."
+  },
+  {
+    "front": "die Berufserfahrung",
+    "back": "doświadczenie zawodowe",
+    "ipa": "dɔɕvʲaˈtt͡ʂɛɲɛ zavɔˈdɔvɛ",
+    "example": "Na to odpowiedzialne stanowisko wymagane jest wieloletnie doświadczenie zawodowe.",
+    "exampleDE": "Für diese verantwortungsvolle Position ist mehrjährige Berufserfahrung erforderlich."
+  },
+  {
+    "front": "die Qualifikation",
+    "back": "kwalifikacje",
+    "ipa": "kvalifʲiˈkat͡sjɛ",
+    "example": "Jej kwalifikacje zawodowe pasują dokładnie do wymaganego profilu.",
+    "exampleDE": "Ihre fachliche Qualifikation passt genau zum geforderten Profil."
+  },
+  {
+    "front": "das Arbeitszeugnis",
+    "back": "świadectwo pracy",
+    "ipa": "ɕvʲaˈdɛt͡stvɔ ˈprat͡sɨ",
+    "example": "Pozytywne świadectwo pracy ułatwia zmianę zatrudnienia.",
+    "exampleDE": "Ein positives Arbeitszeugnis erleichtert den beruflichen Wechsel."
+  },
+  {
+    "front": "der Arbeitsvertrag",
+    "back": "umowa o pracę",
+    "ipa": "uˈmɔva ɔ ˈprat͡sɛ",
+    "example": "Po udanych negocjacjach podpisała umowę o pracę.",
+    "exampleDE": "Nach erfolgreichen Verhandlungen unterschrieb sie den Arbeitsvertrag."
+  },
+  {
+    "front": "die Probezeit",
+    "back": "okres próbny",
+    "ipa": "ˈɔkrɛs ˈprubnɨ",
+    "example": "Podczas sześciomiesięcznego okresu próbnego obie strony poznają się nawzajem.",
+    "exampleDE": "Während der sechsmonatigen Probezeit lernen sich beide Seiten kennen."
+  },
+  {
+    "front": "das Gehalt",
+    "back": "wynagrodzenie",
+    "ipa": "vɨnaɡrɔˈd͡zɛɲɛ",
+    "example": "Uczciwe wynagrodzenie jest przelewane punktualnie pod koniec każdego miesiąca.",
+    "exampleDE": "Ein faires Gehalt wird jeweils zum Monatsende pünktlich überwiesen."
+  },
+  {
+    "front": "die Gleitzeit",
+    "back": "elastyczny czas pracy",
+    "ipa": "ɛlaˈstɨt͡ʂnɨ t͡ʂas ˈprat͡sɨ",
+    "example": "Dzięki elastycznemu czasowi pracy może wygodnie rozplanować swoje godziny pracy.",
+    "exampleDE": "Dank flexibler Gleitzeit kann er seine Arbeitszeiten gut einteilen."
+  },
+  {
+    "front": "der Feierabend",
+    "back": "koniec pracy",
+    "ipa": "ˈkɔɲɛt͡s ˈprat͡sɨ",
+    "example": "Po ośmiu godzinach wytężonej pracy cieszy się z końca pracy.",
+    "exampleDE": "Nach acht Stunden konzentrierter Arbeit genießt er den Feierabend."
+  },
+  {
+    "front": "der Urlaubstag",
+    "back": "dzień urlopu",
+    "ipa": "d͡ʑɛɲ uˈrlɔpu",
+    "example": "Pracownicy zatrudnieni na pełen etat mają prawo do trzydziestu płatnych dni urlopu.",
+    "exampleDE": "Vollzeitbeschäftigte haben Anspruch auf dreißig bezahlte Urlaubstage."
+  },
+  {
+    "front": "die Überstunden",
+    "back": "nadgodziny",
+    "ipa": "nadɡɔˈd͡ʑinɨ",
+    "example": "Przepracowane nadgodziny można zrekompensować czasem wolnym.",
+    "exampleDE": "Geleistete Überstunden können durch Freizeit ausgeglichen werden."
+  },
+  {
+    "front": "die Kaffeepause",
+    "back": "przerwa na kawę",
+    "ipa": "ˈpʂɛrva na ˈkavɛ",
+    "example": "Podczas przerwy na kawę współpracownicy rozmawiają o weekendzie.",
+    "exampleDE": "In der Kaffeepause tauschen sich die Kollegen über das Wochenende aus."
+  },
+  {
+    "front": "die Besprechung",
+    "back": "narada",
+    "ipa": "naˈrada",
+    "example": "O godzinie dziesiątej w sali konferencyjnej odbywa się cotygodniowa narada.",
+    "exampleDE": "Um zehn Uhr findet die wöchentliche Besprechung im Konferenzraum statt."
+  },
+  {
+    "front": "die Tagesordnung",
+    "back": "porządek obrad",
+    "ipa": "pɔˈʐɔndɛk ˈɔbrat",
+    "example": "Punkty porządku obrad zostały przesłane wcześniej pocztą elektroniczną.",
+    "exampleDE": "Die Punkte der Tagesordnung wurden vorab per E-Mail verschickt."
+  },
+  {
+    "front": "das Protokoll",
+    "back": "protokół",
+    "ipa": "prɔˈtɔkuw",
+    "example": "On sporządza protokół i zapisuje wszystkie powzięte uchwały.",
+    "exampleDE": "Er schreibt das Protokoll und hält alle getroffenen Beschlüsse fest."
+  },
+  {
+    "front": "die Präsentation",
+    "back": "prezentacja",
+    "ipa": "prɛzɛˈntat͡sja",
+    "example": "Prezentacja ilustruje wyniki za pomocą przejrzystych wykresów.",
+    "exampleDE": "Die Präsentation veranschaulicht die Ergebnisse mit übersichtlichen Grafiken."
+  },
+  {
+    "front": "die Frist",
+    "back": "termin",
+    "ipa": "ˈtɛrmʲin",
+    "example": "Musimy koniecznie dotrzymać uzgodnionego terminu do końca miesiąca.",
+    "exampleDE": "Wir müssen die vereinbarte Frist bis Ende des Monats unbedingt einhalten."
+  },
+  {
+    "front": "die Teamarbeit",
+    "back": "praca zespołowa",
+    "ipa": "ˈprat͡sa zɛspɔˈwɔva",
+    "example": "Udana praca zespołowa wymaga otwartej wymiany zdań i wzajemnego wsparcia.",
+    "exampleDE": "Erfolgreiche Teamarbeit erfordert offenen Austausch und gegenseitige Unterstützung."
+  },
+  {
+    "front": "die Zusammenarbeit",
+    "back": "współpraca",
+    "ipa": "fspuˈwprat͡sa",
+    "example": "Współpraca między działami układa się bez zakłóceń.",
+    "exampleDE": "Die Zusammenarbeit zwischen den Abteilungen klappt reibungslos."
+  },
+  {
+    "front": "der Aktenordner",
+    "back": "segregator",
+    "ipa": "sɛɡrɛˈɡatɔr",
+    "example": "Ważne umowy są wpinane chronologicznie do segregatora.",
+    "exampleDE": "Wichtige Verträge werden chronologisch im Aktenordner abgeheftet."
+  },
+  {
+    "front": "der Locher",
+    "back": "dziurkacz",
+    "ipa": "ˈd͡ʑurkat͡ʂ",
+    "example": "Dziurkaczem robi dwa równe otwory w dokumencie.",
+    "exampleDE": "Mit dem Locher stanzt er zwei saubere Löcher in das Dokument."
+  },
+  {
+    "front": "das Heftgerät",
+    "back": "zszywacz",
+    "ipa": "ˈsʂɨvat͡ʂ",
+    "example": "Zszywaczem spina razem powiązane strony.",
+    "exampleDE": "Mit dem Heftgerät heftet sie die zusammengehörigen Seiten fest."
+  },
+  {
+    "front": "die Büroklammer",
+    "back": "spinacz biurowy",
+    "ipa": "ˈspʲinat͡ʂ bʲuˈrɔvɨ",
+    "example": "Kolorowy spinacz biurowy spina luźno rachunki.",
+    "exampleDE": "Eine bunte Büroklammer hält die Quittungen lose zusammen."
+  },
+  {
+    "front": "der Textmarker",
+    "back": "zakreślacz",
+    "ipa": "zaˈkrɛɕlat͡ʂ",
+    "example": "Ważne fragmenty tekstu zaznacza żółtym zakreślaczem.",
+    "exampleDE": "Wichtige Textstellen hebt er mit einem gelben Textmarker hervor."
+  },
+  {
+    "front": "der Notizblock",
+    "back": "notatnik",
+    "ipa": "nɔˈtatɲik",
+    "example": "Obok telefonu leży zawsze mały notatnik na notatki.",
+    "exampleDE": "Neben dem Telefon liegt immer ein kleiner Notizblock für Notizen."
+  },
+  {
+    "front": "der Reißwolf",
+    "back": "niszczarka do dokumentów",
+    "ipa": "ɲiˈʂt͡ʂarka dɔ dɔkuˈmɛntuf",
+    "example": "Poufne dokumenty są niszczone w niszczarce do dokumentów przed wyrzuceniem.",
+    "exampleDE": "Vertrauliche Papiere werden vor dem Entsorgen im Reißwolf zerkleinert."
+  },
+  {
+    "front": "der Drehstuhl",
+    "back": "krzesło obrotowe",
+    "ipa": "ˈkʂɛswɔ ɔbrɔˈtɔvɛ",
+    "example": "Ergonomiczne krzesło obrotowe sprzyja zdrowemu siedzeniu na stanowisku pracy.",
+    "exampleDE": "Ein ergonomischer Drehstuhl unterstützt gesundes Sitzen am Arbeitsplatz."
+  },
+  {
+    "front": "der Bildschirm",
+    "back": "ekran",
+    "ipa": "ˈɛkran",
+    "example": "Ekran o wysokiej rozdzielczości wyświetla napisy z idealną ostrością.",
+    "exampleDE": "Der hochauflösende Bildschirm zeigt Schriften gestochen scharf an."
+  },
+  {
+    "front": "die Tastatur",
+    "back": "klawiatura",
+    "ipa": "klavʲaˈtura",
+    "example": "Pisze płynnie i bezbłędnie dziesięcioma palcami na klawiaturze.",
+    "exampleDE": "Er tippt flüssig und fehlerfrei mit zehn Fingern auf der Tastatur."
+  },
+  {
+    "front": "die Computermaus",
+    "back": "mysz komputerowa",
+    "ipa": "mɨʂ kɔmputɛˈrɔva",
+    "example": "Jednym kliknięciem myszy komputerowej wybiera pozycję z menu.",
+    "exampleDE": "Mit einem Klick auf die Computermaus wählt er den Menüpunkt aus."
+  },
+  {
+    "front": "der Drucker",
+    "back": "drukarka",
+    "ipa": "druˈkarka",
+    "example": "Drukarka sieciowa drukuje dwustronnie z dużą prędkością.",
+    "exampleDE": "Der Netzwerkdrucker druckt doppelseitig in hoher Geschwindigkeit."
+  },
+  {
+    "front": "das Ladekabel",
+    "back": "kabel do ładowania",
+    "ipa": "ˈkabɛl dɔ wadɔˈvaɲa",
+    "example": "Nie zapomnij spakować kabla do ładowania laptopa.",
+    "exampleDE": "Vergiss nicht, das Ladekabel für das Notebook einzupacken."
+  },
+  {
+    "front": "der USB-Stick",
+    "back": "pamięć USB",
+    "ipa": "ˈpamʲɛɲt͡ɕ usp",
+    "example": "Zapisuje kopię bezpieczeństwa na poręcznej pamięci USB.",
+    "exampleDE": "Sie speichert die Sicherungskopie auf einem handlichen USB-Stick."
+  },
+  {
+    "front": "die Festplatte",
+    "back": "dysk twardy",
+    "ipa": "dɨsk ˈtvardɨ",
+    "example": "Zewnętrzny dysk twardy oferuje mnóstwo miejsca na zdjęcia.",
+    "exampleDE": "Die externe Festplatte bietet reichlich Speicherplatz für Fotos."
+  },
+  {
+    "front": "der Webbrowser",
+    "back": "przeglądarka internetowa",
+    "ipa": "pʂɛɡlɔnˈdarka intɛrnɛˈtɔva",
+    "example": "Proszę otworzyć tę stronę w aktualnej przeglądarce internetowej.",
+    "exampleDE": "Öffnen Sie die Webseite bitte in einem aktuellen Webbrowser."
+  },
+  {
+    "front": "das Benutzerkonto",
+    "back": "konto użytkownika",
+    "ipa": "ˈkɔntɔ uʐɨtkɔˈvɲika",
+    "example": "Proszę zalogować się za pomocą swojego osobistego konta użytkownika.",
+    "exampleDE": "Melden Sie sich mit Ihrem persönlichen Benutzerkonto an."
+  },
+  {
+    "front": "das sichere Passwort",
+    "back": "bezpieczne hasło",
+    "ipa": "bɛˈzpʲɛt͡ʂnɛ ˈxaswɔ",
+    "example": "Bezpieczne hasło zawiera litery, cyfry oraz znaki specjalne.",
+    "exampleDE": "Ein sicheres Passwort enthält Buchstaben, Ziffern und Sonderzeichen."
+  },
+  {
+    "front": "die Suchmaschine",
+    "back": "wyszukiwarka",
+    "ipa": "vɨʂukʲiˈvarka",
+    "example": "Wpisz szukane słowa do wyszukiwarki.",
+    "exampleDE": "Geben Sie die Suchbegriffe in die Suchmaschine ein."
+  },
+  {
+    "front": "die E-Mail-Adresse",
+    "back": "adres e-mail",
+    "ipa": "ˈadrɛs ɛˈmail",
+    "example": "Proszę wpisać swój ważny adres e-mail do formularza.",
+    "exampleDE": "Bitte tragen Sie Ihre gültige E-Mail-Adresse in das Formular ein."
+  },
+  {
+    "front": "der Anhang",
+    "back": "załącznik",
+    "ipa": "zaˈwɔnt͡ʂɲik",
+    "example": "W załączniku do wiadomości znajdą Państwo dokument w formacie PDF.",
+    "exampleDE": "Im Anhang der Nachricht finden Sie das Dokument im PDF-Format."
+  },
+  {
+    "front": "die Datensicherung",
+    "back": "kopia zapasowa",
+    "ipa": "ˈkɔpʲa zapaˈsɔva",
+    "example": "Automatyczna kopia zapasowa chroni przed niespodziewaną utratą danych.",
+    "exampleDE": "Eine automatische Datensicherung schützt vor überraschendem Datenverlust."
+  },
+  {
+    "front": "das Update",
+    "back": "aktualizacja",
+    "ipa": "aktualiˈzat͡sja",
+    "example": "Instaluj regularne aktualizacje oprogramowania, aby zamknąć luki bezpieczeństwa.",
+    "exampleDE": "Installieren Sie regelmäßige Software-Updates zur Schließung von Sicherheitslücken."
+  },
+  {
+    "front": "der Touchscreen",
+    "back": "ekran dotykowy",
+    "ipa": "ˈɛkran dɔtɨˈkɔvɨ",
+    "example": "Czuły na dotyk ekran dotykowy reaguje natychmiast na dotknięcie palcem.",
+    "exampleDE": "Der berührungsempfindliche Touchscreen reagiert sofort auf Fingertippen."
+  },
+  {
+    "front": "die Sprachnachricht",
+    "back": "wiadomość głosowa",
+    "ipa": "vʲaˈdɔmɔɕt͡ɕ ɡwɔˈsɔva",
+    "example": "Zamiast długo pisać, wysłał jej krótką wiadomość głosową.",
+    "exampleDE": "Statt lange zu tippen, schickte er ihr eine kurze Sprachnachricht."
+  },
+  {
+    "front": "die Benachrichtigung",
+    "back": "powiadomienie",
+    "ipa": "pɔvʲadɔˈmʲɛɲɛ",
+    "example": "Na zablokowanym ekranie pojawiło się nowe powiadomienie.",
+    "exampleDE": "Auf dem Sperrbildschirm erschien eine neue Benachrichtigung."
+  }
+]
