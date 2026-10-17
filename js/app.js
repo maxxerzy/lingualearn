@@ -20,6 +20,7 @@ import { reinitLeague } from '../core/league.js';
 import { reinitQuests } from '../core/quests.js';
 import { getGame } from '../core/gamification.js';
 import { initDictionary, renderDictionary } from '../ui/dictionary.js';
+import { initDialogue, renderDialogOverview } from '../ui/dialogue.js';
 import { initOnboarding, maybeShowOnboarding } from '../ui/onboarding.js';
 import { reinitErrorLog } from '../core/errorLog.js';
 import { reinitGold, reinitThemeBadges } from '../core/session.js';
@@ -87,6 +88,7 @@ function showApp() {
     initStrokeOrderModal();
     initArena(activateView);
     initDictionary(activateView);
+    initDialogue(activateView);
     initOnboarding();
     initRewards();
     setupModeTabs();
@@ -118,6 +120,9 @@ function showApp() {
           const q = document.getElementById('dictSearch');
           if (q) q.value = '';
           renderDictionary();
+        }
+        if (item.dataset.action === 'dialog') {
+          renderDialogOverview();
         }
         dropdown.hidden = true;
         syncChip();

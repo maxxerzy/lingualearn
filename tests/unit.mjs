@@ -455,6 +455,53 @@ console.log('\n── Speicher-Adapter (core/storage.js) ──');
   check('storage.estimate liefert Backend und Zahlen', typeof est.backend === 'string' && est.usageBytes >= 0 && est.quotaBytes > 0);
 }
 
+// ── 8) Interaktive Alltagsdialoge (core/dialogues.js & js/data/dialogues.js) ──
+console.log('\n── Alltagsdialoge (core/dialogues.js & js/data/dialogues.js) ──');
+{
+  const { DIALOGUES } = await import('../js/data/dialogues.js');
+  const dia = await import('../core/dialogues.js');
+
+  const langs = Object.keys(DIALOGUES);
+  check('Dialoge für mindestens 5 Kernsprachen definiert', langs.length >= 5, `Gefunden: ${langs.join(', ')}`);
+
+  let allScenariosValid = true;
+  let totalTurns = 0;
+
+  for (const [lang, scenarios] of Object.entries(DIALOGUES)) {
+    if (!Array.isArray(scenarios) || scenarios.length === 0) allScenariosValid = false;
+    for (const sc of scenarios) {
+      if (!sc.id || !sc.title || !sc.situation || !Array.isArray(sc.turns) || sc.turns.length === 0) {
+        allScenariosValid = false;
+      }
+      for (const t of sc.turns) {
+        totalTurns++;
+        if (!t.npc || !t.npcDe || !t.prompt || !t.expected || !Array.isArray(t.options)) {
+          allScenariosValid = false;
+        }
+        const correctOpts = t.options.filter(o => o.correct);
+        if (correctOpts.length !== 1) allScenariosValid = false;
+      }
+    }
+  }
+  check('Alle Dialog-Szenarien und Turns haben valide Daten & Optionen', allScenariosValid, `${totalTurns} Turns geprüft`);
+
+  dia.resetDialogues('unit');
+  eq('Zu Beginn keine Dialoge abgeschlossen', dia.isDialogueCompleted('da-cafe', 'unit'), false);
+
+  const firstRes = dia.recordDialogueCompletion('da-cafe', 'da', 100, 'unit');
+  eq('Erster Abschluss bringt 30 XP und isFirstTime=true', [firstRes.isFirstTime, firstRes.xpGained], [true, 30]);
+  eq('Dialog ist als abgeschlossen markiert', dia.isDialogueCompleted('da-cafe', 'unit'), true);
+
+  const secondRes = dia.recordDialogueCompletion('da-cafe', 'da', 100, 'unit');
+  eq('Wiederholter Abschluss bringt 10 XP und isFirstTime=false', [secondRes.isFirstTime, secondRes.xpGained], [false, 10]);
+
+  const stats = dia.getDialogueStats('da', 3, 'unit');
+  eq('getDialogueStats liefert 1/3 abgeschlossen (33%)', [stats.total, stats.completed, stats.percent], [3, 1, 33]);
+
+  dia.resetDialogues('unit');
+  eq('resetDialogues leert den Speicher', dia.isDialogueCompleted('da-cafe', 'unit'), false);
+}
+
 const ms = Date.now() - t0;
 console.log(`\n${count} Prüfungen in ${ms} ms`);
 check('Laufzeit unter zwei Sekunden', ms < 2000, `${ms} ms`);
