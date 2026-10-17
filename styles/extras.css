@@ -431,6 +431,44 @@
   text-transform: uppercase;
   color: var(--gray);
 }
+.dialog-category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 16px 0;
+}
+.dialog-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  background: var(--surface);
+  border: 1.5px solid var(--light-gray);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.dialog-filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.dialog-filter-btn--active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff !important;
+}
+.dialog-empty-state {
+  text-align: center;
+  padding: 36px 16px;
+  color: var(--gray);
+  font-size: 0.95rem;
+  background: var(--surface);
+  border-radius: 14px;
+  border: 1.5px dashed var(--light-gray);
+}
 .dialog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -627,9 +665,14 @@
   margin-top: 6px;
   align-items: center;
 }
-.chat-audio-btn {
+.chat-audio-btn, .chat-audio-slow-btn {
   padding: 3px 8px;
   font-size: 0.8rem;
+}
+.chat-audio-slow-btn {
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--primary);
+  border-color: color-mix(in srgb, var(--primary) 30%, transparent);
 }
 .chat-trans-toggle {
   background: none;
@@ -817,9 +860,15 @@
   gap: 12px;
   align-items: center;
 }
-.stb-listen-btn {
+.stb-listen-btn, .stb-slow-btn {
   padding: 10px 16px;
   font-size: 0.9rem;
+}
+.stb-slow-btn {
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--primary);
+  border-color: color-mix(in srgb, var(--primary) 30%, transparent);
+  font-weight: 600;
 }
 .mic-record-btn {
   display: inline-flex;

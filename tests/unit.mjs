@@ -462,7 +462,13 @@ console.log('\n── Alltagsdialoge (core/dialogues.js & js/data/dialogues.js) 
   const dia = await import('../core/dialogues.js');
 
   const langs = Object.keys(DIALOGUES);
-  check('Dialoge für mindestens 5 Kernsprachen definiert', langs.length >= 5, `Gefunden: ${langs.join(', ')}`);
+  check('Dialoge für alle 10 Zielsprachen definiert', langs.length === 10, `Gefunden: ${langs.join(', ')}`);
+
+  const allScens = Object.values(DIALOGUES).flat();
+  check('Mindestens 45 Szenarien vorhanden (Schnitt ≥ 4 pro Sprache)', allScens.length >= 45, `Gesamt: ${allScens.length}`);
+  check('Alle Szenarien besitzen Kategorie food, travel oder health',
+    allScens.every(s => ['food', 'travel', 'health'].includes(s.category)),
+    `Kategorien: ${[...new Set(allScens.map(s => s.category))].join(', ')}`);
 
   let allScenariosValid = true;
   let totalTurns = 0;
@@ -495,11 +501,72 @@ console.log('\n── Alltagsdialoge (core/dialogues.js & js/data/dialogues.js) 
   const secondRes = dia.recordDialogueCompletion('da-cafe', 'da', 100, 'unit');
   eq('Wiederholter Abschluss bringt 10 XP und isFirstTime=false', [secondRes.isFirstTime, secondRes.xpGained], [false, 10]);
 
-  const stats = dia.getDialogueStats('da', 3, 'unit');
-  eq('getDialogueStats liefert 1/3 abgeschlossen (33%)', [stats.total, stats.completed, stats.percent], [3, 1, 33]);
+  const stats = dia.getDialogueStats('da', 5, 'unit');
+  eq('getDialogueStats liefert 1/5 abgeschlossen (20%)', [stats.total, stats.completed, stats.percent], [5, 1, 20]);
 
   dia.resetDialogues('unit');
   eq('resetDialogues leert den Speicher', dia.isDialogueCompleted('da-cafe', 'unit'), false);
+}
+
+// ── 9) Universal Anki & Delimited Deck Importer (utils/ankiImport.js) ──
+console.log('\n── Anki & Deck-Import (utils/ankiImport.js) ──');
+{
+  const anki = await import('../utils/ankiImport.js');
+
+  // 9a: stripHtml
+  eq('stripHtml entfernt Tags und HTML-Entities',
+    anki.stripHtml('<div><b>Hallo</b>&nbsp;<i>Welt</i>!<br></div>'),
+    'Hallo Welt!');
+  eq('stripHtml bei leerem Text', anki.stripHtml(''), '');
+
+  // 9b: detectLanguageFromCards
+  eq('detectLanguage erkennt Arabisch',
+    anki.detectLanguageFromCards([{ front: 'Buch', back: 'كِتَابٌ' }]), 'ar');
+  eq('detectLanguage erkennt Chinesisch',
+    anki.detectLanguageFromCards([{ front: 'Tee', back: '茶' }]), 'zh');
+  eq('detectLanguage erkennt Japanisch',
+    anki.detectLanguageFromCards([{ front: 'Katze', back: 'ねこ' }]), 'ja');
+  eq('detectLanguage erkennt Russisch',
+    anki.detectLanguageFromCards([{ front: 'Wasser', back: 'вода' }]), 'ru');
+  eq('detectLanguage erkennt Griechisch',
+    anki.detectLanguageFromCards([{ front: 'Sonne', back: 'ήλιος' }]), 'el');
+  eq('detectLanguage erkennt Spanisch',
+    anki.detectLanguageFromCards([{ front: 'Kind', back: 'niño' }]), 'es');
+  eq('detectLanguage erkennt Dänisch',
+    anki.detectLanguageFromCards([{ front: 'Insel', back: 'ø' }]), 'da');
+  eq('detectLanguage erkennt Portugiesisch',
+    anki.detectLanguageFromCards([{ front: 'Herz', back: 'coração' }]), 'pt');
+
+  // 9c: parseDelimitedText (TSV)
+  const tsvInput = `# Anki Export TSV
+Haus\thus\tDet er et smukt hus.
+Hund\thund
+Katze\tkat\tkattens mad`;
+  const tsvDeck = anki.parseDelimitedText(tsvInput, 'Dänisch Test');
+  check('parseDelimitedText erkennt TSV-Format', !!tsvDeck && tsvDeck.cards.length === 3);
+  eq('TSV-Deckname und Sprache', [tsvDeck?.name, tsvDeck?.language], ['Dänisch Test', 'da']);
+  eq('TSV-Kartenfelder korrekt extrahiert', tsvDeck?.cards[0], {
+    front: 'Haus',
+    back: 'hus',
+    example: 'Det er et smukt hus.'
+  });
+
+  // 9d: parseDelimitedText (Semikolon-CSV)
+  const csvInput = `Himmel;cielo
+Meer;mar
+Sonne;sol`;
+  const csvDeck = anki.parseDelimitedText(csvInput, 'Spanisch CSV');
+  check('parseDelimitedText erkennt Semikolon-CSV', !!csvDeck && csvDeck.cards.length === 3);
+  eq('CSV-Sprache Spanisch erkannt', csvDeck?.language, 'es');
+
+  // 9e: extractAnkiFieldsFromBinary
+  // Simuliere SQLite-Notizen mit ASCII 0x1F Separator
+  const mockAnkiData = 'header\u001fignored\u001fApfel\u001fæble\u001fBrot\u001fbrød\u001ftrailer';
+  const enc = new TextEncoder();
+  const ankiCards = anki.extractAnkiFieldsFromBinary(enc.encode(mockAnkiData).buffer);
+  check('extractAnkiFieldsFromBinary extrahiert \\x1f Felder', ankiCards.length >= 2);
+  check('extractAnkiFieldsFromBinary findet Apfel/æble',
+    ankiCards.some(c => c.front === 'Apfel' && c.back === 'æble'));
 }
 
 const ms = Date.now() - t0;
