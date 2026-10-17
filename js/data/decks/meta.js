@@ -9,4 +9,6 @@ export const deckMeta = [
   { id: 'basic-zh', name: 'Chinesisch (Mandarin)', language: 'zh', count: 1500, bytes: 313176 },
   { id: 'basic-pt', name: 'Portugiesisch', language: 'pt', count: 1500, bytes: 352971 },
   { id: 'basic-ar', name: 'Arabisch (Hocharabisch)', language: 'ar', count: 1500, bytes: 468218 }
+,
+  { id: 'basic-pl', name: 'Polnisch', language: 'pl', count: 1500, bytes: 361166 }
 ];

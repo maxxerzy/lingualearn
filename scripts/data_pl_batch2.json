@@ -1,0 +1,1752 @@
+[
+  {
+    "front": "Stern",
+    "back": "gwiazda",
+    "ipa": "ˈɡvʲazda",
+    "example": "Nocą na niebie widać wiele gwiazd.",
+    "exampleDE": "Nachts sind am Himmel viele Sterne zu sehen."
+  },
+  {
+    "front": "Himmel",
+    "back": "niebo",
+    "ipa": "ˈɲɛbɔ",
+    "example": "Niebo jest dziś błękitne bez ani jednej chmury.",
+    "exampleDE": "Der Himmel ist heute blau ohne eine einzige Wolke."
+  },
+  {
+    "front": "Wolke",
+    "back": "chmura",
+    "ipa": "ˈxmura",
+    "example": "Białe chmury płyną po błękitnym niebie.",
+    "exampleDE": "Weiße Wolken ziehen über den blauen Himmel."
+  },
+  {
+    "front": "Erde",
+    "back": "ziemia",
+    "ipa": "ˈʑɛmʲa",
+    "example": "Ziemia jest mokra po ulewnym deszczu.",
+    "exampleDE": "Die Erde ist nach dem starken Regen nass."
+  },
+  {
+    "front": "Stein",
+    "back": "kamień",
+    "ipa": "ˈkamʲɛɲ",
+    "example": "Dzieci rzucają kamienie do spokojnego jeziora.",
+    "exampleDE": "Die Kinder werfen Steine in den stillen See."
+  },
+  {
+    "front": "Natur",
+    "back": "natura",
+    "ipa": "naˈtura",
+    "example": "Chętnie spaceruję na łonie natury.",
+    "exampleDE": "Ich gehe gern in der Natur spazieren."
+  },
+  {
+    "front": "Ozean",
+    "back": "ocean",
+    "ipa": "ɔˈt͡sɛan",
+    "example": "Ocean kryje w sobie wiele tajemnic.",
+    "exampleDE": "Der Ozean verbirgt viele Geheimnisse."
+  },
+  {
+    "front": "Wüste",
+    "back": "pustynia",
+    "ipa": "puˈstɨɲa",
+    "example": "Na pustyni jest bardzo mało wody.",
+    "exampleDE": "In der Wüste gibt es sehr wenig Wasser."
+  },
+  {
+    "front": "Dschungel",
+    "back": "dżungla",
+    "ipa": "ˈd͡ʐunɡla",
+    "example": "W dżungli żyje wiele zwierząt.",
+    "exampleDE": "Im Dschungel leben viele Tiere."
+  },
+  {
+    "front": "Küste",
+    "back": "wybrzeże",
+    "ipa": "vɨˈbʐɛʐɛ",
+    "example": "Odpoczywaliśmy na wybrzeżu morza.",
+    "exampleDE": "Wir erholten uns an der Küste des Meeres."
+  },
+  {
+    "front": "Gebirge",
+    "back": "góry",
+    "ipa": "ˈɡurɨ",
+    "example": "Latem wyjeżdżamy w góry.",
+    "exampleDE": "Im Sommer fahren wir ins Gebirge."
+  },
+  {
+    "front": "Tal",
+    "back": "dolina",
+    "ipa": "dɔˈlina",
+    "example": "W dolinie płynęła rzeka.",
+    "exampleDE": "Im Tal floss ein Fluss."
+  },
+  {
+    "front": "Höhle",
+    "back": "jaskinia",
+    "ipa": "jaˈskʲiɲa",
+    "example": "W jaskini było ciemno i zimno.",
+    "exampleDE": "In der Höhle war es dunkel und kalt."
+  },
+  {
+    "front": "See (Gewässer)",
+    "back": "jezioro",
+    "ipa": "jɛˈʑɔrɔ",
+    "example": "Dzieci kąpały się w jeziorze.",
+    "exampleDE": "Die Kinder badeten im See."
+  },
+  {
+    "front": "Landschaft",
+    "back": "krajobraz",
+    "ipa": "kraˈjɔbras",
+    "example": "Z okna rozciągał się piękny krajobraz.",
+    "exampleDE": "Vom Fenster aus bot sich eine schöne Landschaft."
+  },
+  {
+    "front": "Sand",
+    "back": "piasek",
+    "ipa": "ˈpʲasɛk",
+    "example": "Dzieci bawiły się w piasku.",
+    "exampleDE": "Die Kinder spielten im Sand."
+  },
+  {
+    "front": "Fels",
+    "back": "skała",
+    "ipa": "ˈskawa",
+    "example": "Statek rozbił się o skałę.",
+    "exampleDE": "Das Schiff zerschellte an dem Felsen."
+  },
+  {
+    "front": "Ast",
+    "back": "gałąź",
+    "ipa": "ˈɡawɔw̃ɕ",
+    "example": "Ptak usiadł na gałęzi.",
+    "exampleDE": "Der Vogel setzte sich auf den Ast."
+  },
+  {
+    "front": "Wurzel",
+    "back": "korzeń",
+    "ipa": "ˈkɔʐɛɲ",
+    "example": "Korzeń drzewa sięga głęboko w ziemię.",
+    "exampleDE": "Die Wurzel des Baumes reicht tief in die Erde."
+  },
+  {
+    "front": "Blatt",
+    "back": "liść",
+    "ipa": "liɕt͡ɕ",
+    "example": "Jesienią liść spada z drzewa.",
+    "exampleDE": "Im Herbst fällt das Blatt vom Baum."
+  },
+  {
+    "front": "Regen",
+    "back": "deszcz",
+    "ipa": "dɛʂt͡ʂ",
+    "example": "Deszcz pada przez cały poranek bez przerwy.",
+    "exampleDE": "Der Regen fällt den ganzen Morgen ohne Unterbrechung."
+  },
+  {
+    "front": "Schnee",
+    "back": "śnieg",
+    "ipa": "ɕɲɛk",
+    "example": "Pierwszy śnieg spadł na początku listopada.",
+    "exampleDE": "Der erste Schnee fiel Anfang November."
+  },
+  {
+    "front": "Wind",
+    "back": "wiatr",
+    "ipa": "vʲatr",
+    "example": "Silny wiatr zrywał liście z drzew.",
+    "exampleDE": "Ein starker Wind riss die Blätter von den Bäumen."
+  },
+  {
+    "front": "Gewitter",
+    "back": "burza",
+    "ipa": "ˈbuʐa",
+    "example": "W nocy nad miastem przeszła gwałtowna burza.",
+    "exampleDE": "In der Nacht zog ein starkes Gewitter über die Stadt."
+  },
+  {
+    "front": "Nebel",
+    "back": "mgła",
+    "ipa": "mɡwa",
+    "example": "Rano nad rzeką unosiła się gęsta mgła.",
+    "exampleDE": "Am Morgen lag dichter Nebel über dem Fluss."
+  },
+  {
+    "front": "Frost",
+    "back": "mróz",
+    "ipa": "mrus",
+    "example": "Na noc zapowiadany jest silny mróz.",
+    "exampleDE": "Für die Nacht ist starker Frost angesagt."
+  },
+  {
+    "front": "Hitze",
+    "back": "upał",
+    "ipa": "ˈupaw",
+    "example": "W lipcu w mieście panował straszny upał.",
+    "exampleDE": "Im Juli herrschte in der Stadt eine schreckliche Hitze."
+  },
+  {
+    "front": "Regenbogen",
+    "back": "tęcza",
+    "ipa": "ˈtɛnt͡ʂa",
+    "example": "Po deszczu nad polem pojawiła się tęcza.",
+    "exampleDE": "Nach dem Regen erschien ein Regenbogen über dem Feld."
+  },
+  {
+    "front": "Temperatur",
+    "back": "temperatura",
+    "ipa": "tɛmpɛraˈtura",
+    "example": "Dzisiaj temperatura spada poniżej zera.",
+    "exampleDE": "Heute liegt die Temperatur unter null."
+  },
+  {
+    "front": "Klima",
+    "back": "klimat",
+    "ipa": "ˈklimat",
+    "example": "Klimat na południu jest ciepły.",
+    "exampleDE": "Das Klima im Süden ist warm."
+  },
+  {
+    "front": "Feuer",
+    "back": "ogień",
+    "ipa": "ˈɔɡʲɛɲ",
+    "example": "Ogień z ogniska ogrzewa nas w chłodną noc.",
+    "exampleDE": "Das Feuer des Lagerfeuers wärmt uns in der kalten Nacht."
+  },
+  {
+    "front": "Umwelt",
+    "back": "środowisko",
+    "ipa": "ɕrɔdɔˈvʲiskɔ",
+    "example": "Musimy chronić środowisko.",
+    "exampleDE": "Wir müssen die Umwelt schützen."
+  },
+  {
+    "front": "Energie",
+    "back": "energia",
+    "ipa": "ɛˈnɛrɡʲa",
+    "example": "Słońce daje nam energię.",
+    "exampleDE": "Die Sonne gibt uns Energie."
+  },
+  {
+    "front": "Erdbeben",
+    "back": "trzęsienie ziemi",
+    "ipa": "tʂɛw̃ˈɕɛɲɛ ˈʑɛmʲi",
+    "example": "Trzęsienie ziemi zniszczyło miasto.",
+    "exampleDE": "Das Erdbeben zerstörte die Stadt."
+  },
+  {
+    "front": "Vulkan",
+    "back": "wulkan",
+    "ipa": "ˈvulkan",
+    "example": "Wulkan zaczął wybuchać.",
+    "exampleDE": "Der Vulkan begann auszubrechen."
+  },
+  {
+    "front": "Wasserfall",
+    "back": "wodospad",
+    "ipa": "vɔˈdɔspat",
+    "example": "Wodospad szumiał w oddali.",
+    "exampleDE": "Der Wasserfall rauschte in der Ferne."
+  },
+  {
+    "front": "Verschmutzung",
+    "back": "zanieczyszczenie",
+    "ipa": "zaɲɛt͡ʂɨˈʂt͡ʂɛɲɛ",
+    "example": "Zanieczyszczenie powietrza jest ogromnym problemem.",
+    "exampleDE": "Die Verschmutzung der Luft ist ein großes Problem."
+  },
+  {
+    "front": "Überschwemmung",
+    "back": "powódź",
+    "ipa": "ˈpɔvut͡ɕ",
+    "example": "Powódź zalała domy.",
+    "exampleDE": "Die Überschwemmung überflutete die Häuser."
+  },
+  {
+    "front": "Ernte",
+    "back": "zbiory",
+    "ipa": "ˈzbʲɔrɨ",
+    "example": "W tym roku zbiory były bardzo obfite.",
+    "exampleDE": "Dieses Jahr war die Ernte reich."
+  },
+  {
+    "front": "Montag",
+    "back": "poniedziałek",
+    "ipa": "pɔɲɛˈd͡ʑawɛk",
+    "example": "W poniedziałek mamy pierwszą lekcję.",
+    "exampleDE": "Am Montag haben wir die erste Stunde."
+  },
+  {
+    "front": "Dienstag",
+    "back": "wtorek",
+    "ipa": "ˈftɔrɛk",
+    "example": "We wtorek idę na zakupy.",
+    "exampleDE": "Am Dienstag gehe ich einkaufen."
+  },
+  {
+    "front": "Mittwoch",
+    "back": "środa",
+    "ipa": "ˈɕrɔda",
+    "example": "W środę odbędzie się spotkanie w pracy.",
+    "exampleDE": "Am Mittwoch gibt es eine Besprechung auf der Arbeit."
+  },
+  {
+    "front": "Donnerstag",
+    "back": "czwartek",
+    "ipa": "ˈt͡ʂvartɛk",
+    "example": "W czwartek mamy egzamin z matematyki.",
+    "exampleDE": "Am Donnerstag haben wir eine Matheprüfung."
+  },
+  {
+    "front": "Freitag",
+    "back": "piątek",
+    "ipa": "ˈpʲɔntɛk",
+    "example": "W piątek idziemy do kina.",
+    "exampleDE": "Am Freitag gehen wir ins Kino."
+  },
+  {
+    "front": "Samstag",
+    "back": "sobota",
+    "ipa": "sɔˈbɔta",
+    "example": "W sobotę sprzątam mieszkanie.",
+    "exampleDE": "Am Samstag putze ich die Wohnung."
+  },
+  {
+    "front": "Sonntag",
+    "back": "niedziela",
+    "ipa": "ɲɛˈd͡ʑɛla",
+    "example": "W niedzielę cała rodzina jest w domu.",
+    "exampleDE": "Am Sonntag ist die ganze Familie zu Hause."
+  },
+  {
+    "front": "Januar",
+    "back": "styczeń",
+    "ipa": "ˈstɨt͡ʂɛɲ",
+    "example": "W styczniu jest bardzo zimno i leży dużo śniegu.",
+    "exampleDE": "Im Januar ist es sehr kalt und es gibt viel Schnee."
+  },
+  {
+    "front": "Februar",
+    "back": "luty",
+    "ipa": "ˈlutɨ",
+    "example": "Luty to najkrótszy miesiąc w roku.",
+    "exampleDE": "Der Februar ist der kürzeste Monat im Jahr."
+  },
+  {
+    "front": "März",
+    "back": "marzec",
+    "ipa": "ˈmaʐɛt͡s",
+    "example": "W marcu śnieg zaczyna topnieć.",
+    "exampleDE": "Im März beginnt der Schnee zu schmelzen."
+  },
+  {
+    "front": "April",
+    "back": "kwiecień",
+    "ipa": "ˈkvʲɛt͡ɕɛɲ",
+    "example": "W kwietniu kwitną pierwsze kwiaty.",
+    "exampleDE": "Im April blühen die ersten Blumen."
+  },
+  {
+    "front": "Mai",
+    "back": "maj",
+    "ipa": "maj",
+    "example": "W maju świętujemy Dzień Zwycięstwa.",
+    "exampleDE": "Im Mai feiern wir den Tag des Sieges."
+  },
+  {
+    "front": "Juni",
+    "back": "czerwiec",
+    "ipa": "ˈt͡ʂɛrvʲɛt͡s",
+    "example": "W czerwcu dzieci idą na wakacje.",
+    "exampleDE": "Im Juni gehen die Kinder in die Ferien."
+  },
+  {
+    "front": "Juli",
+    "back": "lipiec",
+    "ipa": "ˈlipʲɛt͡s",
+    "example": "Lipiec jest najgorętszym miesiącem lata.",
+    "exampleDE": "Der Juli ist der heißeste Monat des Sommers."
+  },
+  {
+    "front": "August",
+    "back": "sierpień",
+    "ipa": "ˈɕɛrpʲɛɲ",
+    "example": "W sierpniu jedziemy nad morze.",
+    "exampleDE": "Im August fahren wir ans Meer."
+  },
+  {
+    "front": "September",
+    "back": "wrzesień",
+    "ipa": "ˈvʐɛɕɛɲ",
+    "example": "We wrześniu dzieci wracają do szkoły.",
+    "exampleDE": "Im September kehren die Kinder in die Schule zurück."
+  },
+  {
+    "front": "Oktober",
+    "back": "październik",
+    "ipa": "paˈʑd͡ʑɛrɲik",
+    "example": "W październiku liście stają się żółte.",
+    "exampleDE": "Im Oktober werden die Blätter gelb."
+  },
+  {
+    "front": "November",
+    "back": "listopad",
+    "ipa": "liˈstɔpat",
+    "example": "W listopadzie często pada deszcz.",
+    "exampleDE": "Im November regnet es oft."
+  },
+  {
+    "front": "Dezember",
+    "back": "grudzień",
+    "ipa": "ˈɡrud͡ʑɛɲ",
+    "example": "W grudniu przygotowujemy się do Nowego Roku.",
+    "exampleDE": "Im Dezember bereiten wir uns auf das neue Jahr vor."
+  },
+  {
+    "front": "früh",
+    "back": "wczesny",
+    "ipa": "ˈft͡ʂɛsnɨ",
+    "example": "Wczesne wstawanie pomaga zrobić wiele w ciągu jednego dnia.",
+    "exampleDE": "Frühes Aufstehen hilft, an einem Tag viel zu schaffen."
+  },
+  {
+    "front": "spät",
+    "back": "późny",
+    "ipa": "ˈpuʑnɨ",
+    "example": "Późny przyjazd gości zaskoczył całą rodzinę.",
+    "exampleDE": "Die späte Ankunft der Gäste überraschte die ganze Familie."
+  },
+  {
+    "front": "heute",
+    "back": "dzisiaj",
+    "ipa": "ˈd͡ʑiɕaj",
+    "example": "Dzisiaj pogoda jest bardzo dobra na spacer.",
+    "exampleDE": "Heute ist das Wetter sehr gut für einen Spaziergang."
+  },
+  {
+    "front": "morgen",
+    "back": "jutro",
+    "ipa": "ˈjutrɔ",
+    "example": "Jutro mamy ważne spotkanie z klientami.",
+    "exampleDE": "Morgen haben wir ein wichtiges Treffen mit Kunden."
+  },
+  {
+    "front": "gestern",
+    "back": "wczoraj",
+    "ipa": "ˈft͡ʂɔraj",
+    "example": "Wczoraj poszliśmy z całą rodziną do teatru.",
+    "exampleDE": "Gestern sind wir mit der ganzen Familie ins Theater gegangen."
+  },
+  {
+    "front": "jetzt",
+    "back": "teraz",
+    "ipa": "ˈtɛras",
+    "example": "Teraz nie jest najlepszy czas na poważną rozmowę.",
+    "exampleDE": "Jetzt ist nicht der beste Zeitpunkt für ein ernstes Gespräch."
+  },
+  {
+    "front": "später",
+    "back": "później",
+    "ipa": "ˈpuʑɲɛj",
+    "example": "Zadzwoń do mnie później, jestem teraz bardzo zajęty.",
+    "exampleDE": "Ruf mich später an, ich bin gerade sehr beschäftigt."
+  },
+  {
+    "front": "früher",
+    "back": "wcześniej",
+    "ipa": "ˈft͡ʂɛɕɲɛj",
+    "example": "Wcześniej w tym miejscu znajdował się piękny park.",
+    "exampleDE": "Früher war an dieser Stelle ein schöner Park."
+  },
+  {
+    "front": "bald",
+    "back": "wkrótce",
+    "ipa": "ˈfkrutt͡sɛ",
+    "example": "Wkrótce przyjdzie lato i pojedziemy na urlop.",
+    "exampleDE": "Bald kommt der Sommer und wir fahren in den Urlaub."
+  },
+  {
+    "front": "Zeit",
+    "back": "czas",
+    "ipa": "t͡ʂas",
+    "example": "Nie mamy czasu czekać dłużej niż godzinę.",
+    "exampleDE": "Wir haben keine Zeit, länger als eine Stunde zu warten."
+  },
+  {
+    "front": "Stunde",
+    "back": "godzina",
+    "ipa": "ɡɔˈd͡ʑina",
+    "example": "Spotkanie trwało ponad dwie godziny.",
+    "exampleDE": "Das Treffen dauerte mehr als zwei Stunden."
+  },
+  {
+    "front": "Minute",
+    "back": "minuta",
+    "ipa": "mʲiˈnuta",
+    "example": "Poczekaj minutę, zaraz będę gotowy.",
+    "exampleDE": "Warte eine Minute, ich bin gleich fertig."
+  },
+  {
+    "front": "Sekunde",
+    "back": "sekunda",
+    "ipa": "sɛˈkunda",
+    "example": "Jedna sekunda może zmienić całe twoje życie.",
+    "exampleDE": "Eine Sekunde kann dein ganzes Leben verändern."
+  },
+  {
+    "front": "Tag",
+    "back": "dzień",
+    "ipa": "d͡ʑɛɲ",
+    "example": "Każdy nowy dzień przynosi nowe możliwości.",
+    "exampleDE": "Jeder neue Tag bringt neue Möglichkeiten."
+  },
+  {
+    "front": "Woche",
+    "back": "tydzień",
+    "ipa": "ˈtɨd͡ʑɛɲ",
+    "example": "W przyszłym tygodniu mamy wakacje.",
+    "exampleDE": "Nächste Woche haben wir Ferien."
+  },
+  {
+    "front": "Monat",
+    "back": "miesiąc",
+    "ipa": "ˈmʲɛɕɔnt͡s",
+    "example": "W tym miesiącu bardzo dużo pracowałem.",
+    "exampleDE": "In diesem Monat habe ich sehr viel gearbeitet."
+  },
+  {
+    "front": "Jahr",
+    "back": "rok",
+    "ipa": "rɔk",
+    "example": "W tym roku przeprowadziliśmy się do nowego mieszkania.",
+    "exampleDE": "Dieses Jahr sind wir in eine neue Wohnung umgezogen."
+  },
+  {
+    "front": "Jahrhundert",
+    "back": "wiek",
+    "ipa": "vʲɛk",
+    "example": "W ubiegłym wieku wydarzyło się wiele ważnych rzeczy.",
+    "exampleDE": "Im vergangenen Jahrhundert ereigneten sich viele wichtige Ereignisse."
+  },
+  {
+    "front": "Termin",
+    "back": "termin",
+    "ipa": "ˈtɛrmʲin",
+    "example": "O trzeciej mam wyznaczony termin u lekarza.",
+    "exampleDE": "Ich habe um drei Uhr einen Termin beim Arzt."
+  },
+  {
+    "front": "Zukunft",
+    "back": "przyszłość",
+    "ipa": "ˈpʂɨʂwɔɕt͡ɕ",
+    "example": "Nikt nie zna swojej przyszłości.",
+    "exampleDE": "Niemand kennt seine Zukunft."
+  },
+  {
+    "front": "Vergangenheit",
+    "back": "przeszłość",
+    "ipa": "ˈpʂɛʂwɔɕt͡ɕ",
+    "example": "Nie powinno się żyć przeszłością.",
+    "exampleDE": "Man sollte nicht in der Vergangenheit leben."
+  },
+  {
+    "front": "Gegenwart",
+    "back": "teraźniejszość",
+    "ipa": "tɛraˈʑɲɛjʂɔɕt͡ɕ",
+    "example": "Żyj teraźniejszością, a nie marzeniami.",
+    "exampleDE": "Lebe in der Gegenwart, nicht in Träumen."
+  },
+  {
+    "front": "Jahrzehnt",
+    "back": "dekada",
+    "ipa": "dɛˈkada",
+    "example": "W ostatniej dekadzie bardzo wiele się zmieniło.",
+    "exampleDE": "Im letzten Jahrzehnt hat sich vieles verändert."
+  },
+  {
+    "front": "Augenblick",
+    "back": "chwila",
+    "ipa": "ˈxvʲila",
+    "example": "Poczekaj jedną chwilę.",
+    "exampleDE": "Warte einen Augenblick."
+  },
+  {
+    "front": "Zeitpunkt",
+    "back": "moment",
+    "ipa": "ˈmɔmɛnt",
+    "example": "Dokładnie w tym momencie zadzwonił telefon.",
+    "exampleDE": "Zu diesem Zeitpunkt klingelte das Telefon."
+  },
+  {
+    "front": "Datum",
+    "back": "data",
+    "ipa": "ˈdata",
+    "example": "Jaka jest dzisiejsza data?",
+    "exampleDE": "Welches Datum ist heute?"
+  },
+  {
+    "front": "Feiertag",
+    "back": "święto",
+    "ipa": "ˈɕvʲɛntɔ",
+    "example": "Jutro przypada święto państwowe.",
+    "exampleDE": "Morgen ist ein staatlicher Feiertag."
+  },
+  {
+    "front": "Wochenende",
+    "back": "weekend",
+    "ipa": "ˈvikɛnt",
+    "example": "W ten weekend jedziemy na wieś.",
+    "exampleDE": "Am Wochenende fahren wir aufs Land."
+  },
+  {
+    "front": "Zeitalter",
+    "back": "epoka",
+    "ipa": "ɛˈpɔka",
+    "example": "Wtedy rozpoczęła się nowa epoka.",
+    "exampleDE": "Ein neues Zeitalter begann."
+  },
+  {
+    "front": "Frist",
+    "back": "termin",
+    "ipa": "ˈtɛrmʲin",
+    "example": "Ostateczny termin oddania pracy upływa jutro.",
+    "exampleDE": "Die Frist für die Abgabe läuft morgen ab."
+  },
+  {
+    "front": "Auto",
+    "back": "samochód",
+    "ipa": "saˈmɔxut",
+    "example": "Jego samochód stoi przed domem.",
+    "exampleDE": "Sein Auto steht vor dem Haus."
+  },
+  {
+    "front": "Bus",
+    "back": "autobus",
+    "ipa": "auˈtɔbus",
+    "example": "Autobus przyjeżdża co dziesięć minut.",
+    "exampleDE": "Der Bus kommt alle zehn Minuten."
+  },
+  {
+    "front": "Zug",
+    "back": "pociąg",
+    "ipa": "ˈpɔt͡ɕɔŋk",
+    "example": "Pociąg odjeżdża z pierwszego toru.",
+    "exampleDE": "Der Zug fährt von Gleis eins ab."
+  },
+  {
+    "front": "Flugzeug",
+    "back": "samolot",
+    "ipa": "saˈmɔlɔt",
+    "example": "Samolot leci wysoko ponad chmurami.",
+    "exampleDE": "Das Flugzeug fliegt hoch über den Wolken."
+  },
+  {
+    "front": "Schiff",
+    "back": "statek",
+    "ipa": "ˈstatɛk",
+    "example": "Wielki statek płynie po morzu.",
+    "exampleDE": "Das große Schiff fährt über das Meer."
+  },
+  {
+    "front": "Fahrrad",
+    "back": "rower",
+    "ipa": "ˈrɔvɛr",
+    "example": "Latem on dojeżdża rowerem do pracy.",
+    "exampleDE": "Im Sommer fährt er mit dem Fahrrad zur Arbeit."
+  },
+  {
+    "front": "Motorrad",
+    "back": "motocykl",
+    "ipa": "mɔˈtɔt͡sɨkl",
+    "example": "Wiosną kupił sobie nowy motocykl.",
+    "exampleDE": "Er hat im Frühling ein neues Motorrad gekauft."
+  },
+  {
+    "front": "Taxi",
+    "back": "taksówka",
+    "ipa": "taˈksufka",
+    "example": "Zamów taksówkę, bo inaczej spóźnimy się na samolot.",
+    "exampleDE": "Ruf ein Taxi, wir verpassen sonst das Flugzeug."
+  },
+  {
+    "front": "U-Bahn",
+    "back": "metro",
+    "ipa": "ˈmɛtrɔ",
+    "example": "W Moskwie działa bardzo wygodne i piękne metro.",
+    "exampleDE": "In Moskau gibt es eine sehr bequeme und schöne U-Bahn."
+  },
+  {
+    "front": "Straße",
+    "back": "ulica",
+    "ipa": "uˈlit͡sa",
+    "example": "Przy tej ulicy znajduje się wiele pięknych sklepów.",
+    "exampleDE": "In dieser Straße gibt es viele schöne Geschäfte."
+  },
+  {
+    "front": "Bahnhof",
+    "back": "dworzec",
+    "ipa": "ˈdvɔʐɛt͡s",
+    "example": "Spotkamy się na dworcu głównym.",
+    "exampleDE": "Wir treffen uns am Hauptbahnhof."
+  },
+  {
+    "front": "Flughafen",
+    "back": "lotnisko",
+    "ipa": "lɔˈtɲiskɔ",
+    "example": "Lotnisko leży daleko od centrum miasta.",
+    "exampleDE": "Der Flughafen liegt weit vom Stadtzentrum entfernt."
+  },
+  {
+    "front": "Urlaub",
+    "back": "urlop",
+    "ipa": "ˈurlɔp",
+    "example": "W lipcu wyjeżdżam na urlop nad morze.",
+    "exampleDE": "Im Juli fahre ich in den Urlaub ans Meer."
+  },
+  {
+    "front": "Ampel",
+    "back": "sygnalizacja świetlna",
+    "ipa": "sɨɡnaliˈzat͡sja ˈɕvʲɛtlna",
+    "example": "Przy sygnalizacji świetlnej trzeba przejść na drugą stronę.",
+    "exampleDE": "An der Ampel muss man auf die andere Seite gehen."
+  },
+  {
+    "front": "Kreuzung",
+    "back": "skrzyżowanie",
+    "ipa": "skʂɨʐɔˈvaɲɛ",
+    "example": "Na tym skrzyżowaniu zawsze stoi dużo samochodów.",
+    "exampleDE": "An der Kreuzung sind immer viele Autos."
+  },
+  {
+    "front": "Brücke",
+    "back": "most",
+    "ipa": "mɔst",
+    "example": "Ten stary most łączy dwie części miasta.",
+    "exampleDE": "Die alte Brücke verbindet zwei Teile der Stadt."
+  },
+  {
+    "front": "Gepäck",
+    "back": "bagaż",
+    "ipa": "ˈbaɡaʂ",
+    "example": "Nasz bagaż jest już w samochodzie.",
+    "exampleDE": "Unser Gepäck ist schon im Auto."
+  },
+  {
+    "front": "Pass",
+    "back": "paszport",
+    "ipa": "ˈpaʂpɔrt",
+    "example": "Nie zapomnij zabrać paszportu na lotnisko.",
+    "exampleDE": "Vergiss nicht, den Pass zum Flughafen mitzunehmen."
+  },
+  {
+    "front": "Grenze",
+    "back": "granica",
+    "ipa": "ɡraˈɲit͡sa",
+    "example": "Przekroczyliśmy granicę wcześnie rano.",
+    "exampleDE": "Wir haben die Grenze früh am Morgen überquert."
+  },
+  {
+    "front": "Ticket",
+    "back": "bilet",
+    "ipa": "ˈbʲilɛt",
+    "example": "Kupiłem bilet na wieczorny pociąg.",
+    "exampleDE": "Ich habe ein Ticket für den Abendzug gekauft."
+  },
+  {
+    "front": "Verspätung",
+    "back": "opóźnienie",
+    "ipa": "ɔpuˈʑɲɛɲɛ",
+    "example": "Pociąg dotarł z godzinnym opóźnieniem.",
+    "exampleDE": "Der Zug kam mit einer Stunde Verspätung an."
+  },
+  {
+    "front": "Koffer",
+    "back": "walizka",
+    "ipa": "vaˈliska",
+    "example": "Moja walizka jest zbyt ciężka na tę półkę.",
+    "exampleDE": "Mein Koffer ist zu schwer für die Ablage."
+  },
+  {
+    "front": "Reise",
+    "back": "podróż",
+    "ipa": "ˈpɔdruʂ",
+    "example": "To była niezapomniana podróż przez Rosję.",
+    "exampleDE": "Das war eine unvergessliche Reise durch Russland."
+  },
+  {
+    "front": "Tourist",
+    "back": "turysta",
+    "ipa": "tuˈrɨsta",
+    "example": "W okresie letnim w mieście pojawia się wielu turystów.",
+    "exampleDE": "Im Sommer sind viele Touristen in der Stadt."
+  },
+  {
+    "front": "Abfahrt",
+    "back": "odjazd",
+    "ipa": "ˈɔdjast",
+    "example": "Odjazd pociągu opóźni się o dziesięć minut.",
+    "exampleDE": "Die Abfahrt des Zuges verzögert sich um zehn Minuten."
+  },
+  {
+    "front": "Schule",
+    "back": "szkoła",
+    "ipa": "ˈʂkɔwa",
+    "example": "Szkoła rozpoczyna się o ósmej rano.",
+    "exampleDE": "Die Schule beginnt um acht Uhr morgens."
+  },
+  {
+    "front": "Büro",
+    "back": "biuro",
+    "ipa": "ˈbʲurɔ",
+    "example": "On pracuje w wielkim biurze w samym centrum miasta.",
+    "exampleDE": "Er arbeitet in einem großen Büro im Stadtzentrum."
+  },
+  {
+    "front": "Ecke",
+    "back": "róg",
+    "ipa": "ruk",
+    "example": "Kawiarnia mieści się tuż za rogiem tego budynku.",
+    "exampleDE": "Das Café ist um die Ecke dieses Hauses."
+  },
+  {
+    "front": "Platz",
+    "back": "plac",
+    "ipa": "plat͡s",
+    "example": "Na głównym placu miasta wznosi się stary kościół.",
+    "exampleDE": "Auf dem Hauptplatz der Stadt steht eine alte Kirche."
+  },
+  {
+    "front": "Kirche",
+    "back": "kościół",
+    "ipa": "ˈkɔɕt͡ɕuw",
+    "example": "Ten kościół wybudowano dwieście lat temu.",
+    "exampleDE": "Diese Kirche wurde vor zweihundert Jahren gebaut."
+  },
+  {
+    "front": "Markt",
+    "back": "targ",
+    "ipa": "tark",
+    "example": "W każdą sobotę kupujemy świeże warzywa na targu.",
+    "exampleDE": "Samstags kaufen wir Gemüse auf dem Markt."
+  },
+  {
+    "front": "Universität",
+    "back": "uniwersytet",
+    "ipa": "uɲivɛˈrsɨtɛt",
+    "example": "Ona pilnie studiuje na uniwersytecie.",
+    "exampleDE": "Sie studiert an der Universität."
+  },
+  {
+    "front": "Geschäft",
+    "back": "sklep",
+    "ipa": "sklɛp",
+    "example": "Otworzył swój własny sklep.",
+    "exampleDE": "Er hat sein eigenes Geschäft eröffnet."
+  },
+  {
+    "front": "Bank",
+    "back": "bank",
+    "ipa": "bank",
+    "example": "Idę prosto do banku, żeby wybrać pieniądze.",
+    "exampleDE": "Ich gehe zur Bank, um Geld zu holen."
+  },
+  {
+    "front": "Ausstellung",
+    "back": "wystawa",
+    "ipa": "vɨˈstava",
+    "example": "W miejskiej galerii otwarto nową wystawę.",
+    "exampleDE": "In der Galerie wurde eine neue Ausstellung eröffnet."
+  },
+  {
+    "front": "Lehrer",
+    "back": "nauczyciel",
+    "ipa": "nauˈt͡ʂɨt͡ɕɛl",
+    "example": "Nasz nauczyciel tłumaczy materiał w bardzo prosty sposób.",
+    "exampleDE": "Unser Lehrer erklärt den Stoff sehr verständlich."
+  },
+  {
+    "front": "Schüler",
+    "back": "uczeń",
+    "ipa": "ˈut͡ʂɛɲ",
+    "example": "Każdy uczeń zdał ten trudny egzamin z najlepszą oceną.",
+    "exampleDE": "Jeder Schüler hat die Prüfung mit Bestnote bestanden."
+  },
+  {
+    "front": "Buch",
+    "back": "książka",
+    "ipa": "ˈkɕɔw̃ʂka",
+    "example": "Ta książka jest niezwykle ciekawa i pouczająca.",
+    "exampleDE": "Dieses Buch ist sehr interessant und lehrreich."
+  },
+  {
+    "front": "Heft",
+    "back": "zeszyt",
+    "ipa": "ˈzɛʂɨt",
+    "example": "Wyjmij zeszyt i zapisz zadanie domowe.",
+    "exampleDE": "Nimm das Heft und schreib die Hausaufgabe auf."
+  },
+  {
+    "front": "Stift",
+    "back": "długopis",
+    "ipa": "dwuˈɡɔpʲis",
+    "example": "Podaj mi długopis, bo muszę zapisać ten adres.",
+    "exampleDE": "Gib mir einen Stift, ich möchte die Adresse aufschreiben."
+  },
+  {
+    "front": "Tafel",
+    "back": "tablica",
+    "ipa": "taˈblit͡sa",
+    "example": "Nauczyciel zapisuje zadanie kredą na tablicy.",
+    "exampleDE": "Der Lehrer schreibt die Aufgabe mit Kreide an die Tafel."
+  },
+  {
+    "front": "Klasse",
+    "back": "klasa",
+    "ipa": "ˈklasa",
+    "example": "Do naszej klasy chodzi trzydziestu uczniów.",
+    "exampleDE": "In unserer Klasse sind dreißig Schüler."
+  },
+  {
+    "front": "Hausaufgabe",
+    "back": "zadanie domowe",
+    "ipa": "zaˈdaɲɛ dɔˈmɔvɛ",
+    "example": "Odrobiłem wszystkie zadania domowe na czas.",
+    "exampleDE": "Ich habe alle Hausaufgaben rechtzeitig gemacht."
+  },
+  {
+    "front": "Prüfung",
+    "back": "egzamin",
+    "ipa": "ɛˈɡzamʲin",
+    "example": "Jutro czeka nas ważny egzamin z fizyki.",
+    "exampleDE": "Morgen haben wir eine wichtige Prüfung in Physik."
+  },
+  {
+    "front": "Papier",
+    "back": "papier",
+    "ipa": "ˈpapʲɛr",
+    "example": "Potrzebuję papieru do nowej drukarki.",
+    "exampleDE": "Ich brauche Papier für den Drucker."
+  },
+  {
+    "front": "Vorlesung",
+    "back": "wykład",
+    "ipa": "ˈvɨkwat",
+    "example": "Profesor prowadzi ciekawy wykład z historii.",
+    "exampleDE": "Der Professor hält eine Vorlesung über Geschichte."
+  },
+  {
+    "front": "Note (Schule)",
+    "back": "ocena",
+    "ipa": "ɔˈt͡sɛna",
+    "example": "Otrzymał bardzo dobrą ocenę za swoje wypracowanie.",
+    "exampleDE": "Er bekam eine gute Note für den Aufsatz."
+  },
+  {
+    "front": "Bildung",
+    "back": "wykształcenie",
+    "ipa": "vɨkʂtaˈwt͡sɛɲɛ",
+    "example": "Dobre wykształcenie otwiera wiele drzwi w życiu.",
+    "exampleDE": "Eine gute Bildung öffnet Türen."
+  },
+  {
+    "front": "Student",
+    "back": "student",
+    "ipa": "ˈstudɛnt",
+    "example": "Student pilnie przygotowuje się do egzaminu.",
+    "exampleDE": "Der Student bereitet sich auf die Prüfung vor."
+  },
+  {
+    "front": "Professor",
+    "back": "profesor",
+    "ipa": "prɔˈfɛsɔr",
+    "example": "Profesor przystępnie wyjaśnił nam nowy temat.",
+    "exampleDE": "Der Professor erklärte das neue Thema."
+  },
+  {
+    "front": "Kapitel",
+    "back": "rozdział",
+    "ipa": "ˈrɔzd͡ʑaw",
+    "example": "Przeczytałem już cały pierwszy rozdział tej książki.",
+    "exampleDE": "Ich habe das erste Kapitel des Buches gelesen."
+  },
+  {
+    "front": "Note (Musik)",
+    "back": "nuta",
+    "ipa": "ˈnuta",
+    "example": "On nie potrafi rozpoznać ani jednej nuty.",
+    "exampleDE": "Er kennt keine einzige Note."
+  },
+  {
+    "front": "Wirklichkeit",
+    "back": "rzeczywistość",
+    "ipa": "ʐɛt͡ʂɨˈvʲistɔɕt͡ɕ",
+    "example": "Jego najskrytsze marzenia stały się rzeczywistością.",
+    "exampleDE": "Seine Träume wurden zur Wirklichkeit."
+  },
+  {
+    "front": "Wissenschaft",
+    "back": "nauka",
+    "ipa": "naˈuka",
+    "example": "Współczesna nauka nieustannie popycha świat do przodu.",
+    "exampleDE": "Die Wissenschaft treibt die Welt voran."
+  },
+  {
+    "front": "Forschung",
+    "back": "badania",
+    "ipa": "baˈdaɲa",
+    "example": "To epokowe odkrycie jest wynikiem wieloletnich badań.",
+    "exampleDE": "Diese Entdeckung ist das Ergebnis langer Forschung."
+  },
+  {
+    "front": "Experiment",
+    "back": "eksperyment",
+    "ipa": "ɛkspɛˈrɨmɛnt",
+    "example": "Naukowcy przeprowadzili skomplikowany eksperyment.",
+    "exampleDE": "Die Wissenschaftler führten ein wichtiges Experiment durch."
+  },
+  {
+    "front": "Theorie",
+    "back": "teoria",
+    "ipa": "tɛɔˈria",
+    "example": "Ta naukowa teoria wyjaśnia wiele zjawisk.",
+    "exampleDE": "Diese Theorie erklärt vieles."
+  },
+  {
+    "front": "Beweis",
+    "back": "dowód",
+    "ipa": "ˈdɔvut",
+    "example": "Nie posiadamy żadnego dowodu na jego winę.",
+    "exampleDE": "Wir haben keinen Beweis für seine Schuld."
+  },
+  {
+    "front": "Formel",
+    "back": "wzór",
+    "ipa": "vzur",
+    "example": "Zapisał ten skomplikowany wzór na tablicy.",
+    "exampleDE": "Er schrieb die Formel an die Tafel."
+  },
+  {
+    "front": "Physik",
+    "back": "fizyka",
+    "ipa": "fʲiˈzɨka",
+    "example": "Fizyka to zdecydowanie mój ulubiony przedmiot.",
+    "exampleDE": "Physik ist mein Lieblingsfach."
+  },
+  {
+    "front": "Chemie",
+    "back": "chemia",
+    "ipa": "ˈxɛmʲa",
+    "example": "Na lekcji chemii wykonywaliśmy ciekawe doświadczenia.",
+    "exampleDE": "Im Chemieunterricht machten wir Versuche."
+  },
+  {
+    "front": "Biologie",
+    "back": "biologia",
+    "ipa": "bʲɔˈlɔɡʲa",
+    "example": "Biologia zajmuje się badaniem organizmów żywych.",
+    "exampleDE": "Die Biologie erforscht die lebenden Organismen."
+  },
+  {
+    "front": "Mathematik",
+    "back": "matematyka",
+    "ipa": "matɛmaˈtɨka",
+    "example": "Matematyka wymaga przede wszystkim logicznego myślenia.",
+    "exampleDE": "Mathematik erfordert Logik."
+  },
+  {
+    "front": "Geographie",
+    "back": "geografia",
+    "ipa": "ɡɛɔˈɡrafʲa",
+    "example": "Na lekcji geografii uczyliśmy się posługiwania mapami.",
+    "exampleDE": "Im Geografieunterricht lernten wir Karten."
+  },
+  {
+    "front": "Wissenschaftler",
+    "back": "naukowiec",
+    "ipa": "nauˈkɔvʲɛt͡s",
+    "example": "Ten wybitny naukowiec dokonał przełomowego odkrycia.",
+    "exampleDE": "Der Wissenschaftler machte eine wichtige Entdeckung."
+  },
+  {
+    "front": "Entdeckung",
+    "back": "odkrycie",
+    "ipa": "ɔˈtkrɨt͡ɕɛ",
+    "example": "To niezwykłe odkrycie odmieniło całą medycynę.",
+    "exampleDE": "Diese Entdeckung veränderte die Medizin."
+  },
+  {
+    "front": "Erfindung",
+    "back": "wynalazek",
+    "ipa": "vɨnaˈlazɛk",
+    "example": "Koło to prawdopodobnie najstarszy wynalazek ludzkości.",
+    "exampleDE": "Das Rad ist eine alte Erfindung."
+  },
+  {
+    "front": "Zelle",
+    "back": "komórka",
+    "ipa": "kɔˈmurka",
+    "example": "Każdy żywy organizm składa się z komórek.",
+    "exampleDE": "Der Organismus besteht aus Zellen."
+  },
+  {
+    "front": "Atom",
+    "back": "atom",
+    "ipa": "ˈatɔm",
+    "example": "Pojedynczy atom składa się z drobnych cząstek.",
+    "exampleDE": "Das Atom besteht aus kleinen Teilchen."
+  },
+  {
+    "front": "Schwerkraft",
+    "back": "grawitacja",
+    "ipa": "ɡravʲiˈtat͡sja",
+    "example": "Grawitacja bezustannie przyciąga wszystkie przedmioty ku ziemi.",
+    "exampleDE": "Die Schwerkraft zieht Gegenstände zur Erde."
+  },
+  {
+    "front": "malen",
+    "back": "malować",
+    "ipa": "maˈlɔvat͡ɕ",
+    "example": "Moja mała córka bardzo chętnie maluje różne zwierzęta.",
+    "exampleDE": "Meine Tochter malt gern Tiere."
+  },
+  {
+    "front": "Vorstellung",
+    "back": "pojęcie",
+    "ipa": "pɔˈjɛnt͡ɕɛ",
+    "example": "Nie mam o tym nawet najmniejszego pojęcia.",
+    "exampleDE": "Ich habe nicht die geringste Vorstellung."
+  },
+  {
+    "front": "Gemälde",
+    "back": "obraz",
+    "ipa": "ˈɔbras",
+    "example": "W zabytkowym muzeum wisi stary obraz.",
+    "exampleDE": "Im Museum hängt ein altes Gemälde."
+  },
+  {
+    "front": "Melodie",
+    "back": "melodia",
+    "ipa": "mɛlɔˈdia",
+    "example": "Ta wpadająca w ucho melodia brzmi dla mnie znajomo.",
+    "exampleDE": "Diese Melodie ist mir vertraut."
+  },
+  {
+    "front": "Rhythmus",
+    "back": "rytm",
+    "ipa": "rɨtm",
+    "example": "Miarowo wybijał rytm własną stopą.",
+    "exampleDE": "Er schlug den Rhythmus mit dem Fuß."
+  },
+  {
+    "front": "Bühne",
+    "back": "scena",
+    "ipa": "ˈst͡sɛna",
+    "example": "Znany aktor powoli wszedł na scenę.",
+    "exampleDE": "Der Schauspieler betrat die Bühne."
+  },
+  {
+    "front": "Publikum",
+    "back": "publiczność",
+    "ipa": "puˈblit͡ʂnɔɕt͡ɕ",
+    "example": "Zgromadzona publiczność głośno biła brawo.",
+    "exampleDE": "Das Publikum applaudierte laut."
+  },
+  {
+    "front": "Künstler",
+    "back": "artysta",
+    "ipa": "aˈrtɨsta",
+    "example": "Utalentowany artysta maluje piękny portret.",
+    "exampleDE": "Der Künstler malt ein Porträt."
+  },
+  {
+    "front": "Zeichnung",
+    "back": "rysunek",
+    "ipa": "rɨˈsunɛk",
+    "example": "Jej kolorowy rysunek wisi dumnie na ścianie.",
+    "exampleDE": "Ihre Zeichnung hängt an der Wand."
+  },
+  {
+    "front": "Skulptur",
+    "back": "rzeźba",
+    "ipa": "ˈʐɛʑba",
+    "example": "W miejskim parku stoi wielka rzeźba z białego marmuru.",
+    "exampleDE": "Im Park steht eine Skulptur aus Marmor."
+  },
+  {
+    "front": "Orchester",
+    "back": "orkiestra",
+    "ipa": "ɔˈrkʲɛstra",
+    "example": "Cała orkiestra zaczęła grać kolejny utwór.",
+    "exampleDE": "Das Orchester begann zu spielen."
+  },
+  {
+    "front": "Sänger",
+    "back": "piosenkarz",
+    "ipa": "pʲɔˈsɛnkaʂ",
+    "example": "Popularny piosenkarz energicznie wszedł na scenę.",
+    "exampleDE": "Der Sänger betrat die Bühne."
+  },
+  {
+    "front": "Tänzer",
+    "back": "tancerz",
+    "ipa": "ˈtant͡sɛʂ",
+    "example": "Młody tancerz poruszał się z niezwykłym wdziękiem.",
+    "exampleDE": "Der Tänzer bewegte sich anmutig."
+  },
+  {
+    "front": "Schauspieler",
+    "back": "aktor",
+    "ipa": "ˈaktɔr",
+    "example": "Ten znany aktor znakomicie zagrał główną rolę.",
+    "exampleDE": "Der Schauspieler spielte die Hauptrolle."
+  },
+  {
+    "front": "Roman",
+    "back": "powieść",
+    "ipa": "ˈpɔvʲɛɕt͡ɕ",
+    "example": "Ona właśnie pisze swoją pierwszą powieść.",
+    "exampleDE": "Sie schreibt ihren ersten Roman."
+  },
+  {
+    "front": "Pinsel",
+    "back": "pędzel",
+    "ipa": "ˈpɛnd͡zɛl",
+    "example": "Po skończonej pracy artysta dokładnie umył pędzel.",
+    "exampleDE": "Der Künstler wusch den Pinsel aus."
+  },
+  {
+    "front": "Instrument",
+    "back": "instrument",
+    "ipa": "iˈnstrumɛnt",
+    "example": "Na jakim instrumencie muzycznym grasz?",
+    "exampleDE": "Welches Instrument spielst du?"
+  },
+  {
+    "front": "Arbeit",
+    "back": "praca",
+    "ipa": "ˈprat͡sa",
+    "example": "Jego codzienna praca wymaga mnóstwa czasu i energii.",
+    "exampleDE": "Seine Arbeit erfordert viel Zeit und Kraft."
+  },
+  {
+    "front": "Chef",
+    "back": "szef",
+    "ipa": "ʂɛf",
+    "example": "Nasz szef jest bardzo zadowolony z osiągniętych wyników.",
+    "exampleDE": "Der Chef ist mit den Ergebnissen unserer Arbeit zufrieden."
+  },
+  {
+    "front": "Kollege",
+    "back": "kolega",
+    "ipa": "kɔˈlɛɡa",
+    "example": "Mój zaufany kolega chętnie pomaga mi przy trudnych zadaniach.",
+    "exampleDE": "Mein Kollege hilft mir bei schwierigen Aufgaben."
+  },
+  {
+    "front": "Gehalt",
+    "back": "pensja",
+    "ipa": "ˈpɛnsja",
+    "example": "W tym miesiącu otrzymał zasłużoną podwyżkę pensji.",
+    "exampleDE": "Er hat diesen Monat eine Gehaltserhöhung bekommen."
+  },
+  {
+    "front": "Besprechung",
+    "back": "spotkanie",
+    "ipa": "spɔˈtkaɲɛ",
+    "example": "Ważne spotkanie służbowe rozpocznie się o dziesiątej rano.",
+    "exampleDE": "Die Besprechung beginnt um zehn Uhr morgens."
+  },
+  {
+    "front": "Ingenieur",
+    "back": "inżynier",
+    "ipa": "iˈnʐɨɲɛr",
+    "example": "Główny inżynier uważnie sprawdził projekt nowego mostu.",
+    "exampleDE": "Der Ingenieur prüfte den Plan der neuen Brücke."
+  },
+  {
+    "front": "Verkäufer",
+    "back": "sprzedawca",
+    "ipa": "spʂɛˈdaft͡sa",
+    "example": "Uprzejmy sprzedawca pomógł mi wybrać wspaniały prezent.",
+    "exampleDE": "Der Verkäufer half mir, ein Geschenk auszuwählen."
+  },
+  {
+    "front": "Koch",
+    "back": "kucharz",
+    "ipa": "ˈkuxaʂ",
+    "example": "Kucharz tej restauracji przygotowuje wyborną zupę.",
+    "exampleDE": "Der Koch dieses Restaurants macht eine ausgezeichnete Suppe."
+  },
+  {
+    "front": "Fahrer",
+    "back": "kierowca",
+    "ipa": "kʲɛˈrɔft͡sa",
+    "example": "Kierowca autobusu wyraźnie zapowiedział kolejny przystanek.",
+    "exampleDE": "Der Busfahrer kündigte die nächste Haltestelle an."
+  },
+  {
+    "front": "Polizist",
+    "back": "policjant",
+    "ipa": "pɔˈlit͡sjant",
+    "example": "Miejscowy policjant uprzejmie wskazał nam drogę na dworzec.",
+    "exampleDE": "Der Polizist zeigte uns den Weg zum Bahnhof."
+  },
+  {
+    "front": "Feuerwehrmann",
+    "back": "strażak",
+    "ipa": "ˈstraʐak",
+    "example": "Dzielny strażak błyskawicznie ugasił ogień w płonącym budynku.",
+    "exampleDE": "Der Feuerwehrmann löschte das Feuer im Haus schnell."
+  },
+  {
+    "front": "Anwalt",
+    "back": "prawnik",
+    "ipa": "ˈpravɲik",
+    "example": "Nasz prawnik przygotował wszelkie dokumenty na rozprawę sądową.",
+    "exampleDE": "Der Anwalt bereitete alle Unterlagen für das Gericht vor."
+  },
+  {
+    "front": "Friseur",
+    "back": "fryzjer",
+    "ipa": "ˈfrɨzjɛr",
+    "example": "Doświadczony fryzjer wykonał dla niej zachwycającą fryzurę.",
+    "exampleDE": "Der Friseur machte ihr einen schönen Haarschnitt."
+  },
+  {
+    "front": "Kellner",
+    "back": "kelner",
+    "ipa": "ˈkɛlnɛr",
+    "example": "Uprzejmy kelner szybko podał nam gorącą zupę.",
+    "exampleDE": "Der Kellner brachte uns die heiße Suppe."
+  },
+  {
+    "front": "fotografieren",
+    "back": "fotografować",
+    "ipa": "fɔtɔɡraˈfɔvat͡ɕ",
+    "example": "W wolnym czasie on bardzo lubi fotografować zabytkowe budynki.",
+    "exampleDE": "Er fotografiert gern alte Gebäude."
+  },
+  {
+    "front": "Aufgabe",
+    "back": "zadanie",
+    "ipa": "zaˈdaɲɛ",
+    "example": "To konkretne zadanie okazuje się zbyt trudne.",
+    "exampleDE": "Diese Aufgabe ist zu schwer."
+  },
+  {
+    "front": "Firma",
+    "back": "firma",
+    "ipa": "ˈfʲirma",
+    "example": "Ona z powodzeniem pracuje w międzynarodowej firmie.",
+    "exampleDE": "Sie arbeitet in einer großen Firma."
+  },
+  {
+    "front": "Lohn",
+    "back": "wynagrodzenie",
+    "ipa": "vɨnaɡrɔˈd͡zɛɲɛ",
+    "example": "Za swoją rzetelną pracę otrzymuje bardzo dobre wynagrodzenie.",
+    "exampleDE": "Er bekommt einen guten Lohn."
+  },
+  {
+    "front": "Arbeitslosigkeit",
+    "back": "bezrobocie",
+    "ipa": "bɛzrɔˈbɔt͡ɕɛ",
+    "example": "Niestety bezrobocie w całym mieście wciąż rośnie.",
+    "exampleDE": "Die Arbeitslosigkeit in der Stadt steigt."
+  },
+  {
+    "front": "Unternehmen",
+    "back": "przedsiębiorstwo",
+    "ipa": "pʂɛtɕɛmˈbʲɔrstvɔ",
+    "example": "To nowoczesne przedsiębiorstwo zatrudnia setki pracowników.",
+    "exampleDE": "Das ist ein großes Industrieunternehmen."
+  },
+  {
+    "front": "kaufen",
+    "back": "kupować",
+    "ipa": "kuˈpɔvat͡ɕ",
+    "example": "Jutro rano idziemy wspólnie kupować nowe meble do salonu.",
+    "exampleDE": "Morgen gehen wir neue Möbel kaufen."
+  },
+  {
+    "front": "verkaufen",
+    "back": "sprzedawać",
+    "ipa": "spʂɛˈdavat͡ɕ",
+    "example": "Postanowili sprzedawać swój stary dom i wyjechać za granicę.",
+    "exampleDE": "Sie haben beschlossen, das Haus zu verkaufen und ins Ausland zu gehen."
+  },
+  {
+    "front": "teuer",
+    "back": "drogi",
+    "ipa": "ˈdrɔɡʲi",
+    "example": "Ta elegancka restauracja jest zdecydowanie zbyt droga dla nas.",
+    "exampleDE": "Dieses Restaurant ist zu teuer für uns."
+  },
+  {
+    "front": "reich",
+    "back": "bogaty",
+    "ipa": "bɔˈɡatɨ",
+    "example": "Pewien niezwykle bogaty człowiek przekazał sporą sumę na szpital.",
+    "exampleDE": "Der reiche Mann spendete Geld für das Krankenhaus."
+  },
+  {
+    "front": "billig",
+    "back": "tani",
+    "ipa": "ˈtaɲi",
+    "example": "Udało nam się znaleźć zaskakująco tani bilet na ten pociąg.",
+    "exampleDE": "Wir haben eine billige Fahrkarte für den Zug gefunden."
+  },
+  {
+    "front": "Rechnung",
+    "back": "rachunek",
+    "ipa": "raˈxunɛk",
+    "example": "Czy mógłby pan przynieść rachunek, bo bardzo się spieszymy?",
+    "exampleDE": "Bringen Sie bitte die Rechnung, wir haben es eilig."
+  },
+  {
+    "front": "Zoll",
+    "back": "cło",
+    "ipa": "t͡swɔ",
+    "example": "Na cle funkcjonariusze szczegółowo skontrolowali nasze walizki.",
+    "exampleDE": "Am Zoll wurden unsere Koffer kontrolliert."
+  },
+  {
+    "front": "Vorteil",
+    "back": "zaleta",
+    "ipa": "zaˈlɛta",
+    "example": "Płynna znajomość języków obcych to niezaprzeczalna zaleta.",
+    "exampleDE": "Sprachkenntnisse sind ein großer Vorteil."
+  },
+  {
+    "front": "Nachteil",
+    "back": "wada",
+    "ipa": "ˈvada",
+    "example": "Niestety ten przygotowany plan ma jedną istotną wadę.",
+    "exampleDE": "Dieser Plan hat einen Nachteil."
+  },
+  {
+    "front": "kosten (probieren)",
+    "back": "próbować",
+    "ipa": "pruˈbɔvat͡ɕ",
+    "example": "Spróbuj koniecznie tego pysznego sosu.",
+    "exampleDE": "Probier diese Sauce."
+  },
+  {
+    "front": "Wirtschaft",
+    "back": "gospodarka",
+    "ipa": "ɡɔspɔˈdarka",
+    "example": "Gospodarka całego kraju dynamicznie rośnie z roku na rok.",
+    "exampleDE": "Die Wirtschaft des Landes wächst."
+  },
+  {
+    "front": "Gewinn",
+    "back": "zysk",
+    "ipa": "zɨsk",
+    "example": "W minionym kwartale firma wypracowała pokaźny zysk.",
+    "exampleDE": "Die Firma erzielte einen großen Gewinn."
+  },
+  {
+    "front": "Verlust",
+    "back": "strata",
+    "ipa": "ˈstrata",
+    "example": "Wskutek kryzysu firma poniosła bolesną stratę finansową.",
+    "exampleDE": "Die Firma erlitt einen großen Verlust."
+  },
+  {
+    "front": "Steuer",
+    "back": "podatek",
+    "ipa": "pɔˈdatɛk",
+    "example": "Każdy obywatel musi regularnie płacić należny podatek.",
+    "exampleDE": "Jeder muss Steuer zahlen."
+  },
+  {
+    "front": "Kunde",
+    "back": "klient",
+    "ipa": "ˈkliɛnt",
+    "example": "Zgodnie ze starą zasadą klient ma zawsze rację.",
+    "exampleDE": "Der Kunde hat immer recht."
+  },
+  {
+    "front": "Ware",
+    "back": "towar",
+    "ipa": "ˈtɔvar",
+    "example": "Ten luksusowy towar cieszy się niesłabnącą popularnością.",
+    "exampleDE": "Diese Ware ist sehr beliebt."
+  },
+  {
+    "front": "Kredit",
+    "back": "kredyt",
+    "ipa": "ˈkrɛdɨt",
+    "example": "Młode małżeństwo wzięło spory kredyt na zakup domu.",
+    "exampleDE": "Sie nahmen einen Kredit für das Haus auf."
+  },
+  {
+    "front": "Schulden",
+    "back": "dług",
+    "ipa": "dwuk",
+    "example": "Wreszcie po miesiącach oddał mi wszystkie zaciągnięte długi.",
+    "exampleDE": "Er hat mir die Schulden zurückgezahlt."
+  },
+  {
+    "front": "Zins",
+    "back": "odsetki",
+    "ipa": "ɔˈtsɛtkʲi",
+    "example": "Bank pobiera dość wysokie odsetki od udzielonych pożyczek.",
+    "exampleDE": "Die Bank berechnet einen hohen Zins."
+  },
+  {
+    "front": "Investition",
+    "back": "inwestycja",
+    "ipa": "invɛˈstɨt͡sja",
+    "example": "Zakup nieruchomości okazał się niezwykle opłacalną inwestycją.",
+    "exampleDE": "Das ist eine lohnende Investition."
+  },
+  {
+    "front": "Aktie",
+    "back": "akcja",
+    "ipa": "ˈakt͡sja",
+    "example": "Cena pojedynczej akcji tej spółki gwałtownie wzrosła.",
+    "exampleDE": "Der Preis der Aktie ist gestiegen."
+  },
+  {
+    "front": "Währung",
+    "back": "waluta",
+    "ipa": "vaˈluta",
+    "example": "Euro to oficjalna waluta obowiązująca w wielu krajach Europy.",
+    "exampleDE": "Der Euro ist die europäische Währung."
+  },
+  {
+    "front": "Rabatt",
+    "back": "rabat",
+    "ipa": "ˈrabat",
+    "example": "Podczas sezonowej wyprzedaży w sklepie zaoferowano duży rabat.",
+    "exampleDE": "Im Geschäft gibt es einen großen Rabatt."
+  },
+  {
+    "front": "Angebot",
+    "back": "oferta",
+    "ipa": "ɔˈfɛrta",
+    "example": "To bez wątpienia bardzo korzystna oferta cenowa.",
+    "exampleDE": "Das ist ein günstiges Angebot."
+  },
+  {
+    "front": "Nachfrage",
+    "back": "popyt",
+    "ipa": "ˈpɔpɨt",
+    "example": "Na ten innowacyjny produkt panuje obecnie ogromny popyt.",
+    "exampleDE": "Nach dieser Ware gibt es eine große Nachfrage."
+  },
+  {
+    "front": "laufen",
+    "back": "biegać",
+    "ipa": "ˈbʲɛɡat͡ɕ",
+    "example": "Każdego ranka on z zamiłowaniem biega po pobliskim parku.",
+    "exampleDE": "Jeden Morgen läuft er gern im Park."
+  },
+  {
+    "front": "schwimmen",
+    "back": "pływać",
+    "ipa": "ˈpwɨvat͡ɕ",
+    "example": "W upalne dni latem z wielką chęcią pływamy w czystym jeziorze.",
+    "exampleDE": "Im Sommer schwimmen wir oft im See."
+  },
+  {
+    "front": "Fußball",
+    "back": "piłka nożna",
+    "ipa": "ˈpʲiwka ˈnɔʐna",
+    "example": "Chłopcy z osiedla grają w piłkę nożną każdego ciepłego popołudnia.",
+    "exampleDE": "Die Jungen spielen jeden Abend Fußball."
+  },
+  {
+    "front": "Schach",
+    "back": "szachy",
+    "ipa": "ˈʂaxɨ",
+    "example": "Mój cierpliwy dziadek nauczył mnie grać w szachy.",
+    "exampleDE": "Der Großvater hat mir das Schachspielen beigebracht."
+  },
+  {
+    "front": "Mannschaft",
+    "back": "drużyna",
+    "ipa": "druˈʐɨna",
+    "example": "Nasza zgrana drużyna wygrała ten arcyważny mecz.",
+    "exampleDE": "Unsere Mannschaft hat das wichtige Spiel gewonnen."
+  },
+  {
+    "front": "Ball",
+    "back": "piłka",
+    "ipa": "ˈpʲiwka",
+    "example": "Roześmiane dzieci z radością rzucają do siebie małą piłkę.",
+    "exampleDE": "Die Kinder werfen sich den Ball zu."
+  },
+  {
+    "front": "Training",
+    "back": "trening",
+    "ipa": "ˈtrɛɲink",
+    "example": "Dzisiejszy trening siłowy rozpoczyna się punktualnie o szóstej.",
+    "exampleDE": "Das Training beginnt um sechs Uhr abends."
+  },
+  {
+    "front": "Schwimmbad",
+    "back": "basen",
+    "ipa": "ˈbasɛn",
+    "example": "W każdy wtorek po południu chodzę popływać na kryty basen.",
+    "exampleDE": "Dienstags gehe ich ins Schwimmbad."
+  },
+  {
+    "front": "Konzert",
+    "back": "koncert",
+    "ipa": "ˈkɔnt͡sɛrt",
+    "example": "Wczorajszy wieczór spędziliśmy na znakomitym koncercie rockowym.",
+    "exampleDE": "Gestern waren wir auf einem Konzert."
+  },
+  {
+    "front": "E-Mail",
+    "back": "e-mail",
+    "ipa": "ˈimɛjl",
+    "example": "Proszę, prześlij mi potrzebne dokumenty pocztą e-mail.",
+    "exampleDE": "Schick mir die Dokumente per E-Mail."
+  },
+  {
+    "front": "Passwort",
+    "back": "hasło",
+    "ipa": "ˈxaswɔ",
+    "example": "Całkowicie zapomniałem nowego hasła do mojego konta internetowego.",
+    "exampleDE": "Ich habe das Passwort für mein Konto vergessen."
+  },
+  {
+    "front": "Bildschirm",
+    "back": "ekran",
+    "ipa": "ˈɛkran",
+    "example": "Główny ekran mojego starego laptopa jest zdecydowanie za ciemny.",
+    "exampleDE": "Der Bildschirm meines Laptops ist zu dunkel."
+  },
+  {
+    "front": "Tastatur",
+    "back": "klawiatura",
+    "ipa": "klavʲaˈtura",
+    "example": "Ta ergonomiczna klawiatura komputerowa pracuje wyjątkowo cicho.",
+    "exampleDE": "Die neue Tastatur arbeitet sehr leise."
+  },
+  {
+    "front": "Drucker",
+    "back": "drukarka",
+    "ipa": "druˈkarka",
+    "example": "Sieciowa drukarka w naszym biurze znowu odmówiła posłuszeństwa.",
+    "exampleDE": "Der Drucker im Büro funktioniert schon wieder nicht."
+  },
+  {
+    "front": "Akku",
+    "back": "bateria",
+    "ipa": "batɛˈria",
+    "example": "Bateria w moim smartfonie rozładowuje się zaskakująco szybko.",
+    "exampleDE": "Der Akku des Handys ist sehr schnell leer."
+  },
+  {
+    "front": "Handy",
+    "back": "telefon",
+    "ipa": "tɛˈlɛfɔn",
+    "example": "W pośpiechu zostawiłem swój telefon w domu.",
+    "exampleDE": "Ich habe mein Handy zu Hause vergessen."
+  },
+  {
+    "front": "Computer",
+    "back": "komputer",
+    "ipa": "kɔˈmputɛr",
+    "example": "W swojej codziennej pracy spędza całe dnie przy komputerze.",
+    "exampleDE": "Er arbeitet den ganzen Tag am Computer."
+  },
+  {
+    "front": "Internet",
+    "back": "internet",
+    "ipa": "iˈntɛrnɛt",
+    "example": "W całym hotelu goście mają zapewniony darmowy bezprzewodowy internet.",
+    "exampleDE": "Im Hotel gibt es kostenloses Internet."
+  },
+  {
+    "front": "Datei",
+    "back": "plik",
+    "ipa": "plik",
+    "example": "Dla wygody zapisz ten ważny plik tekstowy na pulpicie.",
+    "exampleDE": "Speichere diese Datei auf dem Desktop."
+  },
+  {
+    "front": "Holz",
+    "back": "drewno",
+    "ipa": "ˈdrɛvnɔ",
+    "example": "Wszystkie te eleganckie meble wykonano z solidnego litego drewna.",
+    "exampleDE": "Diese Möbel sind aus gutem Holz gefertigt."
+  },
+  {
+    "front": "Metall",
+    "back": "metal",
+    "ipa": "ˈmɛtal",
+    "example": "Wysoka brama wjazdowa została wykonana z trwałego metalu.",
+    "exampleDE": "Das Tor ist aus festem Metall gemacht."
+  },
+  {
+    "front": "Plastik",
+    "back": "plastik",
+    "ipa": "ˈplastik",
+    "example": "Te kolorowe kubki piknikowe zostały wykonane z plastiku.",
+    "exampleDE": "Diese Becher sind aus Plastik."
+  },
+  {
+    "front": "Leder",
+    "back": "skóra",
+    "ipa": "ˈskura",
+    "example": "Ta stylowa torebka została uszyta z prawdziwej naturalnej skóry.",
+    "exampleDE": "Diese Tasche ist aus echtem Leder."
+  },
+  {
+    "front": "Wolle",
+    "back": "wełna",
+    "ipa": "ˈvɛwna",
+    "example": "Troskliwa babcia zrobiła na drutach sweter z miękkiej, ciepłej wełny.",
+    "exampleDE": "Die Großmutter hat einen Pullover aus warmer Wolle gestrickt."
+  },
+  {
+    "front": "Gold",
+    "back": "złoto",
+    "ipa": "ˈzwɔtɔ",
+    "example": "Ten piękny pierścionek zaręczynowy zrobiony jest z czystego złota.",
+    "exampleDE": "Dieser Ring ist aus reinem Gold."
+  },
+  {
+    "front": "Ordnung",
+    "back": "porządek",
+    "ipa": "pɔˈʐɔndɛk",
+    "example": "W jej przytulnym pokoju panuje nienaganny porządek.",
+    "exampleDE": "Im Zimmer herrscht perfekte Ordnung."
+  },
+  {
+    "front": "befehlen",
+    "back": "rozkazywać",
+    "ipa": "rɔskaˈzɨvat͡ɕ",
+    "example": "Doświadczony generał zaczął stanowczo rozkazywać swoim żołnierzom.",
+    "exampleDE": "Der General begann, den Soldaten zu befehlen."
+  },
+  {
+    "front": "erlauben",
+    "back": "pozwalać",
+    "ipa": "pɔˈzvalat͡ɕ",
+    "example": "Opiekuńczy rodzice nie pozwalają mu wracać zbyt późno do domu.",
+    "exampleDE": "Die Eltern erlauben ihm nicht, spät auszugehen."
+  },
+  {
+    "front": "verbieten",
+    "back": "zabraniać",
+    "ipa": "zaˈbraɲat͡ɕ",
+    "example": "W całym tym budynku surowo zabrania się palić papierosy.",
+    "exampleDE": "Hier ist es verboten zu rauchen."
+  },
+  {
+    "front": "lieben",
+    "back": "kochać",
+    "ipa": "ˈkɔxat͡ɕ",
+    "example": "Ona kocha go z całego serca i bezwarunkowo.",
+    "exampleDE": "Sie liebt ihn von ganzem Herzen."
+  }
+]

@@ -1,0 +1,1252 @@
+[
+  {
+    "index": 1250,
+    "front": "der Flugmodus",
+    "exampleDE": "Während des Fluges müssen alle Telefone in den Flugmodus geschaltet werden."
+  },
+  {
+    "index": 1251,
+    "front": "die Akkukapazität",
+    "exampleDE": "Nach intensivem Gebrauch sank die Akkukapazität auf zwanzig Prozent."
+  },
+  {
+    "index": 1252,
+    "front": "das WLAN-Netzwerk",
+    "exampleDE": "Im Hotel verbinden wir uns mit dem kostenlosen WLAN-Netzwerk."
+  },
+  {
+    "index": 1253,
+    "front": "die Internetverbindung",
+    "exampleDE": "Eine stabile Internetverbindung ist wichtig für flüssige Videoanrufe."
+  },
+  {
+    "index": 1254,
+    "front": "das Wochenende",
+    "exampleDE": "Am Wochenende schlafe ich gerne lange aus und frühstücke in Ruhe."
+  },
+  {
+    "index": 1255,
+    "front": "der Feiertag",
+    "exampleDE": "An gesetzlichen Feiertagen bleiben die meisten Geschäfte geschlossen."
+  },
+  {
+    "index": 1256,
+    "front": "der Ausflug",
+    "exampleDE": "Am Samstag unternahm die Familie einen Ausflug in den Tierpark."
+  },
+  {
+    "index": 1257,
+    "front": "das Picknick",
+    "exampleDE": "Wir breiteten eine Decke aus und machten ein Picknick im Schatten."
+  },
+  {
+    "index": 1258,
+    "front": "die Hängematte",
+    "exampleDE": "Zwischen zwei schattigen Bäumen spannte er eine bequeme Hängematte auf."
+  },
+  {
+    "index": 1259,
+    "front": "das Gesellschaftsspiel",
+    "exampleDE": "Abends spielen wir gerne ein spannendes Gesellschaftsspiel am Tisch."
+  },
+  {
+    "index": 1260,
+    "front": "das Kartenspiel",
+    "exampleDE": "Zu viert spielten sie eine unterhaltsame Runde Skat."
+  },
+  {
+    "index": 1261,
+    "front": "das Kreuzworträtsel",
+    "exampleDE": "Beim sonntäglichen Kaffee löst mein Großvater das Kreuzworträtsel."
+  },
+  {
+    "index": 1262,
+    "front": "die Fotografie",
+    "exampleDE": "Die Naturfotografie ist seit vielen Jahren sein leidenschaftliches Hobby."
+  },
+  {
+    "index": 1263,
+    "front": "das Gärtnern",
+    "exampleDE": "Das Gärtnern im eigenen Gemüsegarten entspannt nach einer anstrengenden Woche."
+  },
+  {
+    "index": 1264,
+    "front": "das Stricken",
+    "exampleDE": "Sie strickt aus warmer Wolle bunte Socken für ihre Enkelkinder."
+  },
+  {
+    "index": 1265,
+    "front": "das Häkeln",
+    "exampleDE": "Mit einer feinen Häkelnadel häkelt sie zarte Deckchen."
+  },
+  {
+    "index": 1266,
+    "front": "die Nähmaschine",
+    "exampleDE": "Mit der elektrischen Nähmaschine näht sie neue Kissenbezüge."
+  },
+  {
+    "index": 1267,
+    "front": "das Heimwerken",
+    "exampleDE": "Am Samstag widmet er sich voll und ganz dem Heimwerken im Keller."
+  },
+  {
+    "index": 1268,
+    "front": "das Basteln",
+    "exampleDE": "Vor Weihnachten basteln die Kinder festlichen Schmuck aus Papier."
+  },
+  {
+    "index": 1269,
+    "front": "der Bestseller",
+    "exampleDE": "Der spannende Kriminalroman schaffte es sofort auf die Bestsellerliste."
+  },
+  {
+    "index": 1270,
+    "front": "das Taschenbuch",
+    "exampleDE": "Für den Urlaub packt sie zwei leichte Taschenbücher in den Koffer."
+  },
+  {
+    "index": 1271,
+    "front": "das Lesezeichen",
+    "exampleDE": "Ein schönes Lesezeichen markiert die zuletzt gelesene Seite."
+  },
+  {
+    "index": 1272,
+    "front": "die Buchhandlung",
+    "exampleDE": "In der kleinen Buchhandlung an der Ecke stöbert er stundenlang."
+  },
+  {
+    "index": 1273,
+    "front": "die Handlung",
+    "exampleDE": "Die fesselnde Handlung des Romans spielt im viktorianischen London."
+  },
+  {
+    "index": 1274,
+    "front": "die Hauptfigur",
+    "exampleDE": "Die mutige Hauptfigur meistert im Laufe des Buches viele Abenteuer."
+  },
+  {
+    "index": 1275,
+    "front": "das Kapitel",
+    "exampleDE": "Vor dem Einschlafen lese ich noch ein spannendes Kapitel zu Ende."
+  },
+  {
+    "index": 1276,
+    "front": "der Autor",
+    "exampleDE": "Der renommierte Autor signierte nach der Lesung viele Exemplare."
+  },
+  {
+    "index": 1277,
+    "front": "die Leinwand",
+    "exampleDE": "Auf der riesigen Leinwand des Kinos wirken Landschaftsaufnahmen überwältigend."
+  },
+  {
+    "index": 1278,
+    "front": "der Dokumentarfilm",
+    "exampleDE": "Der Dokumentarfilm beleuchtet das faszinierende Leben wilder Tiere."
+  },
+  {
+    "index": 1279,
+    "front": "die Komödie",
+    "exampleDE": "Eine heitere Komödie sorgte für viele herzliche Lacher im Saal."
+  },
+  {
+    "index": 1280,
+    "front": "der Untertitel",
+    "exampleDE": "Fremdsprachige Filme schaue ich am liebsten mit deutschen Untertiteln."
+  },
+  {
+    "index": 1281,
+    "front": "die Fernbedienung",
+    "exampleDE": "Mit der Fernbedienung schaltet er die Lautstärke des Fernsehers leiser."
+  },
+  {
+    "index": 1282,
+    "front": "die Fernsehserie",
+    "exampleDE": "Die neue Staffel der beliebten Fernsehserie erscheint nächste Woche."
+  },
+  {
+    "index": 1283,
+    "front": "der Schauspieler",
+    "exampleDE": "Der talentierte Schauspieler verkörpert seine Rolle sehr glaubwürdig."
+  },
+  {
+    "index": 1284,
+    "front": "das Theaterstück",
+    "exampleDE": "Das klassische Theaterstück von Schiller wurde modern inszeniert."
+  },
+  {
+    "index": 1285,
+    "front": "der Theatervorhang",
+    "exampleDE": "Unter großem Applaus senkte sich der schwere rote Theatervorhang."
+  },
+  {
+    "index": 1286,
+    "front": "der Beifall",
+    "exampleDE": "Das begeisterte Publikum spendete den Darstellern tosenden Beifall."
+  },
+  {
+    "index": 1287,
+    "front": "das Bühnenbild",
+    "exampleDE": "Das aufwendige Bühnenbild stellte einen historischen Marktplatz dar."
+  },
+  {
+    "index": 1288,
+    "front": "die Garderobe",
+    "exampleDE": "Vor Beginn der Vorstellung gibt man Jacken an der Garderobe ab."
+  },
+  {
+    "index": 1289,
+    "front": "die Pause",
+    "exampleDE": "In der zwanzigminütigen Pause trinken die Besucher ein Glas Sekt."
+  },
+  {
+    "index": 1290,
+    "front": "der Rang",
+    "exampleDE": "Von den Plätzen im ersten Rang hat man einen ausgezeichneten Überblick."
+  },
+  {
+    "index": 1291,
+    "front": "die Generalprobe",
+    "exampleDE": "Die letzte Probe vor der großen Premiere verlief fehlerfrei."
+  },
+  {
+    "index": 1292,
+    "front": "die Kunstgalerie",
+    "exampleDE": "In der städtischen Kunstgalerie stellen junge Maler ihre Werke aus."
+  },
+  {
+    "index": 1293,
+    "front": "das Ölgemälde",
+    "exampleDE": "Das wertvolle Ölgemälde stammt aus dem siebzehnten Jahrhundert."
+  },
+  {
+    "index": 1294,
+    "front": "die Skulptur",
+    "exampleDE": "Im Museumsgarten steht eine lebensgroße Skulptur aus Bronze."
+  },
+  {
+    "index": 1295,
+    "front": "der Museumsführer",
+    "exampleDE": "Der elektronische Audioguide führt Besucher informativ durch die Räume."
+  },
+  {
+    "index": 1296,
+    "front": "der Eintritt",
+    "exampleDE": "Für Schüler und Studierende ist der Eintritt sonntags ermäßigt."
+  },
+  {
+    "index": 1297,
+    "front": "die Sonderausstellung",
+    "exampleDE": "Die Sonderausstellung über die Antike lockt viele Besucher an."
+  },
+  {
+    "index": 1298,
+    "front": "das Meisterwerk",
+    "exampleDE": "Dieses weltberühmte Porträt gilt als das Meisterwerk des Malers."
+  },
+  {
+    "index": 1299,
+    "front": "die Akustikgitarre",
+    "exampleDE": "Am Lagerfeuer begleitet er die Lieder auf der Akustikgitarre."
+  },
+  {
+    "index": 1300,
+    "front": "das Klavier",
+    "exampleDE": "Sie übt jeden Nachmittag fleißig Tonleitern auf dem Klavier."
+  },
+  {
+    "index": 1301,
+    "front": "die Geige",
+    "exampleDE": "Der klare Klang der Geige trug die Melodie des Streichquartetts."
+  },
+  {
+    "index": 1302,
+    "front": "das Schlagzeug",
+    "exampleDE": "Der Schlagzeuger gibt der Band den treibenden Rhythmus vor."
+  },
+  {
+    "index": 1303,
+    "front": "der Notenständer",
+    "exampleDE": "Das Notenheft steht aufgeschlagen auf dem stabilen Notenständer."
+  },
+  {
+    "index": 1304,
+    "front": "der Kopfhörer",
+    "exampleDE": "In der Bahn hört sie ihre Lieblingsmusik über kabellose Kopfhörer."
+  },
+  {
+    "index": 1305,
+    "front": "der Songtext",
+    "exampleDE": "Er kennt den Songtext des englischen Liedes komplett auswendig."
+  },
+  {
+    "index": 1306,
+    "front": "der Chor",
+    "exampleDE": "Der Kirchenchor probt wöchentlich für das festliche Weihnachtskonzert."
+  },
+  {
+    "index": 1307,
+    "front": "die Laufschuhe",
+    "exampleDE": "Gute Laufschuhe dämpfen jeden Schritt beim Joggen auf Asphalt."
+  },
+  {
+    "index": 1308,
+    "front": "die Trinkflasche",
+    "exampleDE": "Beim Sport habe ich immer eine gefüllte Trinkflasche griffbereit."
+  },
+  {
+    "index": 1309,
+    "front": "das Fitnessstudio",
+    "exampleDE": "Dreimal pro Woche trainiert er an den Geräten im Fitnessstudio."
+  },
+  {
+    "index": 1310,
+    "front": "die Gymnastikmatte",
+    "exampleDE": "Sie rollt ihre rutschfeste Gymnastikmatte für das Yoga aus."
+  },
+  {
+    "index": 1311,
+    "front": "die Liegestütze",
+    "exampleDE": "Zehn saubere Liegestütze gehören zu seinem morgendlichen Zirkeltraining."
+  },
+  {
+    "index": 1312,
+    "front": "das Seilspringen",
+    "exampleDE": "Seilspringen ist eine hervorragende Übung für Koordination und Kondition."
+  },
+  {
+    "index": 1313,
+    "front": "der Marathon",
+    "exampleDE": "Monatelang bereitete er sich gewissenhaft auf seinen ersten Marathon vor."
+  },
+  {
+    "index": 1314,
+    "front": "der Fußballplatz",
+    "exampleDE": "Die Jugendlichen treffen sich nach der Schule auf dem Fußballplatz."
+  },
+  {
+    "index": 1315,
+    "front": "das Tor",
+    "exampleDE": "In der letzten Spielminute schoss die Stürmerin das entscheidende Tor."
+  },
+  {
+    "index": 1316,
+    "front": "der Schiedsrichter",
+    "exampleDE": "Der unparteiische Schiedsrichter pfiff das faire Spiel pünktlich an."
+  },
+  {
+    "index": 1317,
+    "front": "die Halbzeitpause",
+    "exampleDE": "In der fünfzehnminütigen Halbzeitpause besprechen die Spieler die Taktik."
+  },
+  {
+    "index": 1318,
+    "front": "der Basketballkorb",
+    "exampleDE": "Mit einem gezielten Wurf traf er den Ball direkt in den Basketballkorb."
+  },
+  {
+    "index": 1319,
+    "front": "der Tennisschläger",
+    "exampleDE": "Sie bespannt ihren Tennisschläger vor dem großen Turnier neu."
+  },
+  {
+    "index": 1320,
+    "front": "die Tischtennisplatte",
+    "exampleDE": "Im Garten steht eine wetterfeste Tischtennisplatte aus Beton."
+  },
+  {
+    "index": 1321,
+    "front": "das Turnier",
+    "exampleDE": "An dem regionalen Sportturnier nehmen über zwanzig Teams teil."
+  },
+  {
+    "index": 1322,
+    "front": "das Schwimmbad",
+    "exampleDE": "Im Hallenbad schwimmt er jeden Dienstagmorgen zwanzig Bahnen."
+  },
+  {
+    "index": 1323,
+    "front": "die Schwimmbrille",
+    "exampleDE": "Eine dicht sitzende Schwimmbrille schützt die Augen vor Chlorwasser."
+  },
+  {
+    "index": 1324,
+    "front": "der Sprungturm",
+    "exampleDE": "Mutig sprang das Mädchen vom Dreimeter-Sprungturm ins Becken."
+  },
+  {
+    "index": 1325,
+    "front": "das Segelboot",
+    "exampleDE": "Mit gesetzten Segeln gleitet das kleine Segelboot über den See."
+  },
+  {
+    "index": 1326,
+    "front": "die Schwimmweste",
+    "exampleDE": "Auf dem offenen Wasser ist das Tragen einer Schwimmweste Pflicht."
+  },
+  {
+    "index": 1327,
+    "front": "das Paddel",
+    "exampleDE": "Mit gleichmäßigen Zügen taucht er das Paddel ins ruhige Wasser."
+  },
+  {
+    "index": 1328,
+    "front": "der Wanderweg",
+    "exampleDE": "Der markierte Wanderweg führt durch schattige Wälder auf den Berg."
+  },
+  {
+    "index": 1329,
+    "front": "das Bürgeramt",
+    "exampleDE": "Einen neuen Ausweis beantragt man persönlich im Bürgeramt."
+  },
+  {
+    "index": 1330,
+    "front": "der Personalausweis",
+    "exampleDE": "Der Personalausweis ist zehn Jahre lang im Inland gültig."
+  },
+  {
+    "index": 1331,
+    "front": "die Geburtsurkunde",
+    "exampleDE": "Für viele behördliche Anträge benötigt man eine offizielle Geburtsurkunde."
+  },
+  {
+    "index": 1332,
+    "front": "die Meldebestätigung",
+    "exampleDE": "Nach dem Umzug erhält man beim Einwohnermeldeamt die Meldebestätigung."
+  },
+  {
+    "index": 1333,
+    "front": "das Formular",
+    "exampleDE": "Füllen Sie das behördliche Formular bitte in Druckbuchstaben aus."
+  },
+  {
+    "index": 1334,
+    "front": "die Unterschrift",
+    "exampleDE": "Setzen Sie Ihre eigenhändige Unterschrift unten auf die Linie."
+  },
+  {
+    "index": 1335,
+    "front": "der Stempel",
+    "exampleDE": "Ein offizieller Stempel bestätigt die Echtheit des Schreibens."
+  },
+  {
+    "index": 1336,
+    "front": "die Beglaubigung",
+    "exampleDE": "Zeugnisse für die Universität erfordern oft eine amtliche Beglaubigung."
+  },
+  {
+    "index": 1337,
+    "front": "die Vorschrift",
+    "exampleDE": "Alle Mitarbeiter müssen die geltenden Sicherheitsvorschriften strikt befolgen."
+  },
+  {
+    "index": 1338,
+    "front": "die Erlaubnis",
+    "exampleDE": "Ohne schriftliche Erlaubnis der Behörde darf hier nicht gebaut werden."
+  },
+  {
+    "index": 1339,
+    "front": "das Verbot",
+    "exampleDE": "Im gesamten Gebäude gilt ein ausnahmsloses Rauchverbot."
+  },
+  {
+    "index": 1340,
+    "front": "die Strafe",
+    "exampleDE": "Falschparker müssen mit einer empfindlichen Geldstrafe rechnen."
+  },
+  {
+    "index": 1341,
+    "front": "das Fundbüro",
+    "exampleDE": "Verlorene Schlüssel werden oft von ehrlichen Findern im Fundbüro abgegeben."
+  },
+  {
+    "index": 1342,
+    "front": "die Polizeiwache",
+    "exampleDE": "Er erstattete auf der örtlichen Polizeiwache Anzeige gegen Unbekannt."
+  },
+  {
+    "index": 1343,
+    "front": "der Zeuge",
+    "exampleDE": "Die Polizei befragte mehrere Zeugen zum Hergang des Unfalls."
+  },
+  {
+    "index": 1344,
+    "front": "die Wahl",
+    "exampleDE": "Alle vier Jahre findet die demokratische Wahl zum Parlament statt."
+  },
+  {
+    "index": 1345,
+    "front": "der Stimmzettel",
+    "exampleDE": "Setzen Sie Ihr Kreuz bitte verdeckt auf dem Stimmzettel."
+  },
+  {
+    "index": 1346,
+    "front": "die Wahlurne",
+    "exampleDE": "Der gefaltete Stimmzettel wird in die versiegelte Wahlurne geworfen."
+  },
+  {
+    "index": 1347,
+    "front": "das Grundgesetz",
+    "exampleDE": "Das Grundgesetz garantiert die unverletzlichen Menschenrechte aller Bürger."
+  },
+  {
+    "index": 1348,
+    "front": "die Meinungsfreiheit",
+    "exampleDE": "Die freie Meinungsäußerung ist ein tragender Pfeiler der Demokratie."
+  },
+  {
+    "index": 1349,
+    "front": "die Bürgerbeteiligung",
+    "exampleDE": "Durch Bürgerbeteiligung können Einwohner ihre Stadt aktiv mitgestalten."
+  },
+  {
+    "index": 1350,
+    "front": "die Gleichberechtigung",
+    "exampleDE": "Gleichberechtigung aller Geschlechter ist gesetzlich fest verankert."
+  },
+  {
+    "index": 1351,
+    "front": "das Ehrenamt",
+    "exampleDE": "Viele Menschen engagieren sich in ihrer Freizeit in einem Ehrenamt."
+  },
+  {
+    "index": 1352,
+    "front": "das Silvester",
+    "exampleDE": "An Silvester stoßen wir um Mitternacht auf das neue Jahr an."
+  },
+  {
+    "index": 1353,
+    "front": "das Feuerwerk",
+    "exampleDE": "Ein farbenfrohes Feuerwerk erhellt den nächtlichen Himmel."
+  },
+  {
+    "index": 1354,
+    "front": "das Neujahr",
+    "exampleDE": "Am Neujahrstag wünschen sich Nachbarn und Freunde viel Glück."
+  },
+  {
+    "index": 1355,
+    "front": "die Weihnachtstage",
+    "exampleDE": "Die Weihnachtstage verbringt die Familie traditionell gemeinsam zu Hause."
+  },
+  {
+    "index": 1356,
+    "front": "der Heiligabend",
+    "exampleDE": "An Heiligabend werden unter dem geschmückten Baum Geschenke ausgepackt."
+  },
+  {
+    "index": 1357,
+    "front": "das Geschenkpapier",
+    "exampleDE": "Buntes Geschenkpapier und Schleifen zieren die Päckchen."
+  },
+  {
+    "index": 1358,
+    "front": "die Glückwunschkarte",
+    "exampleDE": "Auf die Glückwunschkarte schrieb sie ein paar persönliche Zeilen."
+  },
+  {
+    "index": 1359,
+    "front": "die Geburtstagstorte",
+    "exampleDE": "Auf der Geburtstagstorte brennen bunte Kerzen zum Auspusten."
+  },
+  {
+    "index": 1360,
+    "front": "die Überraschungsparty",
+    "exampleDE": "Freunde organisierten heimlich eine tolle Überraschungsparty für ihn."
+  },
+  {
+    "index": 1361,
+    "front": "der Luftballon",
+    "exampleDE": "Bunte Luftballons schmücken den Festsaal für die Kinderparty."
+  },
+  {
+    "index": 1362,
+    "front": "die Einladungskarte",
+    "exampleDE": "Zwei Wochen vor dem Fest verschickte er die Einladungskarten."
+  },
+  {
+    "index": 1363,
+    "front": "anstoßen",
+    "exampleDE": "Wir stoßen mit einem kühlen Getränk auf das Wohl des Geburtstagskindes an."
+  },
+  {
+    "index": 1364,
+    "front": "der Ehrengast",
+    "exampleDE": "Der Bürgermeister wurde als Ehrengast herzlich begrüßt."
+  },
+  {
+    "index": 1365,
+    "front": "die Festrede",
+    "exampleDE": "In seiner Festrede blickte der Vereinsvorsitzende auf Erfolge zurück."
+  },
+  {
+    "index": 1366,
+    "front": "gratulieren",
+    "exampleDE": "Alle Kollegen gratulieren ihm herzlich zum runden Jubiläum."
+  },
+  {
+    "index": 1367,
+    "front": "die Gegenwart",
+    "exampleDE": "Konzentriere dich auf die Aufgaben in der Gegenwart."
+  },
+  {
+    "index": 1368,
+    "front": "die Vergangenheit",
+    "exampleDE": "Aus den Fehlern der Vergangenheit kann man viel für die Zukunft lernen."
+  },
+  {
+    "index": 1369,
+    "front": "die Zukunft",
+    "exampleDE": "Mit Zuversicht und Fleiß blickt die junge Familie in die Zukunft."
+  },
+  {
+    "index": 1370,
+    "front": "die Zeitspanne",
+    "exampleDE": "In der kurzen Zeitspanne von wenigen Tagen änderte sich alles."
+  },
+  {
+    "index": 1371,
+    "front": "der Zeitraum",
+    "exampleDE": "Über einen längeren Zeitraum hinweg zeigte sich eine deutliche Besserung."
+  },
+  {
+    "index": 1372,
+    "front": "der Augenblick",
+    "exampleDE": "Für einen kurzen Augenblick hielten alle im Raum den Atem an."
+  },
+  {
+    "index": 1373,
+    "front": "die Ewigkeit",
+    "exampleDE": "Das Warten am verspäteten Bahnsteig kam ihm wie eine Ewigkeit vor."
+  },
+  {
+    "index": 1374,
+    "front": "gelegentlich",
+    "exampleDE": "Gelegentlich gönnt er sich nach dem Essen ein Stück dunkle Schokolade."
+  },
+  {
+    "index": 1375,
+    "front": "regelmäßig",
+    "exampleDE": "Wer regelmäßig Vokabeln wiederholt, erzielt schnelle Lernerfolge."
+  },
+  {
+    "index": 1376,
+    "front": "stetig",
+    "exampleDE": "Ihr Sprachverständnis verbesserte sich in den letzten Monaten stetig."
+  },
+  {
+    "index": 1377,
+    "front": "ununterbrochen",
+    "exampleDE": "Seit dem frühen Morgen regnet es draußen ununterbrochen."
+  },
+  {
+    "index": 1378,
+    "front": "inzwischen",
+    "exampleDE": "Inzwischen spricht sie fließend und ohne langes Nachdenken."
+  },
+  {
+    "index": 1379,
+    "front": "demnächst",
+    "exampleDE": "Die neue Version der Lern-App erscheint demnächst im Store."
+  },
+  {
+    "index": 1380,
+    "front": "seinerzeit",
+    "exampleDE": "Seinerzeit bauten die Handwerker das Rathaus ohne moderne Maschinen."
+  },
+  {
+    "index": 1381,
+    "front": "bisher",
+    "exampleDE": "Bisher sind alle Tests und Prüfungen absolut fehlerfrei verlaufen."
+  },
+  {
+    "index": 1382,
+    "front": "die Umgebung",
+    "exampleDE": "In der näheren Umgebung des Hotels gibt es herrliche Wanderwege."
+  },
+  {
+    "index": 1383,
+    "front": "die Entfernung",
+    "exampleDE": "Die Entfernung zwischen den beiden Städten beträgt rund fünfzig Kilometer."
+  },
+  {
+    "index": 1384,
+    "front": "die Zwischenzeit",
+    "exampleDE": "In der Zwischenzeit können wir schon den Tisch für das Essen decken."
+  },
+  {
+    "index": 1385,
+    "front": "gegenüber",
+    "exampleDE": "Die Apotheke liegt direkt gegenüber dem Haupteingang des Bahnhofs."
+  },
+  {
+    "index": 1386,
+    "front": "nebenan",
+    "exampleDE": "In der Wohnung nebenan wohnt eine sehr freundliche Familie."
+  },
+  {
+    "index": 1387,
+    "front": "mittendrin",
+    "exampleDE": "Mitten in der Altstadt steht der älteste Brunnen des Ortes."
+  },
+  {
+    "index": 1388,
+    "front": "außerhalb",
+    "exampleDE": "Das Gewerbegebiet liegt etwas außerhalb der geschlossenen Ortschaft."
+  },
+  {
+    "index": 1389,
+    "front": "einerseits",
+    "exampleDE": "Einerseits möchte er verreisen, andererseits spart er auf ein Auto."
+  },
+  {
+    "index": 1390,
+    "front": "andererseits",
+    "exampleDE": "Andererseits bietet die neue Stelle wesentlich bessere Aufstiegschancen."
+  },
+  {
+    "index": 1391,
+    "front": "infolgedessen",
+    "exampleDE": "Die Straßen waren vereist, infolgedessen kam es zu Staus."
+  },
+  {
+    "index": 1392,
+    "front": "dennoch",
+    "exampleDE": "Es regnete in Strömen, dennoch machten wir einen langen Waldspaziergang."
+  },
+  {
+    "index": 1393,
+    "front": "nichtsdestotrotz",
+    "exampleDE": "Er war sehr müde, nichtsdestotrotz beendete er das Kapitel sorgfältig."
+  },
+  {
+    "index": 1394,
+    "front": "außerdem",
+    "exampleDE": "Das Essen schmeckte hervorragend und die Bedienung war außerdem sehr nett."
+  },
+  {
+    "index": 1395,
+    "front": "aus diesem Grund",
+    "exampleDE": "Sie hatte fleißig gelernt und bestand aus diesem Grund die Prüfung spielend."
+  },
+  {
+    "index": 1396,
+    "front": "nämlich",
+    "exampleDE": "Ich bleibe heute daheim, ich habe nämlich starke Kopfschmerzen."
+  },
+  {
+    "index": 1397,
+    "front": "stattdessen",
+    "exampleDE": "Wir fuhren nicht mit dem Auto, sondern gingen stattdessen zu Fuß."
+  },
+  {
+    "index": 1398,
+    "front": "vorausgesetzt",
+    "exampleDE": "Wir wandern morgen, vorausgesetzt das Wetter bleibt trocken."
+  },
+  {
+    "index": 1399,
+    "front": "währenddessen",
+    "exampleDE": "Er briet das Gemüse, währenddessen deckte sie liebevoll den Tisch."
+  },
+  {
+    "index": 1400,
+    "front": "sowohl ... als auch",
+    "exampleDE": "Sie spricht sowohl fließend Spanisch als auch verhandlungssicheres Englisch."
+  },
+  {
+    "index": 1401,
+    "front": "weder ... noch",
+    "exampleDE": "Er trinkt weder Kaffee noch schwarzen Tee am Morgen."
+  },
+  {
+    "index": 1402,
+    "front": "je ... desto",
+    "exampleDE": "Je mehr man übt, desto leichter fällt das freie Sprechen."
+  },
+  {
+    "index": 1403,
+    "front": "obgleich",
+    "exampleDE": "Obgleich es stürmisch war, liefen die Fischer mit ihren Booten aus."
+  },
+  {
+    "index": 1404,
+    "front": "anpacken",
+    "exampleDE": "Wenn alle mit anpacken, ist die schwere Arbeit im Nu erledigt."
+  },
+  {
+    "index": 1405,
+    "front": "erledigen",
+    "exampleDE": "Ich muss heute Vormittag noch wichtige Einkäufe erledigen."
+  },
+  {
+    "index": 1406,
+    "front": "vorbereiten",
+    "exampleDE": "Sie bereitet die Präsentation für das morgige Meeting gründlich vor."
+  },
+  {
+    "index": 1407,
+    "front": "aufräumen",
+    "exampleDE": "Samstags räumen die Kinder gemeinsam ihre Zimmer auf."
+  },
+  {
+    "index": 1408,
+    "front": "wegwerfen",
+    "exampleDE": "Alte Batterien darf man nicht einfach in den Hausmüll wegwerfen."
+  },
+  {
+    "index": 1409,
+    "front": "behalten",
+    "exampleDE": "Dieses schöne Erinnerungsstück möchte ich mein Leben lang behalten."
+  },
+  {
+    "index": 1410,
+    "front": "verschenken",
+    "exampleDE": "Bücher, die sie schon gelesen hat, verschenkt sie gerne an Freunde."
+  },
+  {
+    "index": 1411,
+    "front": "organisieren",
+    "exampleDE": "Er organisiert das alljährliche Sommerfest unseres Sportvereins."
+  },
+  {
+    "index": 1412,
+    "front": "bemerken",
+    "exampleDE": "Erst spät bemerkte er, dass er seinen Hausschlüssel vergessen hatte."
+  },
+  {
+    "index": 1413,
+    "front": "begreifen",
+    "exampleDE": "Nach der anschaulichen Erklärung konnte er den Zusammenhang begreifen."
+  },
+  {
+    "index": 1414,
+    "front": "nachdenken",
+    "exampleDE": "Über dieses wichtige Angebot muss ich erst in Ruhe nachdenken."
+  },
+  {
+    "index": 1415,
+    "front": "feststellen",
+    "exampleDE": "Die Prüfer stellten fest, dass alle Sicherheitskriterien erfüllt sind."
+  },
+  {
+    "index": 1416,
+    "front": "vermuten",
+    "exampleDE": "Die Experten vermuten, dass die Preise bald wieder sinken werden."
+  },
+  {
+    "index": 1417,
+    "front": "bezweifeln",
+    "exampleDE": "Ich bezweifle stark, dass dieser alte Plan heute noch funktioniert."
+  },
+  {
+    "index": 1418,
+    "front": "beurteilen",
+    "exampleDE": "Aus der Ferne lässt sich die schwierige Lage nur schwer beurteilen."
+  },
+  {
+    "index": 1419,
+    "front": "begründen",
+    "exampleDE": "Können Sie Ihren Standpunkt bitte mit konkreten Beispielen begründen?"
+  },
+  {
+    "index": 1420,
+    "front": "bestätigen",
+    "exampleDE": "Die Fluggesellschaft bestätigte die Buchung per automatischer Nachricht."
+  },
+  {
+    "index": 1421,
+    "front": "vereinbaren",
+    "exampleDE": "Wir vereinbarten einen neuen Termin für die kommende Woche."
+  },
+  {
+    "index": 1422,
+    "front": "anregen",
+    "exampleDE": "Er regte an, die Besprechung um eine halbe Stunde zu verschieben."
+  },
+  {
+    "index": 1423,
+    "front": "zur Sprache bringen",
+    "exampleDE": "Sie brachte das wichtige Thema in der Sitzung mutig zur Sprache."
+  },
+  {
+    "index": 1424,
+    "front": "zusammenfassen",
+    "exampleDE": "Der Sprecher fasste die wichtigsten Kernaussagen kurz zusammen."
+  },
+  {
+    "index": 1425,
+    "front": "berichten",
+    "exampleDE": "Die Korrespondentin berichtet live von den aktuellen Ereignissen."
+  },
+  {
+    "index": 1426,
+    "front": "mitteilen",
+    "exampleDE": "Bitte teilen Sie uns Ihre neue Anschrift zeitnah mit."
+  },
+  {
+    "index": 1427,
+    "front": "verbessern",
+    "exampleDE": "Mit täglichem Training konnte er seine persönliche Laufzeit verbessern."
+  },
+  {
+    "index": 1428,
+    "front": "verschlechtern",
+    "exampleDE": "Bei plötzlichem Regen verschlechtern sich die Sichtverhältnisse rasch."
+  },
+  {
+    "index": 1429,
+    "front": "zunehmen",
+    "exampleDE": "In den letzten Jahren hat das Interesse an gesunder Ernährung zugenommen."
+  },
+  {
+    "index": 1430,
+    "front": "abnehmen",
+    "exampleDE": "Durch mehr Bewegung und weniger Zucker konnte er gesund abnehmen."
+  },
+  {
+    "index": 1431,
+    "front": "entwickeln",
+    "exampleDE": "Das Ingenieurteam entwickelt ein neuartiges, sparsames Antriebssystem."
+  },
+  {
+    "index": 1432,
+    "front": "entstehen",
+    "exampleDE": "Auf der freien Wiese entsteht ein moderner Kindergarten."
+  },
+  {
+    "index": 1433,
+    "front": "verschwinden",
+    "exampleDE": "Die dichten Nebelschwaden verschwinden, sobald die Sonne scheint."
+  },
+  {
+    "index": 1434,
+    "front": "überqueren",
+    "exampleDE": "Fußgänger sollten die Straße nur an gesicherten Überwegen überqueren."
+  },
+  {
+    "index": 1435,
+    "front": "eintreffen",
+    "exampleDE": "Der pünktliche Zug wird planmäßig um vierzehn Uhr eintreffen."
+  },
+  {
+    "index": 1436,
+    "front": "abbiegen",
+    "exampleDE": "An der Ampelkreuzung müssen Sie links in die Fußgängerzone abbiegen."
+  },
+  {
+    "index": 1437,
+    "front": "beschleunigen",
+    "exampleDE": "Auf der Auffahrt beschleunigt der Wagen zügig auf Autobahntempo."
+  },
+  {
+    "index": 1438,
+    "front": "bremsen",
+    "exampleDE": "Vor der scharfen Kurve bremst der Fahrer rechtzeitig ab."
+  },
+  {
+    "index": 1439,
+    "front": "anhalten",
+    "exampleDE": "Am Stoppschild muss jedes Fahrzeug für drei Sekunden anhalten."
+  },
+  {
+    "index": 1440,
+    "front": "vorbeifahren",
+    "exampleDE": "Der Expresszug fährt ohne Halt am kleinen Provinzbahnhof vorbei."
+  },
+  {
+    "index": 1441,
+    "front": "umkehren",
+    "exampleDE": "Wegen des plötzlichen Schneesturms mussten die Bergsteiger umkehren."
+  },
+  {
+    "index": 1442,
+    "front": "beruhigen",
+    "exampleDE": "Die Mutter konnte das weinende Kind mit sanfter Stimme rasch beruhigen."
+  },
+  {
+    "index": 1443,
+    "front": "beunruhigen",
+    "exampleDE": "Die dunklen Gewitterwolken am Himmel beunruhigten die Wanderer."
+  },
+  {
+    "index": 1444,
+    "front": "überraschen",
+    "exampleDE": "Seine Freunde überraschten ihn mit einem selbstgebackenen Kuchen."
+  },
+  {
+    "index": 1445,
+    "front": "trösten",
+    "exampleDE": "Sie versuchte ihre traurige Freundin mit lieben Worten zu trösten."
+  },
+  {
+    "index": 1446,
+    "front": "bewundern",
+    "exampleDE": "Touristen aus aller Welt bewundern die meisterhafte Architektur."
+  },
+  {
+    "index": 1447,
+    "front": "respektieren",
+    "exampleDE": "Wir sollten die unterschiedlichen Meinungen anderer stets respektieren."
+  },
+  {
+    "index": 1448,
+    "front": "schätzen",
+    "exampleDE": "Ich schätze deine ehrliche und direkte Art sehr."
+  },
+  {
+    "index": 1449,
+    "front": "hervorragend",
+    "exampleDE": "Die Schauspielerin lieferte eine rundum hervorragende Leistung ab."
+  },
+  {
+    "index": 1450,
+    "front": "bemerkenswert",
+    "exampleDE": "Ihre schnelle Auffassungsgabe ist wirklich bemerkenswert."
+  },
+  {
+    "index": 1451,
+    "front": "angemessen",
+    "exampleDE": "Der Preis für die gebotene Qualität ist absolut angemessen."
+  },
+  {
+    "index": 1452,
+    "front": "überflüssig",
+    "exampleDE": "Langes Warten am Schalter wird durch Online-Buchungen überflüssig."
+  },
+  {
+    "index": 1453,
+    "front": "wesentlich",
+    "exampleDE": "Gute Vorbereitung trägt wesentlich zum Erfolg eines Vorhabens bei."
+  },
+  {
+    "index": 1454,
+    "front": "ausreichend",
+    "exampleDE": "Im Kühlschrank sind noch ausreichend Vorräte für das Wochenende."
+  },
+  {
+    "index": 1455,
+    "front": "wertvoll",
+    "exampleDE": "Ihre praktischen Ratschläge waren für uns alle sehr wertvoll."
+  },
+  {
+    "index": 1456,
+    "front": "wirkungsvoll",
+    "exampleDE": "Regelmäßiges Lüften ist eine wirkungsvolle Maßnahme gegen Schimmel."
+  },
+  {
+    "index": 1457,
+    "front": "gepflegt",
+    "exampleDE": "Der alte Vorgarten macht einen überaus gepflegten Eindruck."
+  },
+  {
+    "index": 1458,
+    "front": "unordentlich",
+    "exampleDE": "Nach dem Bastelnachmittag sah das Kinderzimmer recht unordentlich aus."
+  },
+  {
+    "index": 1459,
+    "front": "gemütlich",
+    "exampleDE": "Wir verbrachten einen gemütlichen Abend am warmen Kaminfeuer."
+  },
+  {
+    "index": 1460,
+    "front": "anstrengend",
+    "exampleDE": "Die lange Wanderung über steile Geröllpfade war sehr anstrengend."
+  },
+  {
+    "index": 1461,
+    "front": "erträglich",
+    "exampleDE": "Dank des leichten Seewinds waren die hohen Temperaturen erträglich."
+  },
+  {
+    "index": 1462,
+    "front": "tadellos",
+    "exampleDE": "Das frisch renovierte Badezimmer funktioniert tadellos."
+  },
+  {
+    "index": 1463,
+    "front": "makellos",
+    "exampleDE": "Die frisch polierte Oberfläche glänzt makellos im Sonnenlicht."
+  },
+  {
+    "index": 1464,
+    "front": "aufrichtig",
+    "exampleDE": "Sie bedankte sich mit aufrichtigen Worten für die großzügige Hilfe."
+  },
+  {
+    "index": 1465,
+    "front": "rücksichtsvoll",
+    "exampleDE": "Im vollen Bus verhält er sich rücksichtsvoll gegenüber älteren Menschen."
+  },
+  {
+    "index": 1466,
+    "front": "aufmerksam",
+    "exampleDE": "Der aufmerksame Kellner bemerkte sofort, dass das Glas leer war."
+  },
+  {
+    "index": 1467,
+    "front": "willensstark",
+    "exampleDE": "Mit willensstarkem Einsatz erreichte die Athletin ihr sportliches Ziel."
+  },
+  {
+    "index": 1468,
+    "front": "selbstständig",
+    "exampleDE": "Die Schülerin löste die anspruchsvolle Aufgabe völlig selbstständig."
+  },
+  {
+    "index": 1469,
+    "front": "verantwortungsbewusst",
+    "exampleDE": "Ein verantwortungsbewusster Fahrer achtet stets auf das Tempolimit."
+  },
+  {
+    "index": 1470,
+    "front": "friedlich",
+    "exampleDE": "Die Kundgebung verlief von Anfang bis Ende vollkommen friedlich."
+  },
+  {
+    "index": 1471,
+    "front": "hilfsbereit",
+    "exampleDE": "Der neue Nachbar bot hilfsbereit seine Unterstützung beim Umzug an."
+  },
+  {
+    "index": 1472,
+    "front": "keine Ursache",
+    "exampleDE": "„Vielen Dank für deine Hilfe!“ – „Keine Ursache, gern geschehen!“"
+  },
+  {
+    "index": 1473,
+    "front": "mach dir keine Sorgen",
+    "exampleDE": "Mach dir keine Sorgen, alles wird sich zum Guten wenden."
+  },
+  {
+    "index": 1474,
+    "front": "bis zum nächsten Mal",
+    "exampleDE": "Es war ein schöner Abend, auf Wiedersehen und bis zum nächsten Mal!"
+  },
+  {
+    "index": 1475,
+    "front": "im Großen und Ganzen",
+    "exampleDE": "Im Großen und Ganzen sind wir mit dem Ergebnis sehr zufrieden."
+  },
+  {
+    "index": 1476,
+    "front": "Schritt für Schritt",
+    "exampleDE": "Man lernt eine fremde Sprache am besten geduldig Schritt für Schritt."
+  },
+  {
+    "index": 1477,
+    "front": "auf jeden Fall",
+    "exampleDE": "Wir sollten die sehenswerte Altstadt auf jeden Fall besichtigen."
+  },
+  {
+    "index": 1478,
+    "front": "unter vier Augen",
+    "exampleDE": "Ich möchte diese vertrauliche Angelegenheit gerne unter vier Augen besprechen."
+  },
+  {
+    "index": 1479,
+    "front": "das Visum",
+    "exampleDE": "Für den längeren Aufenthalt benötigte sie ein offizielles Visum."
+  },
+  {
+    "index": 1480,
+    "front": "die Zollkontrolle",
+    "exampleDE": "An der Grenze kontrollieren die Beamten stichprobenartig den Zoll."
+  },
+  {
+    "index": 1481,
+    "front": "die Einreisebestimmung",
+    "exampleDE": "Vor der Abreise sollte man die aktuellen Einreisebestimmungen prüfen."
+  },
+  {
+    "index": 1482,
+    "front": "das Konsulat",
+    "exampleDE": "Bei Passverlust im Ausland hilft das zuständige Konsulat weiter."
+  },
+  {
+    "index": 1483,
+    "front": "der Grenzbeamte",
+    "exampleDE": "Der freundliche Grenzbeamte stempelte den Reisepass sorgfältig ab."
+  },
+  {
+    "index": 1484,
+    "front": "die Grenzkontrolle",
+    "exampleDE": "Wegen der Grenzkontrolle bildete sich eine kurze Fahrzeugschlange."
+  },
+  {
+    "index": 1485,
+    "front": "die Aufenthaltsgenehmigung",
+    "exampleDE": "Die Aufenthaltsgenehmigung wurde um weitere zwei Jahre verlängert."
+  },
+  {
+    "index": 1486,
+    "front": "der Auslandskrankenschutz",
+    "exampleDE": "Ein Auslandskrankenschutz schützt vor unvorhersehbaren Behandlungskosten."
+  },
+  {
+    "index": 1487,
+    "front": "die Schlagzeile",
+    "exampleDE": "Die große Schlagzeile auf der Titelseite erregte viel Aufsehen."
+  },
+  {
+    "index": 1488,
+    "front": "die Pressekonferenz",
+    "exampleDE": "Auf der Pressekonferenz stellten Journalisten viele kritische Fragen."
+  },
+  {
+    "index": 1489,
+    "front": "der Leitartikel",
+    "exampleDE": "Der Chefredakteur verfasste einen nachdenklichen Leitartikel."
+  },
+  {
+    "index": 1490,
+    "front": "die Berichterstattung",
+    "exampleDE": "Die objektive Berichterstattung lieferte fundierte Hintergründe."
+  },
+  {
+    "index": 1491,
+    "front": "die Sondersendung",
+    "exampleDE": "Wegen der aktuellen Entwicklung unterbrach der Sender das Programm für eine Sondersendung."
+  },
+  {
+    "index": 1492,
+    "front": "das Rundfunkprogramm",
+    "exampleDE": "Im Rundfunkprogramm laufen am Nachmittag klassische Konzerte."
+  },
+  {
+    "index": 1493,
+    "front": "die Nachrichtenagentur",
+    "exampleDE": "Die renommierte Nachrichtenagentur verbreitete die Eilmeldung weltweit."
+  },
+  {
+    "index": 1494,
+    "front": "die Nachbarschaftshilfe",
+    "exampleDE": "Funktionierende Nachbarschaftshilfe erleichtert älteren Bewohnern den Alltag."
+  },
+  {
+    "index": 1495,
+    "front": "das Wohnviertel",
+    "exampleDE": "Unser ruhiges Wohnviertel liegt nahe an Parks und Schulen."
+  },
+  {
+    "index": 1496,
+    "front": "der Spielplatz",
+    "exampleDE": "Auf dem Spielplatz toben am Nachmittag viele fröhliche Kinder."
+  },
+  {
+    "index": 1497,
+    "front": "das Treppenhaus",
+    "exampleDE": "Das Treppenhaus wird wöchentlich abwechselnd von den Mietern geputzt."
+  },
+  {
+    "index": 1498,
+    "front": "die Hausordnung",
+    "exampleDE": "Die Hausordnung regelt die Ruhezeiten in den Mittags- und Nachtstunden."
+  },
+  {
+    "index": 1499,
+    "front": "der Hausmeister",
+    "exampleDE": "Der hilfsbereite Hausmeister kümmert sich um kleine Reparaturen im Haus."
+  }
+]

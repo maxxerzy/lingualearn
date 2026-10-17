@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 
-const LANGS = ['da', 'el', 'la', 'fr', 'es', 'ru', 'ja', 'zh', 'pt', 'ar'];
+const LANGS = ['da', 'el', 'la', 'fr', 'es', 'ru', 'ja', 'zh', 'pt', 'ar', 'pl'];
 const NON_LATIN = ['el', 'ru', 'ja', 'zh', 'ar'];
-const NEEDS_IPA = ['da', 'el', 'la', 'fr', 'es', 'ru', 'pt'];
+const NEEDS_IPA = ['da', 'el', 'la', 'fr', 'es', 'ru', 'pt', 'pl'];
 
 let totalErrors = 0;
 
@@ -13,13 +13,13 @@ function logError(msg) {
 }
 
 async function validate() {
-  console.log('🔍 Validating all 10 decks...');
+  console.log('🔍 Validating all 11 decks...');
 
   const metaPath = path.resolve('./js/data/decks/meta.js');
   const meta = await import(`file://${metaPath}?t=${Date.now()}`);
   const deckMeta = meta.deckMeta;
 
-  if (!Array.isArray(deckMeta) || deckMeta.length !== 10) {
+  if (!Array.isArray(deckMeta) || deckMeta.length !== 11) {
     logError(`deckMeta must have 10 entries, found ${deckMeta?.length}`);
   }
 
@@ -131,7 +131,7 @@ async function validate() {
   }
 
   if (totalErrors === 0) {
-    console.log('\n🎉 ALL 10 DECKS VALIDATED PERFECTLY WITH 1,500 CARDS EACH!');
+    console.log('\n🎉 ALL 11 DECKS VALIDATED PERFECTLY WITH 1,500 CARDS EACH!');
     process.exit(0);
   } else {
     console.error(`\n❌ Total errors found: ${totalErrors}`);
