@@ -41,6 +41,15 @@ function getActiveDeckName() {
   return getDecks()[deckId]?.name || 'Dänisch';
 }
 
+let selectedCategory = 'all';
+
+const CATEGORIES = [
+  { id: 'all', label: 'Alle Szenarien', icon: 'fa-globe' },
+  { id: 'food', label: 'Essen & Trinken', icon: 'fa-utensils' },
+  { id: 'travel', label: 'Reise & Unterwegs', icon: 'fa-plane-departure' },
+  { id: 'health', label: 'Gesundheit & Alltag', icon: 'fa-kit-medical' },
+];
+
 // ── Übersicht aller Dialoge der aktuellen Sprache ────────────────────────
 export function renderDialogOverview() {
   const container = document.getElementById('dialogContent');
@@ -52,12 +61,16 @@ export function renderDialogOverview() {
   const list = DIALOGUES[lang] || [];
   const stats = getDialogueStats(lang, list.length);
 
+  const filteredList = selectedCategory === 'all'
+    ? list
+    : list.filter(d => (d.category || 'travel') === selectedCategory);
+
   container.innerHTML = `
     <div class="dialog-overview">
       <div class="dialog-banner">
         <div class="dialog-banner__info">
           <h3><i class="fas fa-comments"></i> Alltagsdialoge · ${esc(deckName)}</h3>
-          <p>Tauche in reale Alltagssituationen ein: Bestellen im Café, Hotel-Check-in oder Wegbeschreibung. Wähle klug oder sprich frei ins Mikrofon!</p>
+          <p>Tauche in reale Alltagssituationen ein: Bestellen im Café, Bahnhof, Hotel-Check-in oder Apotheke. Wähle klug oder sprich frei ins Mikrofon!</p>
         </div>
         <div class="dialog-banner__progress">
           <div class="dialog-progress-badge">
@@ -67,29 +80,43 @@ export function renderDialogOverview() {
         </div>
       </div>
 
-      <div class="dialog-grid">
-        ${list.map(d => {
-          const done = isDialogueCompleted(d.id);
-          return `
-            <div class="dialog-card ${done ? 'dialog-card--done' : ''}" data-scenario-id="${esc(d.id)}">
-              <div class="dialog-card__head">
-                <span class="dialog-card__icon"><i class="fas ${esc(d.icon || 'fa-comments')}"></i></span>
-                <span class="dialog-card__level">${esc(d.level || 'A1')}</span>
-              </div>
-              <h4 class="dialog-card__title">${esc(d.title)}</h4>
-              <p class="dialog-card__desc">${esc(d.situation)}</p>
-              <div class="dialog-card__footer">
-                <span class="dialog-card__npc">
-                  <i class="fas fa-user"></i> ${esc(d.npcName)} (${esc(d.npcRole)})
-                </span>
-                <span class="dialog-card__status">
-                  ${done ? '<i class="fas fa-circle-check"></i> Gemeistert' : 'Starten <i class="fas fa-chevron-right"></i>'}
-                </span>
-              </div>
-            </div>
-          `;
-        }).join('')}
+      <div class="dialog-category-filter" id="dialogCategoryFilter">
+        ${CATEGORIES.map(c => `
+          <button type="button" class="dialog-filter-btn ${selectedCategory === c.id ? 'dialog-filter-btn--active' : ''}" data-category="${c.id}">
+            <i class="fas ${c.icon}"></i> ${c.label}
+          </button>
+        `).join('')}
       </div>
+
+      ${filteredList.length === 0 ? `
+        <div class="dialog-empty-state">
+          <i class="fas fa-filter"></i> Keine Szenarien in dieser Kategorie für ${esc(deckName)}.
+        </div>
+      ` : `
+        <div class="dialog-grid">
+          ${filteredList.map(d => {
+            const done = isDialogueCompleted(d.id);
+            return `
+              <div class="dialog-card ${done ? 'dialog-card--done' : ''}" data-scenario-id="${esc(d.id)}">
+                <div class="dialog-card__head">
+                  <span class="dialog-card__icon"><i class="fas ${esc(d.icon || 'fa-comments')}"></i></span>
+                  <span class="dialog-card__level">${esc(d.level || 'A1')}</span>
+                </div>
+                <h4 class="dialog-card__title">${esc(d.title)}</h4>
+                <p class="dialog-card__desc">${esc(d.situation)}</p>
+                <div class="dialog-card__footer">
+                  <span class="dialog-card__npc">
+                    <i class="fas fa-user"></i> ${esc(d.npcName)} (${esc(d.npcRole)})
+                  </span>
+                  <span class="dialog-card__status">
+                    ${done ? '<i class="fas fa-circle-check"></i> Gemeistert' : 'Starten <i class="fas fa-chevron-right"></i>'}
+                  </span>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `}
     </div>
   `;
 }
@@ -161,8 +188,11 @@ function appendNpcTurn(turnIndex) {
         <div class="chat-bubble__text ${lang === 'ar' ? 'chat-bubble__text--ar' : ''}">${esc(turn.npc)}</div>
         ${turn.npcRoman ? `<div class="chat-bubble__roman">${esc(turn.npcRoman)}</div>` : ''}
         <div class="chat-bubble__actions">
-          <button type="button" class="audio-btn chat-audio-btn" data-say="${esc(turn.npc)}" title="Anhören">
+          <button type="button" class="audio-btn chat-audio-btn" data-say="${esc(turn.npc)}" title="Normal anhören">
             <i class="fas fa-volume-up"></i>
+          </button>
+          <button type="button" class="audio-btn chat-audio-slow-btn" data-say="${esc(turn.npc)}" title="Langsam anhören (0.7×)">
+            <i class="fas fa-turtle"></i>
           </button>
           <button type="button" class="chat-trans-toggle" data-target="trans-npc-${turnIndex}">
             <i class="fas fa-language"></i> Übersetzung
@@ -262,8 +292,11 @@ function renderSpeechRecorder(turn) {
       </div>
 
       <div class="speech-actions">
-        <button type="button" class="audio-btn stb-listen-btn" id="stbListenBtn" title="Referenzstimme anhören">
+        <button type="button" class="audio-btn stb-listen-btn" id="stbListenBtn" title="Normal anhören">
           <i class="fas fa-volume-up"></i> Anhören
+        </button>
+        <button type="button" class="audio-btn stb-slow-btn" id="stbSlowBtn" title="Langsam anhören (0.7×)">
+          <i class="fas fa-turtle"></i> Langsam
         </button>
         <button type="button" class="mic-record-btn" id="micRecordBtn">
           <i class="fas fa-microphone"></i>
@@ -304,6 +337,7 @@ function handleChoiceAnswer(button, turn) {
 
 function setupSpeechRecorder(turn) {
   const listenBtn = document.getElementById('stbListenBtn');
+  const slowBtn = document.getElementById('stbSlowBtn');
   const micBtn = document.getElementById('micRecordBtn');
   const statusLbl = document.getElementById('micRecordStatus');
   const feedbackEl = document.getElementById('speechFeedback');
@@ -312,6 +346,10 @@ function setupSpeechRecorder(turn) {
 
   if (listenBtn) {
     listenBtn.addEventListener('click', () => speak(turn.expected, lang));
+  }
+
+  if (slowBtn) {
+    slowBtn.addEventListener('click', () => speak(turn.expected, lang, 0.7));
   }
 
   if (manualBtn) {
@@ -476,10 +514,25 @@ export function initDialogue(activateView) {
   if (!container) return;
 
   container.addEventListener('click', e => {
-    // 1. Audio Button
+    // 1. Audio Button (Normal)
     const audioBtn = e.target.closest('.chat-audio-btn');
     if (audioBtn) {
       speak(audioBtn.dataset.say, getActiveLanguage());
+      return;
+    }
+
+    // 1b. Audio Button (Langsam / 0.7x)
+    const audioSlowBtn = e.target.closest('.chat-audio-slow-btn');
+    if (audioSlowBtn) {
+      speak(audioSlowBtn.dataset.say, getActiveLanguage(), 0.7);
+      return;
+    }
+
+    // 1c. Kategorie-Filter-Chip
+    const filterBtn = e.target.closest('.dialog-filter-btn');
+    if (filterBtn && filterBtn.dataset.category) {
+      selectedCategory = filterBtn.dataset.category;
+      renderDialogOverview();
       return;
     }
 

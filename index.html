@@ -507,15 +507,19 @@
               <p class="settings-hint">Löscht Kartenlevel, Kursstand, Gold-Lektionen und gemerkte Fehler — Konto, XP und Diamanten bleiben.</p>
             </div>
             <div class="form-group">
-              <label for="importFile">Deck importieren (JSON)</label>
-              <input type="file" id="importFile" class="input" accept=".json">
+              <label for="importFile">Deck importieren (Anki .apkg, CSV, TSV, JSON)</label>
+              <input type="file" id="importFile" class="input" accept=".apkg,.csv,.tsv,.txt,.json">
+              <p class="settings-hint">Unterstützt Anki-Decks (.apkg), Tabellen-Exporte (CSV/TSV aus Quizlet/Excel) sowie LinguaLearn-JSON. Sprache und Spalten werden automatisch erkannt.</p>
             </div>
             <div class="row">
               <button type="button" id="importBtn" class="btn btn-secondary">
                 <i class="fas fa-file-import"></i> Importieren
               </button>
               <button type="button" id="exportBtn" class="btn btn-secondary">
-                <i class="fas fa-file-export"></i> Exportieren
+                <i class="fas fa-file-export"></i> Deck (JSON)
+              </button>
+              <button type="button" id="exportTsvBtn" class="btn btn-secondary">
+                <i class="fas fa-file-csv"></i> Deck (TSV / Anki)
               </button>
             </div>
             <div class="form-group">
@@ -542,10 +546,14 @@
                 Das lässt sich nicht rückgängig machen; sichere vorher deinen Fortschritt.</p>
             </div>
             <div class="form-group" style="margin-top: 20px;">
-              <h3>Deck-Schema</h3>
+              <h3>Unterstützte Import-Formate</h3>
+              <p class="settings-hint"><b>1. Anki-Deck (.apkg):</b> Aus Anki exportierte Decks werden direkt im Browser entpackt.<br>
+              <b>2. Tabelle (.csv / .tsv / .txt):</b> Zeilenweise getrennt durch Tabulator, Semikolon oder Komma:<br>
+              <code>Deutsch &lt;TAB&gt; Zielsprache &lt;TAB&gt; Beispielsatz oder Umschrift</code><br>
+              <b>3. LinguaLearn JSON:</b></p>
               <pre class="code">
 {
-  "name": "Deck-Name",
+  "name": "Mein Vokabeldeck",
   "language": "da",
   "cards": [
     {
@@ -734,7 +742,7 @@
     // Bei JEDEM Update erhöhen: dann werden alle Nutzer beim nächsten Start
     // einmal ausgeloggt (Anmeldedaten bleiben gespeichert, nur die aktive
     // Sitzung endet — man muss sich neu einloggen).
-    var APP_VERSION = 'v62';
+    var APP_VERSION = 'v63';
     var loginMode = 'login';
 
     function hp(pw) {

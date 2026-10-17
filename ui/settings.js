@@ -20,6 +20,7 @@ import { offlineDecks, offlineSupported, savedDeckIds, saveDeckOffline,
          removeDeckOffline, formatBytes } from '../core/offline.js';
 import { storage } from '../core/storage.js';
 import { escHtml as esc, todayStr } from '../utils/helpers.js';
+import { parseDeckFile } from '../utils/ankiImport.js';
 
 // Hörprobe im aktuell gewählten Deck — so hört man das Tempo dort,
 // wo man es später braucht.
@@ -329,9 +330,11 @@ export function initSettings() {
 
   const importBtn = document.getElementById('importBtn');
   const exportBtn = document.getElementById('exportBtn');
+  const exportTsvBtn = document.getElementById('exportTsvBtn');
 
   if (importBtn) importBtn.addEventListener('click', handleImport);
   if (exportBtn) exportBtn.addEventListener('click', handleExport);
+  if (exportTsvBtn) exportTsvBtn.addEventListener('click', handleExportTsv);
 
   // ── Kompletten Fortschritt sichern / einspielen ──
   document.getElementById('dataExportBtn')?.addEventListener('click', () => {
@@ -417,40 +420,36 @@ function validateDeckStructure(deckData) {
   );
 }
 
-// Handle import
-export function handleImport() {
+// Handle import — unterstützt Anki (.apkg), CSV, TSV, TXT und JSON.
+export async function handleImport() {
   const fileInput = document.getElementById('importFile');
   const file = fileInput?.files?.[0];
 
   if (!file) {
-    alert('Bitte wählen Sie eine JSON-Datei aus.');
+    alert('Bitte wähle eine Datei aus (.apkg, .csv, .tsv, .txt oder .json).');
     return;
   }
 
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    try {
-      const deckData = JSON.parse(e.target.result);
+  try {
+    const deckData = await parseDeckFile(file);
 
-      if (!validateDeckStructure(deckData)) {
-        alert('Fehler: Deck hat ungültiges Format. Erforderlich: name, language, cards (Array mit front/back)');
-        return;
-      }
-
-      const deckId = `imported-${Date.now()}`;
-      addImportedDeck(deckId, deckData);
-      document.dispatchEvent(new CustomEvent('lingua:decks-changed'));
-
-      alert(`Deck "${deckData.name}" erfolgreich importiert! Du kannst es jetzt in der Lernen-Seite auswählen.`);
-      fileInput.value = '';
-    } catch (error) {
-      alert('Fehler beim Importieren: Ungültiges JSON-Format.');
+    if (!validateDeckStructure(deckData)) {
+      alert('Fehler: Deck hat ungültiges Format. Erforderlich: name, language, cards (Array mit front/back)');
+      return;
     }
-  };
-  reader.readAsText(file);
+
+    const deckId = `imported-${Date.now()}`;
+    addImportedDeck(deckId, deckData);
+    document.dispatchEvent(new CustomEvent('lingua:decks-changed'));
+
+    showToast(`<i class="fas fa-circle-check toast__icon"></i><div class="toast__body"><b>Deck importiert!</b><span>„${esc(deckData.name)}" (${deckData.cards.length} Karten) ist jetzt bereit.</span></div>`);
+    fileInput.value = '';
+  } catch (error) {
+    alert(`Fehler beim Importieren: ${error.message || error}`);
+  }
 }
 
-// Handle export — exportiert das aktuell ausgewählte Deck.
+// Handle export — exportiert das aktuell ausgewählte Deck als JSON.
 export async function handleExport() {
   const deckId = document.getElementById('deckSelect')?.value || 'basic-da';
   const deck = await loadDeck(deckId);
@@ -470,4 +469,25 @@ export async function handleExport() {
   linkElement.setAttribute('href', dataUri);
   linkElement.setAttribute('download', exportFileDefaultName);
   linkElement.click();
+}
+
+// Handle TSV-Export — für Anki, Quizlet oder Tabellenkalkulation.
+export async function handleExportTsv() {
+  const deckId = document.getElementById('deckSelect')?.value || 'basic-da';
+  const deck = await loadDeck(deckId);
+
+  if (!deck?.cards) {
+    alert('Kein Deck zum Export gefunden.');
+    return;
+  }
+
+  const lines = deck.cards.map(c => [c.front, c.back, c.example || c.roman || ''].join('\t'));
+  const blob = new Blob([lines.join('\n')], { type: 'text/tab-separated-values;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `lingualearn_${deckId}.tsv`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('<i class="fas fa-file-csv toast__icon"></i><div class="toast__body"><b>TSV-Export erstellt</b><span>Perfekt für Anki, Quizlet oder Tabellen.</span></div>');
 }
